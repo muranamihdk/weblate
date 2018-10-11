@@ -24,3 +24,4 @@ weblate-*.tar.*
 /.tesseract/
 /test-images/
 /cc-test-reporter
+/weblate/docs/locale/*/LC_MESSAGES/*.mo
