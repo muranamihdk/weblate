@@ -1,0 +1,616 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../devel/index.rst:2
+msgid "Application developer guide"
+msgstr ""
+
+#: ../../devel/index.rst:4
+msgid ""
+"Using Weblate for translating your projects can bring you quite a lot of "
+"benefits. It's only up to you how much of that you will use."
+msgstr ""
+
+#: ../../devel/reporting.rst:2
+msgid "Translation progress reporting"
+msgstr ""
+
+#: ../../devel/reporting.rst:4
+msgid ""
+"It is often useful to be able to see how translation progresses over "
+"given period. For this purpose Weblate includes reporting features, where"
+" you can obtain summaries of contributions to given component over time. "
+"You can find the reporting tool in the :guilabel:`Insights` menu for a "
+"translation component:"
+msgstr ""
+
+#: ../../devel/reporting.rst:11
+msgid ""
+"Several reporting tools are available on this page and all can produce "
+"output in HTML, reStructuredText or JSON. The first two formats are "
+"suitable for embedding into existing documentation, while JSON is useful "
+"for further processing of the data."
+msgstr ""
+
+#: ../../devel/reporting.rst:19
+msgid "Translator credits"
+msgstr ""
+
+#: ../../devel/reporting.rst:21
+msgid ""
+"Generates a document usable for crediting translators - sorted by "
+"language and listing all contributors to given language:"
+msgstr ""
+
+#: ../../devel/reporting.rst:36 ../../devel/reporting.rst:64
+msgid "And it will get rendered as:"
+msgstr ""
+
+#: ../../devel/reporting.rst:38
+msgid "Czech"
+msgstr ""
+
+#: ../../devel/reporting.rst:40
+msgid "Michal Čihař <michal@cihar.com>"
+msgstr ""
+
+#: ../../devel/reporting.rst:41 ../../devel/reporting.rst:45
+msgid "Weblate Admin <admin@example.com>"
+msgstr ""
+
+#: ../../devel/reporting.rst:43
+msgid "Dutch"
+msgstr ""
+
+#: ../../devel/reporting.rst:51
+msgid "Contributor stats"
+msgstr ""
+
+#: ../../devel/reporting.rst:53
+msgid "Generates number of words and units translated by translators:"
+msgstr ""
+
+#: ../../devel/reporting.rst:67
+msgid "Name"
+msgstr ""
+
+#: ../../devel/reporting.rst:67
+msgid "Email"
+msgstr ""
+
+#: ../../devel/reporting.rst:67
+msgid "Words"
+msgstr ""
+
+#: ../../devel/reporting.rst:67
+msgid "Count"
+msgstr ""
+
+#: ../../devel/reporting.rst:69
+msgid "Michal Čihař"
+msgstr ""
+
+#: ../../devel/reporting.rst:69
+msgid "michal@cihar.com"
+msgstr ""
+
+#: ../../devel/reporting.rst:69
+msgid "2332"
+msgstr ""
+
+#: ../../devel/reporting.rst:69
+msgid "421"
+msgstr ""
+
+#: ../../devel/reporting.rst:70
+msgid "Weblate Admin"
+msgstr ""
+
+#: ../../devel/reporting.rst:70
+msgid "admin@example.com"
+msgstr ""
+
+#: ../../devel/reporting.rst:70
+msgid "25"
+msgstr ""
+
+#: ../../devel/reporting.rst:70
+msgid "8"
+msgstr ""
+
+#: ../../devel/review.rst:4
+msgid "Reviewing source strings"
+msgstr ""
+
+#: ../../devel/review.rst:9
+msgid "Activity reports"
+msgstr ""
+
+#: ../../devel/review.rst:11
+msgid ""
+"You can check activity reports for translations, project or individual "
+"users."
+msgstr ""
+
+#: ../../devel/review.rst:16
+msgid "Source strings checks"
+msgstr ""
+
+#: ../../devel/review.rst:18
+msgid ""
+"Weblate includes quite a lot of :ref:`checks`. Some of them also focus on"
+" quality of source strings. These can give you some hints for making "
+"strings easier to translate. You can check failing source checks on "
+":guilabel:`Source` tab of every component."
+msgstr ""
+
+#: ../../devel/review.rst:24
+msgid "Failing checks on translation"
+msgstr ""
+
+#: ../../devel/review.rst:26
+msgid ""
+"On the other side, failing translation checks might also indicate problem"
+" in the source strings. Translators often tend to fix some mistakes in "
+"the translation instead of reporting it - a typical example is a missing "
+"full stop at the end of sentence, but there are more similar cases."
+msgstr ""
+
+#: ../../devel/review.rst:31
+msgid ""
+"Reviewing all failing checks on your translation can bring you valuable "
+"feedback for improving source strings as well."
+msgstr ""
+
+#: ../../devel/review.rst:34
+msgid ""
+"You can find the :guilabel:`Source strings review` in the "
+":guilabel:`Tools` menu of a translation component. You will get a similar"
+" view when opening translation, with slightly different checks being "
+"displayed:"
+msgstr ""
+
+#: ../../devel/review.rst:40
+msgid ""
+"One of the most interesting checks here is the :ref:`check-multiple-"
+"failures` - it fires whenever there is failure on multiple translations "
+"of given string. Usually this is something to look for as this is string "
+"where translators have problems doing the translation properly. It might "
+"be just wrong punctation at the end of sentence or something more "
+"problematic."
+msgstr ""
+
+#: ../../devel/review.rst:46
+msgid "The detailed listing then shows you overview per language:"
+msgstr ""
+
+#: ../../devel/review.rst:51
+msgid "String comments"
+msgstr ""
+
+#: ../../devel/review.rst:53
+msgid ""
+"Weblate allows translators to comment on both translation and source "
+"strings. Each :ref:`component` can be configured to receive such comments"
+" on email address and sending this to developers mailing list is usually "
+"best approach. This way you can monitor when translators find problems "
+"and fix them quickly."
+msgstr ""
+
+#: ../../devel/share.rst:4
+msgid "Promoting the translation"
+msgstr ""
+
+#: ../../devel/share.rst:6
+msgid ""
+"Weblate provides you widgets to share on your website or other sources to"
+" promote the translation project. It also has a nice welcome page for new"
+" contributors to give them basic information about the translation. "
+"Additionally you can share information about translation using Facebook "
+"or Twitter. All these possibilities can be found on the :guilabel:`Share`"
+" tab:"
+msgstr ""
+
+#: ../../devel/share.rst:14
+msgid ""
+"All these badges are provided with the link to simple page which explains"
+" users how to translate using Weblate:"
+msgstr ""
+
+#: ../../devel/starting.rst:4
+msgid "Starting with internationalization"
+msgstr ""
+
+#: ../../devel/starting.rst:6
+msgid ""
+"You have a project and want to to translate it into several languages? "
+"This guide will help you to do so. We will showcase several typical "
+"situations, but most of the examples are generic and can be applied to "
+"other scenarios as well."
+msgstr ""
+
+#: ../../devel/starting.rst:11
+msgid ""
+"Before translating any software, you should realize that languages around"
+" the world are really different and you should not make any assumption "
+"based on your experience. For most of languages it will look weird if you"
+" try to concatenate a sentence out of translated segments. You also "
+"should properly handle plural forms because many languages have complex "
+"rules for that and the internationalization framework you end up using "
+"should support this."
+msgstr ""
+
+#: ../../devel/starting.rst:18
+msgid ""
+"Last but not least, sometimes it might be necessary to add some context "
+"to the translated string. Imagine a translator would get string ``Sun`` "
+"to translate. Without context most people would translate that as our "
+"closest star, but it might be actually used as an abbreviation for "
+"Sunday."
+msgstr ""
+
+#: ../../devel/starting.rst:24
+msgid "Choosing internationalization framework"
+msgstr ""
+
+#: ../../devel/starting.rst:26
+msgid ""
+"Choose whatever is standard on your platform, try to avoid reinventing "
+"the wheel by creating your own framework to handle localizations. Weblate"
+" supports most of the widely used frameworks, see :ref:`formats` for more"
+" information."
+msgstr ""
+
+#: ../../devel/starting.rst:30
+msgid ""
+"Following chapters describe two use cases - GNU Gettext and Sphinx, but "
+"many of the steps are quite generic and apply to the other frameworks as "
+"well."
+msgstr ""
+
+#: ../../devel/starting.rst:34
+msgid "Translating software using GNU Gettext"
+msgstr ""
+
+#: ../../devel/starting.rst:36
+msgid ""
+"`GNU Gettext`_ is one of the most widely used tool for "
+"internationalization of free software. It provides a simple yet flexible "
+"way to localize the software. It has great support for plurals, it can "
+"add further context to the translated string and there are quite a lot of"
+" tools built around it. Of course it has great support in Weblate (see "
+":ref:`gettext` file format description)."
+msgstr ""
+
+#: ../../devel/starting.rst:44
+msgid ""
+"If you are about to use it in proprietary software, please consult "
+"licensing first, it might not be suitable for you."
+msgstr ""
+
+#: ../../devel/starting.rst:47
+msgid ""
+"GNU Gettext can be used from variety of languages (C, Python, PHP, Ruby, "
+"Javascript and much more) and usually the UI frameworks already come with"
+" some support for it. The standard usage is though the `gettext()` "
+"function call, which is often aliased to `_()` to make the code simpler "
+"and easier to read."
+msgstr ""
+
+#: ../../devel/starting.rst:52
+msgid ""
+"Additionally it provides `pgettext()` call to provide additional context "
+"to translators and `ngettext()` which can handle plural types as defined "
+"for target language."
+msgstr ""
+
+#: ../../devel/starting.rst:56
+msgid ""
+"As a widely spread tool, it has many wrappers which make its usage really"
+" simple, instead of manual invoking of Gettext described below, you might"
+" want to try one of them, for example `intltool`_."
+msgstr ""
+
+#: ../../devel/starting.rst:61
+msgid "Sample program"
+msgstr ""
+
+#: ../../devel/starting.rst:63
+msgid "The simple program in C using Gettext might look like following:"
+msgstr ""
+
+#: ../../devel/starting.rst:91
+msgid "Extracting translatable strings"
+msgstr ""
+
+#: ../../devel/starting.rst:93
+msgid ""
+"Once you have code using the gettext calls, you can use "
+":program:`xgettext` to extract messages from it and store them into a "
+"`.pot <https://www.gnu.org/software/gettext/manual/gettext.html#index-"
+"files_002c-_002epot>`_:"
+msgstr ""
+
+#: ../../devel/starting.rst:103
+msgid ""
+"There are alternative programs to extract strings from the code, for "
+"example `pybabel`_."
+msgstr ""
+
+#: ../../devel/starting.rst:106
+msgid ""
+"This creates a template file, which you can use for starting new "
+"translations (using :program:`msginit`) or updating existing ones after "
+"code change (you would use :program:`msgmerge` for that). The resulting "
+"file is simply a structured text file:"
+msgstr ""
+
+#: ../../devel/starting.rst:144
+msgid ""
+"Each ``msgid`` line defines a string to translate, the special empty "
+"string in the beginning is the file header containing metadata about the "
+"translation."
+msgstr ""
+
+#: ../../devel/starting.rst:148
+msgid "Starting new translation"
+msgstr ""
+
+#: ../../devel/starting.rst:150
+msgid "With the template in place, we can start our first translation:"
+msgstr ""
+
+#: ../../devel/starting.rst:157
+msgid ""
+"The just created :file:`cs.po` already has some information filled in. "
+"Most importantly it got the proper plural forms definition for chosen "
+"language and you can see number of plurals have changed according to "
+"that:"
+msgstr ""
+
+#: ../../devel/starting.rst:195
+msgid ""
+"This file is compiled into an optimized binary form, the `.mo "
+"<https://www.gnu.org/software/gettext/manual/gettext.html#MO-Files>`_ "
+"file used by the `GNU Gettext`_ functions at runtime."
+msgstr ""
+
+#: ../../devel/starting.rst:200
+msgid "Updating strings"
+msgstr ""
+
+#: ../../devel/starting.rst:202
+msgid ""
+"Once you add more strings or change some strings in your program, you "
+"execute again :program:`xgettext` which regenerates the template file:"
+msgstr ""
+
+#: ../../devel/starting.rst:209
+msgid ""
+"Then you can update individual translation files to match newly created "
+"templates (this includes reordering the strings to match new template):"
+msgstr ""
+
+#: ../../devel/starting.rst:217
+msgid "Importing to Weblate"
+msgstr ""
+
+#: ../../devel/starting.rst:219
+msgid ""
+"To import such translation into Weblate, all you need to define are the "
+"following fields when creating component (see :ref:`component` for "
+"detailed description of the fields):"
+msgstr ""
+
+#: ../../devel/starting.rst:224
+msgid "Field"
+msgstr ""
+
+#: ../../devel/starting.rst:224
+msgid "Value"
+msgstr ""
+
+#: ../../devel/starting.rst:226
+msgid "Source code repository"
+msgstr ""
+
+#: ../../devel/starting.rst:226
+msgid "URL of the VCS repository with your project"
+msgstr ""
+
+#: ../../devel/starting.rst:228
+msgid "File mask"
+msgstr ""
+
+#: ../../devel/starting.rst:228
+msgid "``po/*.po``"
+msgstr ""
+
+#: ../../devel/starting.rst:230
+msgid "Base file for new translations"
+msgstr ""
+
+#: ../../devel/starting.rst:230
+msgid "``po/hello.pot``"
+msgstr ""
+
+#: ../../devel/starting.rst:232
+msgid "File format"
+msgstr ""
+
+#: ../../devel/starting.rst:232
+msgid "Choose :guilabel:`Gettext PO file`"
+msgstr ""
+
+#: ../../devel/starting.rst:234
+msgid "New language"
+msgstr ""
+
+#: ../../devel/starting.rst:234
+msgid "Choose :guilabel:`Automatically add language file`"
+msgstr ""
+
+#: ../../devel/starting.rst:237
+msgid "And that's it, you're now ready to start translating your software!"
+msgstr ""
+
+#: ../../devel/starting.rst:241
+msgid ""
+"You can find a Gettext example with many languages in the Weblate Hello "
+"project on GitHub: <https://github.com/WeblateOrg/hello>."
+msgstr ""
+
+#: ../../devel/starting.rst:245
+msgid "Translating documentation using Sphinx"
+msgstr ""
+
+#: ../../devel/starting.rst:247
+msgid ""
+"`Sphinx`_ is a tool for creating beautiful documentation. It uses simple "
+"reStructuredText syntax and can generate output in many formats. If "
+"you're looking for an example, this documentation is also build using it."
+" The very useful companion for using Sphinx is the `Read the Docs`_ "
+"service, which will build and publish your documentation for free."
+msgstr ""
+
+#: ../../devel/starting.rst:253
+msgid ""
+"I will not focus on writing documentation itself, if you need guidance "
+"with that, just follow instructions on the `Sphinx`_ website. Once you "
+"have documentation ready, translating it is quite easy as Sphinx comes "
+"with support for this and it is quite nicely covered in their "
+"`Internationalization Quick Guide`_.  It's matter of few configuration "
+"directives and invoking of the ``sphinx-intl`` tool."
+msgstr ""
+
+#: ../../devel/starting.rst:260
+msgid ""
+"If you are using Read the Docs service, you can start building translated"
+" documentation on the Read the Docs. Their `Localization of "
+"Documentation`_ covers pretty much everything you need - creating another"
+" project, set its language and link it from master project as a "
+"translation."
+msgstr ""
+
+#: ../../devel/starting.rst:265
+msgid ""
+"Now all you need is translating the documentation content. As Sphinx "
+"splits the translation files per source file, you might end up with dozen"
+" of files, which might be challenging to import using the Weblate's web "
+"interface. For that reason, there is the :djadmin:`import_project` "
+"management command."
+msgstr ""
+
+#: ../../devel/starting.rst:270
+msgid "Depending on exact setup, importing of the translation might look like:"
+msgstr ""
+
+#: ../../devel/starting.rst:279
+msgid ""
+"If you have more complex document structure, importing different folders "
+"is not direcly supported, you currently have to list them separately:"
+msgstr ""
+
+#: ../../devel/starting.rst:295
+msgid ""
+"The `Odorik`_ python module documentation is built using Sphinx, Read the"
+" Docs and translated using Weblate."
+msgstr ""
+
+#: ../../devel/starting.rst:299
+msgid "Integrating with Weblate"
+msgstr ""
+
+#: ../../devel/starting.rst:302
+msgid "Getting translations updates from Weblate"
+msgstr ""
+
+#: ../../devel/starting.rst:304
+msgid ""
+"To fetch updated strings from Weblate you can simply fetch the underlying"
+" repository (either from filesystem or it can be made available through "
+":ref:`git-exporter`). Prior to this, you might want to commit any pending"
+" changes (see :ref:`lazy-commit`). This can be achieved in the user "
+"interface (in the :guilabel:`Repository maintenance`) or from command "
+"line using :ref:`wlc`."
+msgstr ""
+
+#: ../../devel/starting.rst:310
+msgid ""
+"This can be automated if you grant Weblate push access to your repository"
+" and configure :guilabel:`Push URL` in the :ref:`component`."
+msgstr ""
+
+#: ../../devel/starting.rst:315 ../../devel/starting.rst:329
+msgid ":ref:`continuous-translation`"
+msgstr ""
+
+#: ../../devel/starting.rst:318
+msgid "Pushing string changes to Weblate"
+msgstr ""
+
+#: ../../devel/starting.rst:320
+msgid ""
+"To push newly updated strings to Weblate, just let it to pull from the "
+"upstream repo. This can be achieved in the user interface (in the "
+":guilabel:`Repository maintenance`) or from command line using "
+":ref:`wlc`."
+msgstr ""
+
+#: ../../devel/starting.rst:324
+msgid ""
+"This can be automated by installing a webhook on your repository to "
+"trigger Weblate whenever there is new commit, see :ref:`update-vcs` for "
+"more details."
+msgstr ""
+
+#: ../../devel/translations.rst:2
+msgid "Managing translations"
+msgstr ""
+
+#: ../../devel/translations.rst:7
+msgid "Adding new translations"
+msgstr ""
+
+#: ../../devel/translations.rst:9
+msgid ""
+"Weblate can add new language files to your project automatically for most"
+" of the :ref:`formats`. This feature needs to be enabled in the "
+":ref:`component`. In case this is not enabled (or available for your file"
+" format) the files have to be added manually to the VCS."
+msgstr ""
+
+#: ../../devel/translations.rst:14
+msgid ""
+"Weblate will automatically detect new languages which are added to the "
+"VCS repository and makes them available for translation. This makes "
+"adding new translations incredibly easy:"
+msgstr ""
+
+#: ../../devel/translations.rst:18
+msgid "Add the translation file to VCS."
+msgstr ""
+
+#: ../../devel/translations.rst:19
+msgid ""
+"Let Weblate update the repository (usually set up automatically, see :ref"
+":`update-vcs`)."
+msgstr ""
+

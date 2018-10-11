@@ -1,0 +1,1268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../api.rst:4
+msgid "Weblate's Web API"
+msgstr ""
+
+#: ../../api.rst:11
+msgid "REST API"
+msgstr ""
+
+#: ../../api.rst:15
+msgid "The API is available since Weblate 2.6."
+msgstr ""
+
+#: ../../api.rst:17
+msgid ""
+"The API is accessible on the ``/api/`` URL and it is based on `Django "
+"REST framework <https://www.django-rest-framework.org/>`_. You can use it"
+" directly or by :ref:`wlc`."
+msgstr ""
+
+#: ../../api.rst:24
+msgid "Authentication and generic parameters"
+msgstr ""
+
+#: ../../api.rst:26
+msgid ""
+"The public project API is available without authentication, though "
+"unauthenticated requests are heavily throttled (by default to 100 "
+"requests per day), so it is recommended to use authentication. The "
+"authentication uses a token, which you can get in your profile. Use it in"
+" the ``Authorization`` header:"
+msgstr ""
+
+#: ../../api.rst:33
+msgid ""
+"Generic request behaviour for the API, the headers, status codes and "
+"parameters here apply to all endpoints as well."
+msgstr ""
+
+#: ../../api.rst
+msgid "Query Parameters"
+msgstr ""
+
+#: ../../api.rst:36
+msgid ""
+"Response format (overrides :http:header:`Accept`). Possible values "
+"depends on REST framework setup, by default ``json`` and ``api`` are "
+"supported. The latter provides web browser interface for API."
+msgstr ""
+
+#: ../../api.rst
+msgid "Request Headers"
+msgstr ""
+
+#: ../../api.rst:40
+msgid "the response content type depends on :http:header:`Accept` header"
+msgstr ""
+
+#: ../../api.rst:42
+msgid "optional token to authenticate"
+msgstr ""
+
+#: ../../api.rst
+msgid "Response Headers"
+msgstr ""
+
+#: ../../api.rst:43
+msgid "this depends on :http:header:`Accept` header of request"
+msgstr ""
+
+#: ../../api.rst:45
+msgid "list of allowed HTTP methods on object"
+msgstr ""
+
+#: ../../api.rst
+msgid "Response JSON Object"
+msgstr ""
+
+#: ../../api.rst:46
+msgid ""
+"verbose description of failure (for HTTP status codes other than "
+":http:statuscode:`200`)"
+msgstr ""
+
+#: ../../api.rst:47
+msgid "total item count for object lists"
+msgstr ""
+
+#: ../../api.rst:48
+msgid "next page URL for object lists"
+msgstr ""
+
+#: ../../api.rst:49
+msgid "previous page URL for object lists"
+msgstr ""
+
+#: ../../api.rst:50
+msgid "results for object lists"
+msgstr ""
+
+#: ../../api.rst:51
+msgid "URL to access this resource using API"
+msgstr ""
+
+#: ../../api.rst:52
+msgid "URL to access this resource using web browser"
+msgstr ""
+
+#: ../../api.rst
+msgid "Status Codes"
+msgstr ""
+
+#: ../../api.rst:53
+msgid "when request was correctly handled"
+msgstr ""
+
+#: ../../api.rst:54
+msgid "when form parameters are missing"
+msgstr ""
+
+#: ../../api.rst:55
+msgid "when access is denied"
+msgstr ""
+
+#: ../../api.rst:56
+msgid "when throttling is in place"
+msgstr ""
+
+#: ../../api.rst:59
+msgid "Authentication examples"
+msgstr ""
+
+#: ../../api.rst:61 ../../api.rst:167
+msgid "**Example request:**"
+msgstr ""
+
+#: ../../api.rst:70 ../../api.rst:176
+msgid "**Example response:**"
+msgstr ""
+
+#: ../../api.rst:90 ../../api.rst:130 ../../api.rst:338 ../../api.rst:830
+#: ../../api.rst:1053
+msgid "**CURL example:**"
+msgstr ""
+
+#: ../../api.rst:99
+msgid "Passing Parameters Examples"
+msgstr ""
+
+#: ../../api.rst:101
+msgid ""
+"For the :http:method:`POST` method the parameters can be specified either"
+" as form submission (:mimetype:`application/x-www-form-urlencoded`) or as"
+" JSON (:mimetype:`application/json`)."
+msgstr ""
+
+#: ../../api.rst:105
+msgid "**Form request example:**"
+msgstr ""
+
+#: ../../api.rst:117 ../../api.rst:347
+msgid "**JSON request example:**"
+msgstr ""
+
+#: ../../api.rst:139
+msgid "**CURL JSON example:**"
+msgstr ""
+
+#: ../../api.rst:150
+msgid "Rate limiting"
+msgstr ""
+
+#: ../../api.rst:152
+msgid ""
+"The API requests are rate limited; the default configuration limits it to"
+" 100 requests per day for anonymous users and 1000 requests per day for "
+"authenticated users."
+msgstr ""
+
+#: ../../api.rst:156
+msgid ""
+"Rate limiting can be adjusted in the :file:`settings.py`; see `Throttling"
+" in Django REST framework documentation <http://www.django-rest-"
+"framework.org/api-guide/throttling/>`_ for more details how to configure "
+"it."
+msgstr ""
+
+#: ../../api.rst:161
+msgid "API Entry Point"
+msgstr ""
+
+#: ../../api.rst:165
+msgid "The API root entry point."
+msgstr ""
+
+#: ../../api.rst:197
+msgid "Languages"
+msgstr ""
+
+#: ../../api.rst:201
+msgid "Returns a list of all languages."
+msgstr ""
+
+#: ../../api.rst:205 ../../api.rst:220 ../../api.rst:244 ../../api.rst:264
+#: ../../api.rst:295 ../../api.rst:311 ../../api.rst:336 ../../api.rst:386
+#: ../../api.rst:417 ../../api.rst:449 ../../api.rst:498 ../../api.rst:513
+#: ../../api.rst:538 ../../api.rst:559 ../../api.rst:576 ../../api.rst:589
+#: ../../api.rst:602 ../../api.rst:616 ../../api.rst:639 ../../api.rst:683
+#: ../../api.rst:767 ../../api.rst:784 ../../api.rst:811 ../../api.rst:828
+#: ../../api.rst:854 ../../api.rst:873 ../../api.rst:914 ../../api.rst:957
+#: ../../api.rst:990 ../../api.rst:1019 ../../api.rst:1051
+msgid ""
+"Additional common headers, parameters and status codes are documented at "
+":ref:`api-generic`."
+msgstr ""
+
+#: ../../api.rst:207
+msgid ""
+"Language object attributes are documented at "
+":http:get:`/api/languages/(string:language)/`."
+msgstr ""
+
+#: ../../api.rst:211
+msgid "Returns information about a language."
+msgstr ""
+
+#: ../../api.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../api.rst:213 ../../api.rst:215
+msgid "Language code"
+msgstr ""
+
+#: ../../api.rst:216
+msgid "Text direction"
+msgstr ""
+
+#: ../../api.rst:222 ../../api.rst:266 ../../api.rst:313 ../../api.rst:451
+#: ../../api.rst:515 ../../api.rst:686
+msgid "**Example JSON data:**"
+msgstr ""
+
+#: ../../api.rst:236
+msgid "Projects"
+msgstr ""
+
+#: ../../api.rst:240
+msgid "Returns a list of all projects."
+msgstr ""
+
+#: ../../api.rst:246
+msgid ""
+"Project object attributes are documented at "
+":http:get:`/api/projects/(string:project)/`."
+msgstr ""
+
+#: ../../api.rst:250
+msgid "Returns information about a project."
+msgstr ""
+
+#: ../../api.rst:252 ../../api.rst:289 ../../api.rst:303 ../../api.rst:329
+#: ../../api.rst:380 ../../api.rst:394 ../../api.rst:425 ../../api.rst:490
+#: ../../api.rst:505 ../../api.rst:530 ../../api.rst:546 ../../api.rst:567
+#: ../../api.rst:582 ../../api.rst:595 ../../api.rst:608 ../../api.rst:624
+#: ../../api.rst:647 ../../api.rst:757 ../../api.rst:774 ../../api.rst:802
+#: ../../api.rst:817 ../../api.rst:845 ../../api.rst:862 ../../api.rst:881
+msgid "Project URL slug"
+msgstr ""
+
+#: ../../api.rst:254
+msgid "project name"
+msgstr ""
+
+#: ../../api.rst:255
+msgid "project slug"
+msgstr ""
+
+#: ../../api.rst:256 ../../api.rst:664
+msgid "source language object; see :http:get:`/api/languages/(string:language)/`"
+msgstr ""
+
+#: ../../api.rst:257
+msgid "project website"
+msgstr ""
+
+#: ../../api.rst:258
+msgid ""
+"URL to components list; see "
+":http:get:`/api/projects/(string:project)/components/`"
+msgstr ""
+
+#: ../../api.rst:259
+msgid ""
+"URL to repository status; see "
+":http:get:`/api/projects/(string:project)/repository/`"
+msgstr ""
+
+#: ../../api.rst:260
+msgid ""
+"URL to changes list; see "
+":http:get:`/api/projects/(string:project)/changes/`"
+msgstr ""
+
+#: ../../api.rst:287
+msgid "Returns a list of project changes."
+msgstr ""
+
+#: ../../api.rst:291 ../../api.rst:494 ../../api.rst:763
+msgid "array of component objects; see :http:get:`/api/changes/(int:pk)/`"
+msgstr ""
+
+#: ../../api.rst:299
+msgid ""
+"Returns information about VCS repository status. This endpoint contains "
+"only an overall summary for all repositories for the project. To get more"
+" detailed status use "
+":http:get:`/api/components/(string:project)/(string:component)/repository/`."
+msgstr ""
+
+#: ../../api.rst:305 ../../api.rst:550
+msgid "whether there are any pending changes to commit"
+msgstr ""
+
+#: ../../api.rst:306 ../../api.rst:551
+msgid "whether there are any upstream changes to merge"
+msgstr ""
+
+#: ../../api.rst:307 ../../api.rst:552
+msgid "whether there are any local changes to push"
+msgstr ""
+
+#: ../../api.rst:326 ../../api.rst:858
+msgid "Performs given operation on the VCS repository."
+msgstr ""
+
+#: ../../api.rst
+msgid "Request JSON Object"
+msgstr ""
+
+#: ../../api.rst:331 ../../api.rst:571 ../../api.rst:868
+msgid ""
+"Operation to perform: one of ``push``, ``pull``, ``commit``, ``reset``, "
+"``cleanup``"
+msgstr ""
+
+#: ../../api.rst:332 ../../api.rst:572 ../../api.rst:869
+msgid "result of the operation"
+msgstr ""
+
+#: ../../api.rst:360
+msgid "**JSON response example:**"
+msgstr ""
+
+#: ../../api.rst:378
+msgid "Returns a list of translation components in the given project."
+msgstr ""
+
+#: ../../api.rst:382
+msgid ""
+"array of component objects; see "
+":http:get:`/api/components/(string:project)/(string:component)/`"
+msgstr ""
+
+#: ../../api.rst:390
+msgid "Returns paginated statistics for all languages within a project."
+msgstr ""
+
+#: ../../api.rst:396 ../../api.rst:427 ../../api.rst:492 ../../api.rst:507
+#: ../../api.rst:532 ../../api.rst:548 ../../api.rst:569 ../../api.rst:584
+#: ../../api.rst:597 ../../api.rst:610 ../../api.rst:626 ../../api.rst:649
+#: ../../api.rst:759 ../../api.rst:776 ../../api.rst:804 ../../api.rst:819
+#: ../../api.rst:847 ../../api.rst:864 ../../api.rst:883
+msgid "Component URL slug"
+msgstr ""
+
+#: ../../api.rst:398
+msgid "array of translation statistics objects"
+msgstr ""
+
+#: ../../api.rst:399 ../../api.rst:896
+msgid "language name"
+msgstr ""
+
+#: ../../api.rst:400 ../../api.rst:887
+msgid "language code"
+msgstr ""
+
+#: ../../api.rst:401 ../../api.rst:897
+msgid "total number of strings"
+msgstr ""
+
+#: ../../api.rst:402 ../../api.rst:898
+msgid "number of translated strings"
+msgstr ""
+
+#: ../../api.rst:403 ../../api.rst:899
+msgid "percentage of translated strings"
+msgstr ""
+
+#: ../../api.rst:404 ../../api.rst:671 ../../api.rst:892
+msgid "total number of words"
+msgstr ""
+
+#: ../../api.rst:405 ../../api.rst:675 ../../api.rst:893
+msgid "number of translated words"
+msgstr ""
+
+#: ../../api.rst:406
+msgid "percentage of translated words"
+msgstr ""
+
+#: ../../api.rst:409
+msgid "Components"
+msgstr ""
+
+#: ../../api.rst:413
+msgid "Returns a list of translation components."
+msgstr ""
+
+#: ../../api.rst:419
+msgid ""
+"Component object attributes are documented at "
+":http:get:`/api/components/(string:project)/(string:component)/`."
+msgstr ""
+
+#: ../../api.rst:423
+msgid "Returns information about translation component."
+msgstr ""
+
+#: ../../api.rst:429
+msgid "VCS repository branch"
+msgstr ""
+
+#: ../../api.rst:430
+msgid "file format of translations"
+msgstr ""
+
+#: ../../api.rst:431
+msgid "mask of translation files in the repository"
+msgstr ""
+
+#: ../../api.rst:432
+msgid "URL of the exported VCS repository with translations"
+msgstr ""
+
+#: ../../api.rst:433
+msgid "license for translations"
+msgstr ""
+
+#: ../../api.rst:434
+msgid "URL of license for translations"
+msgstr ""
+
+#: ../../api.rst:435
+msgid "name of component"
+msgstr ""
+
+#: ../../api.rst:436
+msgid "slug of component"
+msgstr ""
+
+#: ../../api.rst:437
+msgid "the translation project; see :http:get:`/api/projects/(string:project)/`"
+msgstr ""
+
+#: ../../api.rst:438
+msgid "VCS repository URL"
+msgstr ""
+
+#: ../../api.rst:439
+msgid "base file for monolingual translations"
+msgstr ""
+
+#: ../../api.rst:440
+msgid "base file for adding new translations"
+msgstr ""
+
+#: ../../api.rst:441
+msgid "version control system"
+msgstr ""
+
+#: ../../api.rst:442
+msgid ""
+"URL to repository status; see "
+":http:get:`/api/components/(string:project)/(string:component)/repository/`"
+msgstr ""
+
+#: ../../api.rst:443
+msgid ""
+"URL to translations list; see "
+":http:get:`/api/components/(string:project)/(string:component)/translations/`"
+msgstr ""
+
+#: ../../api.rst:444
+msgid ""
+"URL to lock status; see "
+":http:get:`/api/components/(string:project)/(string:component)/lock/`"
+msgstr ""
+
+#: ../../api.rst:445
+msgid ""
+"URL to changes list; see "
+":http:get:`/api/components/(string:project)/(string:component)/changes/`"
+msgstr ""
+
+#: ../../api.rst:488
+msgid "Returns a list of component changes."
+msgstr ""
+
+#: ../../api.rst:503
+msgid "Returns component lock status."
+msgstr ""
+
+#: ../../api.rst:509
+msgid "whether component is locked for updates"
+msgstr ""
+
+#: ../../api.rst:526
+msgid "Sets component lock status."
+msgstr ""
+
+#: ../../api.rst:528
+msgid ""
+"Response is same as "
+":http:get:`/api/components/(string:project)/(string:component)/lock/`."
+msgstr ""
+
+#: ../../api.rst:534
+msgid "Boolean whether to lock or not."
+msgstr ""
+
+#: ../../api.rst:542 ../../api.rst:841
+msgid "Returns information about VCS repository status."
+msgstr ""
+
+#: ../../api.rst:544
+msgid ""
+"The response is same as for "
+":http:get:`/api/projects/(string:project)/repository/`."
+msgstr ""
+
+#: ../../api.rst:553
+msgid "Remote commit information"
+msgstr ""
+
+#: ../../api.rst:554
+msgid "VCS repository status as reported by VCS"
+msgstr ""
+
+#: ../../api.rst:555
+msgid "Text describing merge failure or null if there is none"
+msgstr ""
+
+#: ../../api.rst:563
+msgid "Performs the given operation on a VCS repository."
+msgstr ""
+
+#: ../../api.rst:565 ../../api.rst:860
+msgid ""
+"See :http:post:`/api/projects/(string:project)/repository/` for "
+"documentation."
+msgstr ""
+
+#: ../../api.rst:580
+msgid "Downloads base file for monolingual translations."
+msgstr ""
+
+#: ../../api.rst:593
+msgid "Downloads template file for new translations."
+msgstr ""
+
+#: ../../api.rst:606
+msgid "Returns a list of translation objects in the given component."
+msgstr ""
+
+#: ../../api.rst:612
+msgid ""
+"array of translation objects; see "
+":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/`"
+msgstr ""
+
+#: ../../api.rst:620
+msgid "Returns paginated statistics for all translations within component."
+msgstr ""
+
+#: ../../api.rst:628
+msgid ""
+"array of translation statistics objects; see "
+":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/statistics/`"
+msgstr ""
+
+#: ../../api.rst:631
+msgid "Translations"
+msgstr ""
+
+#: ../../api.rst:635
+msgid "Returns a list of translations."
+msgstr ""
+
+#: ../../api.rst:641
+msgid ""
+"Translation object attributes are documented at "
+":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/`."
+msgstr ""
+
+#: ../../api.rst:645
+msgid "Returns information about a translation."
+msgstr ""
+
+#: ../../api.rst:651 ../../api.rst:761 ../../api.rst:778 ../../api.rst:806
+#: ../../api.rst:821 ../../api.rst:849 ../../api.rst:866 ../../api.rst:885
+msgid "Translation language code"
+msgstr ""
+
+#: ../../api.rst:653
+msgid ""
+"component object; see "
+":http:get:`/api/components/(string:project)/(string:component)/`"
+msgstr ""
+
+#: ../../api.rst:654
+msgid "number of units failing check"
+msgstr ""
+
+#: ../../api.rst:655
+msgid "percentage of units failing check"
+msgstr ""
+
+#: ../../api.rst:656
+msgid "number of words with failing check"
+msgstr ""
+
+#: ../../api.rst:657
+msgid "translation filename"
+msgstr ""
+
+#: ../../api.rst:658
+msgid "number of units marked for review"
+msgstr ""
+
+#: ../../api.rst:659
+msgid "percentage of units marked for review"
+msgstr ""
+
+#: ../../api.rst:660
+msgid "number of words marked for review"
+msgstr ""
+
+#: ../../api.rst:661
+msgid "number of units with comment"
+msgstr ""
+
+#: ../../api.rst:662
+msgid "number of units with suggestion"
+msgstr ""
+
+#: ../../api.rst:663
+msgid "whether translation is monolingual base"
+msgstr ""
+
+#: ../../api.rst:665
+msgid ""
+"language code used in the repository; this can be different from language"
+" code in the language object"
+msgstr ""
+
+#: ../../api.rst:666 ../../api.rst:894
+msgid "name of last author"
+msgstr ""
+
+#: ../../api.rst:667
+msgid "last change timestamp"
+msgstr ""
+
+#: ../../api.rst:668
+msgid "hash revision of the file"
+msgstr ""
+
+#: ../../api.rst:669
+msgid "URL for sharing leading to engage page"
+msgstr ""
+
+#: ../../api.rst:670
+msgid "total number of units"
+msgstr ""
+
+#: ../../api.rst:672
+msgid "URL for translating"
+msgstr ""
+
+#: ../../api.rst:673
+msgid "number of translated units"
+msgstr ""
+
+#: ../../api.rst:674
+msgid "percentage of translated units"
+msgstr ""
+
+#: ../../api.rst:676
+msgid ""
+"URL to repository status; see "
+":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/repository/`"
+msgstr ""
+
+#: ../../api.rst:677
+msgid ""
+"URL to file object; see "
+":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/file/`"
+msgstr ""
+
+#: ../../api.rst:678
+msgid ""
+"URL to changes list; see "
+":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/changes/`"
+msgstr ""
+
+#: ../../api.rst:679
+msgid ""
+"URL to units list; see "
+":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/units/`"
+msgstr ""
+
+#: ../../api.rst:755 ../../api.rst:953
+msgid "Returns a list of translation changes."
+msgstr ""
+
+#: ../../api.rst:772
+msgid "Returns a list of translation units."
+msgstr ""
+
+#: ../../api.rst:780
+msgid "array of component objects; see :http:get:`/api/units/(int:pk)/`"
+msgstr ""
+
+#: ../../api.rst:789
+msgid ""
+"Download current translation file as stored in VCS (without ``format`` "
+"parameter) or as converted to a standard format (currently supported: "
+"Gettext PO, MO, XLIFF and TBX)."
+msgstr ""
+
+#: ../../api.rst:795
+msgid ""
+"This API endpoint uses different logic for output than rest of API as it "
+"operates on whole file rather than on data. Set of accepted ``format`` "
+"parameter differs and without such parameter you get translation file as "
+"stored in VCS."
+msgstr ""
+
+#: ../../api.rst:800
+msgid ""
+"File format to use; if not specified no format conversion happens; "
+"supported file formats: ``po``, ``mo``, ``xliff``, ``xliff11``, ``tbx``"
+msgstr ""
+
+#: ../../api.rst:815
+msgid "Upload new file with translations."
+msgstr ""
+
+#: ../../api.rst
+msgid "Form Parameters"
+msgstr ""
+
+#: ../../api.rst:823
+msgid "Whether to overwrite existing translations (defaults to no)"
+msgstr ""
+
+#: ../../api.rst:824 ../../api.rst:1047
+msgid "Uploaded file"
+msgstr ""
+
+#: ../../api.rst:843
+msgid ""
+"The response is same as for "
+":http:get:`/api/components/(string:project)/(string:component)/repository/`."
+msgstr ""
+
+#: ../../api.rst:877
+msgid "Returns detailed translation statistics."
+msgstr ""
+
+#: ../../api.rst:888
+msgid "number of failing checks"
+msgstr ""
+
+#: ../../api.rst:889
+msgid "percentage of failing checks"
+msgstr ""
+
+#: ../../api.rst:890
+msgid "number of strings needing review"
+msgstr ""
+
+#: ../../api.rst:891
+msgid "percentage of strings needing review"
+msgstr ""
+
+#: ../../api.rst:895
+msgid "date of last change"
+msgstr ""
+
+#: ../../api.rst:900
+msgid "URL to access the translation (engagement URL)"
+msgstr ""
+
+#: ../../api.rst:901
+msgid "URL to access the translation (real translation URL)"
+msgstr ""
+
+#: ../../api.rst:904
+msgid "Units"
+msgstr ""
+
+#: ../../api.rst:910
+msgid "Returns list of translation units."
+msgstr ""
+
+#: ../../api.rst:916
+msgid "Unit object attributes are documented at :http:get:`/api/units/(int:pk)/`."
+msgstr ""
+
+#: ../../api.rst:920
+msgid "Returns information about translation unit."
+msgstr ""
+
+#: ../../api.rst:922
+msgid "Unit ID"
+msgstr ""
+
+#: ../../api.rst:924 ../../api.rst:968
+msgid "URL of a related translation object"
+msgstr ""
+
+#: ../../api.rst:925
+msgid "source string"
+msgstr ""
+
+#: ../../api.rst:926
+msgid "previous source string used for fuzzy matching"
+msgstr ""
+
+#: ../../api.rst:927
+msgid "target string"
+msgstr ""
+
+#: ../../api.rst:928 ../../api.rst:1000
+msgid "unique identifier of the unit"
+msgstr ""
+
+#: ../../api.rst:929
+msgid "unique identifier of the source string"
+msgstr ""
+
+#: ../../api.rst:930
+msgid "location of the unit in source code"
+msgstr ""
+
+#: ../../api.rst:931
+msgid "translation unit context"
+msgstr ""
+
+#: ../../api.rst:932
+msgid "translation unit comment"
+msgstr ""
+
+#: ../../api.rst:933
+msgid "translation unit flags"
+msgstr ""
+
+#: ../../api.rst:934
+msgid "whether unit is fuzzy or marked for review"
+msgstr ""
+
+#: ../../api.rst:935
+msgid "whether unit is translated"
+msgstr ""
+
+#: ../../api.rst:936
+msgid "unit position in translation file"
+msgstr ""
+
+#: ../../api.rst:937
+msgid "whether unit has suggestions"
+msgstr ""
+
+#: ../../api.rst:938
+msgid "whether unit has comments"
+msgstr ""
+
+#: ../../api.rst:939
+msgid "whether unit has failing checks"
+msgstr ""
+
+#: ../../api.rst:940
+msgid "number of source words"
+msgstr ""
+
+#: ../../api.rst:941
+msgid "translation priority; 100 is default"
+msgstr ""
+
+#: ../../api.rst:942
+msgid "unit identifier"
+msgstr ""
+
+#: ../../api.rst:943
+msgid "URL where unit can be edited"
+msgstr ""
+
+#: ../../api.rst:944
+msgid "Source string information link; see :http:get:`/api/sources/(int:pk)/`"
+msgstr ""
+
+#: ../../api.rst:947
+msgid "Changes"
+msgstr ""
+
+#: ../../api.rst:959
+msgid ""
+"Change object attributes are documented at "
+":http:get:`/api/changes/(int:pk)/`."
+msgstr ""
+
+#: ../../api.rst:963
+msgid "Returns information about translation change."
+msgstr ""
+
+#: ../../api.rst:965
+msgid "Change ID"
+msgstr ""
+
+#: ../../api.rst:967
+msgid "URL of a related unit object"
+msgstr ""
+
+#: ../../api.rst:969 ../../api.rst:1001 ../../api.rst:1030
+msgid "URL of a related component object"
+msgstr ""
+
+#: ../../api.rst:970
+msgid "URL of a related dictionary object"
+msgstr ""
+
+#: ../../api.rst:971
+msgid "URL of a related user object"
+msgstr ""
+
+#: ../../api.rst:972
+msgid "URL of a related author object"
+msgstr ""
+
+#: ../../api.rst:973
+msgid "event timestamp"
+msgstr ""
+
+#: ../../api.rst:974
+msgid "numeric identification of action"
+msgstr ""
+
+#: ../../api.rst:975
+msgid "text description of action"
+msgstr ""
+
+#: ../../api.rst:976
+msgid "event changed text or detail"
+msgstr ""
+
+#: ../../api.rst:977
+msgid "change identifier"
+msgstr ""
+
+#: ../../api.rst:980
+msgid "Sources"
+msgstr ""
+
+#: ../../api.rst:986
+msgid "Returns a list of source string information."
+msgstr ""
+
+#: ../../api.rst:992
+msgid ""
+"Sources object attributes are documented at "
+":http:get:`/api/sources/(int:pk)/`."
+msgstr ""
+
+#: ../../api.rst:996
+msgid "Returns information about source information."
+msgstr ""
+
+#: ../../api.rst:998
+msgid "Source information ID"
+msgstr ""
+
+#: ../../api.rst:1002
+msgid "timestamp when source string was first seen by Weblate"
+msgstr ""
+
+#: ../../api.rst:1003
+msgid "source string priority, 100 is default"
+msgstr ""
+
+#: ../../api.rst:1004
+msgid "source string flags"
+msgstr ""
+
+#: ../../api.rst:1005
+msgid "links to units; see :http:get:`/api/units/(int:pk)/`"
+msgstr ""
+
+#: ../../api.rst:1006
+msgid "links to assigned screenshots; see :http:get:`/api/screenshots/(int:pk)/`"
+msgstr ""
+
+#: ../../api.rst:1009
+msgid "Screenshots"
+msgstr ""
+
+#: ../../api.rst:1015
+msgid "Returns a list of screenshot string informations."
+msgstr ""
+
+#: ../../api.rst:1021
+msgid ""
+"Sources object attributes are documented at "
+":http:get:`/api/screenshots/(int:pk)/`."
+msgstr ""
+
+#: ../../api.rst:1025
+msgid "Returns information about screenshot information."
+msgstr ""
+
+#: ../../api.rst:1027 ../../api.rst:1038 ../../api.rst:1045
+msgid "Screenshot ID"
+msgstr ""
+
+#: ../../api.rst:1029
+msgid "name of a screenshot"
+msgstr ""
+
+#: ../../api.rst:1031
+msgid "URL to download a file; see :http:get:`/api/screenshots/(int:pk)/file/`"
+msgstr ""
+
+#: ../../api.rst:1032
+msgid ""
+"link to asssociated source string information; see "
+":http:get:`/api/sources/(int:pk)/`"
+msgstr ""
+
+#: ../../api.rst:1036
+msgid "Download the screenshot image."
+msgstr ""
+
+#: ../../api.rst:1043
+msgid "Replace screenshot image."
+msgstr ""
+
+#: ../../api.rst:1066
+msgid "Notification hooks"
+msgstr ""
+
+#: ../../api.rst:1068
+msgid ""
+"Notification hooks allow external applications to notify Weblate that the"
+" VCS repository has been updated."
+msgstr ""
+
+#: ../../api.rst:1071
+msgid ""
+"You can use repository endpoints for projects, components and "
+"translations to update individual repositories; see "
+":http:post:`/api/projects/(string:project)/repository/` for "
+"documentation."
+msgstr ""
+
+#: ../../api.rst:1079
+msgid ""
+"Please use "
+":http:post:`/api/components/(string:project)/(string:component)/repository/`"
+" instead which works properly with authentication for ACL limited "
+"projects."
+msgstr ""
+
+#: ../../api.rst:1082
+msgid ""
+"Triggers update of a component (pulling from VCS and scanning for "
+"translation changes)."
+msgstr ""
+
+#: ../../api.rst:1089
+msgid ""
+"Please use :http:post:`/api/projects/(string:project)/repository/` "
+"instead which works properly with authentication for ACL limited "
+"projects."
+msgstr ""
+
+#: ../../api.rst:1092
+msgid ""
+"Triggers update of all components in a project (pulling from VCS and "
+"scanning for translation changes)."
+msgstr ""
+
+#: ../../api.rst:1097
+msgid ""
+"Special hook for handling GitHub notifications and automatically updating"
+" matching components."
+msgstr ""
+
+#: ../../api.rst:1102
+msgid ""
+"GitHub includes direct support for notifying Weblate: enable Weblate "
+"service hook in repository settings and set the URL to the URL of your "
+"Weblate installation."
+msgstr ""
+
+#: ../../api.rst:1108
+msgid ":ref:`github-setup`"
+msgstr ""
+
+#: ../../api.rst:1109
+msgid "For instruction on setting up GitHub integration"
+msgstr ""
+
+#: ../../api.rst:1110
+msgid "https://help.github.com/articles/creating-webhooks"
+msgstr ""
+
+#: ../../api.rst:1111
+msgid "Generic information about GitHub Webhooks"
+msgstr ""
+
+#: ../../api.rst:1112 ../../api.rst:1126 ../../api.rst:1140
+msgid ":setting:`ENABLE_HOOKS`"
+msgstr ""
+
+#: ../../api.rst:1113 ../../api.rst:1127 ../../api.rst:1141
+msgid "For enabling hooks for whole Weblate"
+msgstr ""
+
+#: ../../api.rst:1117
+msgid ""
+"Special hook for handling GitLab notifications and automatically updating"
+" matching components."
+msgstr ""
+
+#: ../../api.rst:1122
+msgid ":ref:`gitlab-setup`"
+msgstr ""
+
+#: ../../api.rst:1123
+msgid "For instruction on setting up GitLab integration"
+msgstr ""
+
+#: ../../api.rst:1124
+msgid "https://docs.gitlab.com/ce/user/project/integrations/webhooks.html"
+msgstr ""
+
+#: ../../api.rst:1125
+msgid "Generic information about GitLab Webhooks"
+msgstr ""
+
+#: ../../api.rst:1131
+msgid ""
+"Special hook for handling Bitbucket notifications and automatically "
+"updating matching components."
+msgstr ""
+
+#: ../../api.rst:1136
+msgid ":ref:`bitbucket-setup`"
+msgstr ""
+
+#: ../../api.rst:1137
+msgid "For instruction on setting up Bitbucket integration"
+msgstr ""
+
+#: ../../api.rst:1138
+msgid "https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html"
+msgstr ""
+
+#: ../../api.rst:1139
+msgid "Generic information about Bitbucket Webhooks"
+msgstr ""
+
+#: ../../api.rst:1146
+msgid "Exports"
+msgstr ""
+
+#: ../../api.rst:1148
+msgid "Weblate provides various exports to allow you to further process the data."
+msgstr ""
+
+#: ../../api.rst:1152
+msgid "Output format: either ``json`` or ``csv``"
+msgstr ""
+
+#: ../../api.rst:1156
+msgid ""
+"Please use "
+":http:get:`/api/components/(string:project)/(string:component)/statistics/`"
+" and "
+":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/statistics/`"
+" instead; it allows access to ACL controlled projects as well."
+msgstr ""
+
+#: ../../api.rst:1160
+msgid "Retrieves statistics for given component in given format."
+msgstr ""
+
+#: ../../api.rst:1162
+msgid "**Example request**:"
+msgstr ""
+
+#: ../../api.rst:1170
+msgid "**Example response**:"
+msgstr ""
+
+#: ../../api.rst:1235
+msgid "RSS feeds"
+msgstr ""
+
+#: ../../api.rst:1237
+msgid "Changes in translations are exported in RSS feeds."
+msgstr ""
+
+#: ../../api.rst:1241
+msgid "Retrieves RSS feed with recent changes for a translation."
+msgstr ""
+
+#: ../../api.rst:1245
+msgid "Retrieves RSS feed with recent changes for a component."
+msgstr ""
+
+#: ../../api.rst:1249
+msgid "Retrieves RSS feed with recent changes for a project."
+msgstr ""
+
+#: ../../api.rst:1253
+msgid "Retrieves RSS feed with recent changes for a language."
+msgstr ""
+
+#: ../../api.rst:1257
+msgid "Retrieves RSS feed with recent changes for Weblate instance."
+msgstr ""
+
+#: ../../api.rst:1261
+msgid "`RSS on wikipedia <https://en.wikipedia.org/wiki/RSS>`_"
+msgstr ""
+

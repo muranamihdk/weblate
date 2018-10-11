@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../internals.rst:4
+msgid "Internals"
+msgstr ""
+
+#: ../../internals.rst:8
+msgid "This chapter will give you basic overview of Weblate internals."
+msgstr ""
+
+#: ../../internals.rst:10
+msgid ""
+"Weblate is based on `Django`_ and most of its code structure comes from "
+"that. If you are not familiar with Django, you might want to check "
+":doc:`django:intro/overview` to get basic understanding of files "
+"structure."
+msgstr ""
+
+#: ../../internals.rst:15
+msgid "Modules"
+msgstr ""
+
+#: ../../internals.rst:17
+msgid ""
+"Weblate consists of several Django applications (some of them are "
+"optional, see :doc:`admin/optionals`):"
+msgstr ""
+
+#: ../../internals.rst:20
+msgid "``accounts```"
+msgstr ""
+
+#: ../../internals.rst:22
+msgid "User account, profiles and notifications."
+msgstr ""
+
+#: ../../internals.rst:24
+msgid "``addons``"
+msgstr ""
+
+#: ../../internals.rst:26
+msgid "Addons to tweak Weblate behavior, see :ref:`addons`."
+msgstr ""
+
+#: ../../internals.rst:28
+msgid "``api``"
+msgstr ""
+
+#: ../../internals.rst:30
+msgid "API based on `Django REST framework`_."
+msgstr ""
+
+#: ../../internals.rst:32
+msgid "``auth``"
+msgstr ""
+
+#: ../../internals.rst:34
+msgid "Authentication and permissions."
+msgstr ""
+
+#: ../../internals.rst:36
+msgid "``billing``"
+msgstr ""
+
+#: ../../internals.rst:38
+msgid "The optional :ref:`billing` module."
+msgstr ""
+
+#: ../../internals.rst:40
+msgid "``formats``"
+msgstr ""
+
+#: ../../internals.rst:42
+msgid "File formats abstraction layer based on translate-toolkit."
+msgstr ""
+
+#: ../../internals.rst:44
+msgid "``gitexport``"
+msgstr ""
+
+#: ../../internals.rst:46
+msgid "The optional :ref:`git-exporter` module."
+msgstr ""
+
+#: ../../internals.rst:48
+msgid "``lang``"
+msgstr ""
+
+#: ../../internals.rst:50
+msgid "Module defining language and plural models."
+msgstr ""
+
+#: ../../internals.rst:52
+msgid "``langdata``"
+msgstr ""
+
+#: ../../internals.rst:54
+msgid "Language data definitions."
+msgstr ""
+
+#: ../../internals.rst:56
+msgid "``legal``"
+msgstr ""
+
+#: ../../internals.rst:58
+msgid "The optional :ref:`legal` module."
+msgstr ""
+
+#: ../../internals.rst:60
+msgid "``machinery```"
+msgstr ""
+
+#: ../../internals.rst:62
+msgid "Machine translation services integration."
+msgstr ""
+
+#: ../../internals.rst:64
+msgid "``memory``"
+msgstr ""
+
+#: ../../internals.rst:66
+msgid "Built in translation memory, see :ref:`translation-memory`."
+msgstr ""
+
+#: ../../internals.rst:68
+msgid "``permissions``"
+msgstr ""
+
+#: ../../internals.rst:70
+msgid "Obsolete."
+msgstr ""
+
+#: ../../internals.rst:72
+msgid "``screenshots``"
+msgstr ""
+
+#: ../../internals.rst:74
+msgid "Screenshots management and OCR module."
+msgstr ""
+
+#: ../../internals.rst:76
+msgid "``trans``"
+msgstr ""
+
+#: ../../internals.rst:78
+msgid "Main module handling translations."
+msgstr ""
+
+#: ../../internals.rst:80
+msgid "``utils``"
+msgstr ""
+
+#: ../../internals.rst:82
+msgid "Various helper utilities."
+msgstr ""
+
+#: ../../internals.rst:84
+msgid "``vcs``"
+msgstr ""
+
+#: ../../internals.rst:86
+msgid "Version control system abstraction."
+msgstr ""
+
+#: ../../internals.rst:88
+msgid "``wladmin``"
+msgstr ""
+
+#: ../../internals.rst:90
+msgid "Django admin interface customization."
+msgstr ""
+

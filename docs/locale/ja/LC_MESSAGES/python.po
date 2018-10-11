@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../python.rst:8
+msgid "Weblate's Python API"
+msgstr ""
+
+#: ../../python.rst:11
+msgid "Instalation"
+msgstr ""
+
+#: ../../python.rst:13
+msgid ""
+"The Python API is shipped separately, you need to install :ref:`wlc`:, "
+"wlc, to have it."
+msgstr ""
+
+#: ../../python.rst:21
+msgid ":mod:`wlc`"
+msgstr ""
+
+#: ../../python.rst:27
+msgid ":exc:`WeblateException`"
+msgstr ""
+
+#: ../../python.rst:31
+msgid "Base class for all exceptions."
+msgstr ""
+
+#: ../../python.rst:34
+msgid ":class:`Weblate`"
+msgstr ""
+
+#: ../../python.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../python.rst:38
+msgid "User key"
+msgstr ""
+
+#: ../../python.rst:40
+msgid "API server URL, if not specified default is used"
+msgstr ""
+
+#: ../../python.rst:42
+msgid "Configuration object, overrides any other parameters."
+msgstr ""
+
+#: ../../python.rst:45
+msgid "Access class to the API, define API key and optionally API URL."
+msgstr ""
+
+#: ../../python.rst:49 ../../python.rst:57
+msgid "Request path"
+msgstr ""
+
+#: ../../python.rst
+msgid "Return type"
+msgstr ""
+
+#: ../../python.rst:53 ../../python.rst:61
+msgid "Performs single API GET call."
+msgstr ""
+
+#: ../../python.rst:65
+msgid ":mod:`wlc.config`"
+msgstr ""
+
+#: ../../python.rst:71
+msgid ":class:`WeblateConfig`"
+msgstr ""
+
+#: ../../python.rst:75
+msgid "Configuration section to use"
+msgstr ""
+
+#: ../../python.rst:78
+msgid "Configuration file parser following XDG specification."
+msgstr ""
+
+#: ../../python.rst:83
+msgid "Path from which to load configuration."
+msgstr ""
+
+#: ../../python.rst:86
+msgid ""
+"Loads configuration from a file, if none is specified it loads from `wlc`"
+" configuration file placed in XDG configuration path "
+"(:file:`~/.config/wlc` and :file:`/etc/xdg/wlc`)."
+msgstr ""
+
+#: ../../python.rst:92
+msgid ":mod:`wlc.main`"
+msgstr ""
+
+#: ../../python.rst:99
+msgid "settings to override as list of tuples"
+msgstr ""
+
+#: ../../python.rst:101
+msgid "stdout file object for printing output, uses ``sys.stdout`` as default"
+msgstr ""
+
+#: ../../python.rst:103
+msgid "command line argumets to process, uses ``sys.args`` as default"
+msgstr ""
+
+#: ../../python.rst:106
+msgid "Main entry point for command line interface."
+msgstr ""
+
+#: ../../python.rst:110
+msgid ""
+"Decorator to register :class:`Command` class in main parser used by "
+":func:`main`."
+msgstr ""
+
+#: ../../python.rst:114
+msgid ":class:`Command`"
+msgstr ""
+
+#: ../../python.rst:118
+msgid "Main class for invoking commands."
+msgstr ""
+

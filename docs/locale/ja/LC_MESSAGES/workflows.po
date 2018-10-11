@@ -1,0 +1,293 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../workflows.rst:4
+msgid "Translation workflows"
+msgstr ""
+
+#: ../../workflows.rst:6
+msgid ""
+"Weblate can be configured to support several translation workflows. This "
+"document is not a complete listing of ways to configure Weblate, there "
+"are certainly more options. You can base another workflows on the most "
+"usual examples listed here."
+msgstr ""
+
+#: ../../workflows.rst:12
+msgid "Translation access"
+msgstr ""
+
+#: ../../workflows.rst:14
+msgid ""
+"The :ref:`privileges` is not much discussed in the workflows as each of "
+"access control options can be applied to any workflows. Please consult "
+"that documentation for information how to manage access to translations."
+msgstr ""
+
+#: ../../workflows.rst:18
+msgid ""
+"In following chapters, *any user* means any user who has access to the "
+"translation. It can be any authenticated user if project is public or "
+"user having :guilabel:`Translate` permission on the project."
+msgstr ""
+
+#: ../../workflows.rst:23
+msgid "Translation states"
+msgstr ""
+
+#: ../../workflows.rst:25
+msgid "Each translated string can be in following states:"
+msgstr ""
+
+#: ../../workflows.rst:28
+msgid "Untranslated"
+msgstr ""
+
+#: ../../workflows.rst:28
+msgid ""
+"Translation is empty, it might or not be stored in the file, depending on"
+" the file format."
+msgstr ""
+
+#: ../../workflows.rst:32
+msgid "Needs edit"
+msgstr ""
+
+#: ../../workflows.rst:31
+msgid ""
+"Translation needs editing, this is usually result of source string "
+"change. The translation is stored in the file, depending on the file "
+"format it might be marked as needing edit (eg. fuzzy flag)."
+msgstr ""
+
+#: ../../workflows.rst:35
+msgid "Waiting for review"
+msgstr ""
+
+#: ../../workflows.rst:35
+msgid ""
+"Translation is done, but not reviewed. It is stored in the file as a "
+"valid translation."
+msgstr ""
+
+#: ../../workflows.rst:39
+msgid "Approved"
+msgstr ""
+
+#: ../../workflows.rst:38
+msgid ""
+"Translation has been approved in the review. It can no longer be changed "
+"by translators, but only by reviewers. Translators can only add "
+"suggestions to it."
+msgstr ""
+
+#: ../../workflows.rst:43
+msgid "Suggestions"
+msgstr ""
+
+#: ../../workflows.rst:42
+msgid "Suggestions are stored in Weblate only and not in the translation file."
+msgstr ""
+
+#: ../../workflows.rst:46
+msgid "Direct translation"
+msgstr ""
+
+#: ../../workflows.rst:47
+msgid ""
+"This is most usual setup for smaller teams - anybody can directly "
+"translate. This is also default setup in Weblate."
+msgstr ""
+
+#: ../../workflows.rst:50
+msgid "*Any user* can edit translations."
+msgstr ""
+
+#: ../../workflows.rst:51
+msgid ""
+"Suggestions are optional way to suggest changes, when translators are not"
+" sure about the change."
+msgstr ""
+
+#: ../../workflows.rst:55 ../../workflows.rst:82 ../../workflows.rst:117
+msgid "Setting"
+msgstr ""
+
+#: ../../workflows.rst:55 ../../workflows.rst:82 ../../workflows.rst:117
+msgid "Value"
+msgstr ""
+
+#: ../../workflows.rst:55 ../../workflows.rst:82 ../../workflows.rst:117
+msgid "Note"
+msgstr ""
+
+#: ../../workflows.rst:57 ../../workflows.rst:84 ../../workflows.rst:119
+msgid "Enable reviews"
+msgstr ""
+
+#: ../../workflows.rst:57 ../../workflows.rst:62 ../../workflows.rst:84
+#: ../../workflows.rst:124
+msgid "disabled"
+msgstr ""
+
+#: ../../workflows.rst:57 ../../workflows.rst:84 ../../workflows.rst:119
+msgid "configured at project level"
+msgstr ""
+
+#: ../../workflows.rst:59 ../../workflows.rst:86 ../../workflows.rst:121
+msgid "Enable suggestions"
+msgstr ""
+
+#: ../../workflows.rst:59 ../../workflows.rst:86 ../../workflows.rst:88
+#: ../../workflows.rst:119 ../../workflows.rst:121
+msgid "enabled"
+msgstr ""
+
+#: ../../workflows.rst:59 ../../workflows.rst:121
+msgid "it is useful for users to be able suggest when they are not sure"
+msgstr ""
+
+#: ../../workflows.rst:62 ../../workflows.rst:88 ../../workflows.rst:124
+msgid "Suggestion voting"
+msgstr ""
+
+#: ../../workflows.rst:64 ../../workflows.rst:90 ../../workflows.rst:126
+msgid "Autoaccept suggestions"
+msgstr ""
+
+#: ../../workflows.rst:64 ../../workflows.rst:126
+msgid "0"
+msgstr ""
+
+#: ../../workflows.rst:66 ../../workflows.rst:93 ../../workflows.rst:128
+msgid "Translators group"
+msgstr ""
+
+#: ../../workflows.rst:66 ../../workflows.rst:93 ../../workflows.rst:128
+msgid "Users"
+msgstr ""
+
+#: ../../workflows.rst:66 ../../workflows.rst:93 ../../workflows.rst:128
+msgid "or Translate with access control"
+msgstr ""
+
+#: ../../workflows.rst:68 ../../workflows.rst:95 ../../workflows.rst:130
+msgid "Reviewers group"
+msgstr ""
+
+#: ../../workflows.rst:68 ../../workflows.rst:95
+msgid "N/A"
+msgstr ""
+
+#: ../../workflows.rst:68
+msgid "not used"
+msgstr ""
+
+#: ../../workflows.rst:72
+msgid "Peer review"
+msgstr ""
+
+#: ../../workflows.rst:74
+msgid ""
+"With this workflow, anybody can add suggestions, however they need "
+"approval from additional member before it is accepted as a translation."
+msgstr ""
+
+#: ../../workflows.rst:77
+msgid "*Any user* can add suggestions"
+msgstr ""
+
+#: ../../workflows.rst:78
+msgid "*Any user* can vote for suggestions"
+msgstr ""
+
+#: ../../workflows.rst:79
+msgid "Suggestions become translations when they get given number of votes"
+msgstr ""
+
+#: ../../workflows.rst:90
+msgid "1"
+msgstr ""
+
+#: ../../workflows.rst:90
+msgid "you can set higher value to require more peer reviews"
+msgstr ""
+
+#: ../../workflows.rst:95
+msgid "not used, all translators review"
+msgstr ""
+
+#: ../../workflows.rst:101
+msgid "Dedicated reviewers"
+msgstr ""
+
+#: ../../workflows.rst:105
+msgid "The proper review workflow is supported since Weblate 2.18."
+msgstr ""
+
+#: ../../workflows.rst:107
+msgid ""
+"With dedicated reviewers you have two groups of users - one which can "
+"submit translations and one which reviews them. Review is there to ensure"
+" the translations are consistent and in a good quality."
+msgstr ""
+
+#: ../../workflows.rst:111
+msgid "*Any user* can edit non approved translations."
+msgstr ""
+
+#: ../../workflows.rst:112
+msgid "*Reviewer* can approve / unapprove strings."
+msgstr ""
+
+#: ../../workflows.rst:113
+msgid "*Reviewer* can edit all translations (including approved ones)."
+msgstr ""
+
+#: ../../workflows.rst:114
+msgid "Suggestions are now also way to suggest changes for approved strings."
+msgstr ""
+
+#: ../../workflows.rst:130
+msgid "Reviewers"
+msgstr ""
+
+#: ../../workflows.rst:130
+msgid "or Review with access control"
+msgstr ""
+
+#: ../../workflows.rst:134
+msgid "Enabling reviews"
+msgstr ""
+
+#: ../../workflows.rst:136
+msgid ""
+"The reviews can be enabled on project configuration, you can find the "
+"setting on bottom of :guilabel:`Manage users` page (to be found in the "
+":guilabel:`Manage/Users` menu):"
+msgstr ""
+
+#: ../../workflows.rst:144
+msgid ""
+"Depending on Weblate configuration, the setting might not be available to"
+" you. For example on Hosted Weblate this is not available for projects "
+"hosted for free."
+msgstr ""
+

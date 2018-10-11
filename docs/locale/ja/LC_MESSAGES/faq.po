@@ -1,0 +1,646 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../faq.rst:2
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../faq.rst:5
+msgid "Configuration"
+msgstr ""
+
+#: ../../faq.rst:10
+msgid "How to create an automated workflow?"
+msgstr ""
+
+#: ../../faq.rst:12
+msgid ""
+"Weblate can handle all the translation things semi-automatically for you."
+" If you give it push access to your repository, the translations can "
+"happen without interaction unless some merge conflict occurs."
+msgstr ""
+
+#: ../../faq.rst:16
+msgid ""
+"Set up your git repository to tell Weblate whenever there is any change, "
+"see :ref:`hooks` for information how to do it."
+msgstr ""
+
+#: ../../faq.rst:18
+msgid ""
+"Set push URL at your :ref:`component` in Weblate, this will allow Weblate"
+" to push changes to your repository."
+msgstr ""
+
+#: ../../faq.rst:20
+msgid ""
+"Enable push on commit on your :ref:`project` in Weblate, this will make "
+"Weblate push changes to your repository whenever they are committed at "
+"Weblate."
+msgstr ""
+
+#: ../../faq.rst:22
+msgid "Optionally set up a cron job for :djadmin:`commit_pending`."
+msgstr ""
+
+#: ../../faq.rst:26
+msgid ":ref:`continuous-translation`, :ref:`avoid-merge-conflicts`"
+msgstr ""
+
+#: ../../faq.rst:29
+msgid "How to access repositories over SSH?"
+msgstr ""
+
+#: ../../faq.rst:31
+msgid "Please see :ref:`vcs-repos` for information about setting up SSH keys."
+msgstr ""
+
+#: ../../faq.rst:36
+msgid "How to fix merge conflicts in translations?"
+msgstr ""
+
+#: ../../faq.rst:38
+msgid ""
+"The merge conflicts happen from time to time when the translation file is"
+" changed in both Weblate and the upstream repository. You can usually "
+"avoid this by merging Weblate translations prior to doing some changes in"
+" the translation files (e.g. before executing msgmerge). Just tell "
+"Weblate to commit all pending translations (you can do it in the "
+":guilabel:`Repository maintenance` in the :guilabel:`Tools` menu) and "
+"merge the repository (if automatic push is not enabled)."
+msgstr ""
+
+#: ../../faq.rst:46
+msgid ""
+"If you've already ran into the merge conflict, the easiest way is to "
+"solve all conflicts locally at your workstation - simply add Weblate as a"
+" remote repository, merge it into upstream and fix any conflicts.  Once "
+"you push changes back, Weblate will be able to use the merged version "
+"without any other special actions."
+msgstr ""
+
+#: ../../faq.rst:81
+msgid ""
+"If you're using multiple branches in Weblate, you can work similarly on "
+"all branches:"
+msgstr ""
+
+#: ../../faq.rst:106
+msgid ""
+"In case of Gettext po files, there is a way to merge conflict in a semi-"
+"automatic way:"
+msgstr ""
+
+#: ../../faq.rst:108
+msgid ""
+"Get and keep local clone of the Weblate git repository. Also get a second"
+" fresh local clone of the upstream git repository (i. e. you need two "
+"copies of the upstream git repository: intact and working copy):"
+msgstr ""
+
+#: ../../faq.rst:139
+msgid ":ref:`git-export`"
+msgstr ""
+
+#: ../../faq.rst:142
+msgid "How do I translate several branches at once?"
+msgstr ""
+
+#: ../../faq.rst:144
+msgid ""
+"Weblate supports pushing translation changes within one :ref:`project`. "
+"For every :ref:`component` which has it enabled (the default behavior), "
+"the change made is automatically propagated to others. This way the "
+"translations are kept synchronized even if the branches themselves have "
+"already diverged quite a lot and it is not possible to simply merge "
+"translation changes between them."
+msgstr ""
+
+#: ../../faq.rst:150
+msgid ""
+"Once you merge changes from Weblate, you might have to merge these "
+"branches (depending on your development workflow) discarding differences:"
+msgstr ""
+
+#: ../../faq.rst:160
+msgid "How to export the Git repository that Weblate uses?"
+msgstr ""
+
+#: ../../faq.rst:162
+msgid ""
+"There is nothing special about the repository, it lives under the "
+":setting:`DATA_DIR` directory and is named "
+":file:`vcs/<project>/<component>/`. If you have SSH access to this "
+"machine, you can use the repository directly."
+msgstr ""
+
+#: ../../faq.rst:166
+msgid ""
+"For anonymous access you might want to run a git server and let it serve "
+"the repository to the outside world."
+msgstr ""
+
+#: ../../faq.rst:169
+msgid ""
+"Alternatively you can use :ref:`git-exporter` inside Weblate to automate "
+"this."
+msgstr ""
+
+#: ../../faq.rst:172
+msgid "What are the options for pushing changes back upstream?"
+msgstr ""
+
+#: ../../faq.rst:174
+msgid ""
+"This heavily depends on your setup, Weblate is quite flexible in this "
+"area. Here are examples of workflows used with Weblate:"
+msgstr ""
+
+#: ../../faq.rst:177
+msgid "Weblate automatically pushes and merges changes (see :ref:`auto-workflow`)"
+msgstr ""
+
+#: ../../faq.rst:178
+msgid ""
+"You manually tell Weblate to push (it needs push access to the upstream "
+"repository)"
+msgstr ""
+
+#: ../../faq.rst:179
+msgid ""
+"Somebody manually merges changes from the Weblate git repository into the"
+" upstream repository"
+msgstr ""
+
+#: ../../faq.rst:181
+msgid ""
+"Somebody rewrites history produced by Weblate (eg. by eliminating merge "
+"commits), merges changes and tells Weblate to reset the content on the "
+"upstream repository."
+msgstr ""
+
+#: ../../faq.rst:185
+msgid "Of course you are free to mix all of these as you wish."
+msgstr ""
+
+#: ../../faq.rst:188
+msgid ""
+"How can I limit Weblates access to translations only without exposing "
+"source code to it?"
+msgstr ""
+
+#: ../../faq.rst:190
+msgid ""
+"You can use `git submodule`_ for separating translations from source code"
+" while still having them under version control."
+msgstr ""
+
+#: ../../faq.rst:193
+msgid "Create a repository with your translation files."
+msgstr ""
+
+#: ../../faq.rst:194
+msgid "Add this as a submodule to your code:"
+msgstr ""
+
+#: ../../faq.rst:200
+msgid ""
+"Link Weblate to this repository, it no longer needs access to the "
+"repository with your source code."
+msgstr ""
+
+#: ../../faq.rst:202
+msgid "You can update the main repository with translations from Weblate by:"
+msgstr ""
+
+#: ../../faq.rst:208
+msgid "Please consult `git submodule`_ documentation for more details."
+msgstr ""
+
+#: ../../faq.rst:213
+msgid "How can I check if my Weblate is configured properly?"
+msgstr ""
+
+#: ../../faq.rst:215
+msgid ""
+"Weblate includes a set of configuration checks which you can see in the "
+"admin interface, just follow the :guilabel:`Performance report` link in "
+"the admin interface or open the ``/admin/performance/`` URL directly."
+msgstr ""
+
+#: ../../faq.rst:222
+msgid "Why do links contain example.com as the domain?"
+msgstr ""
+
+#: ../../faq.rst:224
+msgid ""
+"Weblate uses Django's sites framework and it defines the site name inside"
+" the database. You need to set the domain name to match your "
+"installation."
+msgstr ""
+
+#: ../../faq.rst:229
+msgid ":ref:`production-site`"
+msgstr ""
+
+#: ../../faq.rst:232
+msgid "Why are all commits committed by Weblate <noreply@weblate.org>?"
+msgstr ""
+
+#: ../../faq.rst:234
+msgid ""
+"This is the default committer name, configured when you create a "
+"translation component. You can also change it in the administration at "
+"any time."
+msgstr ""
+
+#: ../../faq.rst:237
+msgid ""
+"The author of every commit (if the underlaying VCS supports it) is still "
+"recorded correctly as the user who has made the translation."
+msgstr ""
+
+#: ../../faq.rst:242
+msgid ":ref:`component`"
+msgstr ""
+
+#: ../../faq.rst:245
+msgid "Usage"
+msgstr ""
+
+#: ../../faq.rst:248
+msgid "How do I review others translations?"
+msgstr ""
+
+#: ../../faq.rst:250
+msgid ""
+"You can subscribe to any changes made in :ref:`subscriptions` and then "
+"check others contributions in email."
+msgstr ""
+
+#: ../../faq.rst:252
+msgid ""
+"There is a review tool available at the bottom of the translation view, "
+"where you can choose to browse translations made by others since a given "
+"date."
+msgstr ""
+
+#: ../../faq.rst:256
+msgid "How do I provide feedback on a source string?"
+msgstr ""
+
+#: ../../faq.rst:258
+msgid ""
+"On context tabs below translation, you can use the :guilabel:`Source` tab"
+" to provide feedback on a source string or discuss it with other "
+"translators."
+msgstr ""
+
+#: ../../faq.rst:262
+msgid "How can I use existing translations while translating?"
+msgstr ""
+
+#: ../../faq.rst:264
+msgid ""
+"Weblate provides you with several ways to utilize existing translations "
+"while translating:"
+msgstr ""
+
+#: ../../faq.rst:267
+msgid ""
+"You can use the import functionality to load compendium as translations, "
+"suggestions or translations needing review. This is the best approach for"
+" a one time translation using compendium or similar translation database."
+msgstr ""
+
+#: ../../faq.rst:270
+msgid ""
+"You can setup :ref:`tmserver` with all databases you have and let Weblate"
+" use it. This is good for cases when you want to use it for several times"
+" during translating."
+msgstr ""
+
+#: ../../faq.rst:273
+msgid ""
+"Another option is to translate all related projects in a single Weblate "
+"instance, which will make it automatically pick up translations from "
+"other projects as well."
+msgstr ""
+
+#: ../../faq.rst:279
+msgid ":ref:`machine-translation-setup`, :ref:`machine-translation`"
+msgstr ""
+
+#: ../../faq.rst:282
+msgid "Does Weblate update translation files besides translations?"
+msgstr ""
+
+#: ../../faq.rst:284
+msgid ""
+"Weblate tries to limit changes in translation files to a minimum. For "
+"some file formats it might unfortunately lead to reformatting the file. "
+"If you want to keep the file formattted in your way, please use a pre-"
+"commit hook for that."
+msgstr ""
+
+#: ../../faq.rst:288
+msgid ""
+"For monolingual files (see :ref:`formats`) Weblate might add new "
+"translation units which are present in the :guilabel:`template` and not "
+"in actual translations. It does not however perform any automatic cleanup"
+" of stale strings as that might have unexpected outcomes. If you want to "
+"do this, please install a pre-commit hook which will handle the cleanup "
+"according to your requirements."
+msgstr ""
+
+#: ../../faq.rst:294
+msgid ""
+"Weblate also will not try to update bilingual files in any way, so if you"
+" need :file:`po` files being updated from :file:`pot`, you need to do it "
+"yourself."
+msgstr ""
+
+#: ../../faq.rst:299
+msgid ":ref:`processing`"
+msgstr ""
+
+#: ../../faq.rst:303
+msgid "Where do language definitions come from and how can I add my own?"
+msgstr ""
+
+#: ../../faq.rst:305
+msgid ""
+"The basic set of language definitions is included within Weblate and "
+"Translate-toolkit. This covers more than 150 languages and includes "
+"information about used plural forms or text direction."
+msgstr ""
+
+#: ../../faq.rst:309
+msgid ""
+"You are free to define own languages in the administrative interface, you"
+" just need to provide information about it."
+msgstr ""
+
+#: ../../faq.rst:313
+msgid "Can Weblate highlight changes in a fuzzy string?"
+msgstr ""
+
+#: ../../faq.rst:315
+msgid "Weblate supports this, however it needs the data to show the difference."
+msgstr ""
+
+#: ../../faq.rst:317
+msgid ""
+"For Gettext PO files, you have to pass the parameter ``--previous`` to "
+":command:`msgmerge` when updating PO files, for example:"
+msgstr ""
+
+#: ../../faq.rst:324
+msgid ""
+"For monolingual translations, Weblate can find the previous string by ID,"
+" so it shows the differences automatically."
+msgstr ""
+
+#: ../../faq.rst:330
+msgid ""
+"Why does Weblate still show old translation strings when I've updated the"
+" template?"
+msgstr ""
+
+#: ../../faq.rst:332
+msgid ""
+"Weblate does not try to manipulate the translation files in any way other"
+" than allowing translators to translate. So it also does not update the "
+"translatable files when the template or source code have been changed. "
+"You simply have to do this manually and push changes to the repository, "
+"Weblate will then pick up the changes automatically."
+msgstr ""
+
+#: ../../faq.rst:340
+msgid ""
+"It is usually a good idea to merge changes done in Weblate before "
+"updating translation files, as otherwise you will usually end up with "
+"some conflicts to merge."
+msgstr ""
+
+#: ../../faq.rst:344
+msgid ""
+"For example with Gettext PO files, you can update the translation files "
+"using the :command:`msgmerge` tool:"
+msgstr ""
+
+#: ../../faq.rst:351
+msgid ""
+"In case you want to do the update automatically, you can install addon "
+":ref:`addon-weblate.gettext.msgmerge`."
+msgstr ""
+
+#: ../../faq.rst:355
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../faq.rst:358
+msgid "Requests sometimes fail with too many open files error"
+msgstr ""
+
+#: ../../faq.rst:360
+msgid ""
+"This happens sometimes when your Git repository grows too much and you "
+"have many of them. Compressing the Git repositories will improve this "
+"situation."
+msgstr ""
+
+#: ../../faq.rst:363
+msgid "The easiest way to do this is to run:"
+msgstr ""
+
+#: ../../faq.rst:378
+msgid ":setting:`DATA_DIR`"
+msgstr ""
+
+#: ../../faq.rst:383
+msgid "Fulltext search is too slow"
+msgstr ""
+
+#: ../../faq.rst:385
+msgid ""
+"Depending on various conditions (frequency of updates, server restarts "
+"and other), the fulltext index might become too fragmented over time. It "
+"is recommended to optimize it from time to time:"
+msgstr ""
+
+#: ../../faq.rst:393
+msgid ""
+"In case it does not help (or if you have removed a lot of strings) it "
+"might be better to rebuild it from scratch:"
+msgstr ""
+
+#: ../../faq.rst:402 ../../faq.rst:432
+msgid ":djadmin:`rebuild_index`"
+msgstr ""
+
+#: ../../faq.rst:407
+msgid "I get \"Lock Error\" quite often while translating"
+msgstr ""
+
+#: ../../faq.rst:409
+msgid ""
+"This is usually caused by concurrent updates to the fulltext index. In "
+"case you are running a multi-threaded server (e.g. mod_wsgi), this "
+"happens quite often. For such a setup it is recommended to use Celery to "
+"peform updates in the background."
+msgstr ""
+
+#: ../../faq.rst:415
+msgid ":ref:`fulltext`, :ref:`celery`"
+msgstr ""
+
+#: ../../faq.rst:420
+msgid "Rebuilding index has failed with \"No space left on device\""
+msgstr ""
+
+#: ../../faq.rst:422
+msgid ""
+"Whoosh uses a temporary directory to build indices. In case you have a "
+"small /tmp (eg. using ramdisk), this might fail. Change the temporary "
+"directory by passing it as ``TEMP`` variable:"
+msgstr ""
+
+#: ../../faq.rst:436
+msgid "Database operations fail with \"too many SQL variables\""
+msgstr ""
+
+#: ../../faq.rst:438
+msgid ""
+"This can happen when using theSQLite database as it is not powerful "
+"enough for some relations used within Weblate. The only way to fix this "
+"is to use some more capable database, see :ref:`production-database` for "
+"more information."
+msgstr ""
+
+#: ../../faq.rst:444
+msgid ":ref:`production-database`, :doc:`django:ref/databases`"
+msgstr ""
+
+#: ../../faq.rst:449
+msgid "When accessing the site I get Bad Request (400) error"
+msgstr ""
+
+#: ../../faq.rst:451
+msgid ""
+"This is most likely caused by an improperly configured "
+":setting:`ALLOWED_HOSTS`. It needs to contain all hostnames you want to "
+"access your Weblate. For example:"
+msgstr ""
+
+#: ../../faq.rst:460
+msgid ":ref:`production-hosts`"
+msgstr ""
+
+#: ../../faq.rst:463
+msgid "Features"
+msgstr ""
+
+#: ../../faq.rst:468
+msgid "Does Weblate support other VCS than Git and Mercurial?"
+msgstr ""
+
+#: ../../faq.rst:470
+msgid ""
+"Weblate currently does not have native support for anything other than "
+":ref:`vcs-git` (with extended support for :ref:`vcs-github` and :ref"
+":`vcs-git-svn`) and ref:`vcs-mercurial`, but it is possible to write "
+"backends for other VCSes."
+msgstr ""
+
+#: ../../faq.rst:475
+msgid "You can also use :ref:`vcs-git-helpers` in Git to access other VCSes."
+msgstr ""
+
+#: ../../faq.rst:480
+msgid ""
+"For native support of other VCS, Weblate requires distributed VCS and "
+"could be probably adjusted to work with anything other than Git and "
+"Mercurial, but somebody has to implement this support."
+msgstr ""
+
+#: ../../faq.rst:484
+msgid ":ref:`vcs`"
+msgstr ""
+
+#: ../../faq.rst:487
+msgid "How does Weblate credit translators?"
+msgstr ""
+
+#: ../../faq.rst:489
+msgid ""
+"Every change made in Weblate is committed into VCS under the translators "
+"name. This way every single change has proper authorship and you can "
+"track it down using standard VCS tools you use for code."
+msgstr ""
+
+#: ../../faq.rst:493
+msgid ""
+"Additionally, when the translation file format supports it, the file "
+"headers are updated to include the translator name."
+msgstr ""
+
+#: ../../faq.rst:496
+msgid ":djadmin:`list_translators`"
+msgstr ""
+
+#: ../../faq.rst:499
+msgid "Why does Weblate force to show all po files in a single tree?"
+msgstr ""
+
+#: ../../faq.rst:501
+msgid ""
+"Weblate was designed in a way that every po file is represented as a "
+"single component. This is beneficial for translators, so they know what "
+"they are actually translating. If you feel your project should be "
+"translated as one, consider merging these po files. It will make life "
+"easier even for translators not using Weblate."
+msgstr ""
+
+#: ../../faq.rst:509
+msgid ""
+"In case there will be big demand for this feature, it might be "
+"implemented in future versions, but it's definitely not a priority for "
+"now."
+msgstr ""
+
+#: ../../faq.rst:515
+msgid "Why does Weblate use language codes such sr_Latn or zh_Hant?"
+msgstr ""
+
+#: ../../faq.rst:517
+msgid ""
+"These are language codes defined by :rfc:`4646` to better indicate that "
+"they are really different languages instead previously wrongly used "
+"modifiers (for ``@latin`` variants) or country codes (for Chinese)."
+msgstr ""
+
+#: ../../faq.rst:521
+msgid ""
+"Weblate will still understand legacy language codes and will map them to "
+"current one - for example ``sr@latin`` will be handled as ``sr_Latn`` or "
+"``zh@CN`` as ``sr_Hans``."
+msgstr ""
+

@@ -1,0 +1,1523 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: 2018-10-11 19:04+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.2\n"
+
+#: ../../user/basic.rst:2
+msgid "Weblate basics"
+msgstr "Weblate の基本"
+
+#: ../../user/basic.rst:5
+msgid "Project structure"
+msgstr "プロジェクトの構造"
+
+#: ../../user/basic.rst:7
+msgid ""
+"Internally, each project has translations to common strings propangated across "
+"other components within it by default. This lightens the burden of repetitive "
+"and multi version translation. Disable it as per :ref:`component`, still "
+"producing errors for seemingly inconsistent resulting translations."
+msgstr ""
+
+#: ../../user/checks.rst:2
+msgid "Checks and fixups"
+msgstr ""
+
+#: ../../user/checks.rst:4
+msgid ""
+"The quality checks help to catch common translator errors to make sure the "
+"translation is in good shape. The checks are divided into three severities and "
+"can be ignored in case there is a false positive."
+msgstr ""
+
+#: ../../user/checks.rst:8
+msgid ""
+"Once submitting translation with failing check, this is immediatelly shown to "
+"the user:"
+msgstr ""
+
+#: ../../user/checks.rst:17
+msgid "Automatic fixups"
+msgstr ""
+
+#: ../../user/checks.rst:19
+msgid ""
+"In addition to :ref:`checks`, Weblate can also automatically fix some common "
+"errors in translated strings. This can be quite a powerful feature to prevent "
+"common mistakes in translations, however use it with caution as it can cause "
+"silent corruption as well."
+msgstr ""
+
+#: ../../user/checks.rst:26
+msgid ":setting:`AUTOFIX_LIST`"
+msgstr ""
+
+#: ../../user/checks.rst:31
+msgid "Quality checks"
+msgstr ""
+
+#: ../../user/checks.rst:33
+msgid ""
+"Weblate does a wide range of quality checks on messages. The following section "
+"describes them in more detail. The checks also take account special rules for "
+"different languages, so if you think the result is wrong, please report a bug."
+msgstr ""
+
+#: ../../user/checks.rst:39
+msgid ":setting:`CHECK_LIST`, :ref:`custom-checks`"
+msgstr ""
+
+#: ../../user/checks.rst:42
+msgid "Translation checks"
+msgstr ""
+
+#: ../../user/checks.rst:44
+msgid ""
+"These are executed on every translation change and help translators to keep "
+"good quality of translations."
+msgstr ""
+
+#: ../../user/checks.rst:50
+msgid "Unchanged translation"
+msgstr ""
+
+#: ../../user/checks.rst:52
+msgid ""
+"The source and translated strings are identical at least in one of the plural "
+"forms. This check ignores some strings which are quite usually the same in all "
+"languages and strips various markup, which can occur in the string, to reduce "
+"the number of false positives."
+msgstr ""
+
+#: ../../user/checks.rst:57
+msgid "This check can help finding strings which were mistakenly not translated."
+msgstr ""
+
+#: ../../user/checks.rst:63
+msgid "Starting or trailing newline"
+msgstr ""
+
+#: ../../user/checks.rst:65
+msgid "Source and translation do not both start (or end) with a newline."
+msgstr ""
+
+#: ../../user/checks.rst:67
+msgid ""
+"Newlines usually appear in source string for a good reason, so omitting or "
+"adding it can lead to formatting problems when the translated text is used in "
+"the application."
+msgstr ""
+
+#: ../../user/checks.rst:74
+msgid "Starting spaces"
+msgstr ""
+
+#: ../../user/checks.rst:76
+msgid "Source and translation do not both start with the same number of spaces."
+msgstr ""
+
+#: ../../user/checks.rst:78
+msgid ""
+"A space in the beginning is usually used for indentation in the interface and "
+"thus is important to keep."
+msgstr ""
+
+#: ../../user/checks.rst:84
+msgid "Trailing space"
+msgstr ""
+
+#: ../../user/checks.rst:86
+msgid "Source and translation do not both end with a space."
+msgstr ""
+
+#: ../../user/checks.rst:88
+msgid ""
+"Trailing space is usually used to give space between neighbouring elements, so "
+"removing it might break application layout."
+msgstr ""
+
+#: ../../user/checks.rst:94
+msgid "Trailing stop"
+msgstr ""
+
+#: ../../user/checks.rst:96
+msgid ""
+"Source and translation do not both end with a full stop. Full stop is also "
+"checked in various language variants (Chinese, Japanese, Devanagari or Urdu)."
+msgstr ""
+
+#: ../../user/checks.rst:99
+msgid ""
+"When the original string is a sentence, the translated one should be a sentence "
+"as well to be consistent within the translated content."
+msgstr ""
+
+#: ../../user/checks.rst:105
+msgid "Trailing colon"
+msgstr ""
+
+#: ../../user/checks.rst:107
+msgid ""
+"Source and translation do not both end with a colon or the colon is not "
+"correctly spaced. This includes spacing rules for languages like French or "
+"Breton. Colon is also checked in various language variants (Chinese or "
+"Japanese)."
+msgstr ""
+
+#: ../../user/checks.rst:112
+msgid ""
+"Colon is part of a label and should be kept to provide consistent translation. "
+"Weblate also checks for various typographic conventions for colon, for example "
+"in some languages it should be preceded with space."
+msgstr ""
+
+#: ../../user/checks.rst:119
+msgid "Trailing question"
+msgstr ""
+
+#: ../../user/checks.rst:121
+msgid ""
+"Source and translation do not both end with a question mark or it is not "
+"correctly spaced. This includes spacing rules for languages like French or "
+"Breton. Question mark is also checked in various language variants (Armenian, "
+"Arabic, Chinese, Korean, Japanese, Ethiopic, Vai or Coptic)."
+msgstr ""
+
+#: ../../user/checks.rst:126
+msgid ""
+"Question mark indicates question and these semantics should be kept in "
+"translated string as well. Weblate also checks for various typographic "
+"conventions for question mark, for example in some languages it should be "
+"preceded with space."
+msgstr ""
+
+#: ../../user/checks.rst:134
+msgid "Trailing exclamation"
+msgstr ""
+
+#: ../../user/checks.rst:136
+msgid ""
+"Source and translation do not both end with an exclamation mark or it is not "
+"correctly spaced. This includes spacing rules for languages like French or "
+"Breton. Exclamation mark is also checked in various language variants (Chinese, "
+"Japanese, Korean, Armenian, Limbu, Myanmar or Nko)."
+msgstr ""
+
+#: ../../user/checks.rst:141
+msgid ""
+"Exclamation mark indicates some important statement and these semantics should "
+"be kept in translated string as well. Weblate also checks for various "
+"typographic conventions for exclamation mark, for example in some languages it "
+"should be preceded with space."
+msgstr ""
+
+#: ../../user/checks.rst:149
+msgid "Trailing ellipsis"
+msgstr ""
+
+#: ../../user/checks.rst:151
+msgid ""
+"Source and translation do not both end with an ellipsis. This only checks for "
+"real ellipsis (``…``) not for three dots (``...``)."
+msgstr ""
+
+#: ../../user/checks.rst:154
+msgid ""
+"An ellipsis is usually rendered nicer than three dots, so it's good to keep it "
+"when the original string was using that as well."
+msgstr ""
+
+#: ../../user/checks.rst:159 ../../user/checks.rst:502
+msgid "`Ellipsis on wikipedia <https://en.wikipedia.org/wiki/Ellipsis>`_"
+msgstr ""
+
+#: ../../user/checks.rst:165
+msgid "Trailing semicolon"
+msgstr ""
+
+#: ../../user/checks.rst:167
+msgid ""
+"Source and translation do not both end with a semicolon. This can be useful to "
+"keep formatting of entries such as desktop files."
+msgstr ""
+
+#: ../../user/checks.rst:173
+msgid "Maximum Length"
+msgstr ""
+
+#: ../../user/checks.rst:175
+msgid ""
+"Translation is too long to accept. This only checks for the length of "
+"translation characters."
+msgstr ""
+
+#: ../../user/checks.rst:178
+msgid ""
+"Source and translation usually do not have same amount of characters, but if "
+"the translation is too long, it can be affect a rendered shape. For example, in "
+"some UI widget, it should be kept in a specific length of characters in order "
+"to show the complete translation within limited space."
+msgstr ""
+
+#: ../../user/checks.rst:183
+msgid ""
+"Unlike the other checks, the flag should be set as a ``key:value`` pair like "
+"``max-length:100``."
+msgstr ""
+
+#: ../../user/checks.rst:198
+msgid "Format strings"
+msgstr ""
+
+#: ../../user/checks.rst:200
+msgid ""
+"Format string does not match source.  Omitting format string from translation "
+"usually cause severe problems, so you should really keep the format string "
+"matching the original one."
+msgstr ""
+
+#: ../../user/checks.rst:204
+msgid ""
+"Weblate supports checking format strings in several languages. The check is not "
+"enabled automatically, but only if string is flagged by appropriate flag (eg. "
+"`c-format` for C format). Gettext adds this automatically, but you will "
+"probably have to add it manually for other file formats or if your po files are "
+"not generated by :program:`xgettext`."
+msgstr ""
+
+#: ../../user/checks.rst:210
+msgid ""
+"This can be done per unit (see :ref:`additional`) or in :ref:`component`. "
+"Having it defined in component is simpler, but can lead to false positives in "
+"case the string is not interpreted as format string, but format string syntax "
+"happens to be used."
+msgstr ""
+
+#: ../../user/checks.rst:215
+msgid ""
+"Besides checking, this will also highligh the format strings to be simply "
+"inserted to translated string:"
+msgstr ""
+
+#: ../../user/checks.rst:221
+msgid "Python format"
+msgstr ""
+
+#: ../../user/checks.rst:224 ../../user/checks.rst:240 ../../user/checks.rst:256
+#: ../../user/checks.rst:272 ../../user/checks.rst:288 ../../user/checks.rst:304
+#: ../../user/checks.rst:343
+msgid "Simple format string"
+msgstr ""
+
+#: ../../user/checks.rst:224 ../../user/checks.rst:256 ../../user/checks.rst:272
+#: ../../user/checks.rst:288 ../../user/checks.rst:304 ../../user/checks.rst:343
+#, python-format
+msgid "``There are %d apples``"
+msgstr ""
+
+#: ../../user/checks.rst:226 ../../user/checks.rst:242 ../../user/checks.rst:317
+msgid "Named format string"
+msgstr ""
+
+#: ../../user/checks.rst:226
+#, python-format
+msgid "``Your balance is %(amount) %(currency)``"
+msgstr ""
+
+#: ../../user/checks.rst:228 ../../user/checks.rst:244 ../../user/checks.rst:260
+#: ../../user/checks.rst:276 ../../user/checks.rst:292 ../../user/checks.rst:306
+#: ../../user/checks.rst:319 ../../user/checks.rst:332 ../../user/checks.rst:347
+#: ../../user/checks.rst:360
+msgid "Flag to enable"
+msgstr ""
+
+#: ../../user/checks.rst:228
+msgid "`python-format`"
+msgstr ""
+
+#: ../../user/checks.rst:233
+msgid ""
+":ref:`Python string formatting <python2:string-formatting>`, `Python Format "
+"Strings <https://www.gnu.org/software/gettext/manual/html_node/"
+"python_002dformat.html>`_"
+msgstr ""
+
+#: ../../user/checks.rst:237
+msgid "Python brace format"
+msgstr ""
+
+#: ../../user/checks.rst:240
+msgid "``There are {} apples``"
+msgstr ""
+
+#: ../../user/checks.rst:242
+msgid "``Your balance is {amount} {currency}``"
+msgstr ""
+
+#: ../../user/checks.rst:244
+msgid "`python-brace-format`"
+msgstr ""
+
+#: ../../user/checks.rst:249
+msgid ""
+":ref:`Python brace format <python:formatstrings>`, `Python Format Strings "
+"<https://www.gnu.org/software/gettext/manual/html_node/python_002dformat.html>`_"
+msgstr ""
+
+#: ../../user/checks.rst:253
+msgid "PHP format"
+msgstr ""
+
+#: ../../user/checks.rst:258 ../../user/checks.rst:274 ../../user/checks.rst:290
+#: ../../user/checks.rst:330 ../../user/checks.rst:345 ../../user/checks.rst:358
+msgid "Position format string"
+msgstr ""
+
+#: ../../user/checks.rst:258 ../../user/checks.rst:274 ../../user/checks.rst:290
+#: ../../user/checks.rst:345
+msgid "``Your balance is %1$d %2$s``"
+msgstr ""
+
+#: ../../user/checks.rst:260
+msgid "`php-format`"
+msgstr ""
+
+#: ../../user/checks.rst:265
+msgid ""
+"`PHP sprintf documentation <https://php.net/manual/en/function.sprintf.php>`_, "
+"`PHP Format Strings <https://www.gnu.org/software/gettext/manual/html_node/"
+"php_002dformat.html>`_"
+msgstr ""
+
+#: ../../user/checks.rst:269
+msgid "C format"
+msgstr ""
+
+#: ../../user/checks.rst:276
+msgid "`c-format`"
+msgstr ""
+
+#: ../../user/checks.rst:281
+msgid ""
+"`C format strings <https://www.gnu.org/software/gettext/manual/html_node/"
+"c_002dformat.html>`_, `C printf format <https://en.wikipedia.org/wiki/"
+"Printf_format_string>`_"
+msgstr ""
+
+#: ../../user/checks.rst:285
+msgid "Perl format"
+msgstr ""
+
+#: ../../user/checks.rst:292
+msgid "`perl-format`"
+msgstr ""
+
+#: ../../user/checks.rst:297
+msgid ""
+"`Perl sprintf <https://perldoc.perl.org/functions/sprintf.html>`_, `Perl Format "
+"Strings <https://www.gnu.org/software/gettext/manual/html_node/perl_002dformat."
+"html>`_"
+msgstr ""
+
+#: ../../user/checks.rst:301
+msgid "Javascript format"
+msgstr ""
+
+#: ../../user/checks.rst:306
+msgid "`javascript-format`"
+msgstr ""
+
+#: ../../user/checks.rst:311
+msgid ""
+"`JavaScript Format Strings <https://www.gnu.org/software/gettext/manual/"
+"html_node/javascript_002dformat.html>`_"
+msgstr ""
+
+#: ../../user/checks.rst:314
+msgid "AngularJS interpolation string"
+msgstr ""
+
+#: ../../user/checks.rst:317
+msgid "``Your balance is {{amount}} {{ currency }}``"
+msgstr ""
+
+#: ../../user/checks.rst:319
+msgid "`angularjs-format`"
+msgstr ""
+
+#: ../../user/checks.rst:324
+msgid ""
+"`AngularJS: API: $interpolate <https://docs.angularjs.org/api/ng/service/"
+"$interpolate>`_"
+msgstr ""
+
+#: ../../user/checks.rst:327
+msgid "C# format"
+msgstr ""
+
+#: ../../user/checks.rst:330 ../../user/checks.rst:358
+msgid "``There are {0} apples``"
+msgstr ""
+
+#: ../../user/checks.rst:332
+msgid "`c-sharp-format`"
+msgstr ""
+
+#: ../../user/checks.rst:337
+msgid ""
+"`C# String Format <https://docs.microsoft.com/en-us/dotnet/api/system.string."
+"format?view=netframework-4.7.2>`_"
+msgstr ""
+
+#: ../../user/checks.rst:340
+msgid "Java format"
+msgstr ""
+
+#: ../../user/checks.rst:347
+msgid "`java-format`"
+msgstr ""
+
+#: ../../user/checks.rst:352
+msgid ""
+"`Java Format Strings <https://docs.oracle.com/javase/7/docs/api/java/util/"
+"Formatter.html>`_"
+msgstr ""
+
+#: ../../user/checks.rst:355
+msgid "Java MessageFormat"
+msgstr ""
+
+#: ../../user/checks.rst:360
+msgid "`java-messageformat` enables the check unconditionally"
+msgstr ""
+
+#: ../../user/checks.rst:362
+msgid ""
+"`auto-java-messageformat` enables check only if there is a format string in the "
+"source"
+msgstr ""
+
+#: ../../user/checks.rst:368
+msgid ""
+"`Java MessageFormat <https://docs.oracle.com/javase/7/docs/api/java/text/"
+"MessageFormat.html>`_"
+msgstr ""
+
+#: ../../user/checks.rst:373
+msgid "Missing plurals"
+msgstr ""
+
+#: ../../user/checks.rst:375
+msgid ""
+"Some plural forms are not translated. Check plural form definition to see for "
+"which counts each plural form is being used."
+msgstr ""
+
+#: ../../user/checks.rst:378
+msgid ""
+"Not filling in some plural forms will lead to showing no text in the "
+"application in the event the plural would be displayed."
+msgstr ""
+
+#: ../../user/checks.rst:384
+msgid "Same plurals"
+msgstr ""
+
+#: ../../user/checks.rst:386
+msgid ""
+"Some plural forms are translated the same. In most languages the plural forms "
+"have to be different, that's why this feature is actually used."
+msgstr ""
+
+#: ../../user/checks.rst:392
+msgid "Inconsistent"
+msgstr ""
+
+#: ../../user/checks.rst:394
+msgid ""
+"More different translations of one string in a project. This can also lead to "
+"inconsistencies in displayed checks. You can find other translations of this "
+"string on :guilabel:`All locations` tab."
+msgstr ""
+
+#: ../../user/checks.rst:398
+msgid ""
+"Weblate checks translations of the same string across all translation within a "
+"project to help you keep consistent translations."
+msgstr ""
+
+#: ../../user/checks.rst:404
+msgid "Has been translated"
+msgstr ""
+
+#: ../../user/checks.rst:406
+msgid ""
+"This string has been translated in the past. This can happen when the "
+"translations have been reverted in VCS or otherwise lost."
+msgstr ""
+
+#: ../../user/checks.rst:412
+msgid "Mismatched \\\\n"
+msgstr ""
+
+#: ../../user/checks.rst:414
+msgid "Number of ``\\\\n`` literals in translation does not match source."
+msgstr ""
+
+#: ../../user/checks.rst:416
+msgid ""
+"Usually escaped newlines are important for formatting program output, so this "
+"should match to source."
+msgstr ""
+
+#: ../../user/checks.rst:422
+msgid "Mismatched BBcode"
+msgstr ""
+
+#: ../../user/checks.rst:424
+msgid "BBcode in translation does not match source."
+msgstr ""
+
+#: ../../user/checks.rst:426
+msgid ""
+"This code is used as a simple markup to highlight important parts of a message, "
+"so it is usually a good idea to keep them."
+msgstr ""
+
+#: ../../user/checks.rst:431
+msgid ""
+"The method for detecting BBcode is currently quite simple so this check might "
+"produce false positives."
+msgstr ""
+
+#: ../../user/checks.rst:437
+msgid "Zero-width space"
+msgstr ""
+
+#: ../../user/checks.rst:439
+msgid "Translation contains extra zero-width space (<U+200B>) character."
+msgstr ""
+
+#: ../../user/checks.rst:441
+msgid ""
+"This character is usually inserted by mistake, though it might have a "
+"legitimate use. Some programs might have problems when this character is used."
+msgstr ""
+
+#: ../../user/checks.rst:446
+msgid ""
+"`Zero width space on wikipedia <https://en.wikipedia.org/wiki/Zero-"
+"width_space>`_"
+msgstr ""
+
+#: ../../user/checks.rst:452
+msgid "Invalid XML markup"
+msgstr ""
+
+#: ../../user/checks.rst:456
+msgid "The XML markup is invalid."
+msgstr ""
+
+#: ../../user/checks.rst:461
+msgid "XML tags mismatch"
+msgstr ""
+
+#: ../../user/checks.rst:463
+msgid "XML tags in translation do not match source."
+msgstr ""
+
+#: ../../user/checks.rst:465
+msgid ""
+"This usually means resulting output will look different. In most cases this is "
+"not desired result from translation, but occasionally it is desired."
+msgstr ""
+
+#: ../../user/checks.rst:469
+msgid "Source checks"
+msgstr ""
+
+#: ../../user/checks.rst:471
+msgid "Source checks can help developers to improve quality of source strings."
+msgstr ""
+
+#: ../../user/checks.rst:476
+msgid "Optional plural"
+msgstr ""
+
+#: ../../user/checks.rst:478
+msgid ""
+"The string is optionally used as plural, but not using plural forms. In case "
+"your translation system supports this, you should use plural aware variant of "
+"it."
+msgstr ""
+
+#: ../../user/checks.rst:482
+msgid "For example with Gettext in Python it could be:"
+msgstr ""
+
+#: ../../user/checks.rst:493
+msgid "Ellipsis"
+msgstr ""
+
+#: ../../user/checks.rst:495
+msgid ""
+"The string uses three dots (``...``) instead of an ellipsis character (``…``)."
+msgstr ""
+
+#: ../../user/checks.rst:497
+msgid ""
+"Using the Unicode character is in most cases the better approach and looks "
+"better when rendered."
+msgstr ""
+
+#: ../../user/checks.rst:507
+msgid "Multiple failing checks"
+msgstr ""
+
+#: ../../user/checks.rst:509
+msgid ""
+"More translations of this string have some failed quality checks. This is "
+"usually an indication that something could be done about improving the source "
+"string."
+msgstr ""
+
+#: ../../user/checks.rst:513
+msgid ""
+"This check can quite often be caused by a missing full stop at the end of a "
+"sentence or similar minor issues which translators tend to fix in translations, "
+"while it would be better to fix it in a source string."
+msgstr ""
+
+#: ../../user/files.rst:2
+msgid "Downloading and uploading translations"
+msgstr ""
+
+#: ../../user/files.rst:4
+msgid ""
+"Weblate supports both export and import of translation files. This allows you "
+"to work offline and then merge changes back. Your changes will be merged within "
+"existing translation (even if it has been changed meanwhile)."
+msgstr ""
+
+#: ../../user/files.rst:10
+msgid "This available options might be limited by :ref:`privileges`."
+msgstr ""
+
+#: ../../user/files.rst:13
+msgid "Downloading translations"
+msgstr ""
+
+#: ../../user/files.rst:15
+msgid ""
+"You can download a translatable file using the :guilabel:`Download source file` "
+"action in the :guilabel:`Files` menu. This will give you the file as it is "
+"stored in upstream version control system."
+msgstr ""
+
+#: ../../user/files.rst:19
+msgid ""
+"You can also download files in several other formats, including a compiled file "
+"to use within an application (for example ``.mo`` files for GNU Gettext) using "
+"the :guilabel:`Files`."
+msgstr ""
+
+#: ../../user/files.rst:24
+msgid "Uploading translations"
+msgstr ""
+
+#: ../../user/files.rst:26
+msgid ""
+"You can upload translated files using the :guilabel:`Upload translation` action "
+"in the :guilabel:`Files` menu."
+msgstr ""
+
+#: ../../user/files.rst:29
+msgid ""
+"Weblate accepts any file format it understands on upload, but it is still "
+"recommended to use the same file format as is used for translation, otherwise "
+"some features might not be translated properly."
+msgstr ""
+
+#: ../../user/files.rst:35
+msgid ":ref:`formats`"
+msgstr ""
+
+#: ../../user/files.rst:37
+msgid ""
+"The uploaded file is merged to current the translation, overwriting existing "
+"entries by default (this can be changed in the upload dialog)."
+msgstr ""
+
+#: ../../user/files.rst:41
+msgid "Import methods"
+msgstr ""
+
+#: ../../user/files.rst:43
+msgid ""
+"You can choose how imported strings will be merged out of following options:"
+msgstr ""
+
+#: ../../user/files.rst:46
+msgid "Add as translation"
+msgstr ""
+
+#: ../../user/files.rst:46
+msgid ""
+"Imported translations are added as translation. This is most usual and default "
+"behavior."
+msgstr ""
+
+#: ../../user/files.rst:49
+msgid "Add as a suggestion"
+msgstr ""
+
+#: ../../user/files.rst:49
+msgid ""
+"Imported translations are added as suggestions, do this when you want to review "
+"imported strings."
+msgstr ""
+
+#: ../../user/files.rst:53
+msgid "Add as translation needing review"
+msgstr ""
+
+#: ../../user/files.rst:52
+msgid ""
+"Imported translations are added as translations needing review. This can be "
+"useful for review as well."
+msgstr ""
+
+#: ../../user/files.rst:55
+msgid ""
+"Additionally, when adding as a translation, you can choose whether to overwrite "
+"already translated strings or not or how to handle strings needing review in "
+"imported file."
+msgstr ""
+
+#: ../../user/index.rst:2
+msgid "Translators guide"
+msgstr ""
+
+#: ../../user/profile.rst:2
+msgid "Registration and user profile"
+msgstr ""
+
+#: ../../user/profile.rst:5
+msgid "Registration"
+msgstr ""
+
+#: ../../user/profile.rst:7
+msgid ""
+"While everybody can browse projects, view translations or suggest them, only "
+"registered users are allowed to actually save changes and are credited for "
+"every translation made."
+msgstr ""
+
+#: ../../user/profile.rst:11
+msgid "You can register by following a few simple steps:"
+msgstr ""
+
+#: ../../user/profile.rst:13
+msgid "Fill out the registration form with your credentials"
+msgstr ""
+
+#: ../../user/profile.rst:14
+msgid "Activate registration by following in email you receive"
+msgstr ""
+
+#: ../../user/profile.rst:15
+msgid "Possibly adjust your profile to choose which languages you know"
+msgstr ""
+
+#: ../../user/profile.rst:20
+msgid "Dashboard"
+msgstr ""
+
+#: ../../user/profile.rst:22
+msgid ""
+"When you log in to Weblate, you will see an overview of projects and components "
+"as well as their translation progress."
+msgstr ""
+
+#: ../../user/profile.rst:27
+msgid ""
+"By default, this will show the components of projects you are watching, cross-"
+"referenced with your preferred languages.  You can switch to different views "
+"using the navigation tabs."
+msgstr ""
+
+#: ../../user/profile.rst:33
+msgid "The tabs will show several options:"
+msgstr ""
+
+#: ../../user/profile.rst:35
+msgid ""
+":guilabel:`All projects` will show translation status of all projects on the "
+"Weblate instance."
+msgstr ""
+
+#: ../../user/profile.rst:37
+msgid ""
+":guilabel:`Your languages` will show translation status of all projects, "
+"filtered by your primary languages."
+msgstr ""
+
+#: ../../user/profile.rst:39
+msgid ""
+":guilabel:`Watched` will show translation status of only those projects you are "
+"watching, filtered by your primary languages."
+msgstr ""
+
+#: ../../user/profile.rst:42
+msgid ""
+"In addition, the drop-down can also show any number of *component lists*, sets "
+"of project components preconfigured by the Weblate administrator, see :ref:"
+"`componentlists`."
+msgstr ""
+
+#: ../../user/profile.rst:46
+msgid ""
+"You can configure your preferred view in the :guilabel:`Preferences` section of "
+"your user profile settings."
+msgstr ""
+
+#: ../../user/profile.rst:52
+msgid "User profile"
+msgstr ""
+
+#: ../../user/profile.rst:54
+msgid ""
+"User profile contains your preferences, name and email. Name and email are "
+"being used in VCS commits, so keep this information accurate."
+msgstr ""
+
+#: ../../user/profile.rst:60
+msgid ""
+"All language selections offers only languages which are currently being "
+"translated. If you want to translate to other language, please request it first "
+"on the project you want to translate."
+msgstr ""
+
+#: ../../user/profile.rst:65
+msgid "Translated languages"
+msgstr ""
+
+#: ../../user/profile.rst:67
+msgid ""
+"Choose here which languages you prefer to translate. These will be offered to "
+"you on main page for watched projects to have easier access to these "
+"translations."
+msgstr ""
+
+#: ../../user/profile.rst:75
+msgid "Secondary languages"
+msgstr ""
+
+#: ../../user/profile.rst:77
+msgid ""
+"You can define secondary languages, which will be shown you while translating "
+"together with source language. Example can be seen on following image, where "
+"Slovak language is shown as secondary:"
+msgstr ""
+
+#: ../../user/profile.rst:84
+msgid "Default dashboard view"
+msgstr ""
+
+#: ../../user/profile.rst:86
+msgid ""
+"On the :guilabel:`Preferences` tab, you can pick which of the available "
+"dashboard views will be displayed by default. If you pick :guilabel:`Component "
+"list`, you have to select which component list will be displayed from the :"
+"guilabel:`Default component list` drop-down."
+msgstr ""
+
+#: ../../user/profile.rst:93
+msgid ":ref:`componentlists`"
+msgstr ""
+
+#: ../../user/profile.rst:98
+msgid "Subscriptions"
+msgstr ""
+
+#: ../../user/profile.rst:100
+msgid ""
+"You can subscribe to various notifications on :guilabel:`Subscriptions` tab. "
+"You will receive notifications for selected events on chosen projects for "
+"languages you have indicated for translation (see above)."
+msgstr ""
+
+#: ../../user/profile.rst:104
+msgid ""
+"If you are an owner of some project, you will always receive some important "
+"notifications, like merge failures or new language requests."
+msgstr ""
+
+#: ../../user/profile.rst:109
+msgid "You will not receive notifications for actions you've done."
+msgstr ""
+
+#: ../../user/profile.rst:114
+msgid "Authentication"
+msgstr ""
+
+#: ../../user/profile.rst:116
+msgid ""
+"On the :guilabel:`Authentication` tab you can connect various services which "
+"you can use to login into Weblate. List of services depends on Weblate "
+"configuration, but can include popular sites such as Google, Facebook, GitHub "
+"or Bitbucket."
+msgstr ""
+
+#: ../../user/profile.rst:124
+msgid "Avatar"
+msgstr ""
+
+#: ../../user/profile.rst:126
+msgid ""
+"Weblate can be configured to show avatar for each user (depending on :setting:"
+"`ENABLE_AVATARS`). These images are obtained using https://gravatar.com/."
+msgstr ""
+
+#: ../../user/profile.rst:131
+msgid "Editor link"
+msgstr ""
+
+#: ../../user/profile.rst:133
+msgid ""
+"By default Weblate does display source code in web browser configured in the :"
+"ref:`component`. By setting :guilabel:`Editor link` you can override this to "
+"use your local editor to open the source code where translated strings is being "
+"used."
+msgstr ""
+
+#: ../../user/profile.rst:138
+#, python-format
+msgid ""
+"You can use ``%(branch)s`` for branch, ``%(file)s`` and ``%(line)s`` as "
+"filename and line placeholders.  Usually something like ``editor://open/?file="
+"%(file)s&line=%(line)s`` is good option."
+msgstr ""
+
+#: ../../user/profile.rst:144
+msgid ""
+"You can find more information on registering custom URL protocols for editor in "
+"`nette documentation <https://pla.nette.org/en/how-open-files-in-ide-from-"
+"debugger>`_."
+msgstr ""
+
+#: ../../user/translating.rst:2
+msgid "Translating using Weblate"
+msgstr ""
+
+#: ../../user/translating.rst:4
+msgid ""
+"Thank you for interest in translating using Weblate. Weblate can be used to "
+"translate many projects and every project can have different settings which "
+"influence whether you can translate or add suggestions only."
+msgstr ""
+
+#: ../../user/translating.rst:8
+msgid "Overall there are the following possibilities for translating:"
+msgstr ""
+
+#: ../../user/translating.rst:10
+msgid "Projects accepts direct translations"
+msgstr ""
+
+#: ../../user/translating.rst:11
+msgid ""
+"Projects accepts only suggestions and those are accepted once they get a "
+"defined number of votes"
+msgstr ""
+
+#: ../../user/translating.rst:13
+msgid "There are also some options for translation project visibility:"
+msgstr ""
+
+#: ../../user/translating.rst:15
+msgid "It can be publicly visible and anybody can contribute"
+msgstr ""
+
+#: ../../user/translating.rst:16
+msgid "It can be visible only to certain group of translators"
+msgstr ""
+
+#: ../../user/translating.rst:18
+msgid ""
+"Plase see :ref:`workflows` for more information about translation workflow."
+msgstr ""
+
+#: ../../user/translating.rst:21
+msgid "Translation projects"
+msgstr ""
+
+#: ../../user/translating.rst:23
+msgid ""
+"Translation projects are used to organize translations into related groups. It "
+"can be one software component, book or anything closely related."
+msgstr ""
+
+#: ../../user/translating.rst:31
+msgid "Translation links"
+msgstr ""
+
+#: ../../user/translating.rst:33
+msgid ""
+"Once you navigate to a translation, you will be shown set of links which lead "
+"to translation. These are results of various checks, like untranslated or "
+"strings needing review. Should no other checks fire, there will be still link "
+"to all translations. Alternatively you can use the search field to find a "
+"translation you need to fix."
+msgstr ""
+
+#: ../../user/translating.rst:42
+msgid "Suggestions"
+msgstr ""
+
+#: ../../user/translating.rst:44
+msgid ""
+"As an anonymous user, you have no other choice than making a suggestion. "
+"However, if you are logged in you can still decide to make only a suggestion "
+"instead of saving translation, for example in case you are unsure about the "
+"translation and you want somebody else to review it."
+msgstr ""
+
+#: ../../user/translating.rst:51
+msgid ""
+"Permissions might vary depending on your setup, what is described is default "
+"Weblate behaviour."
+msgstr ""
+
+#: ../../user/translating.rst:55
+msgid "Translating"
+msgstr ""
+
+#: ../../user/translating.rst:57
+msgid ""
+"On translate page, you are shown the source string and an edit area for "
+"translating. Should the translation be plural, multiple source strings and edit "
+"areas are shown, each described with label for plural form."
+msgstr ""
+
+#: ../../user/translating.rst:61
+msgid ""
+"Any special whitespace chars are underlined in red and indicated with grey "
+"symbols. Also more than one space is underlined in red to allow translator to "
+"keep formatting."
+msgstr ""
+
+#: ../../user/translating.rst:65
+msgid ""
+"There are various bits of extra information which can be shown on this page. "
+"Most of them are coming from the project source code (like context, comments or "
+"where the message is being used). When you configure secondary languages in "
+"your preferences, translation to these languages will be shown (see :ref:"
+"`secondary-languages`)."
+msgstr ""
+
+#: ../../user/translating.rst:71
+msgid ""
+"Below the translation, suggestions from other users can be shown, which you can "
+"accept or delete."
+msgstr ""
+
+#: ../../user/translating.rst:77
+msgid "Plurals"
+msgstr ""
+
+#: ../../user/translating.rst:79
+msgid ""
+"What are plurals? Generally spoken plurals are words which take into account "
+"numeric meanings. But as you may imagine each language has its own definition "
+"of plurals. English, for example, supports one plural. We have a singular "
+"definition, for example \"car\", which means implicitly one car, and we have "
+"the plural definition, \"cars\" which could mean more than one car but also "
+"zero cars. Other languages like Czech or Arabic have more plurals and also the "
+"rules for plurals are different."
+msgstr ""
+
+#: ../../user/translating.rst:87
+msgid ""
+"Weblate does have support for translating these and offers you one field to "
+"translate every plural separately. The number of fields and how it is used in "
+"the translated application depends on plural equation which is different for "
+"every language. Weblate shows the basic information, but you can find more "
+"detailed description in the `Language Plural Rules`_ from the Unicode "
+"Consortium."
+msgstr ""
+
+#: ../../user/translating.rst:99
+msgid "Keyboard shortcuts"
+msgstr ""
+
+#: ../../user/translating.rst:103
+msgid ""
+"The keyboard shortcuts have been changed in 2.18 to less likely collide with "
+"browser or system ones."
+msgstr ""
+
+#: ../../user/translating.rst:106
+msgid "While translating you can use the following keyboard shortcuts:"
+msgstr ""
+
+#: ../../user/translating.rst:108
+msgid ":kbd:`Alt+Home`"
+msgstr ""
+
+#: ../../user/translating.rst:109
+msgid "Navigates to first translation in current search."
+msgstr ""
+
+#: ../../user/translating.rst:110
+msgid ":kbd:`Alt+End`"
+msgstr ""
+
+#: ../../user/translating.rst:111
+msgid "Navigates to last translation in current search."
+msgstr ""
+
+#: ../../user/translating.rst:112
+msgid ":kbd:`Alt+PageUp`"
+msgstr ""
+
+#: ../../user/translating.rst:113
+msgid "Navigates to previous translation in current search."
+msgstr ""
+
+#: ../../user/translating.rst:114
+msgid ":kbd:`Alt+PageDown`"
+msgstr ""
+
+#: ../../user/translating.rst:115
+msgid "Navigates to next translation in current search."
+msgstr ""
+
+#: ../../user/translating.rst:116
+msgid ":kbd:`Ctrl+Enter` or :kbd:`⌘+Enter` or :kbd:`Ctrl+Enter` or :kbd:`⌘+Enter`"
+msgstr ""
+
+#: ../../user/translating.rst:117
+msgid "Saves current translation."
+msgstr ""
+
+#: ../../user/translating.rst:118
+msgid ":kbd:`Ctrl+Shift+Enter` or :kbd:`⌘+Shift+Enter`"
+msgstr ""
+
+#: ../../user/translating.rst:119
+msgid "Unmarks translation as fuzzy and submits it."
+msgstr ""
+
+#: ../../user/translating.rst:120
+msgid ":kbd:`Ctrl+E` or :kbd:`⌘+E`"
+msgstr ""
+
+#: ../../user/translating.rst:121
+msgid "Focus translation editor."
+msgstr ""
+
+#: ../../user/translating.rst:122
+msgid ":kbd:`Ctrl+U` or :kbd:`⌘+U`"
+msgstr ""
+
+#: ../../user/translating.rst:123
+msgid "Focus comment editor."
+msgstr ""
+
+#: ../../user/translating.rst:124
+msgid ":kbd:`Ctrl+M` or :kbd:`⌘+M`"
+msgstr ""
+
+#: ../../user/translating.rst:125
+msgid "Shows machine translation tab."
+msgstr ""
+
+#: ../../user/translating.rst:126
+msgid ":kbd:`Ctrl+<NUMBER>` or :kbd:`⌘+<NUMBER>`"
+msgstr ""
+
+#: ../../user/translating.rst:127
+msgid "Copies placeable of given number from source string."
+msgstr ""
+
+#: ../../user/translating.rst:128
+msgid ":kbd:`Ctrl+M <NUMBER>` or :kbd:`⌘+M <NUMBER>`"
+msgstr ""
+
+#: ../../user/translating.rst:129
+msgid "Copy machine translation of given number to current translation."
+msgstr ""
+
+#: ../../user/translating.rst:130
+msgid ":kbd:`Ctrl+I <NUMBER>` or :kbd:`⌘+I <NUMBER>`"
+msgstr ""
+
+#: ../../user/translating.rst:131
+msgid "Ignore failing check of given number."
+msgstr ""
+
+#: ../../user/translating.rst:132
+msgid ":kbd:`Ctrl+J` or :kbd:`⌘+J`"
+msgstr ""
+
+#: ../../user/translating.rst:133
+msgid "Shows nearby strings tab."
+msgstr ""
+
+#: ../../user/translating.rst:134
+msgid ":kbd:`Ctrl+S` or :kbd:`⌘+S`"
+msgstr ""
+
+#: ../../user/translating.rst:135
+msgid "Shows search tab."
+msgstr ""
+
+#: ../../user/translating.rst:136
+msgid ":kbd:`Ctrl+O` or :kbd:`⌘+O`"
+msgstr ""
+
+#: ../../user/translating.rst:137
+msgid "Copies source string"
+msgstr ""
+
+#: ../../user/translating.rst:139
+msgid ":kbd:`Ctrl+T` or :kbd:`⌘+T`"
+msgstr ""
+
+#: ../../user/translating.rst:139
+msgid "Toggles edit needed flag."
+msgstr ""
+
+#: ../../user/translating.rst:144
+msgid "Visual keyboard"
+msgstr ""
+
+#: ../../user/translating.rst:146
+msgid ""
+"There is small visual keyboard shown when translating. This can be useful for "
+"typing chars which are usually not present on the keyboard."
+msgstr ""
+
+#: ../../user/translating.rst:149
+msgid "The symbols shown can be split into three categories:"
+msgstr ""
+
+#: ../../user/translating.rst:151
+msgid "User configured chars defined in the :ref:`user-profile`"
+msgstr ""
+
+#: ../../user/translating.rst:152
+msgid "Per language chars provided by Weblate (eg. quotes or RTL specific chars)"
+msgstr ""
+
+#: ../../user/translating.rst:153
+msgid "Chars configured using :setting:`SPECIAL_CHARS`"
+msgstr ""
+
+#: ../../user/translating.rst:160
+msgid "Translation context"
+msgstr ""
+
+#: ../../user/translating.rst:162
+msgid ""
+"Translation context part allows you to see related information about current "
+"string."
+msgstr ""
+
+#: ../../user/translating.rst:165
+msgid "String attributes"
+msgstr ""
+
+#: ../../user/translating.rst:166
+msgid "Things like message ID, context (msgctxt) or location in source code."
+msgstr ""
+
+#: ../../user/translating.rst:168
+msgid "Screenshots"
+msgstr ""
+
+#: ../../user/translating.rst:168
+msgid ""
+"Screenshots can be uploaded to Weblate to better show translators where the "
+"string is used, see :ref:`screenshots`."
+msgstr ""
+
+#: ../../user/translating.rst:172
+msgid "Nearby messages"
+msgstr ""
+
+#: ../../user/translating.rst:171
+msgid ""
+"Displays messages which are located nearby in translation file. These usually "
+"are also used in similar context and you might want to check them to keep "
+"translation consistent."
+msgstr ""
+
+#: ../../user/translating.rst:175
+msgid "Similar messages"
+msgstr ""
+
+#: ../../user/translating.rst:175
+msgid ""
+"Messages which are similar to currently one, which again can help you to stay "
+"consistent within translation."
+msgstr ""
+
+#: ../../user/translating.rst:179
+msgid "All locations"
+msgstr ""
+
+#: ../../user/translating.rst:178
+msgid ""
+"In case message appears in multiple places (eg. multiple components), this tab "
+"shows all of them and for inconsistent translations (see :ref:`check-"
+"inconsistent`) you can choose which one to use."
+msgstr ""
+
+#: ../../user/translating.rst:181 ../../user/translating.rst:200
+msgid "Glossary"
+msgstr ""
+
+#: ../../user/translating.rst:182
+msgid "Displays words from project glossary which are used in current message."
+msgstr ""
+
+#: ../../user/translating.rst:183
+msgid "Recent edits"
+msgstr ""
+
+#: ../../user/translating.rst:184
+msgid "List of people who have changed this message recently using Weblate."
+msgstr ""
+
+#: ../../user/translating.rst:187
+msgid "Project"
+msgstr ""
+
+#: ../../user/translating.rst:186
+msgid ""
+"Project information like instructions for translators or information about VCS "
+"repository."
+msgstr ""
+
+#: ../../user/translating.rst:189
+msgid ""
+"If the translation format supports it, you can also follow links to source code "
+"which contains translated strings."
+msgstr ""
+
+#: ../../user/translating.rst:193
+msgid "Translation history"
+msgstr ""
+
+#: ../../user/translating.rst:195
+msgid ""
+"Every change is by default (unless disabled in component settings) saved in the "
+"database and can be reverted. Of course you can still also revert anything in "
+"the underlaying version control system."
+msgstr ""
+
+#: ../../user/translating.rst:202
+msgid ""
+"Each project can have an assigned glossary for any language. This could be used "
+"for storing terminology for a given project, so that translations are "
+"consistent. You can display terms from the currently translated string in the "
+"bottom tabs."
+msgstr ""
+
+#: ../../user/translating.rst:207
+msgid "Managing glossaries"
+msgstr ""
+
+#: ../../user/translating.rst:209
+msgid ""
+"On project page, on :guilabel:`Glossaries` tab, you can find a link :guilabel:"
+"`Manage all glossaries`, where you can start new glossaries or edit existing "
+"ones. Once a glossary is existing, it will also show up on this tab."
+msgstr ""
+
+#: ../../user/translating.rst:215
+msgid ""
+"On the next page, you can choose which glossary to manage (all languages used "
+"in current project are shown). Following this language link will lead you to "
+"page, which can be used to edit, import or export the glossary:"
+msgstr ""
+
+#: ../../user/translating.rst:224
+msgid "Machine translation"
+msgstr ""
+
+#: ../../user/translating.rst:226
+msgid ""
+"Based on configuration and your language, Weblate provides buttons for the "
+"following machine translation tools."
+msgstr ""
+
+#: ../../user/translating.rst:229
+msgid "All machine translations are available on single tab on translation page."
+msgstr ""
+
+#: ../../user/translating.rst:233
+msgid ":ref:`machine-translation-setup`"
+msgstr ""
+
+#: ../../user/translating.rst:238
+msgid "Automatic translation"
+msgstr ""
+
+#: ../../user/translating.rst:240
+msgid ""
+"You can use automatic translation to bootstrap translation based on external "
+"sources. This tool is called :guilabel:`Automatic translation` and is "
+"accessible in the :guilabel:`Tools` menu:"
+msgstr ""
+
+#: ../../user/translating.rst:246
+msgid "This can operate in two modes:"
+msgstr ""
+
+#: ../../user/translating.rst:248
+msgid "Using other Weblate components as source for translations."
+msgstr ""
+
+#: ../../user/translating.rst:249
+msgid ""
+"Using selected machine translation services with translations about certain "
+"quality threshold."
+msgstr ""
+
+#: ../../user/translating.rst:252
+msgid "You can also choose which strings will be translated."
+msgstr ""
+
+#: ../../user/translating.rst:256
+msgid ""
+"Be careful that this will overwrite existing translations if you choose wide "
+"filters such as :guilabel:`All strings`."
+msgstr ""
+
+#: ../../user/translating.rst:259
+msgid ""
+"This feature can be useful in several situations like consolidating translation "
+"between different components (for example website and application) or when "
+"bootstrapping translation for new component using existing translations "
+"(translation memory)."
+msgstr ""
