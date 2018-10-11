@@ -25,3 +25,4 @@ weblate-*.tar.*
 /test-images/
 /cc-test-reporter
 /weblate/docs/locale/*/LC_MESSAGES/*.mo
+/weblate/docs/_build/
