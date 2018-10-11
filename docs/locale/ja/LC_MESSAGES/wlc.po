@@ -1,0 +1,294 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../wlc.rst:8
+msgid "Weblate Client"
+msgstr ""
+
+#: ../../wlc.rst:14
+msgid ""
+"The wlc utility is fully supported since Weblate 2.7. If you are using an"
+" older version some incompatibilities with the API might occur."
+msgstr ""
+
+#: ../../wlc.rst:18
+msgid "Installation"
+msgstr ""
+
+#: ../../wlc.rst:20
+msgid ""
+"The Weblate Client is shipped separately and includes the Python module. "
+"You need to install :mod:`wlc`:, wlc to use these."
+msgstr ""
+
+#: ../../wlc.rst:28
+msgid "Synopsis"
+msgstr ""
+
+#: ../../wlc.rst:34
+msgid "Commands actually indicate which operation should be performed."
+msgstr ""
+
+#: ../../wlc.rst:37
+msgid "Description"
+msgstr ""
+
+#: ../../wlc.rst:39
+msgid ""
+"Weblate Client is Python library and command line utility to manage "
+"Weblate remotely using :ref:`api`. The command line utility can be "
+"invoked as :command:`wlc` and is built on :mod:`wlc`."
+msgstr ""
+
+#: ../../wlc.rst:44
+msgid "Global options"
+msgstr ""
+
+#: ../../wlc.rst:46
+msgid ""
+"The program accepts the following global options, which must be entered "
+"before subcommand."
+msgstr ""
+
+#: ../../wlc.rst:50
+msgid "Specify output format."
+msgstr ""
+
+#: ../../wlc.rst:54
+msgid ""
+"Specify API URL. Overrides value from configuration file, see "
+":ref:`files`. The URL should end with ``/api/``, for example "
+"``https://hosted.weblate.org/api/``."
+msgstr ""
+
+#: ../../wlc.rst:59
+msgid ""
+"Specify API user key to use. Overrides value from configuration file, see"
+" :ref:`files`. You can figure out your key in your profile in Weblate."
+msgstr ""
+
+#: ../../wlc.rst:64
+msgid "Override path to configuration file, see :ref:`files`."
+msgstr ""
+
+#: ../../wlc.rst:68
+msgid "Override section to use in configuration file, see :ref:`files`."
+msgstr ""
+
+#: ../../wlc.rst:71
+msgid "Subcommands"
+msgstr ""
+
+#: ../../wlc.rst:73
+msgid "Currently the following subcommands are available:"
+msgstr ""
+
+#: ../../wlc.rst:77
+msgid "Prints current version."
+msgstr ""
+
+#: ../../wlc.rst:81
+msgid "List used languages in Weblate."
+msgstr ""
+
+#: ../../wlc.rst:85
+msgid "List projects in Weblate."
+msgstr ""
+
+#: ../../wlc.rst:89
+msgid "List components in Weblate."
+msgstr ""
+
+#: ../../wlc.rst:93
+msgid "List translations in Weblate."
+msgstr ""
+
+#: ../../wlc.rst:97
+msgid "Shows Weblate object (translation, component or project)."
+msgstr ""
+
+#: ../../wlc.rst:101
+msgid "Lists Weblate object (translation, component or project)."
+msgstr ""
+
+#: ../../wlc.rst:105
+msgid "Commits changes in Weblate object (translation, component or project)."
+msgstr ""
+
+#: ../../wlc.rst:109
+msgid ""
+"Pulls remote repository changes into Weblate object (translation, "
+"component or project)."
+msgstr ""
+
+#: ../../wlc.rst:113
+msgid ""
+"Pushes changes in Weblate object into remote repository (translation, "
+"component or project)."
+msgstr ""
+
+#: ../../wlc.rst:119 ../../wlc.rst:167
+msgid "Supported since wlc 0.7."
+msgstr ""
+
+#: ../../wlc.rst:121
+msgid ""
+"Resets changes in Weblate object to match remote repository (translation,"
+" component or project)."
+msgstr ""
+
+#: ../../wlc.rst:125
+msgid ""
+"Displays repository status for given Weblate object (translation, "
+"component or project)."
+msgstr ""
+
+#: ../../wlc.rst:129
+msgid ""
+"Displays detailed statistics for given Weblate object (translation, "
+"component or project)."
+msgstr ""
+
+#: ../../wlc.rst:135 ../../wlc.rst:143 ../../wlc.rst:151
+msgid "Supported since wlc 0.5."
+msgstr ""
+
+#: ../../wlc.rst:137
+msgid "Displays lock status."
+msgstr ""
+
+#: ../../wlc.rst:145
+msgid "Locks compontent from translating in Weblate."
+msgstr ""
+
+#: ../../wlc.rst:153
+msgid "Unlocks compontent from translating in Weblate."
+msgstr ""
+
+#: ../../wlc.rst:159
+msgid "Supported since wlc 0.7 and Weblate 2.10."
+msgstr ""
+
+#: ../../wlc.rst:161
+msgid "Displays changes for given object."
+msgstr ""
+
+#: ../../wlc.rst:169
+msgid "Downloads translation file."
+msgstr ""
+
+#: ../../wlc.rst:173
+msgid ""
+"Convert file format, if not specified not conversion happens on server "
+"and file is downloaded as is in the repository."
+msgstr ""
+
+#: ../../wlc.rst:178
+msgid "File where to store output, if not specified file is printed to stdout."
+msgstr ""
+
+#: ../../wlc.rst:183
+msgid "Files"
+msgstr ""
+
+#: ../../wlc.rst:185
+msgid ":file:`.weblate`"
+msgstr ""
+
+#: ../../wlc.rst:186
+msgid "Per project configuration file"
+msgstr ""
+
+#: ../../wlc.rst:187
+msgid ":file:`~/.config/weblate`"
+msgstr ""
+
+#: ../../wlc.rst:188
+msgid "User configuration file"
+msgstr ""
+
+#: ../../wlc.rst:190
+msgid ":file:`/etc/xdg/weblate`"
+msgstr ""
+
+#: ../../wlc.rst:190
+msgid "Global configration file"
+msgstr ""
+
+#: ../../wlc.rst:192
+msgid ""
+"The program follows XDG specification, so you can adjust placement of "
+"config files by environment variables ``XDG_CONFIG_HOME`` or "
+"``XDG_CONFIG_DIRS``."
+msgstr ""
+
+#: ../../wlc.rst:195
+msgid ""
+"Following settings can be configured in the ``[weblate]`` section (you "
+"can customize this by :option:`--config-section`):"
+msgstr ""
+
+#: ../../wlc.rst:200
+msgid "API KEY to access Weblate."
+msgstr ""
+
+#: ../../wlc.rst:204
+msgid "API server URL, defaults to ``http://127.0.0.1:8000/api/``."
+msgstr ""
+
+#: ../../wlc.rst:208
+msgid "Path of default translation, component or project."
+msgstr ""
+
+#: ../../wlc.rst:210
+msgid "The configuration file is INI file, for example:"
+msgstr ""
+
+#: ../../wlc.rst:219
+msgid "Additionally API keys can be stored in the ``[keys]`` section:"
+msgstr ""
+
+#: ../../wlc.rst:226
+msgid ""
+"This allows you to store keys in your personal settings, while having "
+":file:`.weblate` configuration in the VCS repository so that wlc knows to"
+" which server it should talk."
+msgstr ""
+
+#: ../../wlc.rst:231
+msgid "Examples"
+msgstr ""
+
+#: ../../wlc.rst:233
+msgid "Print current program version:"
+msgstr ""
+
+#: ../../wlc.rst:240
+msgid "List all projects:"
+msgstr ""
+
+#: ../../wlc.rst:252
+msgid "You can also let wlc know current project and it will then operate on it:"
+msgstr ""
+
+#: ../../wlc.rst:279
+msgid "With such setup it is easy to commit pending changes in current project:"
+msgstr ""
+

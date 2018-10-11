@@ -1,0 +1,1002 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../formats.rst:4
+msgid "Supported formats"
+msgstr ""
+
+#: ../../formats.rst:6
+msgid ""
+"Weblate supports most translation format understood by the translate-"
+"toolkit, however each format being slightly different, there might be "
+"some issues with formats that are not well tested."
+msgstr ""
+
+#: ../../formats.rst:12 ../../formats.rst:817
+msgid ":doc:`tt:formats/index`"
+msgstr ""
+
+#: ../../formats.rst:16
+msgid ""
+"When choosing a file format for your application, it's better to stick "
+"some well established format in the toolkit/platform you use. This way "
+"your translators can use whatever tools they are get used to and will "
+"more likely contribute to your project."
+msgstr ""
+
+#: ../../formats.rst:25
+msgid "Bilingual and monolignual formats"
+msgstr ""
+
+#: ../../formats.rst:27
+msgid ""
+"Weblate does support both :index:`monolingual <pair: translation; "
+"monolingual>` and :index:`bilingual <pair: translation; bilingual>` "
+"formats. Bilingual formats store two languages in single file - source "
+"and translation (typical examples are :ref:`gettext`, :ref:`xliff` or "
+":ref:`apple`). On the other side, monolingual formats identify the string"
+" by ID and each language file contains only mapping of those to given "
+"language (typically :ref:`aresource`). Some file formats are used in both"
+" variants, see detailed description below."
+msgstr ""
+
+#: ../../formats.rst:35
+msgid ""
+"For correct use of monolingual files, Weblate requires access to a file "
+"containing complete list of strings to translate with their source - this"
+" file is called :guilabel:`Monolingual base language file` within "
+"Weblate, though the naming might vary in your application."
+msgstr ""
+
+#: ../../formats.rst:41
+msgid "Automatic detection"
+msgstr ""
+
+#: ../../formats.rst:43
+msgid ""
+"Weblate can automatically detect several widely spread file formats, but "
+"this detection can harm your performance and will limit features specific"
+" to given file format (for example automatic adding of new translations)."
+msgstr ""
+
+#: ../../formats.rst:50
+msgid "Translation types capabilities"
+msgstr ""
+
+#: ../../formats.rst:52
+msgid "Below are listed capabilities of all supported formats."
+msgstr ""
+
+#: ../../formats.rst:55
+msgid "Format"
+msgstr ""
+
+#: ../../formats.rst:55
+msgid "Linguality"
+msgstr ""
+
+#: ../../formats.rst:55
+msgid "Comments"
+msgstr ""
+
+#: ../../formats.rst:55
+msgid "Context"
+msgstr ""
+
+#: ../../formats.rst:55
+msgid "Location"
+msgstr ""
+
+#: ../../formats.rst:57
+msgid ":ref:`gettext`"
+msgstr ""
+
+#: ../../formats.rst:57 ../../formats.rst:71 ../../formats.rst:81
+msgid "bilingual"
+msgstr ""
+
+#: ../../formats.rst:57 ../../formats.rst:59 ../../formats.rst:61
+#: ../../formats.rst:63 ../../formats.rst:65 ../../formats.rst:67
+#: ../../formats.rst:69 ../../formats.rst:71 ../../formats.rst:73
+#: ../../formats.rst:77 ../../formats.rst:79 ../../formats.rst:81
+#: ../../formats.rst:83
+msgid "yes"
+msgstr ""
+
+#: ../../formats.rst:59
+msgid ":ref:`mono_gettext`"
+msgstr ""
+
+#: ../../formats.rst:59 ../../formats.rst:63 ../../formats.rst:65
+#: ../../formats.rst:69 ../../formats.rst:73 ../../formats.rst:75
+#: ../../formats.rst:77 ../../formats.rst:79 ../../formats.rst:83
+#: ../../formats.rst:85 ../../formats.rst:87
+msgid "mono"
+msgstr ""
+
+#: ../../formats.rst:61
+msgid ":ref:`xliff`:"
+msgstr ""
+
+#: ../../formats.rst:61 ../../formats.rst:67
+msgid "both"
+msgstr ""
+
+#: ../../formats.rst:63
+msgid ":ref:`javaprop`"
+msgstr ""
+
+#: ../../formats.rst:63 ../../formats.rst:65 ../../formats.rst:67
+#: ../../formats.rst:69 ../../formats.rst:71 ../../formats.rst:73
+#: ../../formats.rst:75 ../../formats.rst:77 ../../formats.rst:79
+#: ../../formats.rst:81 ../../formats.rst:83 ../../formats.rst:85
+#: ../../formats.rst:87 ../../formats.rst:89
+msgid "no"
+msgstr ""
+
+#: ../../formats.rst:65
+msgid ":ref:`joomla`"
+msgstr ""
+
+#: ../../formats.rst:67
+msgid ":ref:`qtling`"
+msgstr ""
+
+#: ../../formats.rst:69
+msgid ":ref:`aresource`"
+msgstr ""
+
+#: ../../formats.rst:71
+msgid ":ref:`apple`"
+msgstr ""
+
+#: ../../formats.rst:73
+msgid ":ref:`php`"
+msgstr ""
+
+#: ../../formats.rst:75
+msgid ":ref:`json`"
+msgstr ""
+
+#: ../../formats.rst:77
+msgid ":ref:`webex`"
+msgstr ""
+
+#: ../../formats.rst:79
+msgid ":ref:`dotnet`"
+msgstr ""
+
+#: ../../formats.rst:81
+msgid ":ref:`csv`"
+msgstr ""
+
+#: ../../formats.rst:83
+msgid ":ref:`yaml`"
+msgstr ""
+
+#: ../../formats.rst:85
+msgid ":ref:`dtd`"
+msgstr ""
+
+#: ../../formats.rst:87
+msgid ":ref:`winrc`"
+msgstr ""
+
+#: ../../formats.rst:89
+msgid ":ref:`xlsx`"
+msgstr ""
+
+#: ../../formats.rst:95
+msgid "GNU Gettext"
+msgstr ""
+
+#: ../../formats.rst:101
+msgid ""
+"Most widely used format in translating free software. This was first "
+"format supported by Weblate and still has the best support."
+msgstr ""
+
+#: ../../formats.rst:104
+msgid ""
+"Weblate supports contextual information stored in the file, adjusting its"
+" headers or linking to corresponding source files."
+msgstr ""
+
+#: ../../formats.rst:107
+msgid "The bilingual gettext PO file typically looks like:"
+msgstr ""
+
+#: ../../formats.rst:125 ../../formats.rst:189 ../../formats.rst:247
+#: ../../formats.rst:286 ../../formats.rst:319 ../../formats.rst:394
+#: ../../formats.rst:452 ../../formats.rst:487 ../../formats.rst:559
+#: ../../formats.rst:595 ../../formats.rst:628 ../../formats.rst:671
+#: ../../formats.rst:714 ../../formats.rst:744 ../../formats.rst:776
+msgid "Typical Weblate :ref:`component`"
+msgstr ""
+
+#: ../../formats.rst:127 ../../formats.rst:191 ../../formats.rst:249
+#: ../../formats.rst:288 ../../formats.rst:321 ../../formats.rst:351
+#: ../../formats.rst:363 ../../formats.rst:396 ../../formats.rst:454
+#: ../../formats.rst:489 ../../formats.rst:561 ../../formats.rst:597
+#: ../../formats.rst:630 ../../formats.rst:673 ../../formats.rst:716
+#: ../../formats.rst:746 ../../formats.rst:778
+msgid "File mask"
+msgstr ""
+
+#: ../../formats.rst:127 ../../formats.rst:191
+msgid "``po/*.po``"
+msgstr ""
+
+#: ../../formats.rst:129 ../../formats.rst:193 ../../formats.rst:251
+#: ../../formats.rst:290 ../../formats.rst:323 ../../formats.rst:353
+#: ../../formats.rst:365 ../../formats.rst:398 ../../formats.rst:456
+#: ../../formats.rst:491 ../../formats.rst:563 ../../formats.rst:599
+#: ../../formats.rst:632 ../../formats.rst:675 ../../formats.rst:718
+#: ../../formats.rst:748 ../../formats.rst:780
+msgid "Monolingual base language file"
+msgstr ""
+
+#: ../../formats.rst:129 ../../formats.rst:251 ../../formats.rst:292
+#: ../../formats.rst:325 ../../formats.rst:353 ../../formats.rst:400
+#: ../../formats.rst:458 ../../formats.rst:565 ../../formats.rst:601
+#: ../../formats.rst:634 ../../formats.rst:675 ../../formats.rst:720
+#: ../../formats.rst:750
+msgid "`Empty`"
+msgstr ""
+
+#: ../../formats.rst:131 ../../formats.rst:195 ../../formats.rst:253
+#: ../../formats.rst:292 ../../formats.rst:325 ../../formats.rst:355
+#: ../../formats.rst:367 ../../formats.rst:400 ../../formats.rst:458
+#: ../../formats.rst:493 ../../formats.rst:565 ../../formats.rst:601
+#: ../../formats.rst:634 ../../formats.rst:677 ../../formats.rst:720
+#: ../../formats.rst:750 ../../formats.rst:782
+msgid "Base file for new translations"
+msgstr ""
+
+#: ../../formats.rst:131 ../../formats.rst:195
+msgid "``po/messages.pot``"
+msgstr ""
+
+#: ../../formats.rst:133 ../../formats.rst:197 ../../formats.rst:255
+#: ../../formats.rst:294 ../../formats.rst:327 ../../formats.rst:357
+#: ../../formats.rst:369 ../../formats.rst:402 ../../formats.rst:460
+#: ../../formats.rst:495 ../../formats.rst:567 ../../formats.rst:603
+#: ../../formats.rst:636 ../../formats.rst:679 ../../formats.rst:722
+#: ../../formats.rst:752 ../../formats.rst:784
+msgid "File format"
+msgstr ""
+
+#: ../../formats.rst:133
+msgid "`Gettext PO file`"
+msgstr ""
+
+#: ../../formats.rst:138
+msgid ""
+"`Gettext on Wikipedia <https://en.wikipedia.org/wiki/Gettext>`_, "
+":doc:`tt:formats/po`, :ref:`addon-weblate.gettext.configure`, :ref"
+":`addon-weblate.gettext.customize`, :ref:`addon-weblate.gettext.linguas`,"
+" :ref:`addon-weblate.gettext.mo`, :ref:`addon-weblate.gettext.msgmerge`,"
+msgstr ""
+
+#: ../../formats.rst:149
+msgid "Monolingual Gettext"
+msgstr ""
+
+#: ../../formats.rst:151
+msgid ""
+"Some projects decide to use Gettext as monolingual formats - they code "
+"just IDs in their source code and the string needs to be translated to "
+"all languages, including English. Weblate does support this, though you "
+"have to choose explicitly this file format when importing components into"
+" Weblate."
+msgstr ""
+
+#: ../../formats.rst:156
+msgid "The monolingual gettext PO file typically looks like:"
+msgstr ""
+
+#: ../../formats.rst:172
+msgid "While the base language file will be:"
+msgstr ""
+
+#: ../../formats.rst:193
+msgid "``po/en.po``"
+msgstr ""
+
+#: ../../formats.rst:197
+msgid "`Gettext PO file (monolingual)`"
+msgstr ""
+
+#: ../../formats.rst:203
+msgid "XLIFF"
+msgstr ""
+
+#: ../../formats.rst:208
+msgid ""
+"XML-based format created to standardize translation files, but in the end"
+" it is one of many standards in this area."
+msgstr ""
+
+#: ../../formats.rst:211
+msgid ""
+"XLIFF is usually used as bilingual, but Weblate supports it as "
+"monolingual as well."
+msgstr ""
+
+#: ../../formats.rst:214
+msgid "Translations marked for review"
+msgstr ""
+
+#: ../../formats.rst:218
+msgid ""
+"Since version 2.18 Weblate differentiates approved and fuzzy states, so "
+"it should work as expected with Xliff. You still might apply note below "
+"in cases where you don't want to use review process in Weblate."
+msgstr ""
+
+#: ../../formats.rst:222
+msgid ""
+"If the translation unit doesn't have ``approved=\"yes\"`` it will be "
+"imported into Weblate as needing review (which matches XLIFF "
+"specification)."
+msgstr ""
+
+#: ../../formats.rst:225
+msgid ""
+"Similarly on importing such files, you should choose :guilabel:`Import as"
+" translated` under :guilabel:`Processing of strings needing review`."
+msgstr ""
+
+#: ../../formats.rst:230
+msgid "Whitespace and newlines in XLIFF"
+msgstr ""
+
+#: ../../formats.rst:232
+msgid ""
+"Generally the XML formats do not differentiate between types or amounts "
+"of whitespace. If you want to keep it, you have to add the "
+"``xml:space=\"preserve\"`` flag to the unit."
+msgstr ""
+
+#: ../../formats.rst:236
+msgid "For example:"
+msgstr ""
+
+#: ../../formats.rst:249
+msgid "``localizations/*.xliff``"
+msgstr ""
+
+#: ../../formats.rst:253
+msgid "``localizations/en-US.xliff``"
+msgstr ""
+
+#: ../../formats.rst:255
+msgid "`XLIFF Translation File`"
+msgstr ""
+
+#: ../../formats.rst:260
+msgid ""
+"`XLIFF on Wikipedia <https://en.wikipedia.org/wiki/XLIFF>`_, "
+":doc:`tt:formats/xliff`"
+msgstr ""
+
+#: ../../formats.rst:266
+msgid "Java properties"
+msgstr ""
+
+#: ../../formats.rst:271
+msgid "Native Java format for translations."
+msgstr ""
+
+#: ../../formats.rst:273
+msgid "Java properties are usually used as monolingual."
+msgstr ""
+
+#: ../../formats.rst:275
+msgid ""
+"Weblate supports ISO-8859-1, UTF-8 and UTF-16 variants of this format. "
+"All of them supports storing all Unicode characters, it's just "
+"differently encoded. In the ISO-8859-1 the Unicode escape sequences are "
+"used (eg. ``zkou\\u0161ka``), all others encode characters directly "
+"either in UTF-8 or UTF-16."
+msgstr ""
+
+#: ../../formats.rst:282
+msgid ""
+"Loading of escape sequences will work in UTF-8 mode as well, so please be"
+" careful chosing correct charset matching your application needs."
+msgstr ""
+
+#: ../../formats.rst:288
+msgid "``src/app/Bundle_*.properties``"
+msgstr ""
+
+#: ../../formats.rst:290
+msgid "``src/app/Bundle.properties``"
+msgstr ""
+
+#: ../../formats.rst:294
+msgid "`Java Properties (ISO-8859-1)`"
+msgstr ""
+
+#: ../../formats.rst:299
+msgid ""
+"`Java properties on Wikipedia "
+"<https://en.wikipedia.org/wiki/.properties>`_, "
+":doc:`tt:formats/properties`, :ref:`addon-weblate.properties.sort`, :ref"
+":`addon-weblate.cleanup.generic`,"
+msgstr ""
+
+#: ../../formats.rst:307
+msgid "Joomla translations"
+msgstr ""
+
+#: ../../formats.rst:314
+msgid "Native Joomla format for translations."
+msgstr ""
+
+#: ../../formats.rst:316
+msgid "Joomla translations are usually used as monolingual."
+msgstr ""
+
+#: ../../formats.rst:321
+msgid "``language/*/com_foobar.ini``"
+msgstr ""
+
+#: ../../formats.rst:323
+msgid "``language/en-GB/com_foobar.ini``"
+msgstr ""
+
+#: ../../formats.rst:327
+msgid "`Joomla Language File`"
+msgstr ""
+
+#: ../../formats.rst:332
+msgid ""
+"`Specification of Joomla language files "
+"<https://docs.joomla.org/Specification_of_language_files>`_, "
+":doc:`tt:formats/properties`"
+msgstr ""
+
+#: ../../formats.rst:338
+msgid "Qt Linguist .ts"
+msgstr ""
+
+#: ../../formats.rst:344
+msgid "Translation format used in Qt based applications."
+msgstr ""
+
+#: ../../formats.rst:346
+msgid "Qt Linguist files are used as both bilingual and monolingual."
+msgstr ""
+
+#: ../../formats.rst:349
+msgid "Typical Weblate :ref:`component` when using as bilingual"
+msgstr ""
+
+#: ../../formats.rst:351 ../../formats.rst:363
+msgid "``i18n/app.*.ts``"
+msgstr ""
+
+#: ../../formats.rst:355
+msgid "``i18n/app.de.ts``"
+msgstr ""
+
+#: ../../formats.rst:357 ../../formats.rst:369
+msgid "`Qt Linguist Translation File`"
+msgstr ""
+
+#: ../../formats.rst:361
+msgid "Typical Weblate :ref:`component` when using as monolingual"
+msgstr ""
+
+#: ../../formats.rst:365 ../../formats.rst:367
+msgid "``i18n/app.en.ts``"
+msgstr ""
+
+#: ../../formats.rst:374
+msgid ""
+"`Qt Linguist manual <https://doc.qt.io/qt-5/qtlinguist-index.html>`_, "
+":doc:`tt:formats/ts`, :ref:`bimono`"
+msgstr ""
+
+#: ../../formats.rst:381
+msgid "Android string resources"
+msgstr ""
+
+#: ../../formats.rst:387
+msgid "Android specific file format for translating applications."
+msgstr ""
+
+#: ../../formats.rst:389
+msgid ""
+"Android string resources are monolingual, the :guilabel:`Monolingual base"
+" language file` file is stored in a different location from the others "
+":file:`res/values/strings.xml`."
+msgstr ""
+
+#: ../../formats.rst:396
+msgid "``res/values-*/strings.xml``"
+msgstr ""
+
+#: ../../formats.rst:398
+msgid "``res/values/strings.xml``"
+msgstr ""
+
+#: ../../formats.rst:402
+msgid "`Android String Resource`"
+msgstr ""
+
+#: ../../formats.rst:407
+msgid ""
+"`Android string resources documentation "
+"<https://developer.android.com/guide/topics/resources/string-"
+"resource.html>`_, :doc:`tt:formats/android`"
+msgstr ""
+
+#: ../../formats.rst:412
+msgid ""
+"Android `string-array` structures are not currently supported. To work "
+"around this, you can break you string arrays apart:"
+msgstr ""
+
+#: ../../formats.rst:422
+msgid "become:"
+msgstr ""
+
+#: ../../formats.rst:433
+msgid ""
+"The `string-array` that points to the `string` elements should be stored "
+"in a different file, and not localized."
+msgstr ""
+
+#: ../../formats.rst:436
+msgid ""
+"This script may help pre-process your existing strings.xml files and "
+"translations: https://gist.github.com/paour/11291062"
+msgstr ""
+
+#: ../../formats.rst:441
+msgid "Apple OS X strings"
+msgstr ""
+
+#: ../../formats.rst:446
+msgid ""
+"Apple specific file format for translating applications, used for both OS"
+" X and :index:`iPhone <pair: iPhone; translation>`/:index:`iPad <pair: "
+"iPad; translation>` application translations."
+msgstr ""
+
+#: ../../formats.rst:449
+msgid "Apple OS X strings are usually used as bilingual."
+msgstr ""
+
+#: ../../formats.rst:454
+msgid "``Resources/*.lproj/Localizable.strings``"
+msgstr ""
+
+#: ../../formats.rst:456
+msgid "``Resources/en.lproj/Localizable.strings``"
+msgstr ""
+
+#: ../../formats.rst:460
+msgid "`OS X Strings (UTF-8)`"
+msgstr ""
+
+#: ../../formats.rst:465
+msgid ""
+"`Apple Strings Files documentation "
+"<https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/MaintaingYourOwnStringsFiles/MaintaingYourOwnStringsFiles.html>`_,"
+" :doc:`tt:formats/strings`"
+msgstr ""
+
+#: ../../formats.rst:471
+msgid "PHP strings"
+msgstr ""
+
+#: ../../formats.rst:477
+msgid ""
+"PHP translations are usually monolingual, so it is recommended to specify"
+" base file with English strings."
+msgstr ""
+
+#: ../../formats.rst:480 ../../formats.rst:546 ../../formats.rst:588
+#: ../../formats.rst:664
+msgid "Example file:"
+msgstr ""
+
+#: ../../formats.rst:489
+msgid "``lang/*/texts.php``"
+msgstr ""
+
+#: ../../formats.rst:491 ../../formats.rst:493
+msgid "``lang/en/texts.php``"
+msgstr ""
+
+#: ../../formats.rst:495
+msgid "`PHP strings`"
+msgstr ""
+
+#: ../../formats.rst:500
+msgid ""
+"Translate-toolkit currently has some limitations in processing PHP files,"
+" so please double check that your files won't get corrupted  before using"
+" Weblate in production setup."
+msgstr ""
+
+#: ../../formats.rst:504
+msgid "Following things are known to be broken:"
+msgstr ""
+
+#: ../../formats.rst:506
+msgid ""
+"Adding new units to translation, every translation has to contain all "
+"strings (even if empty)."
+msgstr ""
+
+#: ../../formats.rst:507
+msgid "Handling of special chars like newlines."
+msgstr ""
+
+#: ../../formats.rst:512
+msgid ":doc:`tt:formats/php`"
+msgstr ""
+
+#: ../../formats.rst:517
+msgid "JSON files"
+msgstr ""
+
+#: ../../formats.rst:526
+msgid ""
+"Since Weblate 2.16 and with translate-toolkit at least 2.2.4 nested "
+"structure JSON files are supported as well."
+msgstr ""
+
+#: ../../formats.rst:531
+msgid ""
+"Since Weblate 2.17 and with translate-toolkit at least 2.2.5 i18next JSON"
+" files with plurals are supported as well."
+msgstr ""
+
+#: ../../formats.rst:534
+msgid ""
+"JSON format is used mostly for translating applications implemented in "
+"Javascript."
+msgstr ""
+
+#: ../../formats.rst:537
+msgid "Weblate currently supports several variants of JSON translations:"
+msgstr ""
+
+#: ../../formats.rst:539
+msgid "Simple key / value files."
+msgstr ""
+
+#: ../../formats.rst:540
+msgid "Files with nested keys."
+msgstr ""
+
+#: ../../formats.rst:541
+msgid "The i18next files with support for plurals."
+msgstr ""
+
+#: ../../formats.rst:543
+msgid ""
+"JSON translations are usually monolingual, so it is recommended to "
+"specify base file with English strings."
+msgstr ""
+
+#: ../../formats.rst:552
+msgid ""
+"Nested files are supported as well (see above for requirements), such "
+"file can look like:"
+msgstr ""
+
+#: ../../formats.rst:561
+msgid "``langs/translation-*.json``"
+msgstr ""
+
+#: ../../formats.rst:563
+msgid "``langs/translation-en.json``"
+msgstr ""
+
+#: ../../formats.rst:567
+msgid "`JSON nested structure file`"
+msgstr ""
+
+#: ../../formats.rst:572
+msgid ""
+":doc:`tt:formats/json`, `i18next JSON Format "
+"<https://www.i18next.com/misc/json-format>`_, :ref:`addon-"
+"weblate.json.customize`, :ref:`addon-weblate.cleanup.generic`,"
+msgstr ""
+
+#: ../../formats.rst:580
+msgid "WebExtension JSON"
+msgstr ""
+
+#: ../../formats.rst:584
+msgid ""
+"This is supported since Weblate 2.16 and with translate-toolkit at least "
+"2.2.4."
+msgstr ""
+
+#: ../../formats.rst:586
+msgid ""
+"File format used when translating extensions for Google Chrome or Mozilla"
+" Firefox."
+msgstr ""
+
+#: ../../formats.rst:597
+msgid "``_locales/*/messages.json``"
+msgstr ""
+
+#: ../../formats.rst:599
+msgid "``_locales/en/messages.json``"
+msgstr ""
+
+#: ../../formats.rst:603
+msgid "`WebExtension JSON file`"
+msgstr ""
+
+#: ../../formats.rst:608
+msgid ""
+":doc:`tt:formats/json`, `Google chrome.i18n "
+"<https://developer.chrome.com/extensions/i18n>`_, `Mozilla Extensions "
+"Internationalization <https://developer.mozilla.org/en-US/Add-"
+"ons/WebExtensions/Internationalization>`_"
+msgstr ""
+
+#: ../../formats.rst:615
+msgid ".Net Resource files"
+msgstr ""
+
+#: ../../formats.rst:623
+msgid ""
+".Net Resource (.resx) file is a monolingual XML file format used in "
+"Microsoft .Net Applications. It works with .resw files as well as they "
+"use identical syntax to .resx."
+msgstr ""
+
+#: ../../formats.rst:630
+msgid "``Resources/Language.*.resx``"
+msgstr ""
+
+#: ../../formats.rst:632
+msgid "``Resources/Language.resx``"
+msgstr ""
+
+#: ../../formats.rst:636
+msgid "`.Net resource file`"
+msgstr ""
+
+#: ../../formats.rst:641
+msgid ":doc:`tt:formats/resx`, :ref:`addon-weblate.cleanup.generic`,"
+msgstr ""
+
+#: ../../formats.rst:647
+msgid "CSV files"
+msgstr ""
+
+#: ../../formats.rst:655
+msgid ""
+"CSV files can contain a simple list of source and translation. Weblate "
+"supports the following files:"
+msgstr ""
+
+#: ../../formats.rst:658
+msgid "Files with header defining fields (source, translation, location, ...)"
+msgstr ""
+
+#: ../../formats.rst:659
+msgid ""
+"Files with two fields - source and translation (in this order), choose "
+":guilabel:`Simple CSV file` as file format"
+msgstr ""
+
+#: ../../formats.rst:661
+msgid ""
+"Files with fields as defined by translate-toolkit: location, source, "
+"target, id, fuzzy, context, translator_comments, developer_comments"
+msgstr ""
+
+#: ../../formats.rst:673
+msgid "``locale/*.csv``"
+msgstr ""
+
+#: ../../formats.rst:677
+msgid "``locale/en.csv``"
+msgstr ""
+
+#: ../../formats.rst:679
+msgid "`CSV file`"
+msgstr ""
+
+#: ../../formats.rst:682
+msgid ":doc:`tt:formats/csv`"
+msgstr ""
+
+#: ../../formats.rst:687
+msgid "YAML files"
+msgstr ""
+
+#: ../../formats.rst:695
+msgid ""
+"There are several variants of using YAML as a translation format. Weblate"
+" currently supports following:"
+msgstr ""
+
+#: ../../formats.rst:698
+msgid "Plain YAML files with string keys and values"
+msgstr ""
+
+#: ../../formats.rst:699
+msgid "Ruby i18n YAML files with language as root node"
+msgstr ""
+
+#: ../../formats.rst:701
+msgid "Example YAML file:"
+msgstr ""
+
+#: ../../formats.rst:707
+msgid "Example Ruby i18n YAML file:"
+msgstr ""
+
+#: ../../formats.rst:716
+msgid "``translations/messages.*.yml``"
+msgstr ""
+
+#: ../../formats.rst:718
+msgid "``translations/messages.en.yml``"
+msgstr ""
+
+#: ../../formats.rst:722
+msgid "`YAML file`"
+msgstr ""
+
+#: ../../formats.rst:725
+msgid ":doc:`tt:formats/yaml`"
+msgstr ""
+
+#: ../../formats.rst:730
+msgid "DTD files"
+msgstr ""
+
+#: ../../formats.rst:737
+msgid "Example DTD file:"
+msgstr ""
+
+#: ../../formats.rst:746
+msgid "``locale/*.dtd``"
+msgstr ""
+
+#: ../../formats.rst:748
+msgid "``locale/en.dtd``"
+msgstr ""
+
+#: ../../formats.rst:752
+msgid "`DTD file`"
+msgstr ""
+
+#: ../../formats.rst:755
+msgid ":doc:`tt:formats/dtd`"
+msgstr ""
+
+#: ../../formats.rst:760
+msgid "Windows RC files"
+msgstr ""
+
+#: ../../formats.rst:764
+msgid ""
+"Experimental support has been added in Weblate 3.0, not supported on "
+"Python 3."
+msgstr ""
+
+#: ../../formats.rst:769
+msgid "Example Windows RC file:"
+msgstr ""
+
+#: ../../formats.rst:778
+msgid "``lang/*.rc``"
+msgstr ""
+
+#: ../../formats.rst:780 ../../formats.rst:782
+msgid "``lang/en-US.rc``"
+msgstr ""
+
+#: ../../formats.rst:784
+msgid "`RC file`"
+msgstr ""
+
+#: ../../formats.rst:787
+msgid ":doc:`tt:formats/rc`"
+msgstr ""
+
+#: ../../formats.rst:792
+msgid "Excel Open XML"
+msgstr ""
+
+#: ../../formats.rst:796
+msgid "Weblate can import and export Excel Open XML (xlsx) files."
+msgstr ""
+
+#: ../../formats.rst:798
+msgid ""
+"When using xlsx files for translation upload, be aware that only the "
+"active worksheet is considered and there must be at least a column called"
+" ``source`` (which contains the source string) and a column called "
+"``target`` (which contains the translation). Additionally there should be"
+" the column ``context`` (which contains the context path of the "
+"translation unit). If you use the xlsx download for exporting the "
+"translations into an Excel workbook, you already get a file with the "
+"correct file format."
+msgstr ""
+
+#: ../../formats.rst:808
+msgid "Others"
+msgstr ""
+
+#: ../../formats.rst:810
+msgid ""
+"Most formats supported by translate-toolkit which support serializing can"
+" be easily supported, but they did not (yet) receive any testing. In most"
+" cases some thin layer is needed in Weblate to hide differences in "
+"behavior of different translate-toolkit storages."
+msgstr ""
+
+#: ../../formats.rst:822
+msgid "Adding new translations"
+msgstr ""
+
+#: ../../formats.rst:826
+msgid ""
+"In versions prior to 2.18 the behaviour of adding new translations was "
+"file format specific."
+msgstr ""
+
+#: ../../formats.rst:829
+msgid ""
+"Weblate can automatically start new translation for all of the file "
+"formats."
+msgstr ""
+
+#: ../../formats.rst:832
+msgid ""
+"Some formats expect to start with empty file and only translated strings "
+"to be included (eg. :ref:`aresource`), while others expect to have all "
+"keys present (eg. :ref:`gettext`). In some situations this really doesn't"
+" depend on the format, but rather on framework you use to handle the "
+"translation (eg. with :ref:`json`)."
+msgstr ""
+
+#: ../../formats.rst:838
+msgid ""
+"When you specify :guilabel:`Base file for new translations` in "
+":ref:`component`, Weblate will use this file to start new translations. "
+"Any exiting translations will be removed from the file when doing so."
+msgstr ""
+
+#: ../../formats.rst:842
+msgid ""
+"When :guilabel:`Base file for new translations` is empty and file format "
+"supports it, empty file is created where new units will be added once "
+"they are translated."
+msgstr ""
+

@@ -1,0 +1,365 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012 - 2018 Michal Čihař
+# This file is distributed under the same license as the Weblate
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate Documentation 3.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../vcs.rst:4
+msgid "Version control integration"
+msgstr ""
+
+#: ../../vcs.rst:6
+msgid ""
+"Weblate currently supports :ref:`vcs-git` (with extended support for :ref"
+":`vcs-github`) and :ref:`vcs-mercurial` as version control backends."
+msgstr ""
+
+#: ../../vcs.rst:12
+msgid "Accessing repositories"
+msgstr ""
+
+#: ../../vcs.rst:14
+msgid ""
+"The VCS repository you want to use has to be accessible to Weblate. With "
+"a publicly available repository you just need to enter correct URL (for "
+"example ``git://github.com/WeblateOrg/weblate.git`` or "
+"``https://github.com/WeblateOrg/weblate.git``), but for private "
+"repositories the setup might be more complex."
+msgstr ""
+
+#: ../../vcs.rst:23
+msgid "Weblate internal URLs"
+msgstr ""
+
+#: ../../vcs.rst:25
+msgid ""
+"To share one repository between different components you can use a "
+"special URL like ``weblate://project/component``. This way, the component"
+" will share the VCS repository configuration with referenced component "
+"and the VCS repository will be stored just once on the disk."
+msgstr ""
+
+#: ../../vcs.rst:31
+msgid "SSH repositories"
+msgstr ""
+
+#: ../../vcs.rst:33
+msgid ""
+"The most frequently used method to access private repositories is based "
+"on SSH. To have access to such a repository, you generate SSH key for "
+"Weblate and authorize it to access the repository. Weblate also needs to "
+"know the host key to avoid man in the middle attacks. This all can be "
+"done in the Weblate administration interface:"
+msgstr ""
+
+#: ../../vcs.rst:42
+msgid "Generating SSH keys"
+msgstr ""
+
+#: ../../vcs.rst:44
+msgid ""
+"You can generate or display the key currently used by Weblate in the "
+"admin interface (follow :guilabel:`SSH keys` link on main admin page). "
+"Once you've done this, Weblate should be able to access your repository."
+msgstr ""
+
+#: ../../vcs.rst:50
+msgid ""
+"The keys need to be without password to make it work, so be sure they are"
+" well protected against malicious usage."
+msgstr ""
+
+#: ../../vcs.rst:55
+msgid ""
+"On GitHub, you can add the key to only one repository. See the following "
+"sections for other solutions for GitHub."
+msgstr ""
+
+#: ../../vcs.rst:59
+msgid "Verifying SSH host keys"
+msgstr ""
+
+#: ../../vcs.rst:61
+msgid ""
+"Before connecting to the repository, you also need to verify SSH host "
+"keys of servers you are going to access in the same section of the admin "
+"interface. You can do this in the :guilabel:`Add host key` section. Just "
+"enter hostname you are going to access (eg. ``gitlab.com``) and press "
+":guilabel:`Submit`. After adding it please verify that the fingerprint "
+"matches the server you're adding, the fingerprints will be displayed in "
+"the confirmation message:"
+msgstr ""
+
+#: ../../vcs.rst:72
+msgid "HTTPS repositories"
+msgstr ""
+
+#: ../../vcs.rst:74
+msgid ""
+"To access protected HTTPS repositories, you need to include the username "
+"and password in the URL. Don't worry, Weblate will strip this information"
+" when showing the URL to the users (if they are allowed to see the "
+"repository URL at all)."
+msgstr ""
+
+#: ../../vcs.rst:78
+msgid ""
+"For example the GitHub URL with authentication might look like "
+"``https://user:your_access_token@github.com/WeblateOrg/weblate.git``."
+msgstr ""
+
+#: ../../vcs.rst:83
+#, python-format
+msgid ""
+"In case your username or password contains special chars, those have to "
+"be URL encoded, for example "
+"``https://user%40example.com:%24password%23@bitbucket.org/...```."
+msgstr ""
+
+#: ../../vcs.rst:88
+msgid "Using proxy"
+msgstr ""
+
+#: ../../vcs.rst:90
+msgid ""
+"If you need to access http/https VCS repositories using a proxy server, "
+"you need to configure the VCS to use it."
+msgstr ""
+
+#: ../../vcs.rst:93
+msgid ""
+"This can be configured using the ``http_proxy``, ``https_proxy``, and "
+"``all_proxy`` environment variables (check cURL documentation for more "
+"details) or by enforcing it in VCS configuration, for example:"
+msgstr ""
+
+#: ../../vcs.rst:103
+msgid ""
+"The proxy setting needs to be done in the same context which is used to "
+"execute Weblate. For the environment it should be set for both server and"
+" cron jobs. The VCS configuration has to be set for the user which is "
+"running Weblate."
+msgstr ""
+
+#: ../../vcs.rst:110
+msgid ""
+"`curl manpage <https://curl.haxx.se/docs/manpage.html>`_, `git config "
+"documentation <https://git-scm.com/docs/git-config>`_"
+msgstr ""
+
+#: ../../vcs.rst:117
+msgid "Git"
+msgstr ""
+
+#: ../../vcs.rst:119
+msgid ""
+"Git is first VCS backend that was available in Weblate and is still the "
+"most stable and tested one."
+msgstr ""
+
+#: ../../vcs.rst:124 ../../vcs.rst:250
+msgid ""
+"See :ref:`vcs-repos` for information how to access different kind of "
+"repositories."
+msgstr ""
+
+#: ../../vcs.rst:130
+msgid "GitHub repositories"
+msgstr ""
+
+#: ../../vcs.rst:132
+msgid ""
+"You can access GitHub repositories by SSH as mentioned above, but in case"
+" you need to access more repositories, you will hit a GitHub limitation "
+"on the SSH key usage (one key can be used only for one repository). There"
+" are several ways to work around this limitation."
+msgstr ""
+
+#: ../../vcs.rst:137
+msgid ""
+"For smaller deployments, you can use HTTPS authentication using a "
+"personal access token and your account, see `Creating an access token for"
+" command-line use`_."
+msgstr ""
+
+#: ../../vcs.rst:142
+msgid ""
+"For a bigger setup, it is usually better to create dedicated user for "
+"Weblate, assign him the SSH key generated in Weblate and grant him access"
+" to all repositories you want."
+msgstr ""
+
+#: ../../vcs.rst:149
+msgid "Git remote helpers"
+msgstr ""
+
+#: ../../vcs.rst:151
+msgid ""
+"You can also use Git `remote helpers`_ for supporting other VCS as well, "
+"but this usually leads to other problems, so be prepared to debug them."
+msgstr ""
+
+#: ../../vcs.rst:154
+msgid ""
+"At this time, helpers for Bazaar and Mercurial are available within "
+"separate repositories on GitHub: `git-remote-hg`_ and `git-remote-bzr`_. "
+"You can download them manually and put somewhere in your search path (for"
+" example :file:`~/bin`). You also need to have installed appropriate "
+"version control programs as well."
+msgstr ""
+
+#: ../../vcs.rst:160
+msgid ""
+"Once you have these installed, you can use such remotes to specify "
+"repository in Weblate."
+msgstr ""
+
+#: ../../vcs.rst:163
+msgid "To clone ``gnuhello`` project from Launchpad with Bazaar use::"
+msgstr ""
+
+#: ../../vcs.rst:167
+msgid "For ``hello`` repository from selenic.com with Mercurial use::"
+msgstr ""
+
+#: ../../vcs.rst:177
+msgid ""
+"Please be prepared to some incovenience when using Git remote helpers, "
+"for example with Mercurial, the remote helper sometimes tends to create "
+"new tip when pushing changes back."
+msgstr ""
+
+#: ../../vcs.rst:184
+msgid "GitHub"
+msgstr ""
+
+#: ../../vcs.rst:188
+msgid ""
+"This just adds a thin layer on top of :ref:`vcs-git` to allow push "
+"translation changes as pull requests instead of pushing directory to the "
+"repository. It currently uses the `hub`_ tool to do the integration."
+msgstr ""
+
+#: ../../vcs.rst:192
+msgid ""
+"There is no need to use this to access Git repositories, ordinary :ref"
+":`vcs-git` works the same, the only difference is how pushing to a "
+"repository is handled. With :ref:`vcs-git` changes are pushed directly to"
+" the repository, while :ref:`vcs-github` creates pull requests."
+msgstr ""
+
+#: ../../vcs.rst:200
+msgid "Pushing changes to GitHub as pull request"
+msgstr ""
+
+#: ../../vcs.rst:202
+msgid ""
+"If you are translating a project that's hosted on GitHub and don't want "
+"to push translations to the repository, you can have them sent as a pull "
+"request instead."
+msgstr ""
+
+#: ../../vcs.rst:205
+msgid ""
+"You need to configure the `hub`_ command line tool and set "
+":setting:`GITHUB_USERNAME` for this to work."
+msgstr ""
+
+#: ../../vcs.rst:210
+msgid ""
+":setting:`GITHUB_USERNAME`, :ref:`hub-setup` for configuration "
+"instructions"
+msgstr ""
+
+#: ../../vcs.rst:215
+msgid "Setting up hub"
+msgstr ""
+
+#: ../../vcs.rst:217
+msgid ""
+":ref:`github-push` requires a configured `hub`_ installation on your "
+"server. Follow the installation instructions at https://hub.github.com/ "
+"and perform an action with `hub`_ to finish the configuration, for "
+"example:"
+msgstr ""
+
+#: ../../vcs.rst:225
+msgid ""
+"The `hub`_ will ask you for your GitHub credentials, retrieve a token and"
+" store it into :file:`~/.config/hub`."
+msgstr ""
+
+#: ../../vcs.rst:230
+msgid ""
+"Use the username you configured :guilabel:`hub` with as "
+":setting:`GITHUB_USERNAME`."
+msgstr ""
+
+#: ../../vcs.rst:237
+msgid "Mercurial"
+msgstr ""
+
+#: ../../vcs.rst:241
+msgid "Mercurial is another VCS you can use directly in Weblate."
+msgstr ""
+
+#: ../../vcs.rst:245
+msgid ""
+"It should work with any Mercurial version, but there are sometimes "
+"incompatible changes to the command line interface which break Weblate."
+msgstr ""
+
+#: ../../vcs.rst:256
+msgid "Subversion"
+msgstr ""
+
+#: ../../vcs.rst:260
+msgid ""
+"Thanks to `git-svn`_, Weblate can work with `subversion`_ repositories. "
+"Git-svn is a Perl script that enables the usage of subversion with a git "
+"client, enabling users to have a full clone of the internal repository "
+"and commit locally."
+msgstr ""
+
+#: ../../vcs.rst:266
+msgid ""
+"Weblate tries to detect Subversion repository layout automatically - it "
+"supports both direct URLs for branch or repositories with standard layout"
+" (branches/, tags/ and trunk/). See `git-svn documentation <https://git-"
+"scm.com/docs/git-svn#git-svn---stdlayout>`_ for more information."
+msgstr ""
+
+#: ../../vcs.rst:274
+msgid "In older versions only repositories with standard layout were supported."
+msgstr ""
+
+#: ../../vcs.rst:281
+msgid "Subversion Credentials"
+msgstr ""
+
+#: ../../vcs.rst:283
+msgid ""
+"Weblate expects you to have accepted the certificate upfront and inserted"
+" your credential, if needed. It will look into the DATA_DIR directory. To"
+" insert your credential and accept the certificate, you can run svn once "
+"with the `$HOME` environment variable set to the DATA_DIR::"
+msgstr ""
+
+#: ../../vcs.rst:292
+msgid ":setting:`DATA_DIR`"
+msgstr ""
+
