@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"POT-Creation-Date: 2018-10-19 21:27+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -144,7 +144,7 @@ msgid ""
 "component or project)."
 msgstr ""
 
-#: ../../wlc.rst:119 ../../wlc.rst:167
+#: ../../wlc.rst:119 ../../wlc.rst:175
 msgid "Supported since wlc 0.7."
 msgstr ""
 
@@ -154,141 +154,163 @@ msgid ""
 " component or project)."
 msgstr ""
 
-#: ../../wlc.rst:125
+#: ../../wlc.rst:127 ../../wlc.rst:192
+msgid "Supported since wlc 0.9."
+msgstr ""
+
+#: ../../wlc.rst:129
+msgid ""
+"Removes any utracked changes in Weblate object to match remote repository"
+" (translation, component or project)."
+msgstr ""
+
+#: ../../wlc.rst:133
 msgid ""
 "Displays repository status for given Weblate object (translation, "
 "component or project)."
 msgstr ""
 
-#: ../../wlc.rst:129
+#: ../../wlc.rst:137
 msgid ""
 "Displays detailed statistics for given Weblate object (translation, "
 "component or project)."
 msgstr ""
 
-#: ../../wlc.rst:135 ../../wlc.rst:143 ../../wlc.rst:151
+#: ../../wlc.rst:143 ../../wlc.rst:151 ../../wlc.rst:159
 msgid "Supported since wlc 0.5."
 msgstr ""
 
-#: ../../wlc.rst:137
+#: ../../wlc.rst:145
 msgid "Displays lock status."
 msgstr ""
 
-#: ../../wlc.rst:145
+#: ../../wlc.rst:153
 msgid "Locks compontent from translating in Weblate."
 msgstr ""
 
-#: ../../wlc.rst:153
+#: ../../wlc.rst:161
 msgid "Unlocks compontent from translating in Weblate."
 msgstr ""
 
-#: ../../wlc.rst:159
+#: ../../wlc.rst:167
 msgid "Supported since wlc 0.7 and Weblate 2.10."
 msgstr ""
 
-#: ../../wlc.rst:161
+#: ../../wlc.rst:169
 msgid "Displays changes for given object."
 msgstr ""
 
-#: ../../wlc.rst:169
+#: ../../wlc.rst:177
 msgid "Downloads translation file."
 msgstr ""
 
-#: ../../wlc.rst:173
+#: ../../wlc.rst:181
 msgid ""
 "Convert file format, if not specified not conversion happens on server "
 "and file is downloaded as is in the repository."
 msgstr ""
 
-#: ../../wlc.rst:178
+#: ../../wlc.rst:186
 msgid "File where to store output, if not specified file is printed to stdout."
 msgstr ""
 
-#: ../../wlc.rst:183
+#: ../../wlc.rst:194
+msgid "Uploads translation file."
+msgstr ""
+
+#: ../../wlc.rst:198
+msgid "Overwrite existing translations on upload."
+msgstr ""
+
+#: ../../wlc.rst:202
+msgid "File where to read content, if not specified file is read from stdin."
+msgstr ""
+
+#: ../../wlc.rst:207
 msgid "Files"
 msgstr ""
 
-#: ../../wlc.rst:185
+#: ../../wlc.rst:209
 msgid ":file:`.weblate`"
 msgstr ""
 
-#: ../../wlc.rst:186
+#: ../../wlc.rst:210
 msgid "Per project configuration file"
 msgstr ""
 
-#: ../../wlc.rst:187
+#: ../../wlc.rst:211
 msgid ":file:`~/.config/weblate`"
 msgstr ""
 
-#: ../../wlc.rst:188
+#: ../../wlc.rst:212
 msgid "User configuration file"
 msgstr ""
 
-#: ../../wlc.rst:190
+#: ../../wlc.rst:214
 msgid ":file:`/etc/xdg/weblate`"
 msgstr ""
 
-#: ../../wlc.rst:190
+#: ../../wlc.rst:214
 msgid "Global configration file"
 msgstr ""
 
-#: ../../wlc.rst:192
+#: ../../wlc.rst:216
 msgid ""
 "The program follows XDG specification, so you can adjust placement of "
 "config files by environment variables ``XDG_CONFIG_HOME`` or "
 "``XDG_CONFIG_DIRS``."
 msgstr ""
 
-#: ../../wlc.rst:195
+#: ../../wlc.rst:219
 msgid ""
 "Following settings can be configured in the ``[weblate]`` section (you "
 "can customize this by :option:`--config-section`):"
 msgstr ""
 
-#: ../../wlc.rst:200
+#: ../../wlc.rst:224
 msgid "API KEY to access Weblate."
 msgstr ""
 
-#: ../../wlc.rst:204
+#: ../../wlc.rst:228
 msgid "API server URL, defaults to ``http://127.0.0.1:8000/api/``."
 msgstr ""
 
-#: ../../wlc.rst:208
+#: ../../wlc.rst:232
 msgid "Path of default translation, component or project."
 msgstr ""
 
-#: ../../wlc.rst:210
+#: ../../wlc.rst:234
 msgid "The configuration file is INI file, for example:"
 msgstr ""
 
-#: ../../wlc.rst:219
+#: ../../wlc.rst:243
 msgid "Additionally API keys can be stored in the ``[keys]`` section:"
 msgstr ""
 
-#: ../../wlc.rst:226
+#: ../../wlc.rst:250
 msgid ""
 "This allows you to store keys in your personal settings, while having "
 ":file:`.weblate` configuration in the VCS repository so that wlc knows to"
 " which server it should talk."
 msgstr ""
 
-#: ../../wlc.rst:231
+#: ../../wlc.rst:255
 msgid "Examples"
 msgstr ""
 
-#: ../../wlc.rst:233
+#: ../../wlc.rst:257
 msgid "Print current program version:"
 msgstr ""
 
-#: ../../wlc.rst:240
+#: ../../wlc.rst:264
 msgid "List all projects:"
 msgstr ""
 
-#: ../../wlc.rst:252
+#: ../../wlc.rst:276
 msgid "You can also let wlc know current project and it will then operate on it:"
 msgstr ""
 
-#: ../../wlc.rst:279
+#: ../../wlc.rst:303
 msgid "With such setup it is easy to commit pending changes in current project:"
 msgstr ""
 

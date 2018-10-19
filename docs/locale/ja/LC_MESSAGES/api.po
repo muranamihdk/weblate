@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"POT-Creation-Date: 2018-10-19 21:27+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -199,7 +199,7 @@ msgstr ""
 #: ../../api.rst:156
 msgid ""
 "Rate limiting can be adjusted in the :file:`settings.py`; see `Throttling"
-" in Django REST framework documentation <http://www.django-rest-"
+" in Django REST framework documentation <https://www.django-rest-"
 "framework.org/api-guide/throttling/>`_ for more details how to configure "
 "it."
 msgstr ""
@@ -1149,11 +1149,11 @@ msgstr ""
 msgid "Generic information about GitHub Webhooks"
 msgstr ""
 
-#: ../../api.rst:1112 ../../api.rst:1126 ../../api.rst:1140
+#: ../../api.rst:1112 ../../api.rst:1126 ../../api.rst:1140 ../../api.rst:1154
 msgid ":setting:`ENABLE_HOOKS`"
 msgstr ""
 
-#: ../../api.rst:1113 ../../api.rst:1127 ../../api.rst:1141
+#: ../../api.rst:1113 ../../api.rst:1127 ../../api.rst:1141 ../../api.rst:1155
 msgid "For enabling hooks for whole Weblate"
 msgstr ""
 
@@ -1189,7 +1189,7 @@ msgstr ""
 msgid ":ref:`bitbucket-setup`"
 msgstr ""
 
-#: ../../api.rst:1137
+#: ../../api.rst:1137 ../../api.rst:1151
 msgid "For instruction on setting up Bitbucket integration"
 msgstr ""
 
@@ -1197,23 +1197,37 @@ msgstr ""
 msgid "https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html"
 msgstr ""
 
-#: ../../api.rst:1139
+#: ../../api.rst:1139 ../../api.rst:1153
 msgid "Generic information about Bitbucket Webhooks"
 msgstr ""
 
-#: ../../api.rst:1146
-msgid "Exports"
+#: ../../api.rst:1145
+msgid ""
+"Special hook for handling Pagure notifications and automatically updating"
+" matching components."
 msgstr ""
 
-#: ../../api.rst:1148
-msgid "Weblate provides various exports to allow you to further process the data."
+#: ../../api.rst:1150
+msgid ":ref:`pagure-setup`"
 msgstr ""
 
 #: ../../api.rst:1152
+msgid "https://docs.pagure.org/pagure/usage/using_webhooks.html"
+msgstr ""
+
+#: ../../api.rst:1160
+msgid "Exports"
+msgstr ""
+
+#: ../../api.rst:1162
+msgid "Weblate provides various exports to allow you to further process the data."
+msgstr ""
+
+#: ../../api.rst:1166
 msgid "Output format: either ``json`` or ``csv``"
 msgstr ""
 
-#: ../../api.rst:1156
+#: ../../api.rst:1170
 msgid ""
 "Please use "
 ":http:get:`/api/components/(string:project)/(string:component)/statistics/`"
@@ -1222,47 +1236,56 @@ msgid ""
 " instead; it allows access to ACL controlled projects as well."
 msgstr ""
 
-#: ../../api.rst:1160
+#: ../../api.rst:1174
 msgid "Retrieves statistics for given component in given format."
 msgstr ""
 
-#: ../../api.rst:1162
+#: ../../api.rst:1176
 msgid "**Example request**:"
 msgstr ""
 
-#: ../../api.rst:1170
+#: ../../api.rst:1184
 msgid "**Example response**:"
 msgstr ""
 
-#: ../../api.rst:1235
+#: ../../api.rst:1249
 msgid "RSS feeds"
 msgstr ""
 
-#: ../../api.rst:1237
+#: ../../api.rst:1251
 msgid "Changes in translations are exported in RSS feeds."
 msgstr ""
 
-#: ../../api.rst:1241
+#: ../../api.rst:1255
 msgid "Retrieves RSS feed with recent changes for a translation."
 msgstr ""
 
-#: ../../api.rst:1245
+#: ../../api.rst:1259
 msgid "Retrieves RSS feed with recent changes for a component."
 msgstr ""
 
-#: ../../api.rst:1249
+#: ../../api.rst:1263
 msgid "Retrieves RSS feed with recent changes for a project."
 msgstr ""
 
-#: ../../api.rst:1253
+#: ../../api.rst:1267
 msgid "Retrieves RSS feed with recent changes for a language."
 msgstr ""
 
-#: ../../api.rst:1257
+#: ../../api.rst:1271
 msgid "Retrieves RSS feed with recent changes for Weblate instance."
 msgstr ""
 
-#: ../../api.rst:1261
+#: ../../api.rst:1275
 msgid "`RSS on wikipedia <https://en.wikipedia.org/wiki/RSS>`_"
 msgstr ""
+
+#~ msgid ""
+#~ "Rate limiting can be adjusted in "
+#~ "the :file:`settings.py`; see `Throttling in"
+#~ " Django REST framework documentation "
+#~ "<http://www.django-rest-framework.org/api-"
+#~ "guide/throttling/>`_ for more details how "
+#~ "to configure it."
+#~ msgstr ""
 
