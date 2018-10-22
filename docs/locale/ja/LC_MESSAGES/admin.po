@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-19 21:27+0900\n"
+"POT-Creation-Date: 2018-10-23 00:22+0900\n"
 "PO-Revision-Date: 2018-10-11 22:29+0900\n"
 "Last-Translator: \n"
 "Language: ja\n"
@@ -4471,7 +4471,7 @@ msgstr ""
 
 #: ../../admin/deployments.rst:600 ../../admin/install.rst:735
 #: ../../admin/optionals.rst:18 ../../admin/optionals.rst:68
-#: ../../admin/optionals.rst:123
+#: ../../admin/optionals.rst:134
 msgid "Installation"
 msgstr ""
 
@@ -8016,7 +8016,7 @@ msgid ""
 msgstr ""
 
 #: ../../admin/optionals.rst:37 ../../admin/optionals.rst:87
-#: ../../admin/optionals.rst:157
+#: ../../admin/optionals.rst:168
 msgid "Usage"
 msgstr ""
 
@@ -8052,7 +8052,7 @@ msgid ""
 ":file:`settings.py`:"
 msgstr ""
 
-#: ../../admin/optionals.rst:79 ../../admin/optionals.rst:146
+#: ../../admin/optionals.rst:79 ../../admin/optionals.rst:157
 msgid ""
 "This module includes additional database structures, to have them "
 "installed you should run the database migration:"
@@ -8099,36 +8099,69 @@ msgstr ""
 #: ../../admin/optionals.rst:114
 msgid ""
 "Legal module is used on `Hosted Weblate <https://weblate.org/hosting/>`_ "
-"and is used to provide required legal documents."
+"and is used to provide required legal documents. It comes with blank "
+"documents and you are expected to provide following templates with the "
+"documents:"
+msgstr ""
+
+#: ../../admin/optionals.rst:118
+msgid ":file:`legal/documents/tos.html`"
 msgstr ""
 
 #: ../../admin/optionals.rst:119
-msgid ""
-"The module ships legal documents for the Hosted Weblate service. You are "
-"required to adjust the templates to match your use case."
+msgid "Terms of service document"
 msgstr ""
 
-#: ../../admin/optionals.rst:125
+#: ../../admin/optionals.rst:120
+msgid ":file:`legal/documents/privacy.html`"
+msgstr ""
+
+#: ../../admin/optionals.rst:121
+msgid "Privacy policy document"
+msgstr ""
+
+#: ../../admin/optionals.rst:123
+msgid ":file:`legal/documents/summary.html`"
+msgstr ""
+
+#: ../../admin/optionals.rst:123
+msgid "Short overview of terms of service and privacy policy"
+msgstr ""
+
+#: ../../admin/optionals.rst:127
+msgid ""
+"You can find legal documents for the Hosted Weblate service in separate "
+"Git repository "
+"<https://github.com/WeblateOrg/hosted/tree/master/wlhosted/templates/legal/documents>."
+msgstr ""
+
+#: ../../admin/optionals.rst:130
+msgid ""
+"Most likely these will not be directly usable for you, but you might want"
+" to use them as a starting point and adjust them to match your use case."
+msgstr ""
+
+#: ../../admin/optionals.rst:136
 msgid ""
 "To install, simply add ``weblate.legal`` to installed applications in "
 ":file:`settings.py`:"
 msgstr ""
 
-#: ../../admin/optionals.rst:153
+#: ../../admin/optionals.rst:164
 msgid ""
 "Now you should edit the legal documents to match your service. You can "
 "find them in the :file:`weblate/legal/templates/legal/` folder."
 msgstr ""
 
-#: ../../admin/optionals.rst:159
+#: ../../admin/optionals.rst:170
 msgid "After installation the legal documents are shown in Weblate UI."
 msgstr ""
 
-#: ../../admin/optionals.rst:164
+#: ../../admin/optionals.rst:175
 msgid "Avatars"
 msgstr ""
 
-#: ../../admin/optionals.rst:166
+#: ../../admin/optionals.rst:177
 msgid ""
 "Weblate comes with built in support for showing user avatars based on "
 "emails. This can be disabled using :setting:`ENABLE_AVATARS`. The avatars"
@@ -8136,46 +8169,46 @@ msgid ""
 " sites serving them."
 msgstr ""
 
-#: ../../admin/optionals.rst:171
+#: ../../admin/optionals.rst:182
 msgid "Weblate currently supports single backend:"
 msgstr ""
 
-#: ../../admin/optionals.rst:173
+#: ../../admin/optionals.rst:184
 msgid "`Gravatar <https://gravatar.com/>`_"
 msgstr ""
 
-#: ../../admin/optionals.rst:177
+#: ../../admin/optionals.rst:188
 msgid ""
 ":ref:`production-cache-avatar`, :setting:`AVATAR_URL_PREFIX`, "
 ":setting:`ENABLE_AVATARS`"
 msgstr ""
 
-#: ../../admin/optionals.rst:182
+#: ../../admin/optionals.rst:193
 msgid "Spam protection"
 msgstr ""
 
-#: ../../admin/optionals.rst:184
+#: ../../admin/optionals.rst:195
 msgid ""
 "Optionally Weblate can be protected against suggestion spamming by "
 "unauthenticated users through `akismet.com <https://akismet.com/>`_ "
 "service."
 msgstr ""
 
-#: ../../admin/optionals.rst:188
+#: ../../admin/optionals.rst:199
 msgid ""
 "To enable this, you need to install `akismet` Python module and configure"
 " Akismet API key."
 msgstr ""
 
-#: ../../admin/optionals.rst:193
+#: ../../admin/optionals.rst:204
 msgid ":setting:`AKISMET_API_KEY`"
 msgstr ""
 
-#: ../../admin/optionals.rst:199
+#: ../../admin/optionals.rst:210
 msgid "Signing Git commits by GnuPG"
 msgstr ""
 
-#: ../../admin/optionals.rst:203
+#: ../../admin/optionals.rst:214
 msgid ""
 "Weblate allows you to sign all commits by it's GnuPG key. To configure "
 "this, you need to enable :setting:`WEBLATE_GPG_IDENTITY`. Weblate will "
@@ -8183,35 +8216,35 @@ msgid ""
 "commits."
 msgstr ""
 
-#: ../../admin/optionals.rst:207
+#: ../../admin/optionals.rst:218
 msgid "This feature needs GnuPG 2.1 or newer installed."
 msgstr ""
 
-#: ../../admin/optionals.rst:209
+#: ../../admin/optionals.rst:220
 msgid ""
 "You can find the key in the :setting:`DATA_DIR` and the public key is "
 "shown on the about page:"
 msgstr ""
 
-#: ../../admin/optionals.rst:214
+#: ../../admin/optionals.rst:225
 msgid ""
 "Alternatively you can also import existing keys into Weblate, just set "
 "``HOME=$DATA_DIR/home`` when invoking gpg."
 msgstr ""
 
-#: ../../admin/optionals.rst:219
+#: ../../admin/optionals.rst:230
 msgid ":setting:`WEBLATE_GPG_IDENTITY`"
 msgstr ""
 
-#: ../../admin/optionals.rst:224
+#: ../../admin/optionals.rst:235
 msgid "Rate limiting"
 msgstr ""
 
-#: ../../admin/optionals.rst:228
+#: ../../admin/optionals.rst:239
 msgid "The rate limiting now accepts more fine grained configuration."
 msgstr ""
 
-#: ../../admin/optionals.rst:230
+#: ../../admin/optionals.rst:241
 msgid ""
 "Several operations in Weblate are rate limited. At most "
 ":setting:`RATELIMIT_ATTEMPTS` attempts are allowed within "
@@ -8220,27 +8253,27 @@ msgid ""
 "settings, eg. `RATELIMIT_CONTACT_ATTEMPTS`, see scopes below."
 msgstr ""
 
-#: ../../admin/optionals.rst:236
+#: ../../admin/optionals.rst:247
 msgid "Following operations are subject to rate limiting:"
 msgstr ""
 
-#: ../../admin/optionals.rst:238
+#: ../../admin/optionals.rst:249
 msgid "Registration (`REGISTRATION` scope)"
 msgstr ""
 
-#: ../../admin/optionals.rst:239
+#: ../../admin/optionals.rst:250
 msgid "Sending message to admins (`MESSAGE` scope)"
 msgstr ""
 
-#: ../../admin/optionals.rst:240
+#: ../../admin/optionals.rst:251
 msgid "Password authentication on login (`LOGIN` scope)"
 msgstr ""
 
-#: ../../admin/optionals.rst:241
+#: ../../admin/optionals.rst:252
 msgid "Sitewide search (`SEARCH` scope)"
 msgstr ""
 
-#: ../../admin/optionals.rst:243
+#: ../../admin/optionals.rst:254
 msgid ""
 "Additionally if there are more than :setting:`AUTH_LOCK_ATTEMPTS` failed "
 "authentication attempts on one account, this account password "
@@ -8248,18 +8281,18 @@ msgid ""
 " for password reset."
 msgstr ""
 
-#: ../../admin/optionals.rst:250
+#: ../../admin/optionals.rst:261
 msgid "IP address for rate limiting"
 msgstr ""
 
-#: ../../admin/optionals.rst:252
+#: ../../admin/optionals.rst:263
 msgid ""
 "The rate limiting is based on client IP address. This is obtained from "
 "HTTP headers and you will have to change configuration in the event "
 "Weblate is running behind reverse proxy to work it properly."
 msgstr ""
 
-#: ../../admin/optionals.rst:258
+#: ../../admin/optionals.rst:269
 msgid ""
 ":setting:`IP_BEHIND_REVERSE_PROXY`, :setting:`IP_PROXY_HEADER`, "
 ":setting:`IP_PROXY_OFFSET`"
@@ -10021,5 +10054,19 @@ msgstr ""
 #~ "However, you might want to customize "
 #~ "this per source string and you "
 #~ "have the option here."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Legal module is used on `Hosted "
+#~ "Weblate <https://weblate.org/hosting/>`_ and is "
+#~ "used to provide required legal "
+#~ "documents."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The module ships legal documents for "
+#~ "the Hosted Weblate service. You are "
+#~ "required to adjust the templates to "
+#~ "match your use case."
 #~ msgstr ""
 
