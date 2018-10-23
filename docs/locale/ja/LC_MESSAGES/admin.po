@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-23 00:22+0900\n"
-"PO-Revision-Date: 2018-10-23 13:48+0900\n"
+"PO-Revision-Date: 2018-10-23 17:16+0900\n"
 "Last-Translator: \n"
 "Language: ja\n"
 "Language-Team: \n"
@@ -8380,14 +8380,14 @@ msgid ""
 "and file mask for which files to translate and Weblate automatically fetches "
 "from the VCS and finds all matching translatable files."
 msgstr ""
-"実際に翻訳する構成部分がコンポーネントです。VCSレポジトリの場所と、どのファイル"
-"を翻訳すべきかのファイルマスクを入力してください。これによりWeblateは自動的にVCS"
-"から取得しマッチするすべての翻訳ファイルを見つけます。"
+"実際に翻訳する構成要素がコンポーネントです。VCSレポジトリの場所と、どのファイル"
+"を翻訳すべきかのファイルマスクを入力すると、Weblateは自動的にVCSから取得し、マッ"
+"チするすべての翻訳ファイルを見つけます。"
 
 #: ../../admin/projects.rst:124
 msgid ""
 "You can find some examples of typical configurations in the :ref:`formats`."
-msgstr ""
+msgstr "典型的な設定例を :ref:`formats` のセクションで見ることができます。"
 
 #: ../../admin/projects.rst:128
 msgid ""
@@ -8395,6 +8395,9 @@ msgid ""
 "translation by anything what makes sense in your case (individual applications "
 "or addons, book chapters or websites)."
 msgstr ""
+"コンポーネントは適当なサイズに保つことをお勧めします。それぞれの事例に応じて、"
+"個々のアプリケーションやアドオン、本の各章や個々のウェブサイトなど、意味のある基"
+"準で翻訳を分割してください。"
 
 #: ../../admin/projects.rst:132
 msgid ""
@@ -8403,6 +8406,10 @@ msgid ""
 "when one translator is working on a component, this translation is locked for "
 "others, see :ref:`locking`."
 msgstr ""
+"Weblateは10000単位の翻訳を苦もなく処理できますが、そのような大規模な翻訳では、作"
+"業を分割し翻訳者間で調整することはより困難になります。また、一人の翻訳者があるコ"
+"ンポーネントの翻訳に取り組んでいる間、このコンポーネントの翻訳は他の翻訳者からは"
+"不可能になります。:ref:`locking` を参照してください。"
 
 #: ../../admin/projects.rst:137
 msgid ""
@@ -8417,23 +8424,27 @@ msgid ""
 "The component contains all important parameters for working with VCS and "
 "getting translations out of it:"
 msgstr ""
+"コンポーネントには、VCSを使用してそこから翻訳を取得するための、すべての重要なパ"
+"ラメータが含まれています。"
 
 #: ../../admin/projects.rst:145
 msgid "Version control system"
-msgstr ""
+msgstr "バージョンコントロールシステム"
 
 #: ../../admin/projects.rst:146
 msgid "VCS to use, see :ref:`vcs` for details."
-msgstr ""
+msgstr "使用するVCSです。詳しくは :ref:`vcs` を参照してください。"
 
 #: ../../admin/projects.rst:151
 msgid "Source code repository"
-msgstr ""
+msgstr "ソースコードリポジトリ"
 
 #: ../../admin/projects.rst:148
 msgid ""
 "VCS repository used to pull changes, see :ref:`vcs-repos` for more details."
 msgstr ""
+"変更を取得するために使用するVCSリポジトリです。より詳しくは :ref:`vcs-repos` を"
+"参照してください。"
 
 #: ../../admin/projects.rst:150
 msgid ""
@@ -8441,10 +8452,13 @@ msgid ""
 "that the repository should be shared with another component. See :ref:`internal-"
 "urls` for more details."
 msgstr ""
+"これは実際のVCSのURLであることもできますし、そのリポジトリが他のコンポーネントと"
+"共有されるべきであることを示す、``weblate://project/component`` であることもでき"
+"ます。より詳しくは :ref:`internal-urls` を参照してください。"
 
 #: ../../admin/projects.rst:155
 msgid "Repository push URL"
-msgstr ""
+msgstr "リポジトリのプッシュURL"
 
 #: ../../admin/projects.rst:154
 msgid ""
@@ -8452,43 +8466,48 @@ msgid ""
 "will be disabled when this is empty. See :ref:`vcs-repos` for more details on "
 "how to specify repository URL."
 msgstr ""
+"プッシュの際に使われるリポジトリのURLです。これは完全にオプションです。ここを空"
+"欄にしておけば、プッシュのサポートは無効化されます。リポジトリのURLをどのように"
+"特定するかについてのより詳しい説明は、:ref:`vcs-repos` を参照してください。"
 
 #: ../../admin/projects.rst:169
 msgid "Repository browser"
-msgstr ""
+msgstr "リポジトリの閲覧"
 
 #: ../../admin/projects.rst:158
 msgid ""
 "URL of repository browser to display source files (location where messages are "
 "used). When empty no such links will be generated."
 msgstr ""
+"ソースファイルを閲覧するためのリポジトリのURLです。メッセージが使われる場所にな"
+"ります。空欄であればそのようなリンクは生成されません。"
 
 #: ../../admin/projects.rst:161
 msgid "You can use following format strings:"
-msgstr ""
+msgstr "以下の書式が使用可能です。"
 
 #: ../../admin/projects.rst:163
 #, python-format
 msgid "``%(branchs)s`` - current branch"
-msgstr ""
+msgstr "``%(branchs)s`` - 現在のブランチ"
 
 #: ../../admin/projects.rst:164
 #, python-format
 msgid "``%(line)s`` - line in file"
-msgstr ""
+msgstr "``%(line)s`` - ファイル中の行"
 
 #: ../../admin/projects.rst:165
 #, python-format
 msgid "``%(file)s`` - filename"
-msgstr ""
+msgstr "``%(file)s`` - ファイル名"
 
 #: ../../admin/projects.rst:166
 msgid "``%(../file)s`` - filename in parent directory"
-msgstr ""
+msgstr "``%(../file)s`` - 親ディレクトリのファイル名"
 
 #: ../../admin/projects.rst:167
 msgid "``%(../../file)s`` - filename in grandparent directory"
-msgstr ""
+msgstr "``%(../../file)s`` - 親の親ディレクトリのファイル名"
 
 #: ../../admin/projects.rst:169
 #, python-format
@@ -8496,10 +8515,12 @@ msgid ""
 "For example on GitHub, you would use something like ``https://github.com/"
 "WeblateOrg/hello/blob/%(branch)s/%(file)s#L%(line)s``."
 msgstr ""
+"例えばGitHubなら、``https://github.com/WeblateOrg/hello/blob/%(branch)s/"
+"%(file)s#L%(line)s`` のように使うことができます。"
 
 #: ../../admin/projects.rst:174
 msgid "Exported repository URL"
-msgstr ""
+msgstr "出力リポジトリのURL"
 
 #: ../../admin/projects.rst:172
 msgid ""
@@ -8507,18 +8528,22 @@ msgid ""
 "`continuous-translation` is not used or when there is need to manually merge "
 "changes. You can use :ref:`git-exporter` to automate this for Git repositories."
 msgstr ""
+"Weblateで行われた変更が出力されるリポジトリのURLです。これは :ref:`continuous-"
+"translation` が使われないか、マニュアルで変更をマージしなけれなならない場合に重"
+"要です。これをGitリポジトリに対して自動化するためには、:ref:`git-exporter` を使"
+"うことができます。"
 
 #: ../../admin/projects.rst:176
 msgid "Repository branch"
-msgstr ""
+msgstr "リポジトリのブランチ"
 
 #: ../../admin/projects.rst:177
 msgid "Which branch to checkout from the VCS and where to look for translations."
-msgstr ""
+msgstr "VCSからチェックアウトして翻訳を探すべきブランチです。"
 
 #: ../../admin/projects.rst:187
 msgid "File mask"
-msgstr ""
+msgstr "ファイルマスク"
 
 #: ../../admin/projects.rst:179
 msgid ""
@@ -8527,72 +8552,90 @@ msgid ""
 "case your repository contains more than one translation files (eg. more Gettext "
 "domains), you need to create separate component for each."
 msgstr ""
+"翻訳すべきファイルのパスを示すマスクです。これは言語コードに置き換えられるべき、"
+"ひとつの * を含んでいなければなりません（これがどのように処理されるかについての"
+"情報は :ref:`languages` を参照してください）。リポジトリにひとつ以上の翻訳ファイ"
+"ルがある場合（例えばひとつ以上のGettextドメインがある場合）は、それぞれについて"
+"独立したコンポーネントを作成しなければなりません。"
 
 #: ../../admin/projects.rst:185
 msgid "For example ``po/*.po`` or ``locale/*/LC_MESSAGES/django.po``."
 msgstr ""
+"例えば ``po/*.po`` や ``locale/*/LC_MESSAGES/django.po`` などといったようになり"
+"ます。"
 
 #: ../../admin/projects.rst:187
 msgid ""
 "In case your filename contains special chars such as ``[``, ``]``, these need "
 "to be escaped as ``[[]`` or ``[]]``."
 msgstr ""
+"ファイル名に `[`` や ``]`` などの特別な文字を含む場合は、これらは ``[[]`` や "
+"``[]]`` のようにエスケープされねばなりません。"
 
 #: ../../admin/projects.rst:189
 msgid "Monolingual base language file"
-msgstr ""
+msgstr "Monolingualベース言語ファイル"
 
 #: ../../admin/projects.rst:190
 msgid "Base file containing strings definition for :ref:`monolingual`."
-msgstr ""
+msgstr ":ref:`monolingual` のための言語定義を含んだベースファイルです。"
 
 #: ../../admin/projects.rst:191
 msgid "Edit base file"
-msgstr ""
+msgstr "ベースファイルの編集"
 
 #: ../../admin/projects.rst:192
 msgid "Whether to allow editing of base file for :ref:`monolingual`."
 msgstr ""
+":ref:`monolingual` のためのベースファイルを編集することを許可するかどうかを設定"
+"します。"
 
 #: ../../admin/projects.rst:194
 msgid "Base file for new translations"
-msgstr ""
+msgstr "新規翻訳のためのベースファイル"
 
 #: ../../admin/projects.rst:194
 msgid ""
 "Base file used to generate new translations, eg. ``.pot`` file with Gettext, "
 "see :ref:`new-translations` for more information."
 msgstr ""
+"新規に翻訳ファイルを生成するためのベースとなるファイルです。例えばGettextにおい"
+"ては ``.pot`` ファイルがそれにあたります。より詳しい情報は :ref:`new-"
+"translations` を参照してください。"
 
 #: ../../admin/projects.rst:196
 msgid "File format"
-msgstr ""
+msgstr "ファイルフォーマット"
 
 #: ../../admin/projects.rst:197
 msgid "Translation file format, see also :ref:`formats`."
-msgstr ""
+msgstr "翻訳ファイルのフォーマットです。:ref:`formats` も参照してください。"
 
 #: ../../admin/projects.rst:199
 msgid "Source string bug report address"
-msgstr ""
+msgstr "原文のバグレポートのためのアドレス"
 
 #: ../../admin/projects.rst:199
 msgid ""
 "Email address used for reporting upstream bugs. This address will also receive "
 "notification about any source string comments made in Weblate."
 msgstr ""
+"原文のバグを報告するために使われるメールアドレスです。このメールアドレスは、"
+"Weblateにおいて原文に対して行われた、あらゆるコメントの通知を受け取るアドレスに"
+"もなります。"
 
 #: ../../admin/projects.rst:201
 msgid "Locked"
-msgstr ""
+msgstr "翻訳のロック"
 
 #: ../../admin/projects.rst:202
 msgid "You can lock the translation to prevent updates by users."
 msgstr ""
+"ユーザによるアップデートが行われないよう、翻訳をロックすることができます。"
 
 #: ../../admin/projects.rst:208
 msgid "Allow translation propagation"
-msgstr ""
+msgstr "翻訳の伝播の許可"
 
 #: ../../admin/projects.rst:204
 msgid ""
@@ -8600,85 +8643,94 @@ msgid ""
 "components within same project. This really depends on what you are "
 "translating, sometimes it's desirable to have same string used."
 msgstr ""
+"同一プロジェクト内の他のコンポーネントの翻訳が、このコンポーネントに伝播し共有さ"
+"れることを、無効にすることができます。これは翻訳の内容に強く依存するもので、同じ"
+"言葉を用いることが望ましい場合もあります。"
 
 #: ../../admin/projects.rst:208
 msgid ""
 "It's usually a good idea to disable this for monolingual translations unless "
 "you are using the same IDs across the whole project."
 msgstr ""
+"monolingual翻訳においては、プロジェクトの全体で同じメッセージIDを使っていない限"
+"りは、通常これを無効にするのが望ましいです。"
 
 #: ../../admin/projects.rst:210
 msgid "Save translation history"
-msgstr ""
+msgstr "翻訳履歴の保存"
 
 #: ../../admin/projects.rst:211
 msgid "Whether to store a history of translation changes in database."
-msgstr ""
+msgstr "データベースに翻訳の変更履歴を保存するかどうかを設定します。"
 
 #: ../../admin/projects.rst:212
 msgid "Enable suggestions"
-msgstr ""
+msgstr "提案の有効化"
 
 #: ../../admin/projects.rst:213
 msgid "Whether translation suggestions are accepted for this component."
-msgstr ""
+msgstr "このコンポーネントで翻訳の提案を受け入れるかどうかを設定します。"
 
 #: ../../admin/projects.rst:214 ../../admin/translating.rst:7
 msgid "Suggestion voting"
-msgstr ""
+msgstr "提案の投票"
 
 #: ../../admin/projects.rst:215
 msgid "Enable voting for suggestions, see :ref:`voting`."
-msgstr ""
+msgstr "提案に対する投票を有効化します。:ref:`voting` を参照してください。"
 
 #: ../../admin/projects.rst:216
 msgid "Autoaccept suggestions"
-msgstr ""
+msgstr "提案の自動受け入れ"
 
 #: ../../admin/projects.rst:217
 msgid "Automatically accept voted suggestions, see :ref:`voting`."
-msgstr ""
+msgstr "投票された提案を自動で受け入れます。:ref:`voting` を参照してください。"
 
 #: ../../admin/projects.rst:218 ../../admin/translating.rst:86
-#, fuzzy
 msgid "Translation flags"
-msgstr "翻訳プロジェクト"
+msgstr "翻訳フラグ"
 
 #: ../../admin/projects.rst:219
 msgid ""
 "Customization of quality checks and other Weblate behavior, see :ref:`custom-"
 "checks`."
 msgstr ""
+"品質チェックやその他のWeblateの挙動をカスタマイズします。:ref:`custom-checks` を"
+"参照してください。"
 
 #: ../../admin/projects.rst:220
 msgid "Translation license"
-msgstr ""
+msgstr "翻訳のライセンス"
 
 #: ../../admin/projects.rst:221
 msgid "License of this translation."
-msgstr ""
+msgstr "この翻訳のライセンスです。"
 
 #: ../../admin/projects.rst:222
 msgid "License URL"
-msgstr ""
+msgstr "ライセンスのURL"
 
 #: ../../admin/projects.rst:223
 msgid "URL where users can find full text of a license."
-msgstr ""
+msgstr "ユーザがライセンスの全文を読むことのできるURLです。"
 
 #: ../../admin/projects.rst:225
 msgid "New language"
-msgstr ""
+msgstr "新規言語"
 
 #: ../../admin/projects.rst:225
 msgid ""
 "How to handle requests for creating new languages. Please note that the "
 "availability of choices depends on the file format, see :ref:`formats`."
 msgstr ""
+"新規言語の作成のリクエストをどのように扱うかを設定します。ここでの選択肢はファイ"
+"ルフォーマットに依存することに注意してください。:ref:`formats` を参照してくださ"
+"い。"
 
 #: ../../admin/projects.rst:229
 msgid "Merge style"
-msgstr ""
+msgstr "マージのスタイル"
 
 #: ../../admin/projects.rst:228
 msgid ""
@@ -8686,18 +8738,22 @@ msgid ""
 "This might not be supported for some VCS. See :ref:`merge-rebase` for more "
 "details."
 msgstr ""
+"上流リポジトリにおける変更をどのように扱うかを設定することができます。使用する"
+"VCSによってはこの設定はサポートされないかもしれません。より詳しくは :ref:`merge-"
+"rebase` を参照してください。"
 
 #: ../../admin/projects.rst:231
 msgid "Commit message"
-msgstr ""
+msgstr "コミットメッセージ"
 
 #: ../../admin/projects.rst:232
 msgid "Message used when committing translation, see :ref:`markup`."
 msgstr ""
+"翻訳をコミットする際に使われるメッセージです。:ref:`markup` を参照してください。"
 
 #: ../../admin/projects.rst:235
 msgid "Committer name"
-msgstr ""
+msgstr "コミッタの名前"
 
 #: ../../admin/projects.rst:234
 msgid ""
@@ -8705,10 +8761,13 @@ msgid ""
 "real translator. On some VCS this might be not supported. Default value can be "
 "changed by :setting:`DEFAULT_COMMITER_NAME`."
 msgstr ""
+"Weblateからコミットする際に使われるコミッタの名前です。常に実際の翻訳者の名前が"
+"使われます。使用するVCSによってはこの設定はサポートされないかもしれません。初期"
+"設定値は :setting:`DEFAULT_COMMITER_NAME` で変更することができます。"
 
 #: ../../admin/projects.rst:239
 msgid "Committer email"
-msgstr ""
+msgstr "コミッタのメールアドレス"
 
 #: ../../admin/projects.rst:238
 msgid ""
@@ -8716,20 +8775,26 @@ msgid ""
 "translator. On some VCS this might be not supported. Default value can be "
 "changed by :setting:`DEFAULT_COMMITER_EMAIL`."
 msgstr ""
+"Weblateからコミットする際に使われるコミッタのメールアドレスです。常に実際の翻訳"
+"者のメールアドレスが使われます。使用するVCSによってはこの設定はサポートされない"
+"かもしれません。初期設定値は :setting:`DEFAULT_COMMITER_EMAIL` で変更することが"
+"できます。"
 
 #: ../../admin/projects.rst:242
 msgid "Push on commit"
-msgstr ""
+msgstr "コミット時のプッシュ"
 
 #: ../../admin/projects.rst:242
 msgid ""
 "Whether any committed changes should be automatically pushed to upstream "
 "repository."
 msgstr ""
+"コミットされたすべての変更を自動的に上流リポジトリにプッシュするかどうかを設定し"
+"ます。"
 
 #: ../../admin/projects.rst:246
 msgid "Age of changes to commit"
-msgstr ""
+msgstr "コミットすべき変更の経過時間"
 
 #: ../../admin/projects.rst:245
 msgid ""
@@ -8737,10 +8802,13 @@ msgid ""
 "`commit_pending` management command (usually executed by cron). Default value "
 "can be changed by :setting:`COMMIT_PENDING_HOURS`."
 msgstr ""
+":djadmin:`commit_pending` 管理コマンド（通常はcronにより実行されます）において、"
+"どの程度の時間までさかのぼって変更をコミットするかを設定します。初期設定値は :"
+"setting:`COMMIT_PENDING_HOURS` で変更することができます。"
 
 #: ../../admin/projects.rst:252
 msgid "Language filter"
-msgstr ""
+msgstr "言語フィルタ"
 
 #: ../../admin/projects.rst:249
 msgid ""
@@ -8749,6 +8817,11 @@ msgid ""
 "``^(cs|de|es)$`` will include only those there languages. Please note that you "
 "need to list language codes as they appear in the filename."
 msgstr ""
+"ファイルマスクによりスキャンが行われる際に、翻訳を言語によってフィルタするための"
+"正規表現です。Weblateによって管理される言語のリストを限定するために使うことがで"
+"きます。例えば ``^(cs|de|es)$`` とすると、ここに列挙された言語のみを含むようにな"
+"ります。ファイル名中で実際に使われている言語コードをリストアップする必要があるこ"
+"とに注意してください。"
 
 #: ../../admin/projects.rst:261
 msgid ":ref:`faq-vcs`"
