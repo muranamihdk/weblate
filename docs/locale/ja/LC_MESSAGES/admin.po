@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-23 00:22+0900\n"
-"PO-Revision-Date: 2018-10-23 13:36+0900\n"
+"PO-Revision-Date: 2018-10-23 13:48+0900\n"
 "Last-Translator: \n"
 "Language: ja\n"
 "Language-Team: \n"
@@ -8325,7 +8325,7 @@ msgstr "レビューの有効化"
 
 #: ../../admin/projects.rst:96
 msgid "Enable review workflow, see :ref:`reviews`."
-msgstr "レビューワークフローを有効にします。:ref:`reviews`を参照してください。"
+msgstr "レビューワークフローを有効にします。:ref:`reviews` を参照してください。"
 
 #: ../../admin/projects.rst:97
 msgid "Enable hooks"
@@ -8367,7 +8367,7 @@ msgid ""
 "pushing of changes (see also :ref:`push-changes`) or maintaining of Translation-"
 "Team header."
 msgstr ""
-"この他にも、変更の自動プッシュ（:ref:`push-changes`も参照してください）や翻訳"
+"この他にも、変更の自動プッシュ（:ref:`push-changes` も参照してください）や翻訳"
 "チームのヘッダーのメンテなど、制御が可能な追加機能がいくつかあります。"
 
 #: ../../admin/projects.rst:118
