@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-19 21:27+0900\n"
+"POT-Creation-Date: 2018-11-13 21:58+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,8 +160,8 @@ msgstr ""
 
 #: ../../wlc.rst:129
 msgid ""
-"Removes any utracked changes in Weblate object to match remote repository"
-" (translation, component or project)."
+"Removes any untracked changes in Weblate object to match remote "
+"repository (translation, component or project)."
 msgstr ""
 
 #: ../../wlc.rst:133
@@ -185,11 +185,11 @@ msgid "Displays lock status."
 msgstr ""
 
 #: ../../wlc.rst:153
-msgid "Locks compontent from translating in Weblate."
+msgid "Locks component from translating in Weblate."
 msgstr ""
 
 #: ../../wlc.rst:161
-msgid "Unlocks compontent from translating in Weblate."
+msgid "Unlocks component from translating in Weblate."
 msgstr ""
 
 #: ../../wlc.rst:167
@@ -251,7 +251,7 @@ msgid ":file:`/etc/xdg/weblate`"
 msgstr ""
 
 #: ../../wlc.rst:214
-msgid "Global configration file"
+msgid "Global configuration file"
 msgstr ""
 
 #: ../../wlc.rst:216
@@ -313,4 +313,19 @@ msgstr ""
 #: ../../wlc.rst:303
 msgid "With such setup it is easy to commit pending changes in current project:"
 msgstr ""
+
+#~ msgid ""
+#~ "Removes any utracked changes in Weblate"
+#~ " object to match remote repository "
+#~ "(translation, component or project)."
+#~ msgstr ""
+
+#~ msgid "Locks compontent from translating in Weblate."
+#~ msgstr ""
+
+#~ msgid "Unlocks compontent from translating in Weblate."
+#~ msgstr ""
+
+#~ msgid "Global configration file"
+#~ msgstr ""
 

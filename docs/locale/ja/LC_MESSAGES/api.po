@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-19 21:27+0900\n"
+"POT-Creation-Date: 2018-11-13 21:58+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1036,7 +1036,7 @@ msgid "Screenshots"
 msgstr ""
 
 #: ../../api.rst:1015
-msgid "Returns a list of screenshot string informations."
+msgid "Returns a list of screenshot string information."
 msgstr ""
 
 #: ../../api.rst:1021
@@ -1063,7 +1063,7 @@ msgstr ""
 
 #: ../../api.rst:1032
 msgid ""
-"link to asssociated source string information; see "
+"link to associated source string information; see "
 ":http:get:`/api/sources/(int:pk)/`"
 msgstr ""
 
@@ -1287,5 +1287,13 @@ msgstr ""
 #~ "<http://www.django-rest-framework.org/api-"
 #~ "guide/throttling/>`_ for more details how "
 #~ "to configure it."
+#~ msgstr ""
+
+#~ msgid "Returns a list of screenshot string informations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "link to asssociated source string "
+#~ "information; see :http:get:`/api/sources/(int:pk)/`"
 #~ msgstr ""
 
