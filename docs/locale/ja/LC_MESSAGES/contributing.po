@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"POT-Creation-Date: 2018-11-13 21:58+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -234,9 +234,9 @@ msgstr ""
 #, python-format
 msgid ""
 "If you are looking for some bugs which should be good for starting with "
-"our codebase, you can find them labelled with :guilabel:` `good first "
-"issue "
-"<https://github.com/WeblateOrg/weblate/labels/good%20first%20issue>`_ ` "
+"our codebase, you can find them labelled with :guilabel:`good first "
+"issue` "
+"<https://github.com/WeblateOrg/weblate/labels/good%20first%20issue>`_ "
 "tag:"
 msgstr ""
 
@@ -284,40 +284,33 @@ msgid ""
 "funding."
 msgstr ""
 
-#: ../../../BACKERS.rst
-#: /home/venus/weblate/weblate-repo/docs/contributing.rst>:2 <included from
+#: ../../../BACKERS.rst:2
 msgid "Backers who have funded Weblate"
 msgstr ""
 
-#: ../../../BACKERS.rst
-#: /home/venus/weblate/weblate-repo/docs/contributing.rst>:4 <included from
+#: ../../../BACKERS.rst:4
 msgid ""
 "List of Weblate supporters from `Bountysource "
 "<https://salt.bountysource.com/teams/weblate>`_:"
 msgstr ""
 
-#: ../../../BACKERS.rst
-#: /home/venus/weblate/weblate-repo/docs/contributing.rst>:7 <included from
+#: ../../../BACKERS.rst:7
 msgid "Yashiro Ccs"
 msgstr ""
 
-#: ../../../BACKERS.rst
-#: /home/venus/weblate/weblate-repo/docs/contributing.rst>:8 <included from
+#: ../../../BACKERS.rst:8
 msgid "Cheng-Chia Tseng"
 msgstr ""
 
-#: ../../../BACKERS.rst
-#: /home/venus/weblate/weblate-repo/docs/contributing.rst>:9 <included from
+#: ../../../BACKERS.rst:9
 msgid "Timon Reinhard"
 msgstr ""
 
-#: ../../../BACKERS.rst
-#: /home/venus/weblate/weblate-repo/docs/contributing.rst>:10 <included from
+#: ../../../BACKERS.rst:10
 msgid "`Cassidy James <https://cassidyjames.com/>`_"
 msgstr ""
 
-#: ../../../BACKERS.rst
-#: /home/venus/weblate/weblate-repo/docs/contributing.rst>:11 <included from
+#: ../../../BACKERS.rst:11
 msgid "Loic Dachary"
 msgstr ""
 
@@ -356,4 +349,14 @@ msgstr ""
 #: ../../contributing.rst:189
 msgid "Once the Docker image is tested, add a tag and push it"
 msgstr ""
+
+#~ msgid ""
+#~ "If you are looking for some bugs"
+#~ " which should be good for starting"
+#~ " with our codebase, you can find "
+#~ "them labelled with :guilabel:` `good "
+#~ "first issue "
+#~ "<https://github.com/WeblateOrg/weblate/labels/good%20first%20issue>`_"
+#~ " ` tag:"
+#~ msgstr ""
 

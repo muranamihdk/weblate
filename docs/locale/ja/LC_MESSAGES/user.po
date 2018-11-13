@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-19 21:27+0900\n"
+"POT-Creation-Date: 2018-11-13 21:58+0900\n"
 "PO-Revision-Date: 2018-10-11 19:04+0900\n"
 "Last-Translator: \n"
 "Language: ja\n"
@@ -29,9 +29,9 @@ msgstr "プロジェクトの構造"
 
 #: ../../user/basic.rst:7
 msgid ""
-"Internally, each project has translations to common strings propangated "
-"across other components within it by default. This lightens the burden of"
-" repetitive and multi version translation. Disable it as per "
+"Internally, each project has translations to common strings propagated "
+"across other components within it by default.  This lightens the burden "
+"of repetitive and multi version translation.  Disable it as per "
 ":ref:`component`, still producing errors for seemingly inconsistent "
 "resulting translations."
 msgstr ""
@@ -42,14 +42,14 @@ msgstr ""
 
 #: ../../user/checks.rst:4
 msgid ""
-"The quality checks help to catch common translator errors to make sure "
-"the translation is in good shape. The checks are divided into three "
-"severities and can be ignored in case there is a false positive."
+"The quality checks help catch common translator errors, ensuring the "
+"translation is in good shape. The checks are divided into three levels of"
+" severity, and can be ignored in case of false positives."
 msgstr ""
 
 #: ../../user/checks.rst:8
 msgid ""
-"Once submitting translation with failing check, this is immediatelly "
+"Once submitting a translation with a failing check, this is immediately "
 "shown to the user:"
 msgstr ""
 
@@ -59,357 +59,323 @@ msgstr ""
 
 #: ../../user/checks.rst:19
 msgid ""
-"In addition to :ref:`checks`, Weblate can also automatically fix some "
-"common errors in translated strings. This can be quite a powerful feature"
-" to prevent common mistakes in translations, however use it with caution "
-"as it can cause silent corruption as well."
+"In addition to :ref:`checks`, Weblate can also fix some common errors in "
+"translated strings automatically. Use it with caution to not have it add "
+"errors."
 msgstr ""
 
-#: ../../user/checks.rst:26
+#: ../../user/checks.rst:25
 msgid ":setting:`AUTOFIX_LIST`"
 msgstr ""
 
-#: ../../user/checks.rst:31
+#: ../../user/checks.rst:30
 msgid "Quality checks"
 msgstr ""
 
-#: ../../user/checks.rst:33
+#: ../../user/checks.rst:32
 msgid ""
-"Weblate does a wide range of quality checks on messages. The following "
-"section describes them in more detail. The checks also take account "
-"special rules for different languages, so if you think the result is "
-"wrong, please report a bug."
+"Weblate employs a wide range of quality checks on strings. The following "
+"section describes them all in further detail. There are also language "
+"specific checks. Please file a bug if anything is reported in error."
 msgstr ""
 
-#: ../../user/checks.rst:39
+#: ../../user/checks.rst:38
 msgid ":setting:`CHECK_LIST`, :ref:`custom-checks`"
 msgstr ""
 
-#: ../../user/checks.rst:42
+#: ../../user/checks.rst:41
 msgid "Translation checks"
 msgstr ""
 
-#: ../../user/checks.rst:44
+#: ../../user/checks.rst:43
 msgid ""
-"These are executed on every translation change and help translators to "
-"keep good quality of translations."
+"Executed upon every translation change, helping translators maintain good"
+" quality translations."
 msgstr ""
 
-#: ../../user/checks.rst:50
+#: ../../user/checks.rst:49
 msgid "Unchanged translation"
 msgstr ""
 
-#: ../../user/checks.rst:52
+#: ../../user/checks.rst:51
 msgid ""
-"The source and translated strings are identical at least in one of the "
-"plural forms. This check ignores some strings which are quite usually the"
-" same in all languages and strips various markup, which can occur in the "
-"string, to reduce the number of false positives."
+"Happens if the source and correspanding translation strings is identical,"
+" down to at least one of the plural forms. Some strings commonly found "
+"across all languages are ignored, and various markup is stripped. This "
+"reduces the number of false positives."
 msgstr ""
 
-#: ../../user/checks.rst:57
-msgid "This check can help finding strings which were mistakenly not translated."
+#: ../../user/checks.rst:56
+msgid "This check can help find strings mistakenly untranslated."
 msgstr ""
 
-#: ../../user/checks.rst:63
+#: ../../user/checks.rst:62
 msgid "Starting or trailing newline"
 msgstr ""
 
-#: ../../user/checks.rst:65
+#: ../../user/checks.rst:64
 msgid "Source and translation do not both start (or end) with a newline."
 msgstr ""
 
-#: ../../user/checks.rst:67
+#: ../../user/checks.rst:66
 msgid ""
-"Newlines usually appear in source string for a good reason, so omitting "
-"or adding it can lead to formatting problems when the translated text is "
-"used in the application."
+"Newlines usually appear in source strings for good reason, omissions or "
+"additions can lead to formatting problems when the translated text is put"
+" to use."
 msgstr ""
 
-#: ../../user/checks.rst:74
+#: ../../user/checks.rst:72
 msgid "Starting spaces"
 msgstr ""
 
-#: ../../user/checks.rst:76
+#: ../../user/checks.rst:74
 msgid "Source and translation do not both start with the same number of spaces."
 msgstr ""
 
-#: ../../user/checks.rst:78
+#: ../../user/checks.rst:76
 msgid ""
-"A space in the beginning is usually used for indentation in the interface"
-" and thus is important to keep."
+"A space in the beginning of a string is usually used for indentation in "
+"the interface and thus important to keep."
 msgstr ""
 
-#: ../../user/checks.rst:84
+#: ../../user/checks.rst:82
 msgid "Trailing space"
 msgstr ""
 
-#: ../../user/checks.rst:86
-msgid "Source and translation do not both end with a space."
-msgstr ""
-
-#: ../../user/checks.rst:88
+#: ../../user/checks.rst:84
 msgid ""
-"Trailing space is usually used to give space between neighbouring "
-"elements, so removing it might break application layout."
+"Checks that trailing spaces are replicated between both source and "
+"translation."
 msgstr ""
 
-#: ../../user/checks.rst:94
+#: ../../user/checks.rst:86
+msgid ""
+"Trailing space is usually utilized to space out neighbouring elements, so"
+" removing it might break layout."
+msgstr ""
+
+#: ../../user/checks.rst:92
 msgid "Trailing stop"
 msgstr ""
 
-#: ../../user/checks.rst:96
+#: ../../user/checks.rst:94
 msgid ""
-"Source and translation do not both end with a full stop. Full stop is "
-"also checked in various language variants (Chinese, Japanese, Devanagari "
-"or Urdu)."
+"Checks that full stops are replicated between both source and "
+"translation. The presence of full stops is checked for various languages "
+"where they do not belong (Chinese, Japanese, Devanagari or Urdu)."
 msgstr ""
 
-#: ../../user/checks.rst:99
-msgid ""
-"When the original string is a sentence, the translated one should be a "
-"sentence as well to be consistent within the translated content."
-msgstr ""
-
-#: ../../user/checks.rst:105
+#: ../../user/checks.rst:101
 msgid "Trailing colon"
 msgstr ""
 
-#: ../../user/checks.rst:107
+#: ../../user/checks.rst:103
 msgid ""
-"Source and translation do not both end with a colon or the colon is not "
-"correctly spaced. This includes spacing rules for languages like French "
-"or Breton. Colon is also checked in various language variants (Chinese or"
-" Japanese)."
+"Checks that colons are replicated between both source and translation, "
+"and that the they are correctly spaced. This includes rules for languages"
+" like French or Breton. The presence of colons is also checked for "
+"various languages where they do not belong (Chinese or Japanese)."
 msgstr ""
 
-#: ../../user/checks.rst:112
-msgid ""
-"Colon is part of a label and should be kept to provide consistent "
-"translation. Weblate also checks for various typographic conventions for "
-"colon, for example in some languages it should be preceded with space."
+#: ../../user/checks.rst:111
+msgid "Trailing question mark"
 msgstr ""
 
-#: ../../user/checks.rst:119
-msgid "Trailing question"
+#: ../../user/checks.rst:113
+msgid ""
+"Checks that question marks are replicated between both source and "
+"translation, and that they are correctly spaced or similar. This includes"
+" spacing rules for languages like French or Breton. The presence of "
+"question marks is also checked for various languages where they do not "
+"belong (Armenian, Arabic, Chinese, Korean, Japanese, Ethiopic, Vai or "
+"Coptic)."
 msgstr ""
 
 #: ../../user/checks.rst:121
-msgid ""
-"Source and translation do not both end with a question mark or it is not "
-"correctly spaced. This includes spacing rules for languages like French "
-"or Breton. Question mark is also checked in various language variants "
-"(Armenian, Arabic, Chinese, Korean, Japanese, Ethiopic, Vai or Coptic)."
-msgstr ""
-
-#: ../../user/checks.rst:126
-msgid ""
-"Question mark indicates question and these semantics should be kept in "
-"translated string as well. Weblate also checks for various typographic "
-"conventions for question mark, for example in some languages it should be"
-" preceded with space."
-msgstr ""
-
-#: ../../user/checks.rst:134
 msgid "Trailing exclamation"
+msgstr ""
+
+#: ../../user/checks.rst:123
+msgid ""
+"Checks that exclamations are replicated between both source and "
+"translation, and that they are correctly spaced. This includes spacing "
+"rules for languages like French or Breton. The presence of exclamation "
+"marks is also checked for various languages where they do not belong "
+"(Chinese, Japanese, Korean, Armenian, Limbu, Myanmar or Nko)."
+msgstr ""
+
+#: ../../user/checks.rst:131
+msgid "Trailing ellipsis"
+msgstr ""
+
+#: ../../user/checks.rst:133
+msgid ""
+"Checks that trailing ellipsises are replicated between both source and "
+"translation. This only checks for real ellipsis (``…``) not for three "
+"dots (``...``)."
 msgstr ""
 
 #: ../../user/checks.rst:136
 msgid ""
-"Source and translation do not both end with an exclamation mark or it is "
-"not correctly spaced. This includes spacing rules for languages like "
-"French or Breton. Exclamation mark is also checked in various language "
-"variants (Chinese, Japanese, Korean, Armenian, Limbu, Myanmar or Nko)."
+"An ellipsis is usually rendered nicer than three dots in print, and sound"
+" better with text-to-speech."
 msgstr ""
 
-#: ../../user/checks.rst:141
-msgid ""
-"Exclamation mark indicates some important statement and these semantics "
-"should be kept in translated string as well. Weblate also checks for "
-"various typographic conventions for exclamation mark, for example in some"
-" languages it should be preceded with space."
-msgstr ""
-
-#: ../../user/checks.rst:149
-msgid "Trailing ellipsis"
-msgstr ""
-
-#: ../../user/checks.rst:151
-msgid ""
-"Source and translation do not both end with an ellipsis. This only checks"
-" for real ellipsis (``…``) not for three dots (``...``)."
-msgstr ""
-
-#: ../../user/checks.rst:154
-msgid ""
-"An ellipsis is usually rendered nicer than three dots, so it's good to "
-"keep it when the original string was using that as well."
-msgstr ""
-
-#: ../../user/checks.rst:159 ../../user/checks.rst:502
+#: ../../user/checks.rst:140
 msgid "`Ellipsis on wikipedia <https://en.wikipedia.org/wiki/Ellipsis>`_"
 msgstr ""
 
-#: ../../user/checks.rst:165
+#: ../../user/checks.rst:146
 msgid "Trailing semicolon"
 msgstr ""
 
-#: ../../user/checks.rst:167
+#: ../../user/checks.rst:148
 msgid ""
-"Source and translation do not both end with a semicolon. This can be "
-"useful to keep formatting of entries such as desktop files."
+"Checks that semicolons at the end of sentences are replicated between "
+"both source and translation. This can be useful to keep formatting of "
+"entries such as desktop files."
 msgstr ""
 
-#: ../../user/checks.rst:173
+#: ../../user/checks.rst:154
 msgid "Maximum Length"
 msgstr ""
 
-#: ../../user/checks.rst:175
+#: ../../user/checks.rst:156
 msgid ""
-"Translation is too long to accept. This only checks for the length of "
-"translation characters."
+"Checks that translations are of acceptable length to fit available space."
+" This only checks for the length of translation characters."
 msgstr ""
 
-#: ../../user/checks.rst:178
-msgid ""
-"Source and translation usually do not have same amount of characters, but"
-" if the translation is too long, it can be affect a rendered shape. For "
-"example, in some UI widget, it should be kept in a specific length of "
-"characters in order to show the complete translation within limited "
-"space."
-msgstr ""
-
-#: ../../user/checks.rst:183
+#: ../../user/checks.rst:159
 msgid ""
 "Unlike the other checks, the flag should be set as a ``key:value`` pair "
 "like ``max-length:100``."
 msgstr ""
 
-#: ../../user/checks.rst:198
-msgid "Format strings"
+#: ../../user/checks.rst:174
+msgid "Formatted strings"
 msgstr ""
 
-#: ../../user/checks.rst:200
+#: ../../user/checks.rst:176
 msgid ""
-"Format string does not match source.  Omitting format string from "
-"translation usually cause severe problems, so you should really keep the "
-"format string matching the original one."
+"Checks that formatting in strings are replicated between both source and "
+"translation. Omitting format strings in translation usually cause severe "
+"problems, so the formatting in strings should usually match the source."
 msgstr ""
 
-#: ../../user/checks.rst:204
+#: ../../user/checks.rst:180
 msgid ""
 "Weblate supports checking format strings in several languages. The check "
-"is not enabled automatically, but only if string is flagged by "
-"appropriate flag (eg. `c-format` for C format). Gettext adds this "
-"automatically, but you will probably have to add it manually for other "
-"file formats or if your po files are not generated by "
-":program:`xgettext`."
+"is not enabled automatically, only if a string is flagged appropriately "
+"(e.g. `c-format` for C format). Gettext adds this automatically, but you "
+"will probably have to add it manually for other file formats or if your "
+"PO files are not generated by :program:`xgettext`."
 msgstr ""
 
-#: ../../user/checks.rst:210
+#: ../../user/checks.rst:186
 msgid ""
 "This can be done per unit (see :ref:`additional`) or in :ref:`component`."
-" Having it defined in component is simpler, but can lead to false "
-"positives in case the string is not interpreted as format string, but "
-"format string syntax happens to be used."
+" Having it defined per component is simpler, but can lead to false "
+"positives in case the string is not interpreted as a formating string, "
+"but format string syntax happens to be used."
 msgstr ""
 
-#: ../../user/checks.rst:215
+#: ../../user/checks.rst:191
 msgid ""
-"Besides checking, this will also highligh the format strings to be simply"
-" inserted to translated string:"
+"Besides checking, this will also highligh the formatting strings to "
+"easily insert them into translated strings:"
 msgstr ""
 
-#: ../../user/checks.rst:221
+#: ../../user/checks.rst:197
 msgid "Python format"
 msgstr ""
 
-#: ../../user/checks.rst:224 ../../user/checks.rst:240
-#: ../../user/checks.rst:256 ../../user/checks.rst:272
-#: ../../user/checks.rst:288 ../../user/checks.rst:304
-#: ../../user/checks.rst:343
+#: ../../user/checks.rst:200 ../../user/checks.rst:216
+#: ../../user/checks.rst:232 ../../user/checks.rst:248
+#: ../../user/checks.rst:264 ../../user/checks.rst:280
+#: ../../user/checks.rst:319
 msgid "Simple format string"
 msgstr ""
 
-#: ../../user/checks.rst:224 ../../user/checks.rst:256
-#: ../../user/checks.rst:272 ../../user/checks.rst:288
-#: ../../user/checks.rst:304 ../../user/checks.rst:343
+#: ../../user/checks.rst:200 ../../user/checks.rst:232
+#: ../../user/checks.rst:248 ../../user/checks.rst:264
+#: ../../user/checks.rst:280 ../../user/checks.rst:319
 #, python-format
 msgid "``There are %d apples``"
 msgstr ""
 
-#: ../../user/checks.rst:226 ../../user/checks.rst:242
-#: ../../user/checks.rst:317
+#: ../../user/checks.rst:202 ../../user/checks.rst:218
+#: ../../user/checks.rst:293
 msgid "Named format string"
 msgstr ""
 
-#: ../../user/checks.rst:226
+#: ../../user/checks.rst:202
 #, python-format
 msgid "``Your balance is %(amount) %(currency)``"
 msgstr ""
 
-#: ../../user/checks.rst:228 ../../user/checks.rst:244
-#: ../../user/checks.rst:260 ../../user/checks.rst:276
-#: ../../user/checks.rst:292 ../../user/checks.rst:306
-#: ../../user/checks.rst:319 ../../user/checks.rst:332
-#: ../../user/checks.rst:347 ../../user/checks.rst:360
+#: ../../user/checks.rst:204 ../../user/checks.rst:220
+#: ../../user/checks.rst:236 ../../user/checks.rst:252
+#: ../../user/checks.rst:268 ../../user/checks.rst:282
+#: ../../user/checks.rst:295 ../../user/checks.rst:308
+#: ../../user/checks.rst:323 ../../user/checks.rst:336
 msgid "Flag to enable"
 msgstr ""
 
-#: ../../user/checks.rst:228
+#: ../../user/checks.rst:204
 msgid "`python-format`"
 msgstr ""
 
-#: ../../user/checks.rst:233
+#: ../../user/checks.rst:209
 msgid ""
 ":ref:`Python string formatting <python2:string-formatting>`, `Python "
 "Format Strings "
 "<https://www.gnu.org/software/gettext/manual/html_node/python_002dformat.html>`_"
 msgstr ""
 
-#: ../../user/checks.rst:237
+#: ../../user/checks.rst:213
 msgid "Python brace format"
 msgstr ""
 
-#: ../../user/checks.rst:240
+#: ../../user/checks.rst:216
 msgid "``There are {} apples``"
 msgstr ""
 
-#: ../../user/checks.rst:242
+#: ../../user/checks.rst:218
 msgid "``Your balance is {amount} {currency}``"
 msgstr ""
 
-#: ../../user/checks.rst:244
+#: ../../user/checks.rst:220
 msgid "`python-brace-format`"
 msgstr ""
 
-#: ../../user/checks.rst:249
+#: ../../user/checks.rst:225
 msgid ""
 ":ref:`Python brace format <python:formatstrings>`, `Python Format Strings"
 " "
 "<https://www.gnu.org/software/gettext/manual/html_node/python_002dformat.html>`_"
 msgstr ""
 
-#: ../../user/checks.rst:253
+#: ../../user/checks.rst:229
 msgid "PHP format"
 msgstr ""
 
-#: ../../user/checks.rst:258 ../../user/checks.rst:274
-#: ../../user/checks.rst:290 ../../user/checks.rst:330
-#: ../../user/checks.rst:345 ../../user/checks.rst:358
+#: ../../user/checks.rst:234 ../../user/checks.rst:250
+#: ../../user/checks.rst:266 ../../user/checks.rst:306
+#: ../../user/checks.rst:321 ../../user/checks.rst:334
 msgid "Position format string"
 msgstr ""
 
-#: ../../user/checks.rst:258 ../../user/checks.rst:274
-#: ../../user/checks.rst:290 ../../user/checks.rst:345
+#: ../../user/checks.rst:234 ../../user/checks.rst:250
+#: ../../user/checks.rst:266 ../../user/checks.rst:321
 msgid "``Your balance is %1$d %2$s``"
 msgstr ""
 
-#: ../../user/checks.rst:260
+#: ../../user/checks.rst:236
 msgid "`php-format`"
 msgstr ""
 
-#: ../../user/checks.rst:265
+#: ../../user/checks.rst:241
 msgid ""
 "`PHP sprintf documentation "
 "<https://secure.php.net/manual/en/function.sprintf.php>`_, `PHP Format "
@@ -417,306 +383,311 @@ msgid ""
 "<https://www.gnu.org/software/gettext/manual/html_node/php_002dformat.html>`_"
 msgstr ""
 
-#: ../../user/checks.rst:269
+#: ../../user/checks.rst:245
 msgid "C format"
 msgstr ""
 
-#: ../../user/checks.rst:276
+#: ../../user/checks.rst:252
 msgid "`c-format`"
 msgstr ""
 
-#: ../../user/checks.rst:281
+#: ../../user/checks.rst:257
 msgid ""
 "`C format strings "
 "<https://www.gnu.org/software/gettext/manual/html_node/c_002dformat.html>`_,"
 " `C printf format <https://en.wikipedia.org/wiki/Printf_format_string>`_"
 msgstr ""
 
-#: ../../user/checks.rst:285
+#: ../../user/checks.rst:261
 msgid "Perl format"
 msgstr ""
 
-#: ../../user/checks.rst:292
+#: ../../user/checks.rst:268
 msgid "`perl-format`"
 msgstr ""
 
-#: ../../user/checks.rst:297
+#: ../../user/checks.rst:273
 msgid ""
 "`Perl sprintf <https://perldoc.perl.org/functions/sprintf.html>`_, `Perl "
 "Format Strings "
 "<https://www.gnu.org/software/gettext/manual/html_node/perl_002dformat.html>`_"
 msgstr ""
 
-#: ../../user/checks.rst:301
+#: ../../user/checks.rst:277
 msgid "Javascript format"
 msgstr ""
 
-#: ../../user/checks.rst:306
+#: ../../user/checks.rst:282
 msgid "`javascript-format`"
 msgstr ""
 
-#: ../../user/checks.rst:311
+#: ../../user/checks.rst:287
 msgid ""
-"`JavaScript Format Strings "
+"`JavaScript formatting strings "
 "<https://www.gnu.org/software/gettext/manual/html_node/javascript_002dformat.html>`_"
 msgstr ""
 
-#: ../../user/checks.rst:314
+#: ../../user/checks.rst:290
 msgid "AngularJS interpolation string"
 msgstr ""
 
-#: ../../user/checks.rst:317
+#: ../../user/checks.rst:293
 msgid "``Your balance is {{amount}} {{ currency }}``"
 msgstr ""
 
-#: ../../user/checks.rst:319
+#: ../../user/checks.rst:295
 msgid "`angularjs-format`"
 msgstr ""
 
-#: ../../user/checks.rst:324
+#: ../../user/checks.rst:300
 msgid ""
 "`AngularJS: API: $interpolate "
 "<https://docs.angularjs.org/api/ng/service/$interpolate>`_"
 msgstr ""
 
-#: ../../user/checks.rst:327
+#: ../../user/checks.rst:303
 msgid "C# format"
 msgstr ""
 
-#: ../../user/checks.rst:330 ../../user/checks.rst:358
+#: ../../user/checks.rst:306 ../../user/checks.rst:334
 msgid "``There are {0} apples``"
 msgstr ""
 
-#: ../../user/checks.rst:332
+#: ../../user/checks.rst:308
 msgid "`c-sharp-format`"
 msgstr ""
 
-#: ../../user/checks.rst:337
+#: ../../user/checks.rst:313
 msgid ""
 "`C# String Format <https://docs.microsoft.com/en-"
 "us/dotnet/api/system.string.format?view=netframework-4.7.2>`_"
 msgstr ""
 
-#: ../../user/checks.rst:340
+#: ../../user/checks.rst:316
 msgid "Java format"
 msgstr ""
 
-#: ../../user/checks.rst:347
+#: ../../user/checks.rst:323
 msgid "`java-format`"
 msgstr ""
 
-#: ../../user/checks.rst:352
+#: ../../user/checks.rst:328
 msgid ""
 "`Java Format Strings "
 "<https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html>`_"
 msgstr ""
 
-#: ../../user/checks.rst:355
+#: ../../user/checks.rst:331
 msgid "Java MessageFormat"
 msgstr ""
 
-#: ../../user/checks.rst:360
+#: ../../user/checks.rst:336
 msgid "`java-messageformat` enables the check unconditionally"
 msgstr ""
 
-#: ../../user/checks.rst:362
+#: ../../user/checks.rst:338
 msgid ""
 "`auto-java-messageformat` enables check only if there is a format string "
 "in the source"
 msgstr ""
 
-#: ../../user/checks.rst:368
+#: ../../user/checks.rst:344
 msgid ""
 "`Java MessageFormat "
 "<https://docs.oracle.com/javase/7/docs/api/java/text/MessageFormat.html>`_"
 msgstr ""
 
-#: ../../user/checks.rst:373
+#: ../../user/checks.rst:349
 msgid "Missing plurals"
 msgstr ""
 
-#: ../../user/checks.rst:375
+#: ../../user/checks.rst:351
 msgid ""
-"Some plural forms are not translated. Check plural form definition to see"
-" for which counts each plural form is being used."
+"Checks that all plural forms of a source string have been translated. "
+"Specifics on how each plural form is used can be found in the string "
+"definition."
 msgstr ""
 
-#: ../../user/checks.rst:378
+#: ../../user/checks.rst:354
 msgid ""
-"Not filling in some plural forms will lead to showing no text in the "
-"application in the event the plural would be displayed."
+"Failing to fill in plural forms will in some cases lead to displaying "
+"nothing when the plural tense is in use."
 msgstr ""
 
-#: ../../user/checks.rst:384
+#: ../../user/checks.rst:360
 msgid "Same plurals"
 msgstr ""
 
-#: ../../user/checks.rst:386
+#: ../../user/checks.rst:362
 msgid ""
-"Some plural forms are translated the same. In most languages the plural "
-"forms have to be different, that's why this feature is actually used."
+"Check that fails if some plural forms duplicated in the translation. In "
+"most languages they have to be different."
 msgstr ""
 
-#: ../../user/checks.rst:392
+#: ../../user/checks.rst:368
 msgid "Inconsistent"
 msgstr ""
 
-#: ../../user/checks.rst:394
-msgid ""
-"More different translations of one string in a project. This can also "
-"lead to inconsistencies in displayed checks. You can find other "
-"translations of this string on :guilabel:`All locations` tab."
-msgstr ""
-
-#: ../../user/checks.rst:398
+#: ../../user/checks.rst:370
 msgid ""
 "Weblate checks translations of the same string across all translation "
 "within a project to help you keep consistent translations."
 msgstr ""
 
-#: ../../user/checks.rst:404
+#: ../../user/checks.rst:373
+msgid ""
+"The check fails on differing translations of one string within a project."
+" This can also lead to inconsistencies in displayed checks. You can find "
+"other translations of this string on the :guilabel:`All locations` tab."
+msgstr ""
+
+#: ../../user/checks.rst:380
 msgid "Has been translated"
 msgstr ""
 
-#: ../../user/checks.rst:406
+#: ../../user/checks.rst:382
 msgid ""
-"This string has been translated in the past. This can happen when the "
-"translations have been reverted in VCS or otherwise lost."
+"Means a string has been translated already. This can happen when the "
+"translations have been reverted in VCS or lost otherwise."
 msgstr ""
 
-#: ../../user/checks.rst:412
+#: ../../user/checks.rst:388
 msgid "Mismatched \\\\n"
 msgstr ""
 
-#: ../../user/checks.rst:414
-msgid "Number of ``\\\\n`` literals in translation does not match source."
-msgstr ""
-
-#: ../../user/checks.rst:416
+#: ../../user/checks.rst:390
 msgid ""
-"Usually escaped newlines are important for formatting program output, so "
-"this should match to source."
+"Usually escaped newlines are important for formatting program output. "
+"Check fails if the number of ``\\\\n`` literals in translation do not "
+"match the source."
 msgstr ""
 
-#: ../../user/checks.rst:422
-msgid "Mismatched BBcode"
+#: ../../user/checks.rst:396
+msgid "Mismatched BBCode"
 msgstr ""
 
-#: ../../user/checks.rst:424
-msgid "BBcode in translation does not match source."
-msgstr ""
-
-#: ../../user/checks.rst:426
+#: ../../user/checks.rst:398
 msgid ""
-"This code is used as a simple markup to highlight important parts of a "
-"message, so it is usually a good idea to keep them."
+"BBCode represents simple markup, like for example highlighting important "
+"parts of a message in bold font, or italics."
 msgstr ""
 
-#: ../../user/checks.rst:431
+#: ../../user/checks.rst:401
+msgid "This check ensures they are also found in translation."
+msgstr ""
+
+#: ../../user/checks.rst:405
 msgid ""
 "The method for detecting BBcode is currently quite simple so this check "
 "might produce false positives."
 msgstr ""
 
-#: ../../user/checks.rst:437
+#: ../../user/checks.rst:411
 msgid "Zero-width space"
 msgstr ""
 
-#: ../../user/checks.rst:439
-msgid "Translation contains extra zero-width space (<U+200B>) character."
+#: ../../user/checks.rst:413
+msgid ""
+"Zero-width space (<U+200B>) character are used to truncate messages "
+"within words."
 msgstr ""
 
-#: ../../user/checks.rst:441
+#: ../../user/checks.rst:415
 msgid ""
-"This character is usually inserted by mistake, though it might have a "
-"legitimate use. Some programs might have problems when this character is "
-"used."
+"As they are usually inserted by mistake, this check is triggered once "
+"they are present in translation. Some programs might have problems when "
+"this character is used."
 msgstr ""
 
-#: ../../user/checks.rst:446
+#: ../../user/checks.rst:420
 msgid ""
-"`Zero width space on wikipedia <https://en.wikipedia.org/wiki/Zero-"
+"`Zero width space on Wikipedia <https://en.wikipedia.org/wiki/Zero-"
 "width_space>`_"
 msgstr ""
 
-#: ../../user/checks.rst:452
+#: ../../user/checks.rst:426
 msgid "Invalid XML markup"
 msgstr ""
 
-#: ../../user/checks.rst:456
-msgid "The XML markup is invalid."
+#: ../../user/checks.rst:430
+msgid "The XML markup is not valid."
 msgstr ""
 
-#: ../../user/checks.rst:461
+#: ../../user/checks.rst:435
 msgid "XML tags mismatch"
 msgstr ""
 
-#: ../../user/checks.rst:463
-msgid "XML tags in translation do not match source."
-msgstr ""
-
-#: ../../user/checks.rst:465
+#: ../../user/checks.rst:437
 msgid ""
-"This usually means resulting output will look different. In most cases "
-"this is not desired result from translation, but occasionally it is "
-"desired."
+"This usually means the resulting output will look different. In most "
+"cases this is not desired result from changing the translation, but "
+"occasionally it is."
 msgstr ""
 
-#: ../../user/checks.rst:469
+#: ../../user/checks.rst:440
+msgid "Checks that XML tags are replicated between both source and translation."
+msgstr ""
+
+#: ../../user/checks.rst:443
 msgid "Source checks"
 msgstr ""
 
-#: ../../user/checks.rst:471
-msgid "Source checks can help developers to improve quality of source strings."
+#: ../../user/checks.rst:445
+msgid "Source checks can help developers improve the quality of source strings."
 msgstr ""
 
-#: ../../user/checks.rst:476
+#: ../../user/checks.rst:450
 msgid "Optional plural"
 msgstr ""
 
-#: ../../user/checks.rst:478
+#: ../../user/checks.rst:452
 msgid ""
-"The string is optionally used as plural, but not using plural forms. In "
-"case your translation system supports this, you should use plural aware "
-"variant of it."
+"The string is optionally used as a plural, but does not use plural forms."
+" In case your translation system supports this, you should use the plural"
+" aware variant of it."
 msgstr ""
 
-#: ../../user/checks.rst:482
+#: ../../user/checks.rst:456
 msgid "For example with Gettext in Python it could be:"
 msgstr ""
 
-#: ../../user/checks.rst:493
+#: ../../user/checks.rst:467
 msgid "Ellipsis"
 msgstr ""
 
-#: ../../user/checks.rst:495
+#: ../../user/checks.rst:469
 msgid ""
-"The string uses three dots (``...``) instead of an ellipsis character "
-"(``…``)."
+"This fails when the string uses three dots (``...``) when it should use "
+"an ellipsis character (``…``)."
 msgstr ""
 
-#: ../../user/checks.rst:497
+#: ../../user/checks.rst:471
 msgid ""
 "Using the Unicode character is in most cases the better approach and "
-"looks better when rendered."
+"looks better rendered, and may sound better with text-to-speech."
 msgstr ""
 
-#: ../../user/checks.rst:507
+#: ../../user/checks.rst:476
+msgid "`Ellipsis on Wikipedia <https://en.wikipedia.org/wiki/Ellipsis>`_"
+msgstr ""
+
+#: ../../user/checks.rst:481
 msgid "Multiple failing checks"
 msgstr ""
 
-#: ../../user/checks.rst:509
+#: ../../user/checks.rst:483
 msgid ""
-"More translations of this string have some failed quality checks. This is"
-" usually an indication that something could be done about improving the "
+"Numerous translations of this string have failing quality checks. This is"
+" usually an indication that something could be done to improving the "
 "source string."
 msgstr ""
 
-#: ../../user/checks.rst:513
+#: ../../user/checks.rst:487
 msgid ""
-"This check can quite often be caused by a missing full stop at the end of"
-" a sentence or similar minor issues which translators tend to fix in "
-"translations, while it would be better to fix it in a source string."
+"This check failing can quite often be caused by a missing full stop at "
+"the end of a sentence, or similar minor issues which translators tend to "
+"fix in translation, while it would be better to fix it in the source "
+"string."
 msgstr ""
 
 #: ../../user/files.rst:2
@@ -1079,7 +1050,7 @@ msgstr ""
 
 #: ../../user/translating.rst:18
 msgid ""
-"Plase see :ref:`workflows` for more information about translation "
+"Please see :ref:`workflows` for more information about translation "
 "workflow."
 msgstr ""
 
@@ -1451,7 +1422,7 @@ msgstr ""
 msgid ""
 "Every change is by default (unless disabled in component settings) saved "
 "in the database and can be reverted. Of course you can still also revert "
-"anything in the underlaying version control system."
+"anything in the underlying version control system."
 msgstr ""
 
 #: ../../user/translating.rst:202
@@ -1556,5 +1527,407 @@ msgstr ""
 #~ "editor in `nette documentation "
 #~ "<https://pla.nette.org/en/how-open-files-in-"
 #~ "ide-from-debugger>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Internally, each project has translations "
+#~ "to common strings propangated across "
+#~ "other components within it by default."
+#~ " This lightens the burden of "
+#~ "repetitive and multi version translation. "
+#~ "Disable it as per :ref:`component`, "
+#~ "still producing errors for seemingly "
+#~ "inconsistent resulting translations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The quality checks help to catch "
+#~ "common translator errors to make sure"
+#~ " the translation is in good shape."
+#~ " The checks are divided into three"
+#~ " severities and can be ignored in "
+#~ "case there is a false positive."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once submitting translation with failing "
+#~ "check, this is immediatelly shown to "
+#~ "the user:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In addition to :ref:`checks`, Weblate "
+#~ "can also automatically fix some common"
+#~ " errors in translated strings. This "
+#~ "can be quite a powerful feature to"
+#~ " prevent common mistakes in translations,"
+#~ " however use it with caution as "
+#~ "it can cause silent corruption as "
+#~ "well."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate does a wide range of "
+#~ "quality checks on messages. The "
+#~ "following section describes them in more"
+#~ " detail. The checks also take account"
+#~ " special rules for different languages, "
+#~ "so if you think the result is "
+#~ "wrong, please report a bug."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "These are executed on every translation"
+#~ " change and help translators to keep"
+#~ " good quality of translations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The source and translated strings are"
+#~ " identical at least in one of "
+#~ "the plural forms. This check ignores "
+#~ "some strings which are quite usually "
+#~ "the same in all languages and "
+#~ "strips various markup, which can occur"
+#~ " in the string, to reduce the "
+#~ "number of false positives."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This check can help finding strings "
+#~ "which were mistakenly not translated."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Newlines usually appear in source string"
+#~ " for a good reason, so omitting "
+#~ "or adding it can lead to "
+#~ "formatting problems when the translated "
+#~ "text is used in the application."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A space in the beginning is "
+#~ "usually used for indentation in the "
+#~ "interface and thus is important to "
+#~ "keep."
+#~ msgstr ""
+
+#~ msgid "Source and translation do not both end with a space."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Trailing space is usually used to "
+#~ "give space between neighbouring elements, "
+#~ "so removing it might break application"
+#~ " layout."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Source and translation do not both "
+#~ "end with a full stop. Full stop"
+#~ " is also checked in various language"
+#~ " variants (Chinese, Japanese, Devanagari or"
+#~ " Urdu)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When the original string is a "
+#~ "sentence, the translated one should be"
+#~ " a sentence as well to be "
+#~ "consistent within the translated content."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Source and translation do not both "
+#~ "end with a colon or the colon "
+#~ "is not correctly spaced. This includes"
+#~ " spacing rules for languages like "
+#~ "French or Breton. Colon is also "
+#~ "checked in various language variants "
+#~ "(Chinese or Japanese)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Colon is part of a label and "
+#~ "should be kept to provide consistent "
+#~ "translation. Weblate also checks for "
+#~ "various typographic conventions for colon, "
+#~ "for example in some languages it "
+#~ "should be preceded with space."
+#~ msgstr ""
+
+#~ msgid "Trailing question"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Source and translation do not both "
+#~ "end with a question mark or it "
+#~ "is not correctly spaced. This includes"
+#~ " spacing rules for languages like "
+#~ "French or Breton. Question mark is "
+#~ "also checked in various language "
+#~ "variants (Armenian, Arabic, Chinese, Korean,"
+#~ " Japanese, Ethiopic, Vai or Coptic)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Question mark indicates question and "
+#~ "these semantics should be kept in "
+#~ "translated string as well. Weblate also"
+#~ " checks for various typographic conventions"
+#~ " for question mark, for example in"
+#~ " some languages it should be preceded"
+#~ " with space."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Source and translation do not both "
+#~ "end with an exclamation mark or it"
+#~ " is not correctly spaced. This "
+#~ "includes spacing rules for languages "
+#~ "like French or Breton. Exclamation mark"
+#~ " is also checked in various language"
+#~ " variants (Chinese, Japanese, Korean, "
+#~ "Armenian, Limbu, Myanmar or Nko)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Exclamation mark indicates some important "
+#~ "statement and these semantics should be"
+#~ " kept in translated string as well."
+#~ " Weblate also checks for various "
+#~ "typographic conventions for exclamation mark,"
+#~ " for example in some languages it "
+#~ "should be preceded with space."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Source and translation do not both "
+#~ "end with an ellipsis. This only "
+#~ "checks for real ellipsis (``…``) not "
+#~ "for three dots (``...``)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An ellipsis is usually rendered nicer"
+#~ " than three dots, so it's good "
+#~ "to keep it when the original "
+#~ "string was using that as well."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Source and translation do not both "
+#~ "end with a semicolon. This can be"
+#~ " useful to keep formatting of entries"
+#~ " such as desktop files."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Translation is too long to accept. "
+#~ "This only checks for the length of"
+#~ " translation characters."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Source and translation usually do not"
+#~ " have same amount of characters, but"
+#~ " if the translation is too long, "
+#~ "it can be affect a rendered shape."
+#~ " For example, in some UI widget, "
+#~ "it should be kept in a specific"
+#~ " length of characters in order to "
+#~ "show the complete translation within "
+#~ "limited space."
+#~ msgstr ""
+
+#~ msgid "Format strings"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Format string does not match source."
+#~ "  Omitting format string from translation"
+#~ " usually cause severe problems, so "
+#~ "you should really keep the format "
+#~ "string matching the original one."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate supports checking format strings "
+#~ "in several languages. The check is "
+#~ "not enabled automatically, but only if"
+#~ " string is flagged by appropriate "
+#~ "flag (eg. `c-format` for C format). "
+#~ "Gettext adds this automatically, but you"
+#~ " will probably have to add it "
+#~ "manually for other file formats or "
+#~ "if your po files are not generated"
+#~ " by :program:`xgettext`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This can be done per unit (see "
+#~ ":ref:`additional`) or in :ref:`component`. "
+#~ "Having it defined in component is "
+#~ "simpler, but can lead to false "
+#~ "positives in case the string is "
+#~ "not interpreted as format string, but"
+#~ " format string syntax happens to be"
+#~ " used."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Besides checking, this will also "
+#~ "highligh the format strings to be "
+#~ "simply inserted to translated string:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`JavaScript Format Strings "
+#~ "<https://www.gnu.org/software/gettext/manual/html_node/javascript_002dformat.html>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Some plural forms are not translated."
+#~ " Check plural form definition to see"
+#~ " for which counts each plural form"
+#~ " is being used."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Not filling in some plural forms "
+#~ "will lead to showing no text in"
+#~ " the application in the event the "
+#~ "plural would be displayed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Some plural forms are translated the "
+#~ "same. In most languages the plural "
+#~ "forms have to be different, that's "
+#~ "why this feature is actually used."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "More different translations of one "
+#~ "string in a project. This can also"
+#~ " lead to inconsistencies in displayed "
+#~ "checks. You can find other translations"
+#~ " of this string on :guilabel:`All "
+#~ "locations` tab."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This string has been translated in "
+#~ "the past. This can happen when the"
+#~ " translations have been reverted in "
+#~ "VCS or otherwise lost."
+#~ msgstr ""
+
+#~ msgid "Number of ``\\\\n`` literals in translation does not match source."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Usually escaped newlines are important "
+#~ "for formatting program output, so this"
+#~ " should match to source."
+#~ msgstr ""
+
+#~ msgid "Mismatched BBcode"
+#~ msgstr ""
+
+#~ msgid "BBcode in translation does not match source."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This code is used as a simple "
+#~ "markup to highlight important parts of"
+#~ " a message, so it is usually a"
+#~ " good idea to keep them."
+#~ msgstr ""
+
+#~ msgid "Translation contains extra zero-width space (<U+200B>) character."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This character is usually inserted by"
+#~ " mistake, though it might have a "
+#~ "legitimate use. Some programs might have"
+#~ " problems when this character is "
+#~ "used."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Zero width space on wikipedia "
+#~ "<https://en.wikipedia.org/wiki/Zero-width_space>`_"
+#~ msgstr ""
+
+#~ msgid "The XML markup is invalid."
+#~ msgstr ""
+
+#~ msgid "XML tags in translation do not match source."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This usually means resulting output will"
+#~ " look different. In most cases this"
+#~ " is not desired result from "
+#~ "translation, but occasionally it is "
+#~ "desired."
+#~ msgstr ""
+
+#~ msgid "Source checks can help developers to improve quality of source strings."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The string is optionally used as "
+#~ "plural, but not using plural forms. "
+#~ "In case your translation system supports"
+#~ " this, you should use plural aware"
+#~ " variant of it."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The string uses three dots (``...``) "
+#~ "instead of an ellipsis character "
+#~ "(``…``)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Using the Unicode character is in "
+#~ "most cases the better approach and "
+#~ "looks better when rendered."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "More translations of this string have"
+#~ " some failed quality checks. This is"
+#~ " usually an indication that something "
+#~ "could be done about improving the "
+#~ "source string."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This check can quite often be "
+#~ "caused by a missing full stop at"
+#~ " the end of a sentence or "
+#~ "similar minor issues which translators "
+#~ "tend to fix in translations, while "
+#~ "it would be better to fix it "
+#~ "in a source string."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Plase see :ref:`workflows` for more "
+#~ "information about translation workflow."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Every change is by default (unless "
+#~ "disabled in component settings) saved in"
+#~ " the database and can be reverted."
+#~ " Of course you can still also "
+#~ "revert anything in the underlaying "
+#~ "version control system."
 #~ msgstr ""
 

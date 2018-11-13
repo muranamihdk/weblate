@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"POT-Creation-Date: 2018-11-13 21:58+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -254,7 +254,7 @@ msgid "*Any user* can edit non approved translations."
 msgstr ""
 
 #: ../../workflows.rst:112
-msgid "*Reviewer* can approve / unapprove strings."
+msgid "*Reviewer* can approve / unapproved strings."
 msgstr ""
 
 #: ../../workflows.rst:113
@@ -290,4 +290,7 @@ msgid ""
 " you. For example on Hosted Weblate this is not available for projects "
 "hosted for free."
 msgstr ""
+
+#~ msgid "*Reviewer* can approve / unapprove strings."
+#~ msgstr ""
 

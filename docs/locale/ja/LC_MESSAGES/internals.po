@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"POT-Creation-Date: 2018-11-13 21:58+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 
 #: ../../internals.rst:20
-msgid "``accounts```"
+msgid "``accounts``"
 msgstr ""
 
 #: ../../internals.rst:22
@@ -125,7 +125,7 @@ msgid "The optional :ref:`legal` module."
 msgstr ""
 
 #: ../../internals.rst:60
-msgid "``machinery```"
+msgid "``machinery``"
 msgstr ""
 
 #: ../../internals.rst:62
@@ -187,4 +187,10 @@ msgstr ""
 #: ../../internals.rst:90
 msgid "Django admin interface customization."
 msgstr ""
+
+#~ msgid "``accounts```"
+#~ msgstr ""
+
+#~ msgid "``machinery```"
+#~ msgstr ""
 
