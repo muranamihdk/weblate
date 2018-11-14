@@ -4,45 +4,53 @@
 # Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2018-11-15 00:38+0900\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.2\n"
 
 #: ../../internals.rst:4
 msgid "Internals"
-msgstr ""
+msgstr "内部構造"
 
 #: ../../internals.rst:8
 msgid "This chapter will give you basic overview of Weblate internals."
-msgstr ""
+msgstr "この章では、Weblate の内部構造の、基本的な概要を説明します。"
 
 #: ../../internals.rst:10
 msgid ""
 "Weblate is based on `Django`_ and most of its code structure comes from "
-"that. If you are not familiar with Django, you might want to check "
-":doc:`django:intro/overview` to get basic understanding of files "
-"structure."
+"that. If you are not familiar with Django, you might want to check :doc:"
+"`django:intro/overview` to get basic understanding of files structure."
 msgstr ""
+"Weblate は ' Django'_ に基づいており、そのコード構造のほとんどはそこから"
+"来ています。Django に馴染みがない場合は、そのファイル構造について基本的"
+"な理解を得るために、:doc:`django:intro/overview` をチェックしてみてくだ"
+"さい。"
 
 #: ../../internals.rst:15
 msgid "Modules"
-msgstr ""
+msgstr "モジュール"
 
 #: ../../internals.rst:17
 msgid ""
 "Weblate consists of several Django applications (some of them are "
 "optional, see :doc:`admin/optionals`):"
 msgstr ""
+"Weblate はいくつかの Django アプリケーションで構成されています（そのうち"
+"のいくつかはオプションです。:doc:`admin/optionals` を参照してくださ"
+"い）。"
 
 #: ../../internals.rst:20
 msgid "``accounts``"
@@ -50,7 +58,7 @@ msgstr ""
 
 #: ../../internals.rst:22
 msgid "User account, profiles and notifications."
-msgstr ""
+msgstr "ユーザーアカウント、プロファイル、および通知。"
 
 #: ../../internals.rst:24
 msgid "``addons``"
@@ -59,6 +67,8 @@ msgstr ""
 #: ../../internals.rst:26
 msgid "Addons to tweak Weblate behavior, see :ref:`addons`."
 msgstr ""
+"Weblate の動作を微調整するためのアドオン。:ref:`addons` を参照してくださ"
+"い。"
 
 #: ../../internals.rst:28
 msgid "``api``"
@@ -66,7 +76,7 @@ msgstr ""
 
 #: ../../internals.rst:30
 msgid "API based on `Django REST framework`_."
-msgstr ""
+msgstr "`Django REST framework`_ に基づく API。"
 
 #: ../../internals.rst:32
 msgid "``auth``"
@@ -74,7 +84,7 @@ msgstr ""
 
 #: ../../internals.rst:34
 msgid "Authentication and permissions."
-msgstr ""
+msgstr "認証とアクセス許可。"
 
 #: ../../internals.rst:36
 msgid "``billing``"
@@ -82,7 +92,7 @@ msgstr ""
 
 #: ../../internals.rst:38
 msgid "The optional :ref:`billing` module."
-msgstr ""
+msgstr "オプションの :ref:`billing` モジュール。"
 
 #: ../../internals.rst:40
 msgid "``formats``"
@@ -90,7 +100,7 @@ msgstr ""
 
 #: ../../internals.rst:42
 msgid "File formats abstraction layer based on translate-toolkit."
-msgstr ""
+msgstr "translate-toolkit に基づくファイル形式の抽象化レイヤー。"
 
 #: ../../internals.rst:44
 msgid "``gitexport``"
@@ -98,7 +108,7 @@ msgstr ""
 
 #: ../../internals.rst:46
 msgid "The optional :ref:`git-exporter` module."
-msgstr ""
+msgstr "オプションの :ref:`git-exporter` モジュール。"
 
 #: ../../internals.rst:48
 msgid "``lang``"
@@ -106,7 +116,7 @@ msgstr ""
 
 #: ../../internals.rst:50
 msgid "Module defining language and plural models."
-msgstr ""
+msgstr "言語と複数形モデルを定義するモジュール。"
 
 #: ../../internals.rst:52
 msgid "``langdata``"
@@ -114,7 +124,7 @@ msgstr ""
 
 #: ../../internals.rst:54
 msgid "Language data definitions."
-msgstr ""
+msgstr "言語データの定義。"
 
 #: ../../internals.rst:56
 msgid "``legal``"
@@ -122,7 +132,7 @@ msgstr ""
 
 #: ../../internals.rst:58
 msgid "The optional :ref:`legal` module."
-msgstr ""
+msgstr "オプションの :ref:`legal` モジュール。"
 
 #: ../../internals.rst:60
 msgid "``machinery``"
@@ -130,7 +140,7 @@ msgstr ""
 
 #: ../../internals.rst:62
 msgid "Machine translation services integration."
-msgstr ""
+msgstr "機械翻訳サービスの統合。"
 
 #: ../../internals.rst:64
 msgid "``memory``"
@@ -138,7 +148,7 @@ msgstr ""
 
 #: ../../internals.rst:66
 msgid "Built in translation memory, see :ref:`translation-memory`."
-msgstr ""
+msgstr "内臓の翻訳メモリ。:ref:`translation-memory` を参照してください。"
 
 #: ../../internals.rst:68
 msgid "``permissions``"
@@ -146,7 +156,7 @@ msgstr ""
 
 #: ../../internals.rst:70
 msgid "Obsolete."
-msgstr ""
+msgstr "現在使われていません。"
 
 #: ../../internals.rst:72
 msgid "``screenshots``"
@@ -154,7 +164,7 @@ msgstr ""
 
 #: ../../internals.rst:74
 msgid "Screenshots management and OCR module."
-msgstr ""
+msgstr "スクリーンショット管理と OCR モジュール。"
 
 #: ../../internals.rst:76
 msgid "``trans``"
@@ -162,7 +172,7 @@ msgstr ""
 
 #: ../../internals.rst:78
 msgid "Main module handling translations."
-msgstr ""
+msgstr "翻訳文をあつかう中心となるモジュール。"
 
 #: ../../internals.rst:80
 msgid "``utils``"
@@ -170,7 +180,7 @@ msgstr ""
 
 #: ../../internals.rst:82
 msgid "Various helper utilities."
-msgstr ""
+msgstr "種々のヘルパーユーティリティ。"
 
 #: ../../internals.rst:84
 msgid "``vcs``"
@@ -178,7 +188,7 @@ msgstr ""
 
 #: ../../internals.rst:86
 msgid "Version control system abstraction."
-msgstr ""
+msgstr "バージョン管理システムの抽象化。"
 
 #: ../../internals.rst:88
 msgid "``wladmin``"
@@ -186,11 +196,4 @@ msgstr ""
 
 #: ../../internals.rst:90
 msgid "Django admin interface customization."
-msgstr ""
-
-#~ msgid "``accounts```"
-#~ msgstr ""
-
-#~ msgid "``machinery```"
-#~ msgstr ""
-
+msgstr "Django 管理者インターフェイスのカスタマイズ。"
