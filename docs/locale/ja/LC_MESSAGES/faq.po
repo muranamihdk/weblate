@@ -4,31 +4,34 @@
 # Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2018-11-16 15:50+0000\n"
+"Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
+"weblate-doc-ja/faq/ja/>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../faq.rst:2
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "よくある質問"
 
 #: ../../faq.rst:5
 msgid "Configuration"
-msgstr ""
+msgstr "設定について"
 
 #: ../../faq.rst:10
 msgid "How to create an automated workflow?"
-msgstr ""
+msgstr "自動化されたワークフローはどのようにしたら作れますか？"
 
 #: ../../faq.rst:12
 msgid ""
@@ -36,6 +39,8 @@ msgid ""
 " If you give it push access to your repository, the translations can "
 "happen without interaction unless some merge conflict occurs."
 msgstr ""
+"Weblate は翻訳に係る諸々をあなたに代わって半自動的に処理することができます。Weblate "
+"にリモートリポジトリへの書き込みを許可すれば、マージの際に競合が生じない限り、人手を介さずに翻訳を反映することができます。"
 
 #: ../../faq.rst:16
 msgid ""
@@ -66,7 +71,7 @@ msgstr ""
 
 #: ../../faq.rst:29
 msgid "How to access repositories over SSH?"
-msgstr ""
+msgstr "SSHを使ってリポジトリにアクセスするにはどうしたらいいですか？"
 
 #: ../../faq.rst:31
 msgid "Please see :ref:`vcs-repos` for information about setting up SSH keys."
@@ -74,7 +79,7 @@ msgstr ""
 
 #: ../../faq.rst:36
 msgid "How to fix merge conflicts in translations?"
-msgstr ""
+msgstr "翻訳をマージした際の競合はどのように解決したらよいですか？"
 
 #: ../../faq.rst:38
 msgid ""
@@ -121,7 +126,7 @@ msgstr ""
 
 #: ../../faq.rst:142
 msgid "How do I translate several branches at once?"
-msgstr ""
+msgstr "複数のブランチを一度に翻訳するにはどうしたらいいですか？"
 
 #: ../../faq.rst:144
 msgid ""
@@ -141,7 +146,7 @@ msgstr ""
 
 #: ../../faq.rst:160
 msgid "How to export the Git repository that Weblate uses?"
-msgstr ""
+msgstr "Weblate が使用しているリポジトリをエクスポートするにはどうしたらいいですか？"
 
 #: ../../faq.rst:162
 msgid ""
@@ -165,7 +170,7 @@ msgstr ""
 
 #: ../../faq.rst:172
 msgid "What are the options for pushing changes back upstream?"
-msgstr ""
+msgstr "変更をリモートリポジトリに書き込むにはどのような方法がありますか？"
 
 #: ../../faq.rst:174
 msgid ""
@@ -677,4 +682,3 @@ msgstr ""
 #~ "Celery to peform updates in the "
 #~ "background."
 #~ msgstr ""
-
