@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: 2018-11-16 15:50+0000\n"
+"PO-Revision-Date: 2018-11-17 13:45+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/faq/ja/>\n"
@@ -31,7 +31,7 @@ msgstr "設定について"
 
 #: ../../faq.rst:10
 msgid "How to create an automated workflow?"
-msgstr "自動化されたワークフローはどのようにしたら作れますか？"
+msgstr "自動化されたワークフローはどのように作りますか？"
 
 #: ../../faq.rst:12
 msgid ""
@@ -39,7 +39,7 @@ msgid ""
 " If you give it push access to your repository, the translations can "
 "happen without interaction unless some merge conflict occurs."
 msgstr ""
-"Weblate は翻訳に係る諸々をあなたに代わって半自動的に処理することができます。Weblate "
+"Weblate は翻訳に関わるすべてをあなたに代わって半自動的に処理することができます。Weblate "
 "にリモートリポジトリへの書き込みを許可すれば、マージの際に競合が生じない限り、人手を介さずに翻訳を反映することができます。"
 
 #: ../../faq.rst:16
@@ -47,12 +47,16 @@ msgid ""
 "Set up your git repository to tell Weblate whenever there is any change, "
 "see :ref:`hooks` for information how to do it."
 msgstr ""
+"変更があったら Weblate に通知が行くように、あなたの git リポジトリを設定してください。そのやり方については "
+":ref:`hooks`を参照してください。"
 
 #: ../../faq.rst:18
 msgid ""
 "Set push URL at your :ref:`component` in Weblate, this will allow Weblate"
 " to push changes to your repository."
 msgstr ""
+"Weblate の :ref:`component` でプッシュ用の URL を設定してください。これにより Weblate "
+"は変更をあなたのリポジトリに送信するようになります。"
 
 #: ../../faq.rst:20
 msgid ""
@@ -60,10 +64,12 @@ msgid ""
 "Weblate push changes to your repository whenever they are committed at "
 "Weblate."
 msgstr ""
+"Weblate の :ref:`project` でコミット時のプッシュを有効にしてください。これにより Weblate "
+"で変更がコミットされたら、あなたのリポジトリに送信されるようになります。"
 
 #: ../../faq.rst:22
 msgid "Optionally set up a cron job for :djadmin:`commit_pending`."
-msgstr ""
+msgstr ":djadmin:`commit_pending`のためのクロンジョブを設定することもできます。"
 
 #: ../../faq.rst:26
 msgid ":ref:`continuous-translation`, :ref:`avoid-merge-conflicts`"
@@ -75,11 +81,11 @@ msgstr "SSHを使ってリポジトリにアクセスするにはどうしたら
 
 #: ../../faq.rst:31
 msgid "Please see :ref:`vcs-repos` for information about setting up SSH keys."
-msgstr ""
+msgstr "SSHキーを使えるようにするには :ref:`vcs-repos` を参照してください。"
 
 #: ../../faq.rst:36
 msgid "How to fix merge conflicts in translations?"
-msgstr "翻訳をマージした際の競合はどのように解決したらよいですか？"
+msgstr "翻訳のマージの競合はどのように解決したらよいですか？"
 
 #: ../../faq.rst:38
 msgid ""
@@ -91,6 +97,10 @@ msgid ""
 ":guilabel:`Repository maintenance` in the :guilabel:`Tools` menu) and "
 "merge the repository (if automatic push is not enabled)."
 msgstr ""
+"Weblate とリモートリポジトリの両方で翻訳ファイルを変更すると、時によりマージの際に競合が起こります。翻訳ファイルを変更する前に（例えば "
+"msgmerge を実行する前など）、Weblate での変更をマージしてしまうことにより、通常はこれを避けることができます。単に Weblate "
+"で保留中の変更をすべてコミットしてください（これは :guilabel:`Tools` メニューの :guilabel:`Repository "
+"maintenance` で行うことができます）。そのあとリポジトリをマージしてください（自動プッシュを有効にしていない場合）。"
 
 #: ../../faq.rst:46
 msgid ""
@@ -100,18 +110,21 @@ msgid ""
 "you push changes back, Weblate will be able to use the merged version "
 "without any other special actions."
 msgstr ""
+"あいにくマージ時の競合に出くわしてしまったら、これを解決するいちばん簡単な方法は、すべての競合をあなたのローカルマシンで解消してしまうことです。単に "
+"Weblate をリモートリポジトリとして追加してから、あなたのリポジトリにこれをマージし、ここですべての競合を解決してください。そのあとこれを "
+"Weblate にプッシュすれば、これ以外には特に何もしなくても、このマージ済みのバージョンが Weblate で使用可能になります。"
 
 #: ../../faq.rst:81
 msgid ""
 "If you're using multiple branches in Weblate, you can work similarly on "
 "all branches:"
-msgstr ""
+msgstr "Weblate で複数のブランチを使用している場合は、すべてのブランチで同様に行うことができます。"
 
 #: ../../faq.rst:106
 msgid ""
 "In case of Gettext po files, there is a way to merge conflict in a semi-"
 "automatic way:"
-msgstr ""
+msgstr "翻訳ファイルが Gettext po ファイルの場合は、半自動的な方法でマージ時の競合を解決する方法があります。"
 
 #: ../../faq.rst:108
 msgid ""
@@ -119,6 +132,8 @@ msgid ""
 " fresh local clone of the upstream git repository (i. e. you need two "
 "copies of the upstream git repository: intact and working copy):"
 msgstr ""
+"Weblate の git リポジトリをローカルにクローンしておきます。同時に、あなた自身のリポジトリを、これもローカルでクローンしてください（つまりあな"
+"たのリポジトリのコピーが、元のままのものと作業用のコピーと、ふたつ必要ということです）。"
 
 #: ../../faq.rst:139
 msgid ":ref:`git-export`"
