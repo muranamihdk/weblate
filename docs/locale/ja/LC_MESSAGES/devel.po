@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-13 21:58+0900\n"
+"POT-Creation-Date: 2018-11-17 23:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,56 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
+
+#: ../../devel/alerts.rst:4
+msgid "Translation component alerts"
+msgstr ""
+
+#: ../../devel/alerts.rst:6
+msgid ""
+"The alerts are there to tell you there is something wrong with your "
+"translation component. They can indicate problem in Weblate configuration"
+" or in your translation project and they will give you a guidance how to "
+"address found issue."
+msgstr ""
+
+#: ../../devel/alerts.rst:10
+msgid "The alerts currently cover following areas:"
+msgstr ""
+
+#: ../../devel/alerts.rst:12
+msgid "Duplicate source strings in translation files"
+msgstr ""
+
+#: ../../devel/alerts.rst:13
+msgid "Duplicate languages within translations"
+msgstr ""
+
+#: ../../devel/alerts.rst:14
+msgid "Merge or update failure on the repository"
+msgstr ""
+
+#: ../../devel/alerts.rst:15
+msgid "Unused new base in component settings"
+msgstr ""
+
+#: ../../devel/alerts.rst:16
+msgid "Parse error in the translation files"
+msgstr ""
+
+#: ../../devel/alerts.rst:18
+msgid ""
+"You can find alerts on the component page as :guilabel:`Alerts`. If there"
+" is no such tab, no alert was triggered on this particular component. "
+"There is no way to ignore an alert, it will disappear automatically after"
+" underlying problem has been fixed."
+msgstr ""
+
+#: ../../devel/alerts.rst:23
+msgid ""
+"For example component having both duplicate strinsg and languages will "
+"have this:"
+msgstr ""
 
 #: ../../devel/index.rst:2
 msgid "Application developer guide"
