@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-17 23:00+0900\n"
-"PO-Revision-Date: 2018-11-16 15:50+0000\n"
+"PO-Revision-Date: 2018-11-18 13:13+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
+"weblate-doc-ja/admin/ja/>\n"
 "Language: ja\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
-"doc-ja/admin/ja/>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../admin/access.rst:4 ../../admin/projects.rst:96
@@ -3526,7 +3527,7 @@ msgstr ""
 
 #: ../../admin/continuous.rst:4
 msgid "Continuous translation"
-msgstr ""
+msgstr "継続的トランスレーション"
 
 #: ../../admin/continuous.rst:6
 msgid ""
@@ -3535,34 +3536,38 @@ msgid ""
 "translations the entire time and are not forced to translate a huge "
 "amount of new texts before release."
 msgstr ""
+"Weblate はあなたの開発に密に追従する翻訳のための最高の基盤を提供します。これにより翻訳者は常に翻訳に取り組むことができ、リリース前に新たに大量のテ"
+"キストの翻訳を強いられることがありません。"
 
 #: ../../admin/continuous.rst:10
 msgid "The complete process can be described in following steps:"
-msgstr ""
+msgstr "完全なプロセスは次のようなステップで説明することができます。"
 
 #: ../../admin/continuous.rst:12
 msgid "Developers make some changes and push them to the VCS repository."
-msgstr ""
+msgstr "開発者は変更を行い VCS リポジトリに push します。"
 
 #: ../../admin/continuous.rst:13
 msgid ""
 "Optionally the translation files are updated (this depends on the file "
 "format, see :ref:`translations-update`)."
 msgstr ""
+"ファイル形式によっては翻訳ファイルが更新されます（これはファイル形式に依存します。:ref:`translations-update` "
+"を参照してください）。"
 
 #: ../../admin/continuous.rst:14
 msgid "Weblate pulls changes from the VCS repository, see :ref:`update-vcs`."
-msgstr ""
+msgstr "Weblate は変更を VCS リポジトリから取得します。:ref:`update-vcs` を参照してください。"
 
 #: ../../admin/continuous.rst:15
 msgid ""
 "Once Weblate detects changes in translations, translators will be "
 "notified based on their subscription settings."
-msgstr ""
+msgstr "Weblate が翻訳に変更を検知すると、翻訳者に購読設定に応じて通知が行われます。"
 
 #: ../../admin/continuous.rst:16
 msgid "Translators make translations using Weblate web interface."
-msgstr ""
+msgstr "翻訳者は Weblate のウェブインターフェイスを使用して翻訳を行います。"
 
 #: ../../admin/continuous.rst:17
 msgid ""
@@ -3570,10 +3575,13 @@ msgid ""
 "repository (see :ref:`lazy-commit`) and pushes them back if it has "
 "permissions to do that (see :ref:`push-changes`)."
 msgstr ""
+"翻訳が行われると、Weblate は変更をローカルリポジトリにコミットします（:ref:`lazy-commit` "
+"を参照してください）。同時に、許可が与えられている場合は、リモートリポジトリに変更を送信します（:ref:`push-changes` "
+"を参照してください）。"
 
 #: ../../admin/continuous.rst:41
 msgid "Updating repositories"
-msgstr ""
+msgstr "リポジトリを更新する"
 
 #: ../../admin/continuous.rst:43
 msgid ""
@@ -3582,12 +3590,15 @@ msgid ""
 "regularly run :djadmin:`updategit` (with selection of project or `--all` "
 "for updating all)."
 msgstr ""
+"バックエンドリポジトリをソースに基づいて更新するために、何らかの方法を設定しておく必要があります。フックを使うこともできますし（:ref:`hooks` "
+"を参照してください）、単に定期的に :djadmin:`updategit` を（プロジェクトを選択して、あるいは `--all` "
+"ですべてのプロジェクトに対し）実行することもできます。"
 
 #: ../../admin/continuous.rst:47
 msgid ""
 "Whenever Weblate updates the repository, the :guilabel:`Post-update "
 "script` hooks are executed."
-msgstr ""
+msgstr "リポジトリが更新されるとその都度、:guilabel:`Post-update script` フックが実行されます。"
 
 #: ../../admin/continuous.rst:50
 msgid ""
@@ -3596,28 +3607,33 @@ msgid ""
 "/git-merge-gettext-po`). To use it just put following configuration to "
 "your :file:`.gitconfig`:"
 msgstr ""
+"Gettext po ファイルにおいては、しばしば PO ヘッダの競合に遭遇することになります。これを避けるために、付属のマージドライバ（:file:`"
+"examples/git-merge-gettext-po`）を使うことができます。:file:`.gitconfig` "
+"ファイルに以下の設定を行うだけで、これを使うことができます。"
 
 #: ../../admin/continuous.rst:61
 msgid ""
 "And enable its use by defining proper attributes in given repository (eg."
 " in :file:`.git/info/attributes`)::"
 msgstr ""
+"そして所定のリポジトリで適当な属性を定義することにより、使用を有効にしてください（例えば :file:`.git/info/attributes` "
+"ファイルなど）。"
 
 #: ../../admin/continuous.rst:68
 msgid ""
 "This merge driver assumes the changes in POT files always are done in the"
 " branch we're trying to merge."
-msgstr ""
+msgstr "このマージドライバは、POT ファイルの変更は常に、マージしようとしているブランチで行われていると仮定しています。"
 
 #: ../../admin/continuous.rst:73
 msgid ""
 "This merge driver is now automatically installed for all Weblate internal"
 " repositories."
-msgstr ""
+msgstr "このマージドライバは現在は Weblate のすべての内部リポジトリで自動的にインストールされます。"
 
 #: ../../admin/continuous.rst:79
 msgid "Avoiding merge conflicts"
-msgstr ""
+msgstr "マージ時の競合を避ける"
 
 #: ../../admin/continuous.rst:81
 msgid ""
@@ -3625,22 +3641,26 @@ msgid ""
 "files in upstream repository to avoid Weblate having changes on same "
 "file."
 msgstr ""
+"マージ時の競合を避けるためには、リモートリポジトリでの翻訳ファイルの更新タイミングをコントロールし、Weblate "
+"が同じファイルを変更するのを避けなければいけません。"
 
 #: ../../admin/continuous.rst:84
 msgid ""
 "You can achieve this using :ref:`api` to force Weblate push all pending "
 "changes and lock translation while you are doing changes on your side."
 msgstr ""
+":ref:`api` を使って、Weblate で保留中の変更をすべてリモートリポジトリに反映させることと、ローカルで変更を行っている間は "
+"Weblate での翻訳にロックをかけておくことによって、これを行うことができます。"
 
 #: ../../admin/continuous.rst:87
 msgid "The script for doing updates can look like:"
-msgstr ""
+msgstr "更新を行うスクリプトは次のようになります。"
 
 #: ../../admin/continuous.rst:108
 msgid ""
 "If you have multiple components sharing same repository, you need to lock"
 " them all separately:"
-msgstr ""
+msgstr "同一のリポジトリを共有する複数のコンポーネントがある場合は、個々のコンポーネントごとに、それぞれロックをかける必要があります。"
 
 #: ../../admin/continuous.rst:119
 msgid ""
@@ -3648,14 +3668,17 @@ msgid ""
 "be able to control Weblate remotely. You can also achieve this using any "
 "HTTP client instead of wlc, eg. curl, see :ref:`api`."
 msgstr ""
+"これらのスクリプト例では :ref:`wlc` を使っていますが、これには Weblate をリモートコントロールするための設定（API "
+"キー）が必要です。 wlc ではなく、例えば curl などの HTTP クライアントを使っても同じことを実現できます。:ref:`api` "
+"を参照してください。"
 
 #: ../../admin/continuous.rst:126
 msgid "Automatically receiving changes from GitHub"
-msgstr ""
+msgstr "GitHub から自動的に変更を受け取る"
 
 #: ../../admin/continuous.rst:128
 msgid "Weblate comes with native support for GitHub."
-msgstr ""
+msgstr "Weblate は最初から GitHub をサポートするように作られています。"
 
 #: ../../admin/continuous.rst:130
 msgid ""
@@ -3665,6 +3688,10 @@ msgid ""
 " used for pushing changes back as well (that's why the write permission "
 "is requested), but it's not yet implemented."
 msgstr ""
+"Weblate ホスティングサービスを利用されている場合は、`Hosted Weblate app <https://github.com/apps/"
+"hosted-weblate>`_ をインストールするのがおすすめです。これによって最小限の設定で正しいセットアップをすることが可能です。"
+"将来は同じように Weblate から GitHub "
+"への変更の送信にも対応する予定ですが（これが書き込み権限も要求される理由です）、現在のところはまだ実装されていません。"
 
 #: ../../admin/continuous.rst:136
 msgid ""
@@ -3672,6 +3699,8 @@ msgid ""
 "need to add Weblate Webhook in the repository settings "
 "(:guilabel:`Webhooks`) as shown on the image below:"
 msgstr ""
+"GitHub リポジトリへのすべてのプッシュの通知を受け取るためには、次の画像で示すように、リポジトリ設定の :guilabel:`Webhooks` "
+"で Weblate Webhook を追加するだけでよいです。"
 
 #: ../../admin/continuous.rst:142
 msgid ""
@@ -3679,12 +3708,16 @@ msgid ""
 "example for Hosted Weblate service this is "
 "``https://hosted.weblate.org/hooks/github/``."
 msgstr ""
+"payload URL として、``/hooks/github/`` をあなたの Weblate URL に追加してください。例えば Weblate "
+"ホスティングサービスであればこれは ``https://hosted.weblate.org/hooks/github/`` になります。"
 
 #: ../../admin/continuous.rst:145
 msgid ""
 "You can leave other values on the default settings (Weblate can handle "
 "both content types and consumes just the `push` event)."
 msgstr ""
+"それ以外の設定値は最初のままで構いません（Weblate は単に `push` イベントで content types と consumes "
+"の両方を取り扱うことができます）。"
 
 #: ../../admin/continuous.rst:150
 msgid ":http:post:`/hooks/github/`, :ref:`hosted-push`"
@@ -3740,7 +3773,7 @@ msgstr ""
 
 #: ../../admin/continuous.rst:202
 msgid "Pushing changes"
-msgstr ""
+msgstr "変更をプッシュする"
 
 #: ../../admin/continuous.rst:204
 msgid ""
@@ -3749,6 +3782,9 @@ msgid ""
 "repository. Weblate can be also configured to automatically push changes "
 "on every commit."
 msgstr ""
+"プロジェクトごとにプッシュ URL を設定することができます。設定すると Weblate "
+"のウェブインターフェイスにプッシュボタンが現れ、リモートリポジトリに変更をプッシュすることができるようになります。"
+"またすべてのコミットごとに自動的に変更のプッシュが行われるように Weblate を設定することもできます。"
 
 #: ../../admin/continuous.rst:208
 msgid ""
@@ -3757,24 +3793,28 @@ msgid ""
 "be verified by you via the admin interface first, otherwise pushing will "
 "fail."
 msgstr ""
+"SSH をプッシュに使用している場合は、パスフレーズを設定していないキー（もしくは Django 用の ssh-"
+"agent）が必要になります。そしてまず管理インターフェイスでリモートサーバを認証する必要があります。これをしないとプッシュしても失敗します。"
 
 #: ../../admin/continuous.rst:212
 msgid ""
 "The push options differ based on the :ref:`vcs` used, please check that "
 "chapter for more details."
-msgstr ""
+msgstr "プッシュのオプションは使用している :ref:`vcs` によって違いますので、詳しくはそちらの章を参照してください。"
 
 #: ../../admin/continuous.rst:217
 msgid ""
 "You can also enable the automatic pushing of changes on commit, this can "
 "be done in :ref:`component`."
-msgstr ""
+msgstr "コミットした時に自動的に変更がプッシュされるようにすることもできます。これは :ref:`component` で可能です。"
 
 #: ../../admin/continuous.rst:222
 msgid ""
 "See :ref:`vcs-repos` for setting up SSH keys and :ref:`lazy-commit` for "
 "information about when Weblate decides to commit changes."
 msgstr ""
+"SSH キーのセットアップについては :ref:`vcs-repos` を参照してください。Weblate がいつ変更をコミットするかについては :ref"
+":`lazy-commit` を参照してください。"
 
 #: ../../admin/continuous.rst:228
 msgid "Pushing changes from Hosted Weblate"
@@ -3792,7 +3832,7 @@ msgstr ""
 
 #: ../../admin/continuous.rst:239
 msgid "Merge or rebase"
-msgstr ""
+msgstr "マージあるいはリベース"
 
 #: ../../admin/continuous.rst:241
 msgid ""
@@ -3801,20 +3841,23 @@ msgid ""
 " means. In case you don't need this, you can enable rebasing of changes "
 "on upstream, which will produce history with fewer merge commits."
 msgstr ""
+"初期設定では、Weblate はリモートリポジトリを Weblate リポジトリにマージします。Weblate リポジトリにアクセスする他の方法もある場合"
+"には、これがいちばん安全な方法です。これが必要ない場合は、変更をリモートリポジトリにリベースすることもできます。これにより履歴でマージコミットを減らすこと"
+"ができます。"
 
 #: ../../admin/continuous.rst:248
 msgid ""
 "Rebasing can cause you troubles in case of complicated merges, so "
 "carefully consider whether or not you want to enable them."
-msgstr ""
+msgstr "複雑なマージにおいては、リベースはトラブルを引き起こすこともあります。このため、リベースを有効にするかどうかは、慎重に考慮してください。"
 
 #: ../../admin/continuous.rst:252
 msgid "Interacting with others"
-msgstr ""
+msgstr "他のサービスとのやりとり"
 
 #: ../../admin/continuous.rst:254
 msgid "Weblate makes it easy to interact with others using its API."
-msgstr ""
+msgstr "Weblate は API を使うことにより、他のサービスとのやりとりを簡単にすることができます。"
 
 #: ../../admin/continuous.rst:258
 msgid ":ref:`api`"
@@ -3822,7 +3865,7 @@ msgstr ""
 
 #: ../../admin/continuous.rst:263
 msgid "Lazy commits"
-msgstr ""
+msgstr "省力コミット"
 
 #: ../../admin/continuous.rst:265
 msgid ""
@@ -3832,46 +3875,52 @@ msgid ""
 "you want to get the VCS repository in sync, eg. for merge (this is by "
 "default allowed for Managers group, see :ref:`privileges`)."
 msgstr ""
+"Welate "
+"は同一の翻訳者によるコミットは、可能なかぎりひとつのコミットにまとめてコミットします。これにより大幅にコミット数は減りますが、例えばマージをする際など、"
+"VCS リポジトリと同期させたい場合には、コミットをするよう明示的に Weblate "
+"に命じなければなりません（これは管理者グループユーザには最初から許可されています。:ref:`privileges` を参照してください）。"
 
 #: ../../admin/continuous.rst:271
 msgid ""
 "The changes are in this mode committed once any of following conditions "
 "is fulfilled:"
-msgstr ""
+msgstr "このモードにおける複数の変更は、以下の条件のいずれかが満たされた時に、まとめて一度にコミットされます。"
 
 #: ../../admin/continuous.rst:274
 msgid "somebody else changes already changed string"
-msgstr ""
+msgstr "他の誰かが、すでに変更されている文字列に変更を加えたとき"
 
 #: ../../admin/continuous.rst:275
 msgid "a merge from upstream occurs"
-msgstr ""
+msgstr "リモートリポジトリからマージ動作が行われたとき"
 
 #: ../../admin/continuous.rst:276
 msgid "import of translation happens"
-msgstr ""
+msgstr "翻訳ファイルのインポートが行われたとき"
 
 #: ../../admin/continuous.rst:277
 msgid "mass state change is performed"
-msgstr ""
+msgstr "大量の状態の変更が行われたとき"
 
 #: ../../admin/continuous.rst:278
 msgid "search and replace is executed"
-msgstr ""
+msgstr "検索置換が行われたとき"
 
 #: ../../admin/continuous.rst:279
 msgid "explicit commit is requested"
-msgstr ""
+msgstr "明示的にコミットが要求されたとき"
 
 #: ../../admin/continuous.rst:281
 msgid ""
 "You can also additionally set a cron job to commit pending changes after "
 "some delay, see :djadmin:`commit_pending` and :ref:`production-cron`."
 msgstr ""
+"以上に加えて、保留された変更を少し遅れてコミットさせるための、クロンジョブを設定することもできます。:djadmin:`commit_pending` "
+"と :ref:`production-cron` を参照してください。"
 
 #: ../../admin/continuous.rst:287
 msgid "Processing repository with scripts"
-msgstr ""
+msgstr "リポジトリをスクリプトで処理する"
 
 #: ../../admin/continuous.rst:289
 msgid ""
@@ -3879,6 +3928,8 @@ msgid ""
 ":ref:`addons`. See :ref:`addon-script` for information how to execute "
 "external scripts through addons."
 msgstr ""
+"Weblate のリポジトリとのやりとりをカスタマイズするための方法が、:ref:`addons` です。addon "
+"を通して外部スクリプトを実行する方法については、:ref:`addon-script` を参照ください。"
 
 #: ../../admin/deployments.rst:4
 msgid "Weblate deployments"
@@ -10294,4 +10345,3 @@ msgstr ""
 
 #~ msgid ":ref:`faq-vcs`"
 #~ msgstr ""
-
