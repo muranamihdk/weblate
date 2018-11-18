@@ -4,31 +4,34 @@
 # Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-09 22:12+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2018-11-18 16:21+0000\n"
+"Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
+"weblate-doc-ja/index/ja/>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../index.rst:7
 msgid "Welcome to Weblate's documentation!"
-msgstr ""
+msgstr "Weblate ドキュメンテーションへようこそ！"
 
 #: ../../index.rst:9
 msgid "Contents:"
-msgstr ""
+msgstr "目次"
 
 #: ../../index.rst:32
 msgid "Indices and tables"
-msgstr ""
+msgstr "索引と表"
 
 #: ../../index.rst:34
 msgid ":ref:`genindex`"
@@ -37,4 +40,3 @@ msgstr ""
 #: ../../index.rst:35
 msgid ":ref:`search`"
 msgstr ""
-
