@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-17 23:00+0900\n"
-"PO-Revision-Date: 2018-11-18 13:13+0000\n"
+"PO-Revision-Date: 2018-11-18 16:20+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/admin/ja/>\n"
@@ -446,7 +446,7 @@ msgstr ""
 
 #: ../../admin/access.rst:285
 msgid "Changes"
-msgstr ""
+msgstr "変更履歴"
 
 #: ../../admin/access.rst:285
 msgid "Download changes [`Administration`]"
@@ -4825,7 +4825,7 @@ msgstr ""
 
 #: ../../admin/index.rst:2
 msgid "Administrators guide"
-msgstr ""
+msgstr "管理者のためのガイド"
 
 #: ../../admin/install.rst:4
 msgid "Installation instructions"
