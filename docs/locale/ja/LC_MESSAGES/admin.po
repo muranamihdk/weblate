@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-17 23:00+0900\n"
-"PO-Revision-Date: 2018-11-18 16:20+0000\n"
+"PO-Revision-Date: 2018-11-19 09:41+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/admin/ja/>\n"
@@ -1674,7 +1674,7 @@ msgstr ""
 
 #: ../../admin/checks.rst:2
 msgid "Checks and fixups"
-msgstr ""
+msgstr "チェックと修正"
 
 #: ../../admin/checks.rst:7
 msgid "Custom automatic fixups"
