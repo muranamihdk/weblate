@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: 2018-11-18 16:21+0000\n"
+"PO-Revision-Date: 2018-11-19 09:41+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/user/ja/>\n"
@@ -37,10 +37,13 @@ msgid ""
 ":ref:`component`, still producing errors for seemingly inconsistent "
 "resulting translations."
 msgstr ""
+"初期設定では、内部でそれぞれのプロジェクトは、翻訳された文字列をプロジェクト内のコンポーネント間で伝播させ、共有させます。これにより複数のバージョンを繰り"
+"返し翻訳する負荷を軽減します。これは :ref:`component` "
+"ごとに無効にすることができますが、一貫していないように見える翻訳には依然エラーを生成します。"
 
 #: ../../user/checks.rst:2
 msgid "Checks and fixups"
-msgstr ""
+msgstr "チェックと修正"
 
 #: ../../user/checks.rst:4
 msgid ""
