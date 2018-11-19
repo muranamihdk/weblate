@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: 2018-11-18 16:21+0000\n"
+"PO-Revision-Date: 2018-11-20 22:02+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/vcs/ja/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../vcs.rst:4
 msgid "Version control integration"
-msgstr "バージョン管理との統合"
+msgstr "バージョン管理の統合"
 
 #: ../../vcs.rst:6
 msgid ""
