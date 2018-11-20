@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-19 18:50+0900\n"
-"PO-Revision-Date: 2018-11-19 09:41+0000\n"
+"PO-Revision-Date: 2018-11-20 22:02+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
+"weblate-doc-ja/admin/ja/>\n"
 "Language: ja\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
-"doc-ja/admin/ja/>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../admin/access.rst:4 ../../admin/projects.rst:96
@@ -696,7 +697,7 @@ msgstr ""
 
 #: ../../admin/addons.rst:4
 msgid "Addons"
-msgstr ""
+msgstr "アドオン"
 
 #: ../../admin/addons.rst:8
 msgid ""
@@ -705,10 +706,12 @@ msgid ""
 "scenes. The addon management can be found under :guilabel:`Manage` menu "
 "of a translation component."
 msgstr ""
+"アドオンは翻訳のワークフローをカスタマイズする手段を提供します。アドオンは翻訳コンポーネントにインストールすることができ、これによりアドオンは舞台裏で働き"
+"を開始します。アドオンの管理メニューは翻訳コンポーネントの :guilabel:`Manage` メニューの中にあります。"
 
 #: ../../admin/addons.rst:16
 msgid "Built in addons"
-msgstr ""
+msgstr "組み込みアドオン"
 
 #: ../../admin/addons.rst:21
 msgid "Cleanup translation files"
@@ -927,7 +930,7 @@ msgstr ""
 
 #: ../../admin/addons.rst:194
 msgid "Writing addon"
-msgstr ""
+msgstr "アドオンを書く"
 
 #: ../../admin/addons.rst:196
 msgid ""
@@ -935,14 +938,16 @@ msgid ""
 "``BaseAddon``, define addon metadata and implement callback which will do"
 " the processing."
 msgstr ""
+"自分でアドオンを書くこともできますが、そのために必要なのは、``BaseAddon`` "
+"のサブクラスを作成し、アドオンのためのメタデータを定義し、実際の処理を行うコールバックを実装することだけです。"
 
 #: ../../admin/addons.rst:199
 msgid "You can look at example addon for more information:"
-msgstr ""
+msgstr "より詳しくは、次のアドオン例をご覧ください。"
 
 #: ../../admin/addons.rst:207
 msgid "Executing scripts from addon"
-msgstr ""
+msgstr "アドオンからスクリプトを実行する"
 
 #: ../../admin/addons.rst:209
 msgid ""
@@ -950,62 +955,64 @@ msgid ""
 "integrated in Weblate, but now you have to write little code to wrap your"
 " script with an addon."
 msgstr ""
+"アドオンを外部スクリプトを実行するために使うこともできます。この機能は以前は Weblate "
+"の一部でしたが、現在はアドオンとスクリプトをラップするコードを少しばかり書かなければなりません。"
 
 #: ../../admin/addons.rst:216
 msgid ""
 "The script is executed with the current directory set to the root of the "
 "VCS repository for given component."
-msgstr ""
+msgstr "スクリプトは、そのコンポーネントの VCS リポジトリのルートディレクトリをカレントディレクトリとして実行されます。"
 
 #: ../../admin/addons.rst:219
 msgid "Additionally, the following environment variables are available:"
-msgstr ""
+msgstr "加えて、以下の環境変数を使うことができます。"
 
 #: ../../admin/addons.rst:223
 msgid "Version control system used."
-msgstr ""
+msgstr "使用しているバージョン管理システム。"
 
 #: ../../admin/addons.rst:227
 msgid "Upstream repository URL."
-msgstr ""
+msgstr "上流のリポジトリのURL。"
 
 #: ../../admin/addons.rst:231
 msgid "Absolute path to VCS repository."
-msgstr ""
+msgstr "VCS リポジトリの絶対パス。"
 
 #: ../../admin/addons.rst:237
 msgid "Repository branch configured in the current component."
-msgstr ""
+msgstr "現在のコンポーネント内で設定されたリポジトリのブランチ。"
 
 #: ../../admin/addons.rst:241
 msgid "File mask for current component."
-msgstr ""
+msgstr "現在のコンポーネントのためのファイルマスク。"
 
 #: ../../admin/addons.rst:245
 msgid "File name of template for monolingual translations (can be empty)."
-msgstr ""
+msgstr "単一言語翻訳テンプレートのファイル名（値が空のこともあります）。"
 
 #: ../../admin/addons.rst:251
 msgid ""
 "File name of the file which is used for creating new translations (can be"
 " empty)."
-msgstr ""
+msgstr "新しい翻訳の作成に使われるファイルのファイル名（値が空の場合もあります）。"
 
 #: ../../admin/addons.rst:256
 msgid "File format used in current component."
-msgstr ""
+msgstr "現在のコンポーネントで使われているファイル形式。"
 
 #: ../../admin/addons.rst:260
 msgid ""
 "Language of currently processed translation (not available for component "
 "level hooks)."
-msgstr ""
+msgstr "現在処理中の翻訳の言語（コンポーネントのレベルのフックでは使えません）。"
 
 #: ../../admin/addons.rst:265
 msgid ""
 "Previous HEAD on update (available only available when running post "
 "update hook)."
-msgstr ""
+msgstr "前回のアップデートの HEAD（アップデート後に実行するフックでのみ利用可能です）。"
 
 #: ../../admin/addons.rst:269 ../../admin/config.rst:440
 msgid ":ref:`component`"
@@ -6614,7 +6621,7 @@ msgstr ""
 
 #: ../../admin/machine.rst:4
 msgid "Machine translation"
-msgstr ""
+msgstr "機械翻訳"
 
 #: ../../admin/machine.rst:6
 msgid ""
@@ -6624,10 +6631,14 @@ msgid ""
 " enabling them in Weblate. The individual services are enabled using "
 ":setting:`MT_SERVICES`."
 msgstr ""
+"Weblate はいくつかの機械翻訳サービスを組み込みでサポートしており、これを有効にするかどうかは管理者次第です。それらのサービスはそれぞれに違った利用"
+"規約を持っていますので、それを Weblate "
+"で有効にする前に、利用が許可されているかどうかを確認してください。それぞれのサービスは、:setting:`MT_SERVICES` "
+"を使うことにより有効にされます。"
 
 #: ../../admin/machine.rst:11
 msgid "The source language can be configured at :ref:`project`."
-msgstr ""
+msgstr "原文の言語は :ref:`project` で設定することができます。"
 
 #: ../../admin/machine.rst:14
 msgid "Amagama"
@@ -10367,4 +10378,3 @@ msgstr ""
 #~ " required, see :ref:`virtualenv` for "
 #~ "instructions how to install these."
 #~ msgstr ""
-
