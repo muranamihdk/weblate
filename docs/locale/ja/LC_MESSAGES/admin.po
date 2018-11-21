@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-19 18:50+0900\n"
-"PO-Revision-Date: 2018-11-20 22:02+0000\n"
+"PO-Revision-Date: 2018-11-21 12:10+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/admin/ja/>\n"
@@ -990,13 +990,13 @@ msgstr "現在のコンポーネントのためのファイルマスク。"
 
 #: ../../admin/addons.rst:245
 msgid "File name of template for monolingual translations (can be empty)."
-msgstr "単一言語翻訳テンプレートのファイル名（値が空のこともあります）。"
+msgstr "単一言語翻訳テンプレートのファイル名（この値は空のこともあります）。"
 
 #: ../../admin/addons.rst:251
 msgid ""
 "File name of the file which is used for creating new translations (can be"
 " empty)."
-msgstr "新しい翻訳の作成に使われるファイルのファイル名（値が空の場合もあります）。"
+msgstr "新しい翻訳の作成に使われるファイルのファイル名（この値は空のこともあります）。"
 
 #: ../../admin/addons.rst:256
 msgid "File format used in current component."
@@ -1012,7 +1012,7 @@ msgstr "現在処理中の翻訳の言語（コンポーネントのレベルの
 msgid ""
 "Previous HEAD on update (available only available when running post "
 "update hook)."
-msgstr "前回のアップデートの HEAD（アップデート後に実行するフックでのみ利用可能です）。"
+msgstr "前回更新の HEAD（更新後に実行するフックでのみ利用可能です）。"
 
 #: ../../admin/addons.rst:269 ../../admin/config.rst:440
 msgid ":ref:`component`"
@@ -1020,7 +1020,7 @@ msgstr ""
 
 #: ../../admin/addons.rst:272
 msgid "Post update repository processing"
-msgstr ""
+msgstr "更新後のリポジトリ処理"
 
 #: ../../admin/addons.rst:274
 msgid ""
@@ -1029,14 +1029,16 @@ msgid ""
 " sees files which are committed to the VCS, so you need to commit changes"
 " as a part of the script."
 msgstr ""
+"原文が変更されたときは、翻訳ファイルを更新するために、更新後リポジトリ処理を使うことができます。これを行うためには、Weblate は VCS "
+"にコミットされたファイルだけを見ていることを覚えておいてください。このためスクリプトの一部で変更をコミットする必要があるのです。"
 
 #: ../../admin/addons.rst:279
 msgid "For example with gulp you can do it using following code:"
-msgstr ""
+msgstr "例えば gulp を使った以下のようなコードでこれを行うことができます。"
 
 #: ../../admin/addons.rst:289
 msgid "Pre commit processing of translations"
-msgstr ""
+msgstr "コミット前の翻訳処理"
 
 #: ../../admin/addons.rst:291
 msgid ""
@@ -1044,16 +1046,17 @@ msgid ""
 "translation before it is committed to the repository. The pre commit "
 "script is exactly the place to achieve this."
 msgstr ""
+"リポジトリに翻訳をコミットする前に、多くの場合で自動的に翻訳に何か変更を加えたいかもしれません。コミット前スクリプトがまさにこれをできる場となります。"
 
 #: ../../admin/addons.rst:295
 msgid ""
 "It is passed a single parameter consisting of file name of current "
 "translation."
-msgstr ""
+msgstr "現在の翻訳のファイル名で構成される単一のパラメータが渡されます。"
 
 #: ../../admin/admin.rst:4
 msgid "Django admin interface"
-msgstr ""
+msgstr "Django 管理インターフェイス"
 
 #: ../../admin/admin.rst:6
 msgid ""
@@ -7115,7 +7118,7 @@ msgstr ""
 
 #: ../../admin/management.rst:4
 msgid "Management commands"
-msgstr ""
+msgstr "管理コマンド"
 
 #: ../../admin/management.rst:8
 msgid ""
@@ -7123,6 +7126,8 @@ msgid ""
 "webserver can cause wrong permissions on some files, please check :ref"
 ":`file-permissions` for more details."
 msgstr ""
+"ウェブサーバを実行しているユーザとは別のユーザで管理コマンドを実行すると、ファイルによっては権限間違いを引き起こす可能性があります。より詳しくは :ref"
+":`file-permissions` を確認してください。"
 
 #: ../../admin/management.rst:12
 msgid ""
