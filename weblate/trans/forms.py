@@ -134,7 +134,7 @@ class WeblateDateField(forms.DateField):
 
 
 class ChecksumField(forms.CharField):
-    """Field for handling checksum ids for translation."""
+    """Field for handling checksum IDs for translation."""
     def __init__(self, *args, **kwargs):
         kwargs['widget'] = forms.HiddenInput
         super(ChecksumField, self).__init__(*args, **kwargs)
@@ -584,7 +584,7 @@ class SimpleUploadForm(forms.Form):
         choices=(
             ('translate', _('Add as translation needing review')),
             ('approve', _('Add as approved translation')),
-            ('suggest', _('Add as a suggestion')),
+            ('suggest', _('Add as suggestion')),
             ('fuzzy', _('Add as translation needing edit')),
         ),
     )
@@ -1550,6 +1550,16 @@ class ProjectAccessForm(forms.ModelForm):
             'access_control',
             'enable_review',
         )
+
+    def clean(self):
+        access = self.cleaned_data.get('access_control')
+        if access in (Project.ACCESS_PUBLIC, Project.ACCESS_PROTECTED):
+            unlicensed = self.instance.component_set.filter(license='')
+            if unlicensed:
+                raise ValidationError(_(
+                    'You must specify a license for these components '
+                    'to make them publicly accessible: %s'
+                ) % ', '.join(unlicensed.values_list('name', flat=True)))
 
     def __init__(self, *args, **kwargs):
         super(ProjectAccessForm, self).__init__(*args, **kwargs)
