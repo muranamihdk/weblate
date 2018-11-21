@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-19 18:50+0900\n"
+"POT-Creation-Date: 2018-11-21 22:04+0900\n"
 "PO-Revision-Date: 2018-11-21 12:10+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
-"weblate-doc-ja/admin/ja/>\n"
 "Language: ja\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
+"doc-ja/admin/ja/>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../admin/access.rst:4 ../../admin/projects.rst:96
@@ -706,8 +705,8 @@ msgid ""
 "scenes. The addon management can be found under :guilabel:`Manage` menu "
 "of a translation component."
 msgstr ""
-"アドオンは翻訳のワークフローをカスタマイズする手段を提供します。アドオンは翻訳コンポーネントにインストールすることができ、これによりアドオンは舞台裏で働き"
-"を開始します。アドオンの管理メニューは翻訳コンポーネントの :guilabel:`Manage` メニューの中にあります。"
+"アドオンは翻訳のワークフローをカスタマイズする手段を提供します。アドオンは翻訳コンポーネントにインストールすることができ、これによりアドオンは舞台裏で働きを開始します。アドオンの管理メニューは翻訳コンポーネントの"
+" :guilabel:`Manage` メニューの中にあります。"
 
 #: ../../admin/addons.rst:16
 msgid "Built in addons"
@@ -1045,8 +1044,7 @@ msgid ""
 "In many cases you might want to automatically do some changes to the "
 "translation before it is committed to the repository. The pre commit "
 "script is exactly the place to achieve this."
-msgstr ""
-"リポジトリに翻訳をコミットする前に、多くの場合で自動的に翻訳に何か変更を加えたいかもしれません。コミット前スクリプトがまさにこれをできる場となります。"
+msgstr "リポジトリに翻訳をコミットする前に、多くの場合で自動的に翻訳に何か変更を加えたいかもしれません。コミット前スクリプトがまさにこれをできる場となります。"
 
 #: ../../admin/addons.rst:295
 msgid ""
@@ -2404,7 +2402,7 @@ msgid "Enables automatic locking of translation when somebody is working on it."
 msgstr ""
 
 #: ../../admin/config.rst:184 ../../admin/config.rst:198
-#: ../../admin/config.rst:627
+#: ../../admin/config.rst:630
 msgid ":ref:`locking`"
 msgstr ""
 
@@ -2809,7 +2807,7 @@ msgstr ""
 msgid "GIT_ROOT"
 msgstr ""
 
-#: ../../admin/config.rst:502 ../../admin/config.rst:1191
+#: ../../admin/config.rst:502 ../../admin/config.rst:1194
 msgid "This setting is no longer used, use :setting:`DATA_DIR` instead."
 msgstr ""
 
@@ -2858,18 +2856,23 @@ msgstr ""
 #: ../../admin/config.rst:536
 msgid ""
 "For example instead of ``https://user:password@git.example.com/repo.git``"
-" it will show just ``https://git.example.com/repo.git``."
+" it will show just ``https://git.example.com/repo.git``. It tries to "
+"cleanup VCS error messages as well in similar manner."
 msgstr ""
 
-#: ../../admin/config.rst:542
+#: ../../admin/config.rst:540
+msgid "This is enabled by default."
+msgstr ""
+
+#: ../../admin/config.rst:545
 msgid "IP_BEHIND_REVERSE_PROXY"
 msgstr ""
 
-#: ../../admin/config.rst:546
+#: ../../admin/config.rst:549
 msgid "Indicates whether Weblate is running behind a reverse proxy."
 msgstr ""
 
-#: ../../admin/config.rst:548
+#: ../../admin/config.rst:551
 msgid ""
 "If set to True, Weblate gets IP address from header defined by "
 ":setting:`IP_BEHIND_REVERSE_PROXY`. Ensure that you are actually using "
@@ -2877,236 +2880,236 @@ msgid ""
 "to fake the IP address."
 msgstr ""
 
-#: ../../admin/config.rst:553
+#: ../../admin/config.rst:556
 msgid "Defaults to False."
 msgstr ""
 
-#: ../../admin/config.rst:557 ../../admin/config.rst:574
-#: ../../admin/config.rst:595
+#: ../../admin/config.rst:560 ../../admin/config.rst:577
+#: ../../admin/config.rst:598
 msgid ":ref:`rate-limit`, :ref:`rate-ip`"
 msgstr ""
 
-#: ../../admin/config.rst:563
+#: ../../admin/config.rst:566
 msgid "IP_PROXY_HEADER"
 msgstr ""
 
-#: ../../admin/config.rst:567
+#: ../../admin/config.rst:570
 msgid ""
 "Indicates from which header Weblate should obtain the IP address when "
 ":setting:`IP_BEHIND_REVERSE_PROXY` is enabled."
 msgstr ""
 
-#: ../../admin/config.rst:570
+#: ../../admin/config.rst:573
 msgid "Defaults to ``HTTP_X_FORWARDED_FOR``."
 msgstr ""
 
-#: ../../admin/config.rst:580
+#: ../../admin/config.rst:583
 msgid "IP_PROXY_OFFSET"
 msgstr ""
 
-#: ../../admin/config.rst:584
+#: ../../admin/config.rst:587
 msgid ""
 "Indicates which part of :setting:`IP_BEHIND_REVERSE_PROXY` is used as "
 "client IP address."
 msgstr ""
 
-#: ../../admin/config.rst:587
+#: ../../admin/config.rst:590
 msgid ""
 "Depending on your setup, this header might consist of several IP "
 "addresses, (for example ``X-Forwarded-For: a, b, client-ip``) and you can"
 " configure here which address from the header is client IP address."
 msgstr ""
 
-#: ../../admin/config.rst:591
+#: ../../admin/config.rst:594
 msgid "Defaults to 0."
 msgstr ""
 
-#: ../../admin/config.rst:601
+#: ../../admin/config.rst:604
 msgid "LAZY_COMMITS"
 msgstr ""
 
-#: ../../admin/config.rst:605
+#: ../../admin/config.rst:608
 msgid "This setting can no longer be configured and is enabled permanently."
 msgstr ""
 
-#: ../../admin/config.rst:607
+#: ../../admin/config.rst:610
 msgid ""
 "Delay creating VCS commits until necessary. This heavily reduces number "
 "of commits generated by Weblate at expense of temporarily not being able "
 "to merge some changes as they are not yet committed."
 msgstr ""
 
-#: ../../admin/config.rst:613
+#: ../../admin/config.rst:616
 msgid ":ref:`lazy-commit`"
 msgstr ""
 
-#: ../../admin/config.rst:618
+#: ../../admin/config.rst:621
 msgid "LOCK_TIME"
 msgstr ""
 
-#: ../../admin/config.rst:622
+#: ../../admin/config.rst:625
 msgid ""
 "Time in seconds for how long the translation will be locked for single "
 "translator when locked manually."
 msgstr ""
 
-#: ../../admin/config.rst:632
+#: ../../admin/config.rst:635
 msgid "LOGIN_REQUIRED_URLS"
 msgstr ""
 
-#: ../../admin/config.rst:634
+#: ../../admin/config.rst:637
 msgid ""
 "List of URLs which require login (besides standard rules built into "
 "Weblate). This allows you to password protect whole installation using:"
 msgstr ""
 
-#: ../../admin/config.rst:646
+#: ../../admin/config.rst:649
 msgid "LOGIN_REQUIRED_URLS_EXCEPTIONS"
 msgstr ""
 
-#: ../../admin/config.rst:648
+#: ../../admin/config.rst:651
 msgid ""
 "List of exceptions for :setting:`LOGIN_REQUIRED_URLS`. If you don't "
 "specify this list, the default value will be used, which allows users to "
 "access the login page."
 msgstr ""
 
-#: ../../admin/config.rst:652
+#: ../../admin/config.rst:655
 msgid "Some of exceptions you might want to include:"
 msgstr ""
 
-#: ../../admin/config.rst:670
+#: ../../admin/config.rst:673
 msgid "MT_SERVICES"
 msgstr ""
 
-#: ../../admin/config.rst:674
+#: ../../admin/config.rst:677
 msgid ""
 "The setting was renamed from ``MACHINE_TRANSLATION_SERVICES`` to "
 "``MT_SERVICES`` to be consistent with other machine translation settings."
 msgstr ""
 
-#: ../../admin/config.rst:677
+#: ../../admin/config.rst:680
 msgid "List of enabled machine translation services to use."
 msgstr ""
 
-#: ../../admin/config.rst:681
+#: ../../admin/config.rst:684
 msgid ""
 "Many of services need additional configuration like API keys, please "
 "check their documentation for more details."
 msgstr ""
 
-#: ../../admin/config.rst:704
+#: ../../admin/config.rst:707
 msgid ":ref:`machine-translation-setup`, :ref:`machine-translation`"
 msgstr ""
 
-#: ../../admin/config.rst:710
+#: ../../admin/config.rst:713
 msgid "MT_APERTIUM_APY"
 msgstr ""
 
-#: ../../admin/config.rst:712
+#: ../../admin/config.rst:715
 msgid ""
 "URL of the Apertium APy server, see http://wiki.apertium.org/wiki"
 "/Apertium-apy"
 msgstr ""
 
-#: ../../admin/config.rst:716
+#: ../../admin/config.rst:719
 msgid ""
 ":ref:`apertium`, :ref:`machine-translation-setup`, :ref:`machine-"
 "translation`"
 msgstr ""
 
-#: ../../admin/config.rst:721
+#: ../../admin/config.rst:724
 msgid "MT_AWS_ACCESS_KEY_ID"
 msgstr ""
 
-#: ../../admin/config.rst:723
+#: ../../admin/config.rst:726
 msgid "Access key ID for Amazon Translate."
 msgstr ""
 
-#: ../../admin/config.rst:727 ../../admin/config.rst:738
-#: ../../admin/config.rst:749
+#: ../../admin/config.rst:730 ../../admin/config.rst:741
+#: ../../admin/config.rst:752
 msgid ":ref:`aws`, :ref:`machine-translation-setup`, :ref:`machine-translation`"
 msgstr ""
 
-#: ../../admin/config.rst:732
+#: ../../admin/config.rst:735
 msgid "MT_AWS_SECRET_ACCESS_KEY"
 msgstr ""
 
-#: ../../admin/config.rst:734
+#: ../../admin/config.rst:737
 msgid "API secret key for Amazon Translate."
 msgstr ""
 
-#: ../../admin/config.rst:743
+#: ../../admin/config.rst:746
 msgid "MT_AWS_REGION"
 msgstr ""
 
-#: ../../admin/config.rst:745
+#: ../../admin/config.rst:748
 msgid "Region name to use for Amazon Translate."
 msgstr ""
 
-#: ../../admin/config.rst:754
+#: ../../admin/config.rst:757
 msgid "MT_BAIDU_ID"
 msgstr ""
 
-#: ../../admin/config.rst:756
+#: ../../admin/config.rst:759
 msgid ""
 "Client ID for Baidu Zhiyun API, you can register at "
 "https://api.fanyi.baidu.com/api/trans/product/index"
 msgstr ""
 
-#: ../../admin/config.rst:760 ../../admin/config.rst:771
+#: ../../admin/config.rst:763 ../../admin/config.rst:774
 msgid ""
 ":ref:`baidu-translate`, :ref:`machine-translation-setup`, :ref:`machine-"
 "translation`"
 msgstr ""
 
-#: ../../admin/config.rst:765
+#: ../../admin/config.rst:768
 msgid "MT_BAIDU_SECRET"
 msgstr ""
 
-#: ../../admin/config.rst:767
+#: ../../admin/config.rst:770
 msgid ""
 "Client secret for Baidu Zhiyun API, you can register at "
 "https://api.fanyi.baidu.com/api/trans/product/index"
 msgstr ""
 
-#: ../../admin/config.rst:776
+#: ../../admin/config.rst:779
 msgid "MT_DEEPL_KEY"
 msgstr ""
 
-#: ../../admin/config.rst:778
+#: ../../admin/config.rst:781
 msgid "API key for DeepL API, you can register at https://www.deepl.com/pro.html."
 msgstr ""
 
-#: ../../admin/config.rst:782
+#: ../../admin/config.rst:785
 msgid ":ref:`deepl`, :ref:`machine-translation-setup`, :ref:`machine-translation`"
 msgstr ""
 
-#: ../../admin/config.rst:787
+#: ../../admin/config.rst:790
 msgid "MT_GOOGLE_KEY"
 msgstr ""
 
-#: ../../admin/config.rst:789
+#: ../../admin/config.rst:792
 msgid ""
 "API key for Google Translate API, you can register at "
 "https://cloud.google.com/translate/docs"
 msgstr ""
 
-#: ../../admin/config.rst:793
+#: ../../admin/config.rst:796
 msgid ""
 ":ref:`google-translate`, :ref:`machine-translation-setup`, :ref:`machine-"
 "translation`"
 msgstr ""
 
-#: ../../admin/config.rst:798
+#: ../../admin/config.rst:801
 msgid "MT_MICROSOFT_COGNITIVE_KEY"
 msgstr ""
 
-#: ../../admin/config.rst:800
+#: ../../admin/config.rst:803
 msgid "Client key for Microsoft Cognitive Services Translator API."
 msgstr ""
 
-#: ../../admin/config.rst:803
+#: ../../admin/config.rst:806
 msgid ""
 ":ref:`ms-cognitive-translate`, :ref:`machine-translation-setup`, :ref"
 ":`machine-translation`, `Cognitive Services - Text Translation API "
@@ -3114,281 +3117,281 @@ msgid ""
 "api/>`_, `Microsoft Azure Portal <https://portal.azure.com/>`_"
 msgstr ""
 
-#: ../../admin/config.rst:810
+#: ../../admin/config.rst:813
 msgid "MT_MYMEMORY_EMAIL"
 msgstr ""
 
-#: ../../admin/config.rst:812
+#: ../../admin/config.rst:815
 msgid ""
 "MyMemory identification email, you can get 1000 requests per day with "
 "this."
 msgstr ""
 
-#: ../../admin/config.rst:816
+#: ../../admin/config.rst:819
 msgid ""
 ":ref:`mymemory`, :ref:`machine-translation-setup`, :ref:`machine-"
 "translation`, `MyMemory: API technical specifications "
 "<https://mymemory.translated.net/doc/spec.php>`_"
 msgstr ""
 
-#: ../../admin/config.rst:822
+#: ../../admin/config.rst:825
 msgid "MT_MYMEMORY_KEY"
 msgstr ""
 
-#: ../../admin/config.rst:824
+#: ../../admin/config.rst:827
 msgid ""
 "MyMemory access key for private translation memory, use together with "
 ":setting:`MT_MYMEMORY_USER`."
 msgstr ""
 
-#: ../../admin/config.rst:828 ../../admin/config.rst:840
+#: ../../admin/config.rst:831 ../../admin/config.rst:843
 msgid ""
 ":ref:`mymemory`, :ref:`machine-translation-setup`, :ref:`machine-"
 "translation`, `MyMemory: API key generator "
 "<https://mymemory.translated.net/doc/keygen.php>`_"
 msgstr ""
 
-#: ../../admin/config.rst:834
+#: ../../admin/config.rst:837
 msgid "MT_MYMEMORY_USER"
 msgstr ""
 
-#: ../../admin/config.rst:836
+#: ../../admin/config.rst:839
 msgid ""
 "MyMemory user id for private translation memory, use together with "
 ":setting:`MT_MYMEMORY_KEY`."
 msgstr ""
 
-#: ../../admin/config.rst:846
+#: ../../admin/config.rst:849
 msgid "MT_NETEASE_KEY"
 msgstr ""
 
-#: ../../admin/config.rst:848
+#: ../../admin/config.rst:851
 msgid ""
 "App key for Netease Sight API, you can register at "
 "https://sight.netease.com/"
 msgstr ""
 
-#: ../../admin/config.rst:852 ../../admin/config.rst:863
+#: ../../admin/config.rst:855 ../../admin/config.rst:866
 msgid ""
 ":ref:`netease-translate`, :ref:`machine-translation-setup`, :ref"
 ":`machine-translation`"
 msgstr ""
 
-#: ../../admin/config.rst:857
+#: ../../admin/config.rst:860
 msgid "MT_NETEASE_SECRET"
 msgstr ""
 
-#: ../../admin/config.rst:859
+#: ../../admin/config.rst:862
 msgid ""
 "App secret for Netease Sight API, you can register at "
 "https://sight.netease.com/"
 msgstr ""
 
-#: ../../admin/config.rst:868
+#: ../../admin/config.rst:871
 msgid "MT_TMSERVER"
 msgstr ""
 
-#: ../../admin/config.rst:870
+#: ../../admin/config.rst:873
 msgid "URL where tmserver is running."
 msgstr ""
 
-#: ../../admin/config.rst:874
+#: ../../admin/config.rst:877
 msgid ""
 ":ref:`tmserver`, :ref:`machine-translation-setup`, :ref:`machine-"
 "translation`, :doc:`tt:commands/tmserver`"
 msgstr ""
 
-#: ../../admin/config.rst:880
+#: ../../admin/config.rst:883
 msgid "MT_YANDEX_KEY"
 msgstr ""
 
-#: ../../admin/config.rst:882
+#: ../../admin/config.rst:885
 msgid ""
 "API key for Yandex Translate API, you can register at "
 "https://tech.yandex.com/translate/"
 msgstr ""
 
-#: ../../admin/config.rst:886
+#: ../../admin/config.rst:889
 msgid ""
 ":ref:`yandex-translate`, :ref:`machine-translation-setup`, :ref:`machine-"
 "translation`"
 msgstr ""
 
-#: ../../admin/config.rst:891
+#: ../../admin/config.rst:894
 msgid "MT_YOUDAO_ID"
 msgstr ""
 
-#: ../../admin/config.rst:893
+#: ../../admin/config.rst:896
 msgid ""
 "Client ID for Youdao Zhiyun API, you can register at "
 "https://ai.youdao.com/product-fanyi.s"
 msgstr ""
 
-#: ../../admin/config.rst:897 ../../admin/config.rst:908
+#: ../../admin/config.rst:900 ../../admin/config.rst:911
 msgid ""
 ":ref:`youdao-translate`, :ref:`machine-translation-setup`, :ref:`machine-"
 "translation`"
 msgstr ""
 
-#: ../../admin/config.rst:902
+#: ../../admin/config.rst:905
 msgid "MT_YOUDAO_SECRET"
 msgstr ""
 
-#: ../../admin/config.rst:904
+#: ../../admin/config.rst:907
 msgid ""
 "Client secret for Youdao Zhiyun API, you can register at "
 "https://ai.youdao.com/product-fanyi.s"
 msgstr ""
 
-#: ../../admin/config.rst:913
+#: ../../admin/config.rst:916
 msgid "MT_SAP_BASE_URL"
 msgstr ""
 
-#: ../../admin/config.rst:915
+#: ../../admin/config.rst:918
 msgid "API URL to the SAP Translation Hub service."
 msgstr ""
 
-#: ../../admin/config.rst:918 ../../admin/config.rst:928
-#: ../../admin/config.rst:938 ../../admin/config.rst:948
-#: ../../admin/config.rst:959
+#: ../../admin/config.rst:921 ../../admin/config.rst:931
+#: ../../admin/config.rst:941 ../../admin/config.rst:951
+#: ../../admin/config.rst:962
 msgid ""
 ":ref:`saptranslationhub`, :ref:`machine-translation-setup`, :ref"
 ":`machine-translation`"
 msgstr ""
 
-#: ../../admin/config.rst:923
+#: ../../admin/config.rst:926
 msgid "MT_SAP_SANDBOX_APIKEY"
 msgstr ""
 
-#: ../../admin/config.rst:925
+#: ../../admin/config.rst:928
 msgid "API key for sandbox API usage"
 msgstr ""
 
-#: ../../admin/config.rst:933
+#: ../../admin/config.rst:936
 msgid "MT_SAP_USERNAME"
 msgstr ""
 
-#: ../../admin/config.rst:935
+#: ../../admin/config.rst:938
 msgid "Your SAP username"
 msgstr ""
 
-#: ../../admin/config.rst:943
+#: ../../admin/config.rst:946
 msgid "MT_SAP_PASSWORD"
 msgstr ""
 
-#: ../../admin/config.rst:945
+#: ../../admin/config.rst:948
 msgid "Your SAP password"
 msgstr ""
 
-#: ../../admin/config.rst:953
+#: ../../admin/config.rst:956
 msgid "MT_SAP_USE_MT"
 msgstr ""
 
-#: ../../admin/config.rst:955
+#: ../../admin/config.rst:958
 msgid ""
 "Should the machine translation service also be used? (in addition to the "
 "term database). Possible values: True / False"
 msgstr ""
 
-#: ../../admin/config.rst:964
+#: ../../admin/config.rst:967
 msgid "NEARBY_MESSAGES"
 msgstr ""
 
-#: ../../admin/config.rst:966
+#: ../../admin/config.rst:969
 msgid "How many messages around current one to show during translating."
 msgstr ""
 
-#: ../../admin/config.rst:971
+#: ../../admin/config.rst:974
 msgid "PIWIK_SITE_ID"
 msgstr ""
 
-#: ../../admin/config.rst:973
+#: ../../admin/config.rst:976
 msgid "ID of a site in Matomo you want to track."
 msgstr ""
 
-#: ../../admin/config.rst:977
+#: ../../admin/config.rst:980
 msgid ":setting:`PIWIK_URL`"
 msgstr ""
 
-#: ../../admin/config.rst:982
+#: ../../admin/config.rst:985
 msgid "PIWIK_URL"
 msgstr ""
 
-#: ../../admin/config.rst:984
+#: ../../admin/config.rst:987
 msgid ""
 "URL of a Matomo installation you want to use to track Weblate users. For "
 "more information about Matomo see <https://matomo.org/>."
 msgstr ""
 
-#: ../../admin/config.rst:989
+#: ../../admin/config.rst:992
 msgid ":setting:`PIWIK_SITE_ID`"
 msgstr ""
 
-#: ../../admin/config.rst:994
+#: ../../admin/config.rst:997
 msgid "REGISTRATION_CAPTCHA"
 msgstr ""
 
-#: ../../admin/config.rst:996
+#: ../../admin/config.rst:999
 msgid ""
 "A boolean (either ``True`` or ``False``) indicating whether registration "
 "of new accounts is protected by captcha. This setting is optional, and a "
 "default of True will be assumed if it is not supplied."
 msgstr ""
 
-#: ../../admin/config.rst:1000
+#: ../../admin/config.rst:1003
 msgid ""
 "If enabled the captcha is added to all pages where users enter email "
 "address:"
 msgstr ""
 
-#: ../../admin/config.rst:1002
+#: ../../admin/config.rst:1005
 msgid "New account registration."
 msgstr ""
 
-#: ../../admin/config.rst:1003
+#: ../../admin/config.rst:1006
 msgid "Password recovery."
 msgstr ""
 
-#: ../../admin/config.rst:1004
+#: ../../admin/config.rst:1007
 msgid "Adding email to an account."
 msgstr ""
 
-#: ../../admin/config.rst:1005
+#: ../../admin/config.rst:1008
 msgid "Contact form for users who are not logged in."
 msgstr ""
 
-#: ../../admin/config.rst:1010
+#: ../../admin/config.rst:1013
 msgid "REGISTRATION_EMAIL_MATCH"
 msgstr ""
 
-#: ../../admin/config.rst:1014
+#: ../../admin/config.rst:1017
 msgid "Allows you to filter email addresses which can register."
 msgstr ""
 
-#: ../../admin/config.rst:1016
+#: ../../admin/config.rst:1019
 msgid "Defaults to ``.*`` which allows any address to register."
 msgstr ""
 
-#: ../../admin/config.rst:1018
+#: ../../admin/config.rst:1021
 msgid "You can use it to restrict registration to a single email domain:"
 msgstr ""
 
-#: ../../admin/config.rst:1027
+#: ../../admin/config.rst:1030
 msgid "REGISTRATION_OPEN"
 msgstr ""
 
-#: ../../admin/config.rst:1029
+#: ../../admin/config.rst:1032
 msgid ""
 "A boolean (either ``True`` or ``False``) indicating whether registration "
 "of new accounts is currently permitted. This setting is optional, and a "
 "default of True will be assumed if it is not supplied."
 msgstr ""
 
-#: ../../admin/config.rst:1036
+#: ../../admin/config.rst:1039
 msgid "SIMPLIFY_LANGUAGES"
 msgstr ""
 
-#: ../../admin/config.rst:1038
+#: ../../admin/config.rst:1041
 msgid ""
 "Use simple language codes for default language/country combinations. For "
 "example ``fr_FR`` translation will use ``fr`` language code. This is "
@@ -3396,71 +3399,71 @@ msgid ""
 "these default combinations."
 msgstr ""
 
-#: ../../admin/config.rst:1043
+#: ../../admin/config.rst:1046
 msgid "Disable this if you are having different translations for both variants."
 msgstr ""
 
-#: ../../admin/config.rst:1048
+#: ../../admin/config.rst:1051
 msgid "SITE_TITLE"
 msgstr ""
 
-#: ../../admin/config.rst:1050
+#: ../../admin/config.rst:1053
 msgid "Site title to be used in website and emails as well."
 msgstr ""
 
-#: ../../admin/config.rst:1055
+#: ../../admin/config.rst:1058
 msgid "SPECIAL_CHARS"
 msgstr ""
 
-#: ../../admin/config.rst:1057
+#: ../../admin/config.rst:1060
 msgid ""
 "Additional chars to show in the visual keyboard, see :ref:`visual-"
 "keyboard`."
 msgstr ""
 
-#: ../../admin/config.rst:1059
+#: ../../admin/config.rst:1062
 msgid "The default value is:"
 msgstr ""
 
-#: ../../admin/config.rst:1068
+#: ../../admin/config.rst:1071
 msgid "STATUS_URL"
 msgstr ""
 
-#: ../../admin/config.rst:1070
+#: ../../admin/config.rst:1073
 msgid "URL where your Weblate instance reports it's status."
 msgstr ""
 
-#: ../../admin/config.rst:1075
+#: ../../admin/config.rst:1078
 msgid "SUGGESTION_CLEANUP_DAYS"
 msgstr ""
 
-#: ../../admin/config.rst:1079
+#: ../../admin/config.rst:1082
 msgid ""
 "Automatically delete suggestions after given number of days. Defaults to "
 "``None`` what means no deletion at all."
 msgstr ""
 
-#: ../../admin/config.rst:1085
+#: ../../admin/config.rst:1088
 msgid "TTF_PATH"
 msgstr ""
 
-#: ../../admin/config.rst:1087
+#: ../../admin/config.rst:1090
 msgid "Path to Droid fonts used for widgets and charts."
 msgstr ""
 
-#: ../../admin/config.rst:1089
+#: ../../admin/config.rst:1092
 msgid "Defaults to ``$BASE_DIR/weblate/ttf``."
 msgstr ""
 
-#: ../../admin/config.rst:1093
+#: ../../admin/config.rst:1096
 msgid ":setting:`BASE_DIR`"
 msgstr ""
 
-#: ../../admin/config.rst:1098
+#: ../../admin/config.rst:1101
 msgid "URL_PREFIX"
 msgstr ""
 
-#: ../../admin/config.rst:1100
+#: ../../admin/config.rst:1103
 msgid ""
 "This settings allows you to run Weblate under some path (otherwise it "
 "relies on being executed from webserver root). To use this setting, you "
@@ -3468,17 +3471,17 @@ msgid ""
 " WSGI, this can be achieved by setting ``WSGIScriptAlias``."
 msgstr ""
 
-#: ../../admin/config.rst:1107
+#: ../../admin/config.rst:1110
 msgid ""
 "This setting does not work with Django's builtin server, you would have "
 "to adjust :file:`urls.py` to contain this prefix."
 msgstr ""
 
-#: ../../admin/config.rst:1113
+#: ../../admin/config.rst:1116
 msgid "WEBLATE_ADDONS"
 msgstr ""
 
-#: ../../admin/config.rst:1115
+#: ../../admin/config.rst:1118
 msgid ""
 "List of addons available for use. To use them, they have to be enabled "
 "for given translation component. By default this includes all built in "
@@ -3486,33 +3489,33 @@ msgid ""
 "ones enabled, for example:"
 msgstr ""
 
-#: ../../admin/config.rst:1147 ../../admin/management.rst:560
+#: ../../admin/config.rst:1150 ../../admin/management.rst:560
 msgid ":ref:`addons`"
 msgstr ""
 
-#: ../../admin/config.rst:1152
+#: ../../admin/config.rst:1155
 msgid "WEBLATE_FORMATS"
 msgstr ""
 
-#: ../../admin/config.rst:1156
+#: ../../admin/config.rst:1159
 msgid ""
 "List of file formats available for use, you can usually keep this on "
 "default value."
 msgstr ""
 
-#: ../../admin/config.rst:1160
+#: ../../admin/config.rst:1163
 msgid ":ref:`formats`"
 msgstr ""
 
-#: ../../admin/config.rst:1165
+#: ../../admin/config.rst:1168
 msgid "WEBLATE_GPG_IDENTITY"
 msgstr ""
 
-#: ../../admin/config.rst:1169
+#: ../../admin/config.rst:1172
 msgid "Identity which should be used by Weblate to sign Git commits, for example:"
 msgstr ""
 
-#: ../../admin/config.rst:1177
+#: ../../admin/config.rst:1180
 msgid ""
 "If you are going to change value of setting, it is advisable to clean the"
 " cache as the key information is cached for seven days. This is not "
@@ -3520,15 +3523,15 @@ msgid ""
 "configured."
 msgstr ""
 
-#: ../../admin/config.rst:1184
+#: ../../admin/config.rst:1187
 msgid ":ref:`gpg-sign`"
 msgstr ""
 
-#: ../../admin/config.rst:1189
+#: ../../admin/config.rst:1192
 msgid "WHOOSH_INDEX"
 msgstr ""
 
-#: ../../admin/config.rst:1194
+#: ../../admin/config.rst:1197
 msgid ""
 "Directory where Whoosh fulltext indices will be stored. Defaults to :file"
 ":`whoosh-index` subdirectory."
@@ -6634,8 +6637,9 @@ msgid ""
 " enabling them in Weblate. The individual services are enabled using "
 ":setting:`MT_SERVICES`."
 msgstr ""
-"Weblate はいくつかの機械翻訳サービスを組み込みでサポートしており、これを有効にするかどうかは管理者次第です。それらのサービスはそれぞれに違った利用"
-"規約を持っていますので、それを Weblate "
+"Weblate "
+"はいくつかの機械翻訳サービスを組み込みでサポートしており、これを有効にするかどうかは管理者次第です。それらのサービスはそれぞれに違った利用規約を持っていますので、それを"
+" Weblate "
 "で有効にする前に、利用が許可されているかどうかを確認してください。それぞれのサービスは、:setting:`MT_SERVICES` "
 "を使うことにより有効にされます。"
 
@@ -7126,8 +7130,8 @@ msgid ""
 "webserver can cause wrong permissions on some files, please check :ref"
 ":`file-permissions` for more details."
 msgstr ""
-"ウェブサーバを実行しているユーザとは別のユーザで管理コマンドを実行すると、ファイルによっては権限間違いを引き起こす可能性があります。より詳しくは :ref"
-":`file-permissions` を確認してください。"
+"ウェブサーバを実行しているユーザとは別のユーザで管理コマンドを実行すると、ファイルによっては権限間違いを引き起こす可能性があります。より詳しくは "
+":ref:`file-permissions` を確認してください。"
 
 #: ../../admin/management.rst:12
 msgid ""
@@ -10383,3 +10387,10 @@ msgstr ""
 #~ " required, see :ref:`virtualenv` for "
 #~ "instructions how to install these."
 #~ msgstr ""
+
+#~ msgid ""
+#~ "For example instead of "
+#~ "``https://user:password@git.example.com/repo.git`` it will"
+#~ " show just ``https://git.example.com/repo.git``."
+#~ msgstr ""
+
