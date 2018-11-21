@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: 2018-11-18 16:20+0000\n"
+"PO-Revision-Date: 2018-11-23 00:31+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/api/ja/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../api.rst:15
 msgid "The API is available since Weblate 2.6."
-msgstr ""
+msgstr "この API は Weblate 2.6 以降で利用可能です。"
 
 #: ../../api.rst:17
 msgid ""
@@ -39,10 +39,13 @@ msgid ""
 "REST framework <https://www.django-rest-framework.org/>`_. You can use it"
 " directly or by :ref:`wlc`."
 msgstr ""
+"API は ``/api/`` の URL から利用可能です。これは `Django REST framework <https://www"
+".django-rest-framework.org/>`_ に基づいています。URL から直接使うこともできますし、:ref:`wlc` "
+"を通して使うこともできます。"
 
 #: ../../api.rst:24
 msgid "Authentication and generic parameters"
-msgstr ""
+msgstr "認証と共通パラメータ"
 
 #: ../../api.rst:26
 msgid ""
@@ -52,6 +55,9 @@ msgid ""
 "authentication uses a token, which you can get in your profile. Use it in"
 " the ``Authorization`` header:"
 msgstr ""
+"公開プロジェクトの API は認証なしに使うことができますが、認証されていないリクエストの数は大きく制限されていますので（初期設定では1日あたり100リク"
+"エストまでです）、認証を使うことをおすすめします。認証はトークンを利用して行われます。トークンはあなたのプロファイルページで入手できますので、これを "
+"``Authorization`` ヘッダに含めてください。"
 
 #: ../../api.rst:33
 msgid ""
