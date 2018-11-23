@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-21 22:04+0900\n"
-"PO-Revision-Date: 2018-11-21 12:10+0000\n"
+"PO-Revision-Date: 2018-11-24 22:14+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
+"weblate-doc-ja/admin/ja/>\n"
 "Language: ja\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
-"doc-ja/admin/ja/>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../admin/access.rst:4 ../../admin/projects.rst:96
@@ -1054,7 +1055,7 @@ msgstr "現在の翻訳のファイル名で構成される単一のパラメー
 
 #: ../../admin/admin.rst:4
 msgid "Django admin interface"
-msgstr "Django 管理インターフェイス"
+msgstr "Django 管理画面"
 
 #: ../../admin/admin.rst:6
 msgid ""
@@ -7105,7 +7106,7 @@ msgstr ""
 
 #: ../../admin/machine.rst:359
 msgid "Custom machine translation"
-msgstr ""
+msgstr "カスタム機械翻訳"
 
 #: ../../admin/machine.rst:361
 msgid ""
@@ -8404,10 +8405,9 @@ msgstr "翻訳プロジェクト"
 
 #: ../../admin/projects.rst:5
 msgid "Translation organization"
-msgstr "翻訳の編成"
+msgstr "翻訳の構成"
 
 #: ../../admin/projects.rst:7
-#, fuzzy
 msgid ""
 "Weblate organizes translatable content into tree like structure. The top "
 "level object is :ref:`project`, which should hold all translations which "
@@ -8419,12 +8419,12 @@ msgid ""
 "automatically by Weblate as the translation files (matching mask defined "
 "in :ref:`component`) appear in VCS repository."
 msgstr ""
-"Weblate では翻訳される対象を木構造のように組織します。最上位の構成要素は :ref:`project` "
+"Weblate では翻訳の対象をツリーのような構造に組織します。最上位の構成要素は :ref:`project` "
 "です。これは例えば、アプリケーションやドキュメントのバージョン違いの翻訳など、同じ対象に属するすべての翻訳を保持します。次の階層には "
 ":ref:`component` があります。これが実際に翻訳対象となる部分です。使用する VCS "
-"レポジトリや、翻訳すべきファイルを決定するフィルタなどは、ここで定義します。:ref:`component` "
-"の下の階層に、個々の翻訳が位置します。ここでは :ref:`component` での定義によって VCS "
-"リポジトリから抽出されたファイルが、Weblate によって自動的に翻訳ファイルとして扱われます。"
+"レポジトリや、翻訳すべきファイルを決定するフィルタなどは、ここで定義します。:ref:`component` の下の階層に、個々の翻訳が位置します。"
+"ここでは :ref:`component` での定義によって VCS リポジトリから抽出されたファイルが、Weblate "
+"によって自動的に翻訳ファイルとして扱われます。"
 
 #: ../../admin/projects.rst:16
 msgid ""
@@ -8487,7 +8487,7 @@ msgstr "プロジェクトを作成することにより、プロジェクトの
 msgid ""
 "Creating new translation component can be initiated by single click there"
 " and you will have to fill in translation component information now:"
-msgstr "新しい翻訳コンポーネントの作成は、そこでワンクリックで開始することができます。今度は翻訳コンポーネントの情報を入力してください。"
+msgstr "ワンクリックで新しい翻訳コンポーネントの作成を開始できますので、今度は翻訳コンポーネントの情報を入力してください。"
 
 #: ../../admin/projects.rst:67
 msgid ":ref:`admin-interface`, :ref:`project`, :ref:`component`"
@@ -8616,7 +8616,9 @@ msgid ""
 "location and file mask for which files to translate and Weblate "
 "automatically fetches from the VCS and finds all matching translatable "
 "files."
-msgstr "実際に翻訳する構成要素がコンポーネントです。VCSレポジトリの場所と、どのファイルを翻訳すべきかのファイルマスクを入力すると、Weblateは自動的にVCSから取得し、マッチするすべての翻訳ファイルを見つけます。"
+msgstr ""
+"コンポーネントは実際に翻訳する構成要素です。VCSレポジトリの場所と、どのファイルを翻訳すべきかのファイルマスクを入力すると、Weblateは自動的に "
+"VCS から取得し、マッチするすべての翻訳ファイルを見つけます。"
 
 #: ../../admin/projects.rst:127
 msgid ""
@@ -8629,7 +8631,9 @@ msgid ""
 "It is recommended to have translation components of reasonable size - "
 "split the translation by anything what makes sense in your case "
 "(individual applications or addons, book chapters or websites)."
-msgstr "コンポーネントは適当なサイズに保つことをお勧めします。それぞれの事例に応じて、個々のアプリケーションやアドオン、本の各章や個々のウェブサイトなど、意味のある基準で翻訳を分割してください。"
+msgstr ""
+"コンポーネントは適切なサイズに保つことをお勧めします。個々のアプリケーションやアドオン、本の各章や個々のウェブサイトなど、それぞれのケースに応じて意味のあ"
+"る基準で翻訳を分割してください。"
 
 #: ../../admin/projects.rst:135
 msgid ""
@@ -8703,7 +8707,7 @@ msgstr "リポジトリの閲覧"
 msgid ""
 "URL of repository browser to display source files (location where "
 "messages are used). When empty no such links will be generated."
-msgstr "ソースファイルを閲覧するためのリポジトリのURLです。メッセージが使われる場所になります。空欄であればそのようなリンクは生成されません。"
+msgstr "ソースファイルを閲覧するためのリポジトリのURL（そのメッセージが使われている場所）です。空欄であればこのリンクは生成されません。"
 
 #: ../../admin/projects.rst:164
 msgid "You can use following format strings:"
@@ -8753,7 +8757,7 @@ msgid ""
 "for Git repositories."
 msgstr ""
 "Weblateで行われた変更が出力されるリポジトリのURLです。これは :ref:`continuous-translation` "
-"が使われないか、マニュアルで変更をマージしなけれなならない場合に重要です。これをGitリポジトリに対して自動化するためには、:ref:`git-"
+"を行わないとき、あるいは手動で変更をマージしなけれなならないときに重要です。これをGitリポジトリに対して自動化するためには、:ref:`git-"
 "exporter` を使うことができます。"
 
 #: ../../admin/projects.rst:179
@@ -8776,21 +8780,21 @@ msgid ""
 "files (eg. more Gettext domains), you need to create separate component "
 "for each."
 msgstr ""
-"翻訳すべきファイルのパスを示すマスクです。これは言語コードに置き換えられるべき、ひとつの * "
-"を含んでいなければなりません（これがどのように処理されるかについての情報は :ref:`languages` "
-"を参照してください）。リポジトリにひとつ以上の翻訳ファイルがある場合（例えばひとつ以上のGettextドメインがある場合）は、それぞれについて独立したコンポーネントを作成しなければなりません。"
+"翻訳すべきファイルのパスを示すマスクです。これは言語コードに置き換えられる * をひとつ含んでいなければなりません（"
+"これがどのように処理されるかについての情報は :ref:`languages` を参照してください）。リポジトリに複数の翻訳ファイルがある場合（例えば複数"
+"のGettextドメインがある場合）は、それぞれ独立してコンポーネントを作成しなければなりません。"
 
 #: ../../admin/projects.rst:188
 msgid "For example ``po/*.po`` or ``locale/*/LC_MESSAGES/django.po``."
-msgstr "例えば ``po/*.po`` や ``locale/*/LC_MESSAGES/django.po`` などといったようになります。"
+msgstr "例としては ``po/*.po`` や ``locale/*/LC_MESSAGES/django.po`` などといったようになります。"
 
 #: ../../admin/projects.rst:190
 msgid ""
 "In case your filename contains special chars such as ``[``, ``]``, these "
 "need to be escaped as ``[[]`` or ``[]]``."
 msgstr ""
-"ファイル名に `[`` や ``]`` などの特別な文字を含む場合は、これらは ``[[]`` や ``[]]`` "
-"のようにエスケープされねばなりません。"
+"ファイル名に ``[`` や ``]`` などの特別な文字を含む場合は、これらは ``[[]`` や ``[]]`` "
+"のようにエスケープされなければなりません。"
 
 #: ../../admin/projects.rst:192
 msgid "Monolingual base language file"
@@ -10393,4 +10397,3 @@ msgstr ""
 #~ "``https://user:password@git.example.com/repo.git`` it will"
 #~ " show just ``https://git.example.com/repo.git``."
 #~ msgstr ""
-
