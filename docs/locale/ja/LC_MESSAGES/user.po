@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: 2018-11-20 22:02+0000\n"
+"PO-Revision-Date: 2018-11-24 22:14+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/user/ja/>\n"
@@ -51,6 +51,8 @@ msgid ""
 "translation is in good shape. The checks are divided into three levels of"
 " severity, and can be ignored in case of false positives."
 msgstr ""
+"品質チェックはよくある翻訳者の間違いを見つける手助けとなり、翻訳が質の良いものとなることを確実にします。チェックは深刻度によって3段階に分けられており、検"
+"出間違いの場合は無視することができます。"
 
 #: ../../user/checks.rst:8
 msgid ""
@@ -75,7 +77,7 @@ msgstr ""
 
 #: ../../user/checks.rst:30
 msgid "Quality checks"
-msgstr ""
+msgstr "品質チェック"
 
 #: ../../user/checks.rst:32
 msgid ""
@@ -90,7 +92,7 @@ msgstr ""
 
 #: ../../user/checks.rst:41
 msgid "Translation checks"
-msgstr ""
+msgstr "翻訳チェック"
 
 #: ../../user/checks.rst:43
 msgid ""
