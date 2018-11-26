@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-21 22:04+0900\n"
-"PO-Revision-Date: 2018-11-24 22:14+0000\n"
+"PO-Revision-Date: 2018-11-26 02:26+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/admin/ja/>\n"
@@ -212,49 +212,49 @@ msgstr ""
 
 #: ../../admin/access.rst:118
 msgid "Users, roles, groups and permissions"
-msgstr ""
+msgstr "ユーザ、役割、グループ、権限"
 
 #: ../../admin/access.rst:120
 msgid "The authentication models consist of several objects:"
-msgstr ""
+msgstr "認証モデルは以下に示す複数のオブジェクトから構成されます。"
 
 #: ../../admin/access.rst:123
 msgid "`Permission`"
-msgstr ""
+msgstr "`権限`"
 
 #: ../../admin/access.rst:123
 msgid ""
 "Individual permissions defined by Weblate. You can not assign individual "
 "permissions, this can be done only through roles."
-msgstr ""
+msgstr "Weblate によって定義されている個々の権限です。権限を直接ユーザに割り当てることはできません。次の「役割」を通してのみ可能です。"
 
 #: ../../admin/access.rst:126
 msgid "`Role`"
-msgstr ""
+msgstr "`役割`"
 
 #: ../../admin/access.rst:126
 msgid ""
 "Role defines set of a permissions. This allows to reuse these sets in "
 "several places and makes the administration easier."
-msgstr ""
+msgstr "役割は権限の束を定義します。これによりこれらの束を複数の場所で再利用でき、また管理者の作業を容易にします。"
 
 #: ../../admin/access.rst:128
 msgid "`User`"
-msgstr ""
+msgstr "`ユーザ`"
 
 #: ../../admin/access.rst:129
 msgid "Users can be members of several groups."
-msgstr ""
+msgstr "ユーザは複数のグループに所属できます。"
 
 #: ../../admin/access.rst:132
 msgid "`Group`"
-msgstr ""
+msgstr "`グループ`"
 
 #: ../../admin/access.rst:131
 msgid ""
 "Groups connect roles, users and authentication objects (projects, "
 "languages and component lists)."
-msgstr ""
+msgstr "グループは「役割」「ユーザ」「権限」オブジェクトを繋ぎます。グループには「プロジェクト」「言語」「コンポーネントリスト」があります。"
 
 #: ../../admin/access.rst:147
 msgid "Permission checking"
@@ -268,7 +268,7 @@ msgstr ""
 
 #: ../../admin/access.rst:156
 msgid "`Project`"
-msgstr ""
+msgstr "`プロジェクト`"
 
 #: ../../admin/access.rst:153
 msgid "Compared against scope project, if not set, this matches none project."
@@ -282,7 +282,7 @@ msgstr ""
 
 #: ../../admin/access.rst:164
 msgid "`Component list`"
-msgstr ""
+msgstr "`コンポーネントリスト`"
 
 #: ../../admin/access.rst:159
 msgid "Scope component is matched against this list, if not set this is ignored."
@@ -298,7 +298,7 @@ msgstr ""
 
 #: ../../admin/access.rst:171
 msgid "`Language`"
-msgstr ""
+msgstr "`言語`"
 
 #: ../../admin/access.rst:167
 msgid ""
@@ -325,7 +325,7 @@ msgstr ""
 
 #: ../../admin/access.rst:181
 msgid "Managing users and groups"
-msgstr ""
+msgstr "ユーザとグループを管理する"
 
 #: ../../admin/access.rst:183
 msgid ""
@@ -335,7 +335,7 @@ msgstr ""
 
 #: ../../admin/access.rst:189
 msgid "Managing per project access control"
-msgstr ""
+msgstr "プロジェクトごとのアクセスコントロールを管理する"
 
 #: ../../admin/access.rst:193
 msgid "This feature only works for ACL controlled projects, see :ref:`acl`."
@@ -2131,7 +2131,7 @@ msgstr ""
 
 #: ../../admin/componentlists.rst:4
 msgid "Component Lists"
-msgstr ""
+msgstr "コンポーネントリスト"
 
 #: ../../admin/componentlists.rst:6
 msgid ""
@@ -2140,12 +2140,15 @@ msgid ""
 "to be their default view when they log in. See :ref:`dashboard` to learn "
 "more about this feature."
 msgstr ""
+"Weblateではコンポーネントのグループを複数定義することができ、これを「コンポーネントリスト」と呼んでいます。これらのリストはユーザのダッシュボードに"
+"オプションで表示することができ、ユーザはログインしたときのデフォルトビューとしてリストを選ぶことができます。この機能についてより詳しく知るには "
+":ref:`dashboard` を参照してください。"
 
 #: ../../admin/componentlists.rst:13
 msgid ""
 "The overview of all component lists status is also available on the "
 "dashboard."
-msgstr ""
+msgstr "すべてのコンポーネントリストの状態もダッシュボードでまとめて見ることができます。"
 
 #: ../../admin/componentlists.rst:16
 msgid ""
@@ -2154,6 +2157,9 @@ msgid ""
 "must have a name that is displayed to the user, and a slug that "
 "represents it in the URL."
 msgstr ""
+"コンポーネントリストの名前と中身は、管理画面の :guilabel:`Component lists` "
+"セクションで設定することができます。個々のコンポーネントリストはそれぞれ、ユーザに表示される名前と、URL "
+"の中でコンポーネントリストを示すために使われる短い文字列 (slug) を持たなければなりません。"
 
 #: ../../admin/componentlists.rst:23
 msgid ""
@@ -2161,10 +2167,12 @@ msgid ""
 "anonymous user in the admin interface, this will change what dashboard is"
 " visible to unauthenticated users."
 msgstr ""
+"バージョン 2.13 から、匿名ユーザのためのダッシュボード設定を、管理画面から変更することができるようになりました。これにより非認証ユーザに表示されるダ"
+"ッシュボード画面が変更されます。"
 
 #: ../../admin/componentlists.rst:28
 msgid "Automatic component lists"
-msgstr ""
+msgstr "自動コンポーネントリスト"
 
 #: ../../admin/componentlists.rst:32
 msgid ""
@@ -2174,6 +2182,8 @@ msgid ""
 "installations or in case you want to have component list with all "
 "components on your Weblate installation."
 msgstr ""
+"さらに、コンポーネントを slug に基づいて自動でリストに追加するための、:guilabel:`Automatic component list "
+"assignment` ルールを作ることができます。"
 
 #: ../../admin/componentlists.rst:38
 msgid ""
@@ -2181,6 +2191,8 @@ msgid ""
 " :guilabel:`Automatic component list assignment` with ``^.*$`` regular "
 "expression on both project and component as shown on following image:"
 msgstr ""
+"すべてのコンポーネントを含むコンポーネントリストを作るには単に、下の画像のように、:guilabel:`Automatic component list "
+"assignment` のプロジェクトとコンポーネントの双方の値を、正規表現で ``^.*$`` と定義すればよいです。"
 
 #: ../../admin/config.rst:4
 msgid "Configuration"
