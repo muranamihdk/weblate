@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-21 22:04+0900\n"
-"PO-Revision-Date: 2018-11-27 03:31+0000\n"
+"PO-Revision-Date: 2018-11-28 10:19+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/admin/ja/>\n"
@@ -454,7 +454,7 @@ msgstr ""
 
 #: ../../admin/access.rst:289
 msgid "Comments"
-msgstr ""
+msgstr "注釈"
 
 #: ../../admin/access.rst:288
 msgid ""
@@ -3958,17 +3958,17 @@ msgstr ""
 
 #: ../../admin/deployments.rst:4
 msgid "Weblate deployments"
-msgstr ""
+msgstr "Weblate のデプロイ"
 
 #: ../../admin/deployments.rst:6
 msgid ""
 "Weblate comes with support for deployment using several technologies. "
 "This section is overview of them."
-msgstr ""
+msgstr "Weblate は複数の技術でのデプロイメントをサポートしています。このセクションではそれらを概観します。"
 
 #: ../../admin/deployments.rst:12
 msgid "Running Weblate in the Docker"
-msgstr ""
+msgstr "Weblate を Docker で動かす"
 
 #: ../../admin/deployments.rst:14
 msgid ""
@@ -4854,15 +4854,15 @@ msgstr "管理者のためのガイド"
 
 #: ../../admin/install.rst:4
 msgid "Installation instructions"
-msgstr ""
+msgstr "インストール手順"
 
 #: ../../admin/install.rst:6
 msgid "Looking for quick installation instructions? See :doc:`admin/quick`."
-msgstr ""
+msgstr "手っ取り早いインストールの手順を探していますか？　:doc:`admin/quick` を参照してください。"
 
 #: ../../admin/install.rst:9
 msgid "Hardware requirements"
-msgstr ""
+msgstr "ハードウェア要件"
 
 #: ../../admin/install.rst:11
 msgid ""
@@ -7936,7 +7936,7 @@ msgstr ""
 
 #: ../../admin/memory.rst:4
 msgid "Translation Memory"
-msgstr ""
+msgstr "翻訳メモリ"
 
 #: ../../admin/memory.rst:8
 msgid ""
@@ -7944,6 +7944,8 @@ msgid ""
 " against it as a :ref:`machine-translation` or in :ref:`auto-"
 "translation`."
 msgstr ""
+"Weblate には内臓の翻訳メモリがあります。これは :ref:`machine-translation` として、あるいは :ref:`auto-"
+"translation`において、翻訳メモリとの照合を提供します。"
 
 #: ../../admin/memory.rst:13
 msgid ""
@@ -8810,7 +8812,7 @@ msgstr ""
 
 #: ../../admin/projects.rst:192
 msgid "Monolingual base language file"
-msgstr "Monolingualベース言語ファイル"
+msgstr "単一言語基盤言語ファイル"
 
 #: ../../admin/projects.rst:193
 msgid "Base file containing strings definition for :ref:`monolingual`."
@@ -9538,17 +9540,19 @@ msgstr ""
 
 #: ../../admin/quick.rst:190
 msgid "Adding translation"
-msgstr ""
+msgstr "翻訳を追加する"
 
 #: ../../admin/quick.rst:192
 msgid ""
 "Open admin interface (http://localhost/admin/) and create project you "
 "want to translate. See :ref:`project` for more details."
 msgstr ""
+"管理者画面 (http://localhost/admin/) を開いて、希望する翻訳のためのプロジェクトを作成してください。より詳しくは "
+":ref:`project` を参照してください。"
 
 #: ../../admin/quick.rst:195
 msgid "All you need to specify here is project name and its website."
-msgstr ""
+msgstr "ここで設定が必須なのはプロジェクト名とそのウェブサイトだけです。"
 
 #: ../../admin/quick.rst:197
 msgid ""
@@ -9556,6 +9560,8 @@ msgid ""
 "VCS repository and selects which files to translate. See :ref:`component`"
 " for more details."
 msgstr ""
+"実際に翻訳する対象であるコンポーネントを作成してください。ここでは特定の VCS リポジトリと、そのリポジトリどのファイルを翻訳するかを設定します。"
+"より詳しくは :ref:`component` を参照してください。"
 
 #: ../../admin/quick.rst:201
 msgid ""
@@ -9565,27 +9571,30 @@ msgid ""
 "string properties, Java properties or Qt Linguist files, see "
 ":ref:`formats` for more details."
 msgstr ""
+"ここでの重要な設定項目は、コンポーネント名、VCS リポジトリのアドレス、翻訳対象ファイルを見つけるためのマスクです。Weblate は Gettext "
+"PO ファイル、Android リソースストリング、OS X ストリングプロパティー、Java プロパティー、Qt "
+"リンギストファイルなどを含む、幅広いフォーマットをサポートしています。より詳しくは :ref:`formats` を参照してください。"
 
 #: ../../admin/quick.rst:207
 msgid ""
 "Once the above is completed (it can be lengthy process depending on size "
 "of your VCS repository and number of messages to translate), you can "
 "start translating."
-msgstr ""
+msgstr "以上が終了したら（VCS リポジトリのサイズや翻訳すべきメッセージの数によっては時間がかかるかもしれません）、翻訳を開始することができます。"
 
 #: ../../admin/sample.rst:4
 msgid "Sample configuration"
-msgstr ""
+msgstr "設定例"
 
 #: ../../admin/sample.rst:6
 msgid ""
 "The following example is shipped as :file:`weblate/settings_example.py` "
 "with Weblate:"
-msgstr ""
+msgstr "以下の例は :file:`weblate/settings_example.py` として Weblate とともに出荷されているものです。"
 
 #: ../../admin/translating.rst:2
 msgid "Translation process"
-msgstr ""
+msgstr "翻訳のプロセス"
 
 #: ../../admin/translating.rst:11
 msgid "This feature is available since Weblate 1.6."
