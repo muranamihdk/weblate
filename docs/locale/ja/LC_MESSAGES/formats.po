@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: 2018-11-18 16:21+0000\n"
+"PO-Revision-Date: 2018-11-28 10:19+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/formats/ja/>\n"
@@ -47,9 +47,8 @@ msgid ""
 msgstr "アプリケーションのファイルフォーマットを選ぶ際には、使用するツールキットやプラットフォームで十分に実績のあるフォーマットにしたほうがよいでしょう。これにより翻訳者は使いたいどんなツールでも使うことができますので、よりプロジェクトへの貢献が期待できます。"
 
 #: ../../formats.rst:25
-#, fuzzy
 msgid "Bilingual and monolingual formats"
-msgstr "Bilingualフォーマットとmonolignualフォーマット"
+msgstr "複式言語フォーマットと単一言語フォーマット"
 
 #: ../../formats.rst:27
 msgid ""
@@ -62,13 +61,13 @@ msgid ""
 "language (typically :ref:`aresource`). Some file formats are used in both"
 " variants, see detailed description below."
 msgstr ""
-"Weblateは :index:`monolingual <pair: translation; monolingual>` と "
-":index:`bilingual <pair: translation; bilingual>` "
-"の双方のフォーマットをサポートしています。bilingualフォーマットはひとつのファイルに、原文と翻訳という、ふたつの言語を収めます。典型的な例としては"
-" :ref:`gettext` や :ref:`xliff` や :ref:`apple` "
-"などがこれに当たります。一方のmonolingualフォーマットは、原文の文字列をIDで識別し、それぞれの言語ファイルにはIDとそれに対応するその言語の文字列を収めます。"
-" 典型的には :ref:`aresource` "
-"がこれに当たります。ファイルフォーマットによってはこの双方で使われることもあります。詳しくは以下の記述を参照してください。"
+"Weblate は :index:`単一言語 <pair: translation; monolingual>` と :index:`複式言語 "
+"<pair: translation; bilingual>` "
+"の双方のフォーマットをサポートしています。複式言語フォーマットはひとつのファイルに、原文と翻訳という、ふたつの言語を収めます。典型的な例としては "
+":ref:`gettext` や :ref:`xliff` や :ref:`apple` "
+"などがこれに当たります。一方の単一言語フォーマットは、原文の文字列をIDで識別し、それぞれ個別の言語ファイルに ID "
+"とそれに対応する翻訳文字列を収めます。 典型的には :ref:`aresource` "
+"がこれに当たります。ファイルフォーマットによってはこの両方で使われることもあります。詳しくは以下の説明を参照してください。"
 
 #: ../../formats.rst:35
 msgid ""
@@ -77,9 +76,8 @@ msgid ""
 " file is called :guilabel:`Monolingual base language file` within "
 "Weblate, though the naming might vary in your application."
 msgstr ""
-"monolingualファイルを正しく扱うためにWeblateは、翻訳すべき文字列とそのソースの完全なリストを含むファイルに、アクセスできる必要があります。このファイルをWeblateでは"
-" :guilabel:`Monolingual base language file` "
-"と呼んでいますが、アプリケーションによって呼び方は違うかもしれません。"
+"単一言語ファイルを正しく扱うためには、Weblate は翻訳すべき文字列とそのソースの完全なリストを持つファイルに、アクセスできる必要があります。"
+"このファイルを Weblate では :guilabel:`単一基盤言語ファイル` と呼んでいますが、アプリケーションによって呼び方は違うかもしれません。"
 
 #: ../../formats.rst:41
 msgid "Automatic detection"
@@ -90,43 +88,46 @@ msgid ""
 "Weblate can automatically detect several widely spread file formats, but "
 "this detection can harm your performance and will limit features specific"
 " to given file format (for example automatic adding of new translations)."
-msgstr "広く普及している幾つかのファイルフォーマットに関しては、Weblateは自動で検出することができます。しかしこの検出はパフォーマンスを低下させ、そのファイルフォーマット固有の機能を制限する可能性があります（例えば新規翻訳の自動追加など）。"
+msgstr ""
+"広く普及している幾つかのファイルフォーマットに関しては、Weblate は自動で検出することができます。しかしこの検出はパフォーマンスを低下させ、そのファ"
+"イルフォーマット固有の機能を制限する可能性があります（例えば新規翻訳の自動追加など）。"
 
 #: ../../formats.rst:50
 msgid "Translation types capabilities"
-msgstr ""
+msgstr "可能な翻訳のタイプ"
 
 #: ../../formats.rst:52
 msgid "Below are listed capabilities of all supported formats."
-msgstr ""
+msgstr "以下は可能な翻訳タイプを、サポートするすべてのフォーマットで一覧にしたものです。"
 
 #: ../../formats.rst:55
 msgid "Format"
-msgstr ""
+msgstr "フォーマット"
 
 #: ../../formats.rst:55
 msgid "Linguality"
-msgstr ""
+msgstr "言語"
 
 #: ../../formats.rst:55
 msgid "Comments"
-msgstr ""
+msgstr "注釈"
 
 #: ../../formats.rst:55
 msgid "Context"
-msgstr ""
+msgstr "文脈"
 
 #: ../../formats.rst:55
 msgid "Location"
-msgstr ""
+msgstr "場所"
 
 #: ../../formats.rst:57
+#, fuzzy
 msgid ":ref:`gettext`"
-msgstr ""
+msgstr ":ref:`gettext`"
 
 #: ../../formats.rst:57 ../../formats.rst:71 ../../formats.rst:81
 msgid "bilingual"
-msgstr ""
+msgstr "複式"
 
 #: ../../formats.rst:57 ../../formats.rst:59 ../../formats.rst:61
 #: ../../formats.rst:63 ../../formats.rst:65 ../../formats.rst:67
@@ -134,30 +135,33 @@ msgstr ""
 #: ../../formats.rst:77 ../../formats.rst:79 ../../formats.rst:81
 #: ../../formats.rst:83
 msgid "yes"
-msgstr ""
+msgstr "はい"
 
 #: ../../formats.rst:59
+#, fuzzy
 msgid ":ref:`mono_gettext`"
-msgstr ""
+msgstr ":ref:`mono_gettext`"
 
 #: ../../formats.rst:59 ../../formats.rst:63 ../../formats.rst:65
 #: ../../formats.rst:69 ../../formats.rst:73 ../../formats.rst:75
 #: ../../formats.rst:77 ../../formats.rst:79 ../../formats.rst:83
 #: ../../formats.rst:85 ../../formats.rst:87
 msgid "mono"
-msgstr ""
+msgstr "単一"
 
 #: ../../formats.rst:61
+#, fuzzy
 msgid ":ref:`xliff`"
-msgstr ""
+msgstr ":ref:`xliff`"
 
 #: ../../formats.rst:61 ../../formats.rst:67
 msgid "both"
-msgstr ""
+msgstr "両方"
 
 #: ../../formats.rst:63
+#, fuzzy
 msgid ":ref:`javaprop`"
-msgstr ""
+msgstr ":ref:`javaprop`"
 
 #: ../../formats.rst:63 ../../formats.rst:65 ../../formats.rst:67
 #: ../../formats.rst:69 ../../formats.rst:71 ../../formats.rst:73
@@ -165,79 +169,95 @@ msgstr ""
 #: ../../formats.rst:81 ../../formats.rst:83 ../../formats.rst:85
 #: ../../formats.rst:87 ../../formats.rst:89
 msgid "no"
-msgstr ""
+msgstr "いいえ"
 
 #: ../../formats.rst:65
+#, fuzzy
 msgid ":ref:`joomla`"
-msgstr ""
+msgstr ":ref:`joomla`"
 
 #: ../../formats.rst:67
+#, fuzzy
 msgid ":ref:`qtling`"
-msgstr ""
+msgstr ":ref:`qtling`"
 
 #: ../../formats.rst:69
+#, fuzzy
 msgid ":ref:`aresource`"
-msgstr ""
+msgstr ":ref:`aresource`"
 
 #: ../../formats.rst:71
+#, fuzzy
 msgid ":ref:`apple`"
-msgstr ""
+msgstr ":ref:`apple`"
 
 #: ../../formats.rst:73
+#, fuzzy
 msgid ":ref:`php`"
-msgstr ""
+msgstr ":ref:`php`"
 
 #: ../../formats.rst:75
+#, fuzzy
 msgid ":ref:`json`"
-msgstr ""
+msgstr ":ref:`json`"
 
 #: ../../formats.rst:77
+#, fuzzy
 msgid ":ref:`webex`"
-msgstr ""
+msgstr ":ref:`webex`"
 
 #: ../../formats.rst:79
+#, fuzzy
 msgid ":ref:`dotnet`"
-msgstr ""
+msgstr ":ref:`dotnet`"
 
 #: ../../formats.rst:81
+#, fuzzy
 msgid ":ref:`csv`"
-msgstr ""
+msgstr ":ref:`csv`"
 
 #: ../../formats.rst:83
+#, fuzzy
 msgid ":ref:`yaml`"
-msgstr ""
+msgstr ":ref:`yaml`"
 
 #: ../../formats.rst:85
+#, fuzzy
 msgid ":ref:`dtd`"
-msgstr ""
+msgstr ":ref:`dtd`"
 
 #: ../../formats.rst:87
+#, fuzzy
 msgid ":ref:`winrc`"
-msgstr ""
+msgstr ":ref:`winrc`"
 
 #: ../../formats.rst:89
+#, fuzzy
 msgid ":ref:`xlsx`"
-msgstr ""
+msgstr ":ref:`xlsx`"
 
 #: ../../formats.rst:95
+#, fuzzy
 msgid "GNU Gettext"
-msgstr ""
+msgstr "GNU Gettext"
 
 #: ../../formats.rst:101
 msgid ""
 "Most widely used format in translating free software. This was first "
 "format supported by Weblate and still has the best support."
 msgstr ""
+"フリーソフトウェアの翻訳において最も広く使われている形式です。これは Weblate "
+"において最初にサポートされたフォーマットであり、現在においても最も手厚くサポートされています。"
 
 #: ../../formats.rst:104
 msgid ""
 "Weblate supports contextual information stored in the file, adjusting its"
 " headers or linking to corresponding source files."
-msgstr ""
+msgstr "Weblate はファイルに格納された文脈情報をサポートしています。これによりヘッダを調整したり、対応するソースファイルへリンクしたりします。"
 
 #: ../../formats.rst:107
 msgid "The bilingual gettext PO file typically looks like:"
-msgstr ""
+msgstr "複式言語形式の gettext PO ファイルは典型的には次のようなものです。"
 
 #: ../../formats.rst:125 ../../formats.rst:189 ../../formats.rst:301
 #: ../../formats.rst:334 ../../formats.rst:409 ../../formats.rst:467
@@ -245,7 +265,7 @@ msgstr ""
 #: ../../formats.rst:643 ../../formats.rst:686 ../../formats.rst:729
 #: ../../formats.rst:759 ../../formats.rst:791
 msgid "Typical Weblate :ref:`component`"
-msgstr ""
+msgstr "典型的な Weblate :ref:`component`"
 
 #: ../../formats.rst:127 ../../formats.rst:191 ../../formats.rst:252
 #: ../../formats.rst:264 ../../formats.rst:303 ../../formats.rst:336
@@ -254,11 +274,12 @@ msgstr ""
 #: ../../formats.rst:612 ../../formats.rst:645 ../../formats.rst:688
 #: ../../formats.rst:731 ../../formats.rst:761 ../../formats.rst:793
 msgid "File mask"
-msgstr ""
+msgstr "ファイルマスク"
 
 #: ../../formats.rst:127 ../../formats.rst:191
+#, fuzzy
 msgid "``po/*.po``"
-msgstr ""
+msgstr "``po/*.po``"
 
 #: ../../formats.rst:129 ../../formats.rst:193 ../../formats.rst:254
 #: ../../formats.rst:266 ../../formats.rst:305 ../../formats.rst:338
@@ -267,7 +288,7 @@ msgstr ""
 #: ../../formats.rst:614 ../../formats.rst:647 ../../formats.rst:690
 #: ../../formats.rst:733 ../../formats.rst:763 ../../formats.rst:795
 msgid "Monolingual base language file"
-msgstr ""
+msgstr "単一言語基盤言語ファイル"
 
 #: ../../formats.rst:129 ../../formats.rst:254 ../../formats.rst:307
 #: ../../formats.rst:340 ../../formats.rst:368 ../../formats.rst:415
@@ -275,7 +296,7 @@ msgstr ""
 #: ../../formats.rst:649 ../../formats.rst:690 ../../formats.rst:735
 #: ../../formats.rst:765
 msgid "`Empty`"
-msgstr ""
+msgstr "`空`"
 
 #: ../../formats.rst:131 ../../formats.rst:195 ../../formats.rst:256
 #: ../../formats.rst:268 ../../formats.rst:307 ../../formats.rst:340
@@ -284,11 +305,12 @@ msgstr ""
 #: ../../formats.rst:616 ../../formats.rst:649 ../../formats.rst:692
 #: ../../formats.rst:735 ../../formats.rst:765 ../../formats.rst:797
 msgid "Base file for new translations"
-msgstr ""
+msgstr "新規翻訳のためのベースファイル"
 
 #: ../../formats.rst:131 ../../formats.rst:195
+#, fuzzy
 msgid "``po/messages.pot``"
-msgstr ""
+msgstr "``po/messages.pot``"
 
 #: ../../formats.rst:133 ../../formats.rst:197 ../../formats.rst:258
 #: ../../formats.rst:270 ../../formats.rst:309 ../../formats.rst:342
@@ -297,23 +319,28 @@ msgstr ""
 #: ../../formats.rst:618 ../../formats.rst:651 ../../formats.rst:694
 #: ../../formats.rst:737 ../../formats.rst:767 ../../formats.rst:799
 msgid "File format"
-msgstr ""
+msgstr "ファイルフォーマット"
 
 #: ../../formats.rst:133
 msgid "`Gettext PO file`"
-msgstr ""
+msgstr "`Gettext PO ファイル`"
 
 #: ../../formats.rst:138
+#, fuzzy
 msgid ""
 "`Gettext on Wikipedia <https://en.wikipedia.org/wiki/Gettext>`_, "
 ":doc:`tt:formats/po`, :ref:`addon-weblate.gettext.configure`, :ref"
 ":`addon-weblate.gettext.customize`, :ref:`addon-weblate.gettext.linguas`,"
 " :ref:`addon-weblate.gettext.mo`, :ref:`addon-weblate.gettext.msgmerge`,"
 msgstr ""
+"`Gettext on Wikipedia <https://en.wikipedia.org/wiki/Gettext>`_, :doc:`tt:"
+"formats/po`, :ref:`addon-weblate.gettext.configure`, :ref:`addon-"
+"weblate.gettext.customize`, :ref:`addon-weblate.gettext.linguas`, :ref"
+":`addon-weblate.gettext.mo`, :ref:`addon-weblate.gettext.msgmerge`,"
 
 #: ../../formats.rst:149
 msgid "Monolingual Gettext"
-msgstr ""
+msgstr "単一言語 Gettext"
 
 #: ../../formats.rst:151
 msgid ""
@@ -323,22 +350,26 @@ msgid ""
 "have to choose explicitly this file format when importing components into"
 " Weblate."
 msgstr ""
+"プロジェクトによっては Gettext を単一言語形式で使用すると決定することがあります。ソースコードには ID "
+"のみをコーディングし、文字列は英語を含むすべての言語に訳さねばなりません。Weblate "
+"はこの形式もサポートしていますが、コンポーネントをインポートする際に明示的にこのファイルフォーマットを選択せねばなりません。"
 
 #: ../../formats.rst:156
 msgid "The monolingual gettext PO file typically looks like:"
-msgstr ""
+msgstr "単一言語 gettext PO ファイルは典型的には次のようなものです。"
 
 #: ../../formats.rst:172
 msgid "While the base language file will be:"
-msgstr ""
+msgstr "一方、基盤言語ファイルは次のようになります。"
 
 #: ../../formats.rst:193
+#, fuzzy
 msgid "``po/en.po``"
-msgstr ""
+msgstr "``po/en.po``"
 
 #: ../../formats.rst:197
 msgid "`Gettext PO file (monolingual)`"
-msgstr ""
+msgstr "`Gettext PO file (単一言語)`"
 
 #: ../../formats.rst:203
 msgid "XLIFF"
