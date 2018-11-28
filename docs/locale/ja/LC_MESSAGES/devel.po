@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-17 23:00+0900\n"
+"POT-Creation-Date: 2018-11-29 06:49+0900\n"
 "PO-Revision-Date: 2018-11-28 10:19+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
-"weblate-doc-ja/devel/ja/>\n"
 "Language: ja\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
+"doc-ja/devel/ja/>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../devel/alerts.rst:4
@@ -27,48 +26,46 @@ msgstr ""
 
 #: ../../devel/alerts.rst:6
 msgid ""
-"The alerts are there to tell you there is something wrong with your "
-"translation component. They can indicate problem in Weblate configuration"
-" or in your translation project and they will give you a guidance how to "
-"address found issue."
+"Shows errors in the Weblate configuration or the translation project for "
+"any given translation component. Guidance on how to address found issues "
+"is also offered."
 msgstr ""
 
-#: ../../devel/alerts.rst:10
-msgid "The alerts currently cover following areas:"
+#: ../../devel/alerts.rst:9
+msgid "Currently the following is covered:"
+msgstr ""
+
+#: ../../devel/alerts.rst:11
+msgid "Duplicated source strings in translation files"
 msgstr ""
 
 #: ../../devel/alerts.rst:12
-msgid "Duplicate source strings in translation files"
+msgid "Duplicated languages within translations"
 msgstr ""
 
 #: ../../devel/alerts.rst:13
-msgid "Duplicate languages within translations"
+msgid "Merge or update failures in the source repository"
 msgstr ""
 
 #: ../../devel/alerts.rst:14
-msgid "Merge or update failure on the repository"
-msgstr ""
-
-#: ../../devel/alerts.rst:15
 msgid "Unused new base in component settings"
 msgstr ""
 
-#: ../../devel/alerts.rst:16
-msgid "Parse error in the translation files"
+#: ../../devel/alerts.rst:15
+#, fuzzy
+msgid "Parse errors in the translation files"
+msgstr "新規翻訳のためのベースファイル"
+
+#: ../../devel/alerts.rst:17
+msgid ""
+"Alerts are listed on each respective component page as "
+":guilabel:`Alerts`. If it is missing, the component clears all current "
+"checks. Alerts can not be ignored, but will disappear once the underlying"
+" problem has been fixed."
 msgstr ""
 
-#: ../../devel/alerts.rst:18
-msgid ""
-"You can find alerts on the component page as :guilabel:`Alerts`. If there"
-" is no such tab, no alert was triggered on this particular component. "
-"There is no way to ignore an alert, it will disappear automatically after"
-" underlying problem has been fixed."
-msgstr ""
-
-#: ../../devel/alerts.rst:23
-msgid ""
-"For example component having both duplicate strinsg and languages will "
-"have this:"
+#: ../../devel/alerts.rst:21
+msgid "A component with both duplicated strings and languages looks like this:"
 msgstr ""
 
 #: ../../devel/index.rst:2
@@ -713,3 +710,46 @@ msgstr ""
 #~ "not direcly supported, you currently "
 #~ "have to list them separately:"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "The alerts are there to tell you"
+#~ " there is something wrong with your"
+#~ " translation component. They can indicate"
+#~ " problem in Weblate configuration or "
+#~ "in your translation project and they "
+#~ "will give you a guidance how to"
+#~ " address found issue."
+#~ msgstr ""
+
+#~ msgid "The alerts currently cover following areas:"
+#~ msgstr ""
+
+#~ msgid "Duplicate source strings in translation files"
+#~ msgstr ""
+
+#~ msgid "Duplicate languages within translations"
+#~ msgstr ""
+
+#~ msgid "Merge or update failure on the repository"
+#~ msgstr ""
+
+#~ msgid "Parse error in the translation files"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can find alerts on the "
+#~ "component page as :guilabel:`Alerts`. If "
+#~ "there is no such tab, no alert "
+#~ "was triggered on this particular "
+#~ "component. There is no way to "
+#~ "ignore an alert, it will disappear "
+#~ "automatically after underlying problem has "
+#~ "been fixed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For example component having both "
+#~ "duplicate strinsg and languages will "
+#~ "have this:"
+#~ msgstr ""
+

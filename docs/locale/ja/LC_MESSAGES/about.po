@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-09 22:12+0900\n"
+"POT-Creation-Date: 2018-11-29 06:49+0900\n"
 "PO-Revision-Date: 2018-11-19 09:41+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
-"weblate-doc-ja/about/ja/>\n"
 "Language: ja\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
+"doc-ja/about/ja/>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../about.rst:2
@@ -30,12 +29,11 @@ msgid "Project goals"
 msgstr "プロジェクトの目標"
 
 #: ../../about.rst:7
+#, fuzzy
 msgid ""
-"Web based translation tool with tight Git integration supporting a wide "
+"Web based localization tool with tight Git integration supporting a wide "
 "range of file formats, making it easy for translators to contribute."
-msgstr ""
-"Git と緊密に連携し、多くのファイルフォーマットをサポートした、翻訳者の貢"
-"献を容易にするウェブベースの翻訳ツール。"
+msgstr "Git と緊密に連携し、多くのファイルフォーマットをサポートした、翻訳者の貢献を容易にするウェブベースの翻訳ツール。"
 
 #: ../../about.rst:10
 msgid ""
@@ -55,11 +53,9 @@ msgstr "プロジェクトの名前"
 
 #: ../../about.rst:19
 msgid ""
-"The project is named as combination of the words \"web\" and \"translate"
-"\"."
-msgstr ""
-"このプロジェクトの名前は \"web\" と \"translate\" という言葉の組み合わせ"
-"として名付けられました。"
+"The project is named as combination of the words \"web\" and "
+"\"translate\"."
+msgstr "このプロジェクトの名前は \"web\" と \"translate\" という言葉の組み合わせとして名付けられました。"
 
 #: ../../about.rst:22
 msgid "Project website"
@@ -67,14 +63,14 @@ msgstr "プロジェクトのウェブサイト"
 
 #: ../../about.rst:24
 msgid ""
-"You can find the project website at <https://weblate.org/>, there is "
-"also a demonstration server at <https://demo.weblate.org/>, and a hosted "
+"You can find the project website at <https://weblate.org/>, there is also"
+" a demonstration server at <https://demo.weblate.org/>, and a hosted "
 "service at <https://hosted.weblate.org/>. This documentation can be "
 "browsed on <https://docs.weblate.org/>."
 msgstr ""
-"プロジェクトのウェブサイトは <https://weblate.org/> にあります。デモ・"
-"サーバも <https://demo.weblate.org/> にあります。ホスティング・サービス"
-"を <https://hosted.weblate.org/> で提供しています。このドキュメントは "
+"プロジェクトのウェブサイトは <https://weblate.org/> にあります。デモ・サーバも "
+"<https://demo.weblate.org/> にあります。ホスティング・サービスを "
+"<https://hosted.weblate.org/> で提供しています。このドキュメントは "
 "<https://docs.weblate.org/> で閲覧可能です。"
 
 #: ../../about.rst:30
@@ -83,5 +79,5 @@ msgstr "開発者"
 
 #: ../../about.rst:32
 msgid "This tool was written by Michal Čihař <michal@cihar.com>."
-msgstr ""
-"このツールは Michal Čihař <michal@cihar.com> によって書かれました。"
+msgstr "このツールは Michal Čihař <michal@cihar.com> によって書かれました。"
+
