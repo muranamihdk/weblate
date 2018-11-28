@@ -41,9 +41,18 @@ from weblate.utils.fields import JSONField
 
 
 class PlanQuerySet(models.QuerySet):
-    def public(self):
+    def public(self, user=None):
         """List of public paid plans which are available."""
-        return self.filter(public=True, price__gt=0).order_by('price')
+        base = self.exclude(Q(price=0) & Q(yearly_price=0))
+        result = base.filter(
+            public=True
+        )
+        if user:
+            result |= base.filter(
+                public=False,
+                billing__in=Billing.objects.for_user(user)
+            )
+        return result.distinct().order_by('price')
 
 
 @python_2_unicode_compatible
@@ -77,6 +86,10 @@ class Plan(models.Model):
     @property
     def vat_yearly_price(self):
         return round(self.yearly_price * settings.VAT_RATE, 2)
+
+    @property
+    def is_free(self):
+        return self.price == 0 and self.yearly_price == 0
 
 
 class BillingManager(models.Manager):
@@ -322,7 +335,7 @@ class Billing(models.Model):
         Compared to paid attribute, this does not include grace period.
         """
         return (
-            self.plan.price == 0 or
+            self.plan.is_free or
             self.invoice_set.filter(end__gte=timezone.now()).exists() or
             self.state == Billing.STATE_TRIAL
         )
@@ -331,7 +344,7 @@ class Billing(models.Model):
         due_date = timezone.now() - timedelta(days=grace)
         in_limits = self.check_in_limits()
         paid = (
-            self.plan.price == 0 or
+            self.plan.is_free or
             self.invoice_set.filter(end__gt=due_date).exists() or
             self.state == Billing.STATE_TRIAL
         )

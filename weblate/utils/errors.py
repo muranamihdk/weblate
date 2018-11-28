@@ -52,11 +52,11 @@ def report_error(error, request=None, extra_data=None):
 
     if HAS_RAVEN and hasattr(settings, 'RAVEN_CONFIG'):
         raven_client.captureException(
-            request=request, extra_data=extra_data, level='warning'
+            request=request, extra=extra_data, level='warning'
         )
 
     LOGGER.error(
         'Handled exception %s: %s',
         error.__class__.__name__,
-        force_text(error).encode('utf-8')
+        force_text(error)
     )

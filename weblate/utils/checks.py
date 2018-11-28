@@ -20,7 +20,8 @@
 
 from __future__ import unicode_literals, absolute_import
 
-import os.path
+from itertools import chain
+import os
 
 from celery.exceptions import TimeoutError
 
@@ -272,4 +273,24 @@ def check_site(app_configs, **kwargs):
                 id='weblate.E017',
             )
         )
+    return errors
+
+
+def check_perms(app_configs=None, **kwargs):
+    """Check we can write to data dir."""
+    errors = []
+    uid = os.getuid()
+    message = 'Path {} is not writable, check your DATA_DIR settings.'
+    for dirpath, dirnames, filenames in os.walk(settings.DATA_DIR):
+        for name in chain(dirnames, filenames):
+            path = os.path.join(dirpath, name)
+            if os.lstat(path).st_uid != uid:
+                errors.append(
+                    Critical(
+                        message.format(path),
+                        hint=get_doc_url('admin/install', 'file-permissions'),
+                        id='weblate.E002',
+                    )
+                )
+
     return errors

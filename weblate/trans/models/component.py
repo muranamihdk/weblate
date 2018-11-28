@@ -560,9 +560,10 @@ class Component(models.Model, URLMixin, PathMixin):
 
     def error_text(self, error):
         """Returns text message for a RepositoryException."""
+        message = error.get_message()
         if not settings.HIDE_REPO_CREDENTIALS:
-            return error.get_message()
-        return cleanup_repo_url(self.repo, error.get_message())
+            return message
+        return cleanup_repo_url(self.repo, message)
 
     @perform_on_link
     def update_remote_branch(self, validate=False):
@@ -673,9 +674,13 @@ class Component(models.Model, URLMixin, PathMixin):
             return True
         if not self.repo_needs_push():
             return True
-        return self.do_push(
-            request, force_commit=False, do_update=do_update
-        )
+        if settings.CELERY_TASK_ALWAYS_EAGER:
+            self.do_push(request, force_commit=False, do_update=do_update)
+        else:
+            from weblate.trans.tasks import perform_push
+            perform_push.delay(
+                self.pk, None, force_commit=False, do_update=do_update
+            )
 
     @perform_on_link
     def do_push(self, request, force_commit=True, do_update=True):
@@ -720,6 +725,7 @@ class Component(models.Model, URLMixin, PathMixin):
                 vcs_post_push.send(
                     sender=component.__class__, component=component
                 )
+            self.delete_alert('RepositoryChanges', childs=True)
 
             return True
         except RepositoryException as error:
@@ -895,6 +901,7 @@ class Component(models.Model, URLMixin, PathMixin):
                         previous_head=previous_head
                     )
                     self.delete_alert('MergeFailure', childs=True)
+                    self.delete_alert('RepositoryOutdated', childs=True)
                     for component in self.get_linked_childs():
                         vcs_post_update.send(
                             sender=component.__class__,
@@ -997,6 +1004,9 @@ class Component(models.Model, URLMixin, PathMixin):
     def create_translations(self, force=False, langs=None, request=None,
                             changed_template=False, skip_checks=False):
         """Load translations from VCS."""
+        # Ensure we start from fresh template
+        if 'template_store' in self.__dict__:
+            del self.__dict__['template_store']
         self.needs_cleanup = False
         self.updated_sources = {}
         self.alerts_trigger = {}
@@ -1200,12 +1210,6 @@ class Component(models.Model, URLMixin, PathMixin):
                     'adjust the mask and use components for translating '
                     'different resources.'
                 ) % code)
-            if lang.code in translated_langs:
-                raise ValidationError(_(
-                    'Multiple translations were mapped to a single language '
-                    'code (%s). You should disable SIMPLIFY_LANGUAGES '
-                    'to prevent Weblate mapping similar languages to one.'
-                ) % lang.code)
             langs.add(code)
             translated_langs.add(lang.code)
 
@@ -1508,9 +1512,7 @@ class Component(models.Model, URLMixin, PathMixin):
 
     def load_template_store(self):
         """Load translate-toolkit store for template."""
-        return self.file_format_cls.parse(
-            self.get_template_filename(),
-        )
+        return self.file_format_cls.parse(self.get_template_filename())
 
     @cached_property
     def template_store(self):
@@ -1589,6 +1591,7 @@ class Component(models.Model, URLMixin, PathMixin):
                 sender=self.__class__,
                 translation=translation
             )
+        translation.check_sync(force=True, request=request)
         translation.commit_template = 'add'
         translation.git_commit(
             request,
@@ -1596,10 +1599,6 @@ class Component(models.Model, URLMixin, PathMixin):
             if request else 'Weblate <noreply@weblate.org>',
             timezone.now(),
             force_new=True,
-        )
-        translation.check_sync(
-            force=True,
-            request=request
         )
         self.run_target_checks()
         translation.invalidate_cache()

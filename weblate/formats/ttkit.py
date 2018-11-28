@@ -130,16 +130,22 @@ class TTKitUnit(TranslationUnit):
 
     def set_target(self, target):
         """Set translation unit target."""
+        if 'target' in self.__dict__:
+            del self.__dict__['target']
         if isinstance(target, list):
             target = multistring(target)
         self.unit.target = target
 
     def mark_fuzzy(self, fuzzy):
         """Set fuzzy flag on translated unit."""
+        if 'flags' in self.__dict__:
+            del self.__dict__['flags']
         self.unit.markfuzzy(fuzzy)
 
     def mark_approved(self, value):
         """Set approved flag on translated unit."""
+        if 'flags' in self.__dict__:
+            del self.__dict__['flags']
         if hasattr(self.unit, 'markapproved'):
             self.unit.markapproved(value)
 
@@ -217,9 +223,6 @@ class TTKitFormat(TranslationFormat):
         if isinstance(storefile, TranslationStore):
             # Used by XLSX writer
             return storefile
-        if (not isinstance(storefile, six.string_types) and
-                not hasattr(storefile, 'mode')):
-            storefile.mode = 'r'
 
         return cls.parse_store(storefile)
 
@@ -408,6 +411,19 @@ class XliffUnit(TTKitUnit):
     XLIFF is special in ttkit - it uses locations for what
     is context in other formats.
     """
+    FUZZY_STATES = frozenset((
+        'new', 'needs-translation', 'needs-adaptation', 'needs-l10n'
+    ))
+
+    @cached_property
+    def xliff_node(self):
+        return self.unit.getlanguageNode(lang=None, index=1)
+
+    @property
+    def xliff_state(self):
+        if self.xliff_node is None:
+            return None
+        return self.xliff_node.get('state', None)
 
     @cached_property
     def context(self):
@@ -456,14 +472,20 @@ class XliffUnit(TTKitUnit):
         """Check whether unit needs edit.
 
         The isfuzzy on Xliff is really messing up approved flag with fuzzy
-        and leading to various problems. That's why we completely ignore it.
+        and leading to various problems.
+
+        That's why we handle it on our own.
         """
-        return fallback
+        return self.target and self.xliff_state in self.FUZZY_STATES
 
     def mark_fuzzy(self, fuzzy):
         """Set fuzzy flag on translated unit.
 
-        We ignore this for now."""
+        We handle this on our own."""
+        if fuzzy:
+            self.xliff_node.set('state', 'needs-translation')
+        elif self.xliff_state:
+            self.xliff_node.set('state', 'translated')
         return
 
     def is_approved(self, fallback=False):
@@ -473,6 +495,11 @@ class XliffUnit(TTKitUnit):
         if hasattr(self.unit, 'isapproved'):
             return self.unit.isapproved()
         return fallback
+
+    def mark_approved(self, value):
+        super(XliffUnit, self).mark_approved(value)
+        if self.xliff_state:
+            self.xliff_node.set('state', 'final' if value else 'translated')
 
 
 class MonolingualIDUnit(TTKitUnit):

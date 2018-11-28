@@ -40,6 +40,51 @@ LANGUAGE_MAP = {
     'nl': 'nld',
     'ro': 'ron',
     'de': 'deu',
+    'fr': 'fra',
+    'sl': 'slv',
+    'sr': 'hbs',
+    'nb_NO': 'nob',
+    'nn': 'nno',
+    'se': 'sme',
+    'oc': 'oci',
+    'pt': 'por',
+    'co': 'cos',
+    'fi': 'fin',
+    'ia': 'ina',
+    'ro': 'ron',
+    'cs': 'ces',
+    'sk': 'slk',
+    'ru': 'rus',
+    'av': 'ava',
+    'is': 'isl',
+    'pl': 'pol',
+    'kk': 'kaz',
+    'tt': 'tat',
+    'be': 'bel',
+    'uk': 'ukr',
+    'gn': 'grn',
+    'mt': 'mlt',
+    'it': 'ita',
+    'zh_Hant': 'zho',
+    'br': 'bre',
+    'qu': 'qve',
+    'an': 'arg',
+    'mr': 'mar',
+    'af': 'afr',
+    'fa': 'pes',
+    'el': 'ell',
+    'lv': 'lvs',
+    'as': 'asm',
+    'hi': 'hin',
+    'te': 'tel',
+    'hy': 'hye',
+    'th': 'tha',
+    'mk': 'mkd',
+    'la': 'lat',
+    'ga': 'gle',
+    'sw': 'swa',
+    'hu': 'hun',
+    'ml': 'mal',
 }
 
 
@@ -91,7 +136,7 @@ class ApertiumAPYTranslation(MachineTranslation):
         """Check whether given language combination is supported."""
         return (source, language) in self.supported_languages
 
-    def download_translations(self, source, language, text, unit, user):
+    def download_translations(self, source, language, text, unit, request):
         """Download list of possible translations from Apertium."""
         args = {
             'langpair': '{0}|{1}'.format(source, language),

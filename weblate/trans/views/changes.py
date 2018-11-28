@@ -18,7 +18,11 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-import csv
+import six
+if six.PY2:
+    from backports import csv
+else:
+    import csv
 
 from django.views.generic.list import ListView
 from django.http import Http404, HttpResponse
@@ -29,10 +33,11 @@ from django.core.exceptions import PermissionDenied
 from django.utils.http import urlencode
 
 from weblate.auth.models import User
-from weblate.utils import messages
-from weblate.trans.models.change import Change
-from weblate.utils.views import get_project_translation
 from weblate.lang.models import Language
+from weblate.trans.models.change import Change
+from weblate.utils import messages
+from weblate.utils.site import get_site_url
+from weblate.utils.views import get_project_translation
 
 
 class ChangesView(ListView):
@@ -230,14 +235,15 @@ class ChangesCSVView(ChangesView):
         writer = csv.writer(response)
 
         # Add header
-        writer.writerow(('timestamp', 'action', 'user', 'url'))
+        writer.writerow(('timestamp', 'action', 'user', 'url', 'target'))
 
         for change in object_list:
             writer.writerow((
                 change.timestamp.isoformat(),
-                change.get_action_display().encode('utf8'),
-                change.user.username.encode('utf8') if change.user else '',
-                change.get_absolute_url(),
+                change.get_action_display(),
+                change.user.username if change.user else '',
+                get_site_url(change.get_absolute_url()),
+                change.target,
             ))
 
         return response

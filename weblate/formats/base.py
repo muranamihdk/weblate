@@ -21,12 +21,15 @@
 
 from __future__ import unicode_literals
 
+from copy import deepcopy
 import os
 import re
 import sys
 import tempfile
 
 from django.utils.functional import cached_property
+
+import six
 
 from weblate.utils.hash import calculate_hash
 
@@ -191,14 +194,21 @@ class TranslationFormat(object):
 
     def __init__(self, storefile, template_store=None, language_code=None):
         """Create file format object, wrapping up translate-toolkit's store."""
+        if (not isinstance(storefile, six.string_types) and
+                not hasattr(storefile, 'mode')):
+            storefile.mode = 'r'
+
         self.storefile = storefile
+
         # Load store
         self.store = self.load(storefile)
+
         # Check store validity
         if not self.is_valid(self.store):
             raise ValueError(
                 'Invalid file format {0}'.format(repr(self.store))
             )
+
         # Remember template
         self.template_store = template_store
 
@@ -225,6 +235,7 @@ class TranslationFormat(object):
 
     def find_unit_mono(self, context):
         try:
+            # The mono units always have only template set
             return self._context_index[context].template
         except KeyError:
             return None
@@ -237,9 +248,9 @@ class TranslationFormat(object):
 
         # We always need new unit to translate
         if ttkit_unit is None:
-            ttkit_unit = template_ttkit_unit
             if template_ttkit_unit is None:
                 return (None, False)
+            ttkit_unit = deepcopy(template_ttkit_unit)
             add = True
         else:
             add = False

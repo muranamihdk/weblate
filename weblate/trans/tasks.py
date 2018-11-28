@@ -45,7 +45,7 @@ from weblate.trans.models import (
     Suggestion, Comment, Unit, Project, Translation, Source, Component,
     Change,
 )
-from weblate.trans.models.component import FileParseError
+from weblate.trans.exceptions import FileParseError
 from weblate.trans.search import Fulltext
 from weblate.utils.data import data_dir
 from weblate.utils.files import remove_readonly
@@ -75,6 +75,12 @@ def perform_load(pk, *args):
 def perform_commit(pk, *args):
     component = Component.objects.get(pk=pk)
     component.commit_pending(*args)
+
+
+@app.task
+def perform_push(pk, *args, **kwargs):
+    component = Component.objects.get(pk=pk)
+    component.do_push(*args, **kwargs)
 
 
 @app.task
@@ -295,13 +301,13 @@ def repository_alerts(threshold=10):
     non_linked = Component.objects.exclude(repo__startswith='weblate:')
     for component in non_linked.iterator():
         if component.repository.count_missing() > 10:
-            component.delete_alert('RepositoryOutdated', childs=True)
-        else:
             component.add_alert('RepositoryOutdated', childs=True)
-        if component.repository.count_outgoing() > 10:
-            component.delete_alert('RepositoryChanges', childs=True)
         else:
+            component.delete_alert('RepositoryOutdated', childs=True)
+        if component.repository.count_outgoing() > 10:
             component.add_alert('RepositoryChanges', childs=True)
+        else:
+            component.delete_alert('RepositoryChanges', childs=True)
 
 
 @app.on_after_finalize.connect
