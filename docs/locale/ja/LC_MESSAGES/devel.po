@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-17 23:00+0900\n"
-"PO-Revision-Date: 2018-11-18 16:21+0000\n"
+"PO-Revision-Date: 2018-11-28 10:19+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/devel/ja/>\n"
@@ -490,15 +490,16 @@ msgstr ""
 
 #: ../../devel/starting.rst:228
 msgid "File mask"
-msgstr ""
+msgstr "ファイルマスク"
 
 #: ../../devel/starting.rst:228
+#, fuzzy
 msgid "``po/*.po``"
-msgstr ""
+msgstr "``po/*.po``"
 
 #: ../../devel/starting.rst:230
 msgid "Base file for new translations"
-msgstr ""
+msgstr "新規翻訳のためのベースファイル"
 
 #: ../../devel/starting.rst:230
 msgid "``po/hello.pot``"
@@ -506,7 +507,7 @@ msgstr ""
 
 #: ../../devel/starting.rst:232
 msgid "File format"
-msgstr ""
+msgstr "ファイルフォーマット"
 
 #: ../../devel/starting.rst:232
 msgid "Choose :guilabel:`Gettext PO file`"
