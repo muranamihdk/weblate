@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-29 06:49+0900\n"
-"PO-Revision-Date: 2018-11-28 10:19+0000\n"
+"PO-Revision-Date: 2018-12-02 03:27+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
+"weblate-doc-ja/admin/ja/>\n"
 "Language: ja\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
-"doc-ja/admin/ja/>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../admin/access.rst:4 ../../admin/projects.rst:96
@@ -494,7 +495,7 @@ msgstr ""
 
 #: ../../admin/access.rst:306
 msgid "Projects"
-msgstr ""
+msgstr "プロジェクト"
 
 #: ../../admin/access.rst:305
 msgid ""
@@ -512,7 +513,7 @@ msgstr ""
 
 #: ../../admin/access.rst:314
 msgid "Screenshots"
-msgstr ""
+msgstr "スクリーンショット"
 
 #: ../../admin/access.rst:312
 msgid ""
@@ -559,7 +560,7 @@ msgstr ""
 
 #: ../../admin/access.rst:337
 msgid "Translations"
-msgstr ""
+msgstr "翻訳"
 
 #: ../../admin/access.rst:334
 msgid ""
@@ -8294,7 +8295,7 @@ msgstr ""
 
 #: ../../admin/optionals.rst:235
 msgid "Rate limiting"
-msgstr ""
+msgstr "レート制限"
 
 #: ../../admin/optionals.rst:239
 msgid "The rate limiting now accepts more fine grained configuration."
@@ -10434,4 +10435,3 @@ msgstr ""
 #~ "A user can also explicitly lock a"
 #~ " translation for :setting:`LOCK_TIME` seconds."
 #~ msgstr ""
-
