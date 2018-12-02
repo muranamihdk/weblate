@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: 2018-11-23 00:31+0000\n"
+"PO-Revision-Date: 2018-12-02 03:27+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/api/ja/>\n"
@@ -64,10 +64,12 @@ msgid ""
 "Generic request behaviour for the API, the headers, status codes and "
 "parameters here apply to all endpoints as well."
 msgstr ""
+"以下のヘッダー、ステータスコード、パラメータは、APIに対するリクエスト行為として一般的なものであり、すべてのエントリーポイントに対して同様に適用されます"
+"。"
 
 #: ../../api.rst
 msgid "Query Parameters"
-msgstr ""
+msgstr "クエリ・パラメータ"
 
 #: ../../api.rst:36
 msgid ""
@@ -75,10 +77,12 @@ msgid ""
 "depends on REST framework setup, by default ``json`` and ``api`` are "
 "supported. The latter provides web browser interface for API."
 msgstr ""
+"レスポンスのフォーマット（:http:header:`Accept` を上書きします）。可能な値は REST framework の設定に依存しますが、"
+"初期値では ``json`` と ``api`` がサポートされています。後者は API のためのウェブブラウザ用インターフェースを提供します。"
 
 #: ../../api.rst
 msgid "Request Headers"
-msgstr ""
+msgstr "リクエスト・ヘッダ"
 
 #: ../../api.rst:40
 msgid "the response content type depends on :http:header:`Accept` header"
@@ -90,7 +94,7 @@ msgstr ""
 
 #: ../../api.rst
 msgid "Response Headers"
-msgstr ""
+msgstr "レスポンス・ヘッダ"
 
 #: ../../api.rst:43
 msgid "this depends on :http:header:`Accept` header of request"
@@ -102,7 +106,7 @@ msgstr ""
 
 #: ../../api.rst
 msgid "Response JSON Object"
-msgstr ""
+msgstr "レスポンス JSON オブジェクト"
 
 #: ../../api.rst:46
 msgid ""
@@ -136,7 +140,7 @@ msgstr ""
 
 #: ../../api.rst
 msgid "Status Codes"
-msgstr ""
+msgstr "ステータス・コード"
 
 #: ../../api.rst:53
 msgid "when request was correctly handled"
@@ -156,24 +160,24 @@ msgstr ""
 
 #: ../../api.rst:59
 msgid "Authentication examples"
-msgstr ""
+msgstr "認証の例"
 
 #: ../../api.rst:61 ../../api.rst:167
 msgid "**Example request:**"
-msgstr ""
+msgstr "**リクエスト例**"
 
 #: ../../api.rst:70 ../../api.rst:176
 msgid "**Example response:**"
-msgstr ""
+msgstr "**レスポンス例**"
 
 #: ../../api.rst:90 ../../api.rst:130 ../../api.rst:338 ../../api.rst:830
 #: ../../api.rst:1053
 msgid "**CURL example:**"
-msgstr ""
+msgstr "**CURL 例**"
 
 #: ../../api.rst:99
 msgid "Passing Parameters Examples"
-msgstr ""
+msgstr "パラメータ渡しの例"
 
 #: ../../api.rst:101
 msgid ""
@@ -184,19 +188,19 @@ msgstr ""
 
 #: ../../api.rst:105
 msgid "**Form request example:**"
-msgstr ""
+msgstr "**フォームリクエスト例**"
 
 #: ../../api.rst:117 ../../api.rst:347
 msgid "**JSON request example:**"
-msgstr ""
+msgstr "**JSON リクエスト例**"
 
 #: ../../api.rst:139
 msgid "**CURL JSON example:**"
-msgstr ""
+msgstr "**CURL JSON 例**"
 
 #: ../../api.rst:150
 msgid "Rate limiting"
-msgstr ""
+msgstr "レート制限"
 
 #: ../../api.rst:152
 msgid ""
@@ -215,19 +219,19 @@ msgstr ""
 
 #: ../../api.rst:161
 msgid "API Entry Point"
-msgstr ""
+msgstr "API エントリーポイント"
 
 #: ../../api.rst:165
 msgid "The API root entry point."
-msgstr ""
+msgstr "API のルート・エントリーポイントです。"
 
 #: ../../api.rst:197
 msgid "Languages"
-msgstr ""
+msgstr "言語"
 
 #: ../../api.rst:201
 msgid "Returns a list of all languages."
-msgstr ""
+msgstr "すべての言語のリストを返します。"
 
 #: ../../api.rst:205 ../../api.rst:220 ../../api.rst:244 ../../api.rst:264
 #: ../../api.rst:295 ../../api.rst:311 ../../api.rst:336 ../../api.rst:386
@@ -271,11 +275,11 @@ msgstr ""
 
 #: ../../api.rst:236
 msgid "Projects"
-msgstr ""
+msgstr "プロジェクト"
 
 #: ../../api.rst:240
 msgid "Returns a list of all projects."
-msgstr ""
+msgstr "すべてのプロジェクトのリストを返します。"
 
 #: ../../api.rst:246
 msgid ""
@@ -440,11 +444,11 @@ msgstr ""
 
 #: ../../api.rst:409
 msgid "Components"
-msgstr ""
+msgstr "コンポーネント"
 
 #: ../../api.rst:413
 msgid "Returns a list of translation components."
-msgstr ""
+msgstr "翻訳コンポーネントのリストを返します。"
 
 #: ../../api.rst:419
 msgid ""
@@ -620,11 +624,11 @@ msgstr ""
 
 #: ../../api.rst:631
 msgid "Translations"
-msgstr ""
+msgstr "翻訳"
 
 #: ../../api.rst:635
 msgid "Returns a list of translations."
-msgstr ""
+msgstr "翻訳のリストを返します。"
 
 #: ../../api.rst:641
 msgid ""
@@ -838,11 +842,11 @@ msgstr ""
 
 #: ../../api.rst:904
 msgid "Units"
-msgstr ""
+msgstr "ユニット"
 
 #: ../../api.rst:910
 msgid "Returns list of translation units."
-msgstr ""
+msgstr "翻訳ユニットのリストを返します。"
 
 #: ../../api.rst:916
 msgid "Unit object attributes are documented at :http:get:`/api/units/(int:pk)/`."
@@ -1000,11 +1004,11 @@ msgstr ""
 
 #: ../../api.rst:980
 msgid "Sources"
-msgstr ""
+msgstr "ソース"
 
 #: ../../api.rst:986
 msgid "Returns a list of source string information."
-msgstr ""
+msgstr "ソース文字列の情報のリストを返します。"
 
 #: ../../api.rst:992
 msgid ""
@@ -1042,11 +1046,11 @@ msgstr ""
 
 #: ../../api.rst:1009
 msgid "Screenshots"
-msgstr ""
+msgstr "スクリーンショット"
 
 #: ../../api.rst:1015
 msgid "Returns a list of screenshot string information."
-msgstr ""
+msgstr "スクリーンショット文字列の情報のリストを返します。"
 
 #: ../../api.rst:1021
 msgid ""
@@ -1086,13 +1090,13 @@ msgstr ""
 
 #: ../../api.rst:1066
 msgid "Notification hooks"
-msgstr ""
+msgstr "通知フック"
 
 #: ../../api.rst:1068
 msgid ""
 "Notification hooks allow external applications to notify Weblate that the"
 " VCS repository has been updated."
-msgstr ""
+msgstr "通知フックは外部アプリケーションが VCS リポジトリのアップデートを Weblate に通知することを可能にします。"
 
 #: ../../api.rst:1071
 msgid ""
@@ -1101,6 +1105,8 @@ msgid ""
 ":http:post:`/api/projects/(string:project)/repository/` for "
 "documentation."
 msgstr ""
+"プロジェクトやコンポーネント、翻訳のためのリポジトリ・エンドポイントを、個々のリポジトリをアップデートするために使うことができます。:http:post:"
+"`/api/projects/(string:project)/repository/` のドキュメンテーションを参照してください。"
 
 #: ../../api.rst:1079
 msgid ""
@@ -1226,11 +1232,11 @@ msgstr ""
 
 #: ../../api.rst:1160
 msgid "Exports"
-msgstr ""
+msgstr "エクスポート"
 
 #: ../../api.rst:1162
 msgid "Weblate provides various exports to allow you to further process the data."
-msgstr ""
+msgstr "より進んだデータ処理を可能にするために、Weblate は様々なエクスポートを提供しています。"
 
 #: ../../api.rst:1166
 msgid "Output format: either ``json`` or ``csv``"
