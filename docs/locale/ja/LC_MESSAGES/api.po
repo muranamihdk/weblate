@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-13 21:58+0900\n"
-"PO-Revision-Date: 2018-12-02 03:27+0000\n"
+"PO-Revision-Date: 2018-12-02 04:14+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
 "weblate-doc-ja/api/ja/>\n"
@@ -1105,8 +1105,8 @@ msgid ""
 ":http:post:`/api/projects/(string:project)/repository/` for "
 "documentation."
 msgstr ""
-"プロジェクトやコンポーネント、翻訳のためのリポジトリ・エンドポイントを、個々のリポジトリをアップデートするために使うことができます。:http:post:"
-"`/api/projects/(string:project)/repository/` のドキュメンテーションを参照してください。"
+"プロジェクトやコンポーネント、翻訳のためのリポジトリ・エンドポイントを、個々のリポジトリをアップデートするために使うことができます。 "
+":http:post:`/api/projects/(string:project)/repository/` のドキュメンテーションを参照してください。"
 
 #: ../../api.rst:1079
 msgid ""
@@ -1265,11 +1265,11 @@ msgstr ""
 
 #: ../../api.rst:1249
 msgid "RSS feeds"
-msgstr ""
+msgstr "RSS フィード"
 
 #: ../../api.rst:1251
 msgid "Changes in translations are exported in RSS feeds."
-msgstr ""
+msgstr "翻訳の変更は RSS フィードにエクスポートされます。"
 
 #: ../../api.rst:1255
 msgid "Retrieves RSS feed with recent changes for a translation."
