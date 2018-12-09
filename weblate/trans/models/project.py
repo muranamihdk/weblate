@@ -238,66 +238,46 @@ class Project(models.Model, URLMixin, PathMixin):
                 return True
         return False
 
+    def on_repo_components(self, default, call, *args, **kwargs):
+        """Wrapper for operations on repository."""
+        ret = default
+        for component in self.all_repo_components():
+            res = getattr(component, call)(*args, **kwargs)
+            if default:
+                ret = ret & res
+            else:
+                ret = ret | res
+        return ret
+
+    def commit_pending(self, reason, request):
+        """Commit any pending changes."""
+        return self.on_repo_components(True, 'commit_pending', reason, request)
+
     def repo_needs_merge(self):
-        for component in self.component_set.all():
-            if component.repo_needs_merge():
-                return True
-        return False
+        return self.on_repo_components(False, 'repo_needs_merge')
 
     def repo_needs_push(self):
-        for component in self.all_repo_components():
-            if component.repo_needs_push():
-                return True
-        return False
-
-    def commit_pending(self, reason, request, on_commit=True):
-        """Commit any pending changes."""
-        ret = False
-
-        components = self.all_repo_components()
-
-        # Iterate all components
-        for component in components:
-            component.commit_pending(reason, request, skip_push=True)
-
-        # Push all components, this avoids multiple pushes for linked
-        # components
-        for component in components:
-            component.push_if_needed(request, on_commit=on_commit)
-
-        return ret
+        return self.on_repo_components(False, 'repo_needs_push')
 
     def do_update(self, request=None, method=None):
         """Update all Git repos."""
-        ret = True
-        for component in self.all_repo_components():
-            ret &= component.do_update(request, method=method)
-        return ret
+        return self.on_repo_components(True, 'do_update', request, method=method)
 
     def do_push(self, request=None):
         """Push all Git repos."""
-        return self.commit_pending('push', request, on_commit=False)
+        return self.on_repo_components(True, 'do_push', request)
 
     def do_reset(self, request=None):
         """Push all Git repos."""
-        ret = False
-        for component in self.all_repo_components():
-            ret |= component.do_reset(request)
-        return ret
+        return self.on_repo_components(True, 'do_reset', request)
 
     def do_cleanup(self, request=None):
         """Push all Git repos."""
-        ret = False
-        for component in self.all_repo_components():
-            ret |= component.do_cleanup(request)
-        return ret
+        return self.on_repo_components(True, 'do_cleanup', request)
 
     def can_push(self):
         """Check whether any suprojects can push."""
-        ret = False
-        for component in self.component_set.all():
-            ret |= component.can_push()
-        return ret
+        return self.on_repo_components(False, 'can_push')
 
     def all_repo_components(self):
         """Return list of all unique VCS components."""

@@ -54,7 +54,7 @@ script:
 # upload coverage
 after_script:
   # Kill Sauce Connect Proxy if running
-  - if [ -f ~/.sauce-pid ] ; then kill `cat ~/.sauce-pid` ; fi
+  - if [ -f ~/.sauce-pid ] ; then kill `cat ~/.sauce-pid` ; cat ~/.sauce-log ; fi
   # Combine partial reports
   - coverage combine
   - coverage xml
@@ -64,8 +64,6 @@ after_script:
   - python-codacy-coverage -r coverage.xml
   # CodeClimate
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-# use docker based faster build
-sudo: false
 matrix:
   include:
     - name: "Django 2.1, sqlite"

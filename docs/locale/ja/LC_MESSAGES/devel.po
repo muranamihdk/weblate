@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-29 06:49+0900\n"
+"POT-Creation-Date: 2018-12-09 23:35+0900\n"
 "PO-Revision-Date: 2018-11-28 10:19+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language: ja\n"
@@ -84,104 +84,111 @@ msgstr ""
 
 #: ../../devel/reporting.rst:4
 msgid ""
-"It is often useful to be able to see how translation progresses over "
-"given period. For this purpose Weblate includes reporting features, where"
-" you can obtain summaries of contributions to given component over time. "
-"You can find the reporting tool in the :guilabel:`Insights` menu for a "
-"translation component:"
+"Reporting features give insight into how a translation progresses over a "
+"given period. A summary of contributions to any given component over time"
+" is provided. The reporting tool is found in the :guilabel:`Insights` "
+"menu of any translation component:"
 msgstr ""
 
-#: ../../devel/reporting.rst:11
+#: ../../devel/reporting.rst:10
 msgid ""
 "Several reporting tools are available on this page and all can produce "
 "output in HTML, reStructuredText or JSON. The first two formats are "
-"suitable for embedding into existing documentation, while JSON is useful "
-"for further processing of the data."
+"suitable for embedding statistics into existing documentation, while JSON"
+" is useful for further processing of the data."
 msgstr ""
 
-#: ../../devel/reporting.rst:19
+#: ../../devel/reporting.rst:18
 msgid "Translator credits"
 msgstr ""
 
-#: ../../devel/reporting.rst:21
+#: ../../devel/reporting.rst:20
 msgid ""
 "Generates a document usable for crediting translators - sorted by "
-"language and listing all contributors to given language:"
+"language and lists all contributors to a given language:"
 msgstr ""
 
-#: ../../devel/reporting.rst:36 ../../devel/reporting.rst:64
-msgid "And it will get rendered as:"
+#: ../../devel/reporting.rst:35
+msgid "It will render as:"
 msgstr ""
 
-#: ../../devel/reporting.rst:38
+#: ../../devel/reporting.rst:37
 msgid "Czech"
 msgstr ""
 
-#: ../../devel/reporting.rst:40
+#: ../../devel/reporting.rst:39
 msgid "Michal Čihař <michal@cihar.com>"
 msgstr ""
 
-#: ../../devel/reporting.rst:41 ../../devel/reporting.rst:45
-msgid "Weblate Admin <admin@example.com>"
+#: ../../devel/reporting.rst:40
+msgid "John Doe <john@example.com>"
 msgstr ""
 
-#: ../../devel/reporting.rst:43
+#: ../../devel/reporting.rst:42
 msgid "Dutch"
 msgstr ""
 
-#: ../../devel/reporting.rst:51
+#: ../../devel/reporting.rst:44
+msgid "Jae Doe <jane@example.com>"
+msgstr ""
+
+#: ../../devel/reporting.rst:50
 msgid "Contributor stats"
 msgstr ""
 
-#: ../../devel/reporting.rst:53
-msgid "Generates number of words and units translated by translators:"
+#: ../../devel/reporting.rst:52
+msgid "Generates the number of translated words and strings by translator name:"
 msgstr ""
 
-#: ../../devel/reporting.rst:67
+#: ../../devel/reporting.rst:63
+msgid "And it will get rendered as:"
+msgstr ""
+
+#: ../../devel/reporting.rst:66
 msgid "Name"
 msgstr ""
 
-#: ../../devel/reporting.rst:67
+#: ../../devel/reporting.rst:66
 msgid "Email"
 msgstr ""
 
-#: ../../devel/reporting.rst:67
+#: ../../devel/reporting.rst:66
 msgid "Words"
 msgstr ""
 
-#: ../../devel/reporting.rst:67
+#: ../../devel/reporting.rst:66
 msgid "Count"
 msgstr ""
 
-#: ../../devel/reporting.rst:69
+#: ../../devel/reporting.rst:68
 msgid "Michal Čihař"
 msgstr ""
 
-#: ../../devel/reporting.rst:69
+#: ../../devel/reporting.rst:68
 msgid "michal@cihar.com"
 msgstr ""
 
-#: ../../devel/reporting.rst:69
+#: ../../devel/reporting.rst:68
 msgid "2332"
 msgstr ""
 
-#: ../../devel/reporting.rst:69
+#: ../../devel/reporting.rst:68
 msgid "421"
 msgstr ""
 
-#: ../../devel/reporting.rst:70
-msgid "Weblate Admin"
+#: ../../devel/reporting.rst:69
+msgid "John Doe"
 msgstr ""
 
-#: ../../devel/reporting.rst:70
-msgid "admin@example.com"
+#: ../../devel/reporting.rst:69
+msgid "john@example.com"
 msgstr ""
 
-#: ../../devel/reporting.rst:70
+#: ../../devel/reporting.rst:69
 msgid "25"
 msgstr ""
 
-#: ../../devel/reporting.rst:70
+#: ../../devel/reporting.rst:69
 msgid "8"
 msgstr ""
 
@@ -194,9 +201,7 @@ msgid "Activity reports"
 msgstr ""
 
 #: ../../devel/review.rst:11
-msgid ""
-"You can check activity reports for translations, project or individual "
-"users."
+msgid "Check changes of translations, projects or for individual users."
 msgstr ""
 
 #: ../../devel/review.rst:16
@@ -205,63 +210,60 @@ msgstr ""
 
 #: ../../devel/review.rst:18
 msgid ""
-"Weblate includes quite a lot of :ref:`checks`. Some of them also focus on"
-" quality of source strings. These can give you some hints for making "
-"strings easier to translate. You can check failing source checks on "
-":guilabel:`Source` tab of every component."
+"There are many :ref:`checks`, some of them focus on improving the quality"
+" of source strings. Many failing checks make for a hint to make source "
+"strings easier to translate. All types failing source checks are "
+"displayed on the :guilabel:`Source` tab of every component."
 msgstr ""
 
 #: ../../devel/review.rst:24
-msgid "Failing checks on translation"
+msgid "Translation string checks"
 msgstr ""
 
 #: ../../devel/review.rst:26
 msgid ""
-"On the other side, failing translation checks might also indicate problem"
-" in the source strings. Translators often tend to fix some mistakes in "
-"the translation instead of reporting it - a typical example is a missing "
-"full stop at the end of sentence, but there are more similar cases."
+"Erroneous failing translation string checks indicate the problem is with "
+"the source string. Translators sometimes fix mistakes in the translation "
+"instead of reporting it - a typical example is a missing full stop at the"
+" end of a sentence."
 msgstr ""
 
 #: ../../devel/review.rst:31
 msgid ""
-"Reviewing all failing checks on your translation can bring you valuable "
-"feedback for improving source strings as well."
+"Reviewing all failing checks of your translation, for every language, can"
+" provide valuable feedback to improve its source strings."
 msgstr ""
 
 #: ../../devel/review.rst:34
 msgid ""
-"You can find the :guilabel:`Source strings review` in the "
-":guilabel:`Tools` menu of a translation component. You will get a similar"
-" view when opening translation, with slightly different checks being "
-"displayed:"
+":guilabel:`Source strings review` is in the :guilabel:`Tools` menu of any"
+" given translation component. A similar view is presented when opening a "
+"translation, with slightly different checks displayed:"
 msgstr ""
 
 #: ../../devel/review.rst:40
 msgid ""
 "One of the most interesting checks here is the :ref:`check-multiple-"
-"failures` - it fires whenever there is failure on multiple translations "
-"of given string. Usually this is something to look for as this is string "
-"where translators have problems doing the translation properly. It might "
-"be just wrong punctuation at the end of sentence or something more "
-"problematic."
+"failures` - it is triggered whenever there is failure on multiple "
+"translations of a given string. Usually this is something to look for, as"
+" this is a string translators have problems translating properly."
 msgstr ""
 
-#: ../../devel/review.rst:46
-msgid "The detailed listing then shows you overview per language:"
+#: ../../devel/review.rst:45
+msgid "The detailed listing is a per language overview:"
 msgstr ""
 
-#: ../../devel/review.rst:51
+#: ../../devel/review.rst:50
 msgid "String comments"
 msgstr ""
 
-#: ../../devel/review.rst:53
+#: ../../devel/review.rst:52
 msgid ""
-"Weblate allows translators to comment on both translation and source "
-"strings. Each :ref:`component` can be configured to receive such comments"
-" on email address and sending this to developers mailing list is usually "
-"best approach. This way you can monitor when translators find problems "
-"and fix them quickly."
+"Translators can comment on both translation and source strings. Each "
+":ref:`component` can be configured to receive such comments to an email "
+"address, and using the developers mailing list is usually the best "
+"approach. This way you can keep an eye on when problems arise in "
+"translation, tend to, and fix them quickly."
 msgstr ""
 
 #: ../../devel/share.rst:4
@@ -751,5 +753,121 @@ msgstr ""
 #~ "For example component having both "
 #~ "duplicate strinsg and languages will "
 #~ "have this:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is often useful to be able "
+#~ "to see how translation progresses over"
+#~ " given period. For this purpose "
+#~ "Weblate includes reporting features, where "
+#~ "you can obtain summaries of "
+#~ "contributions to given component over "
+#~ "time. You can find the reporting "
+#~ "tool in the :guilabel:`Insights` menu "
+#~ "for a translation component:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Several reporting tools are available on"
+#~ " this page and all can produce "
+#~ "output in HTML, reStructuredText or "
+#~ "JSON. The first two formats are "
+#~ "suitable for embedding into existing "
+#~ "documentation, while JSON is useful for"
+#~ " further processing of the data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Generates a document usable for "
+#~ "crediting translators - sorted by "
+#~ "language and listing all contributors to"
+#~ " given language:"
+#~ msgstr ""
+
+#~ msgid "Weblate Admin <admin@example.com>"
+#~ msgstr ""
+
+#~ msgid "Generates number of words and units translated by translators:"
+#~ msgstr ""
+
+#~ msgid "Weblate Admin"
+#~ msgstr ""
+
+#~ msgid "admin@example.com"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can check activity reports for "
+#~ "translations, project or individual users."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate includes quite a lot of "
+#~ ":ref:`checks`. Some of them also focus"
+#~ " on quality of source strings. These"
+#~ " can give you some hints for "
+#~ "making strings easier to translate. You"
+#~ " can check failing source checks on"
+#~ " :guilabel:`Source` tab of every component."
+#~ msgstr ""
+
+#~ msgid "Failing checks on translation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "On the other side, failing translation"
+#~ " checks might also indicate problem "
+#~ "in the source strings. Translators often"
+#~ " tend to fix some mistakes in "
+#~ "the translation instead of reporting it"
+#~ " - a typical example is a "
+#~ "missing full stop at the end of"
+#~ " sentence, but there are more similar"
+#~ " cases."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Reviewing all failing checks on your "
+#~ "translation can bring you valuable "
+#~ "feedback for improving source strings as"
+#~ " well."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can find the :guilabel:`Source "
+#~ "strings review` in the :guilabel:`Tools` "
+#~ "menu of a translation component. You "
+#~ "will get a similar view when "
+#~ "opening translation, with slightly different"
+#~ " checks being displayed:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "One of the most interesting checks "
+#~ "here is the :ref:`check-multiple-"
+#~ "failures` - it fires whenever there "
+#~ "is failure on multiple translations of"
+#~ " given string. Usually this is "
+#~ "something to look for as this is"
+#~ " string where translators have problems "
+#~ "doing the translation properly. It might"
+#~ " be just wrong punctuation at the "
+#~ "end of sentence or something more "
+#~ "problematic."
+#~ msgstr ""
+
+#~ msgid "The detailed listing then shows you overview per language:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate allows translators to comment on"
+#~ " both translation and source strings. "
+#~ "Each :ref:`component` can be configured "
+#~ "to receive such comments on email "
+#~ "address and sending this to developers"
+#~ " mailing list is usually best "
+#~ "approach. This way you can monitor "
+#~ "when translators find problems and fix"
+#~ " them quickly."
 #~ msgstr ""
 

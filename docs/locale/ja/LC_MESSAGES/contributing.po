@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-13 21:58+0900\n"
+"POT-Creation-Date: 2018-12-09 23:35+0900\n"
 "PO-Revision-Date: 2018-11-18 16:21+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
-"weblate-doc-ja/contributing/ja/>\n"
 "Language: ja\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
+"doc-ja/contributing/ja/>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../contributing.rst:4
@@ -27,8 +26,8 @@ msgstr "貢献する"
 
 #: ../../contributing.rst:6
 msgid ""
-"There are dozens of ways to contribute in Weblate. We welcome any help, "
-"be it coding help, graphics design, documentation or sponsorship."
+"There are dozens of ways to contribute in Weblate. Any help is welcomed, "
+"be it coding, graphics design, documentation or sponsorship."
 msgstr ""
 
 #: ../../contributing.rst:10
@@ -37,10 +36,9 @@ msgstr ""
 
 #: ../../contributing.rst:12
 msgid ""
-"Weblate is being developed on `GitHub "
+"Weblate is developed on `GitHub "
 "<https://github.com/WeblateOrg/weblate>`_. You are welcome to fork the "
-"code and open pull requests. Patches in any other form are welcome as "
-"well."
+"code and open pull requests. Patches in any other form are welcome too."
 msgstr ""
 
 #: ../../contributing.rst:18
@@ -58,8 +56,8 @@ msgstr ""
 #: ../../contributing.rst:25
 msgid ""
 "It is good idea to check your contributions using :program:`pep8`, "
-":program:`pylint` and :program:`pyflages`. You can execute all checks by "
-"script :file:`ci/run-lint`."
+":program:`pylint` and :program:`pyflages`. You can execute all checks "
+"with the script :file:`ci/run-lint`."
 msgstr ""
 
 #: ../../contributing.rst:30
@@ -67,9 +65,7 @@ msgid "Developer's Certificate of Origin"
 msgstr ""
 
 #: ../../contributing.rst:32
-msgid ""
-"If you would like to make a contribution to the Weblate project, please "
-"certify to the following:"
+msgid "In contributing to the Weblate project, please certify to the following:"
 msgstr ""
 
 #: ../../contributing.rst:35
@@ -123,8 +119,8 @@ msgstr ""
 
 #: ../../contributing.rst:63
 msgid ""
-"And please confirm your certification to the above by adding the "
-"following line to your patch:"
+"Please confirm your affirmation of the above by adding the following line"
+" to your patch:"
 msgstr ""
 
 #: ../../contributing.rst:70
@@ -133,9 +129,9 @@ msgstr ""
 
 #: ../../contributing.rst:72
 msgid ""
-"If you are a developer who is authorized to contribute to Weblate on "
-"behalf of your employer, then please use your corporate email address in "
-"the Signed-off-by tag.  If not, then please use a personal email address."
+"If you are a developer authorized to contribute to Weblate on behalf of "
+"your employer, please use your corporate email address in the \"Signed-"
+"off-by\" tag.  If not, please use a personal email address."
 msgstr ""
 
 #: ../../contributing.rst:77
@@ -144,14 +140,15 @@ msgstr ""
 
 #: ../../contributing.rst:79
 msgid ""
-"We do write testsuite for our code, so please add testcases for any new "
-"functionality and verify that it works. You can see current test results "
-"on `Travis <https://travis-ci.org/WeblateOrg/weblate>`_ and coverage on "
-"`Codecov <https://codecov.io/github/WeblateOrg/weblate>`_."
+"Testsuites exist for most of the current code, increase coverage by "
+"adding testcases for any new functionality, and verify that it works. "
+"Current test results can be found on `Travis <https://travis-"
+"ci.org/WeblateOrg/weblate>`_ and coverage is reported on `Codecov "
+"<https://codecov.io/github/WeblateOrg/weblate>`_."
 msgstr ""
 
 #: ../../contributing.rst:83
-msgid "To run testsuite locally, use:"
+msgid "To run a testsuite locally, use:"
 msgstr ""
 
 #: ../../contributing.rst:89
@@ -176,9 +173,9 @@ msgstr ""
 
 #: ../../contributing.rst:105
 msgid ""
-"Feel welcome to report any issues with or suggest improvement of Weblate "
-"there. In case you have found a security issue in Weblate, please consult"
-" the \"Security issues\" section below."
+"Feel welcome to report any issues with, or suggest improvement of Weblate"
+" there. If what you have found is a security issue in Weblate, please "
+"consult the \"Security issues\" section below."
 msgstr ""
 
 #: ../../contributing.rst:112
@@ -187,30 +184,30 @@ msgstr ""
 
 #: ../../contributing.rst:114
 msgid ""
-"In order to give the community time to respond and upgrade we strongly "
-"urge you report all security issues privately. We're currently using "
-"HackerOne to handle security issues, so you are welcome to report issues "
-"directly at `HackerOne <https://hackerone.com/weblate>`_."
+"In order to give the community time to respond and upgrade your are "
+"strongly urged to report all security issues privately. HackerOne is used"
+" to handle security issues, and can be reported directly at `HackerOne "
+"<https://hackerone.com/weblate>`_."
 msgstr ""
 
 #: ../../contributing.rst:118
 msgid ""
-"Alternatively you can report them to security@weblate.org, which ends up "
-"on HackerOne as well."
+"Alternatively, report to security@weblate.org, which ends up on HackerOne"
+" as well."
 msgstr ""
 
 #: ../../contributing.rst:121
 msgid ""
 "If you don't want to use HackerOne, for whatever reason, you can send the"
 " report by email to michal@cihar.com. You can choose to encrypt it using "
-"his PGP key `3CB 1DF1 EF12 CF2A C0EE  5A32 9C27 B313 42B7 511D`."
+"this PGP key `3CB 1DF1 EF12 CF2A C0EE  5A32 9C27 B313 42B7 511D`."
 msgstr ""
 
 #: ../../contributing.rst:127
 msgid ""
-"We're heavily depending on third party components for many things.  In "
-"case you find a vulnerability which is affecting those components in "
-"general, please report it directly to them."
+"Weblate depends on third party components for many things.  In case you "
+"find a vulnerability affecting one of those components in general, please"
+" report it directly to the respective project."
 msgstr ""
 
 #: ../../contributing.rst:131
@@ -236,16 +233,14 @@ msgstr ""
 #: ../../contributing.rst:140
 #, python-format
 msgid ""
-"If you are looking for some bugs which should be good for starting with "
-"our codebase, you can find them labelled with :guilabel:`good first "
-"issue` "
-"<https://github.com/WeblateOrg/weblate/labels/good%20first%20issue>`_ "
-"tag:"
+"If looking for some bugs to familiarize yourself with the Weblate "
+"codebase, look for ones labelled :guilabel:`good first issue` "
+"<https://github.com/WeblateOrg/weblate/labels/good%20first%20issue>`_:"
 msgstr ""
 
 #: ../../contributing.rst:143
 msgid ""
-"If you have Docker and docker-compose installed you can spin up the "
+"If you have Docker and docker-compose installed, you can spin up the "
 "development environment simply by running:"
 msgstr ""
 
@@ -255,8 +250,8 @@ msgstr ""
 
 #: ../../contributing.rst:153
 msgid ""
-"We're using Bountysource to fund our development, you can participate as "
-"well by solving issues with bounties on them:"
+"Bountysource is used to fund development, you can participate too by "
+"solving issues with bounties attached:"
 msgstr ""
 
 #: ../../contributing.rst:155
@@ -281,10 +276,10 @@ msgstr ""
 #: ../../contributing.rst:168
 msgid ""
 "You can fund further Weblate development on `Bountysource`_. Funds "
-"collected there are used to fund free hosting for libre software projects"
-" and further development of Weblate. Please check the `Bountysource`_ "
-"page for details, such as funding goals and rewards you can get for "
-"funding."
+"collected there are used to fund gratis hosting for libre software "
+"projects, and further development of Weblate. Please check the "
+"`Bountysource`_ page for details, such as funding goals and rewards you "
+"can get by being a funder."
 msgstr ""
 
 #: ../../../BACKERS.rst:2
@@ -362,3 +357,141 @@ msgstr ""
 #~ "<https://github.com/WeblateOrg/weblate/labels/good%20first%20issue>`_"
 #~ " ` tag:"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "There are dozens of ways to "
+#~ "contribute in Weblate. We welcome any"
+#~ " help, be it coding help, graphics"
+#~ " design, documentation or sponsorship."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate is being developed on `GitHub"
+#~ " <https://github.com/WeblateOrg/weblate>`_. You are "
+#~ "welcome to fork the code and open"
+#~ " pull requests. Patches in any other"
+#~ " form are welcome as well."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is good idea to check your "
+#~ "contributions using :program:`pep8`, "
+#~ ":program:`pylint` and :program:`pyflages`. You "
+#~ "can execute all checks by script "
+#~ ":file:`ci/run-lint`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you would like to make a "
+#~ "contribution to the Weblate project, "
+#~ "please certify to the following:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "And please confirm your certification to"
+#~ " the above by adding the following"
+#~ " line to your patch:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are a developer who is "
+#~ "authorized to contribute to Weblate on"
+#~ " behalf of your employer, then please"
+#~ " use your corporate email address in"
+#~ " the Signed-off-by tag.  If "
+#~ "not, then please use a personal "
+#~ "email address."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We do write testsuite for our "
+#~ "code, so please add testcases for "
+#~ "any new functionality and verify that"
+#~ " it works. You can see current "
+#~ "test results on `Travis <https://travis-"
+#~ "ci.org/WeblateOrg/weblate>`_ and coverage on "
+#~ "`Codecov <https://codecov.io/github/WeblateOrg/weblate>`_."
+#~ msgstr ""
+
+#~ msgid "To run testsuite locally, use:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Feel welcome to report any issues "
+#~ "with or suggest improvement of Weblate"
+#~ " there. In case you have found "
+#~ "a security issue in Weblate, please "
+#~ "consult the \"Security issues\" section "
+#~ "below."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In order to give the community "
+#~ "time to respond and upgrade we "
+#~ "strongly urge you report all security"
+#~ " issues privately. We're currently using"
+#~ " HackerOne to handle security issues, "
+#~ "so you are welcome to report "
+#~ "issues directly at `HackerOne "
+#~ "<https://hackerone.com/weblate>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Alternatively you can report them to "
+#~ "security@weblate.org, which ends up on "
+#~ "HackerOne as well."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you don't want to use "
+#~ "HackerOne, for whatever reason, you can"
+#~ " send the report by email to "
+#~ "michal@cihar.com. You can choose to "
+#~ "encrypt it using his PGP key `3CB"
+#~ " 1DF1 EF12 CF2A C0EE  5A32 9C27 "
+#~ "B313 42B7 511D`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We're heavily depending on third party"
+#~ " components for many things.  In case"
+#~ " you find a vulnerability which is"
+#~ " affecting those components in general, "
+#~ "please report it directly to them."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are looking for some bugs"
+#~ " which should be good for starting"
+#~ " with our codebase, you can find "
+#~ "them labelled with :guilabel:`good first "
+#~ "issue` "
+#~ "<https://github.com/WeblateOrg/weblate/labels/good%20first%20issue>`_"
+#~ " tag:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you have Docker and docker-"
+#~ "compose installed you can spin up "
+#~ "the development environment simply by "
+#~ "running:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We're using Bountysource to fund our "
+#~ "development, you can participate as well"
+#~ " by solving issues with bounties on"
+#~ " them:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can fund further Weblate development"
+#~ " on `Bountysource`_. Funds collected there"
+#~ " are used to fund free hosting "
+#~ "for libre software projects and further"
+#~ " development of Weblate. Please check "
+#~ "the `Bountysource`_ page for details, "
+#~ "such as funding goals and rewards "
+#~ "you can get for funding."
+#~ msgstr ""
+

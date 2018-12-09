@@ -115,6 +115,8 @@ class BillingQuerySet(models.QuerySet):
         )
 
     def for_user(self, user):
+        if user.is_superuser:
+            return self.all().order_by('state')
         return self.filter(
             Q(projects__in=user.projects_with_perm('billing.view')) |
             Q(owners=user)
@@ -126,6 +128,7 @@ class Billing(models.Model):
     STATE_ACTIVE = 0
     STATE_TRIAL = 1
     STATE_EXPIRED = 2
+    STATE_TERMINATED = 3
 
     EXPIRING_STATES = (STATE_TRIAL,)
 
@@ -147,6 +150,7 @@ class Billing(models.Model):
             (STATE_ACTIVE, _('Active')),
             (STATE_TRIAL, _('Trial')),
             (STATE_EXPIRED, _('Expired')),
+            (STATE_TERMINATED, _('Terminated')),
         ),
         default=STATE_ACTIVE,
         verbose_name=_('Billing state'),
@@ -165,6 +169,10 @@ class Billing(models.Model):
         default=True,
         verbose_name=_('In limits'),
         editable=False,
+    )
+    grace_period = models.IntegerField(
+        default=0,
+        verbose_name=_('Grace period for payments'),
     )
     # Payment detailed information, used for integration
     # with payment processor
@@ -334,9 +342,10 @@ class Billing(models.Model):
 
         Compared to paid attribute, this does not include grace period.
         """
+        end = timezone.now() - timedelta(days=self.grace_period)
         return (
             self.plan.is_free or
-            self.invoice_set.filter(end__gte=timezone.now()).exists() or
+            self.invoice_set.filter(end__gte=end).exists() or
             self.state == Billing.STATE_TRIAL
         )
 

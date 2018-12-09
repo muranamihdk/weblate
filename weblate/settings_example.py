@@ -51,6 +51,8 @@ DATABASES = {
         'PORT': '',
         # Customizations for databases
         'OPTIONS': {
+            # In case of using an older MySQL server, which has MyISAM as a default storage
+            # 'init_command': 'SET storage_engine=INNODB',
             # Uncomment for MySQL older than 5.7:
             # 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             # Set emoji capable charset for MySQL:
@@ -494,11 +496,16 @@ LOGGING = {
             'handlers': [DEFAULT_LOG],
             'level': 'DEBUG',
         },
+        # Logging search operations
+        'weblate.search': {
+            'handlers': [DEFAULT_LOG],
+            'level': 'INFO',
+        },
         # Logging VCS operations
-        # 'weblate-vcs': {
-        #     'handlers': [DEFAULT_LOG],
-        #     'level': 'DEBUG',
-        # },
+        'weblate.vcs': {
+            'handlers': [DEFAULT_LOG],
+            'level': 'WARNING',
+        },
         # Python Social Auth logging
         # 'social': {
         #     'handlers': [DEFAULT_LOG],
@@ -817,3 +824,8 @@ CELERY_WORKER_PREFETCH_MULTIPLIER = 0
 CELERY_BEAT_SCHEDULE_FILENAME = os.path.join(
     DATA_DIR, 'celery', 'beat-schedule'
 )
+CELERY_TASK_ROUTES = {
+    'weblate.trans.search.delete_fulltext': {'queue': 'search'},
+    'weblate.trans.search.update_fulltext': {'queue': 'search'},
+    'weblate.memory.tasks.update_memory_task': {'queue': 'search'},
+}

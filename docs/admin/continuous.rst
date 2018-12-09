@@ -196,6 +196,13 @@ example ``https://hosted.weblate.org/hooks/pagure/``). This can be done in
 
    :http:post:`/hooks/pagure/`, :ref:`hosted-push`
 
+Automatically updating repositories nightly
++++++++++++++++++++++++++++++++++++++++++++
+
+Weblate does automatically fetch remote repositories nightly to improve
+performance when merging changes later. You can optionally turn this into doing
+nightly merges as well by enabling :setting:`AUTO_UPDATE`.
+
 .. _push-changes:
 
 Pushing changes
@@ -278,8 +285,11 @@ fulfilled:
 * search and replace is executed
 * explicit commit is requested
 
-You can also additionally set a cron job to commit pending changes after some
-delay, see :djadmin:`commit_pending` and :ref:`production-cron`.
+Additionally you can schedule a regular task to perform commit:
+
+.. literalinclude:: ../../examples/beat-settings.py
+    :language: python
+    :encoding: utf-8
 
 .. _processing:
 

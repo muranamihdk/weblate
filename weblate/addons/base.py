@@ -109,6 +109,9 @@ class BaseAddon(object):
     def post_push(self, component):
         return
 
+    def pre_update(self, component):
+        return
+
     def post_update(self, component, previous_head):
         return
 
@@ -158,8 +161,7 @@ Updated by {name} hook in Weblate.'''
                     self.message.format(name=self.verbose),
                     files=files
                 )
-                if component.push_on_commit:
-                    repository.push()
+                component.push_if_needed(None)
 
     def post_update(self, component, previous_head):
         self.update_translations(component, previous_head)

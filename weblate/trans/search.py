@@ -23,6 +23,7 @@
 from __future__ import absolute_import, unicode_literals
 
 import functools
+import logging
 from time import sleep
 
 from celery_batches import Batches
@@ -38,6 +39,8 @@ from django.utils.encoding import force_text
 from weblate.celery import app
 from weblate.utils.celery import extract_batch_args, extract_batch_kwargs
 from weblate.utils.index import WhooshIndex
+
+LOGGER = logging.getLogger('weblate.search')
 
 
 class TargetSchema(SchemaClass):
@@ -204,19 +207,22 @@ class Fulltext(WhooshIndex):
             query = Or(
                 [Term('source', word, boost=weight) for word, weight in kts]
             )
+            LOGGER.debug('more like query: %r', query)
 
             # Grab fulltext results
             results = [
                 (h['pk'], h.score) for h in searcher.search(query, limit=top)
             ]
+            LOGGER.debug('found %d matches', len(results))
             if not results:
                 return []
-            # Normalize scores to 0-100
-            max_score = max([h[1] for h in results])
-            scores = {h[0]:  h[1] * 100 / max_score for h in results}
 
-            # Filter results with score above 50 and not current unit
-            return [h[0] for h in results if scores[h[0]] > 50 and h[0] != pk]
+            # Filter bad results
+            threshold = max([h[1] for h in results]) / 2
+            results = [h[0] for h in results if h[1] > threshold]
+            LOGGER.debug('filter %d matches over threshold %d', len(results), threshold)
+
+            return results
 
     @classmethod
     def clean_search_unit(cls, pk, lang):
@@ -260,6 +266,7 @@ def update_fulltext(self, *args, **kwargs):
     try:
         fulltext.update_index(unitdata)
     except LockError:
+        LOGGER.info('retrying update batch of len %d', len(unitdata))
         # Manually handle retries, it doesn't work
         # with celery-batches
         sleep(10)
@@ -285,6 +292,7 @@ def delete_fulltext(self, *args):
     try:
         fulltext.delete_search_units(units, languages)
     except LockError:
+        LOGGER.info('retrying delete batch of len %d', len(ids))
         # Manually handle retries, it doesn't work
         # with celery-batches
         sleep(10)

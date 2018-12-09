@@ -47,12 +47,14 @@ from weblate.utils import messages
 from weblate.utils.site import get_site_url
 from weblate.utils.state import STATE_TRANSLATED, STATE_FUZZY
 from weblate.utils.errors import report_error
+from weblate.utils.licenses import is_osi_approved, is_fsf_approved
+from weblate.utils.render import render_template
 from weblate.trans.util import (
     is_repo_link, cleanup_repo_url, cleanup_path, path_separator,
     PRIORITY_CHOICES,
 )
 from weblate.trans.signals import (
-    vcs_post_push, vcs_post_update, translation_post_add
+    vcs_post_push, vcs_pre_update, vcs_post_update, translation_post_add
 )
 from weblate.vcs.base import RepositoryException
 from weblate.vcs.models import VCS_REGISTRY
@@ -374,6 +376,15 @@ class Component(models.Model, URLMixin, PathMixin):
         validators=[validate_render],
         default=settings.DEFAULT_DELETE_MESSAGE,
     )
+    merge_message = models.TextField(
+        verbose_name=ugettext_lazy('Commit message when merging translation'),
+        help_text=ugettext_lazy(
+            'You can use template language for various information, '
+            'please check documentation for more details.'
+        ),
+        validators=[validate_render],
+        default=settings.DEFAULT_MERGE_MESSAGE,
+    )
     committer_name = models.CharField(
         verbose_name=ugettext_lazy('Committer name'),
         max_length=200,
@@ -659,7 +670,7 @@ class Component(models.Model, URLMixin, PathMixin):
 
         return ret
 
-    def push_if_needed(self, request, do_update=True, on_commit=True):
+    def push_if_needed(self, request, do_update=True):
         """Wrapper to push if needed
 
         Checks for:
@@ -668,12 +679,10 @@ class Component(models.Model, URLMixin, PathMixin):
         * Configured push
         * There is something to push
         """
-        if on_commit and not self.push_on_commit:
-            return True
-        if not self.can_push():
-            return True
-        if not self.repo_needs_push():
-            return True
+        if (not self.push_on_commit
+                or not self.can_push()
+                or not self.repo_needs_push()):
+            return
         if settings.CELERY_TASK_ALWAYS_EAGER:
             self.do_push(request, force_commit=False, do_update=do_update)
         else:
@@ -714,20 +723,6 @@ class Component(models.Model, URLMixin, PathMixin):
             self.log_info('pushing to remote repo')
             with self.repository.lock:
                 self.repository.push()
-
-            Change.objects.create(
-                action=Change.ACTION_PUSH, component=self,
-                user=request.user if request else None,
-            )
-
-            vcs_post_push.send(sender=self.__class__, component=self)
-            for component in self.get_linked_childs():
-                vcs_post_push.send(
-                    sender=component.__class__, component=component
-                )
-            self.delete_alert('RepositoryChanges', childs=True)
-
-            return True
         except RepositoryException as error:
             error_text = self.error_text(error)
             self.log_error('failed to push on repo: %s', error_text)
@@ -748,6 +743,20 @@ class Component(models.Model, URLMixin, PathMixin):
             )
             return False
 
+        Change.objects.create(
+            action=Change.ACTION_PUSH, component=self,
+            user=request.user if request else None,
+        )
+
+        vcs_post_push.send(sender=self.__class__, component=self)
+        for component in self.get_linked_childs():
+            vcs_post_push.send(
+                sender=component.__class__, component=component
+            )
+        self.delete_alert('RepositoryChanges', childs=True)
+
+        return True
+
     @perform_on_link
     def do_reset(self, request=None):
         """Wrapper for reseting repo to same sources as remote."""
@@ -759,11 +768,6 @@ class Component(models.Model, URLMixin, PathMixin):
             self.log_info('reseting to remote repo')
             with self.repository.lock:
                 self.repository.reset()
-
-            Change.objects.create(
-                action=Change.ACTION_RESET, component=self,
-                user=request.user if request else None,
-            )
         except RepositoryException as error:
             self.log_error('failed to reset on repo')
             msg = 'Error:\n{0}'.format(self.error_text(error))
@@ -777,6 +781,11 @@ class Component(models.Model, URLMixin, PathMixin):
                 force_text(self)
             )
             return False
+
+        Change.objects.create(
+            action=Change.ACTION_RESET, component=self,
+            user=request.user if request else None,
+        )
 
         # create translation objects for all files
         self.create_translations(request=request)
@@ -866,6 +875,12 @@ class Component(models.Model, URLMixin, PathMixin):
         """Update current branch to match remote (if possible)."""
         if method is None:
             method = self.merge_style
+        # run pre update hook
+        vcs_pre_update.send(sender=self.__class__, component=self)
+        for component in self.get_linked_childs():
+            vcs_pre_update.send(
+                sender=component.__class__, component=component
+            )
 
         # Merge/rebase
         if method == 'rebase':
@@ -873,53 +888,29 @@ class Component(models.Model, URLMixin, PathMixin):
             error_msg = _('Failed to rebase our branch onto remote branch %s.')
             action = Change.ACTION_REBASE
             action_failed = Change.ACTION_FAILED_REBASE
+            kwargs = {}
         else:
             method = self.repository.merge
             error_msg = _('Failed to merge remote branch into %s.')
             action = Change.ACTION_MERGE
             action_failed = Change.ACTION_FAILED_MERGE
+            kwargs = {
+                'message': render_template(self.merge_message, component=self)
+            }
 
         with self.repository.lock:
             try:
                 previous_head = self.repository.last_revision
                 # Try to merge it
-                method()
-                self.log_info(
-                    '%s remote into repo',
-                    self.merge_style,
-                )
-                if self.id:
-                    Change.objects.create(
-                        component=self, action=action,
-                        user=request.user if request else None,
-                    )
-
-                    # run post update hook
-                    vcs_post_update.send(
-                        sender=self.__class__,
-                        component=self,
-                        previous_head=previous_head
-                    )
-                    self.delete_alert('MergeFailure', childs=True)
-                    self.delete_alert('RepositoryOutdated', childs=True)
-                    for component in self.get_linked_childs():
-                        vcs_post_update.send(
-                            sender=component.__class__,
-                            component=component,
-                            previous_head=previous_head
-                        )
-                return True
+                method(**kwargs)
+                self.log_info('%s remote into repo', self.merge_style)
             except RepositoryException as error:
                 # In case merge has failer recover
                 error = self.error_text(error)
                 status = self.repository.status()
 
                 # Log error
-                self.log_error(
-                    'failed %s on repo: %s',
-                    self.merge_style,
-                    error
-                )
+                self.log_error('failed %s: %s', self.merge_style, error)
                 if self.id:
                     Change.objects.create(
                         component=self, action=action_failed, target=error,
@@ -935,12 +926,31 @@ class Component(models.Model, URLMixin, PathMixin):
                 method(abort=True)
 
                 # Tell user (if there is any)
-                messages.error(
-                    request,
-                    error_msg % force_text(self)
-                )
+                messages.error(request, error_msg % force_text(self))
 
                 return False
+
+        if self.id:
+            Change.objects.create(
+                component=self, action=action,
+                user=request.user if request else None,
+            )
+
+            # run post update hook
+            vcs_post_update.send(
+                sender=self.__class__,
+                component=self,
+                previous_head=previous_head
+            )
+            self.delete_alert('MergeFailure', childs=True)
+            self.delete_alert('RepositoryOutdated', childs=True)
+            for component in self.get_linked_childs():
+                vcs_post_update.send(
+                    sender=component.__class__,
+                    component=component,
+                    previous_head=previous_head
+                )
+        return True
 
     def get_mask_matches(self):
         """Return files matching current mask."""
@@ -949,7 +959,7 @@ class Component(models.Model, URLMixin, PathMixin):
         for filename in glob(os.path.join(self.full_path, self.filemask)):
             path = path_separator(filename).replace(prefix, '')
             code = self.get_lang_code(path)
-            if re.match(self.language_regex, code):
+            if re.match(self.language_regex, code) and code != 'source':
                 matches.add(path)
             else:
                 self.log_info('skipping language %s [%s]', code, path)
@@ -1310,6 +1320,24 @@ class Component(models.Model, URLMixin, PathMixin):
             )
             raise ValidationError({'template': msg})
 
+    def clean_repo(self):
+        self.set_default_branch()
+
+        # Baild out on failed repo validation
+        if self.repo is None:
+            return
+
+        # Validate VCS repo
+        try:
+            self.sync_git_repo(True)
+        except RepositoryException as exc:
+            msg = _('Failed to update repository: %s') % self.error_text(exc)
+            raise ValidationError({'repo': msg})
+
+        # Push repo is not used with link
+        if self.is_repo_link:
+            self.clean_repo_link()
+
     def clean(self):
         """Validator fetches repository
 
@@ -1332,12 +1360,10 @@ class Component(models.Model, URLMixin, PathMixin):
         if self.project_id is None:
             return
 
-        self.set_default_branch()
-
         # Check if we should rename
         if self.id:
             old = Component.objects.get(pk=self.id)
-            self.check_rename(old)
+            self.check_rename(old, validate=True)
 
             if old.vcs != self.vcs:
                 # This could work, but the problem is that before changed
@@ -1347,25 +1373,7 @@ class Component(models.Model, URLMixin, PathMixin):
                 msg = _('Changing version control system is not supported!')
                 raise ValidationError({'vcs': msg})
 
-        # Check file format
-        if self.file_format not in FILE_FORMATS:
-            msg = _('Unsupported file format: {0}').format(self.file_format)
-            raise ValidationError({'file_format': msg})
-
-        # Baild out on failed repo validation
-        if self.repo is None:
-            return
-
-        # Validate VCS repo
-        try:
-            self.sync_git_repo(True)
-        except RepositoryException as exc:
-            msg = _('Failed to update repository: %s') % self.error_text(exc)
-            raise ValidationError({'repo': msg})
-
-        # Push repo is not used with link
-        if self.is_repo_link:
-            self.clean_repo_link()
+        self.clean_repo()
 
         # Template validation
         self.clean_template()
@@ -1473,10 +1481,19 @@ class Component(models.Model, URLMixin, PathMixin):
         if changed_project:
             old.project.suggestion_set.copy(self.project)
 
+        self.update_alerts()
+
+    def update_alerts(self):
         if self.new_lang != 'add' and self.new_base:
             self.add_alert('UnusedNewBase')
         else:
             self.delete_alert('UnusedNewBase')
+
+        if (self.project.access_control == self.project.ACCESS_PUBLIC
+                and not self.license):
+            self.add_alert('MissingLicense')
+        else:
+            self.delete_alert('MissingLicense')
 
     def repo_needs_commit(self):
         """Check whether there are some not committed changes"""
@@ -1648,3 +1665,11 @@ class Component(models.Model, URLMixin, PathMixin):
                 existing.discard(instance.pk)
             # Remove stale instances
             Check.objects.filter(pk__in=existing).delete()
+
+    @cached_property
+    def osi_approved_license(self):
+        return is_osi_approved(self.license)
+
+    @cached_property
+    def fsf_approved_license(self):
+        return is_fsf_approved(self.license)

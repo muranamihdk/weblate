@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-13 21:58+0900\n"
+"POT-Creation-Date: 2018-12-09 23:35+0900\n"
 "PO-Revision-Date: 2018-12-02 04:14+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
-"weblate-doc-ja/api/ja/>\n"
 "Language: ja\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
+"doc-ja/api/ja/>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../api.rst:4
@@ -55,17 +54,15 @@ msgid ""
 "authentication uses a token, which you can get in your profile. Use it in"
 " the ``Authorization`` header:"
 msgstr ""
-"公開プロジェクトの API は認証なしに使うことができますが、認証されていないリクエストの数は大きく制限されていますので（初期設定では1日あたり100リク"
-"エストまでです）、認証を使うことをおすすめします。認証はトークンを利用して行われます。トークンはあなたのプロファイルページで入手できますので、これを "
-"``Authorization`` ヘッダに含めてください。"
+"公開プロジェクトの API "
+"は認証なしに使うことができますが、認証されていないリクエストの数は大きく制限されていますので（初期設定では1日あたり100リクエストまでです）、認証を使うことをおすすめします。認証はトークンを利用して行われます。トークンはあなたのプロファイルページで入手できますので、これを"
+" ``Authorization`` ヘッダに含めてください。"
 
 #: ../../api.rst:33
 msgid ""
 "Generic request behaviour for the API, the headers, status codes and "
 "parameters here apply to all endpoints as well."
-msgstr ""
-"以下のヘッダー、ステータスコード、パラメータは、APIに対するリクエスト行為として一般的なものであり、すべてのエントリーポイントに対して同様に適用されます"
-"。"
+msgstr "以下のヘッダー、ステータスコード、パラメータは、APIに対するリクエスト行為として一般的なものであり、すべてのエントリーポイントに対して同様に適用されます。"
 
 #: ../../api.rst
 msgid "Query Parameters"
@@ -77,8 +74,9 @@ msgid ""
 "depends on REST framework setup, by default ``json`` and ``api`` are "
 "supported. The latter provides web browser interface for API."
 msgstr ""
-"レスポンスのフォーマット（:http:header:`Accept` を上書きします）。可能な値は REST framework の設定に依存しますが、"
-"初期値では ``json`` と ``api`` がサポートされています。後者は API のためのウェブブラウザ用インターフェースを提供します。"
+"レスポンスのフォーマット（:http:header:`Accept` を上書きします）。可能な値は REST framework "
+"の設定に依存しますが、初期値では ``json`` と ``api`` がサポートされています。後者は API "
+"のためのウェブブラウザ用インターフェースを提供します。"
 
 #: ../../api.rst
 msgid "Request Headers"
@@ -170,8 +168,8 @@ msgstr "**リクエスト例**"
 msgid "**Example response:**"
 msgstr "**レスポンス例**"
 
-#: ../../api.rst:90 ../../api.rst:130 ../../api.rst:338 ../../api.rst:830
-#: ../../api.rst:1053
+#: ../../api.rst:90 ../../api.rst:130 ../../api.rst:338 ../../api.rst:828
+#: ../../api.rst:1051
 msgid "**CURL example:**"
 msgstr "**CURL 例**"
 
@@ -235,12 +233,12 @@ msgstr "すべての言語のリストを返します。"
 
 #: ../../api.rst:205 ../../api.rst:220 ../../api.rst:244 ../../api.rst:264
 #: ../../api.rst:295 ../../api.rst:311 ../../api.rst:336 ../../api.rst:386
-#: ../../api.rst:417 ../../api.rst:449 ../../api.rst:498 ../../api.rst:513
-#: ../../api.rst:538 ../../api.rst:559 ../../api.rst:576 ../../api.rst:589
-#: ../../api.rst:602 ../../api.rst:616 ../../api.rst:639 ../../api.rst:683
-#: ../../api.rst:767 ../../api.rst:784 ../../api.rst:811 ../../api.rst:828
-#: ../../api.rst:854 ../../api.rst:873 ../../api.rst:914 ../../api.rst:957
-#: ../../api.rst:990 ../../api.rst:1019 ../../api.rst:1051
+#: ../../api.rst:415 ../../api.rst:447 ../../api.rst:496 ../../api.rst:511
+#: ../../api.rst:536 ../../api.rst:557 ../../api.rst:574 ../../api.rst:587
+#: ../../api.rst:600 ../../api.rst:614 ../../api.rst:637 ../../api.rst:681
+#: ../../api.rst:765 ../../api.rst:782 ../../api.rst:809 ../../api.rst:826
+#: ../../api.rst:852 ../../api.rst:871 ../../api.rst:912 ../../api.rst:955
+#: ../../api.rst:988 ../../api.rst:1017 ../../api.rst:1049
 msgid ""
 "Additional common headers, parameters and status codes are documented at "
 ":ref:`api-generic`."
@@ -268,8 +266,8 @@ msgstr ""
 msgid "Text direction"
 msgstr ""
 
-#: ../../api.rst:222 ../../api.rst:266 ../../api.rst:313 ../../api.rst:451
-#: ../../api.rst:515 ../../api.rst:686
+#: ../../api.rst:222 ../../api.rst:266 ../../api.rst:313 ../../api.rst:449
+#: ../../api.rst:513 ../../api.rst:684
 msgid "**Example JSON data:**"
 msgstr ""
 
@@ -292,11 +290,11 @@ msgid "Returns information about a project."
 msgstr ""
 
 #: ../../api.rst:252 ../../api.rst:289 ../../api.rst:303 ../../api.rst:329
-#: ../../api.rst:380 ../../api.rst:394 ../../api.rst:425 ../../api.rst:490
-#: ../../api.rst:505 ../../api.rst:530 ../../api.rst:546 ../../api.rst:567
-#: ../../api.rst:582 ../../api.rst:595 ../../api.rst:608 ../../api.rst:624
-#: ../../api.rst:647 ../../api.rst:757 ../../api.rst:774 ../../api.rst:802
-#: ../../api.rst:817 ../../api.rst:845 ../../api.rst:862 ../../api.rst:881
+#: ../../api.rst:380 ../../api.rst:394 ../../api.rst:423 ../../api.rst:488
+#: ../../api.rst:503 ../../api.rst:528 ../../api.rst:544 ../../api.rst:565
+#: ../../api.rst:580 ../../api.rst:593 ../../api.rst:606 ../../api.rst:622
+#: ../../api.rst:645 ../../api.rst:755 ../../api.rst:772 ../../api.rst:800
+#: ../../api.rst:815 ../../api.rst:843 ../../api.rst:860 ../../api.rst:879
 msgid "Project URL slug"
 msgstr ""
 
@@ -308,7 +306,7 @@ msgstr ""
 msgid "project slug"
 msgstr ""
 
-#: ../../api.rst:256 ../../api.rst:664
+#: ../../api.rst:256 ../../api.rst:662
 msgid "source language object; see :http:get:`/api/languages/(string:language)/`"
 msgstr ""
 
@@ -338,7 +336,7 @@ msgstr ""
 msgid "Returns a list of project changes."
 msgstr ""
 
-#: ../../api.rst:291 ../../api.rst:494 ../../api.rst:763
+#: ../../api.rst:291 ../../api.rst:492 ../../api.rst:761
 msgid "array of component objects; see :http:get:`/api/changes/(int:pk)/`"
 msgstr ""
 
@@ -350,19 +348,19 @@ msgid ""
 ":http:get:`/api/components/(string:project)/(string:component)/repository/`."
 msgstr ""
 
-#: ../../api.rst:305 ../../api.rst:550
+#: ../../api.rst:305 ../../api.rst:548
 msgid "whether there are any pending changes to commit"
 msgstr ""
 
-#: ../../api.rst:306 ../../api.rst:551
+#: ../../api.rst:306 ../../api.rst:549
 msgid "whether there are any upstream changes to merge"
 msgstr ""
 
-#: ../../api.rst:307 ../../api.rst:552
+#: ../../api.rst:307 ../../api.rst:550
 msgid "whether there are any local changes to push"
 msgstr ""
 
-#: ../../api.rst:326 ../../api.rst:858
+#: ../../api.rst:326 ../../api.rst:856
 msgid "Performs given operation on the VCS repository."
 msgstr ""
 
@@ -370,13 +368,13 @@ msgstr ""
 msgid "Request JSON Object"
 msgstr ""
 
-#: ../../api.rst:331 ../../api.rst:571 ../../api.rst:868
+#: ../../api.rst:331 ../../api.rst:569 ../../api.rst:866
 msgid ""
 "Operation to perform: one of ``push``, ``pull``, ``commit``, ``reset``, "
 "``cleanup``"
 msgstr ""
 
-#: ../../api.rst:332 ../../api.rst:572 ../../api.rst:869
+#: ../../api.rst:332 ../../api.rst:570 ../../api.rst:867
 msgid "result of the operation"
 msgstr ""
 
@@ -398,381 +396,369 @@ msgstr ""
 msgid "Returns paginated statistics for all languages within a project."
 msgstr ""
 
-#: ../../api.rst:396 ../../api.rst:427 ../../api.rst:492 ../../api.rst:507
-#: ../../api.rst:532 ../../api.rst:548 ../../api.rst:569 ../../api.rst:584
-#: ../../api.rst:597 ../../api.rst:610 ../../api.rst:626 ../../api.rst:649
-#: ../../api.rst:759 ../../api.rst:776 ../../api.rst:804 ../../api.rst:819
-#: ../../api.rst:847 ../../api.rst:864 ../../api.rst:883
-msgid "Component URL slug"
-msgstr ""
-
-#: ../../api.rst:398
+#: ../../api.rst:396
 msgid "array of translation statistics objects"
 msgstr ""
 
-#: ../../api.rst:399 ../../api.rst:896
+#: ../../api.rst:397 ../../api.rst:894
 msgid "language name"
 msgstr ""
 
-#: ../../api.rst:400 ../../api.rst:887
+#: ../../api.rst:398 ../../api.rst:885
 msgid "language code"
 msgstr ""
 
-#: ../../api.rst:401 ../../api.rst:897
+#: ../../api.rst:399 ../../api.rst:668 ../../api.rst:895
 msgid "total number of strings"
 msgstr ""
 
-#: ../../api.rst:402 ../../api.rst:898
+#: ../../api.rst:400 ../../api.rst:671 ../../api.rst:896
 msgid "number of translated strings"
 msgstr ""
 
-#: ../../api.rst:403 ../../api.rst:899
+#: ../../api.rst:401 ../../api.rst:672 ../../api.rst:897
 msgid "percentage of translated strings"
 msgstr ""
 
-#: ../../api.rst:404 ../../api.rst:671 ../../api.rst:892
+#: ../../api.rst:402 ../../api.rst:669 ../../api.rst:890
 msgid "total number of words"
 msgstr ""
 
-#: ../../api.rst:405 ../../api.rst:675 ../../api.rst:893
+#: ../../api.rst:403 ../../api.rst:673 ../../api.rst:891
 msgid "number of translated words"
 msgstr ""
 
-#: ../../api.rst:406
+#: ../../api.rst:404
 msgid "percentage of translated words"
 msgstr ""
 
-#: ../../api.rst:409
+#: ../../api.rst:407
 msgid "Components"
 msgstr "コンポーネント"
 
-#: ../../api.rst:413
+#: ../../api.rst:411
 msgid "Returns a list of translation components."
 msgstr "翻訳コンポーネントのリストを返します。"
 
-#: ../../api.rst:419
+#: ../../api.rst:417
 msgid ""
 "Component object attributes are documented at "
 ":http:get:`/api/components/(string:project)/(string:component)/`."
 msgstr ""
 
-#: ../../api.rst:423
+#: ../../api.rst:421
 msgid "Returns information about translation component."
 msgstr ""
 
-#: ../../api.rst:429
+#: ../../api.rst:425 ../../api.rst:490 ../../api.rst:505 ../../api.rst:530
+#: ../../api.rst:546 ../../api.rst:567 ../../api.rst:582 ../../api.rst:595
+#: ../../api.rst:608 ../../api.rst:624 ../../api.rst:647 ../../api.rst:757
+#: ../../api.rst:774 ../../api.rst:802 ../../api.rst:817 ../../api.rst:845
+#: ../../api.rst:862 ../../api.rst:881
+msgid "Component URL slug"
+msgstr ""
+
+#: ../../api.rst:427
 msgid "VCS repository branch"
 msgstr ""
 
-#: ../../api.rst:430
+#: ../../api.rst:428
 msgid "file format of translations"
 msgstr ""
 
-#: ../../api.rst:431
+#: ../../api.rst:429
 msgid "mask of translation files in the repository"
 msgstr ""
 
-#: ../../api.rst:432
+#: ../../api.rst:430
 msgid "URL of the exported VCS repository with translations"
 msgstr ""
 
-#: ../../api.rst:433
+#: ../../api.rst:431
 msgid "license for translations"
 msgstr ""
 
-#: ../../api.rst:434
+#: ../../api.rst:432
 msgid "URL of license for translations"
 msgstr ""
 
-#: ../../api.rst:435
+#: ../../api.rst:433
 msgid "name of component"
 msgstr ""
 
-#: ../../api.rst:436
+#: ../../api.rst:434
 msgid "slug of component"
 msgstr ""
 
-#: ../../api.rst:437
+#: ../../api.rst:435
 msgid "the translation project; see :http:get:`/api/projects/(string:project)/`"
 msgstr ""
 
-#: ../../api.rst:438
+#: ../../api.rst:436
 msgid "VCS repository URL"
 msgstr ""
 
-#: ../../api.rst:439
+#: ../../api.rst:437
 msgid "base file for monolingual translations"
 msgstr ""
 
-#: ../../api.rst:440
+#: ../../api.rst:438
 msgid "base file for adding new translations"
 msgstr ""
 
-#: ../../api.rst:441
+#: ../../api.rst:439
 msgid "version control system"
 msgstr ""
 
-#: ../../api.rst:442
+#: ../../api.rst:440
 msgid ""
 "URL to repository status; see "
 ":http:get:`/api/components/(string:project)/(string:component)/repository/`"
 msgstr ""
 
-#: ../../api.rst:443
+#: ../../api.rst:441
 msgid ""
 "URL to translations list; see "
 ":http:get:`/api/components/(string:project)/(string:component)/translations/`"
 msgstr ""
 
-#: ../../api.rst:444
+#: ../../api.rst:442
 msgid ""
 "URL to lock status; see "
 ":http:get:`/api/components/(string:project)/(string:component)/lock/`"
 msgstr ""
 
-#: ../../api.rst:445
+#: ../../api.rst:443
 msgid ""
 "URL to changes list; see "
 ":http:get:`/api/components/(string:project)/(string:component)/changes/`"
 msgstr ""
 
-#: ../../api.rst:488
+#: ../../api.rst:486
 msgid "Returns a list of component changes."
 msgstr ""
 
-#: ../../api.rst:503
+#: ../../api.rst:501
 msgid "Returns component lock status."
 msgstr ""
 
-#: ../../api.rst:509
+#: ../../api.rst:507
 msgid "whether component is locked for updates"
 msgstr ""
 
-#: ../../api.rst:526
+#: ../../api.rst:524
 msgid "Sets component lock status."
 msgstr ""
 
-#: ../../api.rst:528
+#: ../../api.rst:526
 msgid ""
 "Response is same as "
 ":http:get:`/api/components/(string:project)/(string:component)/lock/`."
 msgstr ""
 
-#: ../../api.rst:534
+#: ../../api.rst:532
 msgid "Boolean whether to lock or not."
 msgstr ""
 
-#: ../../api.rst:542 ../../api.rst:841
+#: ../../api.rst:540 ../../api.rst:839
 msgid "Returns information about VCS repository status."
 msgstr ""
 
-#: ../../api.rst:544
+#: ../../api.rst:542
 msgid ""
 "The response is same as for "
 ":http:get:`/api/projects/(string:project)/repository/`."
 msgstr ""
 
-#: ../../api.rst:553
+#: ../../api.rst:551
 msgid "Remote commit information"
 msgstr ""
 
-#: ../../api.rst:554
+#: ../../api.rst:552
 msgid "VCS repository status as reported by VCS"
 msgstr ""
 
-#: ../../api.rst:555
+#: ../../api.rst:553
 msgid "Text describing merge failure or null if there is none"
 msgstr ""
 
-#: ../../api.rst:563
+#: ../../api.rst:561
 msgid "Performs the given operation on a VCS repository."
 msgstr ""
 
-#: ../../api.rst:565 ../../api.rst:860
+#: ../../api.rst:563 ../../api.rst:858
 msgid ""
 "See :http:post:`/api/projects/(string:project)/repository/` for "
 "documentation."
 msgstr ""
 
-#: ../../api.rst:580
+#: ../../api.rst:578
 msgid "Downloads base file for monolingual translations."
 msgstr ""
 
-#: ../../api.rst:593
+#: ../../api.rst:591
 msgid "Downloads template file for new translations."
 msgstr ""
 
-#: ../../api.rst:606
+#: ../../api.rst:604
 msgid "Returns a list of translation objects in the given component."
 msgstr ""
 
-#: ../../api.rst:612
+#: ../../api.rst:610
 msgid ""
 "array of translation objects; see "
 ":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/`"
 msgstr ""
 
-#: ../../api.rst:620
+#: ../../api.rst:618
 msgid "Returns paginated statistics for all translations within component."
 msgstr ""
 
-#: ../../api.rst:628
+#: ../../api.rst:626
 msgid ""
 "array of translation statistics objects; see "
 ":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/statistics/`"
 msgstr ""
 
-#: ../../api.rst:631
+#: ../../api.rst:629
 msgid "Translations"
 msgstr "翻訳"
 
-#: ../../api.rst:635
+#: ../../api.rst:633
 msgid "Returns a list of translations."
 msgstr "翻訳のリストを返します。"
 
-#: ../../api.rst:641
+#: ../../api.rst:639
 msgid ""
 "Translation object attributes are documented at "
 ":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/`."
 msgstr ""
 
-#: ../../api.rst:645
+#: ../../api.rst:643
 msgid "Returns information about a translation."
 msgstr ""
 
-#: ../../api.rst:651 ../../api.rst:761 ../../api.rst:778 ../../api.rst:806
-#: ../../api.rst:821 ../../api.rst:849 ../../api.rst:866 ../../api.rst:885
+#: ../../api.rst:649 ../../api.rst:759 ../../api.rst:776 ../../api.rst:804
+#: ../../api.rst:819 ../../api.rst:847 ../../api.rst:864 ../../api.rst:883
 msgid "Translation language code"
 msgstr ""
 
-#: ../../api.rst:653
+#: ../../api.rst:651
 msgid ""
 "component object; see "
 ":http:get:`/api/components/(string:project)/(string:component)/`"
 msgstr ""
 
+#: ../../api.rst:652
+msgid "number of strings failing check"
+msgstr ""
+
+#: ../../api.rst:653
+msgid "percentage of strings failing check"
+msgstr ""
+
 #: ../../api.rst:654
-msgid "number of units failing check"
-msgstr ""
-
-#: ../../api.rst:655
-msgid "percentage of units failing check"
-msgstr ""
-
-#: ../../api.rst:656
 msgid "number of words with failing check"
 msgstr ""
 
-#: ../../api.rst:657
+#: ../../api.rst:655
 msgid "translation filename"
 msgstr ""
 
+#: ../../api.rst:656
+msgid "number of strings marked for review"
+msgstr ""
+
+#: ../../api.rst:657
+msgid "percentage of strings marked for review"
+msgstr ""
+
 #: ../../api.rst:658
-msgid "number of units marked for review"
-msgstr ""
-
-#: ../../api.rst:659
-msgid "percentage of units marked for review"
-msgstr ""
-
-#: ../../api.rst:660
 msgid "number of words marked for review"
 msgstr ""
 
+#: ../../api.rst:659
+msgid "number of strings with comment"
+msgstr ""
+
+#: ../../api.rst:660
+msgid "number of strings with suggestion"
+msgstr ""
+
 #: ../../api.rst:661
-msgid "number of units with comment"
-msgstr ""
-
-#: ../../api.rst:662
-msgid "number of units with suggestion"
-msgstr ""
-
-#: ../../api.rst:663
 msgid "whether translation is monolingual base"
 msgstr ""
 
-#: ../../api.rst:665
+#: ../../api.rst:663
 msgid ""
 "language code used in the repository; this can be different from language"
 " code in the language object"
 msgstr ""
 
-#: ../../api.rst:666 ../../api.rst:894
+#: ../../api.rst:664 ../../api.rst:892
 msgid "name of last author"
 msgstr ""
 
-#: ../../api.rst:667
+#: ../../api.rst:665
 msgid "last change timestamp"
 msgstr ""
 
-#: ../../api.rst:668
+#: ../../api.rst:666
 msgid "hash revision of the file"
 msgstr ""
 
-#: ../../api.rst:669
+#: ../../api.rst:667
 msgid "URL for sharing leading to engage page"
 msgstr ""
 
 #: ../../api.rst:670
-msgid "total number of units"
-msgstr ""
-
-#: ../../api.rst:672
 msgid "URL for translating"
 msgstr ""
 
-#: ../../api.rst:673
-msgid "number of translated units"
-msgstr ""
-
 #: ../../api.rst:674
-msgid "percentage of translated units"
-msgstr ""
-
-#: ../../api.rst:676
 msgid ""
 "URL to repository status; see "
 ":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/repository/`"
 msgstr ""
 
-#: ../../api.rst:677
+#: ../../api.rst:675
 msgid ""
 "URL to file object; see "
 ":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/file/`"
 msgstr ""
 
-#: ../../api.rst:678
+#: ../../api.rst:676
 msgid ""
 "URL to changes list; see "
 ":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/changes/`"
 msgstr ""
 
-#: ../../api.rst:679
+#: ../../api.rst:677
 msgid ""
-"URL to units list; see "
+"URL to strings list; see "
 ":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/units/`"
 msgstr ""
 
-#: ../../api.rst:755 ../../api.rst:953
+#: ../../api.rst:753 ../../api.rst:951
 msgid "Returns a list of translation changes."
 msgstr ""
 
-#: ../../api.rst:772
+#: ../../api.rst:770
 msgid "Returns a list of translation units."
 msgstr ""
 
-#: ../../api.rst:780
+#: ../../api.rst:778
 msgid "array of component objects; see :http:get:`/api/units/(int:pk)/`"
 msgstr ""
 
-#: ../../api.rst:789
+#: ../../api.rst:787
 msgid ""
 "Download current translation file as stored in VCS (without ``format`` "
 "parameter) or as converted to a standard format (currently supported: "
 "Gettext PO, MO, XLIFF and TBX)."
 msgstr ""
 
-#: ../../api.rst:795
+#: ../../api.rst:793
 msgid ""
 "This API endpoint uses different logic for output than rest of API as it "
 "operates on whole file rather than on data. Set of accepted ``format`` "
@@ -780,13 +766,13 @@ msgid ""
 "stored in VCS."
 msgstr ""
 
-#: ../../api.rst:800
+#: ../../api.rst:798
 msgid ""
 "File format to use; if not specified no format conversion happens; "
 "supported file formats: ``po``, ``mo``, ``xliff``, ``xliff11``, ``tbx``"
 msgstr ""
 
-#: ../../api.rst:815
+#: ../../api.rst:813
 msgid "Upload new file with translations."
 msgstr ""
 
@@ -794,311 +780,311 @@ msgstr ""
 msgid "Form Parameters"
 msgstr ""
 
-#: ../../api.rst:823
+#: ../../api.rst:821
 msgid "Whether to overwrite existing translations (defaults to no)"
 msgstr ""
 
-#: ../../api.rst:824 ../../api.rst:1047
+#: ../../api.rst:822 ../../api.rst:1045
 msgid "Uploaded file"
 msgstr ""
 
-#: ../../api.rst:843
+#: ../../api.rst:841
 msgid ""
 "The response is same as for "
 ":http:get:`/api/components/(string:project)/(string:component)/repository/`."
 msgstr ""
 
-#: ../../api.rst:877
+#: ../../api.rst:875
 msgid "Returns detailed translation statistics."
 msgstr ""
 
-#: ../../api.rst:888
+#: ../../api.rst:886
 msgid "number of failing checks"
 msgstr ""
 
-#: ../../api.rst:889
+#: ../../api.rst:887
 msgid "percentage of failing checks"
 msgstr ""
 
-#: ../../api.rst:890
+#: ../../api.rst:888
 msgid "number of strings needing review"
 msgstr ""
 
-#: ../../api.rst:891
+#: ../../api.rst:889
 msgid "percentage of strings needing review"
 msgstr ""
 
-#: ../../api.rst:895
+#: ../../api.rst:893
 msgid "date of last change"
 msgstr ""
 
-#: ../../api.rst:900
+#: ../../api.rst:898
 msgid "URL to access the translation (engagement URL)"
 msgstr ""
 
-#: ../../api.rst:901
+#: ../../api.rst:899
 msgid "URL to access the translation (real translation URL)"
 msgstr ""
 
-#: ../../api.rst:904
+#: ../../api.rst:902
 msgid "Units"
 msgstr "ユニット"
 
-#: ../../api.rst:910
+#: ../../api.rst:908
 msgid "Returns list of translation units."
 msgstr "翻訳ユニットのリストを返します。"
 
-#: ../../api.rst:916
+#: ../../api.rst:914
 msgid "Unit object attributes are documented at :http:get:`/api/units/(int:pk)/`."
 msgstr ""
 
-#: ../../api.rst:920
+#: ../../api.rst:918
 msgid "Returns information about translation unit."
 msgstr ""
 
-#: ../../api.rst:922
+#: ../../api.rst:920
 msgid "Unit ID"
 msgstr ""
 
-#: ../../api.rst:924 ../../api.rst:968
+#: ../../api.rst:922 ../../api.rst:966
 msgid "URL of a related translation object"
 msgstr ""
 
-#: ../../api.rst:925
+#: ../../api.rst:923
 msgid "source string"
 msgstr ""
 
-#: ../../api.rst:926
+#: ../../api.rst:924
 msgid "previous source string used for fuzzy matching"
 msgstr ""
 
-#: ../../api.rst:927
+#: ../../api.rst:925
 msgid "target string"
 msgstr ""
 
-#: ../../api.rst:928 ../../api.rst:1000
+#: ../../api.rst:926 ../../api.rst:998
 msgid "unique identifier of the unit"
 msgstr ""
 
-#: ../../api.rst:929
+#: ../../api.rst:927
 msgid "unique identifier of the source string"
 msgstr ""
 
-#: ../../api.rst:930
+#: ../../api.rst:928
 msgid "location of the unit in source code"
 msgstr ""
 
-#: ../../api.rst:931
+#: ../../api.rst:929
 msgid "translation unit context"
 msgstr ""
 
-#: ../../api.rst:932
+#: ../../api.rst:930
 msgid "translation unit comment"
 msgstr ""
 
-#: ../../api.rst:933
+#: ../../api.rst:931
 msgid "translation unit flags"
 msgstr ""
 
-#: ../../api.rst:934
+#: ../../api.rst:932
 msgid "whether unit is fuzzy or marked for review"
 msgstr ""
 
-#: ../../api.rst:935
+#: ../../api.rst:933
 msgid "whether unit is translated"
 msgstr ""
 
-#: ../../api.rst:936
+#: ../../api.rst:934
 msgid "unit position in translation file"
 msgstr ""
 
-#: ../../api.rst:937
+#: ../../api.rst:935
 msgid "whether unit has suggestions"
 msgstr ""
 
-#: ../../api.rst:938
+#: ../../api.rst:936
 msgid "whether unit has comments"
 msgstr ""
 
-#: ../../api.rst:939
+#: ../../api.rst:937
 msgid "whether unit has failing checks"
 msgstr ""
 
-#: ../../api.rst:940
+#: ../../api.rst:938
 msgid "number of source words"
 msgstr ""
 
-#: ../../api.rst:941
+#: ../../api.rst:939
 msgid "translation priority; 100 is default"
 msgstr ""
 
-#: ../../api.rst:942
+#: ../../api.rst:940
 msgid "unit identifier"
 msgstr ""
 
-#: ../../api.rst:943
+#: ../../api.rst:941
 msgid "URL where unit can be edited"
 msgstr ""
 
-#: ../../api.rst:944
+#: ../../api.rst:942
 msgid "Source string information link; see :http:get:`/api/sources/(int:pk)/`"
 msgstr ""
 
-#: ../../api.rst:947
+#: ../../api.rst:945
 msgid "Changes"
 msgstr "変更履歴"
 
-#: ../../api.rst:959
+#: ../../api.rst:957
 msgid ""
 "Change object attributes are documented at "
 ":http:get:`/api/changes/(int:pk)/`."
 msgstr ""
 
-#: ../../api.rst:963
+#: ../../api.rst:961
 msgid "Returns information about translation change."
 msgstr ""
 
-#: ../../api.rst:965
+#: ../../api.rst:963
 msgid "Change ID"
 msgstr ""
 
-#: ../../api.rst:967
+#: ../../api.rst:965
 msgid "URL of a related unit object"
 msgstr ""
 
-#: ../../api.rst:969 ../../api.rst:1001 ../../api.rst:1030
+#: ../../api.rst:967 ../../api.rst:999 ../../api.rst:1028
 msgid "URL of a related component object"
 msgstr ""
 
-#: ../../api.rst:970
+#: ../../api.rst:968
 msgid "URL of a related dictionary object"
 msgstr ""
 
-#: ../../api.rst:971
+#: ../../api.rst:969
 msgid "URL of a related user object"
 msgstr ""
 
-#: ../../api.rst:972
+#: ../../api.rst:970
 msgid "URL of a related author object"
 msgstr ""
 
-#: ../../api.rst:973
+#: ../../api.rst:971
 msgid "event timestamp"
 msgstr ""
 
-#: ../../api.rst:974
+#: ../../api.rst:972
 msgid "numeric identification of action"
 msgstr ""
 
-#: ../../api.rst:975
+#: ../../api.rst:973
 msgid "text description of action"
 msgstr ""
 
-#: ../../api.rst:976
+#: ../../api.rst:974
 msgid "event changed text or detail"
 msgstr ""
 
-#: ../../api.rst:977
+#: ../../api.rst:975
 msgid "change identifier"
 msgstr ""
 
-#: ../../api.rst:980
+#: ../../api.rst:978
 msgid "Sources"
 msgstr "ソース"
 
-#: ../../api.rst:986
+#: ../../api.rst:984
 msgid "Returns a list of source string information."
 msgstr "ソース文字列の情報のリストを返します。"
 
-#: ../../api.rst:992
+#: ../../api.rst:990
 msgid ""
 "Sources object attributes are documented at "
 ":http:get:`/api/sources/(int:pk)/`."
 msgstr ""
 
-#: ../../api.rst:996
+#: ../../api.rst:994
 msgid "Returns information about source information."
 msgstr ""
 
-#: ../../api.rst:998
+#: ../../api.rst:996
 msgid "Source information ID"
 msgstr ""
 
-#: ../../api.rst:1002
+#: ../../api.rst:1000
 msgid "timestamp when source string was first seen by Weblate"
 msgstr ""
 
-#: ../../api.rst:1003
+#: ../../api.rst:1001
 msgid "source string priority, 100 is default"
 msgstr ""
 
-#: ../../api.rst:1004
+#: ../../api.rst:1002
 msgid "source string flags"
 msgstr ""
 
-#: ../../api.rst:1005
+#: ../../api.rst:1003
 msgid "links to units; see :http:get:`/api/units/(int:pk)/`"
 msgstr ""
 
-#: ../../api.rst:1006
+#: ../../api.rst:1004
 msgid "links to assigned screenshots; see :http:get:`/api/screenshots/(int:pk)/`"
 msgstr ""
 
-#: ../../api.rst:1009
+#: ../../api.rst:1007
 msgid "Screenshots"
 msgstr "スクリーンショット"
 
-#: ../../api.rst:1015
+#: ../../api.rst:1013
 msgid "Returns a list of screenshot string information."
 msgstr "スクリーンショット文字列の情報のリストを返します。"
 
-#: ../../api.rst:1021
+#: ../../api.rst:1019
 msgid ""
 "Sources object attributes are documented at "
 ":http:get:`/api/screenshots/(int:pk)/`."
 msgstr ""
 
-#: ../../api.rst:1025
+#: ../../api.rst:1023
 msgid "Returns information about screenshot information."
 msgstr ""
 
-#: ../../api.rst:1027 ../../api.rst:1038 ../../api.rst:1045
+#: ../../api.rst:1025 ../../api.rst:1036 ../../api.rst:1043
 msgid "Screenshot ID"
 msgstr ""
 
-#: ../../api.rst:1029
+#: ../../api.rst:1027
 msgid "name of a screenshot"
 msgstr ""
 
-#: ../../api.rst:1031
+#: ../../api.rst:1029
 msgid "URL to download a file; see :http:get:`/api/screenshots/(int:pk)/file/`"
 msgstr ""
 
-#: ../../api.rst:1032
+#: ../../api.rst:1030
 msgid ""
 "link to associated source string information; see "
 ":http:get:`/api/sources/(int:pk)/`"
 msgstr ""
 
-#: ../../api.rst:1036
+#: ../../api.rst:1034
 msgid "Download the screenshot image."
 msgstr ""
 
-#: ../../api.rst:1043
+#: ../../api.rst:1041
 msgid "Replace screenshot image."
 msgstr ""
 
-#: ../../api.rst:1066
+#: ../../api.rst:1064
 msgid "Notification hooks"
 msgstr "通知フック"
 
-#: ../../api.rst:1068
+#: ../../api.rst:1066
 msgid ""
 "Notification hooks allow external applications to notify Weblate that the"
 " VCS repository has been updated."
 msgstr "通知フックは外部アプリケーションが VCS リポジトリのアップデートを Weblate に通知することを可能にします。"
 
-#: ../../api.rst:1071
+#: ../../api.rst:1069
 msgid ""
 "You can use repository endpoints for projects, components and "
 "translations to update individual repositories; see "
@@ -1106,9 +1092,10 @@ msgid ""
 "documentation."
 msgstr ""
 "プロジェクトやコンポーネント、翻訳のためのリポジトリ・エンドポイントを、個々のリポジトリをアップデートするために使うことができます。 "
-":http:post:`/api/projects/(string:project)/repository/` のドキュメンテーションを参照してください。"
+":http:post:`/api/projects/(string:project)/repository/` "
+"のドキュメンテーションを参照してください。"
 
-#: ../../api.rst:1079
+#: ../../api.rst:1077
 msgid ""
 "Please use "
 ":http:post:`/api/components/(string:project)/(string:component)/repository/`"
@@ -1116,133 +1103,133 @@ msgid ""
 "projects."
 msgstr ""
 
-#: ../../api.rst:1082
+#: ../../api.rst:1080
 msgid ""
 "Triggers update of a component (pulling from VCS and scanning for "
 "translation changes)."
 msgstr ""
 
-#: ../../api.rst:1089
+#: ../../api.rst:1087
 msgid ""
 "Please use :http:post:`/api/projects/(string:project)/repository/` "
 "instead which works properly with authentication for ACL limited "
 "projects."
 msgstr ""
 
-#: ../../api.rst:1092
+#: ../../api.rst:1090
 msgid ""
 "Triggers update of all components in a project (pulling from VCS and "
 "scanning for translation changes)."
 msgstr ""
 
-#: ../../api.rst:1097
+#: ../../api.rst:1095
 msgid ""
 "Special hook for handling GitHub notifications and automatically updating"
 " matching components."
 msgstr ""
 
-#: ../../api.rst:1102
+#: ../../api.rst:1100
 msgid ""
 "GitHub includes direct support for notifying Weblate: enable Weblate "
 "service hook in repository settings and set the URL to the URL of your "
 "Weblate installation."
 msgstr ""
 
-#: ../../api.rst:1108
+#: ../../api.rst:1106
 msgid ":ref:`github-setup`"
 msgstr ""
 
-#: ../../api.rst:1109
+#: ../../api.rst:1107
 msgid "For instruction on setting up GitHub integration"
 msgstr ""
 
-#: ../../api.rst:1110
+#: ../../api.rst:1108
 msgid "https://help.github.com/articles/creating-webhooks"
 msgstr ""
 
-#: ../../api.rst:1111
+#: ../../api.rst:1109
 msgid "Generic information about GitHub Webhooks"
 msgstr ""
 
-#: ../../api.rst:1112 ../../api.rst:1126 ../../api.rst:1140 ../../api.rst:1154
+#: ../../api.rst:1110 ../../api.rst:1124 ../../api.rst:1138 ../../api.rst:1152
 msgid ":setting:`ENABLE_HOOKS`"
 msgstr ""
 
-#: ../../api.rst:1113 ../../api.rst:1127 ../../api.rst:1141 ../../api.rst:1155
+#: ../../api.rst:1111 ../../api.rst:1125 ../../api.rst:1139 ../../api.rst:1153
 msgid "For enabling hooks for whole Weblate"
 msgstr ""
 
-#: ../../api.rst:1117
+#: ../../api.rst:1115
 msgid ""
 "Special hook for handling GitLab notifications and automatically updating"
 " matching components."
 msgstr ""
 
-#: ../../api.rst:1122
+#: ../../api.rst:1120
 msgid ":ref:`gitlab-setup`"
 msgstr ""
 
-#: ../../api.rst:1123
+#: ../../api.rst:1121
 msgid "For instruction on setting up GitLab integration"
 msgstr ""
 
-#: ../../api.rst:1124
+#: ../../api.rst:1122
 msgid "https://docs.gitlab.com/ce/user/project/integrations/webhooks.html"
 msgstr ""
 
-#: ../../api.rst:1125
+#: ../../api.rst:1123
 msgid "Generic information about GitLab Webhooks"
 msgstr ""
 
-#: ../../api.rst:1131
+#: ../../api.rst:1129
 msgid ""
 "Special hook for handling Bitbucket notifications and automatically "
 "updating matching components."
 msgstr ""
 
-#: ../../api.rst:1136
+#: ../../api.rst:1134
 msgid ":ref:`bitbucket-setup`"
 msgstr ""
 
-#: ../../api.rst:1137 ../../api.rst:1151
+#: ../../api.rst:1135 ../../api.rst:1149
 msgid "For instruction on setting up Bitbucket integration"
 msgstr ""
 
-#: ../../api.rst:1138
+#: ../../api.rst:1136
 msgid "https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html"
 msgstr ""
 
-#: ../../api.rst:1139 ../../api.rst:1153
+#: ../../api.rst:1137 ../../api.rst:1151
 msgid "Generic information about Bitbucket Webhooks"
 msgstr ""
 
-#: ../../api.rst:1145
+#: ../../api.rst:1143
 msgid ""
 "Special hook for handling Pagure notifications and automatically updating"
 " matching components."
 msgstr ""
 
-#: ../../api.rst:1150
+#: ../../api.rst:1148
 msgid ":ref:`pagure-setup`"
 msgstr ""
 
-#: ../../api.rst:1152
+#: ../../api.rst:1150
 msgid "https://docs.pagure.org/pagure/usage/using_webhooks.html"
 msgstr ""
 
-#: ../../api.rst:1160
+#: ../../api.rst:1158
 msgid "Exports"
 msgstr "エクスポート"
 
-#: ../../api.rst:1162
+#: ../../api.rst:1160
 msgid "Weblate provides various exports to allow you to further process the data."
 msgstr "より進んだデータ処理を可能にするために、Weblate は様々なエクスポートを提供しています。"
 
-#: ../../api.rst:1166
+#: ../../api.rst:1164
 msgid "Output format: either ``json`` or ``csv``"
 msgstr ""
 
-#: ../../api.rst:1170
+#: ../../api.rst:1168
 msgid ""
 "Please use "
 ":http:get:`/api/components/(string:project)/(string:component)/statistics/`"
@@ -1251,47 +1238,47 @@ msgid ""
 " instead; it allows access to ACL controlled projects as well."
 msgstr ""
 
-#: ../../api.rst:1174
+#: ../../api.rst:1172
 msgid "Retrieves statistics for given component in given format."
 msgstr ""
 
-#: ../../api.rst:1176
+#: ../../api.rst:1174
 msgid "**Example request**:"
 msgstr ""
 
-#: ../../api.rst:1184
+#: ../../api.rst:1182
 msgid "**Example response**:"
 msgstr ""
 
-#: ../../api.rst:1249
+#: ../../api.rst:1247
 msgid "RSS feeds"
 msgstr "RSS フィード"
 
-#: ../../api.rst:1251
+#: ../../api.rst:1249
 msgid "Changes in translations are exported in RSS feeds."
 msgstr "翻訳の変更は RSS フィードにエクスポートされます。"
 
-#: ../../api.rst:1255
+#: ../../api.rst:1253
 msgid "Retrieves RSS feed with recent changes for a translation."
 msgstr ""
 
-#: ../../api.rst:1259
+#: ../../api.rst:1257
 msgid "Retrieves RSS feed with recent changes for a component."
 msgstr ""
 
-#: ../../api.rst:1263
+#: ../../api.rst:1261
 msgid "Retrieves RSS feed with recent changes for a project."
 msgstr ""
 
-#: ../../api.rst:1267
+#: ../../api.rst:1265
 msgid "Retrieves RSS feed with recent changes for a language."
 msgstr ""
 
-#: ../../api.rst:1271
+#: ../../api.rst:1269
 msgid "Retrieves RSS feed with recent changes for Weblate instance."
 msgstr ""
 
-#: ../../api.rst:1275
+#: ../../api.rst:1273
 msgid "`RSS on wikipedia <https://en.wikipedia.org/wiki/RSS>`_"
 msgstr ""
 
@@ -1311,3 +1298,36 @@ msgstr ""
 #~ "link to asssociated source string "
 #~ "information; see :http:get:`/api/sources/(int:pk)/`"
 #~ msgstr ""
+
+#~ msgid "number of units failing check"
+#~ msgstr ""
+
+#~ msgid "percentage of units failing check"
+#~ msgstr ""
+
+#~ msgid "number of units marked for review"
+#~ msgstr ""
+
+#~ msgid "percentage of units marked for review"
+#~ msgstr ""
+
+#~ msgid "number of units with comment"
+#~ msgstr ""
+
+#~ msgid "number of units with suggestion"
+#~ msgstr ""
+
+#~ msgid "total number of units"
+#~ msgstr ""
+
+#~ msgid "number of translated units"
+#~ msgstr ""
+
+#~ msgid "percentage of translated units"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "URL to units list; see "
+#~ ":http:get:`/api/translations/(string:project)/(string:component)/(string:language)/units/`"
+#~ msgstr ""
+

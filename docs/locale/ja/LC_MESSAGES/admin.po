@@ -8,20 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-29 06:49+0900\n"
+"POT-Creation-Date: 2018-12-09 23:35+0900\n"
 "PO-Revision-Date: 2018-12-02 03:27+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
-"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/"
-"weblate-doc-ja/admin/ja/>\n"
 "Language: ja\n"
+"Language-Team: Japanese <http://www3420ue.sakura.ne.jp/projects/weblate-"
+"doc-ja/admin/ja/>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.2.2\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../admin/access.rst:4 ../../admin/projects.rst:96
+#: ../../admin/access.rst:4 ../../admin/projects.rst:113
 msgid "Access control"
 msgstr ""
 
@@ -1679,11 +1678,11 @@ msgstr ""
 msgid "Restore all data you have backed up."
 msgstr ""
 
-#: ../../admin/backup.rst:101 ../../admin/upgrade.rst:157
+#: ../../admin/backup.rst:101 ../../admin/upgrade.rst:169
 msgid "Recreate fulltext index using :djadmin:`rebuild_index`:"
 msgstr ""
 
-#: ../../admin/backup.rst:107 ../../admin/upgrade.rst:151
+#: ../../admin/backup.rst:107 ../../admin/upgrade.rst:163
 msgid "Restore your :ref:`translation-memory` using :djadmin:`import_memory`."
 msgstr ""
 
@@ -2798,7 +2797,7 @@ msgid ""
 "sent mails and generated absolute URLs."
 msgstr ""
 
-#: ../../admin/config.rst:457 ../../admin/deployments.rst:267
+#: ../../admin/config.rst:457 ../../admin/deployments.rst:270
 #: ../../admin/management.rst:159
 msgid ":ref:`production-site`"
 msgstr ""
@@ -2821,8 +2820,8 @@ msgid ""
 "updates."
 msgstr ""
 
-#: ../../admin/config.rst:476 ../../admin/deployments.rst:310
-#: ../../admin/deployments.rst:558
+#: ../../admin/config.rst:476 ../../admin/deployments.rst:313
+#: ../../admin/deployments.rst:561
 msgid ":ref:`github-push`, :ref:`hub-setup`"
 msgstr ""
 
@@ -3739,11 +3738,23 @@ msgstr ""
 msgid ":http:post:`/hooks/pagure/`, :ref:`hosted-push`"
 msgstr ""
 
+#: ../../admin/continuous.rst:200
+#, fuzzy
+msgid "Automatically updating repositories nightly"
+msgstr "リポジトリを更新する"
+
 #: ../../admin/continuous.rst:202
+msgid ""
+"Weblate does automatically fetch remote repositories nightly to improve "
+"performance when merging changes later. You can optionally turn this into"
+" doing nightly merges as well by enabling :setting:`AUTO_UPDATE`."
+msgstr ""
+
+#: ../../admin/continuous.rst:209
 msgid "Pushing changes"
 msgstr "変更をプッシュする"
 
-#: ../../admin/continuous.rst:204
+#: ../../admin/continuous.rst:211
 msgid ""
 "Each project can have a push URL configured and in that case Weblate "
 "offers a button in the web interface to push changes to the remote "
@@ -3754,7 +3765,7 @@ msgstr ""
 "のウェブインターフェイスにプッシュボタンが現れ、リモートリポジトリに変更をプッシュすることができるようになります。またすべてのコミットごとに自動的に変更のプッシュが行われるように"
 " Weblate を設定することもできます。"
 
-#: ../../admin/continuous.rst:208
+#: ../../admin/continuous.rst:215
 msgid ""
 "If you are using SSH to push, you will need to have a key without a "
 "passphrase (or use ssh-agent for Django) and the remote server needs to "
@@ -3764,19 +3775,19 @@ msgstr ""
 "SSH をプッシュに使用している場合は、パスフレーズを設定していないキー（もしくは Django 用の ssh-"
 "agent）が必要になります。そしてまず管理インターフェイスでリモートサーバを認証する必要があります。これをしないとプッシュしても失敗します。"
 
-#: ../../admin/continuous.rst:212
+#: ../../admin/continuous.rst:219
 msgid ""
 "The push options differ based on the :ref:`vcs` used, please check that "
 "chapter for more details."
 msgstr "プッシュのオプションは使用している :ref:`vcs` によって違いますので、詳しくはそちらの章を参照してください。"
 
-#: ../../admin/continuous.rst:217
+#: ../../admin/continuous.rst:224
 msgid ""
 "You can also enable the automatic pushing of changes on commit, this can "
 "be done in :ref:`component`."
 msgstr "コミットした時に自動的に変更がプッシュされるようにすることもできます。これは :ref:`component` で可能です。"
 
-#: ../../admin/continuous.rst:222
+#: ../../admin/continuous.rst:229
 msgid ""
 "See :ref:`vcs-repos` for setting up SSH keys and :ref:`lazy-commit` for "
 "information about when Weblate decides to commit changes."
@@ -3784,11 +3795,11 @@ msgstr ""
 "SSH キーのセットアップについては :ref:`vcs-repos` を参照してください。Weblate がいつ変更をコミットするかについては "
 ":ref:`lazy-commit` を参照してください。"
 
-#: ../../admin/continuous.rst:228
+#: ../../admin/continuous.rst:235
 msgid "Pushing changes from Hosted Weblate"
 msgstr ""
 
-#: ../../admin/continuous.rst:230
+#: ../../admin/continuous.rst:237
 msgid ""
 "For Hosted Weblate there is a dedicated push user registered on GitHub, "
 "Bitbucket and GitLab (with username :guilabel:`weblate` and named "
@@ -3798,11 +3809,11 @@ msgid ""
 "Weblate for you."
 msgstr ""
 
-#: ../../admin/continuous.rst:239
+#: ../../admin/continuous.rst:246
 msgid "Merge or rebase"
 msgstr "マージあるいはリベース"
 
-#: ../../admin/continuous.rst:241
+#: ../../admin/continuous.rst:248
 msgid ""
 "By default, Weblate merges the upstream repository into its own. This is "
 "the safest way in case you also access the underlying repository by other"
@@ -3812,29 +3823,29 @@ msgstr ""
 "初期設定では、Weblate はリモートリポジトリを Weblate リポジトリにマージします。Weblate "
 "リポジトリにアクセスする他の方法もある場合には、これがいちばん安全な方法です。これが必要ない場合は、変更をリモートリポジトリにリベースすることもできます。これにより履歴でマージコミットを減らすことができます。"
 
-#: ../../admin/continuous.rst:248
+#: ../../admin/continuous.rst:255
 msgid ""
 "Rebasing can cause you troubles in case of complicated merges, so "
 "carefully consider whether or not you want to enable them."
 msgstr "複雑なマージにおいては、リベースはトラブルを引き起こすこともあります。このため、リベースを有効にするかどうかは、慎重に考慮してください。"
 
-#: ../../admin/continuous.rst:252
+#: ../../admin/continuous.rst:259
 msgid "Interacting with others"
 msgstr "他のサービスとのやりとり"
 
-#: ../../admin/continuous.rst:254
+#: ../../admin/continuous.rst:261
 msgid "Weblate makes it easy to interact with others using its API."
 msgstr "Weblate は API を使うことにより、他のサービスとのやりとりを簡単にすることができます。"
 
-#: ../../admin/continuous.rst:258
+#: ../../admin/continuous.rst:265
 msgid ":ref:`api`"
 msgstr ""
 
-#: ../../admin/continuous.rst:263
+#: ../../admin/continuous.rst:270
 msgid "Lazy commits"
 msgstr "省力コミット"
 
-#: ../../admin/continuous.rst:265
+#: ../../admin/continuous.rst:272
 msgid ""
 "The behaviour of Weblate is to group commits from the same author into "
 "one commit if possible. This greatly reduces the number of commits, "
@@ -3847,49 +3858,45 @@ msgstr ""
 " リポジトリと同期させたい場合には、コミットをするよう明示的に Weblate "
 "に命じなければなりません（これは管理者グループユーザには最初から許可されています。:ref:`privileges` を参照してください）。"
 
-#: ../../admin/continuous.rst:271
+#: ../../admin/continuous.rst:278
 msgid ""
 "The changes are in this mode committed once any of following conditions "
 "is fulfilled:"
 msgstr "このモードにおける複数の変更は、以下の条件のいずれかが満たされた時に、まとめて一度にコミットされます。"
 
-#: ../../admin/continuous.rst:274
+#: ../../admin/continuous.rst:281
 msgid "somebody else changes already changed string"
 msgstr "他の誰かが、すでに変更されている文字列に変更を加えたとき"
 
-#: ../../admin/continuous.rst:275
+#: ../../admin/continuous.rst:282
 msgid "a merge from upstream occurs"
 msgstr "リモートリポジトリからマージ動作が行われたとき"
 
-#: ../../admin/continuous.rst:276
+#: ../../admin/continuous.rst:283
 msgid "import of translation happens"
 msgstr "翻訳ファイルのインポートが行われたとき"
 
-#: ../../admin/continuous.rst:277
+#: ../../admin/continuous.rst:284
 msgid "mass state change is performed"
 msgstr "大量の状態の変更が行われたとき"
 
-#: ../../admin/continuous.rst:278
+#: ../../admin/continuous.rst:285
 msgid "search and replace is executed"
 msgstr "検索置換が行われたとき"
 
-#: ../../admin/continuous.rst:279
+#: ../../admin/continuous.rst:286
 msgid "explicit commit is requested"
 msgstr "明示的にコミットが要求されたとき"
 
-#: ../../admin/continuous.rst:281
-msgid ""
-"You can also additionally set a cron job to commit pending changes after "
-"some delay, see :djadmin:`commit_pending` and :ref:`production-cron`."
+#: ../../admin/continuous.rst:288
+msgid "Additionally you can schedule a regular task to perform commit:"
 msgstr ""
-"以上に加えて、保留された変更を少し遅れてコミットさせるための、クロンジョブを設定することもできます。:djadmin:`commit_pending`"
-" と :ref:`production-cron` を参照してください。"
 
-#: ../../admin/continuous.rst:287
+#: ../../admin/continuous.rst:297
 msgid "Processing repository with scripts"
 msgstr "リポジトリをスクリプトで処理する"
 
-#: ../../admin/continuous.rst:289
+#: ../../admin/continuous.rst:299
 msgid ""
 "The way to customize how Weblate interacts with the repository are "
 ":ref:`addons`. See :ref:`addon-script` for information how to execute "
@@ -3903,558 +3910,576 @@ msgid "Weblate deployments"
 msgstr "Weblate のデプロイ"
 
 #: ../../admin/deployments.rst:6
-msgid ""
-"Weblate comes with support for deployment using several technologies. "
-"This section is overview of them."
-msgstr "Weblate は複数の技術でのデプロイメントをサポートしています。このセクションではそれらを概観します。"
-
-#: ../../admin/deployments.rst:12
-msgid "Running Weblate in the Docker"
-msgstr "Weblate を Docker で動かす"
-
-#: ../../admin/deployments.rst:14
-msgid ""
-"With dockerized weblate deployment you can get your personal weblate "
-"instance up an running in seconds. All of Weblate's dependencies are "
-"already included. PostgreSQL is configured as the default database."
+msgid "This is an overview of the supported deployment technologies."
 msgstr ""
 
-#: ../../admin/deployments.rst:21
+#: ../../admin/deployments.rst:11
+#, fuzzy
+msgid "Running Weblate with Docker"
+msgstr "Weblate を Docker で動かす"
+
+#: ../../admin/deployments.rst:13
+msgid ""
+"With dockerized Weblate deployment you can get your personal Weblate "
+"instance up an running in seconds. All of Weblate's dependencies are "
+"already included. PostgreSQL is set up as the default database."
+msgstr ""
+
+#: ../../admin/deployments.rst:20
 msgid "Deployment"
 msgstr ""
 
-#: ../../admin/deployments.rst:23
+#: ../../admin/deployments.rst:22
 msgid ""
 "The following examples assume you have a working Docker environment, with"
-" docker-compose installed. Please check Docker documentation for "
-"instructions on this."
+" ``docker-compose`` installed. Please check the Docker documentation for "
+"instructions."
 msgstr ""
 
-#: ../../admin/deployments.rst:27 ../../admin/quick.rst:152
-msgid "Clone weblate-docker repo:"
+#: ../../admin/deployments.rst:25
+msgid "Clone the weblate-docker repo:"
 msgstr ""
 
-#: ../../admin/deployments.rst:34
+#: ../../admin/deployments.rst:32
 msgid ""
 "Create a :file:`docker-compose.override.yml` file with your settings. See"
-" :ref:`docker-environment` full list of environment vars"
+" :ref:`docker-environment` for full list of environment variables."
 msgstr ""
 
-#: ../../admin/deployments.rst:53
+#: ../../admin/deployments.rst:52
 msgid ""
-"If :envvar:`WEBLATE_ADMIN_PASSWORD` is not set, admin user is created "
-"with random password printed out on first startup."
+"If :envvar:`WEBLATE_ADMIN_PASSWORD` is not set, the admin user is created"
+" with a random password shown on first startup."
 msgstr ""
 
-#: ../../admin/deployments.rst:56 ../../admin/quick.rst:159
+#: ../../admin/deployments.rst:55
+msgid ""
+"Append ',localhost' to *WEBLATE_ALLOWED_HOSTS* to be able to access "
+"locally for testing."
+msgstr ""
+
+#: ../../admin/deployments.rst:57
+msgid ""
+"You may also need to edit the *docker-compose.yml* file and change the "
+"default port from 80 if you already have a web server running on your "
+"local machine"
+msgstr ""
+
+#: ../../admin/deployments.rst:59 ../../admin/quick.rst:159
 msgid "Start Weblate containers:"
 msgstr ""
 
-#: ../../admin/deployments.rst:62
+#: ../../admin/deployments.rst:65
 msgid ""
 "Enjoy your Weblate deployment, it's accessible on port 80 of the "
 "``weblate`` container."
 msgstr ""
 
-#: ../../admin/deployments.rst:66
+#: ../../admin/deployments.rst:69
 msgid ""
-"The setup has changed recently, prior there was separate web server "
-"container, since 2.15-2 the web server is embedded in weblate container."
+"The setup has changed recently, priorly there was separate web server "
+"container, since 2.15-2 the web server is embedded in the Weblate "
+"container."
 msgstr ""
 
-#: ../../admin/deployments.rst:69 ../../admin/install.rst:265
+#: ../../admin/deployments.rst:72 ../../admin/install.rst:265
 msgid ":ref:`invoke-manage`"
 msgstr ""
 
-#: ../../admin/deployments.rst:74
-msgid "Docker container with https support"
+#: ../../admin/deployments.rst:77
+msgid "Docker container with HTTPS support"
 msgstr ""
 
-#: ../../admin/deployments.rst:76
+#: ../../admin/deployments.rst:79
 msgid ""
 "Please see :ref:`docker-deploy` for generic deployment instructions. To "
-"add HTTPS reverse proxy additional Docker container is required, we will "
-"use `https-portal <https://hub.docker.com/r/steveltn/https-portal/>`_. "
-"This is used in the :file:`docker-compose-https.yml` file. Then you just "
-"need to create a :file:`docker-compose-https.override.yml` file with your"
-" settings:"
+"add a reverse HTTPS proxy an additional Docker container is required, "
+"`https-portal <https://hub.docker.com/r/steveltn/https-portal/>`_ will be"
+" used. This is made use of in the :file:`docker-compose-https.yml` file. "
+"Then create a :file:`docker-compose-https.override.yml` file with your "
+"settings:"
 msgstr ""
 
-#: ../../admin/deployments.rst:97
+#: ../../admin/deployments.rst:100
 msgid ""
 "Whenever invoking :program:`docker-compose` you need to pass both files "
-"to it then:"
+"to it, and then do:"
 msgstr ""
 
-#: ../../admin/deployments.rst:106
-msgid "Upgrading Docker container"
+#: ../../admin/deployments.rst:109
+msgid "Upgrading the Docker container"
 msgstr ""
 
-#: ../../admin/deployments.rst:108
+#: ../../admin/deployments.rst:111
 msgid ""
-"Usually it is good idea to update the weblate container only and keep the"
-" PostgreSQL container at version you have as upgrading PostgreSQL is "
-"quite painful and in most cases it does not bring many benefits."
+"Usually it is good idea to only update the Weblate container and keep the"
+" PostgreSQL container at the version you have, as upgrading PostgreSQL is"
+" quite painful and in most cases does not bring many benefits."
 msgstr ""
 
-#: ../../admin/deployments.rst:112
+#: ../../admin/deployments.rst:115
 msgid ""
-"You can do this by sticking with existing docker-compose and just pulling"
-" latest images and restarting:"
+"You can do this by sticking with the existing docker-compose and just "
+"pull the latest images and then restart:"
 msgstr ""
 
-#: ../../admin/deployments.rst:121
+#: ../../admin/deployments.rst:124
 msgid ""
-"The Weblate database should be automatically migrated on first start and "
-"there should be no need for additional manual actions."
+"The Weblate database should be automatically migrated on first startup, "
+"and there should be no need for additional manual actions."
 msgstr ""
 
-#: ../../admin/deployments.rst:126
+#: ../../admin/deployments.rst:129
 msgid ""
 "Upgrades across 3.0 are not supported by Weblate. If you are on 2.x "
-"series and want to upgrade to 3.x, first upgrade to latest 3.0.1-x (at "
-"time of writing this it is ``3.0.1-7``) image which will do the migration"
-" and then continue in upgrading to newer versions."
+"series and want to upgrade to 3.x, first upgrade to the latest 3.0.1-x "
+"(at time of writing this it is the ``3.0.1-7``) image, which will do the "
+"migration and then continue upgrading to newer versions."
 msgstr ""
 
-#: ../../admin/deployments.rst:134
+#: ../../admin/deployments.rst:137
 msgid "Docker environment variables"
 msgstr ""
 
-#: ../../admin/deployments.rst:136
+#: ../../admin/deployments.rst:139
 msgid ""
-"Many of Weblate :ref:`config` can be set in Docker container using "
+"Many of Weblate's :ref:`config` can be set in the Docker container using "
 "environment variables:"
 msgstr ""
 
-#: ../../admin/deployments.rst:139
+#: ../../admin/deployments.rst:142
 msgid "Generic settings"
 msgstr ""
 
-#: ../../admin/deployments.rst:143
+#: ../../admin/deployments.rst:146
 msgid "Configures Django debug mode using :setting:`DEBUG`."
 msgstr ""
 
-#: ../../admin/deployments.rst:145 ../../admin/deployments.rst:170
-#: ../../admin/deployments.rst:207 ../../admin/deployments.rst:236
-#: ../../admin/deployments.rst:258 ../../admin/deployments.rst:276
-#: ../../admin/deployments.rst:288 ../../admin/deployments.rst:355
+#: ../../admin/deployments.rst:148 ../../admin/deployments.rst:173
+#: ../../admin/deployments.rst:210 ../../admin/deployments.rst:239
+#: ../../admin/deployments.rst:261 ../../admin/deployments.rst:279
+#: ../../admin/deployments.rst:291 ../../admin/deployments.rst:358
 msgid "**Example:**"
 msgstr ""
 
-#: ../../admin/deployments.rst:154
+#: ../../admin/deployments.rst:157
 msgid ":ref:`production-debug`."
 msgstr ""
 
-#: ../../admin/deployments.rst:158
-msgid "Configures verbosity of logging."
+#: ../../admin/deployments.rst:161
+msgid "Configures the logging verbosity."
 msgstr ""
 
-#: ../../admin/deployments.rst:163
-msgid "Configures site title shown on headings of all pages."
+#: ../../admin/deployments.rst:166
+msgid "Configures the site-title shown on the heading of all pages."
 msgstr ""
 
-#: ../../admin/deployments.rst:168
-msgid "Configures site admins name and email."
+#: ../../admin/deployments.rst:171
+msgid "Configures the site-admin's name and email."
 msgstr ""
 
-#: ../../admin/deployments.rst:180
+#: ../../admin/deployments.rst:183
 msgid ":ref:`production-admins`"
 msgstr ""
 
-#: ../../admin/deployments.rst:184
+#: ../../admin/deployments.rst:187
 msgid ""
-"Sets password for admin user. If not set, admin user is created with "
-"random password printed out on first startup."
+"Sets the password for the admin user. If not set, the admin user is "
+"created with a random password shown on first startup."
 msgstr ""
 
-#: ../../admin/deployments.rst:189
+#: ../../admin/deployments.rst:192
 msgid ""
 "Since version 2.9, the admin user is adjusted on every container startup "
 "to match :envvar:`WEBLATE_ADMIN_PASSWORD`, :envvar:`WEBLATE_ADMIN_NAME` "
 "and :envvar:`WEBLATE_ADMIN_EMAIL`."
 msgstr ""
 
-#: ../../admin/deployments.rst:196
-msgid "Configures address for outgoing mails."
+#: ../../admin/deployments.rst:199
+msgid "Configures the address for outgoing emails."
 msgstr ""
 
-#: ../../admin/deployments.rst:200
+#: ../../admin/deployments.rst:203
 msgid ":ref:`production-email`"
 msgstr ""
 
-#: ../../admin/deployments.rst:204
+#: ../../admin/deployments.rst:207
 msgid ""
 "Configures allowed HTTP hostnames using :setting:`ALLOWED_HOSTS` and sets"
-" site name to first one."
+" sitename to the first one."
 msgstr ""
 
-#: ../../admin/deployments.rst:216
+#: ../../admin/deployments.rst:219
 msgid ":ref:`production-hosts`, :ref:`production-site`"
 msgstr ""
 
-#: ../../admin/deployments.rst:221
-msgid "Configures secret used for Django for cookies signing."
+#: ../../admin/deployments.rst:224
+msgid "Configures the secret used by Django for cookie signing."
 msgstr ""
 
-#: ../../admin/deployments.rst:225
+#: ../../admin/deployments.rst:228
 msgid ""
 "The secret is now generated automatically on first startup, there is no "
 "need to set it manually."
 msgstr ""
 
-#: ../../admin/deployments.rst:230
+#: ../../admin/deployments.rst:233
 msgid ":ref:`production-secret`"
 msgstr ""
 
-#: ../../admin/deployments.rst:234
+#: ../../admin/deployments.rst:237
 msgid ""
 "Configures whether registrations are open by toggling "
 ":std:setting:`REGISTRATION_OPEN`."
 msgstr ""
 
-#: ../../admin/deployments.rst:245
-msgid "Configures time zone used."
+#: ../../admin/deployments.rst:248
+msgid "Configures the used time-zone."
 msgstr ""
 
-#: ../../admin/deployments.rst:249
+#: ../../admin/deployments.rst:252
 msgid ""
-"Makes Weblate assume it is operated behind HTTPS reverse proxy, it makes "
-"Weblate use https in email and API links or set secure flags on cookies."
+"Makes Weblate assume it is operated behind a reverse HTTPS proxy, it "
+"makes Weblate use HTTPS in email and API links or set secure flags on "
+"cookies."
 msgstr ""
 
-#: ../../admin/deployments.rst:254
+#: ../../admin/deployments.rst:257
 msgid ""
-"This does not make the Weblate container accept https connections, you "
-"need to use a standalone HTTPS reverse proxy, see :ref:`docker-ssl` for "
+"This does not make the Weblate container accept HTTPS connections, you "
+"need to use a standalone reverse HTTPS proxy, see :ref:`docker-ssl` for "
 "example."
 msgstr ""
 
-#: ../../admin/deployments.rst:271
+#: ../../admin/deployments.rst:274
 msgid ""
-"Enables Weblate fetching IP address from given HTTP header. Use this when"
-" using reverse proxy in front of Weblate container."
+"Lets Weblate fetching the IP address from any given HTTP header. Use this"
+" when using a reverse proxy in front of the Weblate container."
 msgstr ""
 
-#: ../../admin/deployments.rst:274
+#: ../../admin/deployments.rst:277
 msgid ""
 "Enables :setting:`IP_BEHIND_REVERSE_PROXY` and sets "
 ":setting:`IP_PROXY_HEADER`."
 msgstr ""
 
-#: ../../admin/deployments.rst:286
+#: ../../admin/deployments.rst:289
 msgid ""
-"Configures login required for whole Weblate using "
-":setting:`LOGIN_REQUIRED_URLS`."
+"Configures login required for the whole of the Weblate installation using"
+" :setting:`LOGIN_REQUIRED_URLS`."
 msgstr ""
 
-#: ../../admin/deployments.rst:297
+#: ../../admin/deployments.rst:300
 msgid ""
-"Adds URL exceptions for login required for whole Weblate using "
-":setting:`LOGIN_REQUIRED_URLS_EXCEPTIONS`."
+"Adds URL exceptions for login required for the whole Weblate installation"
+" using :setting:`LOGIN_REQUIRED_URLS_EXCEPTIONS`."
 msgstr ""
 
-#: ../../admin/deployments.rst:301
+#: ../../admin/deployments.rst:304
 msgid ""
 "Configures ID for Google Analytics by changing "
 ":setting:`GOOGLE_ANALYTICS_ID`."
 msgstr ""
 
-#: ../../admin/deployments.rst:305
+#: ../../admin/deployments.rst:308
 msgid ""
-"Configures github username for GitHub pull requests by changing "
+"Configures GitHub username for GitHub pull-requests by changing "
 ":setting:`GITHUB_USERNAME`."
 msgstr ""
 
-#: ../../admin/deployments.rst:315
+#: ../../admin/deployments.rst:318
 msgid ""
-"Configures language simplification policy, see "
+"Configures the language simplification policy, see "
 ":setting:`SIMPLIFY_LANGUAGES`."
 msgstr ""
 
-#: ../../admin/deployments.rst:319
-msgid "Configures Akismet API key, see :setting:`AKISMET_API_KEY`."
+#: ../../admin/deployments.rst:322
+msgid "Configures the Akismet API key, see :setting:`AKISMET_API_KEY`."
 msgstr ""
 
-#: ../../admin/deployments.rst:323
+#: ../../admin/deployments.rst:326
 msgid "Machine translation settings"
 msgstr ""
 
-#: ../../admin/deployments.rst:327
+#: ../../admin/deployments.rst:330
 msgid "Enables :ref:`deepl` machine translation and sets :setting:`MT_DEEPL_KEY`"
 msgstr ""
 
-#: ../../admin/deployments.rst:331
+#: ../../admin/deployments.rst:334
 msgid "Enables :ref:`google-translate` and sets :setting:`MT_GOOGLE_KEY`"
 msgstr ""
 
-#: ../../admin/deployments.rst:335
+#: ../../admin/deployments.rst:338
 msgid ""
 "Enables :ref:`ms-cognitive-translate` and sets "
 ":setting:`MT_MICROSOFT_COGNITIVE_KEY`"
 msgstr ""
 
-#: ../../admin/deployments.rst:339
+#: ../../admin/deployments.rst:342
 msgid ""
 "Enables :ref:`mymemory` machine translation and sets "
 ":setting:`MT_MYMEMORY_EMAIL` to :envvar:`WEBLATE_ADMIN_EMAIL`."
 msgstr ""
 
-#: ../../admin/deployments.rst:344
+#: ../../admin/deployments.rst:347
 msgid "Enables :ref:`glosbe` machine translation."
 msgstr ""
 
-#: ../../admin/deployments.rst:347
+#: ../../admin/deployments.rst:350
 msgid "Authentication settings"
 msgstr ""
 
-#: ../../admin/deployments.rst:353
+#: ../../admin/deployments.rst:356
 msgid "LDAP authentication configuration."
 msgstr ""
 
-#: ../../admin/deployments.rst:368
+#: ../../admin/deployments.rst:371
 msgid ":ref:`ldap-auth`"
 msgstr ""
 
-#: ../../admin/deployments.rst:373
+#: ../../admin/deployments.rst:376
 msgid "Enables :ref:`github_auth`."
 msgstr ""
 
-#: ../../admin/deployments.rst:378
+#: ../../admin/deployments.rst:381
 msgid "Enables :ref:`bitbucket_auth`."
 msgstr ""
 
-#: ../../admin/deployments.rst:383
+#: ../../admin/deployments.rst:386
 msgid "Enables :ref:`facebook_auth`."
 msgstr ""
 
-#: ../../admin/deployments.rst:388
+#: ../../admin/deployments.rst:391
 msgid "Enables :ref:`google_auth`."
 msgstr ""
 
-#: ../../admin/deployments.rst:394
+#: ../../admin/deployments.rst:397
 msgid "Enables :ref:`gitlab_auth`."
 msgstr ""
 
-#: ../../admin/deployments.rst:398
-msgid "Disabled email authentication when set to any value."
+#: ../../admin/deployments.rst:401
+msgid "Disables email authentication when set to any value."
 msgstr ""
 
-#: ../../admin/deployments.rst:402
+#: ../../admin/deployments.rst:405
 msgid "PostgreSQL database setup"
 msgstr ""
 
-#: ../../admin/deployments.rst:404
+#: ../../admin/deployments.rst:407
 msgid ""
-"The database is created by :file:`docker-compose.yml`, so this settings "
-"affects both Weblate and PostgreSQL containers."
+"The database is created by :file:`docker-compose.yml`, so these settings "
+"affect both Weblate and PostgreSQL containers."
 msgstr ""
 
-#: ../../admin/deployments.rst:407
+#: ../../admin/deployments.rst:410
 msgid ":ref:`database-setup`"
 msgstr ""
 
-#: ../../admin/deployments.rst:411
+#: ../../admin/deployments.rst:414
 msgid "PostgreSQL password."
 msgstr ""
 
-#: ../../admin/deployments.rst:415
+#: ../../admin/deployments.rst:418
 msgid "PostgreSQL username."
 msgstr ""
 
-#: ../../admin/deployments.rst:419
+#: ../../admin/deployments.rst:422
 msgid "PostgreSQL database name."
 msgstr ""
 
-#: ../../admin/deployments.rst:423
+#: ../../admin/deployments.rst:426
 msgid "PostgreSQL server hostname or IP address. Defaults to ``database``."
 msgstr ""
 
-#: ../../admin/deployments.rst:427
-msgid "PostgreSQL server port. Default to empty (use default value)."
+#: ../../admin/deployments.rst:430
+msgid "PostgreSQL server port. Defaults to none (uses the default value)."
 msgstr ""
 
-#: ../../admin/deployments.rst:431
+#: ../../admin/deployments.rst:434
 msgid "Caching server setup"
 msgstr ""
 
-#: ../../admin/deployments.rst:433
+#: ../../admin/deployments.rst:436
 msgid ""
-"Using redis is strongly recommended by Weblate and you have to provide "
-"redis instance when running Weblate in Docker. Additionally memcached is "
+"Using Redis is strongly recommended by Weblate and you have to provide a "
+"Redis instance when running Weblate in Docker. Additionally Memcached is "
 "supported for compatibility with older deployments."
 msgstr ""
 
-#: ../../admin/deployments.rst:437 ../../admin/projects.rst:362
+#: ../../admin/deployments.rst:440 ../../admin/projects.rst:379
 msgid ":ref:`production-cache`"
 msgstr ""
 
-#: ../../admin/deployments.rst:441 ../../admin/deployments.rst:449
+#: ../../admin/deployments.rst:444
 msgid "The memcached server hostname or IP address. Defaults to ``cache``."
 msgstr ""
 
-#: ../../admin/deployments.rst:445
-msgid "The memcached server port. Defaults to ``6379``."
+#: ../../admin/deployments.rst:448
+msgid "The Memcached server port. Defaults to ``6379``."
 msgstr ""
 
-#: ../../admin/deployments.rst:453
-msgid "The memcached server port. Defaults to ``11211``."
+#: ../../admin/deployments.rst:452
+msgid "The Memcached server hostname or IP address. Defaults to ``cache``."
 msgstr ""
 
 #: ../../admin/deployments.rst:456
+msgid "The Memcached server port. Defaults to ``11211``."
+msgstr ""
+
+#: ../../admin/deployments.rst:459
 msgid "Email server setup"
 msgstr ""
 
-#: ../../admin/deployments.rst:458
-msgid "To make outgoing email work, you need to provide mail server."
+#: ../../admin/deployments.rst:461
+msgid "To make outgoing email work, you need to provide a mail server."
 msgstr ""
 
-#: ../../admin/deployments.rst:460
+#: ../../admin/deployments.rst:463
 msgid ":ref:`out-mail`"
 msgstr ""
 
-#: ../../admin/deployments.rst:464
+#: ../../admin/deployments.rst:467
 msgid "Mail server, the server has to listen on port 587 and understand TLS."
 msgstr ""
 
-#: ../../admin/deployments.rst:466
+#: ../../admin/deployments.rst:469
 msgid ":setting:`django:EMAIL_HOST`"
 msgstr ""
 
-#: ../../admin/deployments.rst:470
+#: ../../admin/deployments.rst:473
 msgid ""
-"Mail server port, use if your cloud provider or ISP blocks outgoing "
+"Mail server port. Use if your cloud provider or ISP blocks outgoing "
 "connections on port 587."
 msgstr ""
 
-#: ../../admin/deployments.rst:473
+#: ../../admin/deployments.rst:476
 msgid ":setting:`django:EMAIL_PORT`"
 msgstr ""
 
-#: ../../admin/deployments.rst:477
+#: ../../admin/deployments.rst:480
 msgid "Email authentication user, do NOT use quotes here."
 msgstr ""
 
-#: ../../admin/deployments.rst:479
+#: ../../admin/deployments.rst:482
 msgid ":setting:`django:EMAIL_HOST_USER`"
 msgstr ""
 
-#: ../../admin/deployments.rst:483
+#: ../../admin/deployments.rst:486
 msgid "Email authentication password, do NOT use quotes here."
 msgstr ""
 
-#: ../../admin/deployments.rst:485
+#: ../../admin/deployments.rst:488
 msgid ":setting:`django:EMAIL_HOST_PASSWORD`"
 msgstr ""
 
-#: ../../admin/deployments.rst:489
+#: ../../admin/deployments.rst:492
 msgid ""
 "Whether to use an implicit TLS (secure) connection when talking to the "
-"SMTP server. In most email documentation this type of TLS connection is "
+"SMTP server. In most email documentation, this type of TLS connection is "
 "referred to as SSL. It is generally used on port 465. If you are "
 "experiencing problems, see the explicit TLS setting "
 ":envvar:`WEBLATE_EMAIL_USE_TLS`."
 msgstr ""
 
-#: ../../admin/deployments.rst:494
+#: ../../admin/deployments.rst:497
 msgid ":setting:`django:EMAIL_USE_SSL`"
 msgstr ""
 
-#: ../../admin/deployments.rst:498
+#: ../../admin/deployments.rst:501
 msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server."
 " This is used for explicit TLS connections, generally on port 587. If you"
-" are experiencing hanging connections, see the implicit TLS setting "
+" are experiencing connections that hang, see the implicit TLS setting "
 ":envvar:`WEBLATE_EMAIL_USE_SSL`."
 msgstr ""
 
-#: ../../admin/deployments.rst:503
+#: ../../admin/deployments.rst:506
 msgid ":setting:`django:EMAIL_USE_TLS`"
 msgstr ""
 
-#: ../../admin/deployments.rst:506
+#: ../../admin/deployments.rst:509
 msgid "Error reporting"
 msgstr ""
 
-#: ../../admin/deployments.rst:508
-msgid ""
-"It is recommended to collect errors from the installation in systematic "
-"way, see :ref:`collecting-errors`."
-msgstr ""
-
 #: ../../admin/deployments.rst:511
-msgid "To enable support for Rollbar, set following:"
+msgid ""
+"It is recommended to collect errors from the installation in a systematic"
+" way, see :ref:`collecting-errors`."
 msgstr ""
 
-#: ../../admin/deployments.rst:515
+#: ../../admin/deployments.rst:514
+msgid "To enable support for Rollbar, set the following:"
+msgstr ""
+
+#: ../../admin/deployments.rst:518
 msgid "Your Rollbar post server access token."
 msgstr ""
 
-#: ../../admin/deployments.rst:519
+#: ../../admin/deployments.rst:522
 msgid "Your Rollbar environment, defaults to ``production``."
 msgstr ""
 
-#: ../../admin/deployments.rst:521
+#: ../../admin/deployments.rst:524
 msgid "To enable support for Sentry, set following:"
 msgstr ""
 
-#: ../../admin/deployments.rst:525
+#: ../../admin/deployments.rst:528
 msgid "Your Sentry DSN."
 msgstr ""
 
-#: ../../admin/deployments.rst:529
+#: ../../admin/deployments.rst:532
 msgid "Your Sentry public DSN."
 msgstr ""
 
-#: ../../admin/deployments.rst:533
+#: ../../admin/deployments.rst:536
 msgid "Your Sentry environment, defaults to ``production``."
 msgstr ""
 
-#: ../../admin/deployments.rst:536
+#: ../../admin/deployments.rst:539
 msgid "Further configuration customization"
 msgstr ""
 
-#: ../../admin/deployments.rst:538
+#: ../../admin/deployments.rst:541
 msgid ""
-"You can additionally override the configuration by :file:`/app/data"
+"You can additionally override the configuration in :file:`/app/data"
 "/settings-override.py`. This is executed after all environment settings "
-"are loaded, so it gets complete setup and can be used to customize "
+"are loaded, so it gets completely set up, and can be used to customize "
 "anything."
 msgstr ""
 
-#: ../../admin/deployments.rst:544
+#: ../../admin/deployments.rst:547
 msgid "Hub setup"
 msgstr ""
 
-#: ../../admin/deployments.rst:546
+#: ../../admin/deployments.rst:549
 msgid ""
-"In order to use the Github pull requests feature, you must initialize hub"
-" configuration by entering the weblate container and executing an "
-"arbitrary hub command. For example:"
+"In order to use the GitHub's pull-request feature, you must initialize "
+"hub configuration by entering the Weblate container and executing an "
+"arbitrary Hub command. For example:"
 msgstr ""
 
-#: ../../admin/deployments.rst:554
+#: ../../admin/deployments.rst:557
 msgid ""
 "The username passed for credentials must be the same as "
 ":setting:`GITHUB_USERNAME`."
 msgstr ""
 
-#: ../../admin/deployments.rst:562
+#: ../../admin/deployments.rst:565
 msgid "Select your machine - local or cloud providers"
 msgstr ""
 
-#: ../../admin/deployments.rst:564
+#: ../../admin/deployments.rst:567
 msgid ""
 "With docker-machine you can create your Weblate deployment either on your"
-" local machine or on any large number of cloud-based deployments on e.g. "
-"Amazon AWS, Digitalocean and many more providers."
+" local machine, or on any large number of cloud-based deployments on e.g."
+" Amazon AWS, Greenhost, and many other providers."
 msgstr ""
 
-#: ../../admin/deployments.rst:571
+#: ../../admin/deployments.rst:574
 msgid "Running Weblate on OpenShift 2"
 msgstr ""
 
-#: ../../admin/deployments.rst:573
+#: ../../admin/deployments.rst:576
 msgid ""
 "This repository contains a configuration for the OpenShift platform as a "
 "service product, which facilitates easy installation of Weblate on "
@@ -4462,262 +4487,263 @@ msgid ""
 "https://www.okd.io/)."
 msgstr ""
 
-#: ../../admin/deployments.rst:578
+#: ../../admin/deployments.rst:581
 msgid "Prerequisites"
 msgstr ""
 
-#: ../../admin/deployments.rst:580
+#: ../../admin/deployments.rst:583
 msgid "OpenShift Account"
-msgstr ""
-
-#: ../../admin/deployments.rst:582
-msgid ""
-"You need an account for OpenShift Online (https://www.openshift.com/) or "
-"another OpenShift installation you have access to."
 msgstr ""
 
 #: ../../admin/deployments.rst:585
 msgid ""
-"You can register a free account on OpenShift Online, which allows you to "
-"host up to 3 applications free of charge."
+"You need an account on OpenShift Online (https://www.openshift.com/) or "
+"another OpenShift installation you have access to."
 msgstr ""
 
 #: ../../admin/deployments.rst:588
+msgid ""
+"You can register a gratis account on OpenShift Online, which allows you "
+"to host up to 3 programs gratis."
+msgstr ""
+
+#: ../../admin/deployments.rst:591
 msgid "OpenShift Client Tools"
 msgstr ""
 
-#: ../../admin/deployments.rst:590
+#: ../../admin/deployments.rst:593
 msgid ""
-"In order to follow the examples given in this documentation you need to "
+"In order to follow the examples given in this documentation, you need to "
 "have the OpenShift Client Tools (RHC) installed: "
 "https://docs.openshift.com/online/cli_reference/get_started_cli.html"
 msgstr ""
 
-#: ../../admin/deployments.rst:594
+#: ../../admin/deployments.rst:597
 msgid ""
 "While there are other possibilities to create and configure OpenShift "
-"applications, this documentation is based on the OpenShift Client Tools "
-"(RHC) because they provide a consistent interface for all described "
+"programs, this documentation is based on the OpenShift Client Tools (RHC)"
+" because they provide a consistent interface for all described "
 "operations."
 msgstr ""
 
-#: ../../admin/deployments.rst:600 ../../admin/install.rst:755
+#: ../../admin/deployments.rst:603 ../../admin/install.rst:758
 #: ../../admin/optionals.rst:18 ../../admin/optionals.rst:68
 #: ../../admin/optionals.rst:134
 msgid "Installation"
 msgstr ""
 
-#: ../../admin/deployments.rst:602
+#: ../../admin/deployments.rst:605
 msgid ""
-"You can install Weblate on OpenShift directly from Weblate's Github "
+"You can install Weblate on OpenShift directly from Weblate's GitHub "
 "repository with the following command:"
-msgstr ""
-
-#: ../../admin/deployments.rst:613
-msgid ""
-"The ``-a`` option defines the name of your weblate installation, "
-"``weblate`` in this instance. You are free to specify a different name."
 msgstr ""
 
 #: ../../admin/deployments.rst:616
 msgid ""
-"The above example installs latest development version, you can optionally"
-" specify tag identifier right of the ``#`` sign to identify the version "
-"of Weblate to install. For a list of available versions see here: "
-"https://github.com/WeblateOrg/weblate/tags."
+"The ``-a`` option defines the name of your weblate installation, "
+"``weblate`` in this instance. Feel free to specify a different name."
 msgstr ""
 
-#: ../../admin/deployments.rst:621
-msgid "The ``--no-git`` option skips the creation of a local git repository."
+#: ../../admin/deployments.rst:619
+msgid ""
+"The above example installs the latest development version, you can "
+"optionally specify tag identifier to the right of the ``#`` sign to "
+"identify the version of Weblate to install. A list of available versions "
+"is available here: https://github.com/WeblateOrg/weblate/tags."
 msgstr ""
 
 #: ../../admin/deployments.rst:624
+msgid "The ``--no-git`` option skips the creation of a local Git repository."
+msgstr ""
+
+#: ../../admin/deployments.rst:627
 msgid "You can also specify which database you want to use:"
 msgstr ""
 
-#: ../../admin/deployments.rst:635
+#: ../../admin/deployments.rst:638
 msgid "Default Configuration"
 msgstr ""
 
-#: ../../admin/deployments.rst:637
-msgid ""
-"After installation on OpenShift Weblate is ready to use and preconfigured"
-" as follows:"
-msgstr ""
-
-#: ../../admin/deployments.rst:639
-msgid "SQLite embedded database (:setting:`DATABASES`)"
-msgstr ""
-
 #: ../../admin/deployments.rst:640
-msgid "Random admin password"
-msgstr ""
-
-#: ../../admin/deployments.rst:641
-msgid "Random Django secret key (:setting:`SECRET_KEY`)"
+msgid ""
+"After installation on OpenShift, Weblate is ready for use and, "
+"preconfigured as follows:"
 msgstr ""
 
 #: ../../admin/deployments.rst:642
-msgid ""
-"Committing of pending changes if the cron cartridge is installed "
-"(:djadmin:`commit_pending`)"
+msgid "SQLite embedded database (:setting:`DATABASES`)"
 msgstr ""
 
 #: ../../admin/deployments.rst:643
-msgid ""
-"Weblate machine translations for suggestions bases on previous "
-"translations (:setting:`MT_SERVICES`)"
+msgid "Random admin password"
 msgstr ""
 
 #: ../../admin/deployments.rst:644
-msgid ""
-"Weblate directories (STATIC_ROOT, :setting:`DATA_DIR`, "
-":setting:`TTF_PATH`, Avatar cache) set according to OpenShift "
-"requirements/conventions"
+msgid "Random Django secret key (:setting:`SECRET_KEY`)"
 msgstr ""
 
 #: ../../admin/deployments.rst:645
 msgid ""
-"Django site name and ALLOWED_HOSTS set to DNS name of your OpenShift "
-"application"
+"Committing of pending changes if the Cron cartridge is installed "
+"(:djadmin:`commit_pending`)"
 msgstr ""
 
 #: ../../admin/deployments.rst:646
 msgid ""
-"Email sender addresses set to no-reply@<OPENSHIFT_CLOUD_DOMAIN>, where "
-"<OPENSHIFT_CLOUD_DOMAIN> is the domain OpenShift runs under. In case of "
-"OpenShift Online it's rhcloud.com."
+"Weblate machine translations for suggestions, based on previous "
+"translations (:setting:`MT_SERVICES`)"
 msgstr ""
 
-#: ../../admin/deployments.rst:650
-msgid ":ref:`customize_config`"
+#: ../../admin/deployments.rst:647
+msgid ""
+"Weblate directories (STATIC_ROOT, :setting:`DATA_DIR`, "
+":setting:`TTF_PATH`, avatar cache) set according to OpenShift "
+"requirements/conventions."
+msgstr ""
+
+#: ../../admin/deployments.rst:648
+msgid ""
+"Django sitename and ALLOWED_HOSTS set to DNS name of your OpenShift "
+"program"
+msgstr ""
+
+#: ../../admin/deployments.rst:649
+msgid ""
+"Email sender addresses set to no-reply@<OPENSHIFT_CLOUD_DOMAIN>, where "
+"<OPENSHIFT_CLOUD_DOMAIN> is the domain OpenShift runs under. In case of "
+"OpenShift Online it is rhcloud.com."
 msgstr ""
 
 #: ../../admin/deployments.rst:653
-msgid "Retrieve Admin Password"
+msgid ":ref:`customize_config`"
 msgstr ""
 
-#: ../../admin/deployments.rst:655
-msgid "You can retrieve the generated admin password with the following command:"
+#: ../../admin/deployments.rst:656
+msgid "Retrieve the Admin Password"
 msgstr ""
 
-#: ../../admin/deployments.rst:662
+#: ../../admin/deployments.rst:658
+msgid "Retrieve the generated admin password using the following command:"
+msgstr ""
+
+#: ../../admin/deployments.rst:665
 msgid "Indexing Offloading"
 msgstr ""
 
-#: ../../admin/deployments.rst:664
+#: ../../admin/deployments.rst:667
 msgid ""
-"To enable the preconfigured indexing offloading you need to add the cron "
-"cartridge to your application and restart it:"
+"To enable the preconfigured indexing offloading you need to add the Cron "
+"cartridge to your program and restart it:"
 msgstr ""
 
-#: ../../admin/deployments.rst:672
+#: ../../admin/deployments.rst:675
 msgid ""
 "The fulltext search index will then be updated every 5 minutes. "
-"Restarting with ``rhc restart`` instead will not enable indexing "
+"Restarting with ``rhc restart`` instead, will not enable indexing "
 "offloading in Weblate. You can verify that indexing offloading is indeed "
-"enabled by visiting the URL ``/admin/performance/`` of your application."
+"enabled by visiting the URL ``/admin/performance/`` of your program."
 msgstr ""
 
-#: ../../admin/deployments.rst:677
+#: ../../admin/deployments.rst:680
 msgid "Pending Changes"
 msgstr ""
 
-#: ../../admin/deployments.rst:679
+#: ../../admin/deployments.rst:682
 msgid ""
-"Weblate's OpenShift configuration contains a cron job which periodically "
+"Weblate's OpenShift configuration contains a Cron job which periodically "
 "commits pending changes older than a certain age (24h by default). To "
-"enable the cron job you need to add the cron cartridge and restart "
+"enable the Cron job you need to add the Cron cartridge and restart "
 "Weblate as described in the previous section. You can change the age "
 "parameter by setting the environment variable WEBLATE_PENDING_AGE to the "
 "desired number of hours, e.g.:"
 msgstr ""
 
-#: ../../admin/deployments.rst:690
-msgid "Customize Weblate Configuration"
-msgstr ""
+#: ../../admin/deployments.rst:694
+#, fuzzy
+msgid "Customize the Weblate Configuration"
+msgstr "コンポーネント設定"
 
-#: ../../admin/deployments.rst:692
+#: ../../admin/deployments.rst:696
 msgid ""
-"You can customize the configuration of your Weblate installation on "
-"OpenShift through environment variables.  Override any of Weblate's "
-"setting documented under :ref:`config` using ``rhc env set`` by "
+"Customize the configuration of your Weblate installation on OpenShift "
+"through the use of environment variables. Override any of Weblate's "
+"settings documented under :ref:`config` using ``rhc env set`` by "
 "prepending the settings name with ``WEBLATE_``. The variable content is "
-"put verbatim to the configuration file, so it is parsed as Python string,"
-" after replacing environment variables in it (eg. ``$PATH``). To put "
-"literal ``$`` you need to escape it as ``$$``."
+"put into the configuration file verbatim, so it is parsed as a Python "
+"string, after replacing the environment variables in it (e.g. ``$PATH``)."
+" To put in a literal ``$`` you need to escape it as ``$$``."
 msgstr ""
 
-#: ../../admin/deployments.rst:699
+#: ../../admin/deployments.rst:703
 msgid "For example override the :setting:`ADMINS` setting like this:"
 msgstr ""
 
-#: ../../admin/deployments.rst:705
-msgid "To change site title, do not forget to include additional quotes:"
+#: ../../admin/deployments.rst:709
+msgid "To change the sitetitle, do not forget to include additional quotes:"
 msgstr ""
 
-#: ../../admin/deployments.rst:711
-msgid "New settings will only take effect after restarting Weblate:"
+#: ../../admin/deployments.rst:715
+msgid "The new settings will only take effect once Weblate is restarted:"
 msgstr ""
 
-#: ../../admin/deployments.rst:718
+#: ../../admin/deployments.rst:722
 msgid ""
 "Restarting using ``rhc -aweblate app restart`` does not work. For "
 "security reasons only constant expressions are allowed as values. With "
-"the exception of environment variables which can be referenced using "
+"the exception of environment variables, which can be referenced using "
 "``${ENV_VAR}``. For example:"
 msgstr ""
 
-#: ../../admin/deployments.rst:725
+#: ../../admin/deployments.rst:730
 msgid "You can check the effective settings Weblate is using by running:"
 msgstr ""
 
-#: ../../admin/deployments.rst:731
+#: ../../admin/deployments.rst:736
 msgid ""
 "This will also print syntax errors in your expressions. To reset a "
-"setting to its preconfigured value just delete the corresponding "
+"setting to its preconfigured value, just delete the corresponding "
 "environment variable:"
 msgstr ""
 
-#: ../../admin/deployments.rst:740
+#: ../../admin/deployments.rst:745
 msgid ":ref:`config`"
 msgstr ""
 
-#: ../../admin/deployments.rst:743
+#: ../../admin/deployments.rst:748
 msgid "Updating"
 msgstr ""
 
-#: ../../admin/deployments.rst:745
+#: ../../admin/deployments.rst:750
 msgid ""
 "It is recommended that you try updates on a clone of your Weblate "
-"installation before running the actual update. To create such a clone "
+"installation before running the actual update. To create such a clone, "
 "run:"
 msgstr ""
 
-#: ../../admin/deployments.rst:752
+#: ../../admin/deployments.rst:757
 msgid ""
-"Visit the newly given URL with a browser and wait for the install/update "
-"page to disappear."
+"Visit the newly given URL with a web browser and wait for the "
+"install/update page to disappear."
 msgstr ""
 
-#: ../../admin/deployments.rst:754
+#: ../../admin/deployments.rst:759
 msgid ""
 "You can update your Weblate installation on OpenShift directly from "
-"Weblate's github repository by executing:"
+"Weblate's GitHub repository by executing:"
 msgstr ""
 
-#: ../../admin/deployments.rst:760
+#: ../../admin/deployments.rst:765
 msgid ""
-"The identifier right of the ``#`` sign identifies the version of Weblate "
-"to install. For a list of available versions see here: "
+"The identifier to the right of the ``#`` sign identifies the version of "
+"Weblate to install. For a list of available versions see: "
 "https://github.com/WeblateOrg/weblate/tags. Please note that the update "
-"process will not work if you modified the git repository of you weblate "
+"process will not work if you modified the Git repository of you Weblate "
 "installation. You can force an update by specifying the ``--force`` "
-"option to the update script. However any changes you made to the git "
+"option with the update script. However any changes you made to the Git "
 "repository of your installation will be discarded:"
 msgstr ""
 
-#: ../../admin/deployments.rst:770
+#: ../../admin/deployments.rst:775
 msgid ""
 "The ``--force`` option is also needed when downgrading to an older "
 "version. Please note that only version 2.0 and newer can be installed on "
@@ -4725,69 +4751,69 @@ msgid ""
 "files."
 msgstr ""
 
-#: ../../admin/deployments.rst:774
-msgid ""
-"The update script takes care of the following update steps as described "
-"under :ref:`generic-upgrade-instructions`."
-msgstr ""
-
-#: ../../admin/deployments.rst:776
-msgid "Install any new requirements"
-msgstr ""
-
-#: ../../admin/deployments.rst:777
-msgid "manage.py migrate"
-msgstr ""
-
-#: ../../admin/deployments.rst:778
-msgid "manage.py setupgroups --move"
-msgstr ""
-
 #: ../../admin/deployments.rst:779
-msgid "manage.py setuplang"
-msgstr ""
-
-#: ../../admin/deployments.rst:780
-msgid "manage.py rebuild_index --all"
+msgid ""
+"The update script takes care of the following update steps, as described "
+"in :ref:`generic-upgrade-instructions`."
 msgstr ""
 
 #: ../../admin/deployments.rst:781
-msgid "manage.py collectstatic --noinput"
+msgid "Install any new requirements"
+msgstr ""
+
+#: ../../admin/deployments.rst:782
+msgid "manage.py migrate"
+msgstr ""
+
+#: ../../admin/deployments.rst:783
+msgid "manage.py setupgroups --move"
+msgstr ""
+
+#: ../../admin/deployments.rst:784
+msgid "manage.py setuplang"
 msgstr ""
 
 #: ../../admin/deployments.rst:785
+msgid "manage.py rebuild_index --all"
+msgstr ""
+
+#: ../../admin/deployments.rst:786
+msgid "manage.py collectstatic --noinput"
+msgstr ""
+
+#: ../../admin/deployments.rst:790
 msgid "Bitnami Weblate stack"
 msgstr ""
 
-#: ../../admin/deployments.rst:787
+#: ../../admin/deployments.rst:792
 msgid ""
-"Bitnami provides Weblate stack for many platforms at "
+"Bitnami provides a Weblate stack for many platforms at "
 "<https://bitnami.com/stack/weblate>. The setup will be adjusted during "
 "installation, see <https://bitnami.com/stack/weblate/README.txt> for more"
 " documentation."
 msgstr ""
 
-#: ../../admin/deployments.rst:793
+#: ../../admin/deployments.rst:798
 msgid "Weblate in YunoHost"
 msgstr ""
 
-#: ../../admin/deployments.rst:795
+#: ../../admin/deployments.rst:800
 msgid ""
 "The self-hosting project `YunoHost <https://yunohost.org/>`_ provides a "
 "package for Weblate. Once you have your YunoHost installation, you may "
-"install Weblate as any other application. It will provide you a fully "
-"working stack with backup and restoration, but you may still have to edit"
-" your settings file for specific usages."
+"install Weblate as any other application. It will provide you with a "
+"fully working stack with backup and restoration, but you may still have "
+"to edit your settings file for specific usages."
 msgstr ""
 
-#: ../../admin/deployments.rst:801
+#: ../../admin/deployments.rst:806
 msgid ""
-"You may use your administration interface or this button (it will bring "
+"You may use your administration interface, or this button (it will bring "
 "you to your server):"
 msgstr ""
 
-#: ../../admin/deployments.rst:807
-msgid "It also is possible to use the command line interface:"
+#: ../../admin/deployments.rst:812
+msgid "It also is possible to use the commandline interface:"
 msgstr ""
 
 #: ../../admin/index.rst:2
@@ -4808,13 +4834,13 @@ msgstr "ハードウェア要件"
 
 #: ../../admin/install.rst:11
 msgid ""
-"Weblate should run on any contemporary hardware without problems, the "
-"following is the minimal configuration required to run Weblate on single "
-"host (Weblate, database and web server):"
+"Weblate should run on all contemporary hardware without problems, the "
+"following is the minimal configuration required to run Weblate on a "
+"single host (Weblate, database and web server):"
 msgstr ""
 
 #: ../../admin/install.rst:15
-msgid "2 GB of RAM memory"
+msgid "2 GB of RAM"
 msgstr ""
 
 #: ../../admin/install.rst:16
@@ -4827,21 +4853,20 @@ msgstr ""
 
 #: ../../admin/install.rst:19
 msgid ""
-"The more memory you have, the better - it will be used for caching on all"
-" levels (file system, database and Weblate)."
+"The more memory you have, the better - it is used for caching on all "
+"levels (filesystem, database and Weblate)."
 msgstr ""
 
 #: ../../admin/install.rst:22
 msgid ""
-"If you are going to have many concurrent users, you will need more CPU "
-"cores. For hundreds of translation components at least 4 GB of memory is "
-"recommended."
+"Many concurrent users increases the amount of needed CPU cores. For "
+"hundreds of translation components at least 4 GB of RAM is recommended."
 msgstr ""
 
 #: ../../admin/install.rst:28
 msgid ""
-"The actual requirements for your installation heavily vary based on the "
-"size of translations managed by Weblate."
+"Actual requirements for your installation of Weblate vary heavily based "
+"on the size of the translations managed in it."
 msgstr ""
 
 #: ../../admin/install.rst:34
@@ -4856,11 +4881,11 @@ msgstr ""
 msgid ""
 "Weblate is written in `Python <https://www.python.org/>`_ and supports "
 "Python 2.7, 3.4 or newer. The following dependencies can be installed "
-"using pip or your distribution packages:"
+"using pip or from your distribution packages:"
 msgstr ""
 
 #: ../../admin/install.rst:45
-msgid "Django (>= 1.11)"
+msgid "``Django`` (>= 1.11)"
 msgstr ""
 
 #: ../../admin/install.rst:46
@@ -4868,7 +4893,7 @@ msgid "https://www.djangoproject.com/"
 msgstr ""
 
 #: ../../admin/install.rst:47
-msgid "Celery (>= 4.0)"
+msgid "``Celery`` (>= 4.0)"
 msgstr ""
 
 #: ../../admin/install.rst:48
@@ -4876,7 +4901,7 @@ msgid "http://www.celeryproject.org/"
 msgstr ""
 
 #: ../../admin/install.rst:49
-msgid "celery-batches (>= 0.2)"
+msgid "``celery-batches`` (>= 0.2)"
 msgstr ""
 
 #: ../../admin/install.rst:50
@@ -4884,7 +4909,7 @@ msgid "https://pypi.org/project/celery-batches/"
 msgstr ""
 
 #: ../../admin/install.rst:51
-msgid "siphashc (>= 0.8)"
+msgid "``siphashc`` (>= 0.8)"
 msgstr ""
 
 #: ../../admin/install.rst:52
@@ -4892,7 +4917,7 @@ msgid "https://github.com/WeblateOrg/siphashc"
 msgstr ""
 
 #: ../../admin/install.rst:53
-msgid "translate-toolkit (>= 2.3.1)"
+msgid "``translate-toolkit`` (>= 2.3.1)"
 msgstr ""
 
 #: ../../admin/install.rst:54
@@ -4900,7 +4925,7 @@ msgid "https://toolkit.translatehouse.org/"
 msgstr ""
 
 #: ../../admin/install.rst:55
-msgid "Six (>= 1.7.0)"
+msgid "``Six`` (>= 1.7.0)"
 msgstr ""
 
 #: ../../admin/install.rst:56
@@ -4908,7 +4933,7 @@ msgid "https://pypi.org/project/six/"
 msgstr ""
 
 #: ../../admin/install.rst:57
-msgid "filelock (>= 3.0.1)"
+msgid "``filelock`` (>= 3.0.1)"
 msgstr ""
 
 #: ../../admin/install.rst:58
@@ -4916,7 +4941,7 @@ msgid "https://github.com/benediktschmitt/py-filelock"
 msgstr ""
 
 #: ../../admin/install.rst:59
-msgid "Mercurial (>= 2.8) (optional for Mercurial repositories support)"
+msgid "``Mercurial`` (>= 2.8) (optional for Mercurial repositories support)"
 msgstr ""
 
 #: ../../admin/install.rst:60
@@ -4924,7 +4949,7 @@ msgid "https://www.mercurial-scm.org/"
 msgstr ""
 
 #: ../../admin/install.rst:61
-msgid "social-auth-core (>= 1.3.0)"
+msgid "``social-auth-core`` (>= 1.3.0)"
 msgstr ""
 
 #: ../../admin/install.rst:62 ../../admin/install.rst:64
@@ -4932,11 +4957,11 @@ msgid "https://python-social-auth.readthedocs.io/"
 msgstr ""
 
 #: ../../admin/install.rst:63
-msgid "social-auth-app-django (>= 2.0.0)"
+msgid "``social-auth-app-django`` (>= 2.0.0)"
 msgstr ""
 
 #: ../../admin/install.rst:65
-msgid "django-appconf (>= 1.0)"
+msgid "``django-appconf`` (>= 1.0)"
 msgstr ""
 
 #: ../../admin/install.rst:66
@@ -4944,7 +4969,7 @@ msgid "https://github.com/django-compressor/django-appconf"
 msgstr ""
 
 #: ../../admin/install.rst:67
-msgid "Whoosh (>= 2.7.0)"
+msgid "``Whoosh`` (>= 2.7.0)"
 msgstr ""
 
 #: ../../admin/install.rst:68
@@ -4952,7 +4977,7 @@ msgid "https://bitbucket.org/mchaput/whoosh/wiki/Home"
 msgstr ""
 
 #: ../../admin/install.rst:69
-msgid "PIL or Pillow library"
+msgid "``PIL`` or ``Pillow`` library"
 msgstr ""
 
 #: ../../admin/install.rst:70
@@ -4960,7 +4985,7 @@ msgid "https://python-pillow.org/"
 msgstr ""
 
 #: ../../admin/install.rst:71
-msgid "lxml (>= 3.1.0)"
+msgid "``lxml`` (>= 3.1.0)"
 msgstr ""
 
 #: ../../admin/install.rst:72
@@ -4968,7 +4993,7 @@ msgid "https://lxml.de/"
 msgstr ""
 
 #: ../../admin/install.rst:73
-msgid "defusedxml (>= 0.4)"
+msgid "``defusedxml`` (>= 0.4)"
 msgstr ""
 
 #: ../../admin/install.rst:74
@@ -4976,7 +5001,7 @@ msgid "https://bitbucket.org/tiran/defusedxml"
 msgstr ""
 
 #: ../../admin/install.rst:75
-msgid "dateutil"
+msgid "``dateutil``"
 msgstr ""
 
 #: ../../admin/install.rst:76
@@ -4984,7 +5009,7 @@ msgid "https://labix.org/python-dateutil"
 msgstr ""
 
 #: ../../admin/install.rst:77
-msgid "django_compressor (>= 2.1.1)"
+msgid "``django_compressor`` (>= 2.1.1)"
 msgstr ""
 
 #: ../../admin/install.rst:78
@@ -4992,7 +5017,7 @@ msgid "https://github.com/django-compressor/django-compressor"
 msgstr ""
 
 #: ../../admin/install.rst:79
-msgid "django-crispy-forms (>= 1.6.1)"
+msgid "``django-crispy-forms`` (>= 1.6.1)"
 msgstr ""
 
 #: ../../admin/install.rst:80
@@ -5000,7 +5025,7 @@ msgid "https://django-crispy-forms.readthedocs.io/"
 msgstr ""
 
 #: ../../admin/install.rst:81
-msgid "Django REST Framework (>=3.8)"
+msgid "``Django REST Framework`` (>=3.8)"
 msgstr ""
 
 #: ../../admin/install.rst:82
@@ -5008,7 +5033,7 @@ msgid "https://www.django-rest-framework.org/"
 msgstr ""
 
 #: ../../admin/install.rst:83
-msgid "user-agents (>= 1.1.0)"
+msgid "``user-agents`` (>= 1.1.0)"
 msgstr ""
 
 #: ../../admin/install.rst:84
@@ -5016,7 +5041,7 @@ msgid "https://github.com/selwin/python-user-agents"
 msgstr ""
 
 #: ../../admin/install.rst:85
-msgid "pyuca (>= 1.1) (optional for proper sorting of strings)"
+msgid "``pyuca`` (>= 1.1) (optional for proper sorting of strings)"
 msgstr ""
 
 #: ../../admin/install.rst:86
@@ -5024,7 +5049,7 @@ msgid "https://github.com/jtauber/pyuca"
 msgstr ""
 
 #: ../../admin/install.rst:87
-msgid "phply (optional for PHP support)"
+msgid "``phply`` (optional for PHP support)"
 msgstr ""
 
 #: ../../admin/install.rst:88
@@ -5042,7 +5067,7 @@ msgid ""
 msgstr ""
 
 #: ../../admin/install.rst:92
-msgid "pytz (optional, but recommended by Django)"
+msgid "``pytz`` (optional, but recommended by Django)"
 msgstr ""
 
 #: ../../admin/install.rst:93
@@ -5050,7 +5075,7 @@ msgid "https://pypi.org/project/pytz/"
 msgstr ""
 
 #: ../../admin/install.rst:94
-msgid "python-bidi (optional for proper rendering of badges in RTL languages)"
+msgid "``python-bidi`` (optional for proper rendering of badges in RTL languages)"
 msgstr ""
 
 #: ../../admin/install.rst:95
@@ -5058,7 +5083,7 @@ msgid "https://github.com/MeirKriheli/python-bidi"
 msgstr ""
 
 #: ../../admin/install.rst:96
-msgid "tesserocr (>= 2.0.0) (optional for screenshots OCR)"
+msgid "``tesserocr`` (>= 2.0.0) (optional for screenshots OCR)"
 msgstr ""
 
 #: ../../admin/install.rst:97
@@ -5066,7 +5091,7 @@ msgid "https://github.com/sirfz/tesserocr"
 msgstr ""
 
 #: ../../admin/install.rst:98
-msgid "akismet (>= 1.0) (optional for suggestion spam protection)"
+msgid "``akismet`` (>= 1.0) (optional for suggestion spam protection)"
 msgstr ""
 
 #: ../../admin/install.rst:99
@@ -5074,7 +5099,7 @@ msgid "https://github.com/ubernostrum/akismet"
 msgstr ""
 
 #: ../../admin/install.rst:100
-msgid "PyYAML (>= 3.0) (optional for :ref:`yaml`)"
+msgid "``PyYAML`` (>= 3.0) (optional for :ref:`yaml`)"
 msgstr ""
 
 #: ../../admin/install.rst:101
@@ -5082,7 +5107,7 @@ msgid "https://pyyaml.org/"
 msgstr ""
 
 #: ../../admin/install.rst:102
-msgid "backports.csv (needed on Python 2.7)"
+msgid "``backports.csv`` (needed on Python 2.7)"
 msgstr ""
 
 #: ../../admin/install.rst:103
@@ -5090,7 +5115,7 @@ msgid "https://pypi.org/project/backports.csv/"
 msgstr ""
 
 #: ../../admin/install.rst:104
-msgid "jellyfish (>= 0.6.1)"
+msgid "``Jellyfish`` (>= 0.6.1)"
 msgstr ""
 
 #: ../../admin/install.rst:105
@@ -5098,7 +5123,7 @@ msgid "https://github.com/jamesturk/jellyfish"
 msgstr ""
 
 #: ../../admin/install.rst:106
-msgid "openpyxl (>=2.5.0) (for XLSX export/import)"
+msgid "``openpyxl`` (>=2.5.0) (for XLSX export/import)"
 msgstr ""
 
 #: ../../admin/install.rst:107
@@ -5106,7 +5131,7 @@ msgid "https://openpyxl.readthedocs.io/en/stable/"
 msgstr ""
 
 #: ../../admin/install.rst:109
-msgid "zeep (>=3.0.0) (optional for :ref:`ms-terminology`)"
+msgid "``Zeep`` (>=3.0.0) (optional for :ref:`ms-terminology`)"
 msgstr ""
 
 #: ../../admin/install.rst:109
@@ -5122,7 +5147,7 @@ msgid "The following dependencies have to be installed on the system:"
 msgstr ""
 
 #: ../../admin/install.rst:116
-msgid "Git (>= 1.6)"
+msgid "``Git`` (>= 1.6)"
 msgstr ""
 
 #: ../../admin/install.rst:117
@@ -5130,7 +5155,7 @@ msgid "https://git-scm.com/"
 msgstr ""
 
 #: ../../admin/install.rst:118
-msgid "hub (optional for sending pull requests to GitHub)"
+msgid "``hub`` (optional for sending pull requests to GitHub)"
 msgstr ""
 
 #: ../../admin/install.rst:119
@@ -5138,7 +5163,7 @@ msgid "https://hub.github.com/"
 msgstr ""
 
 #: ../../admin/install.rst:120
-msgid "git-review (optional for Gerrit support)"
+msgid "``git-review`` (optional for Gerrit support)"
 msgstr ""
 
 #: ../../admin/install.rst:121
@@ -5146,7 +5171,7 @@ msgid "https://pypi.org/project/git-review/"
 msgstr ""
 
 #: ../../admin/install.rst:122
-msgid "git-svn (>= 2.10.0) (optional for Subversion support)"
+msgid "``git-svn`` (>= 2.10.0) (optional for Subversion support)"
 msgstr ""
 
 #: ../../admin/install.rst:123
@@ -5154,7 +5179,7 @@ msgid "https://git-scm.com/docs/git-svn"
 msgstr ""
 
 #: ../../admin/install.rst:125
-msgid "tesseract and it's data (optional for screenshots OCR)"
+msgid "``tesseract`` and it's data (optional for screenshots OCR)"
 msgstr ""
 
 #: ../../admin/install.rst:125
@@ -5170,8 +5195,8 @@ msgid ""
 "To compile some of the :ref:`python-deps` you might need to install their"
 " dependencies. This depends on how you install them, so please consult "
 "individual packages for documentation. You won't need those if using "
-"prebuilt Wheels while installing using pip or when you use distribution "
-"packages."
+"prebuilt ``Wheels`` while installing using ``pip`` or when you use "
+"distribution packages."
 msgstr ""
 
 #: ../../admin/install.rst:138
@@ -5184,7 +5209,7 @@ msgstr ""
 
 #: ../../admin/install.rst:142
 msgid ""
-"First choices include complete setup without relying on your system "
+"The first choices include complete setup without relying on your system "
 "libraries:"
 msgstr ""
 
@@ -5208,15 +5233,16 @@ msgid ""
 msgstr ""
 
 #: ../../admin/install.rst:151
-msgid "Choose installation method:"
-msgstr ""
+#, fuzzy
+msgid "Choose the installation method:"
+msgstr "共有翻訳メモリの使用"
 
 #: ../../admin/install.rst:153
 msgid ":ref:`install-pip`"
 msgstr ""
 
 #: ../../admin/install.rst:154
-msgid ":ref:`install-git` (if you want to run bleeding edge version)"
+msgid ":ref:`install-git` (if you want to run the bleeding edge version)"
 msgstr ""
 
 #: ../../admin/install.rst:155
@@ -5226,7 +5252,7 @@ msgid ""
 msgstr ""
 
 #: ../../admin/install.rst:158
-msgid "And install dependencies according your platform:"
+msgid "Also install dependencies according to your platform:"
 msgstr ""
 
 #: ../../admin/install.rst:160
@@ -5246,26 +5272,27 @@ msgid ":ref:`deps-pip`"
 msgstr ""
 
 #: ../../admin/install.rst:168
-msgid "Installing in virtualenv"
-msgstr ""
+#, fuzzy
+msgid "Installation in virtualenv"
+msgstr "インストール手順"
 
 #: ../../admin/install.rst:170
 msgid ""
-"This is recommended method if you don't want to dig into details. This "
-"will create separate Python environment for Weblate, possibly duplicating"
-" some system Python libraries."
+"This is the recommended method if you don't want to concern yourself with"
+" further detail. This will create a separate Python environment for "
+"Weblate, possibly duplicating some of the Python libraries on the system."
 msgstr ""
 
 #: ../../admin/install.rst:174
 msgid ""
-"Install development files for libraries we will use during building "
-"Python modules:"
+"Install the development files for libraries to be used during the "
+"building of the Python modules:"
 msgstr ""
 
-#: ../../admin/install.rst:188 ../../admin/quick.rst:43
+#: ../../admin/install.rst:188
 msgid ""
-"Install pip and virtualenv. Usually they are shipped by your distribution"
-" or with Python:"
+"Install ``pip`` and ``virtualenv``. Usually they are shipped by your "
+"distribution or with Python:"
 msgstr ""
 
 #: ../../admin/install.rst:202
@@ -5274,15 +5301,15 @@ msgstr ""
 
 #: ../../admin/install.rst:209
 msgid ""
-"Install Weblate including all dependencies, you can also use pip to "
+"Install Weblate including all dependencies, you can also use ``pip`` to "
 "install optional dependencies:"
 msgstr ""
 
 #: ../../admin/install.rst:218
 msgid ""
-"Create your settings (in our example it would be in :file:`~/weblate-"
+"Create your settings (in this example it would be in :file:`~/weblate-"
 "env/lib/python2.7/site-packages/weblate/settings.py` based on the "
-":file:`settings_example.py` in same directory)."
+":file:`settings_example.py` in the same directory)."
 msgstr ""
 
 #: ../../admin/install.rst:221
@@ -5293,11 +5320,11 @@ msgstr ""
 
 #: ../../admin/install.rst:223
 msgid ""
-"To run webserver, use the wsgi wrapper installed with Weblate (in our "
+"To run webserver, use the wsgi wrapper installed with Weblate (in this "
 "case it is :file:`~/weblate-env/lib/python2.7/site-"
-"packages/weblate/wsgi.py`). Don't forget to set Python search path to "
-"your virtualenv as well (for example using ``virtualenv = /home/user"
-"/weblate-env`` in uwsgi)."
+"packages/weblate/wsgi.py`). Don't forget to set the Python search path to"
+" your virtualenv as well (for example using ``virtualenv = /home/user"
+"/weblate-env`` in uWSGI)."
 msgstr ""
 
 #: ../../admin/install.rst:231
@@ -5306,33 +5333,33 @@ msgstr ""
 
 #: ../../admin/install.rst:233
 msgid ""
-"You can also run the latest version from Git. It is maintained stable and"
-" production ready. You can usually find it running on `Hosted Weblate "
-"<https://weblate.org/hosting/>`_."
+"You can also run the latest version from Git. It is maintained, stable "
+"and production ready. It is most often the version running `Hosted "
+"Weblate <https://weblate.org/hosting/>`_."
 msgstr ""
 
 #: ../../admin/install.rst:237
-msgid "To get latest sources using Git use:"
+msgid "To get the latest sources using Git use:"
 msgstr ""
 
 #: ../../admin/install.rst:245
 msgid ""
 "If you are running a version from Git, you should also regenerate locale "
-"files every time you are upgrading. You can do this by invoking script "
-":file:`./scripts/generate-locales`."
+"files every time you are upgrading. You can do this by invoking the "
+"script :file:`./scripts/generate-locales`."
 msgstr ""
 
 #: ../../admin/install.rst:252
-msgid "Installing Weblate by pip"
+msgid "Installing Weblate with pip"
 msgstr ""
 
 #: ../../admin/install.rst:254
 msgid ""
-"If you decide to install Weblate using pip installer, you will notice "
-"some differences. Most importantly the command line interface is "
-"installed  to the system path as :command:`weblate` instead of "
+"If you decide to install Weblate using the pip installer, you will notice"
+" some differences. Most importantly the command line interface is "
+"installed to the system path as :command:`weblate` instead of "
 ":command:`./manage.py` as used in this documentation. Also when invoking "
-"this command, you will have to specify settings, either by environment "
+"this command, you will have to specify settings by the environment "
 "variable `DJANGO_SETTINGS_MODULE` on the command line, for example:"
 msgstr ""
 
@@ -5342,20 +5369,20 @@ msgstr ""
 
 #: ../../admin/install.rst:272
 msgid ""
-"On recent Debian or Ubuntu, most of requirements are already packaged, to"
-" install them you can use apt-get:"
+"On recent releases of Debian or Ubuntu, most of the requirements are "
+"already packaged, to install them you can use apt-get:"
 msgstr ""
 
 #: ../../admin/install.rst:292
 msgid ""
-"On older versions, some required dependencies are missing or outdated, so"
+"On older releases, some required dependencies are missing or outdated, so"
 " you need to install several Python modules manually using pip:"
 msgstr ""
 
 #: ../../admin/install.rst:322
 msgid ""
-"For proper sorting of a Unicode strings, it is recommended to install "
-"pyuca:"
+"For proper sorting of Unicode strings, it is recommended to install "
+"``pyuca``:"
 msgstr ""
 
 #: ../../admin/install.rst:328 ../../admin/install.rst:377
@@ -5375,13 +5402,13 @@ msgid ""
 msgstr ""
 
 #: ../../admin/install.rst:409
-msgid "Requirements on OSX"
+msgid "Requirements on macOS"
 msgstr ""
 
 #: ../../admin/install.rst:411
 msgid ""
-"If your python was not installed using brew, make sure you have this in "
-"your :file:`.bash_profile` file or executed somehow:"
+"If your Python was not installed using ``brew``, make sure you have this "
+"in your :file:`.bash_profile` file or executed somehow:"
 msgstr ""
 
 #: ../../admin/install.rst:418
@@ -5393,7 +5420,7 @@ msgid "Requirements using pip installer"
 msgstr ""
 
 #: ../../admin/install.rst:425
-msgid "Most requirements can be also installed using pip installer:"
+msgid "Most requirements can be also installed using the pip installer:"
 msgstr ""
 
 #: ../../admin/install.rst:431
@@ -5419,9 +5446,9 @@ msgstr ""
 
 #: ../../admin/install.rst:448
 msgid ""
-"The default configuration places them in the same tree as Weblate "
-"sources, however you might prefer to move these to better location such "
-"as :file:`/var/lib/weblate`."
+"The default configuration places them in the same tree as the Weblate "
+"sources, however you might prefer to move these to a better location such"
+" as: :file:`/var/lib/weblate`."
 msgstr ""
 
 #: ../../admin/install.rst:452
@@ -5433,7 +5460,7 @@ msgstr ""
 #: ../../admin/install.rst:455
 msgid ""
 "You should also take care when running :ref:`manage`, as they should be "
-"run under the same user as Weblate itself is running, otherwise "
+"ran under the same user as Weblate itself is running, otherwise "
 "permissions on some files might be wrong."
 msgstr ""
 
@@ -5447,8 +5474,8 @@ msgstr ""
 
 #: ../../admin/install.rst:468
 msgid ""
-"It is recommended to run Weblate on some database server. Using SQLite "
-"backend is really suitable only for testing purposes."
+"It is recommended to run Weblate with some database server. Using a "
+"SQLite backend is really only suitable for testing purposes."
 msgstr ""
 
 #: ../../admin/install.rst:473
@@ -5470,12 +5497,12 @@ msgid ":ref:`django:postgresql-notes`"
 msgstr ""
 
 #: ../../admin/install.rst:487
-msgid "Creating database in PostgreSQL"
+msgid "Creating a database in PostgreSQL"
 msgstr ""
 
 #: ../../admin/install.rst:489
 msgid ""
-"It is usually good idea to run Weblate in a separate database and "
+"It is usually a good idea to run Weblate in a separate database, and "
 "separate user account:"
 msgstr ""
 
@@ -5493,8 +5520,8 @@ msgstr ""
 
 #: ../../admin/install.rst:529
 msgid ""
-"MySQL or MariaDB are quite good choices to run Weblate. However when "
-"using MySQL you might hit some problems caused by it."
+"MySQL or MariaDB are quite good choices for running Weblate. However when"
+" using MySQL you might hit some problems caused by it."
 msgstr ""
 
 #: ../../admin/install.rst:534
@@ -5507,11 +5534,12 @@ msgstr ""
 
 #: ../../admin/install.rst:539
 msgid ""
-"MySQL by default uses something called ``utf8``, what can not store all "
+"MySQL by default uses something called ``utf8``, which can not store all "
 "Unicode characters, only those who fit into three bytes in ``utf-8`` "
 "encoding. In case you're using emojis or some other higher Unicode "
-"symbols you might hit errors when saving such data. Depending on MySQL "
-"and Python bindings version, the error might look like:"
+"symbols you might hit errors when saving such data. Depending on the "
+"MySQL and Python bindings version, the produced error might look like "
+"this:"
 msgstr ""
 
 #: ../../admin/install.rst:545
@@ -5528,31 +5556,31 @@ msgstr ""
 
 #: ../../admin/install.rst:548
 msgid ""
-"To solve this, you need to change your database to use ``utf8mb4`` (what "
-"is again subset of Unicode, but this time which can be stored in four "
-"bytes in ``utf-8`` encoding, thus covering all chars currently defined in"
-" Unicode)."
+"To solve this, you need to change your database to use ``utf8mb4`` (which"
+" is again a subset of Unicode, but this time one which can be stored in "
+"four bytes in ``utf-8`` encoding, thus covering all chars currently "
+"defined in Unicode)."
 msgstr ""
 
 #: ../../admin/install.rst:552
 msgid ""
-"This can be achieved at database creation time by creating it with this "
-"character set (see :ref:`mysql-create`) and specifying the character set "
-"in connection settings (see :ref:`mysql-config`)."
+"This can be achieved during creation of the database by selecting this "
+"character set (see :ref:`mysql-create`) and specifying that character set"
+" in the connection settings (see :ref:`mysql-config`)."
 msgstr ""
 
 #: ../../admin/install.rst:556
 msgid ""
-"In case you have existing database, you can change it to ``utf8mb4`` by, "
-"but this won't change collation of existing fields:"
+"In case you have an existing database, you can change it to ``utf8mb4`` "
+"by, but this won't change collation of existing fields:"
 msgstr ""
 
 #: ../../admin/install.rst:563
 msgid ""
-"Using this charset might however lead to problems with default MySQL "
-"server settings as each character is now taking 4 bytest to store and "
-"MySQL has limit of 767 bytes for an index. In case this happens you will "
-"get one of following error messages:"
+"Using this charset might however lead to problems with the default MySQL "
+"server settings, as each character now takes 4 bytes to store, and MySQL "
+"has an upper limit of 767 bytes for an index. In case this happens you "
+"will get one of the following error messages:"
 msgstr ""
 
 #: ../../admin/install.rst:568
@@ -5565,10 +5593,10 @@ msgstr ""
 
 #: ../../admin/install.rst:571
 msgid ""
-"There are two ways to workaround this limitation. You can configure MySQL"
-" in a way to not have this limit, see `Using Innodb_large_prefix to Avoid"
-" ERROR 1071 <https://mechanics.flite.com/blog/2014/07/29/using-innodb-"
-"large-prefix-to-avoid-error-1071/>`_. Alternatively you can  also adjust "
+"There are two ways to work around this limitation. You can configure "
+"MySQL to not have this limit, see `Using Innodb_large_prefix to Avoid "
+"ERROR 1071 <https://mechanics.flite.com/blog/2014/07/29/using-innodb-"
+"large-prefix-to-avoid-error-1071/>`_. Alternatively you can also adjust "
 "several settings for social-auth in your :file:`settings.py` (see "
 ":doc:`psa:configuration/settings`):"
 msgstr ""
@@ -5579,8 +5607,8 @@ msgstr ""
 
 #: ../../admin/install.rst:592
 msgid ""
-"MySQL by default uses has different transaction locking scheme than other"
-" databases and in case you see errors like `Deadlock found when trying to"
+"MySQL by default uses a different transaction locking scheme than other "
+"databases, and in case you see errors like `Deadlock found when trying to"
 " get lock; try restarting transaction` it might be good idea to enable "
 "`STRICT_TRANS_TABLES` mode in MySQL. This can be done in the server "
 "configuration file (usually :file:`/etc/mysql/my.cnf` on Linux):"
@@ -5591,7 +5619,7 @@ msgid ":ref:`django:mysql-sql-mode`"
 msgstr ""
 
 #: ../../admin/install.rst:610
-msgid "Creating database in MySQL"
+msgid "Creating a database in MySQL"
 msgstr ""
 
 #: ../../admin/install.rst:612
@@ -5606,819 +5634,832 @@ msgstr ""
 msgid "The :file:`settings.py` snippet for MySQL:"
 msgstr ""
 
-#: ../../admin/install.rst:660
+#: ../../admin/install.rst:662
 msgid "Other configurations"
 msgstr ""
 
-#: ../../admin/install.rst:665
-msgid "Configuring outgoing mail"
+#: ../../admin/install.rst:667
+msgid "Configuring outgoing email"
 msgstr ""
 
-#: ../../admin/install.rst:667
+#: ../../admin/install.rst:669
 msgid ""
 "Weblate sends out emails on various occasions - for account activation "
 "and on various notifications configured by users. For this it needs "
-"access to the SMTP server, which will handle this."
+"access to a SMTP server."
 msgstr ""
 
-#: ../../admin/install.rst:671
+#: ../../admin/install.rst:673
 msgid ""
-"The mail server setup is configured using settings "
+"The mail server setup is configured using these settings: "
 ":setting:`django:EMAIL_HOST`, :setting:`django:EMAIL_HOST_PASSWORD`, "
-":setting:`django:EMAIL_HOST_USER` and :setting:`django:EMAIL_PORT`.  "
-"Their names are quite self-explanatory, but you can find out more "
-"information in the Django documentation."
+":setting:`django:EMAIL_HOST_USER` and :setting:`django:EMAIL_PORT`. Their"
+" names are quite self-explanatory, but you can find more info in the "
+"Django documentation."
 msgstr ""
 
-#: ../../admin/install.rst:679
+#: ../../admin/install.rst:681
 msgid ""
-"You can verify whether outgoing mail is working correctly by using "
+"You can verify whether outgoing email is working correctly by using the "
 ":djadmin:`django:sendtestemail` management command."
 msgstr ""
 
-#: ../../admin/install.rst:685
+#: ../../admin/install.rst:687
 msgid "Background tasks using Celery"
 msgstr ""
 
-#: ../../admin/install.rst:689
+#: ../../admin/install.rst:691
 msgid ""
 "Weblate uses Celery to process background tasks. The example settings "
 "come with eager configuration, which does process all tasks in place, but"
-" you want to change this to something more reasonable for production "
+" you want to change this to something more reasonable for a production "
 "setup."
 msgstr ""
 
-#: ../../admin/install.rst:693
-msgid "Typical setup using redis as a backend should look like:"
+#: ../../admin/install.rst:695
+msgid "A typical setup using Redis as a backend looks like this:"
 msgstr ""
 
-#: ../../admin/install.rst:701
+#: ../../admin/install.rst:703
 msgid ""
 "You should also start the Celery worker to process the tasks and start "
-"scheduled tasks, this can be done directly on command line (what is "
+"scheduled tasks, this can be done directly on the command line (which is "
 "mostly useful when debugging or developing):"
 msgstr ""
 
-#: ../../admin/install.rst:709
+#: ../../admin/install.rst:712
 msgid ""
 "Most likely you will want to run Celery as a daemon and that is covered "
-"by :doc:`celery:userguide/daemonizing`. For the most usual Linux setup "
-"using systemd you can use example files shipped in the :file:`examples` "
-"folder and listed below."
+"by :doc:`celery:userguide/daemonizing`. For the most common Linux setup "
+"using systemd, you can use the example files shipped in the "
+":file:`examples` folder listed below."
 msgstr ""
 
-#: ../../admin/install.rst:714
+#: ../../admin/install.rst:717
 msgid ""
 "Systemd unit to be placed as :file:`/etc/systemd/system/celery-"
 "weblate.service`:"
 msgstr ""
 
-#: ../../admin/install.rst:720
+#: ../../admin/install.rst:723
 msgid ""
 "Environment configuration to be placed as :file:`/etc/default/celery-"
 "weblate`:"
 msgstr ""
 
-#: ../../admin/install.rst:726
+#: ../../admin/install.rst:729
 msgid "Logrotate configuration to be placed as :file:`/etc/logrotate.d/celery`:"
 msgstr ""
 
-#: ../../admin/install.rst:732
+#: ../../admin/install.rst:735
 msgid ""
-"Weblate comes with built in setup for scheduled tasks. You can however "
-"define additional tasks in :file:`settings.py`, for example:"
+"Weblate comes with built-in setup for scheduled tasks. You can however "
+"define additional tasks in :file:`settings.py`, for example (also see "
+":ref:`lazy-commit`):"
 msgstr ""
 
-#: ../../admin/install.rst:748
+#: ../../admin/install.rst:745
+msgid ""
+"The Celery process has to be executed under the same user as Weblate and "
+"the WSGI process, otherwise files in the :setting:`DATA_DIR` will be "
+"stored with mixed ownership, leading to runtime issues."
+msgstr ""
+
+#: ../../admin/install.rst:751
 msgid ""
 ":doc:`celery:userguide/configuration`, :doc:`celery:userguide/workers`, "
 ":doc:`celery:userguide/daemonizing`"
 msgstr ""
 
-#: ../../admin/install.rst:759
+#: ../../admin/install.rst:762
 msgid ":ref:`sample-configuration`"
 msgstr ""
 
-#: ../../admin/install.rst:761
+#: ../../admin/install.rst:764
 msgid ""
 "Copy :file:`weblate/settings_example.py` to :file:`weblate/settings.py` "
 "and adjust it to match your setup. You will probably want to adjust the "
 "following options:"
 msgstr ""
 
-#: ../../admin/install.rst:767
+#: ../../admin/install.rst:770
 msgid "``ADMINS``"
 msgstr ""
 
-#: ../../admin/install.rst:769
+#: ../../admin/install.rst:772
 msgid ""
 "List of site administrators to receive notifications when something goes "
-"wrong, for example notifications on failed merge or Django errors."
+"wrong, for example notifications on failed merges, or Django errors."
 msgstr ""
 
-#: ../../admin/install.rst:774
+#: ../../admin/install.rst:777
 msgid ":setting:`django:ADMINS`"
 msgstr ""
 
-#: ../../admin/install.rst:778
+#: ../../admin/install.rst:781
 msgid "``ALLOWED_HOSTS``"
 msgstr ""
 
-#: ../../admin/install.rst:780
+#: ../../admin/install.rst:783
 msgid ""
-"If you are running Django 1.5 or newer, you need to set this to list of "
+"If you are running Django 1.5 or newer, you need to set this to list the "
 "hosts your site is supposed to serve. For example:"
 msgstr ""
 
-#: ../../admin/install.rst:789
+#: ../../admin/install.rst:792
 msgid ":setting:`django:ALLOWED_HOSTS`"
 msgstr ""
 
-#: ../../admin/install.rst:793
+#: ../../admin/install.rst:796
 msgid "``SESSION_ENGINE``"
 msgstr ""
 
-#: ../../admin/install.rst:795
+#: ../../admin/install.rst:798
 msgid ""
-"Configure how your sessions will be stored. In case you keep default "
-"database backed engine you should schedule :command:`./manage.py "
+"Configure how your sessions will be stored. In case you keep the default "
+"database backend engine, you should schedule: :command:`./manage.py "
 "clearsessions` to remove stale session data from the database."
 msgstr ""
 
-#: ../../admin/install.rst:800
+#: ../../admin/install.rst:803
 msgid ""
-"If you are using redis as cache (see :ref:`production-cache`) it is "
+"If you are using Redis as cache (see :ref:`production-cache`) it is "
 "recommended to use it for sessions as well:"
 msgstr ""
 
-#: ../../admin/install.rst:809
+#: ../../admin/install.rst:812
 msgid ":ref:`django:configuring-sessions`, :setting:`django:SESSION_ENGINE`"
 msgstr ""
 
-#: ../../admin/install.rst:814
+#: ../../admin/install.rst:817
 msgid "``DATABASES``"
 msgstr ""
 
-#: ../../admin/install.rst:816
+#: ../../admin/install.rst:819
 msgid ""
 "Connectivity to database server, please check Django's documentation for "
 "more details."
 msgstr ""
 
-#: ../../admin/install.rst:821
+#: ../../admin/install.rst:824
 msgid ""
 ":ref:`database-setup`, :setting:`django:DATABASES`, "
 ":doc:`django:ref/databases`"
 msgstr ""
 
-#: ../../admin/install.rst:827
+#: ../../admin/install.rst:830
 msgid "``DEBUG``"
 msgstr ""
 
-#: ../../admin/install.rst:829
+#: ../../admin/install.rst:832
 msgid ""
-"Disable this for production server. With debug mode enabled, Django will "
-"show backtraces in case of error to users, when you disable it, errors "
-"will go by email to ``ADMINS`` (see above)."
+"Disable this for any production server. With debug mode enabled, Django "
+"will show backtraces in case of error to users, when you disable it, "
+"errors will be sent per email to ``ADMINS`` (see above)."
 msgstr ""
 
-#: ../../admin/install.rst:833
+#: ../../admin/install.rst:836
 msgid ""
-"Debug mode also slows down Weblate as Django stores much more information"
-" internally in this case."
+"Debug mode also slows down Weblate, as Django stores much more info "
+"internally in this case."
 msgstr ""
 
-#: ../../admin/install.rst:838
+#: ../../admin/install.rst:841
 msgid ":setting:`django:DEBUG`,"
 msgstr ""
 
-#: ../../admin/install.rst:842
+#: ../../admin/install.rst:845
 msgid "``DEFAULT_FROM_EMAIL``"
 msgstr ""
 
-#: ../../admin/install.rst:844
+#: ../../admin/install.rst:847
 msgid "Email sender address for outgoing email, for example registration emails."
 msgstr ""
 
-#: ../../admin/install.rst:848
+#: ../../admin/install.rst:851
 msgid ":std:setting:`django:DEFAULT_FROM_EMAIL`,"
 msgstr ""
 
-#: ../../admin/install.rst:852
+#: ../../admin/install.rst:855
 msgid "``SECRET_KEY``"
 msgstr ""
 
-#: ../../admin/install.rst:854
+#: ../../admin/install.rst:857
 msgid ""
-"Key used by Django to sign some information in cookies, see :ref"
-":`production-secret` for more information."
+"Key used by Django to sign some info in cookies, see :ref:`production-"
+"secret` for more info."
 msgstr ""
 
-#: ../../admin/install.rst:859
+#: ../../admin/install.rst:862
 msgid "``SERVER_EMAIL``"
 msgstr ""
 
-#: ../../admin/install.rst:861
+#: ../../admin/install.rst:864
 msgid ""
-"Email used as sender address for sending emails to administrator, for "
-"example notifications on failed merge."
+"Email used as sender address for sending emails to the administrator, for"
+" example notifications on failed merges."
 msgstr ""
 
-#: ../../admin/install.rst:866
+#: ../../admin/install.rst:869
 msgid ":std:setting:`django:SERVER_EMAIL`"
 msgstr ""
 
-#: ../../admin/install.rst:871
+#: ../../admin/install.rst:874
 msgid "Filling up the database"
 msgstr ""
 
-#: ../../admin/install.rst:873
+#: ../../admin/install.rst:876
 msgid ""
 "After your configuration is ready, you can run :samp:`./manage.py "
 "migrate` to create the database structure. Now you should be able to "
 "create translation projects using the admin interface."
 msgstr ""
 
-#: ../../admin/install.rst:877
+#: ../../admin/install.rst:880
 msgid ""
-"In case you want to run installation non interactively, you can use "
-":samp:`./manage.py migrate --noinput` and then create admin user using "
-":djadmin:`createadmin` command."
+"In case you want to run an installation non interactively, you can use "
+":samp:`./manage.py migrate --noinput`, and then create an admin user "
+"using :djadmin:`createadmin` command."
 msgstr ""
 
-#: ../../admin/install.rst:881
+#: ../../admin/install.rst:884
 msgid ""
-"You should also login to admin interface (on ``/admin/`` URL) and adjust "
-"the default site name to match your domain by clicking on "
-":guilabel:`Sites` and there changing the :samp:`example.com` record to "
-"match your real domain name."
+"You should also log in to the admin interface (on ``/admin/`` URL) and "
+"adjust the default sitename to match your domain by clicking on "
+":guilabel:`Sites` and once there, change the :samp:`example.com` record "
+"to match your real domain name."
 msgstr ""
 
-#: ../../admin/install.rst:885
+#: ../../admin/install.rst:888
 msgid ""
-"Once you are done, you should also check :guilabel:`Performance report` "
-"in the admin interface which will give you hints for non optimal "
-"configuration on your site."
+"Once you are done, you should also check the :guilabel:`Performance "
+"report` in the admin interface, which will give you hints of potential "
+"non optimal configuration on your site."
 msgstr ""
 
-#: ../../admin/install.rst:891
+#: ../../admin/install.rst:894
 msgid ":ref:`config`, :ref:`privileges`, :ref:`faq-site`, :ref:`production-site`"
 msgstr ""
 
-#: ../../admin/install.rst:896
+#: ../../admin/install.rst:899
 msgid "Production setup"
 msgstr ""
 
-#: ../../admin/install.rst:898
+#: ../../admin/install.rst:901
 msgid ""
-"For production setup you should do adjustments described in following "
-"sections. The most critical settings will trigger warning which is "
-"indicated by red exclamation mark in the top bar if you are logged in as "
-"a superuser:"
+"For a production setup you should carry out adjustments described in the "
+"following sections. The most critical settings will trigger a warning, "
+"which is indicated by a red exclamation mark in the top bar if logged in "
+"as a superuser:"
 msgstr ""
 
-#: ../../admin/install.rst:904
+#: ../../admin/install.rst:907
 msgid ""
-"It is also recommended to inspect checks fired by Django (though you "
+"It is also recommended to inspect checks triggered by Django (though you "
 "might not need to fix all of them):"
 msgstr ""
 
-#: ../../admin/install.rst:913
+#: ../../admin/install.rst:916
 msgid ":doc:`django:howto/deployment/checklist`"
 msgstr ""
 
-#: ../../admin/install.rst:918
+#: ../../admin/install.rst:921
 msgid "Disable debug mode"
 msgstr ""
 
-#: ../../admin/install.rst:920
+#: ../../admin/install.rst:923
 msgid "Disable Django's debug mode (:setting:`DEBUG`) by:"
 msgstr ""
 
-#: ../../admin/install.rst:926
+#: ../../admin/install.rst:929
 msgid ""
-"With debug mode Django stores all executed queries and shows users "
-"backtraces of errors which is not desired in production setup."
+"With debug mode on, Django stores all executed queries and shows users "
+"backtraces of errors, which is not desired in a production setup."
 msgstr ""
 
-#: ../../admin/install.rst:931 ../../admin/install.rst:949
+#: ../../admin/install.rst:934 ../../admin/install.rst:952
 msgid ":ref:`installation`"
 msgstr ""
 
-#: ../../admin/install.rst:936
+#: ../../admin/install.rst:939
 msgid "Properly configure admins"
 msgstr ""
 
-#: ../../admin/install.rst:938
+#: ../../admin/install.rst:941
 msgid ""
-"Set correct admin addresses to :setting:`ADMINS` setting for defining who"
-" will receive mail in case something goes wrong on the server, for "
-"example:"
+"Set the correct admin addresses to the :setting:`ADMINS` setting to "
+"defining who will receive email in case something goes wrong on the "
+"server, for example:"
 msgstr ""
 
-#: ../../admin/install.rst:954
-msgid "Set correct site name"
-msgstr ""
-
-#: ../../admin/install.rst:956
-msgid ""
-"Adjust site name in admin interface, otherwise links in RSS or "
-"registration emails will not work."
+#: ../../admin/install.rst:957
+msgid "Set correct sitename"
 msgstr ""
 
 #: ../../admin/install.rst:959
 msgid ""
-"Please open the admin interface and edit default site name and domain "
-"under the :guilabel:`Sites › Sites` (or you can do that directly at "
+"Adjust sitename in the admin interface, otherwise links in RSS or "
+"registration emails will not work."
+msgstr ""
+
+#: ../../admin/install.rst:962
+msgid ""
+"Please open the admin interface and edit the default sitename and domain "
+"under the :guilabel:`Sites › Sites` (or do it directly at the "
 "``/admin/sites/site/1/`` URL under your Weblate installation). You have "
 "to change the :guilabel:`Domain name` to match your setup."
 msgstr ""
 
-#: ../../admin/install.rst:966
+#: ../../admin/install.rst:969
 msgid ""
-"This setting should contain only the domain name. For configuring "
-"protocol (enabling HTTPS) use :setting:`ENABLE_HTTPS` and for changing "
-"URL use :setting:`URL_PREFIX`."
+"This setting should only contain the domain name. For configuring "
+"protocol, (enabling HTTPS) use :setting:`ENABLE_HTTPS` and for changing "
+"URL, use :setting:`URL_PREFIX`."
 msgstr ""
 
-#: ../../admin/install.rst:970
+#: ../../admin/install.rst:973
 msgid ""
-"Alternatively, you can set the site name from command line using "
-":djadmin:`changesite`. For example, when using built in server:"
+"Alternatively, you can set the site name from the commandline using "
+":djadmin:`changesite`. For example, when using the built-in server:"
 msgstr ""
 
-#: ../../admin/install.rst:977
-msgid "For production site, you want something like:"
+#: ../../admin/install.rst:980
+msgid "For a production site, you want something like:"
 msgstr ""
 
-#: ../../admin/install.rst:985
+#: ../../admin/install.rst:988
 msgid ":ref:`faq-site`, :djadmin:`changesite`, :doc:`django:ref/contrib/sites`"
 msgstr ""
 
-#: ../../admin/install.rst:991
+#: ../../admin/install.rst:994
 msgid "Correctly configure HTTPS"
 msgstr ""
 
-#: ../../admin/install.rst:993
+#: ../../admin/install.rst:996
 msgid ""
-"It is strongly recommended to run Weblate using encrypted HTTPS protocol."
-" After enabling you shoud sed :setting:`ENABLE_HTTPS` settings which also"
-" adjusts several other related Django settings in the example "
-"configuration."
+"It is strongly recommended to run Weblate using the encrypted HTTPS "
+"protocol. After enabling it, you should set :setting:`ENABLE_HTTPS` in "
+"the settings, which also adjusts several other related Django settings in"
+" the example configuration."
 msgstr ""
 
-#: ../../admin/install.rst:997
+#: ../../admin/install.rst:1000
 msgid ""
-"You might want to configure HSTS as well, see :ref:`django:security-"
+"You might want to set up HSTS as well, see :ref:`django:security-"
 "recommendation-ssl` for more details."
 msgstr ""
 
-#: ../../admin/install.rst:1003
-msgid "Use powerful database engine"
+#: ../../admin/install.rst:1006
+msgid "Use a powerful database engine"
 msgstr ""
 
-#: ../../admin/install.rst:1005
+#: ../../admin/install.rst:1008
 msgid ""
-"Use a powerful database engine (SQLite is usually not good enough for "
-"production environment), see :ref:`database-setup` for more information."
+"SQLite is usually not good enough for a production environment, see :ref"
+":`database-setup` for more info."
 msgstr ""
 
-#: ../../admin/install.rst:1010
+#: ../../admin/install.rst:1013
 msgid ":ref:`database-setup`, :ref:`installation`, :doc:`django:ref/databases`"
 msgstr ""
 
-#: ../../admin/install.rst:1017
+#: ../../admin/install.rst:1020
 msgid "Enable caching"
 msgstr ""
 
-#: ../../admin/install.rst:1019
+#: ../../admin/install.rst:1022
 msgid ""
-"If possible, use redis from Django by adjusting ``CACHES`` configuration "
-"variable, for example:"
+"If possible, use Redis from Django by adjusting the ``CACHES`` "
+"configuration variable, for example:"
 msgstr ""
 
-#: ../../admin/install.rst:1038
-msgid "Alternatively you can also use memcached:"
+#: ../../admin/install.rst:1041
+msgid "Alternatively, you can also use Memcached:"
 msgstr ""
 
-#: ../../admin/install.rst:1051
+#: ../../admin/install.rst:1054
 msgid ":ref:`production-cache-avatar`, :doc:`django:topics/cache`"
 msgstr ""
 
-#: ../../admin/install.rst:1057
+#: ../../admin/install.rst:1060
 msgid "Avatar caching"
 msgstr ""
 
-#: ../../admin/install.rst:1059
+#: ../../admin/install.rst:1062
 msgid ""
 "In addition to caching of Django, Weblate performs caching of avatars. It"
-" is recommended to use separate, file backed cache for this purpose:"
+" is recommended to use a separate, file-backed cache for this purpose:"
 msgstr ""
 
-#: ../../admin/install.rst:1085
+#: ../../admin/install.rst:1088
 msgid ""
 ":setting:`ENABLE_AVATARS`, :setting:`AVATAR_URL_PREFIX`, :ref:`avatars`, "
 ":ref:`production-cache`, :doc:`django:topics/cache`"
 msgstr ""
 
-#: ../../admin/install.rst:1094
+#: ../../admin/install.rst:1097
 msgid "Configure email addresses"
 msgstr ""
 
-#: ../../admin/install.rst:1096
+#: ../../admin/install.rst:1099
 msgid ""
-"Weblate needs to send out emails on several occasions and these emails "
-"should have correct sender address, please configure "
+"Weblate needs to send out emails on several occasions, and these emails "
+"should have a correct sender address, please configure "
 ":setting:`SERVER_EMAIL` and :setting:`DEFAULT_FROM_EMAIL` to match your "
 "environment, for example:"
 msgstr ""
 
-#: ../../admin/install.rst:1107
+#: ../../admin/install.rst:1110
 msgid ""
 ":ref:`installation`, :std:setting:`django:DEFAULT_FROM_EMAIL`, "
 ":std:setting:`django:SERVER_EMAIL`"
 msgstr ""
 
-#: ../../admin/install.rst:1115
+#: ../../admin/install.rst:1118
 msgid "Allowed hosts setup"
 msgstr ""
 
-#: ../../admin/install.rst:1117
+#: ../../admin/install.rst:1120
 msgid ""
 "Django 1.5 and newer require :setting:`ALLOWED_HOSTS` to hold a list of "
-"domain names your site is allowed to serve, having it empty will block "
-"any request."
+"domain names your site is allowed to serve, leaving it empty will block "
+"any requests."
 msgstr ""
 
-#: ../../admin/install.rst:1122
+#: ../../admin/install.rst:1125
 msgid ":std:setting:`django:ALLOWED_HOSTS`"
 msgstr ""
 
-#: ../../admin/install.rst:1127
-msgid "pyuca library"
+#: ../../admin/install.rst:1130
+msgid "The ``pyuca`` library"
 msgstr ""
 
-#: ../../admin/install.rst:1129
+#: ../../admin/install.rst:1132
 msgid ""
-"`pyuca`_ library is optionally used by Weblate to sort Unicode strings. "
-"This way language names are properly sorted even in non-ASCII languages "
-"like Japanese, Chinese or Arabic or for languages with accented letters."
+"The `pyuca`_ library is optionally used by Weblate to sort Unicode "
+"strings. This way language names are properly sorted, even in non-ASCII "
+"languages like Japanese, Chinese or Arabic, or for languages that employ "
+"diactrics."
 msgstr ""
 
-#: ../../admin/install.rst:1138
+#: ../../admin/install.rst:1141
 msgid "Django secret key"
-msgstr ""
-
-#: ../../admin/install.rst:1140
-msgid ""
-"The :setting:`SECRET_KEY` setting is used by Django to sign cookies and "
-"you should really generate your own value rather than using the one "
-"coming from example setup."
 msgstr ""
 
 #: ../../admin/install.rst:1143
 msgid ""
-"You can generate new key using :file:`examples/generate-secret-key` "
+"The :setting:`SECRET_KEY` setting is used by Django to sign cookies, and "
+"you should really generate your own value rather than using the one from "
+"the example setup."
+msgstr ""
+
+#: ../../admin/install.rst:1146
+msgid ""
+"You can generate a new key using :file:`examples/generate-secret-key` "
 "shipped with Weblate."
 msgstr ""
 
-#: ../../admin/install.rst:1148
+#: ../../admin/install.rst:1151
 msgid ":std:setting:`django:SECRET_KEY`"
 msgstr ""
 
-#: ../../admin/install.rst:1154
+#: ../../admin/install.rst:1157
 msgid "Static files"
 msgstr ""
 
-#: ../../admin/install.rst:1156
+#: ../../admin/install.rst:1159
 msgid ""
-"If you see purely designed admin interface, the CSS files required for it"
-" are not loaded. This is usually if you are running in non-debug mode and"
-" have not configured your web server to serve them. Recommended setup is "
-"described in the :ref:`static-files` chapter."
+"If you see sparsely designed admin interface, the CSS files required for "
+"it are not loaded. This usually happens if you are running in non-debug "
+"mode and have not configured your web server to serve them. The "
+"recommended setup is described in the :ref:`static-files` chapter."
 msgstr ""
 
-#: ../../admin/install.rst:1163
+#: ../../admin/install.rst:1166
 msgid ":ref:`server`, :ref:`static-files`"
 msgstr ""
 
-#: ../../admin/install.rst:1168
+#: ../../admin/install.rst:1171
 msgid "Home directory"
 msgstr ""
 
-#: ../../admin/install.rst:1170
+#: ../../admin/install.rst:1173
 msgid ""
 "This is no longer required, Weblate now stores all its data in "
 ":setting:`DATA_DIR`."
 msgstr ""
 
-#: ../../admin/install.rst:1174
+#: ../../admin/install.rst:1177
 msgid ""
-"The home directory for the user which is running Weblate should be "
-"existing and writable by this user. This is especially needed if you want"
-" to use SSH to access private repositories, but Git might need to access "
-"this directory as well (depends on the Git version you use)."
+"The home directory for the user running Weblate should exist and be "
+"writable by this user. This is especially needed if you want to use SSH "
+"to access private repositories, but Git might need to access this "
+"directory as well (depending on the Git version you use)."
 msgstr ""
 
-#: ../../admin/install.rst:1179
+#: ../../admin/install.rst:1182
 msgid ""
 "You can change the directory used by Weblate in :file:`settings.py`, for "
-"example to set it to ``configuration`` directory under Weblate tree:"
+"example to set it to ``configuration`` directory under the Weblate tree:"
 msgstr ""
 
-#: ../../admin/install.rst:1188
+#: ../../admin/install.rst:1191
 msgid ""
-"On Linux and other UNIX like systems, the path to user's home directory "
-"is defined in :file:`/etc/passwd`. Many distributions default to non "
+"On Linux, and other UNIX like systems, the path to user's home directory "
+"is defined in :file:`/etc/passwd`. Many distributions default to a non-"
 "writable directory for users used for serving web content (such as "
 "``apache``, ``www-data`` or ``wwwrun``, so you either have to run Weblate"
-" under a different user or change this setting."
+" under a different user, or change this setting."
 msgstr ""
 
-#: ../../admin/install.rst:1196
+#: ../../admin/install.rst:1199
 msgid ":ref:`vcs-repos`"
 msgstr ""
 
-#: ../../admin/install.rst:1201
+#: ../../admin/install.rst:1204
 msgid "Template loading"
 msgstr ""
 
-#: ../../admin/install.rst:1203
+#: ../../admin/install.rst:1206
 msgid ""
-"It is recommended to use cached template loader for Django. It caches "
-"parsed templates and avoids the need to do the parsing with every single "
+"It is recommended to use a cached template loader for Django. It caches "
+"parsed templates and avoids the need to do parsing with every single "
 "request. You can configure it using the following snippet (the "
 "``loaders`` setting is important here):"
 msgstr ""
 
-#: ../../admin/install.rst:1237
+#: ../../admin/install.rst:1240
 msgid ":py:class:`django:django.template.loaders.cached.Loader`"
 msgstr ""
 
-#: ../../admin/install.rst:1242
+#: ../../admin/install.rst:1245
 msgid "Running maintenance tasks"
 msgstr ""
 
-#: ../../admin/install.rst:1244
+#: ../../admin/install.rst:1247
 msgid ""
 "For optimal performance, it is good idea to run some maintenance tasks in"
 " the background."
 msgstr ""
 
-#: ../../admin/install.rst:1249
+#: ../../admin/install.rst:1252
 msgid ""
-"Since version 3.2 the default way of executing these tasks is using "
+"Since version 3.2, the default way of executing these tasks is using "
 "Celery and Weblate already comes with proper configuration, see "
 ":ref:`celery`."
 msgstr ""
 
-#: ../../admin/install.rst:1254
+#: ../../admin/install.rst:1257
 msgid ":djadmin:`cleanuptrans`, :djadmin:`commit_pending`"
 msgstr ""
 
-#: ../../admin/install.rst:1259
+#: ../../admin/install.rst:1262
 msgid "Running server"
 msgstr ""
 
-#: ../../admin/install.rst:1261
+#: ../../admin/install.rst:1264
 msgid ""
 "Running Weblate is not different from running any other Django based "
-"application. Django is usually executed as uwsgi or fcgi (see examples "
-"for different webservers below)."
+"program. Django is usually executed as uWSGI or fcgi (see examples for "
+"different webservers below)."
 msgstr ""
 
-#: ../../admin/install.rst:1265
-msgid "For testing purposes, you can use the Django built-in web server:"
+#: ../../admin/install.rst:1268
+msgid "For testing purposes, you can use the built-in web server in Django:"
 msgstr ""
 
-#: ../../admin/install.rst:1273
-msgid "Do not use this in production as this has severe performance limitations."
+#: ../../admin/install.rst:1276
+msgid "Do not use this in production, as this has severe performance limitations."
 msgstr ""
 
-#: ../../admin/install.rst:1278
+#: ../../admin/install.rst:1281
 msgid "Serving static files"
-msgstr ""
-
-#: ../../admin/install.rst:1282
-msgid ""
-"Prior to version 2.4 Weblate didn't properly use Django static files "
-"framework and the setup was more complex."
 msgstr ""
 
 #: ../../admin/install.rst:1285
 msgid ""
-"Django needs to collect its static files to a single directory. To do so,"
+"Prior to version 2.4, Weblate didn't properly use the Django static files"
+" framework and the setup was more complex."
+msgstr ""
+
+#: ../../admin/install.rst:1288
+msgid ""
+"Django needs to collect its static files in a single directory. To do so,"
 " execute :samp:`./manage.py collectstatic --noinput`. This will copy the "
-"static files into directory specified by ``STATIC_ROOT`` setting (this "
-"defaults to ``static`` directory inside :setting:`DATA_DIR`)."
+"static files into a directory specified by the ``STATIC_ROOT`` setting "
+"(this defaults to a ``static`` directory inside :setting:`DATA_DIR`)."
 msgstr ""
 
-#: ../../admin/install.rst:1290
+#: ../../admin/install.rst:1293
 msgid ""
-"It is recommended to serve static files directly by your web server, you "
-"should use that for following paths:"
-msgstr ""
-
-#: ../../admin/install.rst:1294
-msgid ":file:`/static/`"
-msgstr ""
-
-#: ../../admin/install.rst:1294
-msgid ""
-"Serves static files for Weblate and admin interface (from defined by "
-"``STATIC_ROOT``)."
-msgstr ""
-
-#: ../../admin/install.rst:1296
-msgid ":file:`/media/`"
+"It is recommended to serve static files directly from your web server, "
+"you should use that for the following paths:"
 msgstr ""
 
 #: ../../admin/install.rst:1297
-msgid "Used for user media uploads (eg. screenshots)."
+msgid ":file:`/static/`"
 msgstr ""
 
-#: ../../admin/install.rst:1298
-msgid ":file:`/favicon.ico`"
+#: ../../admin/install.rst:1297
+msgid ""
+"Serves static files for Weblate and the admin interface (from defined by "
+"``STATIC_ROOT``)."
 msgstr ""
 
 #: ../../admin/install.rst:1299
-msgid "Should be rewritten to rewrite rule to serve :file:`/static/favicon.ico`"
+msgid ":file:`/media/`"
+msgstr ""
+
+#: ../../admin/install.rst:1300
+msgid "Used for user media uploads (e.g. screenshots)."
 msgstr ""
 
 #: ../../admin/install.rst:1301
+msgid ":file:`/favicon.ico`"
+msgstr ""
+
+#: ../../admin/install.rst:1302
+msgid "Should be rewritten to rewrite a rule to serve :file:`/static/favicon.ico`"
+msgstr ""
+
+#: ../../admin/install.rst:1304
 msgid ":file:`/robots.txt`"
 msgstr ""
 
-#: ../../admin/install.rst:1301
-msgid "Should be rewritten to rewrite rule to serve :file:`/static/robots.txt`"
+#: ../../admin/install.rst:1304
+msgid "Should be rewritten to rewrite a rule to serve :file:`/static/robots.txt`"
 msgstr ""
 
-#: ../../admin/install.rst:1305
+#: ../../admin/install.rst:1308
 msgid ""
 ":doc:`django:howto/deployment/index`, :doc:`django:howto/static-"
 "files/deployment`"
 msgstr ""
 
-#: ../../admin/install.rst:1311
+#: ../../admin/install.rst:1314
 msgid "Content security policy"
 msgstr ""
 
-#: ../../admin/install.rst:1313
+#: ../../admin/install.rst:1316
 msgid ""
-"Default Weblate configuration enables "
+"The default Weblate configuration enables "
 "``weblate.middleware.SecurityMiddleware`` middleware which sets security "
 "related HTTP headers like ``Content-Security-Policy`` or ``X-XSS-"
-"Protection``. These are set to work with Weblate and it's configuration, "
-"but this might clash with your customization. If that is your case, it is"
-" recommended to disable this middleware and set these headers manually."
+"Protection``. These are by default set up to work with Weblate and it's "
+"configuration, but this might clash with your customization. If that is "
+"the case, it is recommended to disable this middleware and set these "
+"headers manually."
 msgstr ""
 
-#: ../../admin/install.rst:1321
+#: ../../admin/install.rst:1324
 msgid "Sample configuration for Apache"
 msgstr ""
 
-#: ../../admin/install.rst:1323
+#: ../../admin/install.rst:1326
 msgid ""
-"Following configuration runs Weblate as WSGI, you need to have enabled "
-"mod_wsgi (available as :file:`examples/apache.conf`):"
+"The following configuration runs Weblate as WSGI, you need to have "
+"enabled mod_wsgi (available as :file:`examples/apache.conf`):"
 msgstr ""
 
-#: ../../admin/install.rst:1329
+#: ../../admin/install.rst:1332
 msgid ""
 "This configuration is for Apache 2.4 and later. For earlier versions of "
 "Apache, replace `Require all granted` with `Allow from all`."
 msgstr ""
 
-#: ../../admin/install.rst:1334
+#: ../../admin/install.rst:1337
 msgid ":doc:`django:howto/deployment/wsgi/modwsgi`"
 msgstr ""
 
-#: ../../admin/install.rst:1337
-msgid "Sample configuration for Apache and gunicorn"
+#: ../../admin/install.rst:1340
+msgid "Sample configuration for Apache and Gunicorn"
 msgstr ""
 
-#: ../../admin/install.rst:1339
+#: ../../admin/install.rst:1342
 msgid ""
-"Following configuration runs Weblate in gunicorn and Apache 2.4 "
+"The following configuration runs Weblate in Gunicorn and Apache 2.4 "
 "(available as :file:`examples/apache.gunicorn.conf`):"
 msgstr ""
 
-#: ../../admin/install.rst:1347
+#: ../../admin/install.rst:1350
 msgid ":doc:`django:howto/deployment/wsgi/gunicorn`"
 msgstr ""
 
-#: ../../admin/install.rst:1350
-msgid "Sample configuration for nginx and uwsgi"
-msgstr ""
+#: ../../admin/install.rst:1353
+#, fuzzy
+msgid "Sample configuration for NGINX and uWSGI"
+msgstr "設定例"
 
-#: ../../admin/install.rst:1352
-msgid "The following configuration runs Weblate as uwsgi under nginx webserver."
-msgstr ""
-
-#: ../../admin/install.rst:1354
+#: ../../admin/install.rst:1355
 msgid ""
-"Configuration for nginx (also available as "
+"The following configuration runs Weblate as uWSGI under the NGINX "
+"webserver."
+msgstr ""
+
+#: ../../admin/install.rst:1357
+msgid ""
+"Configuration for NGINX (also available as "
 ":file:`examples/weblate.nginx.conf`):"
 msgstr ""
 
-#: ../../admin/install.rst:1359
+#: ../../admin/install.rst:1362
 msgid ""
-"Configuration for uwsgi (also available as "
+"Configuration for uWSGI (also available as "
 ":file:`examples/weblate.uwsgi.ini`):"
 msgstr ""
 
-#: ../../admin/install.rst:1366
+#: ../../admin/install.rst:1369
 msgid ":doc:`django:howto/deployment/wsgi/uwsgi`"
 msgstr ""
 
-#: ../../admin/install.rst:1369
+#: ../../admin/install.rst:1372
 msgid "Running Weblate under path"
 msgstr ""
 
-#: ../../admin/install.rst:1373
+#: ../../admin/install.rst:1376
 msgid "This is supported since Weblate 1.3."
 msgstr ""
 
-#: ../../admin/install.rst:1375
+#: ../../admin/install.rst:1378
 msgid ""
-"Sample Apache configuration to serve Weblate under ``/weblate``.  Again "
+"A sample Apache configuration to serve Weblate under ``/weblate``. Again "
 "using mod_wsgi (also available as :file:`examples/apache-path.conf`):"
 msgstr ""
 
-#: ../../admin/install.rst:1381
+#: ../../admin/install.rst:1384
 msgid "Additionally, you will have to adjust :file:`weblate/settings.py`:"
 msgstr ""
 
-#: ../../admin/install.rst:1389
+#: ../../admin/install.rst:1392
 msgid "Monitoring Weblate"
 msgstr ""
 
-#: ../../admin/install.rst:1391
+#: ../../admin/install.rst:1394
 msgid ""
-"Weblate provides ``/healthz/`` URL to be used in simple health checks, "
-"for example using Kubernetes."
+"Weblate provides the ``/healthz/`` URL to be used in simple health "
+"checks, for example using Kubernetes."
 msgstr ""
 
-#: ../../admin/install.rst:1397
+#: ../../admin/install.rst:1400
 msgid "Collecting error reports"
 msgstr ""
 
-#: ../../admin/install.rst:1399
+#: ../../admin/install.rst:1402
 msgid ""
-"It is good idea to collect errors from any Django application in "
-"structured way and Weblate is not an exception from this. You might find "
-"several services providing this, Weblate has basic support for following "
-"ones."
+"It is good idea to collect errors from any Django program in structured "
+"way, and Weblate is no exception from this rule. You might find several "
+"services providing this, Weblate has basic support for the following "
+"ones:"
 msgstr ""
 
-#: ../../admin/install.rst:1404
+#: ../../admin/install.rst:1407
 msgid "Sentry"
 msgstr ""
 
-#: ../../admin/install.rst:1406
+#: ../../admin/install.rst:1409
 msgid ""
 "Weblate has built in support for `Sentry <https://sentry.io/>`_. To use "
 "it it's enough to follow instructions for `Sentry for Python "
 "<https://docs.sentry.io/clients/python/>`_."
 msgstr ""
 
-#: ../../admin/install.rst:1409 ../../admin/install.rst:1438
+#: ../../admin/install.rst:1412 ../../admin/install.rst:1441
 msgid "In short, you need to adjust :file:`settings.py`:"
 msgstr ""
 
-#: ../../admin/install.rst:1433
+#: ../../admin/install.rst:1436
 msgid "Rollbar"
 msgstr ""
 
-#: ../../admin/install.rst:1435
+#: ../../admin/install.rst:1438
 msgid ""
-"Weblate has built in support for `Rollbar <https://rollbar.com/>`_. To "
+"Weblate has built-in support for `Rollbar <https://rollbar.com/>`_. To "
 "use it it's enough to follow instructions for `Rollbar notifier for "
 "Python <https://docs.rollbar.com/docs/python/>`_."
 msgstr ""
 
-#: ../../admin/install.rst:1457
+#: ../../admin/install.rst:1460
 msgid ""
 "Everything else is integrated automatically, you will now collect both "
 "server and client side errors."
 msgstr ""
 
-#: ../../admin/install.rst:1466
+#: ../../admin/install.rst:1469
 msgid "Migrating Weblate to another server"
 msgstr ""
 
-#: ../../admin/install.rst:1468
+#: ../../admin/install.rst:1471
 msgid ""
 "Migrating Weblate to another server should be pretty easy, however it "
 "stores data in few locations which you should migrate carefully. The best"
-" approach is to stop migrated Weblate for the migration."
+" approach is to stop Weblate for the migration."
 msgstr ""
 
-#: ../../admin/install.rst:1473
+#: ../../admin/install.rst:1476
 msgid "Migrating database"
 msgstr ""
 
-#: ../../admin/install.rst:1475
+#: ../../admin/install.rst:1478
 msgid ""
 "Depending on your database backend, you might have several options to "
 "migrate the database. The most straightforward one is to dump the "
@@ -6426,44 +6467,44 @@ msgid ""
 "can use replication in case your database supports it."
 msgstr ""
 
-#: ../../admin/install.rst:1480
+#: ../../admin/install.rst:1483
 msgid ""
-"The best approach is to use database native tools as they are usually the"
-" most effective (eg. :command:`mysqldump` or :command:`pg_dump`). If you "
-"want to migrate between different databases, the only option might be to "
-"use Django management to dump and import the database:"
+"The best approach is to use database native tools, as they are usually "
+"the most effective (e.g. :command:`mysqldump` or :command:`pg_dump`). If "
+"you want to migrate between different databases, the only option might be"
+" to use Django management to dump and import the database:"
 msgstr ""
 
-#: ../../admin/install.rst:1493
+#: ../../admin/install.rst:1496
 msgid "Migrating VCS repositories"
 msgstr ""
 
-#: ../../admin/install.rst:1495
+#: ../../admin/install.rst:1498
 msgid ""
 "The VCS repositories stored under :setting:`DATA_DIR` need to be migrated"
 " as well. You can simply copy them or use :command:`rsync` to do the "
 "migration more effectively."
 msgstr ""
 
-#: ../../admin/install.rst:1500
+#: ../../admin/install.rst:1503
 msgid "Migrating fulltext index"
 msgstr ""
 
-#: ../../admin/install.rst:1502
+#: ../../admin/install.rst:1505
 msgid ""
-"For the fulltext index (stored in :setting:`DATA_DIR`) it is better not "
-"to migrate it, but rather to generate a fresh one using "
+"For the fulltext index, (stored in :setting:`DATA_DIR`) it is better not "
+"to migrate it, but rather generate a fresh one using "
 ":djadmin:`rebuild_index`."
 msgstr ""
 
-#: ../../admin/install.rst:1506
+#: ../../admin/install.rst:1509
 msgid "Other notes"
 msgstr ""
 
-#: ../../admin/install.rst:1508
+#: ../../admin/install.rst:1511
 msgid ""
-"Don't forget to move other services which Weblate might have been using "
-"like redis, memcached, cron jobs or custom authentication backends."
+"Don't forget to move other services Weblate might have been using like "
+"Redis, Memcached, Cron jobs or custom authentication backends."
 msgstr ""
 
 #: ../../admin/languages.rst:4
@@ -7785,7 +7826,7 @@ msgstr ""
 #: ../../admin/management.rst:708
 msgid ""
 "Rebuilds index for fulltext search. This might be lengthy operation if "
-"you have a huge set of translation units."
+"you have a huge set of translation strings."
 msgstr ""
 
 #: ../../admin/management.rst:713
@@ -7858,7 +7899,7 @@ msgstr ""
 
 #: ../../admin/management.rst:777
 msgid ""
-"Updates all check for all units. This could be useful only on upgrades "
+"Updates all check for all strings. This could be useful only on upgrades "
 "which do major changes to checks."
 msgstr ""
 
@@ -8414,7 +8455,13 @@ msgid ""
 "interface`."
 msgstr ""
 
-#: ../../admin/projects.rst:41
+#: ../../admin/projects.rst:43
+msgid ""
+"Since the 3.4 release, the process of adding component is multi stage "
+"with automated discovery of most parameters."
+msgstr ""
+
+#: ../../admin/projects.rst:46
 msgid ""
 "Based on your permissions, you can be able to create new translation "
 "projects and components in Weblate. It is always allowed for superusers "
@@ -8423,11 +8470,11 @@ msgid ""
 "allowance."
 msgstr ""
 
-#: ../../admin/projects.rst:46
+#: ../../admin/projects.rst:51
 msgid "You can view your current billing plan on separate page:"
 msgstr ""
 
-#: ../../admin/projects.rst:50
+#: ../../admin/projects.rst:55
 #, fuzzy
 msgid ""
 "The project creation can be initiated from there or using menu in "
@@ -8435,25 +8482,41 @@ msgid ""
 "about the translation project:"
 msgstr "プロジェクトの作成はそこから、もしくはナビゲーションバーのメニューを使って開始することができます。その後にまず翻訳プロジェクトについての基本的な情報を入力してください。"
 
-#: ../../admin/projects.rst:56
+#: ../../admin/projects.rst:61
 msgid "After creating the project, you are directly taken to the project page:"
 msgstr "プロジェクトを作成することにより、プロジェクトのページに移動します。"
 
-#: ../../admin/projects.rst:60
+#: ../../admin/projects.rst:65
+#, fuzzy
 msgid ""
-"Creating new translation component can be initiated by single click there"
-" and you will have to fill in translation component information now:"
+"Creating new translation component can be initiated by single click "
+"there.  The process of creating component is multi staged and "
+"automatically detects most of the translation parameters."
 msgstr "ワンクリックで新しい翻訳コンポーネントの作成を開始できますので、今度は翻訳コンポーネントの情報を入力してください。"
 
-#: ../../admin/projects.rst:67
+#: ../../admin/projects.rst:69
+msgid "First you need to fill in name and repository location:"
+msgstr ""
+
+#: ../../admin/projects.rst:73
+msgid "On next page, you are presented list of discovered translatable resources:"
+msgstr ""
+
+#: ../../admin/projects.rst:77
+msgid ""
+"As a last step you will review the translation component information and "
+"fill in optional details:"
+msgstr ""
+
+#: ../../admin/projects.rst:84
 msgid ":ref:`admin-interface`, :ref:`project`, :ref:`component`"
 msgstr ""
 
-#: ../../admin/projects.rst:74
+#: ../../admin/projects.rst:91
 msgid "Project configuration"
 msgstr "プロジェクトの設定"
 
-#: ../../admin/projects.rst:76
+#: ../../admin/projects.rst:93
 msgid ""
 "To add a new component to translate, you need to create a translation "
 "project first. The project is a sort of shelf, in which real translations"
@@ -8463,97 +8526,97 @@ msgid ""
 "configuration)."
 msgstr "翻訳する新しいコンポーネントを追加するには、まず翻訳プロジェクトを作成する必要があります。プロジェクトは棚のようなもので、実際の翻訳がそこに収納されます。同一のプロジェクト内のすべてのコンポーネントは、提案と辞書を共有します。同時に翻訳も、コンポーネントの設定で無効にしない限り、同一プロジェクト内のすべてのコンポーネントで自動的に共有されます。"
 
-#: ../../admin/projects.rst:82
+#: ../../admin/projects.rst:99
 msgid ""
 "The project has only a few attributes giving translators information "
 "about the project:"
 msgstr "プロジェクトについて翻訳者に与えられる情報はごくわずかです。"
 
-#: ../../admin/projects.rst:85
+#: ../../admin/projects.rst:102
 msgid "Project website"
 msgstr "プロジェクトのウェブサイト"
 
-#: ../../admin/projects.rst:86
+#: ../../admin/projects.rst:103
 msgid "URL where translators can find more information about the project."
 msgstr "翻訳者がプロジェクトについてより進んだ情報を得ることのできるURLです。"
 
-#: ../../admin/projects.rst:87
+#: ../../admin/projects.rst:104
 msgid "Mailing list"
 msgstr "メーリングリスト"
 
-#: ../../admin/projects.rst:88
+#: ../../admin/projects.rst:105
 msgid "Mailing list where translators can discuss or comment on translations."
 msgstr "翻訳者が翻訳について討議したり意見を述べたりすることのできるメーリングリストです。"
 
-#: ../../admin/projects.rst:89
+#: ../../admin/projects.rst:106
 msgid "Translation instructions"
 msgstr "翻訳の手順"
 
-#: ../../admin/projects.rst:90
+#: ../../admin/projects.rst:107
 msgid "URL where you have more detailed instructions for translators."
 msgstr "翻訳者が翻訳の手順などについてより詳細な指示を得ることのできるURLです。"
 
-#: ../../admin/projects.rst:92
+#: ../../admin/projects.rst:109
 msgid "Set Translation-Team header"
 msgstr "翻訳チームのヘッダーの設定"
 
-#: ../../admin/projects.rst:92
+#: ../../admin/projects.rst:109
 msgid ""
 "Whether Weblate should manage Translation-Team header (this is "
 ":ref:`gettext` only feature right now)."
 msgstr "翻訳チームのヘッダーをWeblateで扱うかどうかを設定します（この機能は今のところ :ref:`gettext` でのみ有効です）。"
 
-#: ../../admin/projects.rst:94
+#: ../../admin/projects.rst:111
 msgid "Use shared translation memory"
 msgstr "共有翻訳メモリの使用"
 
-#: ../../admin/projects.rst:95
+#: ../../admin/projects.rst:112
 msgid ""
 "Whether to use shared translation memory, see :ref:`shared-tm` for more "
 "details."
 msgstr "共有翻訳メモリを使用するかどうかを設定します。詳しくは :ref:`shared-tm` を参照してください。"
 
-#: ../../admin/projects.rst:97
+#: ../../admin/projects.rst:114
 msgid "Configure per project access control, see :ref:`acl` for more details."
 msgstr "プロジェクトごとのアクセスコントロールを設定します。詳しくは :ref:`acl` を参照してください。"
 
-#: ../../admin/projects.rst:98
+#: ../../admin/projects.rst:115
 msgid "Enable reviews"
 msgstr "レビューの有効化"
 
-#: ../../admin/projects.rst:99
+#: ../../admin/projects.rst:116
 msgid "Enable review workflow, see :ref:`reviews`."
 msgstr "レビューワークフローを有効にします。:ref:`reviews` を参照してください。"
 
-#: ../../admin/projects.rst:100
+#: ../../admin/projects.rst:117
 msgid "Enable hooks"
 msgstr "フックの有効化"
 
-#: ../../admin/projects.rst:101
+#: ../../admin/projects.rst:118
 msgid "Whether unauthenticated :ref:`hooks` will be enabled for this repository."
 msgstr "このリポジトリに対して、認証されていない :ref:`hooks` を有効にするかどうかを設定します。"
 
-#: ../../admin/projects.rst:104
+#: ../../admin/projects.rst:121
 msgid "Source language"
 msgstr "原文の言語"
 
-#: ../../admin/projects.rst:103
+#: ../../admin/projects.rst:120
 msgid ""
 "Language used for source strings in all components. Change this if you "
 "are translating from something else than English."
 msgstr "すべてのコンポーネントの原文で使用されている言語です。英語以外の言語から翻訳するときはここを変更してください。"
 
-#: ../../admin/projects.rst:108 ../../admin/projects.rst:259
+#: ../../admin/projects.rst:125 ../../admin/projects.rst:276
 msgid ""
 "Most of the fields can be edited by project owners or managers in the "
 "Weblate interface."
 msgstr "ほとんどの記入フィールドは、プロジェクトの所有者もしくは管理者によって、Weblateのインターフェイスから編集することができます。"
 
-#: ../../admin/projects.rst:112
+#: ../../admin/projects.rst:129
 msgid "Adjusting interaction"
 msgstr "インタラクションの調整"
 
-#: ../../admin/projects.rst:114
+#: ../../admin/projects.rst:131
 msgid ""
 "There are also additional features which you can control, like automatic "
 "pushing of changes (see also :ref:`push-changes`) or maintaining of "
@@ -8562,11 +8625,11 @@ msgstr ""
 "この他にも、変更の自動プッシュ（:ref:`push-changes` "
 "も参照してください）や翻訳チームのヘッダーのメンテなど、制御が可能な追加機能がいくつかあります。"
 
-#: ../../admin/projects.rst:121
+#: ../../admin/projects.rst:138
 msgid "Component configuration"
 msgstr "コンポーネント設定"
 
-#: ../../admin/projects.rst:123
+#: ../../admin/projects.rst:140
 msgid ""
 "Component is real component for translating. You enter VCS repository "
 "location and file mask for which files to translate and Weblate "
@@ -8576,30 +8639,31 @@ msgstr ""
 "コンポーネントは実際に翻訳する構成要素です。VCSレポジトリの場所と、どのファイルを翻訳すべきかのファイルマスクを入力すると、Weblateは自動的に"
 " VCS から取得し、マッチするすべての翻訳ファイルを見つけます。"
 
-#: ../../admin/projects.rst:127
+#: ../../admin/projects.rst:144
 msgid ""
 "You can find some examples of typical configurations in the "
 ":ref:`formats`."
 msgstr "典型的な設定例を :ref:`formats` のセクションで見ることができます。"
 
-#: ../../admin/projects.rst:131
+#: ../../admin/projects.rst:148
 msgid ""
 "It is recommended to have translation components of reasonable size - "
 "split the translation by anything what makes sense in your case "
 "(individual applications or addons, book chapters or websites)."
 msgstr "コンポーネントは適切なサイズに保つことをお勧めします。個々のアプリケーションやアドオン、本の各章や個々のウェブサイトなど、それぞれのケースに応じて意味のある基準で翻訳を分割してください。"
 
-#: ../../admin/projects.rst:135
+#: ../../admin/projects.rst:152
+#, fuzzy
 msgid ""
-"Weblate easily handles translations with 10000 of units, but it is harder"
-" to split work and coordinate among translators with such a large "
+"Weblate easily handles translations with 10000 of strings, but it is "
+"harder to split work and coordinate among translators with such a large "
 "translation. Also when one translator is working on a component, this "
 "translation is locked for others, see :ref:`locking`."
 msgstr ""
 "Weblateは10000単位の翻訳を苦もなく処理できますが、そのような大規模な翻訳では、作業を分割し翻訳者間で調整することはより困難になります。また、一人の翻訳者があるコンポーネントの翻訳に取り組んでいる間、このコンポーネントの翻訳は他の翻訳者からは不可能になります。:ref:`locking`"
 " を参照してください。"
 
-#: ../../admin/projects.rst:140
+#: ../../admin/projects.rst:157
 msgid ""
 "Should the language definition for translation be missing, an empty "
 "definition is created and named as \"cs_CZ (generated)\". You should "
@@ -8607,31 +8671,31 @@ msgid ""
 " missing language can be included in next release."
 msgstr ""
 
-#: ../../admin/projects.rst:145
+#: ../../admin/projects.rst:162
 msgid ""
 "The component contains all important parameters for working with VCS and "
 "getting translations out of it:"
 msgstr "コンポーネントには、VCSを使用してそこから翻訳を取得するための、すべての重要なパラメータが含まれています。"
 
-#: ../../admin/projects.rst:148
+#: ../../admin/projects.rst:165
 msgid "Version control system"
 msgstr "バージョンコントロールシステム"
 
-#: ../../admin/projects.rst:149
+#: ../../admin/projects.rst:166
 msgid "VCS to use, see :ref:`vcs` for details."
 msgstr "使用するVCSです。詳しくは :ref:`vcs` を参照してください。"
 
-#: ../../admin/projects.rst:154
+#: ../../admin/projects.rst:171
 msgid "Source code repository"
 msgstr "ソースコードリポジトリ"
 
-#: ../../admin/projects.rst:151
+#: ../../admin/projects.rst:168
 msgid ""
 "VCS repository used to pull changes, see :ref:`vcs-repos` for more "
 "details."
 msgstr "変更を取得するために使用するVCSリポジトリです。より詳しくは :ref:`vcs-repos` を参照してください。"
 
-#: ../../admin/projects.rst:153
+#: ../../admin/projects.rst:170
 msgid ""
 "This can be either a real VCS URL or ``weblate://project/component`` "
 "indicating that the repository should be shared with another component. "
@@ -8640,11 +8704,11 @@ msgstr ""
 "これは実際のVCSのURLであることもできますし、そのリポジトリが他のコンポーネントと共有されるべきであることを示す、``weblate://project/component``"
 " であることもできます。より詳しくは :ref:`internal-urls` を参照してください。"
 
-#: ../../admin/projects.rst:158
+#: ../../admin/projects.rst:175
 msgid "Repository push URL"
 msgstr "リポジトリのプッシュURL"
 
-#: ../../admin/projects.rst:157
+#: ../../admin/projects.rst:174
 msgid ""
 "Repository URL used for pushing, this is completely optional and push "
 "support will be disabled when this is empty. See :ref:`vcs-repos` for "
@@ -8653,44 +8717,44 @@ msgstr ""
 "プッシュの際に使われるリポジトリのURLです。これは完全にオプションです。ここを空欄にしておけば、プッシュのサポートは無効化されます。リポジトリのURLをどのように特定するかについてのより詳しい説明は、:ref"
 ":`vcs-repos` を参照してください。"
 
-#: ../../admin/projects.rst:172
+#: ../../admin/projects.rst:189
 msgid "Repository browser"
 msgstr "リポジトリの閲覧"
 
-#: ../../admin/projects.rst:161
+#: ../../admin/projects.rst:178
 msgid ""
 "URL of repository browser to display source files (location where "
 "messages are used). When empty no such links will be generated."
 msgstr "ソースファイルを閲覧するためのリポジトリのURL（そのメッセージが使われている場所）です。空欄であればこのリンクは生成されません。"
 
-#: ../../admin/projects.rst:164
+#: ../../admin/projects.rst:181
 msgid "You can use following format strings:"
 msgstr "以下の書式が使用可能です。"
 
-#: ../../admin/projects.rst:166
+#: ../../admin/projects.rst:183
 #, python-format
 msgid "``%(branchs)s`` - current branch"
 msgstr "``%(branchs)s`` - 現在のブランチ"
 
-#: ../../admin/projects.rst:167
+#: ../../admin/projects.rst:184
 #, python-format
 msgid "``%(line)s`` - line in file"
 msgstr "``%(line)s`` - ファイル中の行"
 
-#: ../../admin/projects.rst:168
+#: ../../admin/projects.rst:185
 #, python-format
 msgid "``%(file)s`` - filename"
 msgstr "``%(file)s`` - ファイル名"
 
-#: ../../admin/projects.rst:169
+#: ../../admin/projects.rst:186
 msgid "``%(../file)s`` - filename in parent directory"
 msgstr "``%(../file)s`` - 親ディレクトリのファイル名"
 
-#: ../../admin/projects.rst:170
+#: ../../admin/projects.rst:187
 msgid "``%(../../file)s`` - filename in grandparent directory"
 msgstr "``%(../../file)s`` - 親の親ディレクトリのファイル名"
 
-#: ../../admin/projects.rst:172
+#: ../../admin/projects.rst:189
 #, python-format
 msgid ""
 "For example on GitHub, you would use something like "
@@ -8699,11 +8763,11 @@ msgstr ""
 "例えばGitHubなら、``https://github.com/WeblateOrg/hello/blob/%(branch)s/%(file)s#L%(line)s``"
 " のように使うことができます。"
 
-#: ../../admin/projects.rst:177
+#: ../../admin/projects.rst:194
 msgid "Exported repository URL"
 msgstr "出力リポジトリのURL"
 
-#: ../../admin/projects.rst:175
+#: ../../admin/projects.rst:192
 msgid ""
 "URL where changes made by Weblate are exported. This is important when "
 ":ref:`continuous-translation` is not used or when there is need to "
@@ -8714,19 +8778,19 @@ msgstr ""
 "を行わないとき、あるいは手動で変更をマージしなけれなならないときに重要です。これをGitリポジトリに対して自動化するためには、:ref:`git-"
 "exporter` を使うことができます。"
 
-#: ../../admin/projects.rst:179
+#: ../../admin/projects.rst:196
 msgid "Repository branch"
 msgstr "リポジトリのブランチ"
 
-#: ../../admin/projects.rst:180
+#: ../../admin/projects.rst:197
 msgid "Which branch to checkout from the VCS and where to look for translations."
 msgstr "VCSからチェックアウトして翻訳を探すべきブランチです。"
 
-#: ../../admin/projects.rst:190
+#: ../../admin/projects.rst:207
 msgid "File mask"
 msgstr "ファイルマスク"
 
-#: ../../admin/projects.rst:182
+#: ../../admin/projects.rst:199
 msgid ""
 "Mask of files to translate including path. It should include one * "
 "replacing language code (see :ref:`languages` for information how this is"
@@ -8738,11 +8802,11 @@ msgstr ""
 "をひとつ含んでいなければなりません（これがどのように処理されるかについての情報は :ref:`languages` "
 "を参照してください）。リポジトリに複数の翻訳ファイルがある場合（例えば複数のGettextドメインがある場合）は、それぞれ独立してコンポーネントを作成しなければなりません。"
 
-#: ../../admin/projects.rst:188
+#: ../../admin/projects.rst:205
 msgid "For example ``po/*.po`` or ``locale/*/LC_MESSAGES/django.po``."
 msgstr "例としては ``po/*.po`` や ``locale/*/LC_MESSAGES/django.po`` などといったようになります。"
 
-#: ../../admin/projects.rst:190
+#: ../../admin/projects.rst:207
 msgid ""
 "In case your filename contains special chars such as ``[``, ``]``, these "
 "need to be escaped as ``[[]`` or ``[]]``."
@@ -8750,27 +8814,27 @@ msgstr ""
 "ファイル名に ``[`` や ``]`` などの特別な文字を含む場合は、これらは ``[[]`` や ``[]]`` "
 "のようにエスケープされなければなりません。"
 
-#: ../../admin/projects.rst:192
+#: ../../admin/projects.rst:209
 msgid "Monolingual base language file"
 msgstr "単一言語基盤言語ファイル"
 
-#: ../../admin/projects.rst:193
+#: ../../admin/projects.rst:210
 msgid "Base file containing strings definition for :ref:`monolingual`."
 msgstr ":ref:`monolingual` のための言語定義を含んだベースファイルです。"
 
-#: ../../admin/projects.rst:194
+#: ../../admin/projects.rst:211
 msgid "Edit base file"
 msgstr "ベースファイルの編集"
 
-#: ../../admin/projects.rst:195
+#: ../../admin/projects.rst:212
 msgid "Whether to allow editing of base file for :ref:`monolingual`."
 msgstr ":ref:`monolingual` のためのベースファイルを編集することを許可するかどうかを設定します。"
 
-#: ../../admin/projects.rst:197
+#: ../../admin/projects.rst:214
 msgid "Base file for new translations"
 msgstr "新規翻訳のためのベースファイル"
 
-#: ../../admin/projects.rst:197
+#: ../../admin/projects.rst:214
 msgid ""
 "Base file used to generate new translations, eg. ``.pot`` file with "
 "Gettext, see :ref:`new-translations` for more information."
@@ -8778,112 +8842,112 @@ msgstr ""
 "新規に翻訳ファイルを生成するためのベースとなるファイルです。例えばGettextにおいては ``.pot`` "
 "ファイルがそれにあたります。より詳しい情報は :ref:`new-translations` を参照してください。"
 
-#: ../../admin/projects.rst:199
+#: ../../admin/projects.rst:216
 msgid "File format"
 msgstr "ファイルフォーマット"
 
-#: ../../admin/projects.rst:200
+#: ../../admin/projects.rst:217
 msgid "Translation file format, see also :ref:`formats`."
 msgstr "翻訳ファイルのフォーマットです。:ref:`formats` も参照してください。"
 
-#: ../../admin/projects.rst:202
+#: ../../admin/projects.rst:219
 msgid "Source string bug report address"
 msgstr "原文のバグレポートのためのアドレス"
 
-#: ../../admin/projects.rst:202
+#: ../../admin/projects.rst:219
 msgid ""
 "Email address used for reporting upstream bugs. This address will also "
 "receive notification about any source string comments made in Weblate."
 msgstr "原文のバグを報告するために使われるメールアドレスです。このメールアドレスは、Weblateにおいて原文に対して行われた、あらゆるコメントの通知を受け取るアドレスにもなります。"
 
-#: ../../admin/projects.rst:204
+#: ../../admin/projects.rst:221
 msgid "Locked"
 msgstr "翻訳のロック"
 
-#: ../../admin/projects.rst:205
+#: ../../admin/projects.rst:222
 msgid "You can lock the translation to prevent updates by users."
 msgstr "ユーザによるアップデートが行われないよう、翻訳をロックすることができます。"
 
-#: ../../admin/projects.rst:211
+#: ../../admin/projects.rst:228
 msgid "Allow translation propagation"
 msgstr "翻訳の伝播の許可"
 
-#: ../../admin/projects.rst:207
+#: ../../admin/projects.rst:224
 msgid ""
 "You can disable propagation of translations to this component from other "
 "components within same project. This really depends on what you are "
 "translating, sometimes it's desirable to have same string used."
 msgstr "同一プロジェクト内の他のコンポーネントの翻訳が、このコンポーネントに伝播し共有されることを、無効にすることができます。これは翻訳の内容に強く依存するもので、同じ言葉を用いることが望ましい場合もあります。"
 
-#: ../../admin/projects.rst:211
+#: ../../admin/projects.rst:228
 msgid ""
 "It's usually a good idea to disable this for monolingual translations "
 "unless you are using the same IDs across the whole project."
 msgstr "monolingual翻訳においては、プロジェクトの全体で同じメッセージIDを使っていない限りは、通常これを無効にするのが望ましいです。"
 
-#: ../../admin/projects.rst:213
+#: ../../admin/projects.rst:230
 msgid "Save translation history"
 msgstr "翻訳履歴の保存"
 
-#: ../../admin/projects.rst:214
+#: ../../admin/projects.rst:231
 msgid "Whether to store a history of translation changes in database."
 msgstr "データベースに翻訳の変更履歴を保存するかどうかを設定します。"
 
-#: ../../admin/projects.rst:215
+#: ../../admin/projects.rst:232
 msgid "Enable suggestions"
 msgstr "提案の有効化"
 
-#: ../../admin/projects.rst:216
+#: ../../admin/projects.rst:233
 msgid "Whether translation suggestions are accepted for this component."
 msgstr "このコンポーネントで翻訳の提案を受け入れるかどうかを設定します。"
 
-#: ../../admin/projects.rst:217 ../../admin/translating.rst:7
+#: ../../admin/projects.rst:234 ../../admin/translating.rst:7
 msgid "Suggestion voting"
 msgstr "提案の投票"
 
-#: ../../admin/projects.rst:218
+#: ../../admin/projects.rst:235
 msgid "Enable voting for suggestions, see :ref:`voting`."
 msgstr "提案に対する投票を有効化します。:ref:`voting` を参照してください。"
 
-#: ../../admin/projects.rst:219
+#: ../../admin/projects.rst:236
 msgid "Autoaccept suggestions"
 msgstr "提案の自動受け入れ"
 
-#: ../../admin/projects.rst:220
+#: ../../admin/projects.rst:237
 msgid "Automatically accept voted suggestions, see :ref:`voting`."
 msgstr "投票された提案を自動で受け入れます。:ref:`voting` を参照してください。"
 
-#: ../../admin/projects.rst:221 ../../admin/translating.rst:69
+#: ../../admin/projects.rst:238 ../../admin/translating.rst:69
 msgid "Translation flags"
 msgstr "翻訳フラグ"
 
-#: ../../admin/projects.rst:222
+#: ../../admin/projects.rst:239
 msgid ""
 "Customization of quality checks and other Weblate behavior, see :ref"
 ":`custom-checks`."
 msgstr "品質チェックやその他のWeblateの挙動をカスタマイズします。:ref:`custom-checks` を参照してください。"
 
-#: ../../admin/projects.rst:223
+#: ../../admin/projects.rst:240
 msgid "Translation license"
 msgstr "翻訳のライセンス"
 
-#: ../../admin/projects.rst:224
+#: ../../admin/projects.rst:241
 msgid "License of this translation."
 msgstr "この翻訳のライセンスです。"
 
-#: ../../admin/projects.rst:225
+#: ../../admin/projects.rst:242
 msgid "License URL"
 msgstr "ライセンスのURL"
 
-#: ../../admin/projects.rst:226
+#: ../../admin/projects.rst:243
 msgid "URL where users can find full text of a license."
 msgstr "ユーザがライセンスの全文を読むことのできるURLです。"
 
-#: ../../admin/projects.rst:228
+#: ../../admin/projects.rst:245
 msgid "New language"
 msgstr "新規言語"
 
-#: ../../admin/projects.rst:228
+#: ../../admin/projects.rst:245
 msgid ""
 "How to handle requests for creating new languages. Please note that the "
 "availability of choices depends on the file format, see :ref:`formats`."
@@ -8891,11 +8955,11 @@ msgstr ""
 "新規言語の作成のリクエストをどのように扱うかを設定します。ここでの選択肢はファイルフォーマットに依存することに注意してください。:ref:`formats`"
 " を参照してください。"
 
-#: ../../admin/projects.rst:232
+#: ../../admin/projects.rst:249
 msgid "Merge style"
 msgstr "マージのスタイル"
 
-#: ../../admin/projects.rst:231
+#: ../../admin/projects.rst:248
 msgid ""
 "You can configure how the updates from the upstream repository are "
 "handled. This might not be supported for some VCS. See :ref:`merge-"
@@ -8904,19 +8968,19 @@ msgstr ""
 "上流リポジトリにおける変更をどのように扱うかを設定することができます。使用するVCSによってはこの設定はサポートされないかもしれません。より詳しくは"
 " :ref:`merge-rebase` を参照してください。"
 
-#: ../../admin/projects.rst:234
+#: ../../admin/projects.rst:251
 msgid "Commit message"
 msgstr "コミットメッセージ"
 
-#: ../../admin/projects.rst:235
+#: ../../admin/projects.rst:252
 msgid "Message used when committing translation, see :ref:`markup`."
 msgstr "翻訳をコミットする際に使われるメッセージです。:ref:`markup` を参照してください。"
 
-#: ../../admin/projects.rst:238
+#: ../../admin/projects.rst:255
 msgid "Committer name"
 msgstr "コミッタの名前"
 
-#: ../../admin/projects.rst:237
+#: ../../admin/projects.rst:254
 msgid ""
 "Name of the committer used on Weblate commits, the author will be always "
 "the real translator. On some VCS this might be not supported. Default "
@@ -8925,11 +8989,11 @@ msgstr ""
 "Weblateからコミットする際に使われるコミッタの名前です。常に実際の翻訳者の名前が使われます。使用するVCSによってはこの設定はサポートされないかもしれません。初期設定値は"
 " :setting:`DEFAULT_COMMITER_NAME` で変更することができます。"
 
-#: ../../admin/projects.rst:242
+#: ../../admin/projects.rst:259
 msgid "Committer email"
 msgstr "コミッタのメールアドレス"
 
-#: ../../admin/projects.rst:241
+#: ../../admin/projects.rst:258
 msgid ""
 "Email of committer used on Weblate commits, the author will be always the"
 " real translator. On some VCS this might be not supported. Default value "
@@ -8938,21 +9002,21 @@ msgstr ""
 "Weblateからコミットする際に使われるコミッタのメールアドレスです。常に実際の翻訳者のメールアドレスが使われます。使用するVCSによってはこの設定はサポートされないかもしれません。初期設定値は"
 " :setting:`DEFAULT_COMMITER_EMAIL` で変更することができます。"
 
-#: ../../admin/projects.rst:245
+#: ../../admin/projects.rst:262
 msgid "Push on commit"
 msgstr "コミット時のプッシュ"
 
-#: ../../admin/projects.rst:245
+#: ../../admin/projects.rst:262
 msgid ""
 "Whether any committed changes should be automatically pushed to upstream "
 "repository."
 msgstr "コミットされたすべての変更を自動的に上流リポジトリにプッシュするかどうかを設定します。"
 
-#: ../../admin/projects.rst:249
+#: ../../admin/projects.rst:266
 msgid "Age of changes to commit"
 msgstr "コミットすべき変更の経過時間"
 
-#: ../../admin/projects.rst:248
+#: ../../admin/projects.rst:265
 msgid ""
 "Configures how old changes (in hours) will be committed by "
 ":djadmin:`commit_pending` management command (usually executed by cron). "
@@ -8962,11 +9026,11 @@ msgstr ""
 "管理コマンド（通常はcronにより実行されます）において、どの程度の時間までさかのぼって変更をコミットするかを設定します。初期設定値は "
 ":setting:`COMMIT_PENDING_HOURS` で変更することができます。"
 
-#: ../../admin/projects.rst:255
+#: ../../admin/projects.rst:272
 msgid "Language filter"
 msgstr "言語フィルタ"
 
-#: ../../admin/projects.rst:252
+#: ../../admin/projects.rst:269
 msgid ""
 "Regular expression which is used to filter translation when scanning for "
 "file mask. This can be used to limit list of languages managed by Weblate"
@@ -8977,213 +9041,213 @@ msgstr ""
 " ``^(cs|de|es)$`` "
 "とすると、ここに列挙された言語のみを含むようになります。ファイル名中で実際に使われている言語コードをリストアップする必要があることに注意してください。"
 
-#: ../../admin/projects.rst:264
+#: ../../admin/projects.rst:281
 msgid ":ref:`faq-vcs`, :ref:`alerts`"
 msgstr ""
 
-#: ../../admin/projects.rst:269
+#: ../../admin/projects.rst:286
 msgid "Template markup"
 msgstr ""
 
-#: ../../admin/projects.rst:271
+#: ../../admin/projects.rst:288
 msgid ""
 "Weblate uses simple markup language on several places where text "
 "rendering is needed. It is based on :doc:`django:ref/templates/language` "
 "so it can be quite powerful."
 msgstr ""
 
-#: ../../admin/projects.rst:275
+#: ../../admin/projects.rst:292
 msgid "Currently it is used in:"
 msgstr ""
 
-#: ../../admin/projects.rst:277
+#: ../../admin/projects.rst:294
 msgid "Commit message formatting, see :ref:`component`"
 msgstr ""
 
-#: ../../admin/projects.rst:281
+#: ../../admin/projects.rst:298
 msgid "Several addons"
 msgstr ""
 
-#: ../../admin/projects.rst:279
+#: ../../admin/projects.rst:296
 msgid ":ref:`addon-weblate.discovery.discovery`"
 msgstr ""
 
-#: ../../admin/projects.rst:280
+#: ../../admin/projects.rst:297
 msgid ":ref:`addon-weblate.generate.generate`"
 msgstr ""
 
-#: ../../admin/projects.rst:281
+#: ../../admin/projects.rst:298
 msgid ":ref:`addon-script`"
 msgstr ""
 
-#: ../../admin/projects.rst:283
+#: ../../admin/projects.rst:300
 msgid "There are following variables available in the templates:"
 msgstr ""
 
-#: ../../admin/projects.rst:285
+#: ../../admin/projects.rst:302
 msgid "``{{ language_code }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:286
+#: ../../admin/projects.rst:303
 msgid "Language code"
 msgstr ""
 
-#: ../../admin/projects.rst:287
+#: ../../admin/projects.rst:304
 msgid "``{{ language_name }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:288
+#: ../../admin/projects.rst:305
 msgid "Language name"
 msgstr ""
 
-#: ../../admin/projects.rst:289
+#: ../../admin/projects.rst:306
 msgid "``{{ component_name }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:290
+#: ../../admin/projects.rst:307
 msgid "Component name"
 msgstr ""
 
-#: ../../admin/projects.rst:291
+#: ../../admin/projects.rst:308
 msgid "``{{ component_slug }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:292
+#: ../../admin/projects.rst:309
 msgid "Component slug"
 msgstr ""
 
-#: ../../admin/projects.rst:293
+#: ../../admin/projects.rst:310
 msgid "``{{ project_name }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:294
+#: ../../admin/projects.rst:311
 msgid "Project name"
 msgstr ""
 
-#: ../../admin/projects.rst:295
+#: ../../admin/projects.rst:312
 msgid "``{{ project_slug }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:296
+#: ../../admin/projects.rst:313
 msgid "Project slug"
 msgstr ""
 
-#: ../../admin/projects.rst:297
+#: ../../admin/projects.rst:314
 msgid "``{{ url }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:298
+#: ../../admin/projects.rst:315
 msgid "Translation URL"
 msgstr ""
 
-#: ../../admin/projects.rst:299
+#: ../../admin/projects.rst:316
 msgid "``{{ stats }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:300
+#: ../../admin/projects.rst:317
 msgid "Translation stats, this has further attributes, see below for examples."
 msgstr ""
 
-#: ../../admin/projects.rst:301
+#: ../../admin/projects.rst:318
 msgid "``{{ stats.all }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:302
+#: ../../admin/projects.rst:319
 msgid "Total strings count"
 msgstr ""
 
-#: ../../admin/projects.rst:303
+#: ../../admin/projects.rst:320
 msgid "``{{ stats.fuzzy }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:304
+#: ../../admin/projects.rst:321
 msgid "Count of strings needing review"
 msgstr ""
 
-#: ../../admin/projects.rst:305
+#: ../../admin/projects.rst:322
 msgid "``{{ stats.fuzzy_percent }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:306
+#: ../../admin/projects.rst:323
 msgid "Percent of strings needing review"
 msgstr ""
 
-#: ../../admin/projects.rst:307
+#: ../../admin/projects.rst:324
 msgid "``{{ stats.translated }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:308
+#: ../../admin/projects.rst:325
 msgid "Translated strings count"
 msgstr ""
 
-#: ../../admin/projects.rst:309
+#: ../../admin/projects.rst:326
 msgid "``{{ stats.translated_percent }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:310
+#: ../../admin/projects.rst:327
 msgid "Translated strings percent"
 msgstr ""
 
-#: ../../admin/projects.rst:311
+#: ../../admin/projects.rst:328
 msgid "``{{ stats.allchecks }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:312
+#: ../../admin/projects.rst:329
 msgid "Number of strings with failing check"
 msgstr ""
 
-#: ../../admin/projects.rst:313
+#: ../../admin/projects.rst:330
 msgid "``{{ stats.allchecks_percent }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:314
+#: ../../admin/projects.rst:331
 msgid "Percent of strings with failing check"
 msgstr ""
 
-#: ../../admin/projects.rst:316
+#: ../../admin/projects.rst:333
 msgid "``{{ author }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:316
+#: ../../admin/projects.rst:333
 msgid "Author of current commit, available only in the commit scope."
 msgstr ""
 
-#: ../../admin/projects.rst:318
+#: ../../admin/projects.rst:335
 msgid "You can combine them with filters:"
 msgstr ""
 
-#: ../../admin/projects.rst:324
+#: ../../admin/projects.rst:341
 msgid "You can use conditions:"
 msgstr ""
 
-#: ../../admin/projects.rst:330
+#: ../../admin/projects.rst:347
 msgid "There is additional tag available to replace chars:"
 msgstr ""
 
-#: ../../admin/projects.rst:336
+#: ../../admin/projects.rst:353
 msgid "You can combine it with filters:"
 msgstr ""
 
-#: ../../admin/projects.rst:342
+#: ../../admin/projects.rst:359
 msgid "...and other Django template features."
 msgstr ""
 
-#: ../../admin/projects.rst:347
+#: ../../admin/projects.rst:364
 msgid "Importing speed"
 msgstr ""
 
-#: ../../admin/projects.rst:349
+#: ../../admin/projects.rst:366
 msgid ""
 "Fetching VCS repository and importing translations to Weblate can be a "
 "lengthy process depending on size of your translations. Here are some "
 "tips to improve this situation:"
 msgstr ""
 
-#: ../../admin/projects.rst:354
+#: ../../admin/projects.rst:371
 msgid "Optimize configuration"
 msgstr ""
 
-#: ../../admin/projects.rst:356
+#: ../../admin/projects.rst:373
 msgid ""
 "The default configuration is useful for testing and debugging Weblate, "
 "while for production setup, you should do some adjustments. Many of them "
@@ -9191,62 +9255,62 @@ msgid ""
 "for more details, especially:"
 msgstr ""
 
-#: ../../admin/projects.rst:361
+#: ../../admin/projects.rst:378
 msgid ":ref:`production-indexing`"
 msgstr ""
 
-#: ../../admin/projects.rst:363
+#: ../../admin/projects.rst:380
 msgid ":ref:`production-database`"
 msgstr ""
 
-#: ../../admin/projects.rst:364
+#: ../../admin/projects.rst:381
 msgid ":ref:`production-debug`"
 msgstr ""
 
-#: ../../admin/projects.rst:367
+#: ../../admin/projects.rst:384
 msgid "Check resource limits"
 msgstr ""
 
-#: ../../admin/projects.rst:369
+#: ../../admin/projects.rst:386
 msgid ""
 "If you are importing huge translations or repositories, you might be hit "
 "by resource limits of your server."
 msgstr ""
 
-#: ../../admin/projects.rst:372
+#: ../../admin/projects.rst:389
 msgid ""
 "check amount of free memory, having translation files by system will "
 "greatly improve performance"
 msgstr ""
 
-#: ../../admin/projects.rst:373
+#: ../../admin/projects.rst:390
 msgid ""
 "disk operations might be bottleneck if there is lot of strings to process"
 " - the disk is pushed by both Weblate and database"
 msgstr ""
 
-#: ../../admin/projects.rst:374
+#: ../../admin/projects.rst:391
 msgid ""
 "additional CPU cores might help to improve performance of background "
 "tasks (see :ref:`celery`)"
 msgstr ""
 
-#: ../../admin/projects.rst:377
+#: ../../admin/projects.rst:394
 msgid "Disable not needed checks"
 msgstr ""
 
-#: ../../admin/projects.rst:379
+#: ../../admin/projects.rst:396
 msgid ""
 "Some quality checks can be quite expensive and if you don't need them, "
 "they can save you some time during import. See :setting:`CHECK_LIST` for "
 "more information how to configure this."
 msgstr ""
 
-#: ../../admin/projects.rst:386
+#: ../../admin/projects.rst:403
 msgid "Automatic creation of components"
 msgstr ""
 
-#: ../../admin/projects.rst:388
+#: ../../admin/projects.rst:405
 msgid ""
 "In case you have project with dozen of translation files (eg. for "
 "different Gettext domains or parts of Android apps), you might want to "
@@ -9255,36 +9319,36 @@ msgid ""
 "installing :ref:`addon-weblate.discovery.discovery` addon."
 msgstr ""
 
-#: ../../admin/projects.rst:394
+#: ../../admin/projects.rst:411
 msgid ""
 "For using the addon, you need to first create component for one "
 "translation file (choose the one that is least likely to be renamed or "
 "removed in future) and install the addon on this component."
 msgstr ""
 
-#: ../../admin/projects.rst:398
+#: ../../admin/projects.rst:415
 msgid ""
 "For the management commands, you need to create a project which will "
 "contain all components and then it's just a matter of running "
 ":djadmin:`import_project` or :djadmin:`import_json`."
 msgstr ""
 
-#: ../../admin/projects.rst:404
+#: ../../admin/projects.rst:421
 msgid ":ref:`manage`, :ref:`addon-weblate.discovery.discovery`"
 msgstr ""
 
-#: ../../admin/projects.rst:410
+#: ../../admin/projects.rst:427
 msgid "Fulltext search"
 msgstr ""
 
-#: ../../admin/projects.rst:412
+#: ../../admin/projects.rst:429
 msgid ""
 "Fulltext search is based on Whoosh. It is processed in background if "
 "Celery is configured.  This leads to a faster response of the site and "
 "less fragmented index with the cost that it might be slightly outdated."
 msgstr ""
 
-#: ../../admin/projects.rst:418
+#: ../../admin/projects.rst:435
 msgid ":ref:`faq-ft-slow`, :ref:`faq-ft-lock`, :ref:`faq-ft-space`"
 msgstr ""
 
@@ -9343,6 +9407,12 @@ msgstr ""
 msgid ""
 "Install development files for libraries needed for building some Python "
 "modules:"
+msgstr ""
+
+#: ../../admin/quick.rst:43
+msgid ""
+"Install pip and virtualenv. Usually they are shipped by your distribution"
+" or with Python:"
 msgstr ""
 
 #: ../../admin/quick.rst:57
@@ -9448,6 +9518,10 @@ msgstr ""
 
 #: ../../admin/quick.rst:150
 msgid "Installing using Docker"
+msgstr ""
+
+#: ../../admin/quick.rst:152
+msgid "Clone weblate-docker repo:"
 msgstr ""
 
 #: ../../admin/quick.rst:167
@@ -9756,14 +9830,14 @@ msgid "Upgrade from 3.0.1 to 3.1"
 msgstr ""
 
 #: ../../admin/upgrade.rst:86 ../../admin/upgrade.rst:99
-#: ../../admin/upgrade.rst:114
+#: ../../admin/upgrade.rst:114 ../../admin/upgrade.rst:130
 msgid ""
 "Please follow :ref:`generic-upgrade-instructions` in order to perform "
 "update."
 msgstr ""
 
 #: ../../admin/upgrade.rst:88 ../../admin/upgrade.rst:101
-#: ../../admin/upgrade.rst:116
+#: ../../admin/upgrade.rst:116 ../../admin/upgrade.rst:132
 msgid "Notable configuration or dependencies changes:"
 msgstr ""
 
@@ -9784,7 +9858,7 @@ msgid "There is new dependency on the ``jellyfish`` module."
 msgstr ""
 
 #: ../../admin/upgrade.rst:94 ../../admin/upgrade.rst:108
-#: ../../admin/upgrade.rst:124
+#: ../../admin/upgrade.rst:124 ../../admin/upgrade.rst:136
 msgid ":ref:`generic-upgrade-instructions`"
 msgstr ""
 
@@ -9851,50 +9925,60 @@ msgid ""
 "you use :setting:`IP_BEHIND_REVERSE_PROXY`."
 msgstr ""
 
-#: ../../admin/upgrade.rst:129
+#: ../../admin/upgrade.rst:128
+msgid "Upgrade from 3.3 to 3.4"
+msgstr ""
+
+#: ../../admin/upgrade.rst:134
+msgid ""
+"The Celery now uses multiple queues, it is recommended to update to new "
+"worker setup which utilizes this, see :ref:`celery`."
+msgstr ""
+
+#: ../../admin/upgrade.rst:141
 msgid "Upgrading from Python 2 to Python 3"
 msgstr ""
 
-#: ../../admin/upgrade.rst:131
+#: ../../admin/upgrade.rst:143
 msgid ""
 "Weblate currently supports both Python 2.7 and 3.x. Upgrading existing "
 "installations is supported, but you should pay attention to some data "
 "stored on the disk as it might be incompatible between these two."
 msgstr ""
 
-#: ../../admin/upgrade.rst:135
+#: ../../admin/upgrade.rst:147
 msgid ""
 "Things which might be problematic include Whoosh indices and file based "
 "caches. Fortunately these are easy to handle. Recommended upgrade steps:"
 msgstr ""
 
-#: ../../admin/upgrade.rst:138
+#: ../../admin/upgrade.rst:150
 msgid "Backup your :ref:`translation-memory` using :djadmin:`dump_memory`:"
 msgstr ""
 
-#: ../../admin/upgrade.rst:144
+#: ../../admin/upgrade.rst:156
 msgid "Upgrade your installation to Python 3."
 msgstr ""
 
-#: ../../admin/upgrade.rst:145
+#: ../../admin/upgrade.rst:157
 msgid "Delete :ref:`translation-memory` database :djadmin:`delete_memory`:"
 msgstr ""
 
-#: ../../admin/upgrade.rst:163
+#: ../../admin/upgrade.rst:175
 msgid ""
 "Cleanup avatar cache (if using file based) using "
 ":djadmin:`cleanup_avatar_cache`."
 msgstr ""
 
-#: ../../admin/upgrade.rst:169
+#: ../../admin/upgrade.rst:181
 msgid "It is recommended to throw away your caches."
 msgstr ""
 
-#: ../../admin/upgrade.rst:174
+#: ../../admin/upgrade.rst:186
 msgid "Migrating from Pootle"
 msgstr ""
 
-#: ../../admin/upgrade.rst:176
+#: ../../admin/upgrade.rst:188
 msgid ""
 "As Weblate was originally written as replacement from Pootle, it is "
 "supported to migrate user accounts from Pootle. You can dump the users "
@@ -10435,3 +10519,1502 @@ msgstr ""
 #~ "A user can also explicitly lock a"
 #~ " translation for :setting:`LOCK_TIME` seconds."
 #~ msgstr ""
+
+#~ msgid ""
+#~ "You can also additionally set a "
+#~ "cron job to commit pending changes "
+#~ "after some delay, see "
+#~ ":djadmin:`commit_pending` and :ref:`production-"
+#~ "cron`."
+#~ msgstr ""
+#~ "以上に加えて、保留された変更を少し遅れてコミットさせるための、クロンジョブを設定することもできます。:djadmin:`commit_pending`"
+#~ " と :ref:`production-cron` を参照してください。"
+
+#~ msgid ""
+#~ "Weblate comes with support for "
+#~ "deployment using several technologies. This"
+#~ " section is overview of them."
+#~ msgstr "Weblate は複数の技術でのデプロイメントをサポートしています。このセクションではそれらを概観します。"
+
+#~ msgid ""
+#~ "With dockerized weblate deployment you "
+#~ "can get your personal weblate instance"
+#~ " up an running in seconds. All "
+#~ "of Weblate's dependencies are already "
+#~ "included. PostgreSQL is configured as "
+#~ "the default database."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following examples assume you have"
+#~ " a working Docker environment, with "
+#~ "docker-compose installed. Please check "
+#~ "Docker documentation for instructions on "
+#~ "this."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a :file:`docker-compose.override.yml` "
+#~ "file with your settings. See :ref"
+#~ ":`docker-environment` full list of "
+#~ "environment vars"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If :envvar:`WEBLATE_ADMIN_PASSWORD` is not "
+#~ "set, admin user is created with "
+#~ "random password printed out on first "
+#~ "startup."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The setup has changed recently, prior"
+#~ " there was separate web server "
+#~ "container, since 2.15-2 the web server"
+#~ " is embedded in weblate container."
+#~ msgstr ""
+
+#~ msgid "Docker container with https support"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please see :ref:`docker-deploy` for "
+#~ "generic deployment instructions. To add "
+#~ "HTTPS reverse proxy additional Docker "
+#~ "container is required, we will use "
+#~ "`https-portal <https://hub.docker.com/r/steveltn/https-"
+#~ "portal/>`_. This is used in the "
+#~ ":file:`docker-compose-https.yml` file. Then"
+#~ " you just need to create a "
+#~ ":file:`docker-compose-https.override.yml` file "
+#~ "with your settings:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whenever invoking :program:`docker-compose` "
+#~ "you need to pass both files to "
+#~ "it then:"
+#~ msgstr ""
+
+#~ msgid "Upgrading Docker container"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Usually it is good idea to update"
+#~ " the weblate container only and keep"
+#~ " the PostgreSQL container at version "
+#~ "you have as upgrading PostgreSQL is "
+#~ "quite painful and in most cases it"
+#~ " does not bring many benefits."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can do this by sticking with"
+#~ " existing docker-compose and just "
+#~ "pulling latest images and restarting:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Weblate database should be "
+#~ "automatically migrated on first start "
+#~ "and there should be no need for"
+#~ " additional manual actions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Upgrades across 3.0 are not supported"
+#~ " by Weblate. If you are on 2.x"
+#~ " series and want to upgrade to "
+#~ "3.x, first upgrade to latest 3.0.1-x "
+#~ "(at time of writing this it is "
+#~ "``3.0.1-7``) image which will do the "
+#~ "migration and then continue in upgrading"
+#~ " to newer versions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Many of Weblate :ref:`config` can be "
+#~ "set in Docker container using "
+#~ "environment variables:"
+#~ msgstr ""
+
+#~ msgid "Configures verbosity of logging."
+#~ msgstr ""
+
+#~ msgid "Configures site title shown on headings of all pages."
+#~ msgstr ""
+
+#~ msgid "Configures site admins name and email."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Sets password for admin user. If "
+#~ "not set, admin user is created "
+#~ "with random password printed out on "
+#~ "first startup."
+#~ msgstr ""
+
+#~ msgid "Configures address for outgoing mails."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Configures allowed HTTP hostnames using "
+#~ ":setting:`ALLOWED_HOSTS` and sets site name"
+#~ " to first one."
+#~ msgstr ""
+
+#~ msgid "Configures secret used for Django for cookies signing."
+#~ msgstr ""
+
+#~ msgid "Configures time zone used."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Makes Weblate assume it is operated "
+#~ "behind HTTPS reverse proxy, it makes "
+#~ "Weblate use https in email and API"
+#~ " links or set secure flags on "
+#~ "cookies."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This does not make the Weblate "
+#~ "container accept https connections, you "
+#~ "need to use a standalone HTTPS "
+#~ "reverse proxy, see :ref:`docker-ssl` for"
+#~ " example."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Enables Weblate fetching IP address from"
+#~ " given HTTP header. Use this when "
+#~ "using reverse proxy in front of "
+#~ "Weblate container."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Configures login required for whole "
+#~ "Weblate using :setting:`LOGIN_REQUIRED_URLS`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Adds URL exceptions for login required"
+#~ " for whole Weblate using "
+#~ ":setting:`LOGIN_REQUIRED_URLS_EXCEPTIONS`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Configures github username for GitHub "
+#~ "pull requests by changing "
+#~ ":setting:`GITHUB_USERNAME`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Configures language simplification policy, see"
+#~ " :setting:`SIMPLIFY_LANGUAGES`."
+#~ msgstr ""
+
+#~ msgid "Configures Akismet API key, see :setting:`AKISMET_API_KEY`."
+#~ msgstr ""
+
+#~ msgid "Disabled email authentication when set to any value."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The database is created by :file"
+#~ ":`docker-compose.yml`, so this settings "
+#~ "affects both Weblate and PostgreSQL "
+#~ "containers."
+#~ msgstr ""
+
+#~ msgid "PostgreSQL server port. Default to empty (use default value)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Using redis is strongly recommended by"
+#~ " Weblate and you have to provide "
+#~ "redis instance when running Weblate in"
+#~ " Docker. Additionally memcached is "
+#~ "supported for compatibility with older "
+#~ "deployments."
+#~ msgstr ""
+
+#~ msgid "The memcached server port. Defaults to ``6379``."
+#~ msgstr ""
+
+#~ msgid "The memcached server port. Defaults to ``11211``."
+#~ msgstr ""
+
+#~ msgid "To make outgoing email work, you need to provide mail server."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Mail server port, use if your "
+#~ "cloud provider or ISP blocks outgoing"
+#~ " connections on port 587."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to use an implicit TLS "
+#~ "(secure) connection when talking to the"
+#~ " SMTP server. In most email "
+#~ "documentation this type of TLS "
+#~ "connection is referred to as SSL. "
+#~ "It is generally used on port 465."
+#~ " If you are experiencing problems, "
+#~ "see the explicit TLS setting "
+#~ ":envvar:`WEBLATE_EMAIL_USE_TLS`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to use a TLS (secure) "
+#~ "connection when talking to the SMTP "
+#~ "server. This is used for explicit "
+#~ "TLS connections, generally on port 587."
+#~ " If you are experiencing hanging "
+#~ "connections, see the implicit TLS "
+#~ "setting :envvar:`WEBLATE_EMAIL_USE_SSL`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is recommended to collect errors "
+#~ "from the installation in systematic way,"
+#~ " see :ref:`collecting-errors`."
+#~ msgstr ""
+
+#~ msgid "To enable support for Rollbar, set following:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can additionally override the "
+#~ "configuration by :file:`/app/data/settings-"
+#~ "override.py`. This is executed after all"
+#~ " environment settings are loaded, so "
+#~ "it gets complete setup and can be"
+#~ " used to customize anything."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In order to use the Github pull"
+#~ " requests feature, you must initialize "
+#~ "hub configuration by entering the "
+#~ "weblate container and executing an "
+#~ "arbitrary hub command. For example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "With docker-machine you can create "
+#~ "your Weblate deployment either on your"
+#~ " local machine or on any large "
+#~ "number of cloud-based deployments on "
+#~ "e.g. Amazon AWS, Digitalocean and many"
+#~ " more providers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You need an account for OpenShift "
+#~ "Online (https://www.openshift.com/) or another "
+#~ "OpenShift installation you have access "
+#~ "to."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can register a free account on"
+#~ " OpenShift Online, which allows you "
+#~ "to host up to 3 applications free"
+#~ " of charge."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In order to follow the examples "
+#~ "given in this documentation you need "
+#~ "to have the OpenShift Client Tools "
+#~ "(RHC) installed: "
+#~ "https://docs.openshift.com/online/cli_reference/get_started_cli.html"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "While there are other possibilities to"
+#~ " create and configure OpenShift "
+#~ "applications, this documentation is based "
+#~ "on the OpenShift Client Tools (RHC) "
+#~ "because they provide a consistent "
+#~ "interface for all described operations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can install Weblate on OpenShift "
+#~ "directly from Weblate's Github repository "
+#~ "with the following command:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``-a`` option defines the name "
+#~ "of your weblate installation, ``weblate`` "
+#~ "in this instance. You are free to"
+#~ " specify a different name."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The above example installs latest "
+#~ "development version, you can optionally "
+#~ "specify tag identifier right of the "
+#~ "``#`` sign to identify the version "
+#~ "of Weblate to install. For a list"
+#~ " of available versions see here: "
+#~ "https://github.com/WeblateOrg/weblate/tags."
+#~ msgstr ""
+
+#~ msgid "The ``--no-git`` option skips the creation of a local git repository."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After installation on OpenShift Weblate "
+#~ "is ready to use and preconfigured "
+#~ "as follows:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Committing of pending changes if the "
+#~ "cron cartridge is installed "
+#~ "(:djadmin:`commit_pending`)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate machine translations for suggestions"
+#~ " bases on previous translations "
+#~ "(:setting:`MT_SERVICES`)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate directories (STATIC_ROOT, "
+#~ ":setting:`DATA_DIR`, :setting:`TTF_PATH`, Avatar "
+#~ "cache) set according to OpenShift "
+#~ "requirements/conventions"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Django site name and ALLOWED_HOSTS set"
+#~ " to DNS name of your OpenShift "
+#~ "application"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Email sender addresses set to no-"
+#~ "reply@<OPENSHIFT_CLOUD_DOMAIN>, where "
+#~ "<OPENSHIFT_CLOUD_DOMAIN> is the domain "
+#~ "OpenShift runs under. In case of "
+#~ "OpenShift Online it's rhcloud.com."
+#~ msgstr ""
+
+#~ msgid "Retrieve Admin Password"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can retrieve the generated admin "
+#~ "password with the following command:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To enable the preconfigured indexing "
+#~ "offloading you need to add the "
+#~ "cron cartridge to your application and"
+#~ " restart it:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The fulltext search index will then "
+#~ "be updated every 5 minutes. Restarting"
+#~ " with ``rhc restart`` instead will "
+#~ "not enable indexing offloading in "
+#~ "Weblate. You can verify that indexing"
+#~ " offloading is indeed enabled by "
+#~ "visiting the URL ``/admin/performance/`` of"
+#~ " your application."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate's OpenShift configuration contains a"
+#~ " cron job which periodically commits "
+#~ "pending changes older than a certain "
+#~ "age (24h by default). To enable "
+#~ "the cron job you need to add "
+#~ "the cron cartridge and restart Weblate"
+#~ " as described in the previous "
+#~ "section. You can change the age "
+#~ "parameter by setting the environment "
+#~ "variable WEBLATE_PENDING_AGE to the desired"
+#~ " number of hours, e.g.:"
+#~ msgstr ""
+
+#~ msgid "Customize Weblate Configuration"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can customize the configuration of"
+#~ " your Weblate installation on OpenShift "
+#~ "through environment variables.  Override any"
+#~ " of Weblate's setting documented under "
+#~ ":ref:`config` using ``rhc env set`` by"
+#~ " prepending the settings name with "
+#~ "``WEBLATE_``. The variable content is "
+#~ "put verbatim to the configuration file,"
+#~ " so it is parsed as Python "
+#~ "string, after replacing environment variables"
+#~ " in it (eg. ``$PATH``). To put "
+#~ "literal ``$`` you need to escape "
+#~ "it as ``$$``."
+#~ msgstr ""
+
+#~ msgid "To change site title, do not forget to include additional quotes:"
+#~ msgstr ""
+
+#~ msgid "New settings will only take effect after restarting Weblate:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Restarting using ``rhc -aweblate app "
+#~ "restart`` does not work. For security"
+#~ " reasons only constant expressions are "
+#~ "allowed as values. With the exception"
+#~ " of environment variables which can "
+#~ "be referenced using ``${ENV_VAR}``. For "
+#~ "example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This will also print syntax errors "
+#~ "in your expressions. To reset a "
+#~ "setting to its preconfigured value just"
+#~ " delete the corresponding environment "
+#~ "variable:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is recommended that you try "
+#~ "updates on a clone of your Weblate"
+#~ " installation before running the actual "
+#~ "update. To create such a clone "
+#~ "run:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Visit the newly given URL with a"
+#~ " browser and wait for the "
+#~ "install/update page to disappear."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can update your Weblate installation"
+#~ " on OpenShift directly from Weblate's "
+#~ "github repository by executing:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The identifier right of the ``#`` "
+#~ "sign identifies the version of Weblate"
+#~ " to install. For a list of "
+#~ "available versions see here: "
+#~ "https://github.com/WeblateOrg/weblate/tags. Please note"
+#~ " that the update process will not "
+#~ "work if you modified the git "
+#~ "repository of you weblate installation. "
+#~ "You can force an update by "
+#~ "specifying the ``--force`` option to the"
+#~ " update script. However any changes "
+#~ "you made to the git repository of"
+#~ " your installation will be discarded:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The update script takes care of "
+#~ "the following update steps as described"
+#~ " under :ref:`generic-upgrade-instructions`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Bitnami provides Weblate stack for many"
+#~ " platforms at <https://bitnami.com/stack/weblate>. "
+#~ "The setup will be adjusted during "
+#~ "installation, see "
+#~ "<https://bitnami.com/stack/weblate/README.txt> for more"
+#~ " documentation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The self-hosting project `YunoHost "
+#~ "<https://yunohost.org/>`_ provides a package "
+#~ "for Weblate. Once you have your "
+#~ "YunoHost installation, you may install "
+#~ "Weblate as any other application. It "
+#~ "will provide you a fully working "
+#~ "stack with backup and restoration, but"
+#~ " you may still have to edit "
+#~ "your settings file for specific usages."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You may use your administration "
+#~ "interface or this button (it will "
+#~ "bring you to your server):"
+#~ msgstr ""
+
+#~ msgid "It also is possible to use the command line interface:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate should run on any contemporary"
+#~ " hardware without problems, the following"
+#~ " is the minimal configuration required "
+#~ "to run Weblate on single host "
+#~ "(Weblate, database and web server):"
+#~ msgstr ""
+
+#~ msgid "2 GB of RAM memory"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The more memory you have, the "
+#~ "better - it will be used for "
+#~ "caching on all levels (file system, "
+#~ "database and Weblate)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are going to have many "
+#~ "concurrent users, you will need more "
+#~ "CPU cores. For hundreds of translation"
+#~ " components at least 4 GB of "
+#~ "memory is recommended."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The actual requirements for your "
+#~ "installation heavily vary based on the"
+#~ " size of translations managed by "
+#~ "Weblate."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate is written in `Python "
+#~ "<https://www.python.org/>`_ and supports Python "
+#~ "2.7, 3.4 or newer. The following "
+#~ "dependencies can be installed using pip"
+#~ " or your distribution packages:"
+#~ msgstr ""
+
+#~ msgid "Django (>= 1.11)"
+#~ msgstr ""
+
+#~ msgid "Celery (>= 4.0)"
+#~ msgstr ""
+
+#~ msgid "celery-batches (>= 0.2)"
+#~ msgstr ""
+
+#~ msgid "siphashc (>= 0.8)"
+#~ msgstr ""
+
+#~ msgid "translate-toolkit (>= 2.3.1)"
+#~ msgstr ""
+
+#~ msgid "Six (>= 1.7.0)"
+#~ msgstr ""
+
+#~ msgid "filelock (>= 3.0.1)"
+#~ msgstr ""
+
+#~ msgid "Mercurial (>= 2.8) (optional for Mercurial repositories support)"
+#~ msgstr ""
+
+#~ msgid "social-auth-core (>= 1.3.0)"
+#~ msgstr ""
+
+#~ msgid "social-auth-app-django (>= 2.0.0)"
+#~ msgstr ""
+
+#~ msgid "django-appconf (>= 1.0)"
+#~ msgstr ""
+
+#~ msgid "Whoosh (>= 2.7.0)"
+#~ msgstr ""
+
+#~ msgid "PIL or Pillow library"
+#~ msgstr ""
+
+#~ msgid "lxml (>= 3.1.0)"
+#~ msgstr ""
+
+#~ msgid "defusedxml (>= 0.4)"
+#~ msgstr ""
+
+#~ msgid "dateutil"
+#~ msgstr ""
+
+#~ msgid "django_compressor (>= 2.1.1)"
+#~ msgstr ""
+
+#~ msgid "django-crispy-forms (>= 1.6.1)"
+#~ msgstr ""
+
+#~ msgid "Django REST Framework (>=3.8)"
+#~ msgstr ""
+
+#~ msgid "user-agents (>= 1.1.0)"
+#~ msgstr ""
+
+#~ msgid "pyuca (>= 1.1) (optional for proper sorting of strings)"
+#~ msgstr ""
+
+#~ msgid "phply (optional for PHP support)"
+#~ msgstr ""
+
+#~ msgid "pytz (optional, but recommended by Django)"
+#~ msgstr ""
+
+#~ msgid "python-bidi (optional for proper rendering of badges in RTL languages)"
+#~ msgstr ""
+
+#~ msgid "tesserocr (>= 2.0.0) (optional for screenshots OCR)"
+#~ msgstr ""
+
+#~ msgid "akismet (>= 1.0) (optional for suggestion spam protection)"
+#~ msgstr ""
+
+#~ msgid "PyYAML (>= 3.0) (optional for :ref:`yaml`)"
+#~ msgstr ""
+
+#~ msgid "backports.csv (needed on Python 2.7)"
+#~ msgstr ""
+
+#~ msgid "jellyfish (>= 0.6.1)"
+#~ msgstr ""
+
+#~ msgid "openpyxl (>=2.5.0) (for XLSX export/import)"
+#~ msgstr ""
+
+#~ msgid "zeep (>=3.0.0) (optional for :ref:`ms-terminology`)"
+#~ msgstr ""
+
+#~ msgid "Git (>= 1.6)"
+#~ msgstr ""
+
+#~ msgid "hub (optional for sending pull requests to GitHub)"
+#~ msgstr ""
+
+#~ msgid "git-review (optional for Gerrit support)"
+#~ msgstr ""
+
+#~ msgid "git-svn (>= 2.10.0) (optional for Subversion support)"
+#~ msgstr ""
+
+#~ msgid "tesseract and it's data (optional for screenshots OCR)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To compile some of the :ref:`python-"
+#~ "deps` you might need to install "
+#~ "their dependencies. This depends on how"
+#~ " you install them, so please consult"
+#~ " individual packages for documentation. You"
+#~ " won't need those if using prebuilt"
+#~ " Wheels while installing using pip or"
+#~ " when you use distribution packages."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "First choices include complete setup "
+#~ "without relying on your system "
+#~ "libraries:"
+#~ msgstr ""
+
+#~ msgid "Choose installation method:"
+#~ msgstr ""
+
+#~ msgid ":ref:`install-git` (if you want to run bleeding edge version)"
+#~ msgstr ""
+
+#~ msgid "And install dependencies according your platform:"
+#~ msgstr ""
+
+#~ msgid "Installing in virtualenv"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is recommended method if you "
+#~ "don't want to dig into details. "
+#~ "This will create separate Python "
+#~ "environment for Weblate, possibly duplicating"
+#~ " some system Python libraries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Install development files for libraries "
+#~ "we will use during building Python "
+#~ "modules:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Install Weblate including all dependencies,"
+#~ " you can also use pip to "
+#~ "install optional dependencies:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create your settings (in our example "
+#~ "it would be in :file:`~/weblate-"
+#~ "env/lib/python2.7/site-packages/weblate/settings.py` based"
+#~ " on the :file:`settings_example.py` in same"
+#~ " directory)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To run webserver, use the wsgi "
+#~ "wrapper installed with Weblate (in our"
+#~ " case it is :file:`~/weblate-"
+#~ "env/lib/python2.7/site-packages/weblate/wsgi.py`). Don't"
+#~ " forget to set Python search path "
+#~ "to your virtualenv as well (for "
+#~ "example using ``virtualenv = /home/user"
+#~ "/weblate-env`` in uwsgi)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can also run the latest "
+#~ "version from Git. It is maintained "
+#~ "stable and production ready. You can "
+#~ "usually find it running on `Hosted "
+#~ "Weblate <https://weblate.org/hosting/>`_."
+#~ msgstr ""
+
+#~ msgid "To get latest sources using Git use:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are running a version from"
+#~ " Git, you should also regenerate "
+#~ "locale files every time you are "
+#~ "upgrading. You can do this by "
+#~ "invoking script :file:`./scripts/generate-locales`."
+#~ msgstr ""
+
+#~ msgid "Installing Weblate by pip"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you decide to install Weblate "
+#~ "using pip installer, you will notice "
+#~ "some differences. Most importantly the "
+#~ "command line interface is installed  to"
+#~ " the system path as :command:`weblate` "
+#~ "instead of :command:`./manage.py` as used "
+#~ "in this documentation. Also when "
+#~ "invoking this command, you will have "
+#~ "to specify settings, either by "
+#~ "environment variable `DJANGO_SETTINGS_MODULE` on "
+#~ "the command line, for example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "On recent Debian or Ubuntu, most "
+#~ "of requirements are already packaged, to"
+#~ " install them you can use apt-"
+#~ "get:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "On older versions, some required "
+#~ "dependencies are missing or outdated, so"
+#~ " you need to install several Python"
+#~ " modules manually using pip:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For proper sorting of a Unicode "
+#~ "strings, it is recommended to install"
+#~ " pyuca:"
+#~ msgstr ""
+
+#~ msgid "Requirements on OSX"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If your python was not installed "
+#~ "using brew, make sure you have "
+#~ "this in your :file:`.bash_profile` file "
+#~ "or executed somehow:"
+#~ msgstr ""
+
+#~ msgid "Most requirements can be also installed using pip installer:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The default configuration places them in"
+#~ " the same tree as Weblate sources,"
+#~ " however you might prefer to move "
+#~ "these to better location such as "
+#~ ":file:`/var/lib/weblate`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You should also take care when "
+#~ "running :ref:`manage`, as they should be"
+#~ " run under the same user as "
+#~ "Weblate itself is running, otherwise "
+#~ "permissions on some files might be "
+#~ "wrong."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is recommended to run Weblate "
+#~ "on some database server. Using SQLite"
+#~ " backend is really suitable only for"
+#~ " testing purposes."
+#~ msgstr ""
+
+#~ msgid "Creating database in PostgreSQL"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is usually good idea to run "
+#~ "Weblate in a separate database and "
+#~ "separate user account:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "MySQL or MariaDB are quite good "
+#~ "choices to run Weblate. However when "
+#~ "using MySQL you might hit some "
+#~ "problems caused by it."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "MySQL by default uses something called"
+#~ " ``utf8``, what can not store all "
+#~ "Unicode characters, only those who fit"
+#~ " into three bytes in ``utf-8`` "
+#~ "encoding. In case you're using emojis"
+#~ " or some other higher Unicode symbols"
+#~ " you might hit errors when saving "
+#~ "such data. Depending on MySQL and "
+#~ "Python bindings version, the error might"
+#~ " look like:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To solve this, you need to change"
+#~ " your database to use ``utf8mb4`` "
+#~ "(what is again subset of Unicode, "
+#~ "but this time which can be stored"
+#~ " in four bytes in ``utf-8`` encoding,"
+#~ " thus covering all chars currently "
+#~ "defined in Unicode)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This can be achieved at database "
+#~ "creation time by creating it with "
+#~ "this character set (see :ref:`mysql-"
+#~ "create`) and specifying the character "
+#~ "set in connection settings (see :ref"
+#~ ":`mysql-config`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In case you have existing database, "
+#~ "you can change it to ``utf8mb4`` "
+#~ "by, but this won't change collation "
+#~ "of existing fields:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Using this charset might however lead"
+#~ " to problems with default MySQL "
+#~ "server settings as each character is "
+#~ "now taking 4 bytest to store and"
+#~ " MySQL has limit of 767 bytes "
+#~ "for an index. In case this happens"
+#~ " you will get one of following "
+#~ "error messages:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "There are two ways to workaround "
+#~ "this limitation. You can configure MySQL"
+#~ " in a way to not have this "
+#~ "limit, see `Using Innodb_large_prefix to "
+#~ "Avoid ERROR 1071 "
+#~ "<https://mechanics.flite.com/blog/2014/07/29/using-innodb-"
+#~ "large-prefix-to-avoid-error-1071/>`_. "
+#~ "Alternatively you can  also adjust "
+#~ "several settings for social-auth in "
+#~ "your :file:`settings.py` (see "
+#~ ":doc:`psa:configuration/settings`):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "MySQL by default uses has different "
+#~ "transaction locking scheme than other "
+#~ "databases and in case you see "
+#~ "errors like `Deadlock found when trying"
+#~ " to get lock; try restarting "
+#~ "transaction` it might be good idea "
+#~ "to enable `STRICT_TRANS_TABLES` mode in "
+#~ "MySQL. This can be done in the "
+#~ "server configuration file (usually "
+#~ ":file:`/etc/mysql/my.cnf` on Linux):"
+#~ msgstr ""
+
+#~ msgid "Creating database in MySQL"
+#~ msgstr ""
+
+#~ msgid "Configuring outgoing mail"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate sends out emails on various "
+#~ "occasions - for account activation and"
+#~ " on various notifications configured by "
+#~ "users. For this it needs access to"
+#~ " the SMTP server, which will handle"
+#~ " this."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The mail server setup is configured "
+#~ "using settings :setting:`django:EMAIL_HOST`, "
+#~ ":setting:`django:EMAIL_HOST_PASSWORD`, "
+#~ ":setting:`django:EMAIL_HOST_USER` and "
+#~ ":setting:`django:EMAIL_PORT`.  Their names are "
+#~ "quite self-explanatory, but you can "
+#~ "find out more information in the "
+#~ "Django documentation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can verify whether outgoing mail "
+#~ "is working correctly by using "
+#~ ":djadmin:`django:sendtestemail` management command."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate uses Celery to process "
+#~ "background tasks. The example settings "
+#~ "come with eager configuration, which "
+#~ "does process all tasks in place, "
+#~ "but you want to change this to "
+#~ "something more reasonable for production "
+#~ "setup."
+#~ msgstr ""
+
+#~ msgid "Typical setup using redis as a backend should look like:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You should also start the Celery "
+#~ "worker to process the tasks and "
+#~ "start scheduled tasks, this can be "
+#~ "done directly on command line (what "
+#~ "is mostly useful when debugging or "
+#~ "developing):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Most likely you will want to run"
+#~ " Celery as a daemon and that is"
+#~ " covered by :doc:`celery:userguide/daemonizing`. "
+#~ "For the most usual Linux setup "
+#~ "using systemd you can use example "
+#~ "files shipped in the :file:`examples` "
+#~ "folder and listed below."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate comes with built in setup "
+#~ "for scheduled tasks. You can however "
+#~ "define additional tasks in "
+#~ ":file:`settings.py`, for example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "List of site administrators to receive"
+#~ " notifications when something goes wrong,"
+#~ " for example notifications on failed "
+#~ "merge or Django errors."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are running Django 1.5 or"
+#~ " newer, you need to set this to"
+#~ " list of hosts your site is "
+#~ "supposed to serve. For example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Configure how your sessions will be "
+#~ "stored. In case you keep default "
+#~ "database backed engine you should "
+#~ "schedule :command:`./manage.py clearsessions` to "
+#~ "remove stale session data from the "
+#~ "database."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are using redis as cache"
+#~ " (see :ref:`production-cache`) it is "
+#~ "recommended to use it for sessions "
+#~ "as well:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Disable this for production server. With"
+#~ " debug mode enabled, Django will show"
+#~ " backtraces in case of error to "
+#~ "users, when you disable it, errors "
+#~ "will go by email to ``ADMINS`` "
+#~ "(see above)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Debug mode also slows down Weblate "
+#~ "as Django stores much more information"
+#~ " internally in this case."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Key used by Django to sign some"
+#~ " information in cookies, see :ref"
+#~ ":`production-secret` for more information."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Email used as sender address for "
+#~ "sending emails to administrator, for "
+#~ "example notifications on failed merge."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In case you want to run "
+#~ "installation non interactively, you can "
+#~ "use :samp:`./manage.py migrate --noinput` and"
+#~ " then create admin user using "
+#~ ":djadmin:`createadmin` command."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You should also login to admin "
+#~ "interface (on ``/admin/`` URL) and "
+#~ "adjust the default site name to "
+#~ "match your domain by clicking on "
+#~ ":guilabel:`Sites` and there changing the "
+#~ ":samp:`example.com` record to match your "
+#~ "real domain name."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once you are done, you should also"
+#~ " check :guilabel:`Performance report` in "
+#~ "the admin interface which will give "
+#~ "you hints for non optimal configuration"
+#~ " on your site."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For production setup you should do "
+#~ "adjustments described in following sections."
+#~ " The most critical settings will "
+#~ "trigger warning which is indicated by"
+#~ " red exclamation mark in the top "
+#~ "bar if you are logged in as "
+#~ "a superuser:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is also recommended to inspect "
+#~ "checks fired by Django (though you "
+#~ "might not need to fix all of "
+#~ "them):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "With debug mode Django stores all "
+#~ "executed queries and shows users "
+#~ "backtraces of errors which is not "
+#~ "desired in production setup."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set correct admin addresses to "
+#~ ":setting:`ADMINS` setting for defining who "
+#~ "will receive mail in case something "
+#~ "goes wrong on the server, for "
+#~ "example:"
+#~ msgstr ""
+
+#~ msgid "Set correct site name"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Adjust site name in admin interface, "
+#~ "otherwise links in RSS or registration"
+#~ " emails will not work."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please open the admin interface and "
+#~ "edit default site name and domain "
+#~ "under the :guilabel:`Sites › Sites` (or"
+#~ " you can do that directly at "
+#~ "``/admin/sites/site/1/`` URL under your "
+#~ "Weblate installation). You have to "
+#~ "change the :guilabel:`Domain name` to "
+#~ "match your setup."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This setting should contain only the "
+#~ "domain name. For configuring protocol "
+#~ "(enabling HTTPS) use :setting:`ENABLE_HTTPS` "
+#~ "and for changing URL use "
+#~ ":setting:`URL_PREFIX`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Alternatively, you can set the site "
+#~ "name from command line using "
+#~ ":djadmin:`changesite`. For example, when using"
+#~ " built in server:"
+#~ msgstr ""
+
+#~ msgid "For production site, you want something like:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is strongly recommended to run "
+#~ "Weblate using encrypted HTTPS protocol. "
+#~ "After enabling you shoud sed "
+#~ ":setting:`ENABLE_HTTPS` settings which also "
+#~ "adjusts several other related Django "
+#~ "settings in the example configuration."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You might want to configure HSTS "
+#~ "as well, see :ref:`django:security-"
+#~ "recommendation-ssl` for more details."
+#~ msgstr ""
+
+#~ msgid "Use powerful database engine"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Use a powerful database engine (SQLite"
+#~ " is usually not good enough for "
+#~ "production environment), see :ref:`database-"
+#~ "setup` for more information."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If possible, use redis from Django "
+#~ "by adjusting ``CACHES`` configuration "
+#~ "variable, for example:"
+#~ msgstr ""
+
+#~ msgid "Alternatively you can also use memcached:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In addition to caching of Django, "
+#~ "Weblate performs caching of avatars. It"
+#~ " is recommended to use separate, file"
+#~ " backed cache for this purpose:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate needs to send out emails "
+#~ "on several occasions and these emails"
+#~ " should have correct sender address, "
+#~ "please configure :setting:`SERVER_EMAIL` and "
+#~ ":setting:`DEFAULT_FROM_EMAIL` to match your "
+#~ "environment, for example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Django 1.5 and newer require "
+#~ ":setting:`ALLOWED_HOSTS` to hold a list "
+#~ "of domain names your site is "
+#~ "allowed to serve, having it empty "
+#~ "will block any request."
+#~ msgstr ""
+
+#~ msgid "pyuca library"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`pyuca`_ library is optionally used by"
+#~ " Weblate to sort Unicode strings. "
+#~ "This way language names are properly "
+#~ "sorted even in non-ASCII languages "
+#~ "like Japanese, Chinese or Arabic or "
+#~ "for languages with accented letters."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The :setting:`SECRET_KEY` setting is used "
+#~ "by Django to sign cookies and you"
+#~ " should really generate your own "
+#~ "value rather than using the one "
+#~ "coming from example setup."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can generate new key using "
+#~ ":file:`examples/generate-secret-key` shipped "
+#~ "with Weblate."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you see purely designed admin "
+#~ "interface, the CSS files required for"
+#~ " it are not loaded. This is "
+#~ "usually if you are running in "
+#~ "non-debug mode and have not "
+#~ "configured your web server to serve "
+#~ "them. Recommended setup is described in"
+#~ " the :ref:`static-files` chapter."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The home directory for the user "
+#~ "which is running Weblate should be "
+#~ "existing and writable by this user. "
+#~ "This is especially needed if you "
+#~ "want to use SSH to access private"
+#~ " repositories, but Git might need to"
+#~ " access this directory as well "
+#~ "(depends on the Git version you "
+#~ "use)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can change the directory used "
+#~ "by Weblate in :file:`settings.py`, for "
+#~ "example to set it to ``configuration``"
+#~ " directory under Weblate tree:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "On Linux and other UNIX like "
+#~ "systems, the path to user's home "
+#~ "directory is defined in :file:`/etc/passwd`."
+#~ " Many distributions default to non "
+#~ "writable directory for users used for"
+#~ " serving web content (such as "
+#~ "``apache``, ``www-data`` or ``wwwrun``, "
+#~ "so you either have to run Weblate"
+#~ " under a different user or change "
+#~ "this setting."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is recommended to use cached "
+#~ "template loader for Django. It caches"
+#~ " parsed templates and avoids the need"
+#~ " to do the parsing with every "
+#~ "single request. You can configure it "
+#~ "using the following snippet (the "
+#~ "``loaders`` setting is important here):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Since version 3.2 the default way "
+#~ "of executing these tasks is using "
+#~ "Celery and Weblate already comes with"
+#~ " proper configuration, see :ref:`celery`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Running Weblate is not different from"
+#~ " running any other Django based "
+#~ "application. Django is usually executed "
+#~ "as uwsgi or fcgi (see examples for"
+#~ " different webservers below)."
+#~ msgstr ""
+
+#~ msgid "For testing purposes, you can use the Django built-in web server:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Do not use this in production as"
+#~ " this has severe performance limitations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Prior to version 2.4 Weblate didn't "
+#~ "properly use Django static files "
+#~ "framework and the setup was more "
+#~ "complex."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Django needs to collect its static "
+#~ "files to a single directory. To do"
+#~ " so, execute :samp:`./manage.py collectstatic "
+#~ "--noinput`. This will copy the static"
+#~ " files into directory specified by "
+#~ "``STATIC_ROOT`` setting (this defaults to "
+#~ "``static`` directory inside :setting:`DATA_DIR`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is recommended to serve static "
+#~ "files directly by your web server, "
+#~ "you should use that for following "
+#~ "paths:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Serves static files for Weblate and "
+#~ "admin interface (from defined by "
+#~ "``STATIC_ROOT``)."
+#~ msgstr ""
+
+#~ msgid "Used for user media uploads (eg. screenshots)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Should be rewritten to rewrite rule "
+#~ "to serve :file:`/static/favicon.ico`"
+#~ msgstr ""
+
+#~ msgid "Should be rewritten to rewrite rule to serve :file:`/static/robots.txt`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Default Weblate configuration enables "
+#~ "``weblate.middleware.SecurityMiddleware`` middleware which"
+#~ " sets security related HTTP headers "
+#~ "like ``Content-Security-Policy`` or ``X"
+#~ "-XSS-Protection``. These are set to "
+#~ "work with Weblate and it's "
+#~ "configuration, but this might clash with"
+#~ " your customization. If that is your"
+#~ " case, it is recommended to disable"
+#~ " this middleware and set these "
+#~ "headers manually."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Following configuration runs Weblate as "
+#~ "WSGI, you need to have enabled "
+#~ "mod_wsgi (available as "
+#~ ":file:`examples/apache.conf`):"
+#~ msgstr ""
+
+#~ msgid "Sample configuration for Apache and gunicorn"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Following configuration runs Weblate in "
+#~ "gunicorn and Apache 2.4 (available as"
+#~ " :file:`examples/apache.gunicorn.conf`):"
+#~ msgstr ""
+
+#~ msgid "Sample configuration for nginx and uwsgi"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following configuration runs Weblate "
+#~ "as uwsgi under nginx webserver."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Configuration for nginx (also available "
+#~ "as :file:`examples/weblate.nginx.conf`):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Configuration for uwsgi (also available "
+#~ "as :file:`examples/weblate.uwsgi.ini`):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Sample Apache configuration to serve "
+#~ "Weblate under ``/weblate``.  Again using "
+#~ "mod_wsgi (also available as :file:`examples"
+#~ "/apache-path.conf`):"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate provides ``/healthz/`` URL to be"
+#~ " used in simple health checks, for"
+#~ " example using Kubernetes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is good idea to collect errors"
+#~ " from any Django application in "
+#~ "structured way and Weblate is not "
+#~ "an exception from this. You might "
+#~ "find several services providing this, "
+#~ "Weblate has basic support for following"
+#~ " ones."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate has built in support for "
+#~ "`Rollbar <https://rollbar.com/>`_. To use it"
+#~ " it's enough to follow instructions "
+#~ "for `Rollbar notifier for Python "
+#~ "<https://docs.rollbar.com/docs/python/>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Migrating Weblate to another server "
+#~ "should be pretty easy, however it "
+#~ "stores data in few locations which "
+#~ "you should migrate carefully. The best"
+#~ " approach is to stop migrated Weblate"
+#~ " for the migration."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The best approach is to use "
+#~ "database native tools as they are "
+#~ "usually the most effective (eg. "
+#~ ":command:`mysqldump` or :command:`pg_dump`). If "
+#~ "you want to migrate between different"
+#~ " databases, the only option might be"
+#~ " to use Django management to dump "
+#~ "and import the database:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For the fulltext index (stored in "
+#~ ":setting:`DATA_DIR`) it is better not to"
+#~ " migrate it, but rather to generate"
+#~ " a fresh one using "
+#~ ":djadmin:`rebuild_index`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Don't forget to move other services "
+#~ "which Weblate might have been using "
+#~ "like redis, memcached, cron jobs or "
+#~ "custom authentication backends."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Rebuilds index for fulltext search. This"
+#~ " might be lengthy operation if you"
+#~ " have a huge set of translation "
+#~ "units."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Updates all check for all units. "
+#~ "This could be useful only on "
+#~ "upgrades which do major changes to "
+#~ "checks."
+#~ msgstr ""
+

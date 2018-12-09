@@ -78,7 +78,7 @@ def check_celery(app_configs, **kwargs):
             )
         )
     else:
-        if get_queue_length() > 1000:
+        if get_queue_length() > 50 or get_queue_length('search') > 10000:
             errors.append(
                 Critical(
                     'The Celery tasks queue is too long, either the worker '
@@ -103,7 +103,8 @@ def check_celery(app_configs, **kwargs):
         except NotImplementedError:
             errors.append(
                 Critical(
-                    'The Celery is not configured to store results.',
+                    'The Celery is not configured to store results, '
+                    'CELERY_RESULT_BACKEND is probably not set.',
                     hint=get_doc_url('admin/install', 'celery'),
                     id='weblate.E020',
                 )

@@ -26,9 +26,11 @@ from botocore.stub import Stubber, ANY
 from django.http import HttpRequest
 from django.test import TestCase
 from django.test.utils import override_settings
+from django.utils.encoding import force_text
 
 import httpretty
 
+from weblate.trans.search import update_fulltext
 from weblate.trans.tests.test_views import FixtureTestCase
 from weblate.trans.tests.utils import get_test_file
 from weblate.trans.models.unit import Unit
@@ -50,6 +52,7 @@ from weblate.machinery.netease import NeteaseSightTranslation, NETEASE_API_ROOT
 from weblate.machinery.saptranslationhub import SAPTranslationHub
 from weblate.machinery.weblatetm import WeblateTranslation
 from weblate.checks.tests.test_checks import MockUnit
+from weblate.utils.state import STATE_TRANSLATED
 
 GLOSBE_JSON = '''
 {
@@ -237,10 +240,10 @@ DEEPL_RESPONSE = b'''{
 
 class MachineTranslationTest(TestCase):
     """Testing of machine translation core."""
-    def get_machine(self, cls):
+    def get_machine(self, cls, cache=False):
         machine = cls()
         machine.delete_cache()
-        machine.cache_translations = False
+        machine.cache_translations = cache
         return machine
 
     def test_support(self):
@@ -339,10 +342,7 @@ class MachineTranslationTest(TestCase):
         self.assert_translate(machine)
         self.assert_translate(machine, word='Zkouška')
 
-    @override_settings(MT_APERTIUM_APY='http://apertium.example.com/')
-    @httpretty.activate
-    def test_apertium_apy(self):
-        machine = self.get_machine(ApertiumAPYTranslation)
+    def register_apertium_urls(self):
         httpretty.register_uri(
             httpretty.GET,
             'http://apertium.example.com/listPairs',
@@ -355,6 +355,12 @@ class MachineTranslationTest(TestCase):
             body='{"responseData":{"translatedText":"Mundial"},'
             '"responseDetails":null,"responseStatus":200}'
         )
+
+    @override_settings(MT_APERTIUM_APY='http://apertium.example.com/')
+    @httpretty.activate
+    def test_apertium_apy(self):
+        machine = self.get_machine(ApertiumAPYTranslation)
+        self.register_apertium_urls()
         self.assert_translate(machine, 'es')
         self.assert_translate(machine, 'es', word='Zkouška')
 
@@ -711,8 +717,7 @@ class MachineTranslationTest(TestCase):
     @override_settings(MT_DEEPL_KEY='KEY')
     @httpretty.activate
     def test_cache(self):
-        machine = self.get_machine(DeepLTranslation)
-        machine.cache_translations = True
+        machine = self.get_machine(DeepLTranslation, True)
         httpretty.register_uri(
             httpretty.POST,
             'https://api.deepl.com/v1/translate',
@@ -745,9 +750,23 @@ class MachineTranslationTest(TestCase):
             )
             self.assert_translate(machine, lang='de', word='Hello')
 
+    @override_settings(MT_APERTIUM_APY='http://apertium.example.com/')
+    @httpretty.activate
+    def test_languages_cache(self):
+        machine = self.get_machine(ApertiumAPYTranslation, True)
+        self.register_apertium_urls()
+        self.assert_translate(machine, 'es')
+        self.assert_translate(machine, 'es', word='Zkouška')
+        self.assertTrue(httpretty.has_request())
+        httpretty.reset()
+        # New instance should use cached languages
+        machine = ApertiumAPYTranslation()
+        self.assert_translate(machine, 'es')
+        self.assertFalse(httpretty.has_request())
+
 
 class WeblateTranslationTest(FixtureTestCase):
-    def test_same(self):
+    def test_empty(self):
         machine = WeblateTranslation()
         unit = Unit.objects.all()[0]
         request = HttpRequest()
@@ -759,3 +778,32 @@ class WeblateTranslationTest(FixtureTestCase):
             request,
         )
         self.assertEqual(results, [])
+
+    def test_exists(self):
+        unit = Unit.objects.all()[0]
+        request = HttpRequest()
+        request.user = self.user
+        # Create fake fulltext entry
+        other = unit.translation.unit_set.exclude(pk=unit.pk)[0]
+        other.source = unit.source
+        other.target = 'Preklad'
+        other.state = STATE_TRANSLATED
+        other.save()
+        update_fulltext(
+            pk=other.pk,
+            source=force_text(unit.source),
+            context=force_text(unit.context),
+            location=force_text(unit.location),
+            target=force_text(other.target),
+            comment='',
+            language=force_text(unit.translation.language.code),
+        )
+        # Perform lookup
+        machine = WeblateTranslation()
+        results = machine.translate(
+            unit.translation.language.code,
+            unit.get_source_plurals()[0],
+            unit,
+            request,
+        )
+        self.assertNotEqual(results, [])

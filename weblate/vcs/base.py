@@ -42,7 +42,7 @@ from weblate.trans.util import (
 )
 from weblate.vcs.ssh import SSH_WRAPPER
 
-LOGGER = logging.getLogger('weblate-vcs')
+LOGGER = logging.getLogger('weblate.vcs')
 
 
 class RepositoryException(Exception):
@@ -107,7 +107,7 @@ class Repository(object):
 
     @classmethod
     def log(cls, message):
-        return LOGGER.debug('weblate: %s: %s', cls._cmd, message)
+        return LOGGER.debug('%s: %s', cls._cmd, message)
 
     def check_config(self):
         """Check VCS configuration."""
@@ -163,7 +163,7 @@ class Repository(object):
         output, output_err = process.communicate()
         retcode = process.poll()
         cls.log(
-            '{0} [retcode={1}]'.format(
+            'exec {0} [retcode={1}]'.format(
                 ' '.join([force_text(arg) for arg in args]),
                 retcode,
             )
@@ -241,7 +241,7 @@ class Repository(object):
         """Reset working copy to match remote branch."""
         raise NotImplementedError()
 
-    def merge(self, abort=False):
+    def merge(self, abort=False, message=None):
         """Merge remote branch or reverts the merge."""
         raise NotImplementedError()
 

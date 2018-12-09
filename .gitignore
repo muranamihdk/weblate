@@ -24,5 +24,8 @@ weblate-*.tar.*
 /.tesseract/
 /test-images/
 /cc-test-reporter
+# Celery logs/pids
+/weblate-*.log
+/weblate-*.pid
 /docs/locale/*/LC_MESSAGES/*.mo
 /docs/_build/

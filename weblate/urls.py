@@ -54,6 +54,7 @@ import weblate.trans.views.files
 import weblate.trans.views.git
 import weblate.trans.views.js
 import weblate.trans.views.lock
+import weblate.trans.views.manage
 import weblate.trans.views.reports
 import weblate.trans.views.search
 import weblate.trans.views.settings
@@ -515,18 +516,34 @@ real_patterns = [
     # VCS manipulation - remove
     url(
         r'^remove/' + PROJECT + '$',
-        weblate.trans.views.git.remove_project,
+        weblate.trans.views.manage.remove_project,
         name='remove_project',
     ),
     url(
         r'^remove/' + COMPONENT + '$',
-        weblate.trans.views.git.remove_component,
+        weblate.trans.views.manage.remove_component,
         name='remove_component',
     ),
     url(
         r'^remove/' + TRANSLATION + '$',
-        weblate.trans.views.git.remove_translation,
+        weblate.trans.views.manage.remove_translation,
         name='remove_translation',
+    ),
+    # Rename/move
+    url(
+        r'^rename/' + PROJECT + '$',
+        weblate.trans.views.manage.rename_project,
+        name='rename',
+    ),
+    url(
+        r'^rename/' + COMPONENT + '$',
+        weblate.trans.views.manage.rename_component,
+        name='rename',
+    ),
+    url(
+        r'^move/' + COMPONENT + '$',
+        weblate.trans.views.manage.move_component,
+        name='move',
     ),
 
     # Locking
