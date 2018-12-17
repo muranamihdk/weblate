@@ -347,7 +347,7 @@ Example of JSON file:
 
 .. seealso::
 
-    :djadmin:`import_project`
+    :djadmin:`import_memory`
 
 import_memory
 -------------
@@ -417,6 +417,12 @@ do not exist. It does no changes to the already existing ones.
     Customize base file for monolingual translations.
 
     For example: ``{{ component }}/res/values/string.xml``
+
+.. django-admin-option:: --new-base-template TEMPLATE
+
+    Customize base file for adding new translations.
+
+    For example: ``{{ component }}/ts/en.ts``
 
 .. django-admin-option:: --file-format FORMAT
 
