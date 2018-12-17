@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weblate Documentation 3.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 23:35+0900\n"
+"POT-Creation-Date: 2018-12-17 10:54+0900\n"
 "PO-Revision-Date: 2018-12-02 03:27+0000\n"
 "Last-Translator: Weblate Admin <muranamihideaki@gmail.com>\n"
 "Language: ja\n"
@@ -20,42 +20,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../admin/access.rst:4 ../../admin/projects.rst:113
+#: ../../admin/access.rst:4 ../../admin/projects.rst:111
 msgid "Access control"
 msgstr ""
 
 #: ../../admin/access.rst:8
 msgid ""
-"Before Weblate 3.0, the privileges system was based on Django, but now it"
-" is built specifically for Weblate. If you are using older version, "
-"please consult documentation for that version, information here will not "
-"apply."
+"Before Weblate 3.0, the privilege system was based on Django, but is now "
+"specifically built for Weblate. If you are using an older version, please"
+" the consult documentation for that version, the information here will "
+"not apply."
 msgstr ""
 
 #: ../../admin/access.rst:12
 msgid ""
-"Weblate comes with a fine grained privileges system to assign users "
-"permissions globally or in limited scope."
+"Weblate comes with a fine grained privilege system to assign user "
+"permissions for the whole instance, or in a limited scope."
 msgstr ""
 
 #: ../../admin/access.rst:15
 msgid ""
-"The permission system is groups and roles based, where roles define set "
-"of permissions and groups assign them to users and translations, see :ref"
-":`auth-model` for more details."
+"The permission system based on groups and roles, where roles define a set"
+" of permissions, and groups assign them to users and translations, see "
+":ref:`auth-model` for more details."
 msgstr ""
 
 #: ../../admin/access.rst:19
 msgid ""
-"Just after installation default set of groups is created and you can use "
-"those to assign users global roles (see :ref:`default-groups`). "
-"Additionally when :ref:`acl` is enabled, you can assign users to specific"
-" translation projects. More fine grained configuration can be achieved "
-"using :ref:`custom-acl`"
+"After installation a default set of groups is created, and you can use "
+"those to assign users roles for the whole instance (see :ref:`default-"
+"groups`). Additionally when :ref:`acl` is turned on, you can assign users"
+" to specific translation projects. More fine-grained configuration can be"
+" achieved using :ref:`custom-acl`"
 msgstr ""
 
 #: ../../admin/access.rst:25
-msgid "Most usual setups"
+msgid "Common setups"
 msgstr ""
 
 #: ../../admin/access.rst:28
@@ -64,9 +64,9 @@ msgstr ""
 
 #: ../../admin/access.rst:30
 msgid ""
-"To completely lock down your Weblate installation you can use "
-":setting:`LOGIN_REQUIRED_URLS` for forcing users to login and "
-":setting:`REGISTRATION_OPEN` for disallowing new registrations."
+"To completely lock down your Weblate installation, you can use "
+":setting:`LOGIN_REQUIRED_URLS` to force users to log in and "
+":setting:`REGISTRATION_OPEN` to prevent new registrations."
 msgstr ""
 
 #: ../../admin/access.rst:35
@@ -75,9 +75,10 @@ msgstr ""
 
 #: ../../admin/access.rst:37
 msgid ""
-"To manage site wide permissions, just add users to the `Users` (this is "
-"done by default using :ref:`autogroup`), `Reviewers` and `Managers` "
-"groups. Keep all projects configured as `Public` (see :ref:`acl`)."
+"To manage permissions for a whole instance, just add users to `Users` "
+"(this is done by default using the :ref:`autogroup`), `Reviewers` and "
+"`Managers` groups. Keep all projects configured as `Public` (see "
+":ref:`acl`)."
 msgstr ""
 
 #: ../../admin/access.rst:42
@@ -86,7 +87,7 @@ msgstr ""
 
 #: ../../admin/access.rst:44
 msgid ""
-"Configure your projects to `Protected` or `Private` and manage users per "
+"Set your projects to `Protected` or `Private`, and manage users per "
 "project in the Weblate interface."
 msgstr ""
 
@@ -96,18 +97,19 @@ msgstr ""
 
 #: ../../admin/access.rst:50
 msgid ""
-"You can additionally grant permissions to some user based on project, "
-"language or a component set. To achieve this, create new group (eg. "
-"`Czech translators`) and configure it for given object. Any assigned "
-"permissions will be granted to members of that group on selected objects."
+"You can additionally grant permissions to any user based on project, "
+"language or a component set. To achieve this, create a new group (e.g. "
+"`Czech translators`) and configure it for a given resource. Any assigned "
+"permissions will be granted to members of that group for selected "
+"resources."
 msgstr ""
 
 #: ../../admin/access.rst:55
 msgid ""
-"This will work just fine without additional setup if using per project "
-"permissions, for site wide permissions, you will probably also want to "
-"remove these permissions from the `Users` group or change automatic "
-"assignment of all users to that group (see :ref:`autogroup`)."
+"This will work just fine without additional setup, if using per project "
+"permissions. For permissions on the whole instance, you will probably "
+"also want to remove these permissions from the `Users` group, or change "
+"automatic assignment of all users to that group (see :ref:`autogroup`)."
 msgstr ""
 
 #: ../../admin/access.rst:63
@@ -117,18 +119,19 @@ msgstr ""
 #: ../../admin/access.rst:67
 msgid ""
 "By enabling ACL, all users are prohibited from accessing anything within "
-"a given project unless you add the permissions for them to do that."
+"a given project, unless you add the permissions for them to do just that."
 msgstr ""
 
 #: ../../admin/access.rst:70
 msgid ""
 "You can limit user's access to individual projects. This feature is "
-"enabled by :guilabel:`Access control` at Project configuration. This "
-"automatically creates several groups for this project, see :ref:`groups`."
+"turned on by :guilabel:`Access control` in the configuration of each "
+"respective project. This automatically creates several groups for this "
+"project, see :ref:`groups`."
 msgstr ""
 
 #: ../../admin/access.rst:74
-msgid "There are following choices for :guilabel:`Access control`:"
+msgid "The following choices exist for :guilabel:`Access control`:"
 msgstr ""
 
 #: ../../admin/access.rst:76
@@ -144,7 +147,7 @@ msgid "Protected"
 msgstr ""
 
 #: ../../admin/access.rst:79
-msgid "Publicly visible but translatable only for selected users"
+msgid "Publicly visible, but translatable only for selected users"
 msgstr ""
 
 #: ../../admin/access.rst:80
@@ -165,24 +168,26 @@ msgstr ""
 
 #: ../../admin/access.rst:87
 msgid ""
-"To allow access to this project, you have to add the privilege to do so "
-"either directly to the given user or group of users in Django admin "
-"interface, or by using user management on the project page as described "
+"To allow access to this project, you have to add the privilege either "
+"directly to the given user, or group of users in the Django admin "
+"interface, or by using user management on the project page, as described "
 "in :ref:`manage-acl`."
 msgstr ""
 
 #: ../../admin/access.rst:93
 msgid ""
-"Even with ACL enabled some summary information will be available about "
-"your project:"
+"Even with ACL turned on, some summary info will be available about your "
+"project:"
 msgstr ""
 
 #: ../../admin/access.rst:95
-msgid "Site wide statistics includes counts for all projects"
+msgid "Statistics for the whole instance, including counts for all projects."
 msgstr ""
 
 #: ../../admin/access.rst:96
-msgid "Site wide languages summary includes counts for all projects"
+msgid ""
+"Language summary for the whole instance, including counts for all "
+"projects."
 msgstr ""
 
 #: ../../admin/access.rst:101
@@ -191,22 +196,23 @@ msgstr ""
 
 #: ../../admin/access.rst:103
 msgid ""
-"You can configure Weblate to automatically add users to groups based on "
-"their email. This automatic assignment happens only at the time of "
-"account creation."
+"You can set up Weblate to automatically add users to groups based on "
+"their email addresses. This automatic assignment happens only at the time"
+" of account creation."
 msgstr ""
 
 #: ../../admin/access.rst:106
 msgid ""
-"This can be configured in the Django admin interface (in the "
+"This can be set up in the Django admin interface (in the "
 ":guilabel:`Accounts` section)."
 msgstr ""
 
 #: ../../admin/access.rst:111
 msgid ""
 "The automatic group assignment for the `Users` and `Viewers` groups will "
-"be always created by Weblate on migrations, in case you want to disable "
-"it, simply set the regular expression to ``^$``, what will never match."
+"always be created by Weblate upon migrations, in case you want to turn it"
+" off, simply set the regular expression to ``^$``, which will never "
+"match."
 msgstr ""
 
 #: ../../admin/access.rst:118
@@ -222,9 +228,10 @@ msgid "`Permission`"
 msgstr "`権限`"
 
 #: ../../admin/access.rst:123
+#, fuzzy
 msgid ""
 "Individual permissions defined by Weblate. You can not assign individual "
-"permissions, this can be done only through roles."
+"permissions, this can only be done through assignment of roles."
 msgstr "Weblate によって定義されている個々の権限です。権限を直接ユーザに割り当てることはできません。次の「役割」を通してのみ可能です。"
 
 #: ../../admin/access.rst:126
@@ -232,9 +239,10 @@ msgid "`Role`"
 msgstr "`役割`"
 
 #: ../../admin/access.rst:126
+#, fuzzy
 msgid ""
-"Role defines set of a permissions. This allows to reuse these sets in "
-"several places and makes the administration easier."
+"Role defines a set of permissions. This allows reuse of these sets in "
+"several places, and makes the administration easier."
 msgstr "役割は権限の束を定義します。これによりこれらの束を複数の場所で再利用でき、また管理者の作業を容易にします。"
 
 #: ../../admin/access.rst:128
@@ -261,8 +269,9 @@ msgstr ""
 
 #: ../../admin/access.rst:149
 msgid ""
-"Whenever permission is checked to be able to perform given action, the "
-"check is performed based on scope, following checks are performed:"
+"Whenever a permission is checked to decide whether one is able to perform"
+" a given action, the check is carried out according to scope, and the "
+"following checks are performed:"
 msgstr ""
 
 #: ../../admin/access.rst:156
@@ -270,12 +279,14 @@ msgid "`Project`"
 msgstr "`プロジェクト`"
 
 #: ../../admin/access.rst:153
-msgid "Compared against scope project, if not set, this matches none project."
+msgid ""
+"Compared against the scope of the project, if not set, this matches no "
+"project."
 msgstr ""
 
 #: ../../admin/access.rst:155
 msgid ""
-"You can use :guilabel:`Project selection` to automate including all "
+"You can use :guilabel:`Project selection` to automate inclusion of all "
 "projects."
 msgstr ""
 
@@ -284,15 +295,17 @@ msgid "`Component list`"
 msgstr "`コンポーネントリスト`"
 
 #: ../../admin/access.rst:159
-msgid "Scope component is matched against this list, if not set this is ignored."
+msgid ""
+"The scope component is matched against this list, if not set, this is "
+"ignored."
 msgstr ""
 
 #: ../../admin/access.rst:161
 msgid ""
-"Obviously this has no effect when checking access on the project scope, "
+"Obviously this has no effect when checking access of the project scope, "
 "so you will have to grant access to view all projects in a component list"
-" by other means. By default this is achieved by the `Viewers` group, see "
-":ref:`default-groups`)."
+" by other means. By default this is achieved through the use of the "
+"`Viewers` group, see :ref:`default-groups`)."
 msgstr ""
 
 #: ../../admin/access.rst:171
@@ -301,13 +314,13 @@ msgstr "`言語`"
 
 #: ../../admin/access.rst:167
 msgid ""
-"Compared against scope translation, if not set, this matches none "
+"Compared against scope of translations, if not set, this matches no "
 "language."
 msgstr ""
 
 #: ../../admin/access.rst:170
 msgid ""
-"You can use :guilabel:`Language selection` to automate including all "
+"You can use :guilabel:`Language selection` to automate inclusion of all "
 "languages."
 msgstr ""
 
@@ -317,9 +330,10 @@ msgstr ""
 
 #: ../../admin/access.rst:176
 msgid ""
-"User has to be a member of a group linked to the project. Only membership"
-" is enough, no specific permissions are needed to access a project (this "
-"is used in the default `Viewers` group, see :ref:`default-groups`)."
+"A user has to be a member of a group linked to the project. Only "
+"membership is enough, no specific permissions are needed to access a "
+"project (this is used in the default `Viewers` group, see :ref:`default-"
+"groups`)."
 msgstr ""
 
 #: ../../admin/access.rst:181
@@ -328,8 +342,8 @@ msgstr "ユーザとグループを管理する"
 
 #: ../../admin/access.rst:183
 msgid ""
-"All users and groups can be managed using Django admin interface, which "
-"is available under :file:`/admin/` URL."
+"All users and groups can be managed using the Django admin interface, "
+"available under :file:`/admin/` URL."
 msgstr ""
 
 #: ../../admin/access.rst:189
@@ -342,14 +356,16 @@ msgstr ""
 
 #: ../../admin/access.rst:195
 msgid ""
-"Users with :guilabel:`Can manage ACL rules for a project` privilege (see "
-":ref:`privileges`) can also manage users in projects with access control "
-"enabled on the project page. You can add or remove users to the project "
-"or make them owners."
+"Users with the :guilabel:`Can manage ACL rules for a project` privilege "
+"(see :ref:`privileges`) can also manage users in projects with access "
+"control turned on through the project page. You can add users, or remove "
+"them from a project, or make them owners of it."
 msgstr ""
 
 #: ../../admin/access.rst:200
-msgid "The user management is available in :guilabel:`Tools` menu of a project:"
+msgid ""
+"The user management is available in the :guilabel:`Tools` menu of a "
+"project:"
 msgstr ""
 
 #: ../../admin/access.rst:206
@@ -362,16 +378,16 @@ msgstr ""
 
 #: ../../admin/access.rst:213
 msgid ""
-"Weblate comes with predefined set of groups for a project where you can "
-"assign users."
+"Weblate comes with a predefined set of groups for a project, wherefrom "
+"you can assign users."
 msgstr ""
 
 #: ../../admin/access.rst:218
-msgid "Has all permissions on the project."
+msgid "Has all permissions available in the project."
 msgstr ""
 
 #: ../../admin/access.rst:222
-msgid "Can manage glossary (add or remove entries or upload glossary)."
+msgid "Can manage glossary (add or remove entries, or upload)."
 msgstr ""
 
 #: ../../admin/access.rst:226
@@ -380,22 +396,22 @@ msgstr ""
 
 #: ../../admin/access.rst:230
 msgid ""
-"Can manage screenshots - add or remove them and associate them to source "
-"strings."
+"Can manage screenshots - add or remove them, and associate them to source"
+" strings."
 msgstr ""
 
 #: ../../admin/access.rst:235
 msgid ""
-"Can edit translation template in :ref:`monolingual` and source string "
-"information."
+"Can edit translation templates in :ref:`monolingual` and source string "
+"info."
 msgstr ""
 
 #: ../../admin/access.rst:240
-msgid "Can translate project, including upload of offline translations."
+msgid "Can translate the project, and upload translations made offline."
 msgstr ""
 
 #: ../../admin/access.rst:244
-msgid "Can manage VCS and access exported repository."
+msgid "Can manage VCS and access the exported repository."
 msgstr ""
 
 #: ../../admin/access.rst:248
@@ -403,7 +419,7 @@ msgid "Can approve translations during review."
 msgstr ""
 
 #: ../../admin/access.rst:252
-msgid "Can access billing information (see :ref:`billing`)."
+msgid "Can access billing info (see :ref:`billing`)."
 msgstr ""
 
 #: ../../admin/access.rst:258
@@ -413,18 +429,19 @@ msgstr ""
 #: ../../admin/access.rst:260
 msgid ""
 "By choosing :guilabel:`Custom` as :guilabel:`Access control`, Weblate "
-"will stop managing access for given project and you can setup custom "
-"rules in Django admin interface. This can be used for defining more "
-"complex access control or having shared access policy for all projects in"
-" single Weblate instance. If you want to enable this for all projects by "
-"default please configure the :setting:`DEFAULT_ACCESS_CONTROL`."
+"will stop managing access for a given project, and you can set up custom "
+"rules in the Django admin interface. This can be used to define more "
+"complex access control, or set up a shared access policy for all projects"
+" in a single Weblate instance. If you want to enable this for all "
+"projects by default, please configure the "
+":setting:`DEFAULT_ACCESS_CONTROL`."
 msgstr ""
 
 #: ../../admin/access.rst:269
 msgid ""
-"By enabling this, Weblate will remove all :ref:`acl` it has created for "
-"this project. If you are doing this without global admin permission, you "
-"will instantly loose access to manage the project."
+"By turning this on, Weblate will remove all :ref:`acl` it has created for"
+" this project. If you are doing this without admin permission from the "
+"instance, you will instantly loose your access to manage the project."
 msgstr ""
 
 #: ../../admin/access.rst:276
@@ -440,7 +457,7 @@ msgid "Billing (see :ref:`billing`)"
 msgstr ""
 
 #: ../../admin/access.rst:282
-msgid "View billing information [`Administration`, `Billing`]"
+msgid "View billing info [`Administration`, `Billing`]"
 msgstr ""
 
 #: ../../admin/access.rst:285
@@ -467,8 +484,8 @@ msgstr ""
 
 #: ../../admin/access.rst:292
 msgid ""
-"Edit component settings [`Administration`] Lock component from "
-"translating [`Administration`]"
+"Edit component settings [`Administration`] Lock component, preventing it "
+"from being translated [`Administration`]"
 msgstr ""
 
 #: ../../admin/access.rst:299
@@ -526,7 +543,7 @@ msgid "Source strings"
 msgstr ""
 
 #: ../../admin/access.rst:317
-msgid "Edit info on source strings [`Administration`, `Edit source`]"
+msgid "Edit source string info [`Administration`, `Edit source`]"
 msgstr ""
 
 #: ../../admin/access.rst:325
@@ -535,12 +552,13 @@ msgstr ""
 
 #: ../../admin/access.rst:320
 msgid ""
-"Add new string [`Administration`] Ignore failing check [`Administration`,"
-" `Edit source`, `Power user`, `Review strings`, `Translate`] Edit strings"
-" [`Administration`, `Edit source`, `Power user`, `Review strings`, "
-"`Translate`] Review strings [`Administration`, `Review strings`] Edit "
-"string when suggestions are enforced [`Administration`, `Review strings`]"
-" Edit source strings [`Administration`, `Edit source`, `Power user`]"
+"Add new strings [`Administration`] Ignore failing checks "
+"[`Administration`, `Edit source`, `Power user`, `Review strings`, "
+"`Translate`] Edit strings [`Administration`, `Edit source`, `Power user`,"
+" `Review strings`, `Translate`] Review strings [`Administration`, `Review"
+" strings`] Edit string when suggestions are enforced [`Administration`, "
+"`Review strings`] Edit source strings [`Administration`, `Edit source`, "
+"`Power user`]"
 msgstr ""
 
 #: ../../admin/access.rst:331
@@ -549,10 +567,10 @@ msgstr ""
 
 #: ../../admin/access.rst:328
 msgid ""
-"Accept suggestion [`Administration`, `Edit source`, `Power user`, `Review"
-" strings`, `Translate`] Add suggestion [`Add suggestion`, "
+"Accept suggestions [`Administration`, `Edit source`, `Power user`, "
+"`Review strings`, `Translate`] Add suggestions [`Add suggestion`, "
 "`Administration`, `Edit source`, `Power user`, `Review strings`, "
-"`Translate`] Delete suggestion [`Administration`] Vote suggestion "
+"`Translate`] Delete suggestions [`Administration`] Vote on suggestions "
 "[`Administration`, `Edit source`, `Power user`, `Review strings`, "
 "`Translate`]"
 msgstr ""
@@ -565,8 +583,8 @@ msgstr "翻訳"
 msgid ""
 "Start new translation [`Administration`, `Manage languages`, `Power "
 "user`] Perform automatic translation [`Administration`, `Manage "
-"languages`] Delete existing translation [`Administration`, `Manage "
-"languages`] Start new translation into more languages [`Administration`, "
+"languages`] Delete existing translations [`Administration`, `Manage "
+"languages`] Start translation into a new language [`Administration`, "
 "`Manage languages`]"
 msgstr ""
 
@@ -577,7 +595,7 @@ msgstr ""
 #: ../../admin/access.rst:340
 msgid ""
 "Define author of translation upload [`Administration`] Overwrite existing"
-" strings with upload [`Administration`, `Edit source`, `Power user`, "
+" strings with an upload [`Administration`, `Edit source`, `Power user`, "
 "`Review strings`, `Translate`] Upload translation strings "
 "[`Administration`, `Edit source`, `Power user`, `Review strings`, "
 "`Translate`]"
@@ -605,7 +623,7 @@ msgstr ""
 
 #: ../../admin/access.rst:355
 msgid ""
-"The following groups are created on installation (or after executing "
+"The following groups are created upon installation (or after executing "
 ":djadmin:`setupgroups`):"
 msgstr ""
 
@@ -614,18 +632,18 @@ msgid "`Guests`"
 msgstr ""
 
 #: ../../admin/access.rst:359
-msgid "Defines permissions for not authenticated users."
+msgid "Defines permissions for non authenticated users."
 msgstr ""
 
 #: ../../admin/access.rst:361
 msgid ""
-"This group contains only anonymous user (see "
+"This group contains only anonymous users (see "
 ":setting:`ANONYMOUS_USER_NAME`)."
 msgstr ""
 
 #: ../../admin/access.rst:363
 msgid ""
-"You can remove roles from this group to limit permissions for not "
+"You can remove roles from this group to limit permissions for non "
 "authenticated users."
 msgstr ""
 
@@ -643,8 +661,8 @@ msgid ""
 " all users are members of this group."
 msgstr ""
 
-#: ../../admin/access.rst:372 ../../admin/access.rst:379
-msgid "By default all users are members of this group using :ref:`autogroup`."
+#: ../../admin/access.rst:372
+msgid "By default all users are members of this group, using :ref:`autogroup`."
 msgstr ""
 
 #: ../../admin/access.rst:374
@@ -657,6 +675,10 @@ msgstr ""
 
 #: ../../admin/access.rst:377
 msgid "Default group for all users."
+msgstr ""
+
+#: ../../admin/access.rst:379
+msgid "By default all users are members of this group using :ref:`autogroup`."
 msgstr ""
 
 #: ../../admin/access.rst:381
@@ -689,7 +711,7 @@ msgstr ""
 
 #: ../../admin/access.rst:395
 msgid ""
-"Never remove Weblate predefined groups and users, this can lead to "
+"Never remove the predefined Weblate groups and users, this can lead to "
 "unexpected problems. If you do not want to use these features, just "
 "remove all privileges from them."
 msgstr ""
@@ -1142,184 +1164,181 @@ msgstr ""
 
 #: ../../admin/auth.rst:7
 msgid ""
-"The default setup for Weblate is to use python-social-auth for handling "
-"new users. This allows them to register using a form on the website and "
-"after confirming their email they can contribute or authenticate by using"
-" some third party service."
+"The default setup for Weblate is to use python-social-auth, a form on the"
+" website to handle registration of new users. After confirming their "
+"email a new user can contribute or authenticate by using one of the third"
+" party services."
 msgstr ""
 
-#: ../../admin/auth.rst:12
+#: ../../admin/auth.rst:11
 msgid ""
-"You can also completely disable new users registration using "
+"You can also turn off registration of new users using "
 ":setting:`REGISTRATION_OPEN`."
 msgstr ""
 
-#: ../../admin/auth.rst:15
-msgid "The authentication attempts are subjects to :ref:`rate-limit`."
+#: ../../admin/auth.rst:14
+msgid "The authentication attempts are subject to :ref:`rate-limit`."
 msgstr ""
 
-#: ../../admin/auth.rst:19
+#: ../../admin/auth.rst:18
 msgid "Authentication backends"
 msgstr ""
 
-#: ../../admin/auth.rst:21
+#: ../../admin/auth.rst:20
 msgid ""
-"By default Weblate uses the Django built-in authentication and includes "
-"various social authentication options. Thanks to using Django "
-"authentication, you can also import user database from other Django based"
-" projects (see :ref:`pootle-migration`)."
+"The inbuilt solution of Django is used for authentication, including "
+"various social options to do so. Using it means you can import the user "
+"database of other Django based projects (see :ref:`pootle-migration`)."
 msgstr ""
 
-#: ../../admin/auth.rst:26
-msgid ""
-"Django can be additionally configured to authenticate against other means"
-" as well."
+#: ../../admin/auth.rst:25
+msgid "Django can additionally be set up to authenticate against other means too."
 msgstr ""
 
-#: ../../admin/auth.rst:30
+#: ../../admin/auth.rst:28
 msgid "Social authentication"
 msgstr ""
 
-#: ../../admin/auth.rst:32
+#: ../../admin/auth.rst:30
 msgid ""
 "Thanks to :doc:`psa:index`, Weblate support authentication using many "
-"third party services such as Facebook, GitHub, Google or Bitbucket."
+"third party services such as GitLab, Ubuntu, Fedora, etc."
 msgstr ""
 
-#: ../../admin/auth.rst:35
+#: ../../admin/auth.rst:33
 msgid ""
 "Please check their documentation for generic configuration instructions "
 "in :doc:`psa:configuration/django`."
 msgstr ""
 
-#: ../../admin/auth.rst:40
+#: ../../admin/auth.rst:38
 msgid ""
 "By default, Weblate relies on third-party authentication services to "
-"provide a validated email address, in case some of the services you want "
-"to use do not support this, please enforce email validation on Weblate "
+"provide a validated email address. If some of the services you want to "
+"use don't support this, please enforce email validation on the Weblate "
 "side by configuring FORCE_EMAIL_VALIDATION for them. For example:"
 msgstr ""
 
-#: ../../admin/auth.rst:49
+#: ../../admin/auth.rst:47
 msgid ":doc:`psa:pipeline`"
 msgstr ""
 
-#: ../../admin/auth.rst:51
+#: ../../admin/auth.rst:49
 msgid ""
 "Enabling individual backends is quite easy, it's just a matter of adding "
 "an entry to the ``AUTHENTICATION_BACKENDS`` setting and possibly adding "
-"keys needed for given authentication. Please note that some backends do "
-"not provide user email by default, you have to request it explicitly, "
-"otherwise Weblate will not be able to properly credit users "
-"contributions."
+"keys needed for a given authentication method. Please note that some "
+"backends do not provide user email by default, you have to request it "
+"explicitly, otherwise Weblate will not be able to properly credit "
+"contributions users make."
 msgstr ""
 
-#: ../../admin/auth.rst:59
+#: ../../admin/auth.rst:57
 msgid ":doc:`Python Social Auth backend <psa:backends/index>`"
 msgstr ""
 
-#: ../../admin/auth.rst:62
+#: ../../admin/auth.rst:60
 msgid "OpenID authentication"
 msgstr ""
 
-#: ../../admin/auth.rst:64
+#: ../../admin/auth.rst:62
 msgid ""
 "For OpenID based services it's usually just a matter of enabling them. "
 "The following section enables OpenID authentication for OpenSUSE, Fedora "
 "and Ubuntu:"
 msgstr ""
 
-#: ../../admin/auth.rst:80
+#: ../../admin/auth.rst:78
 msgid ":doc:`psa:backends/openid`"
 msgstr ""
 
-#: ../../admin/auth.rst:85
+#: ../../admin/auth.rst:83
 msgid "GitHub authentication"
 msgstr ""
 
-#: ../../admin/auth.rst:87
+#: ../../admin/auth.rst:85
 msgid ""
 "You need to register an application on GitHub and then tell Weblate all "
-"the secrets:"
+"its secrets:"
 msgstr ""
 
-#: ../../admin/auth.rst:105
+#: ../../admin/auth.rst:103
 msgid ":doc:`psa:backends/github`"
 msgstr ""
 
-#: ../../admin/auth.rst:110
+#: ../../admin/auth.rst:108
 msgid "Bitbucket authentication"
 msgstr ""
 
-#: ../../admin/auth.rst:112
+#: ../../admin/auth.rst:110
 msgid ""
 "You need to register an application on Bitbucket and then tell Weblate "
-"all the secrets:"
+"all its secrets:"
 msgstr ""
 
-#: ../../admin/auth.rst:130
+#: ../../admin/auth.rst:128
 msgid ":doc:`psa:backends/bitbucket`"
 msgstr ""
 
+#: ../../admin/auth.rst:133
+msgid "Google OAuth 2"
+msgstr ""
+
 #: ../../admin/auth.rst:135
-msgid "Google OAuth2"
-msgstr ""
-
-#: ../../admin/auth.rst:137
 msgid ""
-"For using Google OAuth2, you need to register an application on "
-"<https://console.developers.google.com/> and enable Google+ API."
+"To use Google OAuth 2, you need to register an application on "
+"<https://console.developers.google.com/> and enable the Google+ API."
 msgstr ""
 
-#: ../../admin/auth.rst:140
+#: ../../admin/auth.rst:138
 msgid ""
 "The redirect URL is ``https://WEBLATE SERVER/accounts/complete/google-"
 "oauth2/``"
 msgstr ""
 
-#: ../../admin/auth.rst:157
+#: ../../admin/auth.rst:155
 msgid ":doc:`psa:backends/google`"
 msgstr ""
 
+#: ../../admin/auth.rst:160
+msgid "Facebook OAuth 2"
+msgstr ""
+
 #: ../../admin/auth.rst:162
-msgid "Facebook OAuth2"
-msgstr ""
-
-#: ../../admin/auth.rst:164
 msgid ""
-"As usual with OAuth2 services, you need to register your application with"
-" Facebook. Once this is done, you can configure Weblate to use it:"
+"As per usual with OAuth 2 services, you need to register your application"
+" with Facebook. Once this is done, you can set up Weblate to use it:"
 msgstr ""
 
-#: ../../admin/auth.rst:183
+#: ../../admin/auth.rst:181
 msgid ":doc:`psa:backends/facebook`"
 msgstr ""
 
-#: ../../admin/auth.rst:189
-msgid "GitLab OAuth2"
+#: ../../admin/auth.rst:187
+msgid "GitLab OAuth 2"
 msgstr ""
 
-#: ../../admin/auth.rst:191
+#: ../../admin/auth.rst:189
 msgid ""
-"For using Gitlab OAuth2, you need to register application on "
+"For using GitLab OAuth 2, you need to register an application on "
 "<https://gitlab.com/profile/applications>."
 msgstr ""
 
-#: ../../admin/auth.rst:194
+#: ../../admin/auth.rst:192
 msgid ""
 "The redirect URL is ``https://WEBLATE SERVER/accounts/complete/gitlab/`` "
-"and ensure to mark the `read_user` scope."
+"and ensure you mark the `read_user` scope."
 msgstr ""
 
-#: ../../admin/auth.rst:216
+#: ../../admin/auth.rst:214
 msgid ":doc:`psa:backends/gitlab`"
 msgstr ""
 
-#: ../../admin/auth.rst:219
-msgid "Disabling password authentication"
+#: ../../admin/auth.rst:217
+msgid "Turning off password authentication"
 msgstr ""
 
-#: ../../admin/auth.rst:221
+#: ../../admin/auth.rst:219
 msgid ""
 "Email and password authentication can be disabled by removing "
 "``social_core.backends.email.EmailAuth`` from "
@@ -1328,192 +1347,192 @@ msgid ""
 " Weblate functionality."
 msgstr ""
 
-#: ../../admin/auth.rst:229
+#: ../../admin/auth.rst:227
 msgid ""
-"You can still use password authentication for the admin interface for "
+"You can still use password authentication for the admin interface, for "
 "users you manually create there. Just navigate to ``/admin/``."
 msgstr ""
 
-#: ../../admin/auth.rst:232
+#: ../../admin/auth.rst:230
 msgid ""
-"For example authentication using only openSUSE Open ID provider can be "
-"achieved using following:"
+"For example authentication using only the openSUSE Open ID provider can "
+"be achieved using the following:"
 msgstr ""
 
-#: ../../admin/auth.rst:244
+#: ../../admin/auth.rst:242
 msgid "Password authentication"
 msgstr ""
 
-#: ../../admin/auth.rst:246
+#: ../../admin/auth.rst:244
 msgid ""
-"The default :file:`settings.py` comes with reasonable set of "
+"The default :file:`settings.py` comes with a reasonable set of "
 ":setting:`django:AUTH_PASSWORD_VALIDATORS`:"
 msgstr ""
 
+#: ../../admin/auth.rst:247
+msgid "Passwords can't be too similar to your other personal info."
+msgstr ""
+
+#: ../../admin/auth.rst:248
+msgid "Passwords must contain at least 6 characters."
+msgstr ""
+
 #: ../../admin/auth.rst:249
-msgid "Password can't be too similar to your other personal information."
+msgid "Passwords can't be a commonly used password."
 msgstr ""
 
 #: ../../admin/auth.rst:250
-msgid "Password must contain at least 6 characters."
+msgid "Passwords can't be entirely numeric."
 msgstr ""
 
 #: ../../admin/auth.rst:251
-msgid "Password can't be a commonly used password."
+msgid "Passwords can't consist of a single character or only whitespace."
 msgstr ""
 
 #: ../../admin/auth.rst:252
-msgid "Password can't be entirely numeric."
-msgstr ""
-
-#: ../../admin/auth.rst:253
-msgid "Password can't consist of single character or whitespace only."
+msgid "Passwords can't match a password you have used in the past."
 msgstr ""
 
 #: ../../admin/auth.rst:254
-msgid "Password can't match password you have used in the past."
-msgstr ""
-
-#: ../../admin/auth.rst:256
 msgid "You can customize this setting to match your password policy."
 msgstr ""
 
-#: ../../admin/auth.rst:258
+#: ../../admin/auth.rst:256
 msgid ""
 "Additionally you can also install `django-zxcvbn-password "
 "<https://pypi.org/project/django-zxcvbn-password/>`_ which gives quite "
-"realistic estimates of password difficulty and allows to reject passwords"
-" below certain threshold."
+"realistic estimates of password difficulty and allows rejecting passwords"
+" below a certain threshold."
 msgstr ""
 
-#: ../../admin/auth.rst:266
+#: ../../admin/auth.rst:264
 msgid "LDAP authentication"
 msgstr ""
 
-#: ../../admin/auth.rst:268
+#: ../../admin/auth.rst:266
 msgid ""
-"LDAP authentication can be best achieved using `django-auth-ldap` "
-"package. You can install it by usual means:"
+"LDAP authentication can be best achieved using the `django-auth-ldap` "
+"package. You can install it via usual means:"
 msgstr ""
 
-#: ../../admin/auth.rst:281
+#: ../../admin/auth.rst:279
 msgid ""
 "With django-auth-ldap older than 1.3.0 the :ref:`autogroup` will not work"
 " properly for newly created users."
 msgstr ""
 
-#: ../../admin/auth.rst:286
+#: ../../admin/auth.rst:284
 msgid ""
-"There are some incompatibilities in Python LDAP module 3.1.0 which might "
-"prevent you from using that version. If you get error `AttributeError: "
-"'module' object has no attribute '_trace_level' <https://github.com"
-"/python-ldap/python-ldap/issues/226>`_, downgrading python-ldap to 3.0.0 "
-"might help."
+"There are some incompatibilities in the Python LDAP 3.1.0 module, which "
+"might prevent you from using that version. If you get error "
+"`AttributeError: 'module' object has no attribute '_trace_level' "
+"<https://github.com/python-ldap/python-ldap/issues/226>`_, downgrading "
+"python-ldap to 3.0.0 might help."
 msgstr ""
 
-#: ../../admin/auth.rst:292
+#: ../../admin/auth.rst:290
 msgid ""
-"Once you have the package installed, you can hook it to Django "
+"Once you have the package installed, you can hook it into the Django "
 "authentication:"
 msgstr ""
 
-#: ../../admin/auth.rst:324
+#: ../../admin/auth.rst:322
 msgid ""
 "If you can not use direct bind for authentication, you will need to use "
-"search and provide user to bind for the search. For example:"
+"search, and provide a user to bind for the search. For example:"
 msgstr ""
 
-#: ../../admin/auth.rst:339
+#: ../../admin/auth.rst:337
 msgid ""
 "You should remove ``'social_core.backends.email.EmailAuth'`` from the "
 "``AUTHENTICATION_BACKENDS`` setting, otherwise users will be able to set "
-"their password in Weblate and authenticate using that. Keeping "
+"their password in Weblate, and authenticate using that. Keeping "
 "``'weblate.accounts.auth.WeblateUserBackend'`` is still needed in order "
-"to make permissions and anonymous user work correctly. It will also allow"
-" you to login using local admin account if you have created it (eg. by "
-"using :djadmin:`createadmin`)."
+"to make permissions and facilitate anonymous users. It will also allow "
+"you to log in using a local admin account, if you have created it (e.g. "
+"by using :djadmin:`createadmin`)."
 msgstr ""
 
-#: ../../admin/auth.rst:349
+#: ../../admin/auth.rst:347
 msgid ":doc:`ldap:index`, :doc:`ldap:authentication`"
 msgstr ""
 
-#: ../../admin/auth.rst:356
+#: ../../admin/auth.rst:354
 msgid "CAS authentication"
 msgstr ""
 
-#: ../../admin/auth.rst:358
+#: ../../admin/auth.rst:356
 msgid ""
 "CAS authentication can be achieved using a package such as `django-cas-"
 "ng`."
 msgstr ""
 
-#: ../../admin/auth.rst:360
+#: ../../admin/auth.rst:358
 msgid ""
 "Step one is disclosing the email field of the user via CAS. This has to "
-"be configured on the CAS server itself and requires you run at least CAS "
-"v2 since CAS v1 doesn't support attributes at all."
+"be configured on the CAS server itself, and requires you run at least CAS"
+" v2 since CAS v1 doesn't support attributes at all."
 msgstr ""
 
-#: ../../admin/auth.rst:364
+#: ../../admin/auth.rst:362
 msgid "Step two is updating Weblate to use your CAS server and attributes."
 msgstr ""
 
-#: ../../admin/auth.rst:366
+#: ../../admin/auth.rst:364
 msgid "To install `django-cas-ng`:"
 msgstr ""
 
-#: ../../admin/auth.rst:372
+#: ../../admin/auth.rst:370
 msgid ""
 "Once you have the package installed you can hook it up to the Django "
 "authentication system by modifying the :file:`settings.py` file:"
 msgstr ""
 
-#: ../../admin/auth.rst:393
+#: ../../admin/auth.rst:391
 msgid ""
 "Finally, a signal can be used to map the email field to the user object. "
 "For this to work you have to import the signal from the `django-cas-ng` "
-"package and connect your code with this signal. Doing this inside your "
-"settings file can cause problems, therefore it's suggested to put it:"
+"package and connect your code with this signal. Doing this in settings "
+"file can cause problems, therefore it's suggested to put it:"
+msgstr ""
+
+#: ../../admin/auth.rst:396
+msgid ""
+"In your app config's :py:meth:`django:django.apps.AppConfig.ready` method"
+" (Django 1.7 and above)"
+msgstr ""
+
+#: ../../admin/auth.rst:397
+msgid "At the end of your :file:`models.py` file (Django 1.6 and below)"
 msgstr ""
 
 #: ../../admin/auth.rst:398
-msgid ""
-"in your app config's :py:meth:`django:django.apps.AppConfig.ready` method"
-" (Django 1.7 and higher)"
+msgid "In the project's :file:`urls.py` file (when no models exist)"
 msgstr ""
 
-#: ../../admin/auth.rst:399
-msgid "at the end of your :file:`models.py` file (Django 1.6 and lower)"
-msgstr ""
-
-#: ../../admin/auth.rst:400
-msgid "in the project's :file:`urls.py` file (when no models exist)"
-msgstr ""
-
-#: ../../admin/auth.rst:415
+#: ../../admin/auth.rst:413
 msgid "`Django CAS NG <https://github.com/mingchen/django-cas-ng>`_"
 msgstr ""
 
-#: ../../admin/auth.rst:418
+#: ../../admin/auth.rst:416
 msgid "Configuring third party Django authentication"
 msgstr ""
 
-#: ../../admin/auth.rst:420
+#: ../../admin/auth.rst:418
 msgid ""
 "Generally any Django authentication plugin should work with Weblate. Just"
-" follow instructions for the plugin, just remember to keep Weblate user "
-"backend installed."
+" follow the instructions for the plugin, just remember to keep the "
+"Weblate user backend installed."
 msgstr ""
 
-#: ../../admin/auth.rst:426
+#: ../../admin/auth.rst:424
 msgid ":ref:`ldap-auth`, :ref:`cas-auth`"
 msgstr ""
 
-#: ../../admin/auth.rst:429
+#: ../../admin/auth.rst:427
 msgid ""
-"Typically the installation will consist of adding authentication backend "
-"to :setting:`django:AUTHENTICATION_BACKENDS` and installing "
+"Typically the installation will consist of adding an authentication "
+"backend to :setting:`django:AUTHENTICATION_BACKENDS` and installing an "
 "authentication app (if there is any) into "
 ":setting:`django:INSTALLED_APPS`:"
 msgstr ""
@@ -1528,179 +1547,178 @@ msgstr ""
 
 #: ../../admin/backup.rst:7
 msgid ""
-"Weblate stores data in several locations and you should consider how to "
-"backup each of them properly. You might not need to backup some of the "
-"data depending on the configuration."
+"Depending on what you want to save, back up the type data Weblate stores "
+"in each respective place."
 msgstr ""
 
-#: ../../admin/backup.rst:12
+#: ../../admin/backup.rst:10
 msgid "Database"
 msgstr ""
 
+#: ../../admin/backup.rst:12
+msgid "Where this is located depends on your database setup."
+msgstr ""
+
 #: ../../admin/backup.rst:14
-msgid "Location depends on your database setup."
-msgstr ""
-
-#: ../../admin/backup.rst:16
 msgid ""
-"Database is the most important storage for Weblate. Always configure "
-"regular backups of your database, without it all your translations setup "
-"will be gone."
+"The database is the most important storage. Set up regular backups of "
+"your database, without it all your translation setup will be gone."
 msgstr ""
 
-#: ../../admin/backup.rst:20
+#: ../../admin/backup.rst:18
 msgid "Files"
 msgstr ""
 
-#: ../../admin/backup.rst:22
+#: ../../admin/backup.rst:20
 msgid ""
-"If you have enough backup space, simply backup whole :setting:`DATA_DIR`."
-" This is safe bet even if you will include some files which do not have "
-"to be backed up. Following sections in detail describe what you should "
-"backup and what you can skip."
+"If you have enough backup space, simply backup the whole "
+":setting:`DATA_DIR`. This is safe bet even if it includes some files you "
+"don't want. The following sections describe in detail what you should "
+"back up and what you can skip."
 msgstr ""
 
-#: ../../admin/backup.rst:30
+#: ../../admin/backup.rst:28
 msgid "Dumped data for backups"
 msgstr ""
 
-#: ../../admin/backup.rst:32
+#: ../../admin/backup.rst:30
 msgid "Stored in :setting:`DATA_DIR` ``/backups``."
 msgstr ""
 
-#: ../../admin/backup.rst:34
+#: ../../admin/backup.rst:32
 msgid ""
-"Weblate dumps various data here and you can use the files here for better"
-" backups. The files are updated daily (requires running Celery beats "
-"server, see :ref:`celery`).  Currently this includes:"
+"Weblate dumps various data here, and you can include these files for more"
+" complete backups. The files are updated daily (requires a running Celery"
+" beats server, see :ref:`celery`).  Currently this includes:"
 msgstr ""
 
-#: ../../admin/backup.rst:38
-msgid "Translation memory dump in JSON format."
+#: ../../admin/backup.rst:36
+msgid "Translation memory dump, in JSON format."
 msgstr ""
 
-#: ../../admin/backup.rst:41
+#: ../../admin/backup.rst:39
 msgid "Version control repositories"
 msgstr ""
 
-#: ../../admin/backup.rst:43
+#: ../../admin/backup.rst:41
 msgid "Stored in :setting:`DATA_DIR` ``/vcs``."
 msgstr ""
 
-#: ../../admin/backup.rst:45
+#: ../../admin/backup.rst:43
 msgid ""
-"The version control repositories contain copy of your upstream "
-"repositories with Weblate changes. If you have push on commit enabled on "
-"all your translation components, then all Weblate changes are included "
-"upstream and you do not have to backup the repositories on Weblate side. "
-"They can be cloned again from upstream locations with no data loss."
+"The version control repositories contain a copy of your upstream "
+"repositories with Weblate changes. If you have push on commit enabled for"
+" all your translation components, all Weblate changes are included "
+"upstream and you do not have to backup the repositories on the Weblate "
+"side. They can be cloned again from the upstream locations with no data "
+"loss."
 msgstr ""
 
-#: ../../admin/backup.rst:52
+#: ../../admin/backup.rst:50
 msgid "SSH and GPG keys"
 msgstr ""
 
-#: ../../admin/backup.rst:54
+#: ../../admin/backup.rst:52
 msgid "Stored in :setting:`DATA_DIR` ``/ssh`` and :setting:`DATA_DIR` ``/home``."
 msgstr ""
 
-#: ../../admin/backup.rst:56
+#: ../../admin/backup.rst:54
 msgid ""
-"If you are using Weblate generated SSH or GPG keys, you should backup "
-"these locations, otherwise you will loose to private keys and you will "
+"If you are using SSH or GPG keys generated by Weblate, you should back up"
+" these locations, otherwise you will loose the private keys and you will "
 "have to regenerate new ones."
 msgstr ""
 
-#: ../../admin/backup.rst:61
+#: ../../admin/backup.rst:59
 msgid "User uploaded files"
 msgstr ""
 
-#: ../../admin/backup.rst:63
+#: ../../admin/backup.rst:61
 msgid "Stored in :setting:`DATA_DIR` ``/media``."
 msgstr ""
 
-#: ../../admin/backup.rst:65
-msgid "You should backup user uploaded files (eg. :ref:`screenshots`)."
+#: ../../admin/backup.rst:63
+msgid "You should back up user uploaded files (e.g. :ref:`screenshots`)."
 msgstr ""
 
-#: ../../admin/backup.rst:68
+#: ../../admin/backup.rst:66
 msgid "Translation memory"
 msgstr ""
 
-#: ../../admin/backup.rst:70
+#: ../../admin/backup.rst:68
 msgid "Stored in :setting:`DATA_DIR` ``/memory``."
 msgstr ""
 
-#: ../../admin/backup.rst:72
+#: ../../admin/backup.rst:70
 msgid ""
-"The translation memory content. It is recommended to back it up using "
-":djadmin:`dump_memory` in JSON format instead of using binary format as "
-"that might eventually change (and it is incompatible between Python 2 and"
-" Python 3). Weblate prepares this dump daily, see :ref:`backup-dumps`."
+"It is recommended to back up this content using :djadmin:`dump_memory` in"
+" JSON-, instead of binary format, as that might eventually change (and is"
+" also incompatible going from Python 2 to Python 3). Weblate prepares "
+"this dump daily, see :ref:`backup-dumps`."
 msgstr ""
 
-#: ../../admin/backup.rst:78
+#: ../../admin/backup.rst:76
 msgid "Fulltext index"
 msgstr ""
 
-#: ../../admin/backup.rst:80
+#: ../../admin/backup.rst:78
 msgid "Stored in :setting:`DATA_DIR` ``/whoosh``."
 msgstr ""
 
-#: ../../admin/backup.rst:82
+#: ../../admin/backup.rst:80
 msgid ""
 "It is recommended to not backup this and regenerate it from scratch on "
 "restore."
 msgstr ""
 
-#: ../../admin/backup.rst:85
+#: ../../admin/backup.rst:83
 msgid "Celery tasks"
 msgstr ""
 
-#: ../../admin/backup.rst:87
+#: ../../admin/backup.rst:85
 msgid ""
-"The Celery tasks queue might contain some information, but usually it's "
-"not needed to backup. At most your will loose not processed updates to "
-"translation memory. The fulltext or repository updates are anyway "
-"recommended to perform on restore, so there is no problem in losing "
-"these."
+"The Celery tasks queue might contain some info, but is usually not needed"
+" for a backup. At most your will loose updates that have not yet ben "
+"processed to translation memory. It is recommended to perform the "
+"fulltext or repository updates upon restoring anyhow, so there is no "
+"problem in losing these."
 msgstr ""
 
-#: ../../admin/backup.rst:94
+#: ../../admin/backup.rst:92
 msgid ":ref:`celery`"
 msgstr ""
 
-#: ../../admin/backup.rst:97
+#: ../../admin/backup.rst:95
 msgid "Restoring"
 msgstr ""
 
-#: ../../admin/backup.rst:99
+#: ../../admin/backup.rst:97
 msgid "Restore all data you have backed up."
 msgstr ""
 
-#: ../../admin/backup.rst:101 ../../admin/upgrade.rst:169
-msgid "Recreate fulltext index using :djadmin:`rebuild_index`:"
+#: ../../admin/backup.rst:99
+msgid "Recreate a fulltext index using :djadmin:`rebuild_index`:"
 msgstr ""
 
-#: ../../admin/backup.rst:107 ../../admin/upgrade.rst:163
+#: ../../admin/backup.rst:105 ../../admin/upgrade.rst:163
 msgid "Restore your :ref:`translation-memory` using :djadmin:`import_memory`."
 msgstr ""
 
-#: ../../admin/backup.rst:113
+#: ../../admin/backup.rst:111
 msgid "Update all repositories using :djadmin:`updategit`."
 msgstr ""
 
+#: ../../admin/backup.rst:118
+msgid "Moving a Weblate installation"
+msgstr ""
+
 #: ../../admin/backup.rst:120
-msgid "Moving Weblate installation"
-msgstr ""
-
-#: ../../admin/backup.rst:122
 msgid ""
-"Weblate installation should be relocatable, to move to different systems "
-"just follow backup and restore instructions above."
+"Relocatable your installation to a different system by following the "
+"backup and restore instructions above."
 msgstr ""
 
-#: ../../admin/backup.rst:127
+#: ../../admin/backup.rst:125
 msgid ":ref:`py3`"
 msgstr ""
 
@@ -2257,7 +2275,7 @@ msgstr ""
 msgid "User name of user for defining privileges of not logged in user."
 msgstr ""
 
-#: ../../admin/config.rst:37 ../../admin/management.rst:758
+#: ../../admin/config.rst:37 ../../admin/management.rst:764
 msgid ":ref:`privileges`"
 msgstr ""
 
@@ -3453,7 +3471,7 @@ msgid ""
 "ones enabled, for example:"
 msgstr ""
 
-#: ../../admin/config.rst:1077 ../../admin/management.rst:560
+#: ../../admin/config.rst:1077 ../../admin/management.rst:566
 msgid ":ref:`addons`"
 msgstr ""
 
@@ -3497,20 +3515,19 @@ msgstr "継続的トランスレーション"
 
 #: ../../admin/continuous.rst:6
 msgid ""
-"Weblate provides you with a great infrastructure for translation to "
-"closely follow your development. This way translators can work on "
-"translations the entire time and are not forced to translate a huge "
-"amount of new texts before release."
+"There is infrastructure in place so that your translation closely follows"
+" development. This way translators can work on translations the entire "
+"time, instead of working through huge amount of new text just prior to "
+"release."
 msgstr ""
-"Weblate "
-"はあなたの開発に密に追従する翻訳のための最高の基盤を提供します。これにより翻訳者は常に翻訳に取り組むことができ、リリース前に新たに大量のテキストの翻訳を強いられることがありません。"
 
 #: ../../admin/continuous.rst:10
-msgid "The complete process can be described in following steps:"
-msgstr "完全なプロセスは次のようなステップで説明することができます。"
+msgid "This is the process:"
+msgstr ""
 
 #: ../../admin/continuous.rst:12
-msgid "Developers make some changes and push them to the VCS repository."
+#, fuzzy
+msgid "Developers make changes and push them to the VCS repository."
 msgstr "開発者は変更を行い VCS リポジトリに push します。"
 
 #: ../../admin/continuous.rst:13
@@ -3526,20 +3543,25 @@ msgid "Weblate pulls changes from the VCS repository, see :ref:`update-vcs`."
 msgstr "Weblate は変更を VCS リポジトリから取得します。:ref:`update-vcs` を参照してください。"
 
 #: ../../admin/continuous.rst:15
+#, fuzzy
 msgid ""
-"Once Weblate detects changes in translations, translators will be "
-"notified based on their subscription settings."
+"Once Weblate detects changes in translations, translators are notified "
+"based on their subscription settings."
 msgstr "Weblate が翻訳に変更を検知すると、翻訳者に購読設定に応じて通知が行われます。"
 
 #: ../../admin/continuous.rst:16
-msgid "Translators make translations using Weblate web interface."
+#, fuzzy
+msgid ""
+"Translators submit translations using the Weblate web interface, or "
+"upload offline changes."
 msgstr "翻訳者は Weblate のウェブインターフェイスを使用して翻訳を行います。"
 
 #: ../../admin/continuous.rst:17
+#, fuzzy
 msgid ""
-"Once translators are done, Weblate commits the changes to the local "
-"repository (see :ref:`lazy-commit`) and pushes them back if it has "
-"permissions to do that (see :ref:`push-changes`)."
+"Once the translators are finished, Weblate commits the changes to the "
+"local repository (see :ref:`lazy-commit`) and pushes them back if it has "
+"permissions to do so (see :ref:`push-changes`)."
 msgstr ""
 "翻訳が行われると、Weblate は変更をローカルリポジトリにコミットします（:ref:`lazy-commit` "
 "を参照してください）。同時に、許可が与えられている場合は、リモートリポジトリに変更を送信します（:ref:`push-changes` "
@@ -3550,11 +3572,12 @@ msgid "Updating repositories"
 msgstr "リポジトリを更新する"
 
 #: ../../admin/continuous.rst:43
+#, fuzzy
 msgid ""
-"You should set up some way how backend repositories are updated from "
-"their source. You can either use hooks (see :ref:`hooks`) or just "
-"regularly run :djadmin:`updategit` (with selection of project or `--all` "
-"for updating all)."
+"You should set up some way of updating backend repositories from their "
+"source. Either use hooks (see :ref:`hooks`) or just regularly run "
+":djadmin:`updategit` (with selection of project or `--all` to update "
+"all)."
 msgstr ""
 "バックエンドリポジトリをソースに基づいて更新するために、何らかの方法を設定しておく必要があります。フックを使うこともできますし（:ref:`hooks`"
 " を参照してください）、単に定期的に :djadmin:`updategit` を（プロジェクトを選択して、あるいは `--all` "
@@ -3567,28 +3590,31 @@ msgid ""
 msgstr "リポジトリが更新されるとその都度、:guilabel:`Post-update script` フックが実行されます。"
 
 #: ../../admin/continuous.rst:50
+#, fuzzy
 msgid ""
-"With Gettext po files, you might be often bitten by conflict in PO file "
-"headers. To avoid it, you can use shipped merge driver (:file:`examples"
-"/git-merge-gettext-po`). To use it just put following configuration to "
-"your :file:`.gitconfig`:"
+"With Gettext PO files, you might get bit by conflicts in PO file headers."
+" To avoid it, you can use the shipped merge driver (:file:`examples/git-"
+"merge-gettext-po`). Use it by putting the following configuration in your"
+" :file:`.gitconfig`:"
 msgstr ""
 "Gettext po ファイルにおいては、しばしば PO "
 "ヘッダの競合に遭遇することになります。これを避けるために、付属のマージドライバ（:file:`examples/git-merge-"
 "gettext-po`）を使うことができます。:file:`.gitconfig` ファイルに以下の設定を行うだけで、これを使うことができます。"
 
 #: ../../admin/continuous.rst:61
+#, fuzzy
 msgid ""
-"And enable its use by defining proper attributes in given repository (eg."
-" in :file:`.git/info/attributes`)::"
+"Then enable its use by defining proper attributes in the given repository"
+" (e.g. in :file:`.git/info/attributes`)::"
 msgstr ""
 "そして所定のリポジトリで適当な属性を定義することにより、使用を有効にしてください（例えば :file:`.git/info/attributes`"
 " ファイルなど）。"
 
 #: ../../admin/continuous.rst:68
+#, fuzzy
 msgid ""
-"This merge driver assumes the changes in POT files always are done in the"
-" branch we're trying to merge."
+"This merge driver assumes changes in POT files always are done in the "
+"attemptedly merged branch."
 msgstr "このマージドライバは、POT ファイルの変更は常に、マージしようとしているブランチで行われていると仮定しています。"
 
 #: ../../admin/continuous.rst:73
@@ -3602,24 +3628,27 @@ msgid "Avoiding merge conflicts"
 msgstr "マージ時の競合を避ける"
 
 #: ../../admin/continuous.rst:81
+#, fuzzy
 msgid ""
-"To avoid merge conflicts you should control when to update translation "
-"files in upstream repository to avoid Weblate having changes on same "
-"file."
+"To avoid merge conflicts, control when translation files are updated in "
+"the upstream repository to avoid Weblate having changes on the same file."
 msgstr ""
 "マージ時の競合を避けるためには、リモートリポジトリでの翻訳ファイルの更新タイミングをコントロールし、Weblate "
 "が同じファイルを変更するのを避けなければいけません。"
 
 #: ../../admin/continuous.rst:84
+#, fuzzy
 msgid ""
-"You can achieve this using :ref:`api` to force Weblate push all pending "
-"changes and lock translation while you are doing changes on your side."
+"You can achieve this using :ref:`api` to force Weblate to push all "
+"pending changes and lock the translation while you are doing changes on "
+"your side."
 msgstr ""
 ":ref:`api` を使って、Weblate で保留中の変更をすべてリモートリポジトリに反映させることと、ローカルで変更を行っている間は "
 "Weblate での翻訳にロックをかけておくことによって、これを行うことができます。"
 
 #: ../../admin/continuous.rst:87
-msgid "The script for doing updates can look like:"
+#, fuzzy
+msgid "The script for doing updates can look like this:"
 msgstr "更新を行うスクリプトは次のようになります。"
 
 #: ../../admin/continuous.rst:108
@@ -3629,10 +3658,11 @@ msgid ""
 msgstr "同一のリポジトリを共有する複数のコンポーネントがある場合は、個々のコンポーネントごとに、それぞれロックをかける必要があります。"
 
 #: ../../admin/continuous.rst:119
+#, fuzzy
 msgid ""
-"The example uses :ref:`wlc`, which will need configuration (API keys) to "
-"be able to control Weblate remotely. You can also achieve this using any "
-"HTTP client instead of wlc, eg. curl, see :ref:`api`."
+"The example uses :ref:`wlc`, which needs configuration (API keys) to be "
+"able to control Weblate remotely. You can also achieve this using any "
+"HTTP client instead of wlc, e.g. curl, see :ref:`api`."
 msgstr ""
 "これらのスクリプト例では :ref:`wlc` を使っていますが、これには Weblate をリモートコントロールするための設定（API "
 "キー）が必要です。 wlc ではなく、例えば curl などの HTTP クライアントを使っても同じことを実現できます。:ref:`api` "
@@ -3648,172 +3678,174 @@ msgstr "Weblate は最初から GitHub をサポートするように作られ�
 
 #: ../../admin/continuous.rst:130
 msgid ""
-"If you are using Hosted Weblate the recommended approach is to install "
-"`Hosted Weblate app <https://github.com/apps/hosted-weblate>`_, that way "
-"you will get correct setup without much configuring. In future it will be"
-" used for pushing changes back as well (that's why the write permission "
-"is requested), but it's not yet implemented."
+"If you are using Hosted Weblate, the recommended approach is to install "
+"the `Hosted Weblate app <https://github.com/apps/hosted-weblate>`_, that "
+"way you will get the correct setup without having to set much up. It can "
+"also be used for pushing changes back."
 msgstr ""
-"Weblate ホスティングサービスを利用されている場合は、`Hosted Weblate app "
-"<https://github.com/apps/hosted-weblate>`_ "
-"をインストールするのがおすすめです。これによって最小限の設定で正しいセットアップをすることが可能です。将来は同じように Weblate から "
-"GitHub への変更の送信にも対応する予定ですが（これが書き込み権限も要求される理由です）、現在のところはまだ実装されていません。"
 
-#: ../../admin/continuous.rst:136
+#: ../../admin/continuous.rst:135
+#, fuzzy
 msgid ""
-"To receive notifications on every push to GitHub repository, you just "
-"need to add Weblate Webhook in the repository settings "
-"(:guilabel:`Webhooks`) as shown on the image below:"
+"To receive notifications on every push to a GitHub repository, add the "
+"Weblate Webhook in the repository settings (:guilabel:`Webhooks`) as "
+"shown on the image below:"
 msgstr ""
 "GitHub リポジトリへのすべてのプッシュの通知を受け取るためには、次の画像で示すように、リポジトリ設定の "
 ":guilabel:`Webhooks` で Weblate Webhook を追加するだけでよいです。"
 
-#: ../../admin/continuous.rst:142
+#: ../../admin/continuous.rst:141
+#, fuzzy
 msgid ""
-"For the payload URL append ``/hooks/github/`` to your Weblate URL, for "
-"example for Hosted Weblate service this is "
+"For the payload URL, append ``/hooks/github/`` to your Weblate URL, for "
+"example for the Hosted Weblate service, this is "
 "``https://hosted.weblate.org/hooks/github/``."
 msgstr ""
 "payload URL として、``/hooks/github/`` をあなたの Weblate URL に追加してください。例えば "
 "Weblate ホスティングサービスであればこれは ``https://hosted.weblate.org/hooks/github/`` "
 "になります。"
 
-#: ../../admin/continuous.rst:145
+#: ../../admin/continuous.rst:144
+#, fuzzy
 msgid ""
-"You can leave other values on the default settings (Weblate can handle "
-"both content types and consumes just the `push` event)."
+"You can leave other values at default settings (Weblate can handle both "
+"content types and consumes just the `push` event)."
 msgstr ""
 "それ以外の設定値は最初のままで構いません（Weblate は単に `push` イベントで content types と consumes "
 "の両方を取り扱うことができます）。"
 
-#: ../../admin/continuous.rst:150
+#: ../../admin/continuous.rst:149
 msgid ":http:post:`/hooks/github/`, :ref:`hosted-push`"
 msgstr ""
 
-#: ../../admin/continuous.rst:155
+#: ../../admin/continuous.rst:154
 msgid "Automatically receiving changes from Bitbucket"
 msgstr ""
 
-#: ../../admin/continuous.rst:157
+#: ../../admin/continuous.rst:156
 msgid ""
-"Weblate has support for Bitbucket webhooks, all you need to do is add a "
-"webhook which triggers on repository push with destination to "
-"``/hooks/bitbucket/`` URL on your Weblate installation (for example "
+"Weblate has support for Bitbucket webhooks, add a webhook which triggers "
+"upon repository push, with destination to ``/hooks/bitbucket/`` URL on "
+"your Weblate installation (for example "
 "``https://hosted.weblate.org/hooks/bitbucket/``)."
 msgstr ""
 
-#: ../../admin/continuous.rst:166
+#: ../../admin/continuous.rst:165
 msgid ":http:post:`/hooks/bitbucket/`, :ref:`hosted-push`"
 msgstr ""
 
-#: ../../admin/continuous.rst:171
+#: ../../admin/continuous.rst:170
 msgid "Automatically receiving changes from GitLab"
 msgstr ""
 
-#: ../../admin/continuous.rst:173
+#: ../../admin/continuous.rst:172
 msgid ""
-"Weblate has support for GitLab hooks, all you need to do is add project "
-"web hook with destination to ``/hooks/gitlab/`` URL on your Weblate "
-"installation (for example ``https://hosted.weblate.org/hooks/gitlab/``)."
+"Weblate has support for GitLab hooks, add a project webhook with "
+"destination to ``/hooks/gitlab/`` URL on your Weblate installation (for "
+"example ``https://hosted.weblate.org/hooks/gitlab/``)."
 msgstr ""
 
-#: ../../admin/continuous.rst:179
+#: ../../admin/continuous.rst:178
 msgid ":http:post:`/hooks/gitlab/`, :ref:`hosted-push`"
 msgstr ""
 
-#: ../../admin/continuous.rst:184
+#: ../../admin/continuous.rst:183
 msgid "Automatically receiving changes from Pagure"
 msgstr ""
 
-#: ../../admin/continuous.rst:188
+#: ../../admin/continuous.rst:187
 msgid ""
-"Weblate has support for Pagure hooks, all you need to do is add project "
-"web hook with destination to ``/hooks/pagure/`` URL on your Weblate "
-"installation (for example ``https://hosted.weblate.org/hooks/pagure/``). "
-"This can be done in :guilabel:`Activate Web-hooks` under "
-":guilabel:`Project options`:"
+"Weblate has support for Pagure hooks, add a webhook with destination to "
+"``/hooks/pagure/`` URL on your Weblate installation (for example "
+"``https://hosted.weblate.org/hooks/pagure/``). This can be done in "
+":guilabel:`Activate Web-hooks` under :guilabel:`Project options`:"
 msgstr ""
 
-#: ../../admin/continuous.rst:197
+#: ../../admin/continuous.rst:196
 msgid ":http:post:`/hooks/pagure/`, :ref:`hosted-push`"
 msgstr ""
 
-#: ../../admin/continuous.rst:200
+#: ../../admin/continuous.rst:199
 #, fuzzy
 msgid "Automatically updating repositories nightly"
 msgstr "リポジトリを更新する"
 
-#: ../../admin/continuous.rst:202
+#: ../../admin/continuous.rst:201
 msgid ""
-"Weblate does automatically fetch remote repositories nightly to improve "
+"Weblate automatically fetches remote repositories nightly to improve "
 "performance when merging changes later. You can optionally turn this into"
-" doing nightly merges as well by enabling :setting:`AUTO_UPDATE`."
+" doing nightly merges as well, by enabling :setting:`AUTO_UPDATE`."
 msgstr ""
 
-#: ../../admin/continuous.rst:209
+#: ../../admin/continuous.rst:208
 msgid "Pushing changes"
 msgstr "変更をプッシュする"
 
-#: ../../admin/continuous.rst:211
+#: ../../admin/continuous.rst:210
+#, fuzzy
 msgid ""
-"Each project can have a push URL configured and in that case Weblate "
-"offers a button in the web interface to push changes to the remote "
-"repository. Weblate can be also configured to automatically push changes "
-"on every commit."
+"Each project can have a push URL set up, and in that case Weblate offers "
+"a button in the web interface to push changes to the remote repository. "
+"Weblate can be also be configured to automatically push changes on every "
+"commit."
 msgstr ""
 "プロジェクトごとにプッシュ URL を設定することができます。設定すると Weblate "
 "のウェブインターフェイスにプッシュボタンが現れ、リモートリポジトリに変更をプッシュすることができるようになります。またすべてのコミットごとに自動的に変更のプッシュが行われるように"
 " Weblate を設定することもできます。"
 
-#: ../../admin/continuous.rst:215
+#: ../../admin/continuous.rst:214
+#, fuzzy
 msgid ""
 "If you are using SSH to push, you will need to have a key without a "
-"passphrase (or use ssh-agent for Django) and the remote server needs to "
+"passphrase (or use ssh-agent for Django), and the remote server needs to "
 "be verified by you via the admin interface first, otherwise pushing will "
 "fail."
 msgstr ""
 "SSH をプッシュに使用している場合は、パスフレーズを設定していないキー（もしくは Django 用の ssh-"
 "agent）が必要になります。そしてまず管理インターフェイスでリモートサーバを認証する必要があります。これをしないとプッシュしても失敗します。"
 
-#: ../../admin/continuous.rst:219
+#: ../../admin/continuous.rst:218
+#, fuzzy
 msgid ""
-"The push options differ based on the :ref:`vcs` used, please check that "
-"chapter for more details."
+"The push options differ based on the :ref:`vcs` used, more details are "
+"found in that chapter."
 msgstr "プッシュのオプションは使用している :ref:`vcs` によって違いますので、詳しくはそちらの章を参照してください。"
 
-#: ../../admin/continuous.rst:224
+#: ../../admin/continuous.rst:222
+#, fuzzy
 msgid ""
-"You can also enable the automatic pushing of changes on commit, this can "
-"be done in :ref:`component`."
+"You can also enable automatic pushing of changes on commits, this can be "
+"done in :ref:`component`."
 msgstr "コミットした時に自動的に変更がプッシュされるようにすることもできます。これは :ref:`component` で可能です。"
 
-#: ../../admin/continuous.rst:229
+#: ../../admin/continuous.rst:227
+#, fuzzy
 msgid ""
-"See :ref:`vcs-repos` for setting up SSH keys and :ref:`lazy-commit` for "
-"information about when Weblate decides to commit changes."
+"See :ref:`vcs-repos` for setting up SSH keys, and :ref:`lazy-commit` for "
+"info about when Weblate decides to commit changes."
 msgstr ""
 "SSH キーのセットアップについては :ref:`vcs-repos` を参照してください。Weblate がいつ変更をコミットするかについては "
 ":ref:`lazy-commit` を参照してください。"
 
-#: ../../admin/continuous.rst:235
+#: ../../admin/continuous.rst:233
 msgid "Pushing changes from Hosted Weblate"
 msgstr ""
 
-#: ../../admin/continuous.rst:237
+#: ../../admin/continuous.rst:235
 msgid ""
 "For Hosted Weblate there is a dedicated push user registered on GitHub, "
-"Bitbucket and GitLab (with username :guilabel:`weblate` and named "
+"Bitbucket and GitLab (with username :guilabel:`weblate` named "
 ":guilabel:`Weblate push user`). You need to add this user as a "
-"collaborator and give him permissions to push to your repository. Let us "
+"collaborator and give it permission to push to your repository. Let us "
 "know when you've done so and we will enable pushing changes from Hosted "
 "Weblate for you."
 msgstr ""
 
-#: ../../admin/continuous.rst:246
+#: ../../admin/continuous.rst:244
 msgid "Merge or rebase"
 msgstr "マージあるいはリベース"
 
-#: ../../admin/continuous.rst:248
+#: ../../admin/continuous.rst:246
 msgid ""
 "By default, Weblate merges the upstream repository into its own. This is "
 "the safest way in case you also access the underlying repository by other"
@@ -3823,83 +3855,93 @@ msgstr ""
 "初期設定では、Weblate はリモートリポジトリを Weblate リポジトリにマージします。Weblate "
 "リポジトリにアクセスする他の方法もある場合には、これがいちばん安全な方法です。これが必要ない場合は、変更をリモートリポジトリにリベースすることもできます。これにより履歴でマージコミットを減らすことができます。"
 
-#: ../../admin/continuous.rst:255
+#: ../../admin/continuous.rst:253
+#, fuzzy
 msgid ""
-"Rebasing can cause you troubles in case of complicated merges, so "
+"Rebasing can cause you trouble in case of complicated merges, so "
 "carefully consider whether or not you want to enable them."
 msgstr "複雑なマージにおいては、リベースはトラブルを引き起こすこともあります。このため、リベースを有効にするかどうかは、慎重に考慮してください。"
 
-#: ../../admin/continuous.rst:259
+#: ../../admin/continuous.rst:257
 msgid "Interacting with others"
 msgstr "他のサービスとのやりとり"
 
-#: ../../admin/continuous.rst:261
+#: ../../admin/continuous.rst:259
 msgid "Weblate makes it easy to interact with others using its API."
 msgstr "Weblate は API を使うことにより、他のサービスとのやりとりを簡単にすることができます。"
 
-#: ../../admin/continuous.rst:265
+#: ../../admin/continuous.rst:263
 msgid ":ref:`api`"
 msgstr ""
 
-#: ../../admin/continuous.rst:270
+#: ../../admin/continuous.rst:268
 msgid "Lazy commits"
 msgstr "省力コミット"
 
-#: ../../admin/continuous.rst:272
+#: ../../admin/continuous.rst:270
+#, fuzzy
 msgid ""
 "The behaviour of Weblate is to group commits from the same author into "
 "one commit if possible. This greatly reduces the number of commits, "
 "however you might need to explicitly tell it to do the commits in case "
-"you want to get the VCS repository in sync, eg. for merge (this is by "
-"default allowed for Managers group, see :ref:`privileges`)."
+"you want to get the VCS repository in sync, e.g. for merge (this is by "
+"default allowed for the Managers group, see :ref:`privileges`)."
 msgstr ""
 "Welate "
 "は同一の翻訳者によるコミットは、可能なかぎりひとつのコミットにまとめてコミットします。これにより大幅にコミット数は減りますが、例えばマージをする際など、VCS"
 " リポジトリと同期させたい場合には、コミットをするよう明示的に Weblate "
 "に命じなければなりません（これは管理者グループユーザには最初から許可されています。:ref:`privileges` を参照してください）。"
 
-#: ../../admin/continuous.rst:278
+#: ../../admin/continuous.rst:276
+#, fuzzy
 msgid ""
-"The changes are in this mode committed once any of following conditions "
-"is fulfilled:"
+"The changes in this mode are committed once any of the following "
+"conditions are fulfilled:"
 msgstr "このモードにおける複数の変更は、以下の条件のいずれかが満たされた時に、まとめて一度にコミットされます。"
 
-#: ../../admin/continuous.rst:281
-msgid "somebody else changes already changed string"
+#: ../../admin/continuous.rst:279
+#, fuzzy
+msgid "Somebody else changes an already changed string."
 msgstr "他の誰かが、すでに変更されている文字列に変更を加えたとき"
 
-#: ../../admin/continuous.rst:282
-msgid "a merge from upstream occurs"
+#: ../../admin/continuous.rst:280
+#, fuzzy
+msgid "A merge from upstream occurs."
 msgstr "リモートリポジトリからマージ動作が行われたとき"
 
-#: ../../admin/continuous.rst:283
-msgid "import of translation happens"
+#: ../../admin/continuous.rst:281
+#, fuzzy
+msgid "Import of translation happens."
 msgstr "翻訳ファイルのインポートが行われたとき"
 
-#: ../../admin/continuous.rst:284
-msgid "mass state change is performed"
+#: ../../admin/continuous.rst:282
+#, fuzzy
+msgid "Mass state change is performed."
 msgstr "大量の状態の変更が行われたとき"
 
-#: ../../admin/continuous.rst:285
-msgid "search and replace is executed"
+#: ../../admin/continuous.rst:283
+#, fuzzy
+msgid "Search and replace is executed."
 msgstr "検索置換が行われたとき"
 
-#: ../../admin/continuous.rst:286
-msgid "explicit commit is requested"
+#: ../../admin/continuous.rst:284
+#, fuzzy
+msgid "An explicit commit is requested."
 msgstr "明示的にコミットが要求されたとき"
 
-#: ../../admin/continuous.rst:288
-msgid "Additionally you can schedule a regular task to perform commit:"
+#: ../../admin/continuous.rst:286
+msgid "Additionally you can schedule a regular task to perform a commit:"
 msgstr ""
 
-#: ../../admin/continuous.rst:297
+#: ../../admin/continuous.rst:295
 msgid "Processing repository with scripts"
 msgstr "リポジトリをスクリプトで処理する"
 
-#: ../../admin/continuous.rst:299
+#: ../../admin/continuous.rst:297
+#, fuzzy
 msgid ""
-"The way to customize how Weblate interacts with the repository are "
-":ref:`addons`. See :ref:`addon-script` for information how to execute "
+"The way to customize how Weblate interacts with the repository is "
+":ref:`addons`. Consult :ref:`addon-script` for info on how to execute "
 "external scripts through addons."
 msgstr ""
 "Weblate のリポジトリとのやりとりをカスタマイズするための方法が、:ref:`addons` です。addon "
@@ -4306,7 +4348,7 @@ msgid ""
 "supported for compatibility with older deployments."
 msgstr ""
 
-#: ../../admin/deployments.rst:440 ../../admin/projects.rst:379
+#: ../../admin/deployments.rst:440 ../../admin/projects.rst:374
 msgid ":ref:`production-cache`"
 msgstr ""
 
@@ -7273,10 +7315,10 @@ msgid "Prints current state of the backend git repository."
 msgstr ""
 
 #: ../../admin/management.rst:168 ../../admin/management.rst:178
-#: ../../admin/management.rst:188 ../../admin/management.rst:640
-#: ../../admin/management.rst:657 ../../admin/management.rst:695
-#: ../../admin/management.rst:733 ../../admin/management.rst:780
-#: ../../admin/management.rst:790
+#: ../../admin/management.rst:188 ../../admin/management.rst:646
+#: ../../admin/management.rst:663 ../../admin/management.rst:701
+#: ../../admin/management.rst:739 ../../admin/management.rst:786
+#: ../../admin/management.rst:796
 msgid ""
 "You can either define which project or component to update (eg. "
 "``weblate/master``) or use ``--all`` to update all existing components."
@@ -7390,7 +7432,7 @@ msgid "Delete complete memory content and recreate the database."
 msgstr ""
 
 #: ../../admin/management.rst:284 ../../admin/management.rst:297
-#: ../../admin/management.rst:374 ../../admin/management.rst:595
+#: ../../admin/management.rst:374 ../../admin/management.rst:601
 msgid ":ref:`translation-memory`"
 msgstr ""
 
@@ -7456,8 +7498,8 @@ msgstr ""
 msgid "Example of JSON file:"
 msgstr ""
 
-#: ../../admin/management.rst:350
-msgid ":djadmin:`import_project`"
+#: ../../admin/management.rst:350 ../../admin/memory.rst:94
+msgid ":djadmin:`import_memory`"
 msgstr ""
 
 #: ../../admin/management.rst:353
@@ -7558,360 +7600,369 @@ msgid "For example: ``{{ component }}/res/values/string.xml``"
 msgstr ""
 
 #: ../../admin/management.rst:423
+#, fuzzy
+msgid "Customize base file for adding new translations."
+msgstr "新規翻訳のためのベースファイル"
+
+#: ../../admin/management.rst:425
+msgid "For example: ``{{ component }}/ts/en.ts``"
+msgstr ""
+
+#: ../../admin/management.rst:429
 msgid ""
 "You can also specify file format to use (see :ref:`formats`), the default"
 " is autodetection."
 msgstr ""
 
-#: ../../admin/management.rst:428
+#: ../../admin/management.rst:434
 msgid ""
 "You can specify language filtering (see :ref:`component`) by this "
 "parameter. It has to be valid regular expression."
 msgstr ""
 
-#: ../../admin/management.rst:433
+#: ../../admin/management.rst:439
 msgid ""
 "You can specify which component will be chosen as main - the one actually"
 " containing VCS repository."
 msgstr ""
 
-#: ../../admin/management.rst:438
+#: ../../admin/management.rst:444
 msgid "Specify translation license."
 msgstr ""
 
-#: ../../admin/management.rst:442
+#: ../../admin/management.rst:448
 msgid "Specify translation license URL."
 msgstr ""
 
-#: ../../admin/management.rst:446
+#: ../../admin/management.rst:452
 msgid ""
 "In case you need to specify version control system to use, you can do it "
 "here. The default version control is Git."
 msgstr ""
 
-#: ../../admin/management.rst:449
+#: ../../admin/management.rst:455
 msgid "To give you some examples, let's try importing two projects."
 msgstr ""
 
-#: ../../admin/management.rst:451
+#: ../../admin/management.rst:457
 msgid ""
 "As first we import The Debian Handbook translations, where each language "
 "has separate folder with translations of each chapter:"
 msgstr ""
 
-#: ../../admin/management.rst:462
+#: ../../admin/management.rst:468
 msgid ""
 "Another example can be Tanaguru tool, where we need to specify file "
 "format, base file template and has all components and translations "
 "located in single folder:"
 msgstr ""
 
-#: ../../admin/management.rst:476
+#: ../../admin/management.rst:482
 msgid ""
 "Example of more complex parsing of filenames to get correct component and"
 " language out of file name like "
 "``src/security/Numerous_security_holes_in_0.10.1.de.po``:"
 msgstr ""
 
-#: ../../admin/management.rst:487
+#: ../../admin/management.rst:493
 msgid "Filtering only translations in chosen language:"
 msgstr ""
 
-#: ../../admin/management.rst:499
+#: ../../admin/management.rst:505
 msgid ""
 "More detailed examples can be found in the :ref:`starting` chapter, "
 "alternatively you might want to use :djadmin:`import_json`."
 msgstr ""
 
-#: ../../admin/management.rst:503
+#: ../../admin/management.rst:509
 msgid "importuserdata"
 msgstr ""
 
-#: ../../admin/management.rst:507
+#: ../../admin/management.rst:513
 msgid "Imports userdata from file created by :djadmin:`dumpuserdata`"
 msgstr ""
 
-#: ../../admin/management.rst:510
+#: ../../admin/management.rst:516
 msgid "importusers"
 msgstr ""
 
-#: ../../admin/management.rst:514
+#: ../../admin/management.rst:520
 msgid "Imports users from JSON dump of Django auth_users database."
 msgstr ""
 
-#: ../../admin/management.rst:519
+#: ../../admin/management.rst:525
 msgid ""
 "With this option it will just check whether given file can be imported "
 "and report possible conflicts on usernames or emails."
 msgstr ""
 
-#: ../../admin/management.rst:522
+#: ../../admin/management.rst:528
 msgid "You can dump users from existing Django installation using:"
 msgstr ""
 
-#: ../../admin/management.rst:529
+#: ../../admin/management.rst:535
 msgid "install_addon"
 msgstr ""
 
-#: ../../admin/management.rst:535
+#: ../../admin/management.rst:541
 msgid "Installs addon to set of components."
 msgstr ""
 
-#: ../../admin/management.rst:539
+#: ../../admin/management.rst:545
 msgid "Name of addon to install. For example ``weblate.gettext.customize``."
 msgstr ""
 
-#: ../../admin/management.rst:543
+#: ../../admin/management.rst:549
 msgid "JSON encoded configuration of an addon."
 msgstr ""
 
-#: ../../admin/management.rst:547
+#: ../../admin/management.rst:553
 msgid "Update existing addon configuration."
 msgstr ""
 
-#: ../../admin/management.rst:549
+#: ../../admin/management.rst:555
 msgid ""
 "You can either define on which project or component to install addon (eg."
 " ``weblate/master``) or use ``--all`` to include all existing components."
 msgstr ""
 
-#: ../../admin/management.rst:552
+#: ../../admin/management.rst:558
 msgid ""
 "For example installing :ref:`addon-weblate.gettext.customize` to all "
 "components:"
 msgstr ""
 
-#: ../../admin/management.rst:563
+#: ../../admin/management.rst:569
 msgid "list_ignored_checks"
 msgstr ""
 
-#: ../../admin/management.rst:567
+#: ../../admin/management.rst:573
 msgid ""
 "Lists most frequently ignored checks. This can be useful for tuning your "
 "setup, if users have to ignore too many of consistency checks."
 msgstr ""
 
-#: ../../admin/management.rst:571
+#: ../../admin/management.rst:577
 msgid "list_languages"
 msgstr ""
 
-#: ../../admin/management.rst:575
+#: ../../admin/management.rst:581
 msgid ""
 "Lists supported language in MediaWiki markup - language codes, English "
 "names and localized names."
 msgstr ""
 
-#: ../../admin/management.rst:578
+#: ../../admin/management.rst:584
 msgid "This is used to generate <https://wiki.l10n.cz/Jazyky>."
 msgstr ""
 
-#: ../../admin/management.rst:581
+#: ../../admin/management.rst:587
 msgid "list_memory"
 msgstr ""
 
-#: ../../admin/management.rst:587
+#: ../../admin/management.rst:593
 msgid "Lists contents of the Weblate Translation Memory."
 msgstr ""
 
-#: ../../admin/management.rst:591
+#: ../../admin/management.rst:597
 msgid "Type of information to list, defaults to listing used origins."
 msgstr ""
 
-#: ../../admin/management.rst:598
+#: ../../admin/management.rst:604
 msgid "list_translators"
 msgstr ""
 
-#: ../../admin/management.rst:602
+#: ../../admin/management.rst:608
 msgid "Renders the list of translators by language for the given project::"
 msgstr ""
 
-#: ../../admin/management.rst:611
+#: ../../admin/management.rst:617
 msgid "Use language code instead of language name in output."
 msgstr ""
 
-#: ../../admin/management.rst:613
+#: ../../admin/management.rst:619
 msgid ""
 "You can either define which project or component to use (eg. "
 "``weblate/master``) or use ``--all`` to list translators from all "
 "existing components."
 msgstr ""
 
-#: ../../admin/management.rst:618
+#: ../../admin/management.rst:624
 msgid "list_versions"
 msgstr ""
 
-#: ../../admin/management.rst:622
+#: ../../admin/management.rst:628
 msgid "Lists versions of Weblate dependencies."
 msgstr ""
 
-#: ../../admin/management.rst:625
+#: ../../admin/management.rst:631
 msgid "loadpo"
 msgstr ""
 
-#: ../../admin/management.rst:629
+#: ../../admin/management.rst:635
 msgid ""
 "Reloads translations from disk (eg. in case you did some updates in VCS "
 "repository)."
 msgstr ""
 
-#: ../../admin/management.rst:634
+#: ../../admin/management.rst:640
 msgid "Force update even if the files should be up to date."
 msgstr ""
 
-#: ../../admin/management.rst:638
+#: ../../admin/management.rst:644
 msgid "Limit processing to single language."
 msgstr ""
 
-#: ../../admin/management.rst:645
+#: ../../admin/management.rst:651
 msgid ""
 "You seldom need to invoke this, Weblate will automatically load changed "
 "files on VCS update. This is needed in case you manually change "
 "underlying Weblate VCS repository or in some special cases after upgrade."
 msgstr ""
 
-#: ../../admin/management.rst:650
+#: ../../admin/management.rst:656
 msgid "lock_translation"
 msgstr ""
 
-#: ../../admin/management.rst:654
+#: ../../admin/management.rst:660
 msgid ""
 "Locks given component for translating. This is useful in case you want to"
 " do some maintenance on underlying repository."
 msgstr ""
 
-#: ../../admin/management.rst:662
+#: ../../admin/management.rst:668
 msgid ":djadmin:`unlock_translation`"
 msgstr ""
 
-#: ../../admin/management.rst:665
+#: ../../admin/management.rst:671
 msgid "optimize_memory"
 msgstr ""
 
-#: ../../admin/management.rst:671
+#: ../../admin/management.rst:677
 msgid "Optimizes translation memory storage."
 msgstr ""
 
-#: ../../admin/management.rst:675
+#: ../../admin/management.rst:681
 msgid ""
 "The index will be completely rebuilt by dumping all content and creating "
 "it again. It is recommended to backup it prior to this operation."
 msgstr ""
 
-#: ../../admin/management.rst:680
+#: ../../admin/management.rst:686
 msgid ":ref:`translation-memory`, :doc:`backup`, :djadmin:`dump_memory`"
 msgstr ""
 
-#: ../../admin/management.rst:685
+#: ../../admin/management.rst:691
 msgid "pushgit"
 msgstr ""
 
-#: ../../admin/management.rst:689
+#: ../../admin/management.rst:695
 msgid "Pushes committed changes to upstream VCS repository."
 msgstr ""
 
-#: ../../admin/management.rst:693
+#: ../../admin/management.rst:699
 msgid "Force committing any pending changes prior to push."
 msgstr ""
 
-#: ../../admin/management.rst:700
+#: ../../admin/management.rst:706
 msgid ""
 "Weblate does push changes automatically if :guilabel:`Push on commit` in "
 ":ref:`component` is enabled, what is default."
 msgstr ""
 
-#: ../../admin/management.rst:704
+#: ../../admin/management.rst:710
 msgid "rebuild_index"
 msgstr ""
 
-#: ../../admin/management.rst:708
+#: ../../admin/management.rst:714
 msgid ""
 "Rebuilds index for fulltext search. This might be lengthy operation if "
 "you have a huge set of translation strings."
 msgstr ""
 
-#: ../../admin/management.rst:713
+#: ../../admin/management.rst:719
 msgid ""
 "Removes all words from database prior updating, this is implicit when "
 "called with ``--all``."
 msgstr ""
 
-#: ../../admin/management.rst:718
+#: ../../admin/management.rst:724
 msgid ""
 "The index will not be processed again, only its content will be optimized"
 " (removing stale entries and merging possibly split index files)."
 msgstr ""
 
-#: ../../admin/management.rst:723
+#: ../../admin/management.rst:729
 msgid ":ref:`fulltext`"
 msgstr ""
 
-#: ../../admin/management.rst:726
+#: ../../admin/management.rst:732
 msgid "unlock_translation"
 msgstr ""
 
-#: ../../admin/management.rst:730
+#: ../../admin/management.rst:736
 msgid ""
 "Unlocks a given component for translating. This is useful in case you "
 "want to do some maintenance on the underlying repository."
 msgstr ""
 
-#: ../../admin/management.rst:738
+#: ../../admin/management.rst:744
 msgid ":djadmin:`lock_translation`"
 msgstr ""
 
-#: ../../admin/management.rst:741
+#: ../../admin/management.rst:747
 msgid "setupgroups"
 msgstr ""
 
-#: ../../admin/management.rst:745
+#: ../../admin/management.rst:751
 msgid ""
 "Configures default groups and optionally assigns all users to default "
 "group."
 msgstr ""
 
-#: ../../admin/management.rst:749
+#: ../../admin/management.rst:755
 msgid "Disables update of existing groups (only adds new ones)."
 msgstr ""
 
-#: ../../admin/management.rst:753
+#: ../../admin/management.rst:759
 msgid ""
 "Prevents updates of groups for existing projects. This allows to add "
 "newly added groups to existing projects, see :ref:`acl`."
 msgstr ""
 
-#: ../../admin/management.rst:761
+#: ../../admin/management.rst:767
 msgid "setuplang"
 msgstr ""
 
-#: ../../admin/management.rst:765
+#: ../../admin/management.rst:771
 msgid ""
 "Setups list of languages (it has own list and all defined in translate-"
 "toolkit)."
 msgstr ""
 
-#: ../../admin/management.rst:770
+#: ../../admin/management.rst:776
 msgid "Disables update of existing languages (only adds new ones)."
 msgstr ""
 
-#: ../../admin/management.rst:773
+#: ../../admin/management.rst:779
 msgid "updatechecks"
 msgstr ""
 
-#: ../../admin/management.rst:777
+#: ../../admin/management.rst:783
 msgid ""
 "Updates all check for all strings. This could be useful only on upgrades "
 "which do major changes to checks."
 msgstr ""
 
-#: ../../admin/management.rst:784
+#: ../../admin/management.rst:790
 msgid "updategit"
 msgstr ""
 
-#: ../../admin/management.rst:788
+#: ../../admin/management.rst:794
 msgid "Fetches remote VCS repositories and updates internal cache."
 msgstr ""
 
-#: ../../admin/management.rst:795
+#: ../../admin/management.rst:801
 msgid ""
 "Usually it is better to configure hooks in the repository to trigger "
 ":ref:`hooks` instead of regular polling by :djadmin:`updategit`."
@@ -8055,10 +8106,6 @@ msgstr ""
 
 #: ../../admin/memory.rst:93
 msgid "Exporting the memory into JSON"
-msgstr ""
-
-#: ../../admin/memory.rst:94
-msgid ":djadmin:`import_memory`"
 msgstr ""
 
 #: ../../admin/memory.rst:95
@@ -8405,16 +8452,17 @@ msgid "Translation organization"
 msgstr "翻訳の構成"
 
 #: ../../admin/projects.rst:7
+#, fuzzy
 msgid ""
-"Weblate organizes translatable content into tree like structure. The top "
-"level object is :ref:`project`, which should hold all translations which "
-"belong together (for example translation of an application in several "
-"versions and/or documentation). On the next level, there is "
+"Weblate organizes translatable content into a tree-like structure. The "
+"bottom level object is :ref:`project`, which should hold all translations"
+" belonging together (for example translation of an application in several"
+" versions and/or accompanying documentation). On the level above, "
 ":ref:`component`, which is actually the component to translate. Here you "
-"define the VCS repository to use and mask of files to translate. Below "
-":ref:`component` there are individual translations, which are handled "
-"automatically by Weblate as the translation files (matching mask defined "
-"in :ref:`component`) appear in VCS repository."
+"define the VCS repository to use, and the mask of files to translate. "
+"Above :ref:`component` there are individual translations, handled "
+"automatically by Weblate as translation files (which match the mask "
+"defined in :ref:`component`) appear in the VCS repository."
 msgstr ""
 "Weblate では翻訳の対象をツリーのような構造に組織します。最上位の構成要素は :ref:`project` "
 "です。これは例えば、アプリケーションやドキュメントのバージョン違いの翻訳など、同じ対象に属するすべての翻訳を保持します。次の階層には "
@@ -8425,23 +8473,23 @@ msgstr ""
 
 #: ../../admin/projects.rst:16
 msgid ""
-"All translation components need to be available as VCS repositories and "
-"are organized as project/component structure."
+"All translation components need to be available as VCS repositories, and "
+"are organized in a project/component structure."
 msgstr ""
 
 #: ../../admin/projects.rst:19
 msgid ""
-"Weblate supports wide range of translation formats (both bilingual and "
-"monolingual) supported by translate toolkit, see :ref:`formats` for more "
-"information."
+"Weblate supports a wide range of translation formats (both bilingual and "
+"monolingual ones) supported by Translate Toolkit, see :ref:`formats` for "
+"more info."
 msgstr ""
 
 #: ../../admin/projects.rst:25
 msgid ""
 "You can share cloned VCS repositories using :ref:`internal-urls`. Using "
-"shared repositories feature is highly recommended when you have many "
-"components that use the same VCS. It will improve performance and use "
-"less disk space."
+"this feature is highly recommended when you have many components sharing "
+"the same VCS. It improves performance and decreases the required disk "
+"space."
 msgstr ""
 
 #: ../../admin/projects.rst:33
@@ -8451,326 +8499,342 @@ msgstr "翻訳プロジェクトとコンポーネントを追加する"
 #: ../../admin/projects.rst:37
 msgid ""
 "Since the 3.2 release the interface for adding projects and components is"
-" included in Weblate and no longer requires you to use :ref:`admin-"
+" included in Weblate, and no longer requires you to use :ref:`admin-"
 "interface`."
 msgstr ""
 
 #: ../../admin/projects.rst:43
 msgid ""
-"Since the 3.4 release, the process of adding component is multi stage "
-"with automated discovery of most parameters."
+"As of 3.4, the process of adding components is multi staged, with "
+"automated discovery of most parameters."
 msgstr ""
 
 #: ../../admin/projects.rst:46
 msgid ""
-"Based on your permissions, you can be able to create new translation "
-"projects and components in Weblate. It is always allowed for superusers "
-"and if your instance uses billing (eg. like https://hosted.weblate.org/, "
-"see :ref:`billing`), you can also create those based on your plans "
-"allowance."
+"Based on your permissions, you can create new translation projects and "
+"components in Weblate. It is always permitted for superusers, and if your"
+" instance uses billing (e.g. like https://hosted.weblate.org/ see "
+":ref:`billing`), you can also create those based on your plans allowance."
 msgstr ""
 
 #: ../../admin/projects.rst:51
-msgid "You can view your current billing plan on separate page:"
+msgid "You can view your current billing plan on a separate page:"
 msgstr ""
 
 #: ../../admin/projects.rst:55
 #, fuzzy
 msgid ""
-"The project creation can be initiated from there or using menu in "
-"navigation bar. All you need to do then is to fill in basic information "
-"about the translation project:"
+"The project creation can be initiated from there, or using the menu in "
+"the navigation bar, filling in basic info about the translation project "
+"to complete addition of it:"
 msgstr "プロジェクトの作成はそこから、もしくはナビゲーションバーのメニューを使って開始することができます。その後にまず翻訳プロジェクトについての基本的な情報を入力してください。"
 
-#: ../../admin/projects.rst:61
-msgid "After creating the project, you are directly taken to the project page:"
+#: ../../admin/projects.rst:60
+#, fuzzy
+msgid "After creating the project, you are taken directly to the project page:"
 msgstr "プロジェクトを作成することにより、プロジェクトのページに移動します。"
 
-#: ../../admin/projects.rst:65
+#: ../../admin/projects.rst:64
 #, fuzzy
 msgid ""
-"Creating new translation component can be initiated by single click "
-"there.  The process of creating component is multi staged and "
-"automatically detects most of the translation parameters."
+"Creating a new translation component can be initiated via a single click "
+"there. The process of creating a component is multi-staged and "
+"automatically detects most translation parameters."
 msgstr "ワンクリックで新しい翻訳コンポーネントの作成を開始できますので、今度は翻訳コンポーネントの情報を入力してください。"
 
-#: ../../admin/projects.rst:69
+#: ../../admin/projects.rst:68
 msgid "First you need to fill in name and repository location:"
 msgstr ""
 
-#: ../../admin/projects.rst:73
-msgid "On next page, you are presented list of discovered translatable resources:"
-msgstr ""
-
-#: ../../admin/projects.rst:77
+#: ../../admin/projects.rst:72
 msgid ""
-"As a last step you will review the translation component information and "
-"fill in optional details:"
+"On the next page, you are presented with a list of discovered "
+"translatable resources:"
 msgstr ""
 
-#: ../../admin/projects.rst:84
+#: ../../admin/projects.rst:76
+msgid ""
+"As a last step, you review the translation component info and fill in "
+"optional details:"
+msgstr ""
+
+#: ../../admin/projects.rst:83
 msgid ":ref:`admin-interface`, :ref:`project`, :ref:`component`"
 msgstr ""
 
-#: ../../admin/projects.rst:91
+#: ../../admin/projects.rst:90
 msgid "Project configuration"
 msgstr "プロジェクトの設定"
 
-#: ../../admin/projects.rst:93
+#: ../../admin/projects.rst:92
+#, fuzzy
 msgid ""
-"To add a new component to translate, you need to create a translation "
-"project first. The project is a sort of shelf, in which real translations"
-" are folded. All components in the same project share suggestions and the"
-" dictionary; also the translations are automatically propagated through "
-"all components in a single project (unless disabled in component "
-"configuration)."
+"To add a new component for translation, you need to create a translation "
+"project first. The project is like a shelf, in which real translations "
+"are stacked. All components in the same project share suggestions and "
+"their dictionary; the translations are also automatically propagated "
+"through all components in a single project (unless turned off in the "
+"component configuration)."
 msgstr "翻訳する新しいコンポーネントを追加するには、まず翻訳プロジェクトを作成する必要があります。プロジェクトは棚のようなもので、実際の翻訳がそこに収納されます。同一のプロジェクト内のすべてのコンポーネントは、提案と辞書を共有します。同時に翻訳も、コンポーネントの設定で無効にしない限り、同一プロジェクト内のすべてのコンポーネントで自動的に共有されます。"
 
-#: ../../admin/projects.rst:99
-msgid ""
-"The project has only a few attributes giving translators information "
-"about the project:"
+#: ../../admin/projects.rst:98
+#, fuzzy
+msgid "The project has only a few attributes that informs translators of it:"
 msgstr "プロジェクトについて翻訳者に与えられる情報はごくわずかです。"
 
-#: ../../admin/projects.rst:102
+#: ../../admin/projects.rst:100
 msgid "Project website"
 msgstr "プロジェクトのウェブサイト"
 
-#: ../../admin/projects.rst:103
-msgid "URL where translators can find more information about the project."
+#: ../../admin/projects.rst:101
+#, fuzzy
+msgid "URL where translators can find more info about the project."
 msgstr "翻訳者がプロジェクトについてより進んだ情報を得ることのできるURLです。"
 
-#: ../../admin/projects.rst:104
+#: ../../admin/projects.rst:102
 msgid "Mailing list"
 msgstr "メーリングリスト"
 
-#: ../../admin/projects.rst:105
-msgid "Mailing list where translators can discuss or comment on translations."
+#: ../../admin/projects.rst:103
+#, fuzzy
+msgid "Mailing list where translators can discuss or comment translations."
 msgstr "翻訳者が翻訳について討議したり意見を述べたりすることのできるメーリングリストです。"
 
-#: ../../admin/projects.rst:106
+#: ../../admin/projects.rst:104
 msgid "Translation instructions"
 msgstr "翻訳の手順"
 
-#: ../../admin/projects.rst:107
-msgid "URL where you have more detailed instructions for translators."
+#: ../../admin/projects.rst:105
+#, fuzzy
+msgid "URL to more site with more detailed instructions for translators."
 msgstr "翻訳者が翻訳の手順などについてより詳細な指示を得ることのできるURLです。"
 
-#: ../../admin/projects.rst:109
+#: ../../admin/projects.rst:107
 msgid "Set Translation-Team header"
 msgstr "翻訳チームのヘッダーの設定"
 
-#: ../../admin/projects.rst:109
+#: ../../admin/projects.rst:107
+#, fuzzy
 msgid ""
-"Whether Weblate should manage Translation-Team header (this is "
+"Whether Weblate should manage the Translation-Team header (this is a "
 ":ref:`gettext` only feature right now)."
 msgstr "翻訳チームのヘッダーをWeblateで扱うかどうかを設定します（この機能は今のところ :ref:`gettext` でのみ有効です）。"
 
-#: ../../admin/projects.rst:111
+#: ../../admin/projects.rst:109
 msgid "Use shared translation memory"
 msgstr "共有翻訳メモリの使用"
 
-#: ../../admin/projects.rst:112
+#: ../../admin/projects.rst:110
 msgid ""
 "Whether to use shared translation memory, see :ref:`shared-tm` for more "
 "details."
 msgstr "共有翻訳メモリを使用するかどうかを設定します。詳しくは :ref:`shared-tm` を参照してください。"
 
-#: ../../admin/projects.rst:114
+#: ../../admin/projects.rst:112
 msgid "Configure per project access control, see :ref:`acl` for more details."
 msgstr "プロジェクトごとのアクセスコントロールを設定します。詳しくは :ref:`acl` を参照してください。"
 
-#: ../../admin/projects.rst:115
+#: ../../admin/projects.rst:113
 msgid "Enable reviews"
 msgstr "レビューの有効化"
 
-#: ../../admin/projects.rst:116
+#: ../../admin/projects.rst:114
 msgid "Enable review workflow, see :ref:`reviews`."
 msgstr "レビューワークフローを有効にします。:ref:`reviews` を参照してください。"
 
-#: ../../admin/projects.rst:117
+#: ../../admin/projects.rst:115
 msgid "Enable hooks"
 msgstr "フックの有効化"
 
-#: ../../admin/projects.rst:118
-msgid "Whether unauthenticated :ref:`hooks` will be enabled for this repository."
+#: ../../admin/projects.rst:116
+#, fuzzy
+msgid "Whether unauthenticated :ref:`hooks` are to be used for this repository."
 msgstr "このリポジトリに対して、認証されていない :ref:`hooks` を有効にするかどうかを設定します。"
 
-#: ../../admin/projects.rst:121
+#: ../../admin/projects.rst:119
 msgid "Source language"
 msgstr "原文の言語"
 
-#: ../../admin/projects.rst:120
+#: ../../admin/projects.rst:118
 msgid ""
 "Language used for source strings in all components. Change this if you "
 "are translating from something else than English."
 msgstr "すべてのコンポーネントの原文で使用されている言語です。英語以外の言語から翻訳するときはここを変更してください。"
 
-#: ../../admin/projects.rst:125 ../../admin/projects.rst:276
+#: ../../admin/projects.rst:123 ../../admin/projects.rst:272
+#, fuzzy
 msgid ""
-"Most of the fields can be edited by project owners or managers in the "
+"Most of the fields can be edited by project owners or managers, in the "
 "Weblate interface."
 msgstr "ほとんどの記入フィールドは、プロジェクトの所有者もしくは管理者によって、Weblateのインターフェイスから編集することができます。"
 
-#: ../../admin/projects.rst:129
+#: ../../admin/projects.rst:127
 msgid "Adjusting interaction"
 msgstr "インタラクションの調整"
 
-#: ../../admin/projects.rst:131
+#: ../../admin/projects.rst:129
+#, fuzzy
 msgid ""
 "There are also additional features which you can control, like automatic "
-"pushing of changes (see also :ref:`push-changes`) or maintaining of "
-"Translation-Team header."
+"pushing of changes (see also :ref:`push-changes`) or maintainership of "
+"the Translation-Team header."
 msgstr ""
 "この他にも、変更の自動プッシュ（:ref:`push-changes` "
 "も参照してください）や翻訳チームのヘッダーのメンテなど、制御が可能な追加機能がいくつかあります。"
 
-#: ../../admin/projects.rst:138
+#: ../../admin/projects.rst:136
 msgid "Component configuration"
 msgstr "コンポーネント設定"
 
-#: ../../admin/projects.rst:140
+#: ../../admin/projects.rst:138
+#, fuzzy
 msgid ""
-"Component is real component for translating. You enter VCS repository "
-"location and file mask for which files to translate and Weblate "
-"automatically fetches from the VCS and finds all matching translatable "
-"files."
+"A component is a grouping of something for translation. You enter a VCS "
+"repository location and file mask for which files you want translated, "
+"and Weblate automatically fetches from this VCS, and finds all matching "
+"translatable files."
 msgstr ""
 "コンポーネントは実際に翻訳する構成要素です。VCSレポジトリの場所と、どのファイルを翻訳すべきかのファイルマスクを入力すると、Weblateは自動的に"
 " VCS から取得し、マッチするすべての翻訳ファイルを見つけます。"
 
-#: ../../admin/projects.rst:144
+#: ../../admin/projects.rst:142
 msgid ""
 "You can find some examples of typical configurations in the "
 ":ref:`formats`."
 msgstr "典型的な設定例を :ref:`formats` のセクションで見ることができます。"
 
-#: ../../admin/projects.rst:148
-msgid ""
-"It is recommended to have translation components of reasonable size - "
-"split the translation by anything what makes sense in your case "
-"(individual applications or addons, book chapters or websites)."
-msgstr "コンポーネントは適切なサイズに保つことをお勧めします。個々のアプリケーションやアドオン、本の各章や個々のウェブサイトなど、それぞれのケースに応じて意味のある基準で翻訳を分割してください。"
-
-#: ../../admin/projects.rst:152
+#: ../../admin/projects.rst:146
 #, fuzzy
 msgid ""
-"Weblate easily handles translations with 10000 of strings, but it is "
-"harder to split work and coordinate among translators with such a large "
-"translation. Also when one translator is working on a component, this "
-"translation is locked for others, see :ref:`locking`."
+"It is recommended to keep translation components to a reasonable size - "
+"split the translation by anything that makes sense in your case "
+"(individual apps or addons, book chapters or websites)."
+msgstr "コンポーネントは適切なサイズに保つことをお勧めします。個々のアプリケーションやアドオン、本の各章や個々のウェブサイトなど、それぞれのケースに応じて意味のある基準で翻訳を分割してください。"
+
+#: ../../admin/projects.rst:150
+#, fuzzy
+msgid ""
+"Weblate easily handles translations with 10000s of strings, but it is "
+"harder to split work and coordinate among translators with such large "
+"translation components."
 msgstr ""
 "Weblateは10000単位の翻訳を苦もなく処理できますが、そのような大規模な翻訳では、作業を分割し翻訳者間で調整することはより困難になります。また、一人の翻訳者があるコンポーネントの翻訳に取り組んでいる間、このコンポーネントの翻訳は他の翻訳者からは不可能になります。:ref:`locking`"
 " を参照してください。"
 
-#: ../../admin/projects.rst:157
+#: ../../admin/projects.rst:153
 msgid ""
-"Should the language definition for translation be missing, an empty "
+"Should the language definition for a translation be missing, an empty "
 "definition is created and named as \"cs_CZ (generated)\". You should "
-"adjust the definition and report this back to Weblate authors so that the"
-" missing language can be included in next release."
+"adjust the definition and report this back to the Weblate authors, so "
+"that the missing languages can be included in next release."
 msgstr ""
 
-#: ../../admin/projects.rst:162
+#: ../../admin/projects.rst:158
+#, fuzzy
 msgid ""
-"The component contains all important parameters for working with VCS and "
-"getting translations out of it:"
+"The component contains all important parameters for working with the VCS,"
+" and for getting translations out of it:"
 msgstr "コンポーネントには、VCSを使用してそこから翻訳を取得するための、すべての重要なパラメータが含まれています。"
 
-#: ../../admin/projects.rst:165
+#: ../../admin/projects.rst:161
 msgid "Version control system"
 msgstr "バージョンコントロールシステム"
 
-#: ../../admin/projects.rst:166
+#: ../../admin/projects.rst:162
 msgid "VCS to use, see :ref:`vcs` for details."
 msgstr "使用するVCSです。詳しくは :ref:`vcs` を参照してください。"
 
-#: ../../admin/projects.rst:171
+#: ../../admin/projects.rst:167
 msgid "Source code repository"
 msgstr "ソースコードリポジトリ"
 
-#: ../../admin/projects.rst:168
+#: ../../admin/projects.rst:164
 msgid ""
 "VCS repository used to pull changes, see :ref:`vcs-repos` for more "
 "details."
 msgstr "変更を取得するために使用するVCSリポジトリです。より詳しくは :ref:`vcs-repos` を参照してください。"
 
-#: ../../admin/projects.rst:170
+#: ../../admin/projects.rst:166
+#, fuzzy
 msgid ""
-"This can be either a real VCS URL or ``weblate://project/component`` "
+"This can either be a real VCS URL or ``weblate://project/component`` "
 "indicating that the repository should be shared with another component. "
 "See :ref:`internal-urls` for more details."
 msgstr ""
 "これは実際のVCSのURLであることもできますし、そのリポジトリが他のコンポーネントと共有されるべきであることを示す、``weblate://project/component``"
 " であることもできます。より詳しくは :ref:`internal-urls` を参照してください。"
 
-#: ../../admin/projects.rst:175
+#: ../../admin/projects.rst:171
 msgid "Repository push URL"
 msgstr "リポジトリのプッシュURL"
 
-#: ../../admin/projects.rst:174
+#: ../../admin/projects.rst:170
+#, fuzzy
 msgid ""
-"Repository URL used for pushing, this is completely optional and push "
-"support will be disabled when this is empty. See :ref:`vcs-repos` for "
-"more details on how to specify repository URL."
+"Repository URL used for pushing. This is completely optional and push "
+"support is turned off when this is empty. See :ref:`vcs-repos` for more "
+"details on how to specify a repository URL."
 msgstr ""
 "プッシュの際に使われるリポジトリのURLです。これは完全にオプションです。ここを空欄にしておけば、プッシュのサポートは無効化されます。リポジトリのURLをどのように特定するかについてのより詳しい説明は、:ref"
 ":`vcs-repos` を参照してください。"
 
-#: ../../admin/projects.rst:189
+#: ../../admin/projects.rst:185
 msgid "Repository browser"
 msgstr "リポジトリの閲覧"
 
-#: ../../admin/projects.rst:178
+#: ../../admin/projects.rst:174
+#, fuzzy
 msgid ""
-"URL of repository browser to display source files (location where "
-"messages are used). When empty no such links will be generated."
+"URL of repository browser used to display source files (location of used "
+"messages). When empty, no such links will be generated."
 msgstr "ソースファイルを閲覧するためのリポジトリのURL（そのメッセージが使われている場所）です。空欄であればこのリンクは生成されません。"
 
-#: ../../admin/projects.rst:181
-msgid "You can use following format strings:"
+#: ../../admin/projects.rst:177
+#, fuzzy
+msgid "You can use the following format strings:"
 msgstr "以下の書式が使用可能です。"
 
-#: ../../admin/projects.rst:183
+#: ../../admin/projects.rst:179
 #, python-format
 msgid "``%(branchs)s`` - current branch"
 msgstr "``%(branchs)s`` - 現在のブランチ"
 
-#: ../../admin/projects.rst:184
+#: ../../admin/projects.rst:180
 #, python-format
 msgid "``%(line)s`` - line in file"
 msgstr "``%(line)s`` - ファイル中の行"
 
-#: ../../admin/projects.rst:185
+#: ../../admin/projects.rst:181
 #, python-format
 msgid "``%(file)s`` - filename"
 msgstr "``%(file)s`` - ファイル名"
 
-#: ../../admin/projects.rst:186
+#: ../../admin/projects.rst:182
 msgid "``%(../file)s`` - filename in parent directory"
 msgstr "``%(../file)s`` - 親ディレクトリのファイル名"
 
-#: ../../admin/projects.rst:187
+#: ../../admin/projects.rst:183
 msgid "``%(../../file)s`` - filename in grandparent directory"
 msgstr "``%(../../file)s`` - 親の親ディレクトリのファイル名"
 
-#: ../../admin/projects.rst:189
-#, python-format
+#: ../../admin/projects.rst:185
+#, fuzzy, python-format
 msgid ""
-"For example on GitHub, you would use something like "
+"For example on GitHub, use something like "
 "``https://github.com/WeblateOrg/hello/blob/%(branch)s/%(file)s#L%(line)s``."
 msgstr ""
 "例えばGitHubなら、``https://github.com/WeblateOrg/hello/blob/%(branch)s/%(file)s#L%(line)s``"
 " のように使うことができます。"
 
-#: ../../admin/projects.rst:194
+#: ../../admin/projects.rst:190
 msgid "Exported repository URL"
 msgstr "出力リポジトリのURL"
 
-#: ../../admin/projects.rst:192
+#: ../../admin/projects.rst:188
+#, fuzzy
 msgid ""
 "URL where changes made by Weblate are exported. This is important when "
-":ref:`continuous-translation` is not used or when there is need to "
+":ref:`continuous-translation` is not used, or when there is a need to "
 "manually merge changes. You can use :ref:`git-exporter` to automate this "
 "for Git repositories."
 msgstr ""
@@ -8778,35 +8842,37 @@ msgstr ""
 "を行わないとき、あるいは手動で変更をマージしなけれなならないときに重要です。これをGitリポジトリに対して自動化するためには、:ref:`git-"
 "exporter` を使うことができます。"
 
-#: ../../admin/projects.rst:196
+#: ../../admin/projects.rst:192
 msgid "Repository branch"
 msgstr "リポジトリのブランチ"
 
-#: ../../admin/projects.rst:197
-msgid "Which branch to checkout from the VCS and where to look for translations."
+#: ../../admin/projects.rst:193
+#, fuzzy
+msgid "Which branch to checkout from the VCS, and where to look for translations."
 msgstr "VCSからチェックアウトして翻訳を探すべきブランチです。"
 
-#: ../../admin/projects.rst:207
+#: ../../admin/projects.rst:203
 msgid "File mask"
 msgstr "ファイルマスク"
 
-#: ../../admin/projects.rst:199
+#: ../../admin/projects.rst:195
+#, fuzzy
 msgid ""
-"Mask of files to translate including path. It should include one * "
-"replacing language code (see :ref:`languages` for information how this is"
-" processed). In case your repository contains more than one translation "
-"files (eg. more Gettext domains), you need to create separate component "
-"for each."
+"Mask of files to translate, including path. It should include one \"*\" "
+"replacing language code (see :ref:`languages` for info on how this is "
+"processed). In case your repository contains more than one translation "
+"file (e.g. more Gettext domains), you need to create a component for each"
+" of them."
 msgstr ""
 "翻訳すべきファイルのパスを示すマスクです。これは言語コードに置き換えられる * "
 "をひとつ含んでいなければなりません（これがどのように処理されるかについての情報は :ref:`languages` "
 "を参照してください）。リポジトリに複数の翻訳ファイルがある場合（例えば複数のGettextドメインがある場合）は、それぞれ独立してコンポーネントを作成しなければなりません。"
 
-#: ../../admin/projects.rst:205
+#: ../../admin/projects.rst:201
 msgid "For example ``po/*.po`` or ``locale/*/LC_MESSAGES/django.po``."
 msgstr "例としては ``po/*.po`` や ``locale/*/LC_MESSAGES/django.po`` などといったようになります。"
 
-#: ../../admin/projects.rst:207
+#: ../../admin/projects.rst:203
 msgid ""
 "In case your filename contains special chars such as ``[``, ``]``, these "
 "need to be escaped as ``[[]`` or ``[]]``."
@@ -8814,541 +8880,558 @@ msgstr ""
 "ファイル名に ``[`` や ``]`` などの特別な文字を含む場合は、これらは ``[[]`` や ``[]]`` "
 "のようにエスケープされなければなりません。"
 
-#: ../../admin/projects.rst:209
+#: ../../admin/projects.rst:205
 msgid "Monolingual base language file"
 msgstr "単一言語基盤言語ファイル"
 
-#: ../../admin/projects.rst:210
-msgid "Base file containing strings definition for :ref:`monolingual`."
+#: ../../admin/projects.rst:206
+#, fuzzy
+msgid "Base file containing string definitions for :ref:`monolingual`."
 msgstr ":ref:`monolingual` のための言語定義を含んだベースファイルです。"
 
-#: ../../admin/projects.rst:211
+#: ../../admin/projects.rst:207
 msgid "Edit base file"
 msgstr "ベースファイルの編集"
 
-#: ../../admin/projects.rst:212
-msgid "Whether to allow editing of base file for :ref:`monolingual`."
+#: ../../admin/projects.rst:208
+#, fuzzy
+msgid "Whether to allow editing the base file for :ref:`monolingual`."
 msgstr ":ref:`monolingual` のためのベースファイルを編集することを許可するかどうかを設定します。"
 
-#: ../../admin/projects.rst:214
+#: ../../admin/projects.rst:210
 msgid "Base file for new translations"
 msgstr "新規翻訳のためのベースファイル"
 
-#: ../../admin/projects.rst:214
+#: ../../admin/projects.rst:210
+#, fuzzy
 msgid ""
-"Base file used to generate new translations, eg. ``.pot`` file with "
-"Gettext, see :ref:`new-translations` for more information."
+"Base file used to generate new translations, e.g. ``.pot`` file with "
+"Gettext, see :ref:`new-translations` for more info."
 msgstr ""
 "新規に翻訳ファイルを生成するためのベースとなるファイルです。例えばGettextにおいては ``.pot`` "
 "ファイルがそれにあたります。より詳しい情報は :ref:`new-translations` を参照してください。"
 
-#: ../../admin/projects.rst:216
+#: ../../admin/projects.rst:212
 msgid "File format"
 msgstr "ファイルフォーマット"
 
-#: ../../admin/projects.rst:217
+#: ../../admin/projects.rst:213
 msgid "Translation file format, see also :ref:`formats`."
 msgstr "翻訳ファイルのフォーマットです。:ref:`formats` も参照してください。"
 
-#: ../../admin/projects.rst:219
+#: ../../admin/projects.rst:215
 msgid "Source string bug report address"
 msgstr "原文のバグレポートのためのアドレス"
 
-#: ../../admin/projects.rst:219
+#: ../../admin/projects.rst:215
 msgid ""
 "Email address used for reporting upstream bugs. This address will also "
 "receive notification about any source string comments made in Weblate."
 msgstr "原文のバグを報告するために使われるメールアドレスです。このメールアドレスは、Weblateにおいて原文に対して行われた、あらゆるコメントの通知を受け取るアドレスにもなります。"
 
-#: ../../admin/projects.rst:221
+#: ../../admin/projects.rst:217
 msgid "Locked"
 msgstr "翻訳のロック"
 
-#: ../../admin/projects.rst:222
+#: ../../admin/projects.rst:218
 msgid "You can lock the translation to prevent updates by users."
 msgstr "ユーザによるアップデートが行われないよう、翻訳をロックすることができます。"
 
-#: ../../admin/projects.rst:228
+#: ../../admin/projects.rst:224
 msgid "Allow translation propagation"
 msgstr "翻訳の伝播の許可"
 
-#: ../../admin/projects.rst:224
+#: ../../admin/projects.rst:220
+#, fuzzy
 msgid ""
-"You can disable propagation of translations to this component from other "
-"components within same project. This really depends on what you are "
-"translating, sometimes it's desirable to have same string used."
+"You can turn off propagation of translations to this component from other"
+" components within same project. This really depends on what you are "
+"translating, sometimes it's desirable to have make use of a translation "
+"more than once."
 msgstr "同一プロジェクト内の他のコンポーネントの翻訳が、このコンポーネントに伝播し共有されることを、無効にすることができます。これは翻訳の内容に強く依存するもので、同じ言葉を用いることが望ましい場合もあります。"
 
-#: ../../admin/projects.rst:228
+#: ../../admin/projects.rst:224
+#, fuzzy
 msgid ""
-"It's usually a good idea to disable this for monolingual translations "
+"It's usually a good idea to turn this off for monolingual translations, "
 "unless you are using the same IDs across the whole project."
 msgstr "monolingual翻訳においては、プロジェクトの全体で同じメッセージIDを使っていない限りは、通常これを無効にするのが望ましいです。"
 
-#: ../../admin/projects.rst:230
+#: ../../admin/projects.rst:226
 msgid "Save translation history"
 msgstr "翻訳履歴の保存"
 
-#: ../../admin/projects.rst:231
-msgid "Whether to store a history of translation changes in database."
+#: ../../admin/projects.rst:227
+#, fuzzy
+msgid "Whether to store a history of translation changes in the database."
 msgstr "データベースに翻訳の変更履歴を保存するかどうかを設定します。"
 
-#: ../../admin/projects.rst:232
+#: ../../admin/projects.rst:228
 msgid "Enable suggestions"
 msgstr "提案の有効化"
 
-#: ../../admin/projects.rst:233
+#: ../../admin/projects.rst:229
 msgid "Whether translation suggestions are accepted for this component."
 msgstr "このコンポーネントで翻訳の提案を受け入れるかどうかを設定します。"
 
-#: ../../admin/projects.rst:234 ../../admin/translating.rst:7
+#: ../../admin/projects.rst:230 ../../admin/translating.rst:7
 msgid "Suggestion voting"
 msgstr "提案の投票"
 
-#: ../../admin/projects.rst:235
-msgid "Enable voting for suggestions, see :ref:`voting`."
+#: ../../admin/projects.rst:231
+#, fuzzy
+msgid "Turns on votecasting for suggestions, see :ref:`voting`."
 msgstr "提案に対する投票を有効化します。:ref:`voting` を参照してください。"
 
-#: ../../admin/projects.rst:236
+#: ../../admin/projects.rst:232
 msgid "Autoaccept suggestions"
 msgstr "提案の自動受け入れ"
 
-#: ../../admin/projects.rst:237
+#: ../../admin/projects.rst:233
 msgid "Automatically accept voted suggestions, see :ref:`voting`."
 msgstr "投票された提案を自動で受け入れます。:ref:`voting` を参照してください。"
 
-#: ../../admin/projects.rst:238 ../../admin/translating.rst:69
+#: ../../admin/projects.rst:234 ../../admin/translating.rst:69
 msgid "Translation flags"
 msgstr "翻訳フラグ"
 
-#: ../../admin/projects.rst:239
+#: ../../admin/projects.rst:235
 msgid ""
 "Customization of quality checks and other Weblate behavior, see :ref"
 ":`custom-checks`."
 msgstr "品質チェックやその他のWeblateの挙動をカスタマイズします。:ref:`custom-checks` を参照してください。"
 
-#: ../../admin/projects.rst:240
+#: ../../admin/projects.rst:236
 msgid "Translation license"
 msgstr "翻訳のライセンス"
 
-#: ../../admin/projects.rst:241
-msgid "License of this translation."
-msgstr "この翻訳のライセンスです。"
+#: ../../admin/projects.rst:237
+msgid ""
+"License of the translation, (does not need to be the same as the source "
+"code license)."
+msgstr ""
 
-#: ../../admin/projects.rst:242
+#: ../../admin/projects.rst:238
 msgid "License URL"
 msgstr "ライセンスのURL"
 
-#: ../../admin/projects.rst:243
-msgid "URL where users can find full text of a license."
+#: ../../admin/projects.rst:239
+#, fuzzy
+msgid "URL where users can find the actual text of a license in full."
 msgstr "ユーザがライセンスの全文を読むことのできるURLです。"
 
-#: ../../admin/projects.rst:245
+#: ../../admin/projects.rst:241
 msgid "New language"
 msgstr "新規言語"
 
-#: ../../admin/projects.rst:245
+#: ../../admin/projects.rst:241
+#, fuzzy
 msgid ""
-"How to handle requests for creating new languages. Please note that the "
-"availability of choices depends on the file format, see :ref:`formats`."
+"How to handle requests for creation of new languages. Please note that "
+"the availability of choices depends on the file format, see "
+":ref:`formats`."
 msgstr ""
 "新規言語の作成のリクエストをどのように扱うかを設定します。ここでの選択肢はファイルフォーマットに依存することに注意してください。:ref:`formats`"
 " を参照してください。"
 
-#: ../../admin/projects.rst:249
+#: ../../admin/projects.rst:245
 msgid "Merge style"
 msgstr "マージのスタイル"
 
-#: ../../admin/projects.rst:248
+#: ../../admin/projects.rst:244
+#, fuzzy
 msgid ""
-"You can configure how the updates from the upstream repository are "
-"handled. This might not be supported for some VCS. See :ref:`merge-"
-"rebase` for more details."
+"You can configure how updates from the upstream repository are handled. "
+"This might not be supported for some VCSs. See :ref:`merge-rebase` for "
+"more details."
 msgstr ""
 "上流リポジトリにおける変更をどのように扱うかを設定することができます。使用するVCSによってはこの設定はサポートされないかもしれません。より詳しくは"
 " :ref:`merge-rebase` を参照してください。"
 
-#: ../../admin/projects.rst:251
+#: ../../admin/projects.rst:247
 msgid "Commit message"
 msgstr "コミットメッセージ"
 
-#: ../../admin/projects.rst:252
-msgid "Message used when committing translation, see :ref:`markup`."
+#: ../../admin/projects.rst:248
+#, fuzzy
+msgid "Message used when committing a translation, see :ref:`markup`."
 msgstr "翻訳をコミットする際に使われるメッセージです。:ref:`markup` を参照してください。"
 
-#: ../../admin/projects.rst:255
+#: ../../admin/projects.rst:251
 msgid "Committer name"
 msgstr "コミッタの名前"
 
-#: ../../admin/projects.rst:254
+#: ../../admin/projects.rst:250
+#, fuzzy
 msgid ""
-"Name of the committer used on Weblate commits, the author will be always "
-"the real translator. On some VCS this might be not supported. Default "
+"Name of the committer used for Weblate commits, the author will always be"
+" the real translator. On some VCSs this might be not supported. Default "
 "value can be changed by :setting:`DEFAULT_COMMITER_NAME`."
-msgstr ""
-"Weblateからコミットする際に使われるコミッタの名前です。常に実際の翻訳者の名前が使われます。使用するVCSによってはこの設定はサポートされないかもしれません。初期設定値は"
-" :setting:`DEFAULT_COMMITER_NAME` で変更することができます。"
-
-#: ../../admin/projects.rst:259
-msgid "Committer email"
-msgstr "コミッタのメールアドレス"
-
-#: ../../admin/projects.rst:258
-msgid ""
-"Email of committer used on Weblate commits, the author will be always the"
-" real translator. On some VCS this might be not supported. Default value "
-"can be changed by :setting:`DEFAULT_COMMITER_EMAIL`."
 msgstr ""
 "Weblateからコミットする際に使われるコミッタのメールアドレスです。常に実際の翻訳者のメールアドレスが使われます。使用するVCSによってはこの設定はサポートされないかもしれません。初期設定値は"
 " :setting:`DEFAULT_COMMITER_EMAIL` で変更することができます。"
 
-#: ../../admin/projects.rst:262
+#: ../../admin/projects.rst:255
+msgid "Committer email"
+msgstr "コミッタのメールアドレス"
+
+#: ../../admin/projects.rst:254
+#, fuzzy
+msgid ""
+"Email of committer used for Weblate commits, the author will always be "
+"the real translator. On some VCSs this might be not supported. Default "
+"value can be changed by :setting:`DEFAULT_COMMITER_EMAIL`."
+msgstr ""
+"Weblateからコミットする際に使われるコミッタのメールアドレスです。常に実際の翻訳者のメールアドレスが使われます。使用するVCSによってはこの設定はサポートされないかもしれません。初期設定値は"
+" :setting:`DEFAULT_COMMITER_EMAIL` で変更することができます。"
+
+#: ../../admin/projects.rst:258
 msgid "Push on commit"
 msgstr "コミット時のプッシュ"
 
-#: ../../admin/projects.rst:262
+#: ../../admin/projects.rst:258
+#, fuzzy
 msgid ""
-"Whether any committed changes should be automatically pushed to upstream "
+"Whether committed changes should be automatically pushed to the upstream "
 "repository."
 msgstr "コミットされたすべての変更を自動的に上流リポジトリにプッシュするかどうかを設定します。"
 
-#: ../../admin/projects.rst:266
+#: ../../admin/projects.rst:262
 msgid "Age of changes to commit"
 msgstr "コミットすべき変更の経過時間"
 
-#: ../../admin/projects.rst:265
+#: ../../admin/projects.rst:261
+#, fuzzy
 msgid ""
-"Configures how old changes (in hours) will be committed by "
-":djadmin:`commit_pending` management command (usually executed by cron). "
-"Default value can be changed by :setting:`COMMIT_PENDING_HOURS`."
+"Sets how old changes (in hours) are to get before they are committed by "
+":djadmin:`commit_pending` management command (usually executed by Cron). "
+"The Default value can be changed by :setting:`COMMIT_PENDING_HOURS`."
 msgstr ""
 ":djadmin:`commit_pending` "
 "管理コマンド（通常はcronにより実行されます）において、どの程度の時間までさかのぼって変更をコミットするかを設定します。初期設定値は "
 ":setting:`COMMIT_PENDING_HOURS` で変更することができます。"
 
-#: ../../admin/projects.rst:272
+#: ../../admin/projects.rst:268
 msgid "Language filter"
 msgstr "言語フィルタ"
 
-#: ../../admin/projects.rst:269
+#: ../../admin/projects.rst:265
 msgid ""
-"Regular expression which is used to filter translation when scanning for "
-"file mask. This can be used to limit list of languages managed by Weblate"
-" (eg. ``^(cs|de|es)$`` will include only those there languages. Please "
-"note that you need to list language codes as they appear in the filename."
+"Regular expression used to filter the translation when scanning for file "
+"mask. This can be used to limit the list of languages managed by Weblate "
+"(e.g. ``^(cs|de|es)$`` will include only these languages. Please note "
+"that you need to list language codes as they appear in the filename."
 msgstr ""
-"ファイルマスクによりスキャンが行われる際に、翻訳を言語によってフィルタするための正規表現です。Weblateによって管理される言語のリストを限定するために使うことができます。例えば"
-" ``^(cs|de|es)$`` "
-"とすると、ここに列挙された言語のみを含むようになります。ファイル名中で実際に使われている言語コードをリストアップする必要があることに注意してください。"
 
-#: ../../admin/projects.rst:281
+#: ../../admin/projects.rst:277
 msgid ":ref:`faq-vcs`, :ref:`alerts`"
 msgstr ""
 
-#: ../../admin/projects.rst:286
+#: ../../admin/projects.rst:282
 msgid "Template markup"
 msgstr ""
 
-#: ../../admin/projects.rst:288
+#: ../../admin/projects.rst:284
 msgid ""
-"Weblate uses simple markup language on several places where text "
-"rendering is needed. It is based on :doc:`django:ref/templates/language` "
-"so it can be quite powerful."
+"Weblate uses simple markup language in several places where text "
+"rendering is needed. It is based on :doc:`django:ref/templates/language`,"
+" so it can be quite powerful."
 msgstr ""
 
-#: ../../admin/projects.rst:292
+#: ../../admin/projects.rst:288
 msgid "Currently it is used in:"
 msgstr ""
 
-#: ../../admin/projects.rst:294
+#: ../../admin/projects.rst:290
 msgid "Commit message formatting, see :ref:`component`"
 msgstr ""
 
-#: ../../admin/projects.rst:298
+#: ../../admin/projects.rst:294
 msgid "Several addons"
 msgstr ""
 
-#: ../../admin/projects.rst:296
+#: ../../admin/projects.rst:292
 msgid ":ref:`addon-weblate.discovery.discovery`"
 msgstr ""
 
-#: ../../admin/projects.rst:297
+#: ../../admin/projects.rst:293
 msgid ":ref:`addon-weblate.generate.generate`"
 msgstr ""
 
-#: ../../admin/projects.rst:298
+#: ../../admin/projects.rst:294
 msgid ":ref:`addon-script`"
 msgstr ""
 
-#: ../../admin/projects.rst:300
-msgid "There are following variables available in the templates:"
-msgstr ""
+#: ../../admin/projects.rst:296
+#, fuzzy
+msgid "There following variables are available in the templates:"
+msgstr "加えて、以下の環境変数を使うことができます。"
 
-#: ../../admin/projects.rst:302
+#: ../../admin/projects.rst:298
 msgid "``{{ language_code }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:303
+#: ../../admin/projects.rst:299
 msgid "Language code"
 msgstr ""
 
-#: ../../admin/projects.rst:304
+#: ../../admin/projects.rst:300
 msgid "``{{ language_name }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:305
+#: ../../admin/projects.rst:301
 msgid "Language name"
 msgstr ""
 
-#: ../../admin/projects.rst:306
+#: ../../admin/projects.rst:302
 msgid "``{{ component_name }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:307
+#: ../../admin/projects.rst:303
 msgid "Component name"
 msgstr ""
 
-#: ../../admin/projects.rst:308
+#: ../../admin/projects.rst:304
 msgid "``{{ component_slug }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:309
+#: ../../admin/projects.rst:305
 msgid "Component slug"
 msgstr ""
 
-#: ../../admin/projects.rst:310
+#: ../../admin/projects.rst:306
 msgid "``{{ project_name }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:311
+#: ../../admin/projects.rst:307
 msgid "Project name"
 msgstr ""
 
-#: ../../admin/projects.rst:312
+#: ../../admin/projects.rst:308
 msgid "``{{ project_slug }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:313
+#: ../../admin/projects.rst:309
 msgid "Project slug"
 msgstr ""
 
-#: ../../admin/projects.rst:314
+#: ../../admin/projects.rst:310
 msgid "``{{ url }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:315
+#: ../../admin/projects.rst:311
 msgid "Translation URL"
 msgstr ""
 
-#: ../../admin/projects.rst:316
+#: ../../admin/projects.rst:312
 msgid "``{{ stats }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:317
-msgid "Translation stats, this has further attributes, see below for examples."
+#: ../../admin/projects.rst:313
+msgid "Translation stats, this has further attributes, examples below."
 msgstr ""
 
-#: ../../admin/projects.rst:318
+#: ../../admin/projects.rst:314
 msgid "``{{ stats.all }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:319
+#: ../../admin/projects.rst:315
 msgid "Total strings count"
 msgstr ""
 
-#: ../../admin/projects.rst:320
+#: ../../admin/projects.rst:316
 msgid "``{{ stats.fuzzy }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:321
+#: ../../admin/projects.rst:317
 msgid "Count of strings needing review"
 msgstr ""
 
-#: ../../admin/projects.rst:322
+#: ../../admin/projects.rst:318
 msgid "``{{ stats.fuzzy_percent }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:323
+#: ../../admin/projects.rst:319
 msgid "Percent of strings needing review"
 msgstr ""
 
-#: ../../admin/projects.rst:324
+#: ../../admin/projects.rst:320
 msgid "``{{ stats.translated }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:325
+#: ../../admin/projects.rst:321
 msgid "Translated strings count"
 msgstr ""
 
-#: ../../admin/projects.rst:326
+#: ../../admin/projects.rst:322
 msgid "``{{ stats.translated_percent }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:327
+#: ../../admin/projects.rst:323
 msgid "Translated strings percent"
 msgstr ""
 
-#: ../../admin/projects.rst:328
+#: ../../admin/projects.rst:324
 msgid "``{{ stats.allchecks }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:329
-msgid "Number of strings with failing check"
+#: ../../admin/projects.rst:325
+msgid "Number of strings with failing checks"
 msgstr ""
 
-#: ../../admin/projects.rst:330
+#: ../../admin/projects.rst:326
 msgid "``{{ stats.allchecks_percent }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:331
-msgid "Percent of strings with failing check"
+#: ../../admin/projects.rst:327
+msgid "Percent of strings with failing checks"
 msgstr ""
 
-#: ../../admin/projects.rst:333
+#: ../../admin/projects.rst:329
 msgid "``{{ author }}``"
 msgstr ""
 
-#: ../../admin/projects.rst:333
+#: ../../admin/projects.rst:329
 msgid "Author of current commit, available only in the commit scope."
 msgstr ""
 
-#: ../../admin/projects.rst:335
+#: ../../admin/projects.rst:331
 msgid "You can combine them with filters:"
 msgstr ""
 
-#: ../../admin/projects.rst:341
+#: ../../admin/projects.rst:337
 msgid "You can use conditions:"
 msgstr ""
 
-#: ../../admin/projects.rst:347
-msgid "There is additional tag available to replace chars:"
+#: ../../admin/projects.rst:343
+msgid "There is additional tag available for replacing chars:"
 msgstr ""
 
-#: ../../admin/projects.rst:353
+#: ../../admin/projects.rst:349
 msgid "You can combine it with filters:"
 msgstr ""
 
-#: ../../admin/projects.rst:359
+#: ../../admin/projects.rst:355
 msgid "...and other Django template features."
 msgstr ""
 
-#: ../../admin/projects.rst:364
+#: ../../admin/projects.rst:360
 msgid "Importing speed"
 msgstr ""
 
-#: ../../admin/projects.rst:366
+#: ../../admin/projects.rst:362
 msgid ""
 "Fetching VCS repository and importing translations to Weblate can be a "
-"lengthy process depending on size of your translations. Here are some "
-"tips to improve this situation:"
+"lengthy process, depending on size of your translations. Here are some "
+"tips:"
 msgstr ""
 
-#: ../../admin/projects.rst:371
+#: ../../admin/projects.rst:366
 msgid "Optimize configuration"
 msgstr ""
 
-#: ../../admin/projects.rst:373
+#: ../../admin/projects.rst:368
 msgid ""
 "The default configuration is useful for testing and debugging Weblate, "
-"while for production setup, you should do some adjustments. Many of them "
-"have quite a big impact on performance. Please check :ref:`production` "
-"for more details, especially:"
+"while for a production setup, you should do some adjustments. Many of "
+"them have quite a big impact on performance. Please check "
+":ref:`production` for more details, especially:"
 msgstr ""
 
-#: ../../admin/projects.rst:378
+#: ../../admin/projects.rst:373
 msgid ":ref:`production-indexing`"
 msgstr ""
 
-#: ../../admin/projects.rst:380
+#: ../../admin/projects.rst:375
 msgid ":ref:`production-database`"
 msgstr ""
 
-#: ../../admin/projects.rst:381
+#: ../../admin/projects.rst:376
 msgid ":ref:`production-debug`"
 msgstr ""
 
-#: ../../admin/projects.rst:384
+#: ../../admin/projects.rst:379
 msgid "Check resource limits"
+msgstr ""
+
+#: ../../admin/projects.rst:381
+msgid ""
+"If you are importing huge translations or repositories, you might be hit "
+"by resource limitations of your server."
+msgstr ""
+
+#: ../../admin/projects.rst:384
+msgid ""
+"Check the amount of free memory, having translation files cached by the "
+"operating system will greatly improve performance."
+msgstr ""
+
+#: ../../admin/projects.rst:385
+msgid ""
+"Disk operations might be bottleneck if there is a lot of strings to "
+"process - the disk is pushed by both Weblate and the database."
 msgstr ""
 
 #: ../../admin/projects.rst:386
 msgid ""
-"If you are importing huge translations or repositories, you might be hit "
-"by resource limits of your server."
+"Additional CPU cores might help improve performance of background tasks "
+"(see :ref:`celery`)."
 msgstr ""
 
 #: ../../admin/projects.rst:389
-msgid ""
-"check amount of free memory, having translation files by system will "
-"greatly improve performance"
-msgstr ""
-
-#: ../../admin/projects.rst:390
-msgid ""
-"disk operations might be bottleneck if there is lot of strings to process"
-" - the disk is pushed by both Weblate and database"
+msgid "Disable unneeded checks"
 msgstr ""
 
 #: ../../admin/projects.rst:391
 msgid ""
-"additional CPU cores might help to improve performance of background "
-"tasks (see :ref:`celery`)"
+"Some quality checks can be quite expensive, and if not needed, can save "
+"you some time during import if omitted. See :setting:`CHECK_LIST` for "
+"more info on how to configure this."
 msgstr ""
 
-#: ../../admin/projects.rst:394
-msgid "Disable not needed checks"
-msgstr ""
-
-#: ../../admin/projects.rst:396
-msgid ""
-"Some quality checks can be quite expensive and if you don't need them, "
-"they can save you some time during import. See :setting:`CHECK_LIST` for "
-"more information how to configure this."
-msgstr ""
-
-#: ../../admin/projects.rst:403
+#: ../../admin/projects.rst:398
 msgid "Automatic creation of components"
 msgstr ""
 
-#: ../../admin/projects.rst:405
+#: ../../admin/projects.rst:400
 msgid ""
-"In case you have project with dozen of translation files (eg. for "
-"different Gettext domains or parts of Android apps), you might want to "
-"import them automatically. This can be either achieved from command line "
-"using :djadmin:`import_project` or :djadmin:`import_json` or by "
-"installing :ref:`addon-weblate.discovery.discovery` addon."
+"In case your project has dozen of translation files (e.g. for different "
+"Gettext domains, or parts of Android apps), you might want to import them"
+" automatically. This can either be achieved from the command line by "
+"using :djadmin:`import_project` or :djadmin:`import_json`, or by "
+"installing the :ref:`addon-weblate.discovery.discovery` addon."
 msgstr ""
 
-#: ../../admin/projects.rst:411
+#: ../../admin/projects.rst:406
 msgid ""
-"For using the addon, you need to first create component for one "
-"translation file (choose the one that is least likely to be renamed or "
-"removed in future) and install the addon on this component."
+"To use the addon, you first need to create a component for one "
+"translation file (choose the one that is the least likely to be renamed "
+"or removed in future), and install the addon on this component."
 msgstr ""
 
-#: ../../admin/projects.rst:415
+#: ../../admin/projects.rst:410
 msgid ""
 "For the management commands, you need to create a project which will "
-"contain all components and then it's just a matter of running "
-":djadmin:`import_project` or :djadmin:`import_json`."
+"contain all components and then run :djadmin:`import_project` or "
+":djadmin:`import_json`."
 msgstr ""
 
-#: ../../admin/projects.rst:421
+#: ../../admin/projects.rst:416
 msgid ":ref:`manage`, :ref:`addon-weblate.discovery.discovery`"
 msgstr ""
 
-#: ../../admin/projects.rst:427
+#: ../../admin/projects.rst:422
 msgid "Fulltext search"
 msgstr ""
 
-#: ../../admin/projects.rst:429
+#: ../../admin/projects.rst:424
 msgid ""
-"Fulltext search is based on Whoosh. It is processed in background if "
-"Celery is configured.  This leads to a faster response of the site and "
-"less fragmented index with the cost that it might be slightly outdated."
+"Fulltext search is based on Whoosh. It is processed in the background if "
+"Celery is set up. This leads to faster site response, and a less "
+"fragmented index with the added cost that it might be slightly outdated."
 msgstr ""
 
-#: ../../admin/projects.rst:435
+#: ../../admin/projects.rst:430
 msgid ":ref:`faq-ft-slow`, :ref:`faq-ft-lock`, :ref:`faq-ft-space`"
 msgstr ""
 
@@ -9962,6 +10045,10 @@ msgstr ""
 
 #: ../../admin/upgrade.rst:157
 msgid "Delete :ref:`translation-memory` database :djadmin:`delete_memory`:"
+msgstr ""
+
+#: ../../admin/upgrade.rst:169
+msgid "Recreate fulltext index using :djadmin:`rebuild_index`:"
 msgstr ""
 
 #: ../../admin/upgrade.rst:175
@@ -12016,5 +12103,1042 @@ msgstr ""
 #~ "This could be useful only on "
 #~ "upgrades which do major changes to "
 #~ "checks."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Before Weblate 3.0, the privileges "
+#~ "system was based on Django, but "
+#~ "now it is built specifically for "
+#~ "Weblate. If you are using older "
+#~ "version, please consult documentation for "
+#~ "that version, information here will not"
+#~ " apply."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate comes with a fine grained "
+#~ "privileges system to assign users "
+#~ "permissions globally or in limited "
+#~ "scope."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The permission system is groups and "
+#~ "roles based, where roles define set "
+#~ "of permissions and groups assign them"
+#~ " to users and translations, see :ref"
+#~ ":`auth-model` for more details."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Just after installation default set of"
+#~ " groups is created and you can "
+#~ "use those to assign users global "
+#~ "roles (see :ref:`default-groups`). "
+#~ "Additionally when :ref:`acl` is enabled, "
+#~ "you can assign users to specific "
+#~ "translation projects. More fine grained "
+#~ "configuration can be achieved using :ref"
+#~ ":`custom-acl`"
+#~ msgstr ""
+
+#~ msgid "Most usual setups"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To completely lock down your Weblate "
+#~ "installation you can use "
+#~ ":setting:`LOGIN_REQUIRED_URLS` for forcing users "
+#~ "to login and :setting:`REGISTRATION_OPEN` for"
+#~ " disallowing new registrations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To manage site wide permissions, just"
+#~ " add users to the `Users` (this "
+#~ "is done by default using "
+#~ ":ref:`autogroup`), `Reviewers` and `Managers` "
+#~ "groups. Keep all projects configured as"
+#~ " `Public` (see :ref:`acl`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Configure your projects to `Protected` "
+#~ "or `Private` and manage users per "
+#~ "project in the Weblate interface."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can additionally grant permissions "
+#~ "to some user based on project, "
+#~ "language or a component set. To "
+#~ "achieve this, create new group (eg. "
+#~ "`Czech translators`) and configure it "
+#~ "for given object. Any assigned "
+#~ "permissions will be granted to members"
+#~ " of that group on selected objects."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This will work just fine without "
+#~ "additional setup if using per project"
+#~ " permissions, for site wide permissions,"
+#~ " you will probably also want to "
+#~ "remove these permissions from the "
+#~ "`Users` group or change automatic "
+#~ "assignment of all users to that "
+#~ "group (see :ref:`autogroup`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By enabling ACL, all users are "
+#~ "prohibited from accessing anything within "
+#~ "a given project unless you add the"
+#~ " permissions for them to do that."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can limit user's access to "
+#~ "individual projects. This feature is "
+#~ "enabled by :guilabel:`Access control` at "
+#~ "Project configuration. This automatically "
+#~ "creates several groups for this project,"
+#~ " see :ref:`groups`."
+#~ msgstr ""
+
+#~ msgid "There are following choices for :guilabel:`Access control`:"
+#~ msgstr ""
+
+#~ msgid "Publicly visible but translatable only for selected users"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To allow access to this project, "
+#~ "you have to add the privilege to"
+#~ " do so either directly to the "
+#~ "given user or group of users in"
+#~ " Django admin interface, or by using"
+#~ " user management on the project page"
+#~ " as described in :ref:`manage-acl`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Even with ACL enabled some summary "
+#~ "information will be available about your"
+#~ " project:"
+#~ msgstr ""
+
+#~ msgid "Site wide statistics includes counts for all projects"
+#~ msgstr ""
+
+#~ msgid "Site wide languages summary includes counts for all projects"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can configure Weblate to "
+#~ "automatically add users to groups based"
+#~ " on their email. This automatic "
+#~ "assignment happens only at the time "
+#~ "of account creation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This can be configured in the "
+#~ "Django admin interface (in the "
+#~ ":guilabel:`Accounts` section)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The automatic group assignment for the"
+#~ " `Users` and `Viewers` groups will be"
+#~ " always created by Weblate on "
+#~ "migrations, in case you want to "
+#~ "disable it, simply set the regular "
+#~ "expression to ``^$``, what will never"
+#~ " match."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whenever permission is checked to be "
+#~ "able to perform given action, the "
+#~ "check is performed based on scope, "
+#~ "following checks are performed:"
+#~ msgstr ""
+
+#~ msgid "Compared against scope project, if not set, this matches none project."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can use :guilabel:`Project selection` "
+#~ "to automate including all projects."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Scope component is matched against this"
+#~ " list, if not set this is "
+#~ "ignored."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Obviously this has no effect when "
+#~ "checking access on the project scope,"
+#~ " so you will have to grant "
+#~ "access to view all projects in a"
+#~ " component list by other means. By"
+#~ " default this is achieved by the "
+#~ "`Viewers` group, see :ref:`default-groups`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Compared against scope translation, if "
+#~ "not set, this matches none language."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can use :guilabel:`Language selection` "
+#~ "to automate including all languages."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "User has to be a member of a"
+#~ " group linked to the project. Only"
+#~ " membership is enough, no specific "
+#~ "permissions are needed to access a "
+#~ "project (this is used in the "
+#~ "default `Viewers` group, see :ref:`default-"
+#~ "groups`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "All users and groups can be "
+#~ "managed using Django admin interface, "
+#~ "which is available under :file:`/admin/` "
+#~ "URL."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Users with :guilabel:`Can manage ACL "
+#~ "rules for a project` privilege (see "
+#~ ":ref:`privileges`) can also manage users "
+#~ "in projects with access control enabled"
+#~ " on the project page. You can "
+#~ "add or remove users to the project"
+#~ " or make them owners."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The user management is available in "
+#~ ":guilabel:`Tools` menu of a project:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate comes with predefined set of "
+#~ "groups for a project where you can"
+#~ " assign users."
+#~ msgstr ""
+
+#~ msgid "Has all permissions on the project."
+#~ msgstr ""
+
+#~ msgid "Can manage glossary (add or remove entries or upload glossary)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Can manage screenshots - add or "
+#~ "remove them and associate them to "
+#~ "source strings."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Can edit translation template in "
+#~ ":ref:`monolingual` and source string "
+#~ "information."
+#~ msgstr ""
+
+#~ msgid "Can translate project, including upload of offline translations."
+#~ msgstr ""
+
+#~ msgid "Can manage VCS and access exported repository."
+#~ msgstr ""
+
+#~ msgid "Can access billing information (see :ref:`billing`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By choosing :guilabel:`Custom` as "
+#~ ":guilabel:`Access control`, Weblate will stop"
+#~ " managing access for given project "
+#~ "and you can setup custom rules in"
+#~ " Django admin interface. This can be"
+#~ " used for defining more complex "
+#~ "access control or having shared access"
+#~ " policy for all projects in single"
+#~ " Weblate instance. If you want to "
+#~ "enable this for all projects by "
+#~ "default please configure the "
+#~ ":setting:`DEFAULT_ACCESS_CONTROL`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By enabling this, Weblate will remove"
+#~ " all :ref:`acl` it has created for"
+#~ " this project. If you are doing "
+#~ "this without global admin permission, "
+#~ "you will instantly loose access to "
+#~ "manage the project."
+#~ msgstr ""
+
+#~ msgid "View billing information [`Administration`, `Billing`]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Edit component settings [`Administration`] "
+#~ "Lock component from translating "
+#~ "[`Administration`]"
+#~ msgstr ""
+
+#~ msgid "Edit info on source strings [`Administration`, `Edit source`]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Add new string [`Administration`] Ignore "
+#~ "failing check [`Administration`, `Edit "
+#~ "source`, `Power user`, `Review strings`, "
+#~ "`Translate`] Edit strings [`Administration`, "
+#~ "`Edit source`, `Power user`, `Review "
+#~ "strings`, `Translate`] Review strings "
+#~ "[`Administration`, `Review strings`] Edit "
+#~ "string when suggestions are enforced "
+#~ "[`Administration`, `Review strings`] Edit "
+#~ "source strings [`Administration`, `Edit "
+#~ "source`, `Power user`]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Accept suggestion [`Administration`, `Edit "
+#~ "source`, `Power user`, `Review strings`, "
+#~ "`Translate`] Add suggestion [`Add suggestion`,"
+#~ " `Administration`, `Edit source`, `Power "
+#~ "user`, `Review strings`, `Translate`] Delete"
+#~ " suggestion [`Administration`] Vote suggestion"
+#~ " [`Administration`, `Edit source`, `Power "
+#~ "user`, `Review strings`, `Translate`]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Start new translation [`Administration`, "
+#~ "`Manage languages`, `Power user`] Perform "
+#~ "automatic translation [`Administration`, `Manage "
+#~ "languages`] Delete existing translation "
+#~ "[`Administration`, `Manage languages`] Start "
+#~ "new translation into more languages "
+#~ "[`Administration`, `Manage languages`]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Define author of translation upload "
+#~ "[`Administration`] Overwrite existing strings "
+#~ "with upload [`Administration`, `Edit source`,"
+#~ " `Power user`, `Review strings`, "
+#~ "`Translate`] Upload translation strings "
+#~ "[`Administration`, `Edit source`, `Power "
+#~ "user`, `Review strings`, `Translate`]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following groups are created on "
+#~ "installation (or after executing "
+#~ ":djadmin:`setupgroups`):"
+#~ msgstr ""
+
+#~ msgid "Defines permissions for not authenticated users."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This group contains only anonymous user"
+#~ " (see :setting:`ANONYMOUS_USER_NAME`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can remove roles from this "
+#~ "group to limit permissions for not "
+#~ "authenticated users."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Never remove Weblate predefined groups "
+#~ "and users, this can lead to "
+#~ "unexpected problems. If you do not "
+#~ "want to use these features, just "
+#~ "remove all privileges from them."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The default setup for Weblate is "
+#~ "to use python-social-auth for "
+#~ "handling new users. This allows them "
+#~ "to register using a form on the"
+#~ " website and after confirming their "
+#~ "email they can contribute or "
+#~ "authenticate by using some third party"
+#~ " service."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can also completely disable new "
+#~ "users registration using "
+#~ ":setting:`REGISTRATION_OPEN`."
+#~ msgstr ""
+
+#~ msgid "The authentication attempts are subjects to :ref:`rate-limit`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By default Weblate uses the Django "
+#~ "built-in authentication and includes "
+#~ "various social authentication options. Thanks"
+#~ " to using Django authentication, you "
+#~ "can also import user database from "
+#~ "other Django based projects (see :ref"
+#~ ":`pootle-migration`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Django can be additionally configured to"
+#~ " authenticate against other means as "
+#~ "well."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Thanks to :doc:`psa:index`, Weblate support"
+#~ " authentication using many third party "
+#~ "services such as Facebook, GitHub, "
+#~ "Google or Bitbucket."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By default, Weblate relies on third-"
+#~ "party authentication services to provide "
+#~ "a validated email address, in case "
+#~ "some of the services you want to"
+#~ " use do not support this, please "
+#~ "enforce email validation on Weblate side"
+#~ " by configuring FORCE_EMAIL_VALIDATION for "
+#~ "them. For example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Enabling individual backends is quite "
+#~ "easy, it's just a matter of adding"
+#~ " an entry to the "
+#~ "``AUTHENTICATION_BACKENDS`` setting and possibly "
+#~ "adding keys needed for given "
+#~ "authentication. Please note that some "
+#~ "backends do not provide user email "
+#~ "by default, you have to request it"
+#~ " explicitly, otherwise Weblate will not "
+#~ "be able to properly credit users "
+#~ "contributions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You need to register an application "
+#~ "on GitHub and then tell Weblate "
+#~ "all the secrets:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You need to register an application "
+#~ "on Bitbucket and then tell Weblate "
+#~ "all the secrets:"
+#~ msgstr ""
+
+#~ msgid "Google OAuth2"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For using Google OAuth2, you need "
+#~ "to register an application on "
+#~ "<https://console.developers.google.com/> and enable "
+#~ "Google+ API."
+#~ msgstr ""
+
+#~ msgid "Facebook OAuth2"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "As usual with OAuth2 services, you "
+#~ "need to register your application with"
+#~ " Facebook. Once this is done, you "
+#~ "can configure Weblate to use it:"
+#~ msgstr ""
+
+#~ msgid "GitLab OAuth2"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For using Gitlab OAuth2, you need "
+#~ "to register application on "
+#~ "<https://gitlab.com/profile/applications>."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The redirect URL is ``https://WEBLATE "
+#~ "SERVER/accounts/complete/gitlab/`` and ensure to "
+#~ "mark the `read_user` scope."
+#~ msgstr ""
+
+#~ msgid "Disabling password authentication"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can still use password "
+#~ "authentication for the admin interface "
+#~ "for users you manually create there. "
+#~ "Just navigate to ``/admin/``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For example authentication using only "
+#~ "openSUSE Open ID provider can be "
+#~ "achieved using following:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The default :file:`settings.py` comes with "
+#~ "reasonable set of "
+#~ ":setting:`django:AUTH_PASSWORD_VALIDATORS`:"
+#~ msgstr ""
+
+#~ msgid "Password can't be too similar to your other personal information."
+#~ msgstr ""
+
+#~ msgid "Password must contain at least 6 characters."
+#~ msgstr ""
+
+#~ msgid "Password can't be a commonly used password."
+#~ msgstr ""
+
+#~ msgid "Password can't be entirely numeric."
+#~ msgstr ""
+
+#~ msgid "Password can't consist of single character or whitespace only."
+#~ msgstr ""
+
+#~ msgid "Password can't match password you have used in the past."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Additionally you can also install "
+#~ "`django-zxcvbn-password <https://pypi.org/project"
+#~ "/django-zxcvbn-password/>`_ which gives "
+#~ "quite realistic estimates of password "
+#~ "difficulty and allows to reject "
+#~ "passwords below certain threshold."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "LDAP authentication can be best achieved"
+#~ " using `django-auth-ldap` package. "
+#~ "You can install it by usual means:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "There are some incompatibilities in "
+#~ "Python LDAP module 3.1.0 which might "
+#~ "prevent you from using that version. "
+#~ "If you get error `AttributeError: "
+#~ "'module' object has no attribute "
+#~ "'_trace_level' <https://github.com/python-ldap/python-"
+#~ "ldap/issues/226>`_, downgrading python-ldap to"
+#~ " 3.0.0 might help."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once you have the package installed, "
+#~ "you can hook it to Django "
+#~ "authentication:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you can not use direct bind "
+#~ "for authentication, you will need to "
+#~ "use search and provide user to "
+#~ "bind for the search. For example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You should remove "
+#~ "``'social_core.backends.email.EmailAuth'`` from the "
+#~ "``AUTHENTICATION_BACKENDS`` setting, otherwise users"
+#~ " will be able to set their "
+#~ "password in Weblate and authenticate "
+#~ "using that. Keeping "
+#~ "``'weblate.accounts.auth.WeblateUserBackend'`` is still"
+#~ " needed in order to make permissions"
+#~ " and anonymous user work correctly. "
+#~ "It will also allow you to login"
+#~ " using local admin account if you "
+#~ "have created it (eg. by using "
+#~ ":djadmin:`createadmin`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Step one is disclosing the email "
+#~ "field of the user via CAS. This"
+#~ " has to be configured on the "
+#~ "CAS server itself and requires you "
+#~ "run at least CAS v2 since CAS "
+#~ "v1 doesn't support attributes at all."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Finally, a signal can be used to"
+#~ " map the email field to the "
+#~ "user object. For this to work you"
+#~ " have to import the signal from "
+#~ "the `django-cas-ng` package and "
+#~ "connect your code with this signal. "
+#~ "Doing this inside your settings file "
+#~ "can cause problems, therefore it's "
+#~ "suggested to put it:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "in your app config's "
+#~ ":py:meth:`django:django.apps.AppConfig.ready` method "
+#~ "(Django 1.7 and higher)"
+#~ msgstr ""
+
+#~ msgid "at the end of your :file:`models.py` file (Django 1.6 and lower)"
+#~ msgstr ""
+
+#~ msgid "in the project's :file:`urls.py` file (when no models exist)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Generally any Django authentication plugin "
+#~ "should work with Weblate. Just follow"
+#~ " instructions for the plugin, just "
+#~ "remember to keep Weblate user backend"
+#~ " installed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Typically the installation will consist "
+#~ "of adding authentication backend to "
+#~ ":setting:`django:AUTHENTICATION_BACKENDS` and installing"
+#~ " authentication app (if there is any)"
+#~ " into :setting:`django:INSTALLED_APPS`:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate stores data in several locations"
+#~ " and you should consider how to "
+#~ "backup each of them properly. You "
+#~ "might not need to backup some of"
+#~ " the data depending on the "
+#~ "configuration."
+#~ msgstr ""
+
+#~ msgid "Location depends on your database setup."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Database is the most important storage"
+#~ " for Weblate. Always configure regular "
+#~ "backups of your database, without it "
+#~ "all your translations setup will be "
+#~ "gone."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you have enough backup space, "
+#~ "simply backup whole :setting:`DATA_DIR`. This"
+#~ " is safe bet even if you will"
+#~ " include some files which do not "
+#~ "have to be backed up. Following "
+#~ "sections in detail describe what you "
+#~ "should backup and what you can "
+#~ "skip."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate dumps various data here and "
+#~ "you can use the files here for "
+#~ "better backups. The files are updated"
+#~ " daily (requires running Celery beats "
+#~ "server, see :ref:`celery`).  Currently this"
+#~ " includes:"
+#~ msgstr ""
+
+#~ msgid "Translation memory dump in JSON format."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The version control repositories contain "
+#~ "copy of your upstream repositories with"
+#~ " Weblate changes. If you have push"
+#~ " on commit enabled on all your "
+#~ "translation components, then all Weblate "
+#~ "changes are included upstream and you"
+#~ " do not have to backup the "
+#~ "repositories on Weblate side. They can"
+#~ " be cloned again from upstream "
+#~ "locations with no data loss."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are using Weblate generated "
+#~ "SSH or GPG keys, you should backup"
+#~ " these locations, otherwise you will "
+#~ "loose to private keys and you will"
+#~ " have to regenerate new ones."
+#~ msgstr ""
+
+#~ msgid "You should backup user uploaded files (eg. :ref:`screenshots`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The translation memory content. It is"
+#~ " recommended to back it up using "
+#~ ":djadmin:`dump_memory` in JSON format instead"
+#~ " of using binary format as that "
+#~ "might eventually change (and it is "
+#~ "incompatible between Python 2 and Python"
+#~ " 3). Weblate prepares this dump "
+#~ "daily, see :ref:`backup-dumps`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Celery tasks queue might contain "
+#~ "some information, but usually it's not"
+#~ " needed to backup. At most your "
+#~ "will loose not processed updates to "
+#~ "translation memory. The fulltext or "
+#~ "repository updates are anyway recommended "
+#~ "to perform on restore, so there is"
+#~ " no problem in losing these."
+#~ msgstr ""
+
+#~ msgid "Moving Weblate installation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate installation should be relocatable,"
+#~ " to move to different systems just"
+#~ " follow backup and restore instructions "
+#~ "above."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate provides you with a great "
+#~ "infrastructure for translation to closely "
+#~ "follow your development. This way "
+#~ "translators can work on translations the"
+#~ " entire time and are not forced "
+#~ "to translate a huge amount of new"
+#~ " texts before release."
+#~ msgstr ""
+#~ "Weblate "
+#~ "はあなたの開発に密に追従する翻訳のための最高の基盤を提供します。これにより翻訳者は常に翻訳に取り組むことができ、リリース前に新たに大量のテキストの翻訳を強いられることがありません。"
+
+#~ msgid "The complete process can be described in following steps:"
+#~ msgstr "完全なプロセスは次のようなステップで説明することができます。"
+
+#~ msgid ""
+#~ "If you are using Hosted Weblate "
+#~ "the recommended approach is to install"
+#~ " `Hosted Weblate app <https://github.com/apps"
+#~ "/hosted-weblate>`_, that way you will "
+#~ "get correct setup without much "
+#~ "configuring. In future it will be "
+#~ "used for pushing changes back as "
+#~ "well (that's why the write permission"
+#~ " is requested), but it's not yet "
+#~ "implemented."
+#~ msgstr ""
+#~ "Weblate ホスティングサービスを利用されている場合は、`Hosted Weblate app"
+#~ " <https://github.com/apps/hosted-weblate>`_ "
+#~ "をインストールするのがおすすめです。これによって最小限の設定で正しいセットアップをすることが可能です。将来は同じように "
+#~ "Weblate から GitHub "
+#~ "への変更の送信にも対応する予定ですが（これが書き込み権限も要求される理由です）、現在のところはまだ実装されていません。"
+
+#~ msgid ""
+#~ "Weblate has support for Bitbucket "
+#~ "webhooks, all you need to do is"
+#~ " add a webhook which triggers on "
+#~ "repository push with destination to "
+#~ "``/hooks/bitbucket/`` URL on your Weblate "
+#~ "installation (for example "
+#~ "``https://hosted.weblate.org/hooks/bitbucket/``)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate has support for GitLab hooks,"
+#~ " all you need to do is add "
+#~ "project web hook with destination to "
+#~ "``/hooks/gitlab/`` URL on your Weblate "
+#~ "installation (for example "
+#~ "``https://hosted.weblate.org/hooks/gitlab/``)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate has support for Pagure hooks,"
+#~ " all you need to do is add "
+#~ "project web hook with destination to "
+#~ "``/hooks/pagure/`` URL on your Weblate "
+#~ "installation (for example "
+#~ "``https://hosted.weblate.org/hooks/pagure/``). This can"
+#~ " be done in :guilabel:`Activate Web-"
+#~ "hooks` under :guilabel:`Project options`:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate does automatically fetch remote "
+#~ "repositories nightly to improve performance"
+#~ " when merging changes later. You can"
+#~ " optionally turn this into doing "
+#~ "nightly merges as well by enabling "
+#~ ":setting:`AUTO_UPDATE`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For Hosted Weblate there is a "
+#~ "dedicated push user registered on "
+#~ "GitHub, Bitbucket and GitLab (with "
+#~ "username :guilabel:`weblate` and named "
+#~ ":guilabel:`Weblate push user`). You need "
+#~ "to add this user as a collaborator"
+#~ " and give him permissions to push "
+#~ "to your repository. Let us know "
+#~ "when you've done so and we will"
+#~ " enable pushing changes from Hosted "
+#~ "Weblate for you."
+#~ msgstr ""
+
+#~ msgid "Additionally you can schedule a regular task to perform commit:"
+#~ msgstr ""
+
+#~ msgid ":djadmin:`import_project`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "All translation components need to be"
+#~ " available as VCS repositories and "
+#~ "are organized as project/component structure."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Weblate supports wide range of "
+#~ "translation formats (both bilingual and "
+#~ "monolingual) supported by translate toolkit,"
+#~ " see :ref:`formats` for more information."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can share cloned VCS repositories"
+#~ " using :ref:`internal-urls`. Using shared"
+#~ " repositories feature is highly recommended"
+#~ " when you have many components that"
+#~ " use the same VCS. It will "
+#~ "improve performance and use less disk"
+#~ " space."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Since the 3.2 release the interface "
+#~ "for adding projects and components is"
+#~ " included in Weblate and no longer"
+#~ " requires you to use :ref:`admin-"
+#~ "interface`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Since the 3.4 release, the process "
+#~ "of adding component is multi stage "
+#~ "with automated discovery of most "
+#~ "parameters."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Based on your permissions, you can "
+#~ "be able to create new translation "
+#~ "projects and components in Weblate. It"
+#~ " is always allowed for superusers and"
+#~ " if your instance uses billing (eg."
+#~ " like https://hosted.weblate.org/, see "
+#~ ":ref:`billing`), you can also create "
+#~ "those based on your plans allowance."
+#~ msgstr ""
+
+#~ msgid "You can view your current billing plan on separate page:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "On next page, you are presented "
+#~ "list of discovered translatable resources:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "As a last step you will review "
+#~ "the translation component information and "
+#~ "fill in optional details:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Should the language definition for "
+#~ "translation be missing, an empty "
+#~ "definition is created and named as "
+#~ "\"cs_CZ (generated)\". You should adjust "
+#~ "the definition and report this back "
+#~ "to Weblate authors so that the "
+#~ "missing language can be included in "
+#~ "next release."
+#~ msgstr ""
+
+#~ msgid "License of this translation."
+#~ msgstr "この翻訳のライセンスです。"
+
+#~ msgid ""
+#~ "Name of the committer used on "
+#~ "Weblate commits, the author will be "
+#~ "always the real translator. On some "
+#~ "VCS this might be not supported. "
+#~ "Default value can be changed by "
+#~ ":setting:`DEFAULT_COMMITER_NAME`."
+#~ msgstr ""
+#~ "Weblateからコミットする際に使われるコミッタの名前です。常に実際の翻訳者の名前が使われます。使用するVCSによってはこの設定はサポートされないかもしれません。初期設定値は"
+#~ " :setting:`DEFAULT_COMMITER_NAME` で変更することができます。"
+
+#~ msgid ""
+#~ "Regular expression which is used to "
+#~ "filter translation when scanning for "
+#~ "file mask. This can be used to "
+#~ "limit list of languages managed by "
+#~ "Weblate (eg. ``^(cs|de|es)$`` will include "
+#~ "only those there languages. Please note"
+#~ " that you need to list language "
+#~ "codes as they appear in the "
+#~ "filename."
+#~ msgstr ""
+#~ "ファイルマスクによりスキャンが行われる際に、翻訳を言語によってフィルタするための正規表現です。Weblateによって管理される言語のリストを限定するために使うことができます。例えば"
+#~ " ``^(cs|de|es)$`` "
+#~ "とすると、ここに列挙された言語のみを含むようになります。ファイル名中で実際に使われている言語コードをリストアップする必要があることに注意してください。"
+
+#~ msgid ""
+#~ "Weblate uses simple markup language on"
+#~ " several places where text rendering "
+#~ "is needed. It is based on "
+#~ ":doc:`django:ref/templates/language` so it can "
+#~ "be quite powerful."
+#~ msgstr ""
+
+#~ msgid "There are following variables available in the templates:"
+#~ msgstr ""
+
+#~ msgid "Translation stats, this has further attributes, see below for examples."
+#~ msgstr ""
+
+#~ msgid "Number of strings with failing check"
+#~ msgstr ""
+
+#~ msgid "Percent of strings with failing check"
+#~ msgstr ""
+
+#~ msgid "There is additional tag available to replace chars:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fetching VCS repository and importing "
+#~ "translations to Weblate can be a "
+#~ "lengthy process depending on size of "
+#~ "your translations. Here are some tips"
+#~ " to improve this situation:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The default configuration is useful for"
+#~ " testing and debugging Weblate, while "
+#~ "for production setup, you should do "
+#~ "some adjustments. Many of them have "
+#~ "quite a big impact on performance. "
+#~ "Please check :ref:`production` for more "
+#~ "details, especially:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are importing huge translations"
+#~ " or repositories, you might be hit"
+#~ " by resource limits of your server."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "check amount of free memory, having "
+#~ "translation files by system will greatly"
+#~ " improve performance"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "disk operations might be bottleneck if"
+#~ " there is lot of strings to "
+#~ "process - the disk is pushed by"
+#~ " both Weblate and database"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "additional CPU cores might help to "
+#~ "improve performance of background tasks "
+#~ "(see :ref:`celery`)"
+#~ msgstr ""
+
+#~ msgid "Disable not needed checks"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Some quality checks can be quite "
+#~ "expensive and if you don't need "
+#~ "them, they can save you some time"
+#~ " during import. See :setting:`CHECK_LIST` "
+#~ "for more information how to configure"
+#~ " this."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In case you have project with "
+#~ "dozen of translation files (eg. for "
+#~ "different Gettext domains or parts of"
+#~ " Android apps), you might want to "
+#~ "import them automatically. This can be"
+#~ " either achieved from command line "
+#~ "using :djadmin:`import_project` or "
+#~ ":djadmin:`import_json` or by installing :ref"
+#~ ":`addon-weblate.discovery.discovery` addon."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For using the addon, you need to"
+#~ " first create component for one "
+#~ "translation file (choose the one that"
+#~ " is least likely to be renamed "
+#~ "or removed in future) and install "
+#~ "the addon on this component."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For the management commands, you need"
+#~ " to create a project which will "
+#~ "contain all components and then it's "
+#~ "just a matter of running "
+#~ ":djadmin:`import_project` or :djadmin:`import_json`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fulltext search is based on Whoosh. "
+#~ "It is processed in background if "
+#~ "Celery is configured.  This leads to "
+#~ "a faster response of the site and"
+#~ " less fragmented index with the cost"
+#~ " that it might be slightly outdated."
 #~ msgstr ""
 
