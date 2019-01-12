@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -38,6 +38,8 @@ from django.urls import reverse
 from django.core.cache import cache
 from django.utils import timezone
 
+from six.moves.urllib.parse import urlparse
+
 from weblate.checks import CHECKS
 from weblate.checks.models import Check
 from weblate.formats.models import FILE_FORMATS
@@ -59,6 +61,7 @@ from weblate.trans.signals import (
 )
 from weblate.vcs.base import RepositoryException
 from weblate.vcs.models import VCS_REGISTRY
+from weblate.vcs.ssh import add_host_key
 from weblate.utils.stats import ComponentStats
 from weblate.trans.exceptions import FileParseError
 from weblate.trans.models.alert import ALERTS_IMPORT
@@ -344,7 +347,7 @@ class Component(models.Model, URLMixin, PathMixin):
         verbose_name=ugettext_lazy('Merge style'),
         max_length=10,
         choices=MERGE_CHOICES,
-        default='merge',
+        default=settings.DEFAULT_MERGE_STYLE,
         help_text=ugettext_lazy(
             'Define whether Weblate should merge upstream repository '
             'or rebase changes onto it.'
@@ -456,6 +459,20 @@ class Component(models.Model, URLMixin, PathMixin):
         self.alerts_trigger = {}
         self.updated_sources = {}
         self.old_component = copy(self)
+        self._sources = None
+
+    def get_source(self, id_hash):
+        """Cached access to source information."""
+        if not self._sources:
+            self._sources = {
+                source.id_hash: source for source in self.source_set.all()
+            }
+        try:
+            return self._sources[id_hash], False
+        except KeyError:
+            source = self.source_set.create(id_hash=id_hash)
+            self._sources[id_hash] = source
+            return source, True
 
     @property
     def filemask_re(self):
@@ -577,8 +594,32 @@ class Component(models.Model, URLMixin, PathMixin):
             return message
         return cleanup_repo_url(self.repo, message)
 
+    def handle_update_error(self, error_text, retry):
+        if 'Host key verification failed' in error_text:
+            if retry:
+                # Add ssh key and retry
+                parsed = urlparse(self.repo)
+                if not parsed.hostname:
+                    parsed = urlparse('ssh://{}'.format(self.repo))
+                if parsed.hostname:
+                    try:
+                        port = parsed.port
+                    except ValueError:
+                        port = ''
+                    add_host_key(None, parsed.hostname, port)
+                return
+            raise ValidationError({
+                'repo': _(
+                    'Failed to verify SSH host key, please add '
+                    'them in SSH page in the admin interface.'
+                )
+            })
+        raise ValidationError({
+            'repo': _('Failed to fetch repository: %s') % error_text
+        })
+
     @perform_on_link
-    def update_remote_branch(self, validate=False):
+    def update_remote_branch(self, validate=False, retry=True):
         """Pull from remote repository."""
         # Update
         self.log_info('updating repository')
@@ -597,16 +638,8 @@ class Component(models.Model, URLMixin, PathMixin):
             error_text = self.error_text(error)
             self.log_error('failed to update repository: %s', error_text)
             if validate:
-                if 'Host key verification failed' in error_text:
-                    raise ValidationError({
-                        'repo': _(
-                            'Failed to verify SSH host key, please add '
-                            'them in SSH page in the admin interface.'
-                        )
-                    })
-                raise ValidationError({
-                    'repo': _('Failed to fetch repository: %s') % error_text
-                })
+                self.handle_update_error(error_text, retry)
+                return self.update_remote_branch(True, False)
             if self.id:
                 self.add_alert('UpdateFailure', childs=True, error=error_text)
             return False
@@ -1602,30 +1635,31 @@ class Component(models.Model, URLMixin, PathMixin):
 
         file_format.add_language(fullname, language, base_filename)
 
-        translation = Translation.objects.create(
-            component=self,
-            language=language,
-            plural=language.plural,
-            filename=filename,
-            language_code=format_code,
-        )
-        if send_signal:
-            translation_post_add.send(
-                sender=self.__class__,
-                translation=translation
+        with transaction.atomic():
+            translation = Translation.objects.create(
+                component=self,
+                language=language,
+                plural=language.plural,
+                filename=filename,
+                language_code=format_code,
             )
-        translation.check_sync(force=True, request=request)
-        translation.commit_template = 'add'
-        translation.git_commit(
-            request,
-            request.user.get_author_name()
-            if request else 'Weblate <noreply@weblate.org>',
-            timezone.now(),
-            force_new=True,
-        )
-        self.run_target_checks()
-        translation.invalidate_cache()
-        return True
+            if send_signal:
+                translation_post_add.send(
+                    sender=self.__class__,
+                    translation=translation
+                )
+            translation.check_sync(force=True, request=request)
+            translation.commit_template = 'add'
+            translation.git_commit(
+                request,
+                request.user.get_author_name()
+                if request else 'Weblate <noreply@weblate.org>',
+                timezone.now(),
+                force_new=True,
+            )
+            self.run_target_checks()
+            translation.invalidate_cache()
+            return True
 
     def do_lock(self, user, lock=True):
         """Lock or unlock component."""

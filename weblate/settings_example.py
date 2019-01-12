@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -721,6 +721,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 #     'weblate.addons.generate.GenerateFileAddon',
 #     'weblate.addons.json.JSONCustomizeAddon',
 #     'weblate.addons.properties.PropertiesSortAddon',
+#     'weblate.addons.git.GitSquashAddon',
 # )
 
 # E-mail address that error messages come from.
@@ -825,7 +826,8 @@ CELERY_BEAT_SCHEDULE_FILENAME = os.path.join(
     DATA_DIR, 'celery', 'beat-schedule'
 )
 CELERY_TASK_ROUTES = {
-    'weblate.trans.search.delete_fulltext': {'queue': 'search'},
-    'weblate.trans.search.update_fulltext': {'queue': 'search'},
-    'weblate.memory.tasks.update_memory_task': {'queue': 'search'},
+    'weblate.trans.search.*': {'queue': 'search'},
+    'weblate.trans.tasks.optimize_fulltext': {'queue': 'search'},
+    'weblate.trans.tasks.cleanup_fulltext': {'queue': 'search'},
+    'weblate.memory.tasks.*': {'queue': 'memory'},
 }

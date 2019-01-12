@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -20,6 +20,7 @@
 
 from __future__ import unicode_literals, absolute_import
 
+import errno
 from itertools import chain
 import os
 
@@ -27,7 +28,7 @@ from celery.exceptions import TimeoutError
 
 from django.conf import settings
 from django.core.mail import get_connection
-from django.core.checks import Error, Critical
+from django.core.checks import Info, Error, Critical
 
 import six
 
@@ -285,7 +286,14 @@ def check_perms(app_configs=None, **kwargs):
     for dirpath, dirnames, filenames in os.walk(settings.DATA_DIR):
         for name in chain(dirnames, filenames):
             path = os.path.join(dirpath, name)
-            if os.lstat(path).st_uid != uid:
+            try:
+                stat = os.lstat(path)
+            except OSError as error:
+                # File was removed meanwhile
+                if error.errno == errno.ENOENT:
+                    continue
+                raise
+            if stat.st_uid != uid:
                 errors.append(
                     Critical(
                         message.format(path),
@@ -295,3 +303,16 @@ def check_perms(app_configs=None, **kwargs):
                 )
 
     return errors
+
+
+def check_errors(app_configs=None, **kwargs):
+    """Check there is error collection configured."""
+    if hasattr(settings, 'ROLLBAR') or hasattr(settings, 'RAVEN_CONFIG'):
+        return []
+    return [
+        Info(
+            'Error collection is not configured, it is highly recommended for production use',
+            hint=get_doc_url('admin/install', 'collecting-errors'),
+            id='weblate.I021',
+        )
+    ]

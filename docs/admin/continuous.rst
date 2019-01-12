@@ -278,12 +278,11 @@ fulfilled:
 
 * Somebody else changes an already changed string.
 * A merge from upstream occurs.
-* Import of translation happens.
-* Mass state change is performed.
-* Search and replace is executed.
 * An explicit commit is requested.
+* Change is older than period defined as :guilabel:`Age of changes to commit` on :ref:`component`.
 
-Additionally you can schedule a regular task to perform a commit:
+If you want to commit changes more frequently and without checking of age, you
+can schedule a regular task to perform a commit:
 
 .. literalinclude:: ../../examples/beat-settings.py
     :language: python

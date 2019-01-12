@@ -19,7 +19,6 @@ without interaction unless some merge conflict occurs.
    to push changes to your repository.
 3. Enable push on commit on your :ref:`project` in Weblate, this will make
    Weblate push changes to your repository whenever they are committed at Weblate.
-4. Optionally set up a cron job for :djadmin:`commit_pending`.
 
 .. seealso::
 
@@ -136,7 +135,7 @@ upstream git repository: intact and working copy):
 
 .. seealso::
 
-   :ref:`git-export`
+   :ref:`git-export`, :ref:`continuous-translation`, :ref:`avoid-merge-conflicts`
 
 How do I translate several branches at once?
 --------------------------------------------

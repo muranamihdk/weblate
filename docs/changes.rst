@@ -13,6 +13,11 @@ Released on ? 2019.
 * Added guided adding of translation components with automatic detection of translation files.
 * Customizable merge commit messages for Git.
 * Added visual indication of component alerts in navigation.
+* Improved performance of loading translation files.
+* New addon to squash commits prior to push.
+* Improved displaying of translation changes.
+* Changed default merge style to rebase and made that configurable.
+* Better handle private use subtags in language code.
 
 weblate 3.3
 -----------

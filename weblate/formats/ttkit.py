@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -206,7 +206,9 @@ class TTKitFormat(TranslationFormat):
         # Set language (needed for some which do not include this)
         if (language_code is not None and
                 self.store.gettargetlanguage() is None):
-            self.store.settargetlanguage(language_code)
+            self.store.settargetlanguage(
+                self.get_language_code(language_code)
+            )
 
     @staticmethod
     def serialize(store):
@@ -301,7 +303,9 @@ class TTKitFormat(TranslationFormat):
     @classmethod
     def untranslate_store(cls, store, language, fuzzy=False):
         """Remove translations from ttkit store"""
-        store.settargetlanguage(language.code)
+        store.settargetlanguage(
+            cls.get_language_code(language.code)
+        )
         plural = language.plural
 
         for unit in store.units:
@@ -422,7 +426,10 @@ class XliffUnit(TTKitUnit):
         """Return source string from a ttkit unit."""
 
         if self.template is not None:
-            return rich_to_xliff_string(self.template.rich_target)
+            # Use target if set, otherwise fall back to source
+            if self.template.target:
+                return rich_to_xliff_string(self.template.rich_target)
+            return rich_to_xliff_string(self.template.rich_source)
         return rich_to_xliff_string(self.unit.rich_source)
 
     @cached_property
@@ -746,6 +753,11 @@ class XliffFormat(TTKitFormat):
         unit.marktranslated()
         unit.markapproved(False)
         return unit
+
+    @staticmethod
+    def get_language_code(code):
+        """Do any possible formatting needed for language code."""
+        return code.replace('_', '-')
 
 
 class PoXliffFormat(XliffFormat):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -43,9 +43,13 @@ class GettextBaseAddon(BaseAddon):
 
     @classmethod
     def can_install(cls, component, user):
-        # Check extension to cover the auto format
-        if not component.filemask.endswith('.po'):
-            return False
+        # Check actual store to cover the auto format
+        if component.file_format == 'auto':
+            if not component.translation_set.exists():
+                return False
+            translation = component.translation_set.all()[0]
+            if not isinstance(translation.store.store, pofile):
+                return False
         return super(GettextBaseAddon, cls).can_install(component, user)
 
 
@@ -193,9 +197,7 @@ class MsgmergeAddon(GettextBaseAddon, UpdateBaseAddon):
 
     @classmethod
     def can_install(cls, component, user):
-        if not component.new_base.endswith('.pot'):
-            return False
-        if find_command('msgmerge') is None:
+        if not component.new_base or find_command('msgmerge') is None:
             return False
         return super(MsgmergeAddon, cls).can_install(component, user)
 
@@ -212,7 +214,7 @@ class MsgmergeAddon(GettextBaseAddon, UpdateBaseAddon):
             popen_wrapper(cmd)
 
 
-class GettextCustomizeAddon(StoreBaseAddon):
+class GettextCustomizeAddon(GettextBaseAddon, StoreBaseAddon):
     name = 'weblate.gettext.customize'
     verbose = _('Customize gettext output')
     description = _(
@@ -220,11 +222,6 @@ class GettextCustomizeAddon(StoreBaseAddon):
         'line wrapping.'
     )
     settings_form = GettextCustomizeForm
-    compat = {
-        'file_format': frozenset((
-            'auto', 'po', 'po-mono',
-        )),
-    }
 
     @staticmethod
     def is_store_compatible(store):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -1467,14 +1467,19 @@ class ComponentSettingsForm(SettingsBaseForm):
                         'commit_pending_age',
                         'merge_style',
                     ),
+                    css_id='vcs',
+                ),
+                Tab(
+                    _('Commit messages'),
                     Fieldset(
                         _('Commit messages'),
+                        Div(template='trans/messages_help.html'),
                         'commit_message',
                         'add_message',
                         'delete_message',
                         'merge_message',
                     ),
-                    css_id='vcs',
+                    css_id='messages',
                 ),
                 Tab(
                     _('Files'),

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -412,6 +412,16 @@ class User(AbstractBaseUser):
     def is_staff(self):
         """Compatibility API for admin interface."""
         return self.is_superuser
+
+    @property
+    def first_name(self):
+        """Compatibility API for third party modules."""
+        return ''
+
+    @property
+    def last_name(self):
+        """Compatibility API for third party modules."""
+        return self.full_name
 
     # pylint: disable=keyword-arg-before-vararg
     def has_perm(self, perm, obj=None, *args):

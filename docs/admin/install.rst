@@ -681,77 +681,6 @@ Django documentation.
         You can verify whether outgoing email is working correctly by using the
         :djadmin:`django:sendtestemail` management command.
 
-.. _celery:
-
-Background tasks using Celery
-+++++++++++++++++++++++++++++
-
-.. versionadded:: 3.2
-
-Weblate uses Celery to process background tasks. The example settings come with
-eager configuration, which does process all tasks in place, but you want to
-change this to something more reasonable for a production setup.
-
-A typical setup using Redis as a backend looks like this:
-
-.. code-block:: python
-
-   CELERY_TASK_ALWAYS_EAGER = False
-   CELERY_BROKER_URL = 'redis://localhost:6379'
-   CELERY_RESULT_BACKEND = CELERY_BROKER_URL
-
-You should also start the Celery worker to process the tasks and start
-scheduled tasks, this can be done directly on the command line (which is mostly
-useful when debugging or developing):
-
-.. code-block:: sh
-
-   ./examples/celery start
-   ./examples/celery stop
-
-Most likely you will want to run Celery as a daemon and that is covered by
-:doc:`celery:userguide/daemonizing`. For the most common Linux setup using
-systemd, you can use the example files shipped in the :file:`examples` folder
-listed below.
-
-Systemd unit to be placed as :file:`/etc/systemd/system/celery-weblate.service`:
-
-.. literalinclude:: ../../examples/celery-weblate.service
-    :language: ini
-    :encoding: utf-8
-
-Environment configuration to be placed as :file:`/etc/default/celery-weblate`:
-
-.. literalinclude:: ../../examples/celery-weblate.conf
-    :language: sh
-    :encoding: utf-8
-
-Logrotate configuration to be placed as :file:`/etc/logrotate.d/celery`:
-
-.. literalinclude:: ../../examples/celery-weblate.logrotate
-    :language: text
-    :encoding: utf-8
-
-Weblate comes with built-in setup for scheduled tasks. You can however define
-additional tasks in :file:`settings.py`, for example (also see
-:ref:`lazy-commit`):
-
-.. literalinclude:: ../../examples/beat-settings.py
-    :language: python
-    :encoding: utf-8
-
-.. note::
-
-   The Celery process has to be executed under the same user as Weblate and the WSGI
-   process, otherwise files in the :setting:`DATA_DIR` will be stored with
-   mixed ownership, leading to runtime issues.
-
-.. seealso::
-
-   :doc:`celery:userguide/configuration`,
-   :doc:`celery:userguide/workers`,
-   :doc:`celery:userguide/daemonizing`
-
 .. _installation:
 
 Installation
@@ -1245,21 +1174,45 @@ Running maintenance tasks
 +++++++++++++++++++++++++
 
 For optimal performance, it is good idea to run some maintenance tasks in the
-background.
+background. This is now automatically done by :ref:`celery` and covers following tasks:
+
+* Configuration health check (hourly).
+* Committing pending changes (hourly), see :ref:`lazy-commit` and :djadmin:`commit_pending`.
+* Updating component alerts (daily).
+* Update remote branches (nightly), see :setting:`AUTO_UPDATE`.
+* Translation memory backup to JSON (daily), see :djadmin:`dump_memory`.
+* Fulltext and database maintenance tasks (daily and weekly taks), see :djadmin:`cleanuptrans`.
 
 .. versionchanged:: 3.2
 
    Since version 3.2, the default way of executing these tasks is using Celery
    and Weblate already comes with proper configuration, see :ref:`celery`.
 
-.. seealso::
-
-   :djadmin:`cleanuptrans`, :djadmin:`commit_pending`
-
 .. _server:
 
 Running server
 --------------
+
+You will need several services to run Weblate, the recommended setup consists of:
+
+* Database server (see :ref:`database-setup`)
+* Cache server (see :ref:`production-cache`)
+* Frontend web server for static files and SSL termination (see :ref:`static-files`)
+* Wsgi server for dynamic content (see :ref:`uwsgi`)
+* Celery for executing background tasks (see :ref:`celery`)
+
+.. note::
+
+   There are some dependencies between the services, for example cache and
+   database should be running when starting up Celery or uwsgi processes.
+
+In most cases, you will run all services on single (virtual) server, but in
+case your installation is heavy loaded, you can split up the services. The only
+limitation on this is that Celery and Wsgi servers need access to
+:setting:`DATA_DIR`.
+
+Running web server
+++++++++++++++++++
 
 Running Weblate is not different from running any other Django based
 program. Django is usually executed as uWSGI or fcgi (see examples for
@@ -1349,6 +1302,9 @@ The following configuration runs Weblate in Gunicorn and Apache 2.4
 
     :doc:`django:howto/deployment/wsgi/gunicorn`
 
+
+.. _uwsgi:
+
 Sample configuration for NGINX and uWSGI
 ++++++++++++++++++++++++++++++++++++++++
 
@@ -1387,6 +1343,78 @@ Additionally, you will have to adjust :file:`weblate/settings.py`:
 
     URL_PREFIX = '/weblate'
 
+.. _celery:
+
+Background tasks using Celery
++++++++++++++++++++++++++++++
+
+.. versionadded:: 3.2
+
+Weblate uses Celery to process background tasks. The example settings come with
+eager configuration, which does process all tasks in place, but you want to
+change this to something more reasonable for a production setup.
+
+A typical setup using Redis as a backend looks like this:
+
+.. code-block:: python
+
+   CELERY_TASK_ALWAYS_EAGER = False
+   CELERY_BROKER_URL = 'redis://localhost:6379'
+   CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+
+You should also start the Celery worker to process the tasks and start
+scheduled tasks, this can be done directly on the command line (which is mostly
+useful when debugging or developing):
+
+.. code-block:: sh
+
+   ./examples/celery start
+   ./examples/celery stop
+
+Most likely you will want to run Celery as a daemon and that is covered by
+:doc:`celery:userguide/daemonizing`. For the most common Linux setup using
+systemd, you can use the example files shipped in the :file:`examples` folder
+listed below.
+
+Systemd unit to be placed as :file:`/etc/systemd/system/celery-weblate.service`:
+
+.. literalinclude:: ../../examples/celery-weblate.service
+    :language: ini
+    :encoding: utf-8
+
+Environment configuration to be placed as :file:`/etc/default/celery-weblate`:
+
+.. literalinclude:: ../../examples/celery-weblate.conf
+    :language: sh
+    :encoding: utf-8
+
+Logrotate configuration to be placed as :file:`/etc/logrotate.d/celery`:
+
+.. literalinclude:: ../../examples/celery-weblate.logrotate
+    :language: text
+    :encoding: utf-8
+
+Weblate comes with built-in setup for scheduled tasks. You can however define
+additional tasks in :file:`settings.py`, for example see :ref:`lazy-commit`.
+
+.. note::
+
+   The Celery process has to be executed under the same user as Weblate and the WSGI
+   process, otherwise files in the :setting:`DATA_DIR` will be stored with
+   mixed ownership, leading to runtime issues.
+
+.. warning::
+
+   The Celery errors are by default only logged into Celery log and are not
+   visible to user. In case you want to have overview on such failures, it is
+   recommended to configure :ref:`collecting-errors`.
+
+.. seealso::
+
+   :doc:`celery:userguide/configuration`,
+   :doc:`celery:userguide/workers`,
+   :doc:`celery:userguide/daemonizing`
+
 
 Monitoring Weblate
 ------------------
@@ -1399,9 +1427,11 @@ using Kubernetes.
 Collecting error reports
 ------------------------
 
-It is good idea to collect errors from any Django program in structured way,
-and Weblate is no exception from this rule. You might find several services providing
-this, Weblate has basic support for the following ones:
+Weblate, as any other software, can fail. In order to collect useful failure
+states we recommend to use third party services to collect such information.
+This is especially useful in case of failing Celery tasks, which would
+otherwise only report error to the logs and you won't get notified on them.
+Weblate has support for the following services:
 
 Sentry
 ++++++

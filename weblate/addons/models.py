@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -133,6 +133,7 @@ class AddonsConf(AppConf):
         'weblate.addons.generate.GenerateFileAddon',
         'weblate.addons.json.JSONCustomizeAddon',
         'weblate.addons.properties.PropertiesSortAddon',
+        'weblate.addons.git.GitSquashAddon',
     )
 
     class Meta(object):

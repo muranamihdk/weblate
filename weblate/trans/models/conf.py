@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -162,6 +162,7 @@ class WeblateConf(AppConf):
     DEFAULT_COMMITER_NAME = 'Weblate'
 
     DEFAULT_TRANSLATION_PROPAGATION = True
+    DEFAULT_MERGE_STYLE = 'rebase'
 
     DEFAULT_ACCESS_CONTROL = 0
     DEFAULT_SHARED_TM = True

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -826,12 +826,10 @@ class SeleniumTests(BaseLiveServerTestCase, RegistrationTestMixin):
             self.click('Status widgets')
         self.screenshot('promote.png')
         with self.wait_for_page_load():
-            self.click(
-                self.driver.find_element_by_id('engage-link')
-            )
+            self.click(self.driver.find_element_by_id('engage-link'))
         self.screenshot('engage.png')
         with self.wait_for_page_load():
-            self.click('Translation project for WeblateOrg')
+            self.click(self.driver.find_element_by_id('engage-project'))
 
         # Glossary
         self.click('Glossaries')

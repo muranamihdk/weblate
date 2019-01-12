@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -749,3 +749,8 @@ def indicate_alerts(obj):
         alerts = component.alert_set.all()
 
     return {'alerts': alerts, 'component': component}
+
+
+@register.filter
+def replace_english(value, language):
+    return value.replace('English', force_text(language))

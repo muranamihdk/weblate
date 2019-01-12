@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -25,6 +25,8 @@ from django.utils.functional import cached_property
 
 from weblate.addons.events import EVENT_POST_UPDATE, EVENT_STORE_POST_LOAD
 from weblate.addons.forms import BaseAddonForm
+from weblate.utils.render import render_template
+from weblate.utils.site import get_site_url
 
 
 class BaseAddon(object):
@@ -150,7 +152,10 @@ class UpdateBaseAddon(BaseAddon):
     events = (EVENT_POST_UPDATE, )
     message = '''Update translation files
 
-Updated by {name} hook in Weblate.'''
+Updated by "{{ hook_name }}" hook in Weblate.
+
+Translation: {{ project_name }}/{{ component_name }}
+Translate-URL: {{ url }}'''
 
     def update_translations(self, component, previous_head):
         raise NotImplementedError()
@@ -161,7 +166,13 @@ Updated by {name} hook in Weblate.'''
             if repository.needs_commit():
                 files = [t.filename for t in component.translation_set.all()]
                 repository.commit(
-                    self.message.format(name=self.verbose),
+                    render_template(
+                        self.message,
+                        hook_name=self.verbose,
+                        project_name=component.project.name,
+                        component_name=component.name,
+                        url=get_site_url(component.get_absolute_url())
+                    ),
                     files=files
                 )
                 component.push_if_needed(None)
@@ -169,6 +180,20 @@ Updated by {name} hook in Weblate.'''
     def post_update(self, component, previous_head):
         self.update_translations(component, previous_head)
         self.commit_and_push(component)
+
+
+class TestException(Exception):
+    pass
+
+
+class TestCrashAddon(UpdateBaseAddon):
+    """Testing addong doing nothing."""
+    name = 'weblate.base.crash'
+    verbose = 'Crash test addon'
+    description = 'Crash test addon'
+
+    def update_translations(self, component, previous_head):
+        raise TestException('Test error')
 
 
 class StoreBaseAddon(BaseAddon):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -71,44 +71,6 @@ SIMPLE_FILTERS = {
 SEARCH_FILTERS = ('source', 'target', 'context', 'location', 'comment')
 
 NEWLINES = re.compile(r'\r\n|\r|\n')
-
-
-class UnitManager(models.Manager):
-    @staticmethod
-    def update_from_unit(translation, unit, pos):
-        """
-        Process translation toolkit unit and stores/updates database entry.
-        """
-        # Get basic unit data
-        id_hash = unit.id_hash
-        created = False
-
-        # Try getting existing unit
-        try:
-            dbunit = translation.unit_set.get(id_hash=id_hash)
-        except Unit.MultipleObjectsReturned:
-            # Some inconsistency (possibly race condition), try to recover
-            translation.unit_set.filter(id_hash=id_hash).delete()
-            dbunit = None
-        except Unit.DoesNotExist:
-            dbunit = None
-
-        # Create unit if it does not exist
-        if dbunit is None:
-            dbunit = Unit(
-                translation=translation,
-                id_hash=id_hash,
-                content_hash=unit.content_hash,
-                source=unit.source,
-                context=unit.context
-            )
-            created = True
-
-        # Update all details
-        dbunit.update_from_unit(unit, pos, created, translation.component)
-
-        # Return result
-        return dbunit, created
 
 
 class UnitQuerySet(models.QuerySet):
@@ -360,7 +322,7 @@ class Unit(models.Model, LoggerMixin):
 
     pending = models.BooleanField(default=False)
 
-    objects = UnitManager.from_queryset(UnitQuerySet)()
+    objects = UnitQuerySet.as_manager()
 
     class Meta(object):
         ordering = ['priority', 'position']
@@ -425,8 +387,9 @@ class Unit(models.Model, LoggerMixin):
             return STATE_APPROVED
         return STATE_TRANSLATED
 
-    def update_from_unit(self, unit, pos, created, component):
+    def update_from_unit(self, unit, pos, created):
         """Update Unit from ttkit unit."""
+        component = self.translation.component
         self.is_batch_update = True
         # Get unit attributes
         location = unit.locations
@@ -475,9 +438,7 @@ class Unit(models.Model, LoggerMixin):
             return
 
         # Ensure we track source string
-        source_info, source_created = Source.objects.get_or_create(
-            id_hash=self.id_hash, component=component
-        )
+        source_info, source_created = component.get_source(self.id_hash)
         contentsum_changed = self.content_hash != content_hash
 
         self.__dict__['source_info'] = source_info

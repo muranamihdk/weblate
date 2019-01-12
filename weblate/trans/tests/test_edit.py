@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2018 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
@@ -284,7 +284,7 @@ class EditResourceSourceTest(ViewTestCase):
         unit = translation.unit_set.get(context='hello')
         self.assertEqual(unit.state, STATE_TRANSLATED)
 
-    def get_translation(self):
+    def get_translation(self, language=None):
         return self.component.translation_set.get(
             language_code=self._language_code
         )
