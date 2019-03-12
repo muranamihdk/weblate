@@ -112,6 +112,12 @@ class ComponentTest(RepoTestCase):
         component = self.create_ts_mono()
         self.verify_component(component, 2, 'cs', 4)
 
+    def test_create_appstore(self):
+        component = self.create_appstore()
+        self.verify_component(
+            component, 2, 'cs', 3, 'Weblate - continuous localization'
+        )
+
     def test_create_po_pot(self):
         component = self._create_component(
             'po',
@@ -390,10 +396,11 @@ class ComponentChangeTest(RepoTestCase):
         component = self.create_component()
 
         # Create and verify suggestion
+        unit = Unit.objects.all()[0]
         Suggestion.objects.create(
             project=component.project,
-            content_hash=1,
-            language=component.translation_set.all()[0].language,
+            content_hash=unit.content_hash,
+            language=unit.translation.language,
         )
         self.assertEqual(component.project.suggestion_set.count(), 1)
 
@@ -402,6 +409,7 @@ class ComponentChangeTest(RepoTestCase):
         self.assertTrue(os.path.exists(old_path))
 
         # Crete target project
+        original = component.project
         second = Project.objects.create(
             name='Test2',
             slug='test2',
@@ -420,6 +428,7 @@ class ComponentChangeTest(RepoTestCase):
         self.assertNotEqual(old_path, new_path)
 
         # Check suggestion has been copied
+        self.assertEqual(original.suggestion_set.count(), 0)
         self.assertEqual(component.project.suggestion_set.count(), 1)
 
     def test_change_to_mono(self):
@@ -716,7 +725,7 @@ class ComponentEditTest(ViewTestCase):
         del translation.__dict__['store']
 
         unit = translation.unit_set.all()[0]
-        request = self.get_request('/')
+        request = self.get_request()
 
         self.assertTrue(
             unit.translate(request, ['Empty'], STATE_TRANSLATED)
@@ -742,7 +751,7 @@ class ComponentEditMonoTest(ComponentEditTest):
         del translation.__dict__['store']
 
         unit = translation.unit_set.all()[0]
-        request = self.get_request('/')
+        request = self.get_request()
 
         self.assertTrue(
             unit.translate(request, ['Empty'], STATE_TRANSLATED)

@@ -250,7 +250,7 @@ class Translation(models.Model, URLMixin, LoggerMixin):
         self.log_info('processing %s, %s', self.filename, reason)
 
         # List of created units (used for cleanup and duplicates detection)
-        created_units = set()
+        created = {}
 
         try:
             store = self.store
@@ -284,7 +284,8 @@ class Translation(models.Model, URLMixin, LoggerMixin):
             pos += 1
 
             # Check for possible duplicate units
-            if id_hash in created_units:
+            if id_hash in created:
+                newunit = created[id_hash]
                 self.log_warning(
                     'duplicate string to translate: %s (%s)',
                     newunit,
@@ -311,9 +312,7 @@ class Translation(models.Model, URLMixin, LoggerMixin):
                 newunit = Unit(
                     translation=self,
                     id_hash=id_hash,
-                    content_hash=unit.content_hash,
-                    source=unit.source,
-                    context=unit.context
+                    state=-1,
                 )
                 is_new = True
 
@@ -332,7 +331,7 @@ class Translation(models.Model, URLMixin, LoggerMixin):
             )
 
             # Store current unit ID
-            created_units.add(id_hash)
+            created[id_hash] = newunit
 
         # Following query can get huge, so we should find better way
         # to delete stale units, probably sort of garbage collection
@@ -340,7 +339,7 @@ class Translation(models.Model, URLMixin, LoggerMixin):
         # We should also do cleanup on source strings tracking objects
 
         # Delete stale units
-        if self.unit_set.exclude(id_hash__in=created_units).delete()[0]:
+        if self.unit_set.exclude(id_hash__in=created.keys()).delete()[0]:
             self.component.needs_cleanup = True
 
         # Update revision and stats
@@ -399,7 +398,9 @@ class Translation(models.Model, URLMixin, LoggerMixin):
         if not self.stats.last_author:
             return None
         from weblate.auth.models import User
-        return User.objects.get(pk=self.stats.last_author).get_author_name(email)
+        return User.objects.get(
+            pk=self.stats.last_author
+        ).get_author_name(email)
 
     def commit_pending(self, reason, request, skip_push=False):
         """Commit any pending changes."""
@@ -413,9 +414,7 @@ class Translation(models.Model, URLMixin, LoggerMixin):
                 # Find oldest change break loop if there is none left
                 try:
                     unit = self.unit_set.filter(
-                        pending=True,
-                        change__action__in=Change.ACTIONS_CONTENT,
-                        change__user__isnull=False,
+                        pending=True
                     ).annotate(
                         Max('change__timestamp')
                     ).order_by(
@@ -423,19 +422,18 @@ class Translation(models.Model, URLMixin, LoggerMixin):
                     )[0]
                 except IndexError:
                     break
-                # Can not use get as there can be more with same timestamp
-                change = unit.change_set.content().filter(
-                    timestamp=unit.change__timestamp__max
-                )[0]
 
-                author_name = change.author.get_author_name()
+                # Get last change metadata
+                change = unit.get_last_content_change(request)
+
+                author_name = change[0].get_author_name()
 
                 # Flush pending units for this author
-                self.update_units(author_name, change.author.id)
+                self.update_units(author_name, change[0].id)
 
                 # Commit changes
                 self.git_commit(
-                    request, author_name, change.timestamp, skip_push=skip_push
+                    request, author_name, change[1], skip_push=skip_push
                 )
 
         # Update stats (the translated flag might have changed)
@@ -470,7 +468,7 @@ class Translation(models.Model, URLMixin, LoggerMixin):
         )
 
         # Create list of files to commit
-        files = [self.filename]
+        files = self.store.get_filenames()
 
         # Do actual commit
         self.component.repository.commit(
@@ -484,12 +482,9 @@ class Translation(models.Model, URLMixin, LoggerMixin):
         # Store updated hash
         self.store_hash()
 
-    def repo_needs_commit(self):
+    def needs_commit(self):
         """Check whether there are some not committed changes."""
-        return (
-            self.unit_set.filter(pending=True).exists() or
-            self.component.repository.needs_commit(self.filename)
-        )
+        return self.unit_set.filter(pending=True).exists()
 
     def repo_needs_merge(self):
         return self.component.repo_needs_merge()
@@ -497,19 +492,23 @@ class Translation(models.Model, URLMixin, LoggerMixin):
     def repo_needs_push(self):
         return self.component.repo_needs_push()
 
-    def git_commit(self, request, author, timestamp, skip_push=False,
-                   force_new=False):
+    def repo_needs_commit(self):
+        return self.component.repository.needs_commit(
+            *self.store.get_filenames()
+        )
+
+    def git_commit(self, request, author, timestamp, skip_push=False):
         """Wrapper for committing translation to git."""
         repository = self.component.repository
         with repository.lock:
             # Is there something for commit?
-            if not force_new and not repository.needs_commit(self.filename):
+            if not self.repo_needs_commit():
                 return False
 
             # Do actual commit with git lock
             self.log_info(
                 'committing %s as %s',
-                self.filename,
+                self.store.get_filenames(),
                 author
             )
             Change.objects.create(
@@ -535,10 +534,7 @@ class Translation(models.Model, URLMixin, LoggerMixin):
             if unit_change.author_id != author_id:
                 continue
 
-            pounit, add = self.store.find_unit(
-                unit.context,
-                unit.get_source_plurals()[0]
-            )
+            pounit, add = self.store.find_unit(unit.context, unit.source)
 
             unit.pending = False
 
@@ -576,12 +572,15 @@ class Translation(models.Model, URLMixin, LoggerMixin):
 
             # Update comments as they might have been changed (eg, fuzzy flag
             # removed)
-            state = unit.get_unit_state(pounit, False)
+            state = unit.get_unit_state(pounit)
             flags = pounit.flags
             if state != unit.state or flags != unit.flags:
                 unit.state = state
                 unit.flags = flags
-            unit.save(update_fields=['state', 'flags', 'pending'], same_content=True)
+            unit.save(
+                update_fields=['state', 'flags', 'pending'],
+                same_content=True
+            )
 
         # Did we do any updates?
         if not updated:
@@ -766,8 +765,10 @@ class Translation(models.Model, URLMixin, LoggerMixin):
 
             # Add suggestion
             if dbunit.target != unit.target:
-                Suggestion.objects.add(dbunit, unit.target, request)
-                accepted += 1
+                if Suggestion.objects.add(dbunit, unit.target, request):
+                    accepted += 1
+                else:
+                    skipped += 1
             else:
                 skipped += 1
 
@@ -777,8 +778,8 @@ class Translation(models.Model, URLMixin, LoggerMixin):
 
         return (not_found, skipped, accepted, len(store.all_units))
 
-    def merge_upload(self, request, fileobj, overwrite, author=None,
-                     method='translate', fuzzy=''):
+    def merge_upload(self, request, fileobj, overwrite, author_name=None,
+                     author_email=None, method='translate', fuzzy=''):
         """Top level handler for file uploads."""
         filecopy = fileobj.read()
         fileobj.close()
@@ -795,10 +796,6 @@ class Translation(models.Model, URLMixin, LoggerMixin):
             self.component.template_store
         )
 
-        # Optionally set authorship
-        if author is None:
-            author = request.user.get_author_name()
-
         # Check valid plural forms
         if hasattr(store.store, 'parseheader'):
             header = store.store.parseheader()
@@ -810,19 +807,37 @@ class Translation(models.Model, URLMixin, LoggerMixin):
                 # Formula wrong or missing
                 pass
 
-        if method in ('translate', 'fuzzy', 'approve'):
-            # Merge on units level
-            with self.component.repository.lock:
-                return self.merge_translations(
-                    request,
-                    store,
-                    overwrite,
-                    method,
-                    fuzzy,
-                )
+        # Optionally set authorship
+        orig_user = None
+        if author_email:
+            from weblate.auth.models import User
+            orig_user = request.user
+            request.user = User.objects.get_or_create(
+                email=author_email,
+                defaults={
+                    'username': author_email,
+                    'is_active': False,
+                    'full_name': author_name or author_email,
+                }
+            )[0]
 
-        # Add as sugestions
-        return self.merge_suggestions(request, store, fuzzy)
+        try:
+            if method in ('translate', 'fuzzy', 'approve'):
+                # Merge on units level
+                with self.component.repository.lock:
+                    return self.merge_translations(
+                        request,
+                        store,
+                        overwrite,
+                        method,
+                        fuzzy,
+                    )
+
+            # Add as sugestions
+            return self.merge_suggestions(request, store, fuzzy)
+        finally:
+            if orig_user:
+                request.user = orig_user
 
     def invalidate_cache(self, recurse=True):
         """Invalidate any cached stats."""
@@ -869,20 +884,22 @@ class Translation(models.Model, URLMixin, LoggerMixin):
         # Log
         self.log_info(
             'removing %s as %s',
-            self.filename,
+            self.store.get_filenames(),
             author
         )
 
         # Remove file from VCS
-        self.commit_template = 'delete'
-        with self.component.repository.lock:
-            self.component.repository.remove(
-                [self.filename],
-                self.get_commit_message(author),
-                author,
-            )
+        if os.path.exists(self.get_filename()):
+            self.commit_template = 'delete'
+            with self.component.repository.lock:
+                self.component.repository.remove(
+                    self.store.get_filenames(),
+                    self.get_commit_message(author),
+                    author,
+                )
 
         # Delete from the database
+        self.stats.invalidate()
         self.delete()
 
         # Record change
@@ -911,6 +928,3 @@ class Translation(models.Model, URLMixin, LoggerMixin):
                 timezone.now()
             )
             self.component.push_if_needed(request)
-
-    def get_display_filename(self):
-        return self.filename.replace('/', '/\u200B')

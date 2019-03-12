@@ -60,13 +60,13 @@ Below are listed capabilities of all supported formats.
 +---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
 | :ref:`xliff`        | both             | yes           | yes            | yes           | yes            | needs editing, approved |
 +---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
-| :ref:`javaprop`     | mono             | no            | yes            | no            | no             |                         |
+| :ref:`javaprop`     | both             | no            | yes            | no            | no             |                         |
 +---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
 | :ref:`joomla`       | mono             | no            | yes            | no            | yes            |                         |
 +---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
 | :ref:`qtling`       | both             | yes           | yes            | no            | yes            | needs editing           |
 +---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
-| :ref:`aresource`    | mono             | yes           | yes            | no            | no             |                         |
+| :ref:`aresource`    | mono             | yes           | yes [#x]_      | no            | no             |                         |
 +---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
 | :ref:`apple`        | bilingual        | no            | yes            | no            | no             |                         |
 +---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
@@ -90,6 +90,8 @@ Below are listed capabilities of all supported formats.
 +---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
 | :ref:`xlsx`         | mono             | no            | yes            | yes           | yes            | needs editing           |
 +---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
+| :ref:`appstore`     | mono             | no            | no             | no            | no             |                         |
++---------------------+------------------+---------------+----------------+---------------+----------------+-------------------------+
 
 .. [#m] See :ref:`bimono`
 .. [#p] Plurals are necessary to properly localize strings with variable count.
@@ -97,6 +99,7 @@ Below are listed capabilities of all supported formats.
 .. [#c] Context is used to differentiate same strings used in different scope (eg. `Sun` can be used as abbreviated name of day or as a name of our closest star).
 .. [#l] Location of string in source code might help skilled translators to figure out how the string is used.
 .. [#a] Additional states supported by the file format in addition to not translated and translated.
+.. [#x] XML comment placed before the ``<string>`` element is parsed as a developer comment.
 
 .. _gettext:
 
@@ -221,6 +224,10 @@ XLIFF is usually used as bilingual, but Weblate supports it as monolingual as we
 
 Translations states
 +++++++++++++++++++
+
+.. versionchanged:: 3.3
+
+   Weblate did ignore the state attribute prior to the 3.3 release.
 
 The ``state`` attribute in the file is partially processed and mapped to needs
 edit state in Weblate (the following states are used to flag the string as
@@ -554,7 +561,7 @@ JSON files
     structure JSON files are supported as well.
 
 JSON format is used mostly for translating applications implemented in
-Javascript.
+JavaScript.
 
 Weblate currently supports several variants of JSON translations:
 
@@ -852,6 +859,35 @@ Example Windows RC file:
 +--------------------------------+----------------------------------+
 
 .. seealso:: :doc:`tt:formats/rc`
+
+.. _appstore:
+
+App store metadata files
+------------------------
+
+.. versionadded:: 3.5
+
+Weblate can translate metadata used for publishing apps in various app stores.
+Currently it is known to be compatible with following tools:
+
+* `Triple-T gradle-play-publisher <https://github.com/Triple-T/gradle-play-publisher>`_
+* `Fastlane <https://fastlane.tools/>`_
+
+The metadata consist of several text files which Weblate will present as
+separate strings to translate. 
+
++--------------------------------+----------------------------------+
+| Typical Weblate :ref:`component`                                  |
++================================+==================================+
+| File mask                      | ``metadata/*``                   |
++--------------------------------+----------------------------------+
+| Monolingual base language file | ``metadata/en_US``               |
++--------------------------------+----------------------------------+
+| Base file for new translations | ``metadata/en_US``               |
++--------------------------------+----------------------------------+
+| File format                    | `Market metadata text files`     |
++--------------------------------+----------------------------------+
+
 
 .. _xlsx:
 

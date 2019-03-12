@@ -25,10 +25,12 @@ from glob import glob
 import os
 import time
 import fnmatch
+import functools
 import re
 
 from django.conf import settings
 from django.db import models, transaction
+from django.db.models import Q
 from django.utils.translation import ugettext as _, ugettext_lazy
 from django.utils.encoding import python_2_unicode_compatible, force_text
 from django.utils.functional import cached_property
@@ -51,9 +53,10 @@ from weblate.utils.state import STATE_TRANSLATED, STATE_FUZZY
 from weblate.utils.errors import report_error
 from weblate.utils.licenses import is_osi_approved, is_fsf_approved
 from weblate.utils.render import render_template
+from weblate.utils.unitdata import filter_query
 from weblate.trans.util import (
     is_repo_link, cleanup_repo_url, cleanup_path, path_separator,
-    PRIORITY_CHOICES,
+    PRIORITY_CHOICES, parse_flags,
 )
 from weblate.trans.signals import (
     vcs_post_push, vcs_pre_update, vcs_post_update, translation_post_add,
@@ -137,7 +140,9 @@ class Component(models.Model, URLMixin, PathMixin):
         max_length=20,
         help_text=ugettext_lazy(
             'Version control system to use to access your '
-            'repository with translations.'
+            'repository with translations. You can also choose '
+            'additional integration with third party providers to '
+            'submit merge requests.'
         ),
         choices=VCS_REGISTRY.get_choices(),
         default=settings.DEFAULT_VCS,
@@ -389,6 +394,15 @@ class Component(models.Model, URLMixin, PathMixin):
         validators=[validate_render],
         default=settings.DEFAULT_MERGE_MESSAGE,
     )
+    addon_message = models.TextField(
+        verbose_name=ugettext_lazy('Commit message when addon makes a change'),
+        help_text=ugettext_lazy(
+            'You can use template language for various information, '
+            'please check documentation for more details.'
+        ),
+        validators=[validate_render],
+        default=settings.DEFAULT_ADDON_MESSAGE,
+    )
     committer_name = models.CharField(
         verbose_name=ugettext_lazy('Committer name'),
         max_length=200,
@@ -460,6 +474,7 @@ class Component(models.Model, URLMixin, PathMixin):
         self.updated_sources = {}
         self.old_component = copy(self)
         self._sources = None
+        self.checks_cache = None
 
     def get_source(self, id_hash):
         """Cached access to source information."""
@@ -666,6 +681,23 @@ class Component(models.Model, URLMixin, PathMixin):
         with self.repository.lock:
             self.repository.configure_branch(self.branch)
 
+    def needs_commit_upstream(self):
+        def check_single(changed, component):
+            if self.template and self.template in changed:
+                return True
+            for path in changed:
+                if self.filemask_re.match(path):
+                    return True
+            return False
+
+        changed = self.repository.list_upstream_changed_files()
+        if check_single(changed, self):
+            return True
+        for component in self.get_linked_childs():
+            if check_single(changed, self):
+                return True
+        return False
+
     @perform_on_link
     def do_update(self, request=None, method=None):
         """Wrapper for doing repository update"""
@@ -686,8 +718,9 @@ class Component(models.Model, URLMixin, PathMixin):
             if not needs_merge and method != 'rebase':
                 return True
 
-            # commit possible pending changes
-            self.commit_pending('update', request, skip_push=True)
+            # commit possible pending changes if needed
+            if self.needs_commit_upstream():
+                self.commit_pending('update', request, skip_push=True)
 
             # update local branch
             ret = self.update_branch(request, method=method)
@@ -701,6 +734,8 @@ class Component(models.Model, URLMixin, PathMixin):
         # Push after possible merge
         if ret:
             self.push_if_needed(request, do_update=False)
+        if not self.repo_needs_push():
+            self.delete_alert('RepositoryChanges', childs=True)
 
         return ret
 
@@ -762,6 +797,8 @@ class Component(models.Model, URLMixin, PathMixin):
             self.log_info('pushing to remote repo')
             with self.repository.lock:
                 self.repository.push()
+                if self.id:
+                    self.delete_alert('PushFailure', childs=True)
         except RepositoryException as error:
             error_text = self.error_text(error)
             self.log_error('failed to push on repo: %s', error_text)
@@ -780,6 +817,8 @@ class Component(models.Model, URLMixin, PathMixin):
                 _('Failed to push to remote branch on %s.') %
                 force_text(self)
             )
+            if self.id:
+                self.add_alert('PushFailure', childs=True, error=error_text)
             return False
 
         Change.objects.create(
@@ -827,9 +866,11 @@ class Component(models.Model, URLMixin, PathMixin):
         )
 
         # create translation objects for all files
-        self.create_translations(request=request)
-
-        return True
+        try:
+            self.create_translations(request=request)
+            return True
+        except FileParseError:
+            return False
 
     @perform_on_link
     def do_cleanup(self, request=None):
@@ -1018,10 +1059,51 @@ class Component(models.Model, URLMixin, PathMixin):
 
         return sorted(matches)
 
-    def update_source_checks(self):
+    def update_source_checks(self, skip_batch_checks=False):
+        self.log_debug('running source checks')
         for unit in self.updated_sources.values():
-            unit.source_info.run_checks(unit)
+            unit.source_info.run_checks(unit, self.project, batch=True)
         self.updated_sources = {}
+
+        if skip_batch_checks:
+            return
+
+        create = []
+        for check, check_obj in CHECKS.items():
+            if not check_obj.source or not check_obj.batch_update:
+                continue
+            self.log_debug('running batch check: %s', check)
+            # List of triggered checks
+            data = check_obj.check_source_project(self.project)
+            # Fetch existing check instances
+            existing = set(
+                Check.objects.filter(
+                    project=self.project,
+                    language=None,
+                    check=check
+                ).values_list(
+                    'content_hash', flat=True
+                )
+            )
+            # Create new check instances
+            for item in data:
+                content_hash = item['content_hash']
+                if content_hash in existing:
+                    existing.discard(content_hash)
+                else:
+                    create.append(Check(
+                        content_hash=content_hash,
+                        project=self.project,
+                        language_id=None,
+                        check=check,
+                        ignore=False,
+                    ))
+            # Remove stale instances
+            if existing:
+                Check.objects.filter(pk__in=existing).delete()
+        # Create new checks
+        if create:
+            Check.objects.bulk_create_ignore(create)
 
     def trigger_alert(self, name, **kwargs):
         if name in self.alerts_trigger:
@@ -1046,9 +1128,10 @@ class Component(models.Model, URLMixin, PathMixin):
     def update_import_alerts(self):
         for alert in ALERTS_IMPORT:
             if alert in self.alerts_trigger:
-                self.add_alert(alert, occurences=self.alerts_trigger[alert])
+                self.add_alert(alert, occurrences=self.alerts_trigger[alert])
             else:
                 self.delete_alert(alert)
+        self.alerts_trigger = {}
 
     def create_translations(self, force=False, langs=None, request=None,
                             changed_template=False, skip_checks=False):
@@ -1059,6 +1142,18 @@ class Component(models.Model, URLMixin, PathMixin):
         self.needs_cleanup = False
         self.updated_sources = {}
         self.alerts_trigger = {}
+        self.checks_cache = {}
+        check_values = Check.objects.filter(
+            project=self.project
+        ).values_list(
+            'content_hash', 'language_id', 'check'
+        )
+        for check in check_values:
+            key = (check[0], check[1])
+            if key not in self.checks_cache:
+                self.checks_cache[key] = [check[2]]
+            else:
+                self.checks_cache[key].append(check[2])
         translations = {}
         languages = {}
         try:
@@ -1125,10 +1220,6 @@ class Component(models.Model, URLMixin, PathMixin):
                     )
                     todelete.delete()
 
-        if self.updated_sources:
-            self.log_info('running source checks')
-            self.update_source_checks()
-
         self.update_import_alerts()
 
         # Process linked repos
@@ -1146,6 +1237,13 @@ class Component(models.Model, URLMixin, PathMixin):
         if not skip_checks:
             self.run_target_checks()
 
+        if self.updated_sources:
+            self.update_source_checks(skip_checks)
+
+        # Update unit flags
+        if not skip_checks:
+            self.update_unit_flags()
+
         if self.needs_cleanup:
             from weblate.trans.tasks import cleanup_project
             cleanup_project.delay(self.project.pk)
@@ -1160,6 +1258,7 @@ class Component(models.Model, URLMixin, PathMixin):
             if translation.notify_new_string:
                 notify_new_string(translation)
 
+        self.checks_cache = None
         self.log_info('updating completed')
 
     def get_lang_code(self, path):
@@ -1193,7 +1292,7 @@ class Component(models.Model, URLMixin, PathMixin):
 
     def set_default_branch(self):
         """Set default VCS branch if empty"""
-        if self.branch == '':
+        if not self.branch and not self.is_repo_link:
             self.branch = VCS_REGISTRY[self.vcs].default_branch
 
     def clean_repo_link(self):
@@ -1224,6 +1323,10 @@ class Component(models.Model, URLMixin, PathMixin):
         if self.push != '':
             raise ValidationError(
                 {'push': _('Push URL is not used when repository is linked!')}
+            )
+        if self.branch:
+            raise ValidationError(
+                {'branch': _('Repository branch is not used when repository is linked!')}
             )
         if self.git_export != '':
             raise ValidationError(
@@ -1314,7 +1417,7 @@ class Component(models.Model, URLMixin, PathMixin):
                     'You have configured Weblate to add new translation '
                     'files, but did not provide base file to do that!'
                 )
-            raise ValidationError({'new_base': message})
+            raise ValidationError({'new_base': message, 'new_lang': message})
 
     def clean_template(self):
         """Validate template value."""
@@ -1404,14 +1507,6 @@ class Component(models.Model, URLMixin, PathMixin):
             old = Component.objects.get(pk=self.id)
             self.check_rename(old, validate=True)
 
-            if old.vcs != self.vcs:
-                # This could work, but the problem is that before changed
-                # object is saved the linked repos still see old vcs leading
-                # to horrible mess. Changing vcs from the manage.py shell
-                # works fine though.
-                msg = _('Changing version control system is not supported!')
-                raise ValidationError({'vcs': msg})
-
         self.clean_repo()
 
         # Template validation
@@ -1474,6 +1569,7 @@ class Component(models.Model, URLMixin, PathMixin):
         if self.id:
             old = Component.objects.get(pk=self.id)
             changed_git = (
+                (old.vcs != self.vcs) or
                 (old.repo != self.repo) or
                 (old.branch != self.branch) or
                 (old.filemask != self.filemask) or
@@ -1516,30 +1612,49 @@ class Component(models.Model, URLMixin, PathMixin):
         elif changed_git:
             self.create_translations()
 
-        # Copy suggestions to new project
+        # Handle moving between projects
         if changed_project:
+            from weblate.trans.tasks import cleanup_project
+            # Copy suggestions and comments to new project
             old.project.suggestion_set.copy(self.project)
+            old.project.comment_set.copy(self.project)
+            old.project.check_set.copy(self.project)
+            # Schedule cleanup for both projects
+            cleanup_project.delay(old.project.pk)
+            cleanup_project.delay(self.project.pk)
 
         self.update_alerts()
 
     def update_alerts(self):
+        from weblate.trans.models import Unit
         if self.new_lang != 'add' and self.new_base:
             self.add_alert('UnusedNewBase')
         else:
             self.delete_alert('UnusedNewBase')
 
         if (self.project.access_control == self.project.ACCESS_PUBLIC
-                and not self.license):
+                and not self.license
+                and not getattr(settings, 'LOGIN_REQUIRED_URLS', None)):
             self.add_alert('MissingLicense')
         else:
             self.delete_alert('MissingLicense')
 
-    def repo_needs_commit(self):
+        source_space = Unit.objects.filter(
+            translation__component=self,
+            source__contains=' '
+        ).exists
+        target_space = Unit.objects.filter(
+            translation__component=self,
+            target__contains=' '
+        ).exists
+        if not self.template and not source_space() and target_space():
+            self.add_alert('MonolingualTranslation')
+        else:
+            self.delete_alert('MonolingualTranslation')
+
+    def needs_commit(self):
         """Check whether there are some not committed changes"""
-        for translation in self.translation_set.all():
-            if translation.unit_set.filter(pending=True).exists():
-                return True
-        return self.repository.needs_commit()
+        return any((t.needs_commit() for t in self.translation_set.all()))
 
     def repo_needs_merge(self):
         """Check whether there is something to merge from remote repository"""
@@ -1564,7 +1679,7 @@ class Component(models.Model, URLMixin, PathMixin):
     def has_template(self):
         """Return true if component is using template for translation"""
         monolingual = self.file_format_cls.monolingual
-        return ((monolingual or monolingual is None) and self.template)
+        return (monolingual or monolingual is None) and self.template
 
     def load_template_store(self):
         """Load translate-toolkit store for template."""
@@ -1585,10 +1700,10 @@ class Component(models.Model, URLMixin, PathMixin):
     @cached_property
     def all_flags(self):
         """Return parsed list of flags."""
-        return (
-            self.check_flags.split(',') +
-            list(self.file_format_cls.check_flags)
-        )
+        flags = set(parse_flags(self.check_flags))
+        flags.update(self.file_format_cls.check_flags)
+        flags.discard('')
+        return flags
 
     def can_add_new_language(self):
         """Wrapper to check if we can add new language."""
@@ -1625,13 +1740,16 @@ class Component(models.Model, URLMixin, PathMixin):
         # the processing of new language can take some time and user
         # can submit again)
         if os.path.exists(fullname):
-            translation = Translation.objects.check_sync(
-                self, language, format_code, filename, request=request
-            )
-            self.run_target_checks()
-            translation.invalidate_cache()
-            messages.error(request, _('Translation file already exists!'))
-            return False
+            with transaction.atomic():
+                translation = Translation.objects.check_sync(
+                    self, language, format_code, filename, request=request
+                )
+                self.run_target_checks()
+                self.update_source_checks()
+                self.update_unit_flags()
+                translation.invalidate_cache()
+                messages.error(request, _('Translation file already exists!'))
+                return False
 
         file_format.add_language(fullname, language, base_filename)
 
@@ -1655,9 +1773,10 @@ class Component(models.Model, URLMixin, PathMixin):
                 request.user.get_author_name()
                 if request else 'Weblate <noreply@weblate.org>',
                 timezone.now(),
-                force_new=True,
             )
             self.run_target_checks()
+            self.update_source_checks()
+            self.update_unit_flags()
             translation.invalidate_cache()
             return True
 
@@ -1676,8 +1795,28 @@ class Component(models.Model, URLMixin, PathMixin):
             return None
         return self.translation_set.get(filename=self.template)
 
+    def update_unit_flags(self):
+        from weblate.trans.models import Unit
+        units = Unit.objects.filter(
+            translation__component__project=self.project
+        )
+        updates = (
+            ('has_failing_check', 'checks_check'),
+            ('has_comment', 'trans_comment'),
+            ('has_suggestion', 'trans_suggestion'),
+        )
+        for flag, table in updates:
+            self.log_debug('updating unit flag: %s', flag)
+            unit_ids = set(
+                filter_query(units, table).values_list('id', flat=True)
+            )
+            units.filter(id__in=unit_ids).update(**{flag: True})
+            units.exclude(id__in=unit_ids).update(**{flag: False})
+        self.log_debug('all unit flags updated')
+
     def run_target_checks(self):
         """Run batch executed target checks"""
+        create = []
         for check, check_obj in CHECKS.items():
             if not check_obj.target or not check_obj.batch_update:
                 continue
@@ -1690,21 +1829,34 @@ class Component(models.Model, URLMixin, PathMixin):
                     project=self.project,
                     check=check
                 ).values_list(
-                    'pk', flat=True
+                    'content_hash', 'language_id'
                 )
             )
             # Create new check instances
             for item in data:
-                instance = Check.objects.get_or_create(
-                    content_hash=item['content_hash'],
-                    project=self.project,
-                    language_id=item['translation__language'],
-                    check=check,
-                    defaults={'ignore': False},
-                )[0]
-                existing.discard(instance.pk)
+                key = (item['content_hash'], item['translation__language'])
+                if key in existing:
+                    existing.discard(key)
+                else:
+                    create.append(Check(
+                        content_hash=item['content_hash'],
+                        project=self.project,
+                        language_id=item['translation__language'],
+                        check=check,
+                        ignore=False,
+                    ))
             # Remove stale instances
-            Check.objects.filter(pk__in=existing).delete()
+            if existing:
+                query = functools.reduce(
+                    lambda q, value:
+                    q | (Q(content_hash=value[0]) & Q(language_id=value[1])),
+                    existing,
+                    Q()
+                )
+                Check.objects.filter(query).delete()
+        # Create new checks
+        if create:
+            Check.objects.bulk_create_ignore(create)
 
     @cached_property
     def osi_approved_license(self):

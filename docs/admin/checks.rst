@@ -32,8 +32,12 @@ source strings review, see :ref:`additional`) or in the :ref:`component`
 
 ``rst-text``
     Treat text as RST document, effects :ref:`check-same`.
+``md-text``
+    Treat text as Markdown document.
 ``dos-eol``
     Use DOS end of line markers instead of Unix ones (``\r\n`` instead of ``\n``).
+``url``
+    The string should consist of URL only.
 ``max-length:N``
     Limit maximal length for string to N chars, see :ref:`check-max-length`
 ``xml-text``
@@ -71,7 +75,7 @@ source strings review, see :ref:`additional`) or in the :ref:`component`
 ``ignore-c-format``
     Skip the "C format" quality check.
 ``ignore-javascript-format``
-    Skip the "Javascript format" quality check.
+    Skip the "JavaScript format" quality check.
 ``ignore-optional-plural``
     Skip the "Optional plural" quality check.
 ``ignore-end-exclamation``

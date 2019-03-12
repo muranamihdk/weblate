@@ -1,14 +1,57 @@
 Changes
 =======
 
-weblate 3.4
+weblate 3.6
 -----------
 
 Released on ? 2019.
 
+weblate 3.5.1
+-------------
+
+Released on March 10th 2019.
+
+* Fixed Celery systemd unit example.
+* Fixed notifications from http repositories with login.
+* Fixed race condition in editing source string for monolingual translations.
+* Include output of failed addon execution in the logs.
+* Improved validation of choices for adding new language.
+* Allow to edit file format in component settings.
+* Update installation instructions to prefer Python 3.
+* Performance and consistency improvements for loading translations.
+* Make Microsoft Terminology service compatible with current zeep releases.
+* Localization updates.
+
+weblate 3.5
+------------
+
+Released on March 3rd 2019.
+
+* Improved performance of built in translation memory.
+* Added interface to manage global translation memory.
+* Improved alerting on bad component state.
+* Added user interface to manage whiteboard messages.
+* Addon commit message now can be configured.
+* Reduce number of commits when updating upstream repository.
+* Fixed possible metadata loss when moving component between projects.
+* Improved navigation in the zen mode.
+* Added several new quality checks (Markdown related and URL).
+* Added support for app store metadata files.
+* Added support for toggling GitHub or Gerrit integration.
+* Added check for Kashida letters.
+* Added option to squash commits based on authors.
+* Improved support for xlsx file format.
+* Compatibility with tesseract 4.0.
+* Billing addon now removes projects for unpaid billings after 45 days.
+
+weblate 3.4
+-----------
+
+Released on January 22nd 2019.
+
 * Added support for XLIFF placeholders.
 * Celery can now utilize multiple task queues.
-* Added suppport for renaming and moving projects and components.
+* Added support for renaming and moving projects and components.
 * Include chars counts in reports.
 * Added guided adding of translation components with automatic detection of translation files.
 * Customizable merge commit messages for Git.
@@ -18,6 +61,8 @@ Released on ? 2019.
 * Improved displaying of translation changes.
 * Changed default merge style to rebase and made that configurable.
 * Better handle private use subtags in language code.
+* Improved performance of fulltext index updates.
+* Extended file upload API to support more parameters.
 
 weblate 3.3
 -----------

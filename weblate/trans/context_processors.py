@@ -46,6 +46,7 @@ CONTEXT_SETTINGS = [
     'ENABLE_HOOKS',
     'REGISTRATION_OPEN',
     'STATUS_URL',
+    'LEGAL_URL',
     # Hosted Weblate integration
     'PAYMENT_ENABLED',
 ]
@@ -90,16 +91,16 @@ def weblate_context(request):
 
     # Load user translations if user is authenticated
     subscribed_projects = None
-    if request.user.is_authenticated:
+    if hasattr(request, 'user') and request.user.is_authenticated:
         subscribed_projects = request.user.profile.subscriptions.all()
 
     if settings.OFFER_HOSTING:
         description = _(
-            'Hosted Weblate, the place to translate your software project.'
+            'Hosted Weblate, the place to localize your software project.'
         )
     else:
         description = _(
-            'This site runs Weblate for translating various software projects.'
+            'This site runs Weblate for localizing various software projects.'
         )
 
     weblate_url = URL_BASE % weblate.VERSION

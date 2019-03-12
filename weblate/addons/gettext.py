@@ -23,7 +23,8 @@ from __future__ import unicode_literals
 import io
 import os
 
-from django.core.management.utils import find_command, popen_wrapper
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.management.utils import find_command
 from django.utils.translation import ugettext_lazy as _
 
 from translate.storage.po import pofile
@@ -194,6 +195,7 @@ class MsgmergeAddon(GettextBaseAddon, UpdateBaseAddon):
         'triggered whenever new changes are pulled from the upstream '
         'repository.'
     )
+    alert = 'MsgmergeAddonError'
 
     @classmethod
     def can_install(cls, component, user):
@@ -202,16 +204,32 @@ class MsgmergeAddon(GettextBaseAddon, UpdateBaseAddon):
         return super(MsgmergeAddon, cls).can_install(component, user)
 
     def update_translations(self, component, previous_head):
+        wrap = None
+        try:
+            width = component.addon_set.get(
+                name='weblate.gettext.customize'
+            ).configuration['width']
+            if width != 77:
+                wrap = '--no-wrap'
+        except ObjectDoesNotExist:
+            pass
         cmd = [
             'msgmerge',
             '--backup=none',
+            '--previous',
             '--update',
             'FILE',
             component.get_new_base_filename()
         ]
+        if wrap:
+            cmd.insert(1, wrap)
         for translation in component.translation_set.all():
-            cmd[3] = translation.get_filename()
-            popen_wrapper(cmd)
+            filename = translation.get_filename()
+            if not os.path.exists(filename):
+                continue
+            cmd[-2] = filename
+            self.execute_process(component, cmd)
+        self.trigger_alerts(component)
 
 
 class GettextCustomizeAddon(GettextBaseAddon, StoreBaseAddon):

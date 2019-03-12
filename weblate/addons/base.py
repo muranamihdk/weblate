@@ -20,11 +20,15 @@
 
 from __future__ import unicode_literals
 
+from itertools import chain
+import subprocess
+
 from django.apps import apps
 from django.utils.functional import cached_property
 
 from weblate.addons.events import EVENT_POST_UPDATE, EVENT_STORE_POST_LOAD
 from weblate.addons.forms import BaseAddonForm
+from weblate.trans.util import get_clean_env
 from weblate.utils.render import render_template
 from weblate.utils.site import get_site_url
 
@@ -39,11 +43,14 @@ class BaseAddon(object):
     description = 'Base addon'
     icon = 'cog'
     project_scope = False
+    repo_scope = False
     has_summary = False
+    alert = None
 
     """Base class for Weblate addons."""
     def __init__(self, storage=None):
         self.instance = storage
+        self.alerts = []
 
     def get_summary(self):
         return ''
@@ -135,6 +142,44 @@ class BaseAddon(object):
     def store_post_load(self, translation, store):
         return
 
+    def execute_process(self, component, cmd, env=None):
+        component.log_debug('%s addon exec: %s', self.name, repr(cmd))
+        try:
+            output = subprocess.check_output(
+                cmd,
+                env=get_clean_env(env),
+                cwd=component.full_path,
+                stderr=subprocess.STDOUT,
+            )
+            component.log_debug('exec result: %s', repr(output))
+        except (OSError, subprocess.CalledProcessError) as err:
+            output = getattr(err, 'output', '').decode('utf-8')
+            component.log_error('failed to exec %s: %s', repr(cmd), err)
+            for line in output.splitlines():
+                component.log_error('program output: %s', line)
+            self.alerts.append({
+                'addon': self.name,
+                'command': ' '.join(cmd),
+                'output': output,
+                'error': str(err),
+            })
+
+    def trigger_alerts(self, component):
+        if self.alerts:
+            component.add_alert(self.alert, occurrences=self.alerts)
+            self.alerts = []
+        else:
+            component.delete_alert(self.alert)
+
+    def get_commit_message(self, component):
+        return render_template(
+            component.addon_message,
+            hook_name=self.verbose,
+            project_name=component.project.name,
+            component_name=component.name,
+            url=get_site_url(component.get_absolute_url())
+        )
+
 
 class TestAddon(BaseAddon):
     """Testing addong doing nothing."""
@@ -150,12 +195,6 @@ class UpdateBaseAddon(BaseAddon):
     It hooks to post update and commits all changed translations.
     """
     events = (EVENT_POST_UPDATE, )
-    message = '''Update translation files
-
-Updated by "{{ hook_name }}" hook in Weblate.
-
-Translation: {{ project_name }}/{{ component_name }}
-Translate-URL: {{ url }}'''
 
     def update_translations(self, component, previous_head):
         raise NotImplementedError()
@@ -164,20 +203,18 @@ Translate-URL: {{ url }}'''
         repository = component.repository
         with repository.lock:
             if repository.needs_commit():
-                files = [t.filename for t in component.translation_set.all()]
+                files = list(chain.from_iterable((
+                    translation.store.get_filenames()
+                    for translation in component.translation_set.all()
+                )))
                 repository.commit(
-                    render_template(
-                        self.message,
-                        hook_name=self.verbose,
-                        project_name=component.project.name,
-                        component_name=component.name,
-                        url=get_site_url(component.get_absolute_url())
-                    ),
+                    self.get_commit_message(component),
                     files=files
                 )
                 component.push_if_needed(None)
 
     def post_update(self, component, previous_head):
+        component.commit_pending('addon', None, skip_push=True)
         self.update_translations(component, previous_head)
         self.commit_and_push(component)
 

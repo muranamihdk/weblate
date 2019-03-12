@@ -64,44 +64,6 @@ class WeblateConf(AppConf):
     # Automatically update vcs repositories daily
     AUTO_UPDATE = False
 
-    # List of quality checks
-    CHECK_LIST = (
-        'weblate.checks.same.SameCheck',
-        'weblate.checks.chars.BeginNewlineCheck',
-        'weblate.checks.chars.EndNewlineCheck',
-        'weblate.checks.chars.BeginSpaceCheck',
-        'weblate.checks.chars.EndSpaceCheck',
-        'weblate.checks.chars.EndStopCheck',
-        'weblate.checks.chars.EndColonCheck',
-        'weblate.checks.chars.EndQuestionCheck',
-        'weblate.checks.chars.EndExclamationCheck',
-        'weblate.checks.chars.EndEllipsisCheck',
-        'weblate.checks.chars.EndSemicolonCheck',
-        'weblate.checks.chars.MaxLengthCheck',
-        'weblate.checks.format.PythonFormatCheck',
-        'weblate.checks.format.PythonBraceFormatCheck',
-        'weblate.checks.format.PHPFormatCheck',
-        'weblate.checks.format.CFormatCheck',
-        'weblate.checks.format.PerlFormatCheck',
-        'weblate.checks.format.JavascriptFormatCheck',
-        'weblate.checks.format.CSharpFormatCheck',
-        'weblate.checks.format.JavaFormatCheck',
-        'weblate.checks.format.JavaMessageFormatCheck',
-        'weblate.checks.angularjs.AngularJSInterpolationCheck',
-        'weblate.checks.consistency.PluralsCheck',
-        'weblate.checks.consistency.SamePluralsCheck',
-        'weblate.checks.consistency.ConsistencyCheck',
-        'weblate.checks.consistency.TranslatedCheck',
-        'weblate.checks.chars.NewlineCountingCheck',
-        'weblate.checks.markup.BBCodeCheck',
-        'weblate.checks.chars.ZeroWidthSpaceCheck',
-        'weblate.checks.markup.XMLValidityCheck',
-        'weblate.checks.markup.XMLTagsCheck',
-        'weblate.checks.source.OptionalPluralCheck',
-        'weblate.checks.source.EllipsisCheck',
-        'weblate.checks.source.MultipleFailingCheck',
-    )
-
     # List of automatic fixups
     AUTOFIX_LIST = (
         'weblate.trans.autofixes.whitespace.SameBookendingWhitespace',
@@ -113,18 +75,6 @@ class WeblateConf(AppConf):
     # Font for charts and widgets
     TTF_PATH = os.path.join(settings.BASE_DIR, 'weblate', 'ttf')
 
-    # Anonymous user name
-    ANONYMOUS_USER_NAME = 'anonymous'
-
-    # Enable registrations
-    REGISTRATION_OPEN = True
-
-    # Registration email filter
-    REGISTRATION_EMAIL_MATCH = '.*'
-
-    # Captcha for registrations
-    REGISTRATION_CAPTCHA = True
-
     # Matomo
     PIWIK_SITE_ID = None
     PIWIK_URL = None
@@ -135,18 +85,11 @@ class WeblateConf(AppConf):
     # URL with status monitoring
     STATUS_URL = None
 
-    # Use simple language codes for default language/country combinations
-    SIMPLIFY_LANGUAGES = True
+    # URL with legal docs
+    LEGAL_URL = None
 
-    # Disable avatars
-    ENABLE_AVATARS = True
-
-    # Avatar URL prefix
-    AVATAR_URL_PREFIX = 'https://www.gravatar.com/'
-
-    # Avatar fallback image
-    # See http://en.gravatar.com/site/implement/images/ for available choices
-    AVATAR_DEFAULT_IMAGE = 'identicon'
+    # Disable length limitations calculated from the source string length
+    LIMIT_TRANSLATION_LENGTH_BY_SOURCE_LENGTH = True
 
     # Is the site using https
     ENABLE_HTTPS = False
@@ -188,6 +131,13 @@ class WeblateConf(AppConf):
     DEFAULT_MERGE_MESSAGE = (
         "Merge branch '{{ component_remote_branch }}' into Weblate.\n\n"
     )
+
+    DEFAULT_ADDON_MESSAGE = '''Update translation files
+
+Updated by "{{ hook_name }}" hook in Weblate.
+
+Translation: {{ project_name }}/{{ component_name }}
+Translate-URL: {{ url }}'''
 
     DEFAULT_PULL_MESSAGE = (
         'Update from Weblate'

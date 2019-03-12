@@ -28,6 +28,8 @@ import sys
 import subprocess
 import logging
 
+from dateutil import parser
+
 from django.core.cache import cache
 from django.utils.encoding import force_text
 from django.utils.functional import cached_property
@@ -74,6 +76,7 @@ class Repository(object):
     _cmd_update_remote = None
     _cmd_push = None
     _cmd_status = ['status']
+    _cmd_list_changed_files = None
 
     name = None
     req_version = None
@@ -201,6 +204,9 @@ class Repository(object):
     @cached_property
     def last_revision(self):
         """Return last local revision."""
+        return self.get_last_revision()
+
+    def get_last_revision(self):
         return self.execute(self._cmd_last_revision, needs_lock=False)
 
     @cached_property
@@ -249,7 +255,7 @@ class Repository(object):
         """Rebase working copy on top of remote branch."""
         raise NotImplementedError()
 
-    def needs_commit(self, filename=None):
+    def needs_commit(self, *filenames):
         """Check whether repository needs commit."""
         raise NotImplementedError()
 
@@ -283,12 +289,18 @@ class Repository(object):
 
     def get_revision_info(self, revision):
         """Return dictionary with detailed revision information."""
-        key = 'rev-info-{}'.format(revision)
+        key = 'rev-info-{}-{}'.format(self.name, revision)
         result = cache.get(key)
         if not result:
             result = self._get_revision_info(revision)
             # Keep the cache for one day
             cache.set(key, result, 86400)
+
+        # Parse timestamps into datetime objects
+        for name, value in result.items():
+            if 'date' in name:
+                result[name] = parser.parse(value)
+
         return result
 
     @classmethod
@@ -340,18 +352,38 @@ class Repository(object):
         """Remove files and creates new revision."""
         raise NotImplementedError()
 
+    @staticmethod
+    def update_hash(objhash, filename, extra=None):
+        with open(filename, 'rb') as handle:
+            data = handle.read()
+        if extra:
+            objhash.update(extra.encode('utf-8'))
+        objhash.update('blob {0}\0'.format(len(data)).encode('ascii'))
+        objhash.update(data)
+
     def get_object_hash(self, path):
-        """Return hash of object in the VCS in a way compatible with Git."""
+        """Return hash of object in the VCS.
+
+        For files in a way compatible with Git, for dirs it behaves differently
+        as we do not need to track some attributes (eg. permissions)."""
         real_path = os.path.join(
             self.path,
             self.resolve_symlinks(path)
         )
         objhash = hashlib.sha1()
 
-        with open(real_path, 'rb') as handle:
-            data = handle.read()
-            objhash.update('blob {0}\0'.format(len(data)).encode('ascii'))
-            objhash.update(data)
+        if os.path.isdir(real_path):
+            files = []
+            for root, dummy, filenames in os.walk(real_path):
+                for filename in filenames:
+                    full_name = os.path.join(root, filename)
+                    files.append((
+                        full_name, os.path.relpath(full_name, self.path)
+                    ))
+            for filename, name in sorted(files):
+                self.update_hash(objhash, filename, name)
+        else:
+            self.update_hash(objhash, real_path)
 
         return objhash.hexdigest()
 
@@ -411,6 +443,24 @@ class Repository(object):
         This is not universal as refspec is different per vcs.
         """
         raise NotImplementedError()
+
+    def list_changed_files(self, refspec):
+        """List changed files for given refspec.
+
+        This is not universal as refspec is different per vcs.
+        """
+        lines = self.execute(
+            self._cmd_list_changed_files + [refspec],
+            needs_lock=False
+        ).splitlines()
+        # Strip action prefix we do not use
+        return [x[2:] for x in lines]
+
+    def list_upstream_changed_files(self):
+        """List files missing upstream."""
+        return self.list_changed_files(
+            self.ref_to_remote.format(self.get_remote_branch_name())
+        )
 
     def get_remote_branch_name(self):
         return 'origin/{0}'.format(self.branch)

@@ -92,6 +92,7 @@ class SeleniumTests(BaseLiveServerTestCase, RegistrationTestMixin):
     }
     driver = None
     image_path = None
+    port = 9090
 
     def set_test_status(self, passed=True):
         connection = HTTPConnection("saucelabs.com")
@@ -510,7 +511,7 @@ class SeleniumTests(BaseLiveServerTestCase, RegistrationTestMixin):
                 self.click(
                     self.driver.find_element_by_id('settings-button')
                 )
-            self.click('Authentication')
+            self.click('Account')
             self.screenshot('authentication.png')
         finally:
             social_django.utils.BACKENDS = orig_backends
@@ -1109,7 +1110,7 @@ class SeleniumTests(BaseLiveServerTestCase, RegistrationTestMixin):
 
     def test_alerts(self):
         project = Project.objects.create(name='WeblateOrg', slug='weblateorg')
-        component = Component.objects.create(
+        Component.objects.create(
             name='Duplicates',
             slug='duplicates',
             project=project,

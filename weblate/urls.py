@@ -36,6 +36,7 @@ from weblate.trans.feeds import (
 from weblate.trans.views.changes import ChangesView, ChangesCSVView
 import weblate.accounts.views
 import weblate.addons.views
+from weblate.auth.decorators import management_access
 import weblate.checks.views
 import weblate.lang.views
 import weblate.memory.views
@@ -52,6 +53,7 @@ import weblate.trans.views.dictionary
 import weblate.trans.views.edit
 import weblate.trans.views.files
 import weblate.trans.views.git
+import weblate.trans.views.hooks
 import weblate.trans.views.js
 import weblate.trans.views.lock
 import weblate.trans.views.manage
@@ -513,6 +515,27 @@ real_patterns = [
         name='cleanup_translation',
     ),
 
+    # Whiteboard
+    url(
+        r'^whiteboard/' + PROJECT + '$',
+        weblate.trans.views.manage.whiteboard_project,
+        name='whiteboard_project',
+    ),
+    url(
+        r'^whiteboard/' + COMPONENT + '$',
+        weblate.trans.views.manage.whiteboard_component,
+        name='whiteboard_component',
+    ),
+    url(
+        r'^whiteboard/' + TRANSLATION + '$',
+        weblate.trans.views.manage.whiteboard_translation,
+        name='whiteboard_translation',
+    ),
+    url(
+        r'^js/whiteboard/(?P<pk>[0-9]+)/delete/$',
+        weblate.trans.views.manage.whiteboard_delete,
+        name='whiteboard-delete',
+    ),
     # VCS manipulation - remove
     url(
         r'^remove/' + PROJECT + '$',
@@ -632,6 +655,26 @@ real_patterns = [
         name='memory-download',
     ),
     url(
+        r'^(?P<manage>manage)/memory/$',
+        management_access(weblate.memory.views.MemoryView.as_view()),
+        name='memory',
+    ),
+    url(
+        r'^(?P<manage>manage)/memory/delete/$',
+        management_access(weblate.memory.views.DeleteView.as_view()),
+        name='memory-delete',
+    ),
+    url(
+        r'^(?P<manage>manage)/memory/upload/$',
+        management_access(weblate.memory.views.UploadView.as_view()),
+        name='memory-upload',
+    ),
+    url(
+        r'^(?P<manage>manage)/memory/download/$',
+        management_access(weblate.memory.views.DownloadView.as_view()),
+        name='memory-download',
+    ),
+    url(
         r'^memory/project/' + PROJECT + '$',
         weblate.memory.views.MemoryView.as_view(),
         name='memory',
@@ -711,17 +754,17 @@ real_patterns = [
     # Notification hooks
     url(
         r'^hooks/update/' + COMPONENT + '$',
-        weblate.trans.views.api.update_component,
+        weblate.trans.views.hooks.update_component,
         name='hook-component',
     ),
     url(
         r'^hooks/update/' + PROJECT + '$',
-        weblate.trans.views.api.update_project,
+        weblate.trans.views.hooks.update_project,
         name='hook-project',
     ),
     url(
         r'^hooks/(?P<service>github|gitlab|bitbucket|pagure)/$',
-        weblate.trans.views.api.vcs_service_hook,
+        weblate.trans.views.hooks.vcs_service_hook,
         name='webhook',
     ),
 

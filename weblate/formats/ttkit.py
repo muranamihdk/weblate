@@ -28,6 +28,8 @@ import re
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
+from lxml.etree import XMLSyntaxError
+
 import six
 
 from translate.misc import quote
@@ -198,6 +200,7 @@ class KeyValueUnit(TTKitUnit):
 class TTKitFormat(TranslationFormat):
     unit_class = TTKitUnit
     loader = ('', '')
+    new_translation = None
 
     def __init__(self, storefile, template_store=None, language_code=None):
         super(TTKitFormat, self).__init__(
@@ -267,6 +270,10 @@ class TTKitFormat(TranslationFormat):
     def save_content(self, handle):
         """Stores content to file."""
         self.store.serialize(handle)
+
+    def save(self):
+        """Save underlaying store to disk."""
+        self.save_atomic(self.storefile, self.save_content)
 
     @property
     def mimetype(self):
@@ -393,7 +400,7 @@ class PoUnit(TTKitUnit):
         """
         if self.template is not None:
             # Monolingual PO files
-            return self.template.getid()
+            return self.template.source or self.template.getcontext()
         return super(PoUnit, self).context
 
     @cached_property
@@ -438,6 +445,10 @@ class XliffUnit(TTKitUnit):
         if self.unit is None:
             return ''
 
+        # Use source for monolingual files if target is not set
+        if self.template is not None and not self.template.target:
+            return rich_to_xliff_string(self.template.rich_source)
+
         if self.unit.target is None:
             return ''
 
@@ -445,7 +456,15 @@ class XliffUnit(TTKitUnit):
 
     def set_target(self, target):
         """Set translation unit target."""
-        self.unit.rich_target = xliff_string_to_rich(target)
+        try:
+            converted = xliff_string_to_rich(target)
+        except XMLSyntaxError:
+            converted = target
+        # Use source for monolingual files if target is not set
+        if self.template is not None and not self.template.target:
+            self.unit.rich_source = converted
+        else:
+            self.unit.rich_target = converted
 
     @cached_property
     def xliff_node(self):
@@ -496,9 +515,7 @@ class XliffUnit(TTKitUnit):
         We replace translate-toolkit logic here as the isfuzzy
         is pretty much wrong there, see is_fuzzy docs.
         """
-        if self.unit is None:
-            return False
-        return bool(self.unit.target)
+        return bool(self.target)
 
     def is_fuzzy(self, fallback=False):
         """Check whether unit needs edit.
@@ -812,7 +829,6 @@ class PropertiesUtf8Format(PropertiesBaseFormat):
     name = _('Java Properties (UTF-8)')
     format_id = 'properties-utf8'
     loader = ('properties', 'javautf8file')
-    monolingual = True
     new_translation = '\n'
 
 
@@ -903,7 +919,10 @@ class AndroidFormat(TTKitFormat):
             return 'zh-rCN'
         if code == 'zh_Hant':
             return 'zh-rTW'
-        return code.replace('-', '_').replace('_', '-r')
+        sanitized = code.replace('-', '_')
+        if '_' in sanitized and len(sanitized.split('_')[1]) > 2:
+            return 'b+{}'.format(sanitized.replace('_', '+'))
+        return sanitized.replace('_', '-r')
 
 
 class JSONFormat(TTKitFormat):

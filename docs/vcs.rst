@@ -4,7 +4,8 @@ Version control integration
 ===========================
 
 Weblate currently supports :ref:`vcs-git` (with extended support for
-:ref:`vcs-github`) and :ref:`vcs-mercurial` as version control backends.
+:ref:`vcs-github`, :ref:`vcs-gerrit` and :ref:`vcs-git-svn`) and
+:ref:`vcs-mercurial` as version control backends.
 
 .. _vcs-repos:
 
@@ -220,16 +221,37 @@ action with `hub`_ to finish the configuration, for example:
 
 .. code-block:: sh
 
+    # DATA_DIR is set in Weblate settings.py, set it accordingy.
+    # Is is /app/data in Docker
     HOME=${DATA_DIR}/home hub clone octocat/Spoon-Knife
 
-The `hub`_ will ask you for your GitHub credentials, retrieve a token and
-store it into :file:`~/.config/hub`.
+The `hub`_ will ask you for your GitHub credentials, retrieve a token and store
+it into :file:`~/.config/hub`. This file has to be readable by user running
+Weblate.
 
 .. note::
 
-    Use the username you configured :guilabel:`hub` with as :setting:`GITHUB_USERNAME`.
+    Use the username you configured :guilabel:`hub` with as
+    :setting:`GITHUB_USERNAME` (:envvar:`WEBLATE_GITHUB_USERNAME` for the
+    Docker image).
 
 .. _hub: https://hub.github.com/
+
+.. _vcs-gerrit:
+
+Gerrit
+------
+
+.. versionadded:: 2.2
+
+Adds a thin layer atop :ref:`vcs-git` to allow pushing translation
+changes as Gerrit review requests, instead of pushing a directory to the repository.
+Currently uses the `git-review`_ tool to do the integration.
+
+Please refer to the Gerrit documentation for setting up the repository with
+necessary configuration.
+
+.. _git-review: https://pypi.org/project/git-review/
 
 .. _vcs-mercurial:
 

@@ -24,6 +24,8 @@ import gettext
 from itertools import chain
 import re
 
+from appconf import AppConf
+
 from django.conf import settings
 from django.db import models, transaction
 from django.db.models import Q
@@ -140,12 +142,16 @@ class LanguageQuerySet(models.QuerySet):
         # Remove some unwanted chars
         code = code.replace(' ', '').replace('(', '').replace(')', '')
 
+        # Strip leading and trailing .
+        code = code.strip('.')
+
         return code
 
     def aliases_get(self, code):
         code = code.lower()
         codes = (
             code,
+            code.replace('+', '_'),
             code.replace('-', '_'),
             code.replace('-r', '_'),
             code.replace('_r', '_')
@@ -633,3 +639,13 @@ class Plural(models.Model):
                 if self.type != data.PLURAL_UNKNOWN:
                     break
         super(Plural, self).save(*args, **kwargs)
+
+
+class WeblateLanguagesConf(AppConf):
+    """Languages settings."""
+
+    # Use simple language codes for default language/country combinations
+    SIMPLIFY_LANGUAGES = True
+
+    class Meta(object):
+        prefix = ''

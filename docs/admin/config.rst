@@ -36,6 +36,18 @@ User name of user for defining privileges of not logged in user.
 
     :ref:`privileges`
 
+.. setting:: AUDITLOG_EXPIRY
+
+AUDITLOG_EXPIRY
+---------------
+
+.. versionadded:: 3.6
+
+How long (in days) Weblate should keep audit log containing information about account
+activity.
+
+Defaults to 180 days.
+
 .. setting:: AUTH_LOCK_ATTEMPTS
 
 AUTH_LOCK_ATTEMPTS
@@ -250,20 +262,12 @@ For example you can enable only few of them:
         'weblate.checks.chars.MaxLengthCheck',
         'weblate.checks.format.PythonFormatCheck',
         'weblate.checks.format.PythonBraceFormatCheck',
-        'weblate.checks.format.PHPFormatCheck',
-        'weblate.checks.format.CFormatCheck',
-        'weblate.checks.format.PerlFormatCheck',
-        'weblate.checks.format.JavascriptFormatCheck',
-        'weblate.checks.format.CSharpFormatCheck',
-        'weblate.checks.format.JavaFormatCheck',
-        'weblate.checks.consistency.SamePluralsCheck',
         'weblate.checks.consistency.PluralsCheck',
+        'weblate.checks.consistency.SamePluralsCheck',
         'weblate.checks.consistency.ConsistencyCheck',
         'weblate.checks.consistency.TranslatedCheck',
         'weblate.checks.chars.NewlineCountingCheck',
-        'weblate.checks.markup.BBCodeCheck',
         'weblate.checks.chars.ZeroWidthSpaceCheck',
-        'weblate.checks.markup.XMLTagsCheck',
         'weblate.checks.source.OptionalPluralCheck',
         'weblate.checks.source.EllipsisCheck',
         'weblate.checks.source.MultipleFailingCheck',
@@ -568,6 +572,26 @@ Defaults to 0.
     :ref:`rate-limit`,
     :ref:`rate-ip`
 
+.. setting:: LEGAL_URL
+
+LEGAL_URL
+---------
+
+.. versionadded:: 3.5
+
+URL where your Weblate instance shows it's legal documents. This is useful if
+you host your legal documents outside Weblate for embedding inside Weblate
+please see :ref:`legal`.
+
+.. setting:: LIMIT_TRANSLATION_LENGTH_BY_SOURCE_LENGTH
+
+LIMIT_TRANSLATION_LENGTH_BY_SOURCE_LENGTH
+-----------------------------------------
+
+By default the length of a given translation is limited to the length of the source string * 10 characters. Set this option to False to allow longer translations (up to 10.000 characters) irrespective of the source length.
+
+Defaults to True.
+
 .. setting:: LOGIN_REQUIRED_URLS
 
 LOGIN_REQUIRED_URLS
@@ -602,7 +626,7 @@ Some of exceptions you might want to include:
         r'/data/(.*)$',     # Allowing public access to data exports
         r'/hooks/(.*)$',    # Allowing public access to notification hooks
         r'/api/(.*)$',      # Allowing access to API
-        r'/js/i18n/$',      # Javascript localization
+        r'/js/i18n/$',      # JavaScript localization
     )
 
 .. setting:: MT_SERVICES

@@ -183,14 +183,14 @@ def get_versions():
         'social-auth-core',
         'https://python-social-auth.readthedocs.io/',
         'social_core',
-        '2.0.0',
+        '3.1.0',
     ))
 
     result.append(get_single(
         'social-auth-app-django',
         'https://python-social-auth.readthedocs.io/',
         'social_django',
-        '3.0.0',
+        '3.1.0',
     ))
 
     result.append(get_single(
@@ -205,6 +205,13 @@ def get_versions():
         'https://toolkit.translatehouse.org/',
         'translate',
         '2.3.1',
+    ))
+
+    result.append(get_single(
+        'translation-finder',
+        'https://github.com/WeblateOrg/translation-finder',
+        'translation_finder',
+        '1.0',
     ))
 
     result.append(get_single(
@@ -249,7 +256,7 @@ def get_versions():
         'lxml',
         'https://lxml.de/',
         'lxml.etree',
-        '3.1.0',
+        '3.5.0',
     ))
 
     result.append(get_single(

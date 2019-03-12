@@ -41,9 +41,11 @@ import six
 
 from weblate.auth.data import (
     ACL_GROUPS, SELECTION_MANUAL, SELECTION_ALL, SELECTION_COMPONENT_LIST,
-    SELECTION_ALL_PUBLIC, SELECTION_ALL_PROTECTED,
+    SELECTION_ALL_PUBLIC, SELECTION_ALL_PROTECTED, GLOBAL_PERM_NAMES,
 )
-from weblate.auth.permissions import SPECIALS, check_permission
+from weblate.auth.permissions import (
+    SPECIALS, check_permission, check_global_permission
+)
 from weblate.auth.utils import (
     migrate_permissions, migrate_roles, create_anonymous, migrate_groups,
 )
@@ -426,6 +428,10 @@ class User(AbstractBaseUser):
     # pylint: disable=keyword-arg-before-vararg
     def has_perm(self, perm, obj=None, *args):
         """Permission check"""
+        # Weblate global scope permissions
+        if perm in GLOBAL_PERM_NAMES:
+            return check_global_permission(self, perm, obj)
+
         # Compatibility API for admin interface
         if obj is None:
             if not self.is_superuser:
@@ -480,17 +486,21 @@ class User(AbstractBaseUser):
         )
         return Project.objects.filter(group__in=groups).distinct()
 
-    def get_author_name(self, email=True):
-        """Return formatted author name with email."""
-        # The < > are replace to avoid tricking Git to use
-        # name as email
-
+    def get_visible_name(self):
         # Get full name from database
         full_name = self.full_name.replace('<', '').replace('>', '')
 
         # Use username if full name is empty
         if full_name == '':
             full_name = self.username.replace('<', '').replace('>', '')
+        return full_name
+
+    def get_author_name(self, email=True):
+        """Return formatted author name with email."""
+        # The < > are replace to avoid tricking Git to use
+        # name as email
+
+        full_name = self.get_visible_name()
 
         # Add email if we are asked for it
         if not email:
@@ -695,6 +705,9 @@ class WeblateAuthConf(AppConf):
     """Authentication settings."""
     AUTH_VALIDATE_PERMS = False
     AUTH_RESTRICT_ADMINS = {}
+
+    # Anonymous user name
+    ANONYMOUS_USER_NAME = 'anonymous'
 
     class Meta(object):
         prefix = ''

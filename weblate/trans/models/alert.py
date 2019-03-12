@@ -20,6 +20,7 @@
 
 from __future__ import unicode_literals
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.template.loader import render_to_string
 from django.utils.encoding import python_2_unicode_compatible, force_text
@@ -46,7 +47,7 @@ class Alert(models.Model):
     component = models.ForeignKey(
         'Component', on_delete=models.deletion.CASCADE
     )
-    timestamp = models.DateTimeField(auto_now=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=150)
     details = JSONField(default={})
 
@@ -96,33 +97,33 @@ class ErrorAlert(BaseAlert):
 
 
 class MultiAlert(BaseAlert):
-    def __init__(self, instance, occurences):
+    def __init__(self, instance, occurrences):
         super(MultiAlert, self).__init__(instance)
-        self.occurences = self.process_occurences(occurences)
+        self.occurrences = self.process_occurrences(occurrences)
 
     def get_context(self):
         result = super(MultiAlert, self).get_context()
-        result['occurences'] = self.occurences
+        result['occurrences'] = self.occurrences
         return result
 
-    def process_occurences(self, occurences):
+    def process_occurrences(self, occurrences):
         from weblate.lang.models import Language
         from weblate.trans.models import Unit
         processors = (
             ('language_code', 'language', Language, 'code'),
             ('unit_pk', 'unit', Unit, 'pk'),
         )
-        for occurence in occurences:
+        for occurrence in occurrences:
             for key, target, obj, lookup in processors:
-                if key not in occurence:
+                if key not in occurrence:
                     continue
                 try:
-                    occurence[target] = obj.objects.get(
-                        **{lookup: occurence[key]}
+                    occurrence[target] = obj.objects.get(
+                        **{lookup: occurrence[key]}
                     )
-                except Language.DoesNotExist:
-                    occurence[target] = None
-        return occurences
+                except ObjectDoesNotExist:
+                    occurrence[target] = None
+        return occurrences
 
 
 @register
@@ -145,6 +146,11 @@ class MergeFailure(ErrorAlert):
 @register
 class UpdateFailure(ErrorAlert):
     verbose = _('Could not update the repository.')
+
+
+@register
+class PushFailure(ErrorAlert):
+    verbose = _('Could not push the repository.')
 
 
 @register
@@ -176,3 +182,18 @@ class RepositoryChanges(BaseAlert):
 @register
 class MissingLicense(BaseAlert):
     verbose = _('License information missing.')
+
+
+@register
+class AddonScriptError(MultiAlert):
+    verbose = _('Error when executing addon.')
+
+
+@register
+class MsgmergeAddonError(MultiAlert):
+    verbose = _('Error when executing addon.')
+
+
+@register
+class MonolingualTranslation(BaseAlert):
+    verbose = _('Misconfigured monolingual translation.')

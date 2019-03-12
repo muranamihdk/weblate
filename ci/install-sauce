@@ -2,7 +2,7 @@
 # Install and start Sauce Connect
 set -e
 
-NAME=sc-4.5.2-linux.tar.gz
+NAME=sc-4.5.3-linux.tar.gz
 
 rm -f ~/.sauce-ready
 rm -f ~/.sauce-log
@@ -15,7 +15,14 @@ $SC_TEMP/*/bin/sc \
     -f ~/.sauce-ready \
     -l ~/.sauce-log &
 
-echo $! > ~/.sauce-pid
+PID=$!
+
+if [ $? -ne 0 ] ; then 
+    cat ~/.sauce-log
+    exit 1
+fi
+
+echo $PID > ~/.sauce-pid
 
 echo "Waiting for Sauce Connect readyfile"
 while [ ! -f ~/.sauce-ready ]; do

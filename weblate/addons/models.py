@@ -57,6 +57,8 @@ class AddonQuerySet(models.QuerySet):
             Q(component=component) & Q(project_scope=False)
         ) | (
             Q(component__project=component.project) & Q(project_scope=True)
+        ) | (
+            Q(component__linked_component=component) & Q(repo_scope=True)
         ))
 
     def filter_event(self, component, event):
@@ -78,6 +80,7 @@ class Addon(models.Model):
     configuration = JSONField()
     state = JSONField()
     project_scope = models.BooleanField(default=False, db_index=True)
+    repo_scope = models.BooleanField(default=False, db_index=True)
 
     objects = AddonQuerySet.as_manager()
 
@@ -143,24 +146,28 @@ class AddonsConf(AppConf):
 @receiver(vcs_pre_push)
 def pre_push(sender, component, **kwargs):
     for addon in Addon.objects.filter_event(component, EVENT_PRE_PUSH):
+        component.log_debug('running pre_push addon: %s', addon.name)
         addon.addon.pre_push(component)
 
 
 @receiver(vcs_post_push)
 def post_push(sender, component, **kwargs):
     for addon in Addon.objects.filter_event(component, EVENT_POST_PUSH):
+        component.log_debug('running post_push addon: %s', addon.name)
         addon.addon.post_push(component)
 
 
 @receiver(vcs_post_update)
 def post_update(sender, component, previous_head, **kwargs):
     for addon in Addon.objects.filter_event(component, EVENT_POST_UPDATE):
+        component.log_debug('running post_update addon: %s', addon.name)
         addon.addon.post_update(component, previous_head)
 
 
 @receiver(vcs_pre_update)
 def pre_update(sender, component, **kwargs):
     for addon in Addon.objects.filter_event(component, EVENT_PRE_UPDATE):
+        component.log_debug('running pre_update addon: %s', addon.name)
         addon.addon.pre_update(component)
 
 
@@ -170,6 +177,7 @@ def pre_commit(sender, translation, author, **kwargs):
         translation.component, EVENT_PRE_COMMIT
     )
     for addon in addons:
+        translation.log_debug('running pre_commit addon: %s', addon.name)
         addon.addon.pre_commit(translation, author)
 
 
@@ -179,6 +187,7 @@ def post_commit(sender, translation, **kwargs):
         translation.component, EVENT_POST_COMMIT
     )
     for addon in addons:
+        translation.log_debug('running post_commit addon: %s', addon.name)
         addon.addon.post_commit(translation)
 
 
@@ -188,6 +197,7 @@ def post_add(sender, translation, **kwargs):
         translation.component, EVENT_POST_ADD
     )
     for addon in addons:
+        translation.log_debug('running post_add addon: %s', addon.name)
         addon.addon.post_add(translation)
 
 
@@ -197,6 +207,7 @@ def unit_pre_create_handler(sender, unit, **kwargs):
         unit.translation.component, EVENT_UNIT_PRE_CREATE
     )
     for addon in addons:
+        unit.translation.log_debug('running unit_pre_create addon: %s', addon.name)
         addon.addon.unit_pre_create(unit)
 
 
@@ -207,6 +218,7 @@ def unit_post_save_handler(sender, instance, created, **kwargs):
         instance.translation.component, EVENT_UNIT_POST_SAVE
     )
     for addon in addons:
+        instance.translation.log_debug('running unit_post_save addon: %s', addon.name)
         addon.addon.unit_post_save(instance, created)
 
 
@@ -216,4 +228,5 @@ def store_post_load_handler(sender, translation, store, **kwargs):
         translation.component, EVENT_STORE_POST_LOAD
     )
     for addon in addons:
+        translation.log_debug('running store_post_load addon: %s', addon.name)
         addon.addon.store_post_load(translation, store)

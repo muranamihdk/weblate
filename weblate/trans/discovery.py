@@ -20,6 +20,7 @@
 
 from __future__ import unicode_literals
 
+from itertools import chain
 import os
 import re
 
@@ -57,7 +58,7 @@ class ComponentDiscovery(object):
             self.path = self.component.full_path
         else:
             self.path = path
-        self.path_match = re.compile('^' + match + '$')
+        self.path_match = self.compile_match(match)
         self.name_template = name_template
         self.base_file_template = base_file_template
         self.new_base_template = new_base_template
@@ -65,13 +66,25 @@ class ComponentDiscovery(object):
         self.language_match = re.compile(language_regex)
         self.file_format = file_format
 
+    def compile_match(self, match):
+        parts = match.split('(?P=language)')
+        offset = 1
+        while len(parts) > 1:
+            parts[0:2] = [
+                '{}(?P<_language_{}>(?P=language)){}'.format(
+                    parts[0], offset, parts[1]
+                )
+            ]
+            offset += 1
+        return re.compile('^{}$'.format(parts[0]))
+
     @cached_property
     def matches(self):
         """Return matched files together with match groups and mask."""
         result = []
         base = os.path.realpath(self.path)
-        for root, dummy, filenames in os.walk(self.path, followlinks=True):
-            for filename in filenames:
+        for root, dirnames, filenames in os.walk(self.path, followlinks=True):
+            for filename in chain(filenames, dirnames):
                 fullname = os.path.join(root, filename)
 
                 # Skip files outside our root
@@ -91,10 +104,23 @@ class ComponentDiscovery(object):
                     continue
 
                 # Calculate file mask for match
-                mask = '{}*{}'.format(
-                    path[:matches.start('language')],
-                    path[matches.end('language'):],
-                )
+                replacements = [
+                    (matches.start('language'), matches.end('language'))
+                ]
+                for group in matches.groupdict().keys():
+                    if group.startswith('_language_'):
+                        replacements.append(
+                            (matches.start(group), matches.end(group))
+                        )
+                maskparts = []
+                maskpath = path
+                for start, end in sorted(replacements, reverse=True):
+                    maskparts.append(maskpath[end:])
+                    maskpath = maskpath[:start]
+                maskparts.append(maskpath)
+
+                mask = '*'.join(reversed(maskparts))
+
                 result.append((path, matches.groupdict(), mask))
 
         return result
@@ -179,6 +205,7 @@ class ComponentDiscovery(object):
             'slug': slug,
             'template': match['base_file'],
             'filemask': match['mask'],
+            'new_base': match['new_base'],
             'file_format': self.file_format,
             'language_regex': self.language_re,
         })

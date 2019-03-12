@@ -138,7 +138,7 @@ class TranslationUnit(object):
 
     def is_translated(self):
         """Check whether unit is translated."""
-        raise NotImplementedError()
+        return bool(self.target)
 
     def is_approved(self, fallback=False):
         """Check whether unit is appoved."""
@@ -176,7 +176,6 @@ class TranslationFormat(object):
     monolingual = None
     check_flags = ()
     unit_class = TranslationUnit
-    new_translation = None
     autoload = ()
     can_add_unit = True
 
@@ -211,6 +210,11 @@ class TranslationFormat(object):
 
         # Remember template
         self.template_store = template_store
+
+    def get_filenames(self):
+        if isinstance(self.storefile, six.string_types):
+            return [self.storefile]
+        return [self.storefile.name]
 
     @classmethod
     def load(cls, storefile):
@@ -289,23 +293,24 @@ class TranslationFormat(object):
         """Update store header if available."""
         return
 
-    def save_content(self, handle):
-        """Stores content to file."""
-        raise NotImplementedError()
-
-    def save(self):
-        """Save underlaying store to disk."""
-        dirname, basename = os.path.split(self.storefile)
+    def save_atomic(self, filename, callback):
+        dirname, basename = os.path.split(filename)
+        if not os.path.exists(dirname):
+            os.makedirs(dirname)
         temp = tempfile.NamedTemporaryFile(
             prefix=basename, dir=dirname, delete=False
         )
         try:
-            self.save_content(temp)
+            callback(temp)
             temp.close()
-            move_atomic(temp.name, self.storefile)
+            move_atomic(temp.name, filename)
         finally:
             if os.path.exists(temp.name):
                 os.unlink(temp.name)
+
+    def save(self):
+        """Save underlaying store to disk."""
+        raise NotImplementedError()
 
     @cached_property
     def mono_units(self):
@@ -395,11 +400,6 @@ class TranslationFormat(object):
 
             yield set_fuzzy, unit
 
-    @classmethod
-    def untranslate_store(cls, store, language, fuzzy=False):
-        """Remove translations from a store"""
-        raise NotImplementedError()
-
     def create_unit(self, key, source):
         raise NotImplementedError()
 
@@ -408,3 +408,7 @@ class TranslationFormat(object):
         unit = self.create_unit(key, source)
         self.add_unit(unit)
         self.save()
+
+    @classmethod
+    def get_class(cls):
+        raise NotImplementedError()

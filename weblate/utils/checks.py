@@ -159,7 +159,7 @@ def check_settings(app_configs, **kwargs):
     """Check for sane settings"""
     errors = []
 
-    if (len(settings.ADMINS) == 0
+    if (not settings.ADMINS
             or 'noreply@weblate.org' in [x[1] for x in settings.ADMINS]):
         errors.append(
             Error(
@@ -311,7 +311,8 @@ def check_errors(app_configs=None, **kwargs):
         return []
     return [
         Info(
-            'Error collection is not configured, it is highly recommended for production use',
+            'Error collection is not configured, '
+            'it is highly recommended for production use',
             hint=get_doc_url('admin/install', 'collecting-errors'),
             id='weblate.I021',
         )

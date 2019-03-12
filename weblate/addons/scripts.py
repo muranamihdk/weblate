@@ -21,10 +21,8 @@
 from __future__ import unicode_literals
 
 import os
-import subprocess
 
 from weblate.addons.base import BaseAddon
-from weblate.trans.util import get_clean_env
 from weblate.utils.render import render_template
 
 
@@ -33,6 +31,7 @@ class BaseScriptAddon(BaseAddon):
     icon = 'file-code-o'
     script = None
     add_file = None
+    alert = 'AddonScriptError'
 
     def run_script(self, component=None, translation=None, env=None):
         command = [self.script]
@@ -57,19 +56,8 @@ class BaseScriptAddon(BaseAddon):
             environment['WL_LANGUAGE'] = translation.language_code
         if env is not None:
             environment.update(env)
-        try:
-            subprocess.check_call(
-                command,
-                env=get_clean_env(environment),
-                cwd=component.full_path,
-            )
-        except (OSError, subprocess.CalledProcessError) as err:
-            component.log_error(
-                'failed to run hook script %s: %s',
-                self.script,
-                err
-            )
-            raise
+        self.execute_process(component, command, environment)
+        self.trigger_alerts(component)
 
     def post_push(self, component):
         self.run_script(component)

@@ -24,8 +24,6 @@ import email.utils
 import os
 import os.path
 
-from dateutil import parser
-
 from defusedxml import ElementTree
 
 from django.conf import settings
@@ -46,6 +44,8 @@ class GitRepository(Repository):
     ]
     _cmd_update_remote = ['fetch', 'origin']
     _cmd_push = ['push', 'origin']
+    _cmd_list_changed_files = ['diff', '--name-status']
+
     name = 'Git'
     req_version = '1.6'
     default_branch = 'master'
@@ -125,8 +125,7 @@ class GitRepository(Repository):
             # Checkout original branch (we might be on tmp)
             self.execute(['checkout', self.branch])
         else:
-            if self.has_branch(tmp):
-                self.execute(['branch', '-D', tmp])
+            self.delete_branch(tmp)
             # We don't do simple git merge origin/branch as that leads
             # to different merge order than expected and most GUI tools
             # then show confusing diff (not changes done by Weblate, but
@@ -152,15 +151,15 @@ class GitRepository(Repository):
             self.execute(['merge', tmp])
 
         # Delete temporary branch
-        if self.has_branch(tmp):
-            self.execute(['branch', '-D', tmp])
+        self.delete_branch(tmp)
 
-    def needs_commit(self, filename=None):
+    def delete_branch(self, name):
+        if self.has_branch(name):
+            self.execute(['branch', '-D', name])
+
+    def needs_commit(self, *filenames):
         """Check whether repository needs commit."""
-        if filename is None:
-            cmd = ['status', '--porcelain']
-        else:
-            cmd = ['status', '--porcelain', '--', filename]
+        cmd = ('status', '--porcelain', '--') + filenames
         with self.lock:
             status = self.execute(cmd)
         return status != ''
@@ -211,14 +210,11 @@ class GitRepository(Repository):
                     name, value = line.strip().split(':', 1)
                     value = value.strip()
                     name = name.lower()
-                    if 'date' in name:
-                        result[name] = parser.parse(value)
-                    else:
-                        result[name] = value
-                        if '@' in value:
-                            parsed = email.utils.parseaddr(value)
-                            result['{0}_name'.format(name)] = parsed[0]
-                            result['{0}_email'.format(name)] = parsed[1]
+                    result[name] = value
+                    if '@' in value:
+                        parsed = email.utils.parseaddr(value)
+                        result['{0}_name'.format(name)] = parsed[0]
+                        result['{0}_email'.format(name)] = parsed[1]
             else:
                 message.append(line.strip())
 

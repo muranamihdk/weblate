@@ -349,9 +349,14 @@ Machine translation settings
 Authentication settings
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+LDAP
+++++
+
 .. envvar:: WEBLATE_AUTH_LDAP_SERVER_URI
 .. envvar:: WEBLATE_AUTH_LDAP_USER_DN_TEMPLATE
 .. envvar:: WEBLATE_AUTH_LDAP_USER_ATTR_MAP
+.. envvar:: WEBLATE_AUTH_LDAP_BIND_DN
+.. envvar:: WEBLATE_AUTH_LDAP_BIND_PASSWORD
 
     LDAP authentication configuration.
 
@@ -370,31 +375,67 @@ Authentication settings
 
         :ref:`ldap-auth`
 
+GitHub
+++++++
+
 .. envvar:: WEBLATE_SOCIAL_AUTH_GITHUB_KEY
 .. envvar:: WEBLATE_SOCIAL_AUTH_GITHUB_SECRET
 
     Enables :ref:`github_auth`.
+
+BitBucket
++++++++++
 
 .. envvar:: WEBLATE_SOCIAL_AUTH_BITBUCKET_KEY
 .. envvar:: WEBLATE_SOCIAL_AUTH_BITBUCKET_SECRET
 
     Enables :ref:`bitbucket_auth`.
 
+Facebook
+++++++++
+
 .. envvar:: WEBLATE_SOCIAL_AUTH_FACEBOOK_KEY
 .. envvar:: WEBLATE_SOCIAL_AUTH_FACEBOOK_SECRET
 
     Enables :ref:`facebook_auth`.
+
+Google
+++++++
 
 .. envvar:: WEBLATE_SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
 .. envvar:: WEBLATE_SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
 
     Enables :ref:`google_auth`.
 
+GitLab
+++++++
+
 .. envvar:: WEBLATE_SOCIAL_AUTH_GITLAB_KEY
 .. envvar:: WEBLATE_SOCIAL_AUTH_GITLAB_SECRET
 .. envvar:: WEBLATE_SOCIAL_AUTH_GITLAB_API_URL
 
     Enables :ref:`gitlab_auth`.
+
+Azure Active Directory
+++++++++++++++++++++++
+
+.. envvar:: WEBLATE_SOCIAL_AUTH_AZUREAD_OAUTH2_KEY
+.. envvar:: WEBLATE_SOCIAL_AUTH_AZUREAD_OAUTH2_SECRET
+
+    Enables Azure Active Directory authentication, see :doc:`psa:backends/azuread`.
+
+Azure Active Directory with Tenant support
+++++++++++++++++++++++++++++++++++++++++++
+
+.. envvar:: WEBLATE_SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_KEY
+.. envvar:: WEBLATE_SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_SECRET
+.. envvar:: WEBLATE_SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_TENANT_ID
+
+    Enables Azure Active Directory authentication with Tenant support, see
+    :doc:`psa:backends/azuread`.
+
+Other authentication settings
++++++++++++++++++++++++++++++
 
 .. envvar:: WEBLATE_NO_EMAIL_AUTH
 
@@ -429,31 +470,35 @@ both Weblate and PostgreSQL containers.
 
     PostgreSQL server port. Defaults to none (uses the default value).
 
+.. envvar:: POSTGRES_SSL_MODE
+
+   Configure how PostgreSQL handles SSL in connection to the server, for possible choices see
+   `SSL Mode Descriptions <https://www.postgresql.org/docs/11/libpq-ssl.html#LIBPQ-SSL-SSLMODE-STATEMENTS>`_
+
 
 Caching server setup
 ~~~~~~~~~~~~~~~~~~~~
 
 Using Redis is strongly recommended by Weblate and you have to provide a Redis
-instance when running Weblate in Docker. Additionally Memcached is supported
-for compatibility with older deployments.
+instance when running Weblate in Docker.
 
 .. seealso:: :ref:`production-cache`
 
 .. envvar:: REDIS_HOST
 
-   The memcached server hostname or IP address. Defaults to ``cache``.
+   The Redis server hostname or IP address. Defaults to ``cache``.
 
 .. envvar:: REDIS_PORT
 
-    The Memcached server port. Defaults to ``6379``.
+    The Redis server port. Defaults to ``6379``.
 
-.. envvar:: MEMCACHED_HOST
+.. envvar:: REDIS_DB
 
-   The Memcached server hostname or IP address. Defaults to ``cache``.
+    The Redis database number, defaults to ``1``.
 
-.. envvar:: MEMCACHED_PORT
-
-    The Memcached server port. Defaults to ``11211``.
+.. envvar:: REDIS_PASSWORD
+   
+    The Redis server password, not used by default.
 
 Email server setup
 ~~~~~~~~~~~~~~~~~~
@@ -550,7 +595,7 @@ In order to use the GitHub's pull-request feature, you must initialize hub confi
 
 .. code-block:: sh
 
-    docker-compose exec weblate bash
+    docker-compose exec --user weblate weblate bash
     cd
     HOME=/app/data/home hub clone octocat/Spoon-Knife
 
@@ -611,7 +656,7 @@ with the following command:
     rhc -aweblate app create -t python-2.7 --from-code https://github.com/WeblateOrg/weblate.git --no-git
 
     # Install Weblate 2.10
-    rhc -aweblate app create -t python-2.7 --from-code https://github.com/WeblateOrg/weblate.git#weblate-3.3 --no-git
+    rhc -aweblate app create -t python-2.7 --from-code https://github.com/WeblateOrg/weblate.git#weblate-3.5.1 --no-git
 
 The ``-a`` option defines the name of your weblate installation, ``weblate`` in
 this instance. Feel free to specify a different name.

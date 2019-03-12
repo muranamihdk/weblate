@@ -22,13 +22,15 @@ from __future__ import unicode_literals
 
 import datetime
 
+from appconf import AppConf
+
 from django.db import models
 from django.dispatch import receiver
 from django.conf import settings
 from django.contrib.auth.signals import user_logged_in
 from django.core.exceptions import ValidationError
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, ugettext
 from django.utils.encoding import python_2_unicode_compatible
 from django.urls import reverse
 from django.utils import timezone
@@ -58,28 +60,28 @@ ACCOUNT_ACTIVITY = {
         'Password reset has been confirmed and password has been disabled.'
     ),
     'auth-connect': _(
-        'Authentication ({method}:{name}) has been added.'
+        'You can now log in using {method} ({name}).'
     ),
     'auth-disconnect': _(
-        'Authentication ({method}:{name}) has been removed.'
+        'You can no longer log in using {method} ({name}).'
     ),
     'login': _(
-        'Authenticated ({method}:{name}).'
+        'Logged on using {method} ({name}).'
     ),
     'login-new': _(
-        'Authenticated ({method}:{name}) from new device.'
+        'Logged on using {method} ({name}) from a new device.'
     ),
     'register': _(
         'Somebody has attempted to register with your email.'
     ),
     'connect': _(
-        'Somebody has attempted to add your email to existing account.'
+        'Somebody has attempted to register using your email address.'
     ),
     'failed-auth': _(
-        'Failed authentication attempt ({method}:{name}).'
+        'Could not log in using {method} ({name}).'
     ),
     'locked': _(
-        'Account locked due to excessive failed authentication attempts.'
+        'Account locked due to many failed logins.'
     ),
     'removed': _(
         'Account and all private data have been removed.'
@@ -87,6 +89,15 @@ ACCOUNT_ACTIVITY = {
     'tos': _(
         'Agreement with Terms of Service {date}.'
     ),
+}
+# Override activty messages based on method
+ACCOUNT_ACTIVITY_METHOD = {
+    'password': {
+        'auth-connect': _('You can now log in using password.'),
+        'login': _('Logged on using password.'),
+        'login-new': _('Logged on using password from a new device.'),
+        'failed-auth': _('Could not log in using password.'),
+    }
 }
 
 EXTRA_MESSAGES = {
@@ -170,10 +181,21 @@ class AuditLog(models.Model):
     class Meta(object):
         ordering = ['-timestamp']
 
+    def get_params(self):
+        result = {}
+        result.update(self.params)
+        if 'method' in result:
+            result['method'] = ugettext(result['method'])
+        return result
+
     def get_message(self):
-        return ACCOUNT_ACTIVITY[self.activity].format(
-            **self.params
-        )
+        method = self.params.get('method')
+        activity = self.activity
+        if activity in ACCOUNT_ACTIVITY_METHOD.get(method, {}):
+            message = ACCOUNT_ACTIVITY_METHOD[method][activity]
+        else:
+            message = ACCOUNT_ACTIVITY[activity]
+        return message.format(**self.get_params())
     get_message.short_description = _('Account activity')
 
     def get_extra_message(self):
@@ -552,3 +574,35 @@ def create_profile_callback(sender, instance, created=False, **kwargs):
         Token.objects.create(user=instance, key=get_random_string(40))
         # Create profile
         Profile.objects.create(user=instance)
+
+
+class WeblateAccountsConf(AppConf):
+    """Accounts settings."""
+    # Disable avatars
+    ENABLE_AVATARS = True
+
+    # Avatar URL prefix
+    AVATAR_URL_PREFIX = 'https://www.gravatar.com/'
+
+    # Avatar fallback image
+    # See http://en.gravatar.com/site/implement/images/ for available choices
+    AVATAR_DEFAULT_IMAGE = 'identicon'
+
+    # Enable registrations
+    REGISTRATION_OPEN = True
+
+    # Registration email filter
+    REGISTRATION_EMAIL_MATCH = '.*'
+
+    # Captcha for registrations
+    REGISTRATION_CAPTCHA = True
+
+    # How long to keep auditlog entries
+    AUDITLOG_EXPIRY = 180
+
+    # Auth0 provider default image & title on login page
+    SOCIAL_AUTH_AUTH0_IMAGE = 'btn_auth0_badge.png'
+    SOCIAL_AUTH_AUTH0_TITLE = 'Auth0'
+
+    class Meta(object):
+        prefix = ''

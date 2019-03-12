@@ -23,7 +23,6 @@ import argparse
 from django.core.management.base import CommandError
 from django.http.request import HttpRequest
 
-from weblate.auth.models import User
 from weblate.trans.management.commands import WeblateTranslationCommand
 
 
@@ -52,21 +51,15 @@ class Command(WeblateTranslationCommand):
         # Get translation object
         translation = self.get_translation(**options)
 
-        # Get user
-        try:
-            user = User.objects.get(email=options['author'])
-        except User.DoesNotExist:
-            raise CommandError('Import user does not exist!')
-
         # Create fake request object
         request = HttpRequest()
-        request.user = user
+        request.user = None
 
         # Process import
         try:
             translation.merge_upload(
                 request, options['file'], False, method='suggest',
-                author=user.get_author_name(),
+                author_email=options['author']
             )
         except IOError:
             raise CommandError('Failed to import translation file!')

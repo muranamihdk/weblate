@@ -52,11 +52,11 @@ from weblate.auth.models import User
 
 from weblate.formats.exporters import EXPORTERS
 from weblate.formats.models import FILE_FORMATS
-from weblate.langdata.languages  import ALIASES
+from weblate.langdata.languages import ALIASES
 from weblate.lang.models import Language
 from weblate.trans.filter import get_filter_choice
 from weblate.trans.models import (
-    Translation, Component, Unit, Project, Change
+    Translation, Component, Unit, Project, Change, WhiteboardMessage,
 )
 from weblate.trans.models.source import PRIORITY_CHOICES
 from weblate.machinery import MACHINE_TRANSLATION_SERVICES
@@ -109,18 +109,23 @@ data-loading-text="{0}" data-checksum="{1}" data-content="{2}"
 '''
 
 
+class WeblateDateInput(forms.DateInput):
+    def __init__(self, datepicker=True, **kwargs):
+        attrs = {
+            'type': 'date',
+        }
+        if datepicker:
+            attrs['data-provide'] = 'datepicker'
+            attrs['data-date-format'] = 'yyyy-mm-dd'
+        super(WeblateDateInput, self).__init__(
+            attrs=attrs, format='%Y-%m-%d', **kwargs
+        )
+
+
 class WeblateDateField(forms.DateField):
     def __init__(self, datepicker=True, **kwargs):
         if 'widget' not in kwargs:
-            attrs = {
-                'type': 'date',
-            }
-            if datepicker:
-                attrs['data-provide'] = 'datepicker'
-                attrs['data-date-format'] = 'yyyy-mm-dd'
-            kwargs['widget'] = forms.DateInput(
-                attrs=attrs, format='%Y-%m-%d'
-            )
+            kwargs['widget'] = WeblateDateInput(datepicker=datepicker)
         super(WeblateDateField, self).__init__(**kwargs)
 
     def to_python(self, value):
@@ -1348,7 +1353,7 @@ class ReportsForm(forms.Form):
 class CleanRepoMixin(object):
     def clean_repo(self):
         repo = self.cleaned_data.get('repo')
-        if not repo or not is_repo_link(repo):
+        if not repo or not is_repo_link(repo) or '/' not in repo[10:]:
             return repo
         project, component = repo[10:].split('/', 1)
         try:
@@ -1397,6 +1402,9 @@ class ComponentSettingsForm(SettingsBaseForm):
             'add_message',
             'delete_message',
             'merge_message',
+            'addon_message',
+
+            'vcs',
             'repo',
             'branch',
             'push',
@@ -1405,6 +1413,7 @@ class ComponentSettingsForm(SettingsBaseForm):
             'commit_pending_age',
             'merge_style',
 
+            'file_format',
             'edit_template',
             'new_lang',
             'new_base',
@@ -1456,6 +1465,7 @@ class ComponentSettingsForm(SettingsBaseForm):
                     Fieldset(
                         _('Locations'),
                         Div(template='trans/repo_help.html'),
+                        'vcs',
                         'repo',
                         'branch',
                         'push',
@@ -1478,17 +1488,25 @@ class ComponentSettingsForm(SettingsBaseForm):
                         'add_message',
                         'delete_message',
                         'merge_message',
+                        'addon_message',
                     ),
                     css_id='messages',
                 ),
                 Tab(
                     _('Files'),
                     Fieldset(
-                        _('Languages processing'),
+                        _('Translation files'),
+                        'file_format',
                         'filemask',
                         'language_regex',
+                    ),
+                    Fieldset(
+                        _('Monolingual translations'),
                         'template',
                         'edit_template',
+                    ),
+                    Fieldset(
+                        _('Adding new languages'),
                         'new_base',
                         'new_lang',
                     ),
@@ -1497,6 +1515,12 @@ class ComponentSettingsForm(SettingsBaseForm):
                 template='layout/pills.html',
             )
         )
+        vcses = ('git', 'gerrit', 'github')
+        if self.instance.vcs not in vcses:
+            vcses = (self.instance.vcs, )
+        self.fields['vcs'].choices = [
+            c for c in self.fields['vcs'].choices if c[0] in vcses
+        ]
 
 
 class ComponentCreateForm(SettingsBaseForm):
@@ -1505,8 +1529,8 @@ class ComponentCreateForm(SettingsBaseForm):
         model = Component
         fields = [
             'project', 'name', 'slug', 'vcs', 'repo', 'push', 'repoweb',
-            'branch', 'file_format', 'filemask', 'template', 'new_base',
-            'license', 'new_lang', 'language_regex',
+            'branch', 'file_format', 'filemask', 'template', 'edit_template',
+            'new_base', 'license', 'new_lang', 'language_regex',
         ]
 
 
@@ -1582,7 +1606,7 @@ class ComponentInitCreateForm(CleanRepoMixin, forms.Form):
             if same_repo.exists():
                 component = same_repo[0]
                 data['repo'] = component.get_repo_link_url()
-                data['branch'] = component.branch
+                data['branch'] = ''
                 self.clean_instance(data)
 
     def clean(self):
@@ -1808,7 +1832,7 @@ class NewUnitForm(forms.Form):
         self.fields['value'].widget.profile = user.profile
 
 
-class MassStateForm(forms.Form):
+class BulkStateForm(forms.Form):
     type = FilterField(
         required=True,
         initial='all',
@@ -1820,7 +1844,7 @@ class MassStateForm(forms.Form):
     )
 
     def __init__(self, user, obj, *args, **kwargs):
-        super(MassStateForm, self).__init__(*args, **kwargs)
+        super(BulkStateForm, self).__init__(*args, **kwargs)
         excluded = {STATE_EMPTY}
         translation = None
         if isinstance(obj, Translation):
@@ -1888,3 +1912,13 @@ class DeleteForm(forms.Form):
             raise ValidationError(
                 _('The translation name does not match the one to delete!')
             )
+
+
+class WhiteboardForm(forms.ModelForm):
+    """Component base form."""
+    class Meta(object):
+        model = WhiteboardMessage
+        fields = ['message', 'category', 'expiry']
+        widgets = {
+            'expiry': WeblateDateInput()
+        }

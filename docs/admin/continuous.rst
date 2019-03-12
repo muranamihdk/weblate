@@ -1,7 +1,7 @@
 .. _continuous-translation:
 
-Continuous translation
-======================
+Continuous localization
+=======================
 
 There is infrastructure in place so that your translation closely follows
 development. This way translators can work on translations the entire time,
@@ -46,32 +46,6 @@ source. Either use hooks (see :ref:`hooks`) or just regularly run
 
 Whenever Weblate updates the repository, the :guilabel:`Post-update script`
 hooks are executed.
-
-With Gettext PO files, you might get bit by conflicts in PO file
-headers. To avoid it, you can use the shipped merge driver
-(:file:`examples/git-merge-gettext-po`). Use it by putting the following
-configuration in your :file:`.gitconfig`:
-
-.. code-block:: ini
-
-   [merge "merge-gettext-po"]
-     name = merge driver for Gettext PO files
-     driver = /path/to/weblate/examples/git-merge-gettext-po %O %A %B
-
-Then enable its use by defining proper attributes in the given repository (e.g. in
-:file:`.git/info/attributes`)::
-
-    *.po merge=merge-gettext-po
-
-.. note::
-
-    This merge driver assumes changes in POT files always are done in the
-    attemptedly merged branch.
-
-.. versionchanged:: 2.9
-
-    This merge driver is now automatically installed for all Weblate internal
-    repositories.
 
 .. _avoid-merge-conflicts:
 
@@ -235,8 +209,29 @@ Pushing changes from Hosted Weblate
 For Hosted Weblate there is a dedicated push user registered on GitHub, Bitbucket
 and GitLab (with username :guilabel:`weblate` named
 :guilabel:`Weblate push user`). You need to add this user as a collaborator and
-give it permission to push to your repository. Let us know when you've done
-so and we will enable pushing changes from Hosted Weblate for you.
+give it permission to push to your repository.
+
+The user is added to the repository (in some cases this happens immediately, on
+GitHub it typically happens after accepting invitations what happens
+automatically every hour), you can configure your component push URL to a ssh
+URL of your repository (see :ref:`component`) and enjoy Weblate automatically
+pushing changes to your repository.
+
+In case you do not want direct pushes by Weblate, there is support for GitHub
+pull requests or Gerrit reviews, you can activate these by choosing `GitHub` or
+`Gerrit` as VCS in :ref:`component`.
+
+Protected branches
+++++++++++++++++++
+
+If you are using Weblate on protected branch, you can configure it to use pull
+requests and perform actual review on the translations (what might be
+problematic for languages you do not know). Alternative approach is to to waive
+this limitation for the Weblate push user.
+
+For example on GitHub this can be done in the repository configuration:
+
+.. image:: /images/github-protected.png
 
 .. _merge-rebase:
 

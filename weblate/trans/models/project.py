@@ -28,7 +28,6 @@ from django.db import models
 from django.utils.translation import ugettext as _, ugettext_lazy
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.functional import cached_property
-from django.core.exceptions import ValidationError
 from django.urls import reverse
 
 from weblate.lang.models import Language, get_english_lang
@@ -223,10 +222,10 @@ class Project(models.Model, URLMixin, PathMixin):
             translation__component__project=self
         ).distinct()
 
-    def repo_needs_commit(self):
+    def needs_commit(self):
         """Check whether there are any uncommitted changes."""
         for component in self.component_set.all():
-            if component.repo_needs_commit():
+            if component.needs_commit():
                 return True
         return False
 
@@ -253,7 +252,9 @@ class Project(models.Model, URLMixin, PathMixin):
 
     def do_update(self, request=None, method=None):
         """Update all Git repos."""
-        return self.on_repo_components(True, 'do_update', request, method=method)
+        return self.on_repo_components(
+            True, 'do_update', request, method=method
+        )
 
     def do_push(self, request=None):
         """Push all Git repos."""

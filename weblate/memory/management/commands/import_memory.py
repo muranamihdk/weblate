@@ -21,7 +21,6 @@
 from __future__ import unicode_literals
 
 import argparse
-import json
 
 from django.core.management.base import BaseCommand, CommandError
 
@@ -42,7 +41,7 @@ class Command(BaseCommand):
         )
         parser.add_argument(
             'file',
-            type=argparse.FileType('r'),
+            type=argparse.FileType('rb'),
             help='File to import (TMX or JSON)',
         )
 

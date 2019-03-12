@@ -21,6 +21,7 @@
 from __future__ import unicode_literals
 
 from django.http import HttpResponse
+from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
 from translate.misc.multistring import multistring
@@ -73,21 +74,27 @@ class BaseExporter(object):
     def __init__(self, project=None, language=None, url=None,
                  translation=None, fieldnames=None):
         if translation is not None:
+            self.plural = translation.plural
             self.project = translation.component.project
             self.language = translation.language
             self.url = get_site_url(translation.get_absolute_url())
         else:
             self.project = project
             self.language = language
+            self.plural = language.plural
             self.url = url
         self.fieldnames = fieldnames
-        self.storage = self.get_storage()
-        self.storage.setsourcelanguage(
+
+    @cached_property
+    def storage(self):
+        storage = self.get_storage()
+        storage.setsourcelanguage(
             self.project.source_language.code
         )
-        self.storage.settargetlanguage(
+        storage.settargetlanguage(
             self.language.code
         )
+        return storage
 
     def string_filter(self, text):
         return text
@@ -185,10 +192,11 @@ class PoExporter(BaseExporter):
     content_type = 'text/x-po'
     extension = 'po'
     verbose = _('gettext PO')
+    _storage = pofile
 
     def get_storage(self):
-        store = pofile()
-        plural = self.language.plural
+        store = self._storage()
+        plural = self.plural
 
         # Set po file header
         store.updateheader(
@@ -267,31 +275,12 @@ class TMXExporter(XMLExporter):
 
 
 @register_exporter
-class MoExporter(BaseExporter):
+class MoExporter(PoExporter):
     name = 'mo'
     content_type = 'application/x-gettext-catalog'
     extension = 'mo'
     verbose = _('gettext MO')
-
-    def get_storage(self):
-        store = mofile()
-        plural = self.language.plural
-
-        # Set po file header
-        store.updateheader(
-            add=True,
-            language=self.language.code,
-            x_generator='Weblate {0}'.format(weblate.VERSION),
-            project_id_version='{0} ({1})'.format(
-                self.language.name, self.project.name
-            ),
-            plural_forms=plural.plural_form,
-            language_team='{0} <{1}>'.format(
-                self.language.name,
-                self.url
-            )
-        )
-        return store
+    _storage = mofile
 
     def add_unit(self, unit):
         if not unit.translated:

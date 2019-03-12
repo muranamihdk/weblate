@@ -104,10 +104,19 @@ class GitSquashForm(BaseAddonForm):
             ('all', _('All commits into one')),
             ('language', _('Per language')),
             ('file', _('Per file')),
+            ('author', _('Per author')),
         ),
         initial='all',
         required=True,
     )
+
+    def __init__(self, *args, **kwargs):
+        super(GitSquashForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.layout = Layout(
+            Field('squash'),
+            Div(template='addons/squash_help.html'),
+        )
 
 
 class JSONCustomizeForm(BaseAddonForm):

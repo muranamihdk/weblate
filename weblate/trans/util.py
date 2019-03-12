@@ -179,13 +179,18 @@ def get_clean_env(extra=None):
         'LD_PRELOAD',
         # Needed by Git on Windows
         'SystemRoot',
+        # Pass proxy configuration
+        'http_proxy',
+        'https_proxy',
+        'HTTPS_PROXY',
+        'NO_PROXY',
         # below two are nedded for openshift3 deployment,
         # where nss_wrapper is used
         # more on the topic on below link:
         # https://docs.openshift.com/enterprise/3.2/creating_images/guidelines.html
         'NSS_WRAPPER_GROUP',
         'NSS_WRAPPER_PASSWD',
-      )
+    )
     for var in variables:
         if var in os.environ:
             environ[var] = os.environ[var]
@@ -318,13 +323,26 @@ def rich_to_xliff_string(string_elements):
     Transform rich content (StringElement) into
     a string with placeholder kept as XML
     """
-
-    result = ''
+    # Create dummy root element
+    xml = etree.Element(u'e')
     for string_element in string_elements:
-        xml = etree.Element(u'e')
+        # Inject placeable from translate-toolkit
         strelem_to_xml(xml, string_element)
-        string_xml = etree.tostring(xml, encoding="unicode")
-        string_without_wrapping_element = string_xml[3:][:-4]
-        result += string_without_wrapping_element
 
-    return result
+    # Remove any possible namespace
+    for child in xml:
+        if child.tag.startswith('{'):
+            child.tag = child.tag[child.tag.index('}') + 1:]
+    etree.cleanup_namespaces(xml)
+
+    # Convert to string
+    string_xml = etree.tostring(xml, encoding="unicode")
+
+    # Strip dummy root element
+    return string_xml[3:][:-4]
+
+
+def parse_flags(flags):
+    """ Parse comma separated list of flags."""
+    for flag in flags.split(','):
+        yield flag.strip()

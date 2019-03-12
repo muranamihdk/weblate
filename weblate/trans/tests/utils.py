@@ -70,6 +70,7 @@ def create_test_user():
         full_name='Weblate Test',
     )
 
+
 def create_another_user():
     return User.objects.create_user(
         'jane',
@@ -424,6 +425,13 @@ class RepoTestMixin(object):
             'dtd',
             'dtd/*.dtd',
             'dtd/en.dtd',
+        )
+
+    def create_appstore(self):
+        return self._create_component(
+            'appstore',
+            'metadata/*',
+            'metadata/en-US',
         )
 
     def create_link(self, **kwargs):
