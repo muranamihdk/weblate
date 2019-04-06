@@ -65,6 +65,18 @@ class Alert(models.Model):
     def render(self):
         return self.obj.render()
 
+    def save(self, *args, **kwargs):
+        is_new = (not self.id)
+        super(Alert, self).save(*args, **kwargs)
+        if is_new:
+            from weblate.trans.models import Change
+            Change.objects.create(
+                action=Change.ACTION_ALERT,
+                component=self.component,
+                alert=self,
+                target=self.name
+            )
+
 
 class BaseAlert(object):
     verbose = ''
@@ -151,11 +163,6 @@ class UpdateFailure(ErrorAlert):
 @register
 class PushFailure(ErrorAlert):
     verbose = _('Could not push the repository.')
-
-
-@register
-class UnusedNewBase(BaseAlert):
-    verbose = _('Unused base file for new translations.')
 
 
 @register

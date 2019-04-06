@@ -268,7 +268,7 @@ class PluralTextarea(forms.Textarea):
                 char
             )
             for name, char, value in
-            get_special_chars(language, profile.special_chars)
+            get_special_chars(language, profile.special_chars, unit.source)
         ]
 
         groups.append(
@@ -636,12 +636,12 @@ class ExtraUploadForm(UploadForm):
     author_name = forms.CharField(
         label=_('Author name'),
         required=False,
-        help_text=_('Keep empty for using currently logged in user.')
+        help_text=_('Leave empty for using currently logged in user.')
     )
     author_email = forms.EmailField(
         label=_('Author email'),
         required=False,
-        help_text=_('Keep empty for using currently logged in user.')
+        help_text=_('Leave empty for using currently logged in user.')
     )
 
 
@@ -1416,6 +1416,7 @@ class ComponentSettingsForm(SettingsBaseForm):
             'file_format',
             'edit_template',
             'new_lang',
+            'language_code_style',
             'new_base',
             'filemask',
             'template',
@@ -1509,6 +1510,7 @@ class ComponentSettingsForm(SettingsBaseForm):
                         _('Adding new languages'),
                         'new_base',
                         'new_lang',
+                        'language_code_style',
                     ),
                     css_id='files',
                 ),
@@ -1530,7 +1532,8 @@ class ComponentCreateForm(SettingsBaseForm):
         fields = [
             'project', 'name', 'slug', 'vcs', 'repo', 'push', 'repoweb',
             'branch', 'file_format', 'filemask', 'template', 'edit_template',
-            'new_base', 'license', 'new_lang', 'language_regex',
+            'new_base', 'license', 'new_lang', 'language_code_style',
+            'language_regex',
         ]
 
 
@@ -1543,12 +1546,12 @@ class ComponentInitCreateForm(CleanRepoMixin, forms.Form):
     name = forms.CharField(
         label=_('Component name'),
         max_length=settings.COMPONENT_NAME_LENGTH,
-        help_text=_('Name to display')
+        help_text=_('Display name')
     )
     slug = forms.SlugField(
         label=_('URL slug'),
         max_length=settings.COMPONENT_NAME_LENGTH,
-        help_text=_('Name used in URLs and file names.')
+        help_text=_('Name used in URLs and filenames.')
     )
     project = forms.ModelChoiceField(
         queryset=Project.objects.none(),
@@ -1686,7 +1689,7 @@ class ProjectSettingsForm(SettingsBaseForm):
             'web',
             'mail',
             'instructions',
-            'set_translation_team',
+            'set_language_team',
             'use_shared_tm',
             'enable_hooks',
             'source_language',

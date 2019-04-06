@@ -20,6 +20,7 @@
 
 from __future__ import unicode_literals
 
+from collections import defaultdict
 import gettext
 from itertools import chain
 import re
@@ -37,8 +38,6 @@ from django.utils.translation import (
     ugettext as _, ugettext_lazy, pgettext_lazy,
 )
 from django.utils.safestring import mark_safe
-from django.dispatch import receiver
-from django.db.models.signals import post_migrate
 
 from weblate.lang import data
 from weblate.langdata import languages
@@ -349,12 +348,10 @@ class LanguageQuerySet(models.QuerySet):
         return self.filter(translation__pk__gt=0).distinct()
 
 
-@receiver(post_migrate)
 def setup_lang(sender, **kwargs):
     """Hook for creating basic set of languages on database migration."""
-    if sender.label == 'lang':
-        with transaction.atomic():
-            Language.objects.setup(False)
+    with transaction.atomic():
+        Language.objects.setup(False)
 
 
 @python_2_unicode_compatible
@@ -553,12 +550,10 @@ class Plural(models.Model):
 
     @cached_property
     def examples(self):
-        result = {}
+        result = defaultdict(list)
         func = self.plural_function
         for i in chain(range(0, 10000), range(10000, 2000001, 1000)):
             ret = func(i)
-            if ret not in result:
-                result[ret] = []
             if len(result[ret]) >= 10:
                 continue
             result[ret].append(str(i))

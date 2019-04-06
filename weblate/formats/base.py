@@ -178,6 +178,8 @@ class TranslationFormat(object):
     unit_class = TranslationUnit
     autoload = ()
     can_add_unit = True
+    language_format = 'posix'
+    simple_filename = True
 
     @classmethod
     def get_identifier(cls):
@@ -187,7 +189,7 @@ class TranslationFormat(object):
     def parse(cls, storefile, template_store=None, language_code=None):
         """Parse store and returns TranslationFormat instance.
 
-        This wrapper is needed for AutoFormat to be able to return
+        This wrapper is needed for AutodetectFormat to be able to return
         instance of different class."""
         return cls(storefile, template_store, language_code)
 
@@ -346,10 +348,32 @@ class TranslationFormat(object):
         """Check whether base is valid."""
         raise NotImplementedError()
 
-    @staticmethod
-    def get_language_code(code):
+    @classmethod
+    def get_language_code(cls, code, language_format=None):
         """Do any possible formatting needed for language code."""
+        if not language_format:
+            language_format = cls.language_format
+        return getattr(cls, 'get_language_{}'.format(language_format))(code)
+
+    @staticmethod
+    def get_language_posix(code):
         return code
+
+    @staticmethod
+    def get_language_bcp(code):
+        return code.replace('_', '-')
+
+    @staticmethod
+    def get_language_android(code):
+        # Android doesn't use Hans/Hant, but rather TW/CN variants
+        if code == 'zh_Hans':
+            return 'zh-rCN'
+        if code == 'zh_Hant':
+            return 'zh-rTW'
+        sanitized = code.replace('-', '_')
+        if '_' in sanitized and len(sanitized.split('_')[1]) > 2:
+            return 'b+{}'.format(sanitized.replace('_', '+'))
+        return sanitized.replace('_', '-r')
 
     @classmethod
     def get_language_filename(cls, mask, code):

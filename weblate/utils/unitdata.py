@@ -22,7 +22,7 @@ from __future__ import unicode_literals
 
 from django.apps import apps
 from django.utils.functional import cached_property
-from django.db import models
+from django.db import connection, models
 
 from weblate.lang.models import Language
 
@@ -81,4 +81,9 @@ def filter_query(queryset, table):
         where.append(WHERE_LANGUAGE_WILDCARD.format(table))
     else:
         where.append(WHERE_LANGUAGE.format(table))
+    if table == 'checks_check':
+        if connection.vendor == 'sqlite':
+            where.append('checks_check.ignore = 0')
+        else:
+            where.append('checks_check.ignore = false')
     return queryset.extra(tables=[table], where=where)

@@ -47,6 +47,9 @@ class TextItem(object):
     def location(self):
         return '{}:{}'.format(self.filename, self.line)
 
+    def getid(self):
+        return self.location
+
 
 class TextParser(object):
     """Simple text parser returning all content as single unit."""
@@ -172,6 +175,7 @@ class AppStoreFormat(TranslationFormat):
     can_add_unit = False
     monolingual = True
     unit_class = TextUnit
+    simple_filename = False
 
     @classmethod
     def load(cls, storefile):

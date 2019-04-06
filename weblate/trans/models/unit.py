@@ -584,10 +584,6 @@ class Unit(models.Model, LoggerMixin):
             user.profile.translated += 1
             user.profile.save()
 
-        # Notify subscribed users about new translation
-        from weblate.accounts.notifications import notify_new_translation
-        notify_new_translation(self, self.old_unit, user)
-
         # Update related source strings if working on a template
         if self.translation.is_template:
             self.update_source_units(self.old_unit.source, user)
@@ -647,8 +643,12 @@ class Unit(models.Model, LoggerMixin):
             user=user
         )
         if not user_changes.exists():
-            from weblate.accounts.notifications import notify_new_contributor
-            notify_new_contributor(self, user)
+            Change.objects.create(
+                unit=self,
+                action=Change.ACTION_NEW_CONTRIBUTOR,
+                user=user,
+                author=author,
+            )
 
         # Action type to store
         if change_action is not None:
@@ -968,7 +968,7 @@ class Unit(models.Model, LoggerMixin):
     def get_target_hash(self):
         return calculate_hash(None, self.target)
 
-    def get_last_content_change(self, request):
+    def get_last_content_change(self, request, silent=False):
         """Wrapper to get last content change metadata
 
         Used when commiting pending changes, needs to handle and report
@@ -979,5 +979,6 @@ class Unit(models.Model, LoggerMixin):
             change = self.change_set.content().order_by('-timestamp')[0]
             return change.author or get_anonymous(), change.timestamp
         except IndexError as error:
-            report_error(error, request, level='error')
+            if not silent:
+                report_error(error, request, level='error')
             return get_anonymous(), timezone.now()

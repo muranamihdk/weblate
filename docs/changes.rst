@@ -6,6 +6,20 @@ weblate 3.6
 
 Released on ? 2019.
 
+* Add support for downloading user data.
+* Addons are now automatically triggered upon installation.
+* Improved instructions for resolving merge conflicts.
+* Cleanup addon is now compatible with app store metadata translations.
+* Configurable language code syntax when adding new translations.
+* Warn about using Python 2 with planned termination of support in April 2020.
+* Extract special chars from the source string for visual keyboard.
+* Extended contributor stats to reflect both source and target counts.
+* Admins and consistency addons can now add translations even if disabled for users.
+* Fixed description of toggle disabling ``Language-Team`` header manipulation.
+* Notify users mentioned in comments.
+* Removed file format autodetection from component setup.
+* Fixed generating MO file for monolingual PO files.
+
 weblate 3.5.1
 -------------
 
@@ -632,7 +646,7 @@ Released on Feb 19th 2015.
 * Support for deleting comments.
 * Added own SVG badge.
 * Added support for Google Analytics.
-* Improved handling of translation file names.
+* Improved handling of translation filenames.
 * Added support for monolingual JSON translations.
 * Record component locking in a history.
 * Support for editing source (template) language for monolingual translations.

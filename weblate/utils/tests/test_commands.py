@@ -18,14 +18,15 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+from glob import glob
 import os
 
 from django.core.management import call_command
-from django.core.management.base import CommandError
 from django.test import SimpleTestCase
 from django.test.utils import override_settings
 
 from weblate.trans.tests.utils import TempDirMixin
+
 
 class CommandTests(SimpleTestCase, TempDirMixin):
     def setUp(self):
@@ -37,9 +38,7 @@ class CommandTests(SimpleTestCase, TempDirMixin):
         self.remove_temp()
 
     def check_beat(self):
-        self.assertTrue(
-            os.path.exists(self.beat) or os.path.exists(self.beat_db)
-        )
+        self.assertTrue(glob(self.beat + '*'))
 
     def test_none(self):
         with override_settings(CELERY_BEAT_SCHEDULE_FILENAME=self.beat):

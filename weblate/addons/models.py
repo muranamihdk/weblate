@@ -106,6 +106,12 @@ class Addon(models.Model):
             }
         )
 
+    def delete(self, *args, **kwargs):
+        # Delete any addon alerts
+        if self.addon.alert:
+            self.component.alert_set.filter(name=self.addon.alert).delete()
+        super(Addon, self).delete(*args, **kwargs)
+
 
 @python_2_unicode_compatible
 class Event(models.Model):
@@ -207,7 +213,9 @@ def unit_pre_create_handler(sender, unit, **kwargs):
         unit.translation.component, EVENT_UNIT_PRE_CREATE
     )
     for addon in addons:
-        unit.translation.log_debug('running unit_pre_create addon: %s', addon.name)
+        unit.translation.log_debug(
+            'running unit_pre_create addon: %s', addon.name
+        )
         addon.addon.unit_pre_create(unit)
 
 
@@ -218,7 +226,9 @@ def unit_post_save_handler(sender, instance, created, **kwargs):
         instance.translation.component, EVENT_UNIT_POST_SAVE
     )
     for addon in addons:
-        instance.translation.log_debug('running unit_post_save addon: %s', addon.name)
+        instance.translation.log_debug(
+            'running unit_post_save addon: %s', addon.name
+        )
         addon.addon.unit_post_save(instance, created)
 
 

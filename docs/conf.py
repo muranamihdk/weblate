@@ -81,7 +81,10 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+<<<<<<< HEAD
 #html_theme = 'default'
+=======
+>>>>>>> master
 html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -190,7 +193,6 @@ graphviz_output_format = 'svg'
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3.5', None),
     'python2': ('https://docs.python.org/2.7', None),
-    'weblate3': ('https://docs.weblate.org/en/weblate-3.0.1/', None),
     'django': ('https://docs.djangoproject.com/en/stable/', 'https://docs.djangoproject.com/en/stable/_objects/'),
     'psa': ('https://python-social-auth.readthedocs.io/en/latest/', None),
     'tt': ('http://docs.translatehouse.org/projects/translate-toolkit/en/latest/', None),
